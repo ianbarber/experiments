@@ -1,0 +1,72 @@
+{
+  "experiment": "p2.1",
+  "K": 5,
+  "results": [
+    {
+      "mode": "none",
+      "alpha": 0.0,
+      "K": 0,
+      "solve_rate": 0.9082638362395754,
+      "ci_low": 0.8914777967573703,
+      "ci_high": 0.9226786373916614,
+      "correct_count": 1198,
+      "total_count": 1319,
+      "avg_tokens": 291.86353297952996
+    },
+    {
+      "mode": "jepa",
+      "alpha": 0.001,
+      "K": 5,
+      "solve_rate": 0.9082638362395754,
+      "ci_low": 0.8914777967573703,
+      "ci_high": 0.9226786373916614,
+      "correct_count": 1198,
+      "total_count": 1319,
+      "avg_tokens": 291.11144806671723
+    },
+    {
+      "mode": "jepa",
+      "alpha": 0.005,
+      "K": 5,
+      "solve_rate": 0.9029567854435178,
+      "ci_low": 0.885791601000375,
+      "ci_high": 0.9177815554531261,
+      "correct_count": 1191,
+      "total_count": 1319,
+      "avg_tokens": 291.24791508718727
+    },
+    {
+      "mode": "jepa",
+      "alpha": 0.01,
+      "K": 5,
+      "solve_rate": 0.9006823351023503,
+      "ci_low": 0.8833591533468989,
+      "ci_high": 0.9156783126656608,
+      "correct_count": 1188,
+      "total_count": 1319,
+      "avg_tokens": 291.2524639878696
+    },
+    {
+      "mode": "jepa",
+      "alpha": 0.05,
+      "K": 5,
+      "solve_rate": 0.9059893858984079,
+      "ci_low": 0.8890390137579977,
+      "ci_high": 0.9205817299500926,
+      "correct_count": 1195,
+      "total_count": 1319,
+      "avg_tokens": 290.6231993934799
+    },
+    {
+      "mode": "jepa",
+      "alpha": 0.1,
+      "K": 5,
+      "solve_rate": 0.9067475360121304,
+      "ci_low": 0.889851628910415,
+      "ci_high": 0.9212810116113224,
+      "correct_count": 1196,
+      "total_count": 1319,
+      "avg_tokens": 289.8855193328279
+    }
+  ]
+}
