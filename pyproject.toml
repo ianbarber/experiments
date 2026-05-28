@@ -1,0 +1,17 @@
+[project]
+name = "sparsegraph"
+version = "0.1.0"
+description = "Demonstrations of FlashSpread sparse-GPU techniques for broader ML"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.0",
+    "triton>=2.1",
+    "numpy>=1.24",
+    "matplotlib>=3.7",
+    "networkx>=3.0",
+    "scipy>=1.10",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
