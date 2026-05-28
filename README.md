@@ -30,11 +30,11 @@ Self-contained demonstrations of two domain-agnostic sparse-GPU optimization pat
 
 | Work | Relevance |
 |------|-----------|
-| **FlashSpread** (Shakeri-Lab, 2025) | Source of both patterns. Achieves >2×10⁷ events/sec on SEIR epidemics. Block-scalar skip gives ~1.3× on top of ~3× from pure traffic reduction. Fixed-grid compaction gives 1.53× on BA scale-free graphs that run to extinction. |
-| **PyTorch CUDA Graphs** (NVIDIA blog, 2021) | Foundation: captures static kernel DAGs to eliminate CPU launch overhead. Requires no host sync and static shapes. |
-| **SGLang Breakable CUDA Graph** (2025) | Allows graph breaks for dynamic ops, but pays eager Python overhead at each break. Our pattern keeps everything inside the graph. |
-| **Morphling / GNNOne / FuseGNN** | Optimize static graph sparsity (CSR, edge tiling). Complementary to our *dynamic* activation-sparsity patterns. |
-| **CGPA / ReLU-LLM pruning** | Dynamic neuron skipping, but usually needs hardware support or coarse blocks. Block-scalar skip is the software-level analogue on commodity GPUs. |
+| **[FlashSpread](https://github.com/Shakeri-Lab/FlashSpread)** ([arXiv](https://arxiv.org/abs/2604.22092)) (Shakeri-Lab, 2025) | Source of both patterns. Achieves >2×10⁷ events/sec on SEIR epidemics. Block-scalar skip gives ~1.3× on top of ~3× from pure traffic reduction. Fixed-grid compaction gives 1.53× on BA scale-free graphs that run to extinction. |
+| **[PyTorch CUDA Graphs](https://pytorch.org/blog/accelerating-pytorch-with-cuda-graphs/)** (NVIDIA blog, 2021) | Foundation: captures static kernel DAGs to eliminate CPU launch overhead. Requires no host sync and static shapes. |
+| **[SGLang Breakable CUDA Graph](https://sgl-project.github.io/advanced_features/breakable_cuda_graph.html)** (2025) | Allows graph breaks for dynamic ops, but pays eager Python overhead at each break. Our pattern keeps everything inside the graph. |
+| **[Morphling](https://arxiv.org/abs/2512.01678)** / [GNNOne](https://dl.acm.org/doi/10.1145/3620665.3640362) / [FuseGNN](https://arxiv.org/abs/2007.06256) | Optimize static graph sparsity (CSR, edge tiling). Complementary to our *dynamic* activation-sparsity patterns. |
+| **[CGPA](https://upcommons.upc.edu/handle/2117/372338)** (Coarse-Grained Pruning of Activations) / [ReLU-LLM pruning](https://arxiv.org/abs/2312.05934) | Dynamic neuron skipping, but usually needs hardware support or coarse blocks. Block-scalar skip is the software-level analogue on commodity GPUs. |
 
 ---
 
