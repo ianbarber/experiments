@@ -1,0 +1,308 @@
+defaults:
+  seq_len: 128
+  batch_size: 1
+  dtype: float32
+  attn_implementation: eager
+models:
+- id: pythia-410m
+  hf_id: EleutherAI/pythia-410m
+  name: Pythia 410M
+  release_date: 2022-04
+  family: gpt-neox
+  arch_notes: GPT-NeoX, parallel MHA + LayerNorm
+  trust_remote_code: false
+  mechanisms:
+  - full_attention
+  - layer_norm
+  - learned_pos_embed
+- id: opt-125m
+  hf_id: facebook/opt-125m
+  name: OPT-125M
+  release_date: 2022-05
+  family: opt
+  arch_notes: Meta OPT, LayerNorm, ReLU
+  trust_remote_code: false
+  mechanisms:
+  - full_attention
+  - layer_norm
+  - learned_pos_embed
+  - tied_embeddings
+- id: bloom-560m
+  hf_id: bigscience/bloom-560m
+  name: BLOOM 560M
+  release_date: 2022-07
+  family: bloom
+  arch_notes: ALiBi, multilingual dense transformer
+  trust_remote_code: false
+  mechanisms:
+  - full_attention
+  - layer_norm
+  - alibi
+  - learned_pos_embed
+  - tied_embeddings
+- id: tinyllama-1.1b
+  hf_id: TinyLlama/TinyLlama-1.1B-Chat-v1.0
+  name: TinyLlama 1.1B
+  release_date: 2023-09
+  family: llama
+  arch_notes: 'Open Llama-style: RMSNorm, RoPE, SwiGLU'
+  trust_remote_code: false
+  mechanisms:
+  - full_attention
+  - gated_mlp
+  - gqa
+  - rms_norm
+  - rope
+- id: phi-2
+  hf_id: microsoft/phi-2
+  name: Phi-2
+  release_date: 2023-12
+  family: phi
+  arch_notes: Compact Microsoft stack, GQA-like
+  trust_remote_code: false
+  dtype: float16
+  mechanisms:
+  - full_attention
+  - layer_norm
+  - rope
+- id: stablelm-1.6b
+  hf_id: stabilityai/stablelm-2-zephyr-1_6b
+  name: StableLM 2 1.6B
+  release_date: 2024-03
+  family: stablelm
+  arch_notes: RoPE, SwiGLU, modern dense
+  trust_remote_code: false
+  mechanisms:
+  - full_attention
+  - gated_mlp
+  - rms_norm
+  - rope
+- id: olmo-1b
+  hf_id: allenai/OLMo-1B-hf
+  name: OLMo 1B
+  release_date: 2024-02
+  family: olmo
+  arch_notes: Fully open training stack
+  trust_remote_code: false
+  mechanisms:
+  - full_attention
+  - gated_mlp
+  - layer_norm
+  - rope
+  - tied_embeddings
+- id: smollm-360m
+  hf_id: HuggingFaceTB/SmolLM-360M
+  name: SmolLM 360M
+  release_date: 2024-07
+  family: smollm
+  arch_notes: Compact Llama-like dense
+  trust_remote_code: false
+  mechanisms:
+  - full_attention
+  - gated_mlp
+  - gqa
+  - rms_norm
+  - rope
+  - tied_embeddings
+- id: qwen2-0.5b
+  hf_id: Qwen/Qwen2-0.5B
+  name: Qwen 2 0.5B
+  release_date: 2024-06
+  family: qwen2
+  arch_notes: GQA, RoPE, SwiGLU
+  trust_remote_code: false
+  mechanisms:
+  - full_attention
+  - gated_mlp
+  - gqa
+  - rms_norm
+  - rope
+  - tied_embeddings
+- id: deepseek-coder-1.3b
+  hf_id: deepseek-ai/deepseek-coder-1.3b-base
+  name: DeepSeek Coder 1.3B
+  release_date: 2024-06
+  family: deepseek
+  arch_notes: DeepSeek dense decoder
+  trust_remote_code: false
+  mechanisms:
+  - full_attention
+  - gated_mlp
+  - rms_norm
+  - rope
+- id: deepseek-coder-v2-lite
+  hf_id: deepseek-ai/deepseek-coder-v2-lite-base
+  name: DeepSeek Coder V2 Lite
+  release_date: 2024-06
+  family: deepseek
+  arch_notes: DeepSeek MoE code model
+  trust_remote_code: false
+  dtype: float16
+  mechanisms:
+  - full_attention
+  - gated_mlp
+  - moe_routing
+  - rms_norm
+  - rope
+- id: qwen1.5-moe-a2.7b
+  hf_id: Qwen/Qwen1.5-MoE-A2.7B
+  name: Qwen 1.5 MoE A2.7B
+  release_date: 2024-03
+  family: qwen-moe
+  arch_notes: 'Early MoE: routed experts per token'
+  trust_remote_code: false
+  dtype: float16
+  mechanisms:
+  - full_attention
+  - gated_mlp
+  - moe_routing
+  - rms_norm
+  - rope
+- id: qwen2.5-0.5b
+  hf_id: Qwen/Qwen2.5-0.5B
+  name: Qwen 2.5 0.5B
+  release_date: 2024-09
+  family: qwen2
+  arch_notes: Refined Qwen2 dense stack
+  trust_remote_code: false
+  mechanisms:
+  - full_attention
+  - gated_mlp
+  - gqa
+  - rms_norm
+  - rope
+  - tied_embeddings
+- id: phi-3-mini
+  hf_id: microsoft/Phi-3-mini-4k-instruct
+  name: Phi-3 Mini
+  release_date: 2024-12
+  family: phi3
+  arch_notes: Long-context GQA, sliding window
+  trust_remote_code: false
+  dtype: float16
+  mechanisms:
+  - full_attention
+  - gated_mlp
+  - rms_norm
+  - rope
+  - sliding_window_attention
+- id: qwen3-0.6b
+  hf_id: Qwen/Qwen3-0.6B
+  name: Qwen 3 0.6B
+  release_date: 2025-04
+  family: qwen3
+  arch_notes: Qwen3 dense generation
+  trust_remote_code: false
+  mechanisms:
+  - full_attention
+  - gated_mlp
+  - gqa
+  - rms_norm
+  - rope
+  - tied_embeddings
+- id: deepseek-r1-distill-qwen-1.5b
+  hf_id: deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B
+  name: DeepSeek R1 Distill Qwen 1.5B
+  release_date: 2025-01
+  family: deepseek
+  arch_notes: R1 reasoning distill on Qwen
+  trust_remote_code: false
+  dtype: float16
+  mechanisms:
+  - full_attention
+  - gated_mlp
+  - gqa
+  - rms_norm
+  - rope
+- id: qwen3-1.7b
+  hf_id: Qwen/Qwen3-1.7B
+  name: Qwen 3 1.7B
+  release_date: 2025-05
+  family: qwen3
+  arch_notes: Qwen3 dense generation
+  trust_remote_code: false
+  dtype: float16
+  mechanisms:
+  - full_attention
+  - gated_mlp
+  - gqa
+  - rms_norm
+  - rope
+  - tied_embeddings
+- id: olmo2-1b
+  hf_id: allenai/OLMo-2-0425-1B
+  name: OLMo 2 1B
+  release_date: 2025-04
+  family: olmo2
+  arch_notes: OLMo2 open weights
+  trust_remote_code: false
+  mechanisms:
+  - full_attention
+  - gated_mlp
+  - rms_norm
+  - rope
+- id: smollm2-360m
+  hf_id: HuggingFaceTB/SmolLM2-360M
+  name: SmolLM2 360M
+  release_date: 2025-07
+  family: smollm2
+  arch_notes: Second-gen compact dense
+  trust_remote_code: false
+  mechanisms:
+  - full_attention
+  - gated_mlp
+  - gqa
+  - rms_norm
+  - rope
+  - tied_embeddings
+- id: gemma-4-e2b-it
+  hf_id: google/gemma-4-E2B-it
+  name: Gemma 4 E2B IT
+  release_date: 2026-04
+  family: gemma4
+  arch_notes: Google Gemma 4 edge, hybrid attention
+  trust_remote_code: false
+  dtype: float16
+  mechanisms:
+  - full_attention
+  - gated_mlp
+  - mqa
+  - rms_norm
+  - rope
+  - sliding_window_attention
+  - tied_embeddings
+  - multimodal
+  - kv_sharing
+- id: qwen3.5-4b
+  hf_id: Qwen/Qwen3.5-4B
+  name: Qwen 3.5 4B
+  release_date: 2026-03
+  family: qwen3
+  arch_notes: Qwen3.5 dense with hybrid/linear attention
+  trust_remote_code: false
+  dtype: float16
+  mechanisms:
+  - full_attention
+  - linear_attention
+  - gated_mlp
+  - gqa
+  - rms_norm
+  - rope
+  - tied_embeddings
+  - multimodal
+  - mtp
+- id: smollm3-3b
+  hf_id: HuggingFaceTB/SmolLM3-3B
+  name: SmolLM3 3B
+  release_date: 2026-05
+  family: smollm3
+  arch_notes: Hugging Face SmolLM3 compact dense
+  trust_remote_code: false
+  dtype: float16
+  mechanisms:
+  - full_attention
+  - gated_mlp
+  - gqa
+  - rms_norm
+  - rope
+  - tied_embeddings
