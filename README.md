@@ -9,18 +9,24 @@ architecture. It replicates the schedule of the Colfax CUTLASS recipe —
 (CUTLASS example 79b: TMA + warp-specialized blockscaled mainloop + register
 reallocation) — without Meta's experimental Triton fork.
 
-Measured on GB10 (sm_121, idle GPU), bit-exact vs plain `tl.dot_scaled`:
+Measured back-to-back in one session on GB10 (sm_121), so all three columns
+see the same GPU/thermal state. "CUTLASS 79b" is the exact kernel the Colfax
+post builds (CUTLASS `examples/79_blackwell_geforce_gemm`, 79b NVFP4×NVFP4
+binary); "cuBLAS NVFP4" is `torch._scaled_mm` on the same fp4/e4m3 inputs.
+This kernel is bit-exact vs plain `tl.dot_scaled` (see `verify.py`).
 
-| shape | this kernel | CUTLASS 79b | ratio |
-|---|--:|--:|--:|
-| 2048³ | 262 TF | 297 | 88% |
-| 4096³ | 307–332 TF | 402 | 76–83% |
-| 8192×8192×4096 | 218 TF | 360 | 60% |
+| shape | this kernel | CUTLASS 79b (Colfax) | cuBLAS NVFP4 | % of CUTLASS |
+|---|--:|--:|--:|--:|
+| 2048³ | 264 TF | 299 | 298 | 88% |
+| 4096³ | 315 TF | 389 | 348 | 81% |
+| 8192×8192×4096 | 219 TF | 374 | 327 | 59% |
 
-That is at/above the cuBLAS NVFP4 band (~325–347 at 4096³) and at parity or
-better with the same kernel compiled on the fbtriton fork — every fork-only
-ingredient (warp-spec, TMA descriptor ops, register realloc) rides the
-plugin/patch stack instead.
+Run-to-run numbers move a few percent with GPU thermal state (we have seen
+this kernel at 262–334 TF at 4096³ across sessions); comparisons within one
+table row are the meaningful ones. The same kernel compiled on the fbtriton
+fork lands at parity (within that noise) — every fork-only ingredient
+(warp-spec, TMA descriptor ops, register realloc) rides the plugin/patch
+stack instead.
 
 ## Architecture (what runs where)
 
