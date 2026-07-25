@@ -55,7 +55,7 @@ Kernel structure (mirrors the CUTLASS mainloop):
   on a scalar layout (hundreds of `ld.shared.b8`).
 - **Register economy**: launch `maxnreg=168` (64K regfile / 384 threads);
   the plugin pass re-stamps the kernel's register requests after upstream's
-  `OptimizePartitionWarps` would overwrite them (see NOTES-upstream.md).
+  `OptimizePartitionWarps` would overwrite them.
   Result: 248/232/24 per-thread across the three roles, zero spills.
 
 ## Setup
@@ -107,8 +107,7 @@ the kernel.
 Upstream Triton ships almost everything this kernel needs — the native
 `mxf4nvf4.block_scale` MMA lowering for sm_12x, `ttg.warp_specialize` with
 full lowering including `setmaxnreg`, TMA ops, and the plugin ABI itself.
-Three gaps remain, each bridged here and each a candidate upstream change
-(details + file:line evidence in [NOTES-upstream.md](NOTES-upstream.md)):
+Three gaps remain, each bridged here and each a candidate upstream change:
 
 1. No `with`-statement dispatch hook in `CodeGenerator` — bridged by a
    monkeypatch (approach due to [wychi/wheels](https://github.com/wychi/wheels)).
