@@ -1,0 +1,863 @@
+=== verify M=1024 N=1024 K=1024 (variant=good) ===
+
+==============================================================================================
+
+|         MmaTask[0:4)         |        LoadTask[4:5)         |       PaddingTask[5:8)       |
+
+==============================>   Full (Head + Loop + Tail)   <===============================
+
+| SmemAB       ConsAux    H  0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdTrA       0 |                              |
+|                              | SmemAB       ProdAcq<-     0 |                              |
+|                              | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 |                              |                              |
+| SmemAB       ConsWrk       0 |                              |                              |
+| SmemAB     <-ConsRel       0 |                              |                              |
+| GmemC        ProdWrk    T  0 |                              |                              |
+
+==============================> End Full (Head + Loop + Tail) <===============================
+
+Phase tags:  H — Head (prefetch, before the loop)  |  F — FirstIter (first iteration only)  |  L — LastIter (last iteration only)  |  T — Tail (drain, after the loop)
+Task  0 'MmaTask             ', numWarps x (defaultMaxNumRegs - numRegsPerThread) = 4 x (256 - 232) = 96
+Task  1 'LoadTask            ', numWarps x (defaultMaxNumRegs - numRegsPerThread) = 1 x (256 -  40) = 216
+Task  2 'PaddingTask         ', numWarps x (defaultMaxNumRegs - numRegsPerThread) = 3 x (256 -  40) = 648
+Num. regs: 34816 (free reg blocks: 30)
+Reg budget: 960
+SMEM usage: 98352 B (data 98304 B + barriers 48 B) / 101376 B capacity
+========================================================================
+Exhaustive interleaving checker — BFS exploration
+========================================================================
+  Task 0 (MmaTask): [ConsumerAuxWork(SmemAB), ConsumerTryWait(SmemAB), ConsumerWait(SmemAB), ConsumerWork(SmemAB), ConsumerWork(SmemAB), ConsumerRelease(SmemAB), ConsumerTryWait(SmemAB), ConsumerWait(SmemAB), ConsumerWork(SmemAB), ConsumerWork(SmemAB), ConsumerRelease(SmemAB), ConsumerTryWait(SmemAB), ConsumerWait(SmemAB), ConsumerWork(SmemAB), ConsumerWork(SmemAB), ConsumerRelease(SmemAB), ConsumerTryWait(SmemAB), ConsumerWait(SmemAB), ConsumerWork(SmemAB), ConsumerWork(SmemAB), ConsumerRelease(SmemAB), ConsumerTryWait(SmemAB), ConsumerWait(SmemAB), ConsumerWork(SmemAB), ConsumerWork(SmemAB), ConsumerRelease(SmemAB), ConsumerTryWait(SmemAB), ConsumerWait(SmemAB), ConsumerWork(SmemAB), ConsumerWork(SmemAB), ConsumerRelease(SmemAB), ConsumerTryWait(SmemAB), ConsumerWait(SmemAB), ConsumerWork(SmemAB), ConsumerWork(SmemAB), ConsumerRelease(SmemAB), ConsumerTryWait(SmemAB), ConsumerWait(SmemAB), ConsumerWork(SmemAB), ConsumerWork(SmemAB), ConsumerRelease(SmemAB), ConsumerTryWait(SmemAB), ConsumerWait(SmemAB), ConsumerWork(SmemAB), ConsumerWork(SmemAB), ConsumerRelease(SmemAB), ConsumerTryWait(SmemAB), ConsumerWait(SmemAB), ConsumerWork(SmemAB), ConsumerWork(SmemAB), ConsumerRelease(SmemAB), ConsumerTryWait(SmemAB), ConsumerWait(SmemAB), ConsumerWork(SmemAB), ConsumerWork(SmemAB), ConsumerRelease(SmemAB), ConsumerTryWait(SmemAB), ConsumerWait(SmemAB), ConsumerWork(SmemAB), ConsumerWork(SmemAB), ConsumerRelease(SmemAB), ConsumerTryWait(SmemAB), ConsumerWait(SmemAB), ConsumerWork(SmemAB), ConsumerWork(SmemAB), ConsumerRelease(SmemAB), ConsumerTryWait(SmemAB), ConsumerWait(SmemAB), ConsumerWork(SmemAB), ConsumerWork(SmemAB), ConsumerRelease(SmemAB), ConsumerTryWait(SmemAB), ConsumerWait(SmemAB), ConsumerWork(SmemAB), ConsumerWork(SmemAB), ConsumerRelease(SmemAB), ConsumerTryWait(SmemAB), ConsumerWait(SmemAB), ConsumerWork(SmemAB), ConsumerWork(SmemAB), ConsumerRelease(SmemAB), ProducerWork(GmemC)]
+  Task 1 (LoadTask): [ConsumerWork(GmemAB), ConsumerWork(GmemAB), ProducerTryAcquire(SmemAB), ProducerAcquire(SmemAB), ProducerWork(SmemAB), ProducerCommit(SmemAB), ConsumerWork(GmemAB), ConsumerWork(GmemAB), ProducerTryAcquire(SmemAB), ProducerAcquire(SmemAB), ProducerWork(SmemAB), ProducerCommit(SmemAB), ConsumerWork(GmemAB), ConsumerWork(GmemAB), ProducerTryAcquire(SmemAB), ProducerAcquire(SmemAB), ProducerWork(SmemAB), ProducerCommit(SmemAB), ConsumerWork(GmemAB), ConsumerWork(GmemAB), ProducerTryAcquire(SmemAB), ProducerAcquire(SmemAB), ProducerWork(SmemAB), ProducerCommit(SmemAB), ConsumerWork(GmemAB), ConsumerWork(GmemAB), ProducerTryAcquire(SmemAB), ProducerAcquire(SmemAB), ProducerWork(SmemAB), ProducerCommit(SmemAB), ConsumerWork(GmemAB), ConsumerWork(GmemAB), ProducerTryAcquire(SmemAB), ProducerAcquire(SmemAB), ProducerWork(SmemAB), ProducerCommit(SmemAB), ConsumerWork(GmemAB), ConsumerWork(GmemAB), ProducerTryAcquire(SmemAB), ProducerAcquire(SmemAB), ProducerWork(SmemAB), ProducerCommit(SmemAB), ConsumerWork(GmemAB), ConsumerWork(GmemAB), ProducerTryAcquire(SmemAB), ProducerAcquire(SmemAB), ProducerWork(SmemAB), ProducerCommit(SmemAB), ConsumerWork(GmemAB), ConsumerWork(GmemAB), ProducerTryAcquire(SmemAB), ProducerAcquire(SmemAB), ProducerWork(SmemAB), ProducerCommit(SmemAB), ConsumerWork(GmemAB), ConsumerWork(GmemAB), ProducerTryAcquire(SmemAB), ProducerAcquire(SmemAB), ProducerWork(SmemAB), ProducerCommit(SmemAB), ConsumerWork(GmemAB), ConsumerWork(GmemAB), ProducerTryAcquire(SmemAB), ProducerAcquire(SmemAB), ProducerWork(SmemAB), ProducerCommit(SmemAB), ConsumerWork(GmemAB), ConsumerWork(GmemAB), ProducerTryAcquire(SmemAB), ProducerAcquire(SmemAB), ProducerWork(SmemAB), ProducerCommit(SmemAB), ConsumerWork(GmemAB), ConsumerWork(GmemAB), ProducerTryAcquire(SmemAB), ProducerAcquire(SmemAB), ProducerWork(SmemAB), ProducerCommit(SmemAB), ConsumerWork(GmemAB), ConsumerWork(GmemAB), ProducerTryAcquire(SmemAB), ProducerAcquire(SmemAB), ProducerWork(SmemAB), ProducerCommit(SmemAB), ConsumerWork(GmemAB), ConsumerWork(GmemAB), ProducerTryAcquire(SmemAB), ProducerAcquire(SmemAB), ProducerWork(SmemAB), ProducerCommit(SmemAB), ConsumerWork(GmemAB), ConsumerWork(GmemAB), ProducerTryAcquire(SmemAB), ProducerAcquire(SmemAB), ProducerWork(SmemAB), ProducerCommit(SmemAB)]
+  Task 2 (PaddingTask): []
+------------------------------------------------------------------------
+State #1361  cursors=(82, 96, 0)  ✓ COMPLETE
+  timeline (178 steps):
+    t  MmaTask                     LoadTask                    PaddingTask                 
+    ─  ───────                     ────────                    ───────────                 
+    0  ConsumerAuxWork(SmemAB)     ·                           ·                           
+    1  ConsumerTryWait(SmemAB)     ·                           ·                           
+    2  ·                           ConsumerWork(GmemAB)        ·                           
+    3  ·                           ConsumerWork(GmemAB)        ·                           
+    4  ·                           ProducerTryAcquire(SmemAB)  ·                           
+    5  ·                           ProducerAcquire(SmemAB)     ·                           
+    6  ·                           ProducerWork(SmemAB)        ·                           
+    7  ·                           ProducerCommit(SmemAB)      ·                           
+    8  ConsumerWait(SmemAB)        ·                           ·                           
+    9  ConsumerWork(SmemAB)        ·                           ·                           
+    10 ConsumerWork(SmemAB)        ·                           ·                           
+    11 ConsumerRelease(SmemAB)     ·                           ·                           
+    12 ConsumerTryWait(SmemAB)     ·                           ·                           
+    13 ·                           ConsumerWork(GmemAB)        ·                           
+    14 ·                           ConsumerWork(GmemAB)        ·                           
+    15 ·                           ProducerTryAcquire(SmemAB)  ·                           
+    16 ·                           ProducerAcquire(SmemAB)     ·                           
+    17 ·                           ProducerWork(SmemAB)        ·                           
+    18 ·                           ProducerCommit(SmemAB)      ·                           
+    19 ConsumerWait(SmemAB)        ·                           ·                           
+    20 ConsumerWork(SmemAB)        ·                           ·                           
+    21 ConsumerWork(SmemAB)        ·                           ·                           
+    22 ConsumerRelease(SmemAB)     ·                           ·                           
+    23 ConsumerTryWait(SmemAB)     ·                           ·                           
+    24 ·                           ConsumerWork(GmemAB)        ·                           
+    25 ·                           ConsumerWork(GmemAB)        ·                           
+    26 ·                           ProducerTryAcquire(SmemAB)  ·                           
+    27 ·                           ProducerAcquire(SmemAB)     ·                           
+    28 ·                           ProducerWork(SmemAB)        ·                           
+    29 ·                           ProducerCommit(SmemAB)      ·                           
+    30 ConsumerWait(SmemAB)        ·                           ·                           
+    31 ConsumerWork(SmemAB)        ·                           ·                           
+    32 ConsumerWork(SmemAB)        ·                           ·                           
+    33 ConsumerRelease(SmemAB)     ·                           ·                           
+    34 ConsumerTryWait(SmemAB)     ·                           ·                           
+    35 ·                           ConsumerWork(GmemAB)        ·                           
+    36 ·                           ConsumerWork(GmemAB)        ·                           
+    37 ·                           ProducerTryAcquire(SmemAB)  ·                           
+    38 ·                           ProducerAcquire(SmemAB)     ·                           
+    39 ·                           ProducerWork(SmemAB)        ·                           
+    40 ·                           ProducerCommit(SmemAB)      ·                           
+    41 ConsumerWait(SmemAB)        ·                           ·                           
+    42 ConsumerWork(SmemAB)        ·                           ·                           
+    43 ConsumerWork(SmemAB)        ·                           ·                           
+    44 ConsumerRelease(SmemAB)     ·                           ·                           
+    45 ConsumerTryWait(SmemAB)     ·                           ·                           
+    46 ·                           ConsumerWork(GmemAB)        ·                           
+    47 ·                           ConsumerWork(GmemAB)        ·                           
+    48 ·                           ProducerTryAcquire(SmemAB)  ·                           
+    49 ·                           ProducerAcquire(SmemAB)     ·                           
+    50 ·                           ProducerWork(SmemAB)        ·                           
+    51 ·                           ProducerCommit(SmemAB)      ·                           
+    52 ConsumerWait(SmemAB)        ·                           ·                           
+    53 ConsumerWork(SmemAB)        ·                           ·                           
+    54 ConsumerWork(SmemAB)        ·                           ·                           
+    55 ConsumerRelease(SmemAB)     ·                           ·                           
+    56 ConsumerTryWait(SmemAB)     ·                           ·                           
+    57 ·                           ConsumerWork(GmemAB)        ·                           
+    58 ·                           ConsumerWork(GmemAB)        ·                           
+    59 ·                           ProducerTryAcquire(SmemAB)  ·                           
+    60 ·                           ProducerAcquire(SmemAB)     ·                           
+    61 ·                           ProducerWork(SmemAB)        ·                           
+    62 ·                           ProducerCommit(SmemAB)      ·                           
+    63 ConsumerWait(SmemAB)        ·                           ·                           
+    64 ConsumerWork(SmemAB)        ·                           ·                           
+    65 ConsumerWork(SmemAB)        ·                           ·                           
+    66 ConsumerRelease(SmemAB)     ·                           ·                           
+    67 ConsumerTryWait(SmemAB)     ·                           ·                           
+    68 ·                           ConsumerWork(GmemAB)        ·                           
+    69 ·                           ConsumerWork(GmemAB)        ·                           
+    70 ·                           ProducerTryAcquire(SmemAB)  ·                           
+    71 ·                           ProducerAcquire(SmemAB)     ·                           
+    72 ·                           ProducerWork(SmemAB)        ·                           
+    73 ·                           ProducerCommit(SmemAB)      ·                           
+    74 ConsumerWait(SmemAB)        ·                           ·                           
+    75 ConsumerWork(SmemAB)        ·                           ·                           
+    76 ConsumerWork(SmemAB)        ·                           ·                           
+    77 ConsumerRelease(SmemAB)     ·                           ·                           
+    78 ConsumerTryWait(SmemAB)     ·                           ·                           
+    79 ·                           ConsumerWork(GmemAB)        ·                           
+    80 ·                           ConsumerWork(GmemAB)        ·                           
+    81 ·                           ProducerTryAcquire(SmemAB)  ·                           
+    82 ·                           ProducerAcquire(SmemAB)     ·                           
+    83 ·                           ProducerWork(SmemAB)        ·                           
+    84 ·                           ProducerCommit(SmemAB)      ·                           
+    85 ConsumerWait(SmemAB)        ·                           ·                           
+    86 ConsumerWork(SmemAB)        ·                           ·                           
+    87 ConsumerWork(SmemAB)        ·                           ·                           
+    88 ConsumerRelease(SmemAB)     ·                           ·                           
+    89 ConsumerTryWait(SmemAB)     ·                           ·                           
+    90 ·                           ConsumerWork(GmemAB)        ·                           
+    91 ·                           ConsumerWork(GmemAB)        ·                           
+    92 ·                           ProducerTryAcquire(SmemAB)  ·                           
+    93 ·                           ProducerAcquire(SmemAB)     ·                           
+    94 ·                           ProducerWork(SmemAB)        ·                           
+    95 ·                           ProducerCommit(SmemAB)      ·                           
+    96 ConsumerWait(SmemAB)        ·                           ·                           
+    97 ConsumerWork(SmemAB)        ·                           ·                           
+    98 ConsumerWork(SmemAB)        ·                           ·                           
+    99 ConsumerRelease(SmemAB)     ·                           ·                           
+    100ConsumerTryWait(SmemAB)     ·                           ·                           
+    101·                           ConsumerWork(GmemAB)        ·                           
+    102·                           ConsumerWork(GmemAB)        ·                           
+    103·                           ProducerTryAcquire(SmemAB)  ·                           
+    104·                           ProducerAcquire(SmemAB)     ·                           
+    105·                           ProducerWork(SmemAB)        ·                           
+    106·                           ProducerCommit(SmemAB)      ·                           
+    107ConsumerWait(SmemAB)        ·                           ·                           
+    108ConsumerWork(SmemAB)        ·                           ·                           
+    109ConsumerWork(SmemAB)        ·                           ·                           
+    110ConsumerRelease(SmemAB)     ·                           ·                           
+    111ConsumerTryWait(SmemAB)     ·                           ·                           
+    112·                           ConsumerWork(GmemAB)        ·                           
+    113·                           ConsumerWork(GmemAB)        ·                           
+    114·                           ProducerTryAcquire(SmemAB)  ·                           
+    115·                           ProducerAcquire(SmemAB)     ·                           
+    116·                           ProducerWork(SmemAB)        ·                           
+    117·                           ProducerCommit(SmemAB)      ·                           
+    118ConsumerWait(SmemAB)        ·                           ·                           
+    119ConsumerWork(SmemAB)        ·                           ·                           
+    120ConsumerWork(SmemAB)        ·                           ·                           
+    121ConsumerRelease(SmemAB)     ·                           ·                           
+    122ConsumerTryWait(SmemAB)     ·                           ·                           
+    123·                           ConsumerWork(GmemAB)        ·                           
+    124·                           ConsumerWork(GmemAB)        ·                           
+    125·                           ProducerTryAcquire(SmemAB)  ·                           
+    126·                           ProducerAcquire(SmemAB)     ·                           
+    127·                           ProducerWork(SmemAB)        ·                           
+    128·                           ProducerCommit(SmemAB)      ·                           
+    129ConsumerWait(SmemAB)        ·                           ·                           
+    130ConsumerWork(SmemAB)        ·                           ·                           
+    131ConsumerWork(SmemAB)        ·                           ·                           
+    132ConsumerRelease(SmemAB)     ·                           ·                           
+    133ConsumerTryWait(SmemAB)     ·                           ·                           
+    134·                           ConsumerWork(GmemAB)        ·                           
+    135·                           ConsumerWork(GmemAB)        ·                           
+    136·                           ProducerTryAcquire(SmemAB)  ·                           
+    137·                           ProducerAcquire(SmemAB)     ·                           
+    138·                           ProducerWork(SmemAB)        ·                           
+    139·                           ProducerCommit(SmemAB)      ·                           
+    140ConsumerWait(SmemAB)        ·                           ·                           
+    141ConsumerWork(SmemAB)        ·                           ·                           
+    142ConsumerWork(SmemAB)        ·                           ·                           
+    143ConsumerRelease(SmemAB)     ·                           ·                           
+    144ConsumerTryWait(SmemAB)     ·                           ·                           
+    145·                           ConsumerWork(GmemAB)        ·                           
+    146·                           ConsumerWork(GmemAB)        ·                           
+    147·                           ProducerTryAcquire(SmemAB)  ·                           
+    148·                           ProducerAcquire(SmemAB)     ·                           
+    149·                           ProducerWork(SmemAB)        ·                           
+    150·                           ProducerCommit(SmemAB)      ·                           
+    151ConsumerWait(SmemAB)        ·                           ·                           
+    152ConsumerWork(SmemAB)        ·                           ·                           
+    153ConsumerWork(SmemAB)        ·                           ·                           
+    154ConsumerRelease(SmemAB)     ·                           ·                           
+    155ConsumerTryWait(SmemAB)     ·                           ·                           
+    156·                           ConsumerWork(GmemAB)        ·                           
+    157·                           ConsumerWork(GmemAB)        ·                           
+    158·                           ProducerTryAcquire(SmemAB)  ·                           
+    159·                           ProducerAcquire(SmemAB)     ·                           
+    160·                           ProducerWork(SmemAB)        ·                           
+    161·                           ProducerCommit(SmemAB)      ·                           
+    162ConsumerWait(SmemAB)        ·                           ·                           
+    163ConsumerWork(SmemAB)        ·                           ·                           
+    164ConsumerWork(SmemAB)        ·                           ·                           
+    165ConsumerRelease(SmemAB)     ·                           ·                           
+    166ConsumerTryWait(SmemAB)     ·                           ·                           
+    167·                           ConsumerWork(GmemAB)        ·                           
+    168·                           ConsumerWork(GmemAB)        ·                           
+    169·                           ProducerTryAcquire(SmemAB)  ·                           
+    170·                           ProducerAcquire(SmemAB)     ·                           
+    171·                           ProducerWork(SmemAB)        ·                           
+    172·                           ProducerCommit(SmemAB)      ·                           
+    173ConsumerWait(SmemAB)        ·                           ·                           
+    174ConsumerWork(SmemAB)        ·                           ·                           
+    175ConsumerWork(SmemAB)        ·                           ·                           
+    176ConsumerRelease(SmemAB)     ·                           ·                           
+    177ProducerWork(GmemC)         ·                           ·                           
+
+========================================================================
+BFS complete: 1361 states explored, 1 complete, 0 deadlock(s), 0 race(s), 0 PDL order violation(s)
+Result: SAFE
+========================================================================
+
+[smem-layout] SMEM Usage Report
+  Name                             Size  Align    Offset       End
+  ────────────────────────────────────────────────────────────────
+  smem_a                          49152   1024         0     49152
+  smem_b                          49152   1024     49152     98304
+  ────────────────────────────────────────────────────────────────
+  Data SMEM:           98304 B
+  Barrier SMEM:           48 B
+  Total SMEM:          98352 B  (data + barriers)
+  Total:             98304 B
+
+verify M=1024 N=1024 K=1024: PASS
+M=N=K=1024: ts=0.056 ms (38.02 TFLOP/s)  torch=0.036 ms (59.87 TFLOP/s)
+=== verify M=2048 N=2048 K=2048 (variant=good) ===
+
+==============================================================================================
+
+|         MmaTask[0:4)         |        LoadTask[4:5)         |       PaddingTask[5:8)       |
+
+==============================>   Full (Head + Loop + Tail)   <===============================
+
+| SmemAB       ConsAux    H  0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdTrA       0 |                              |
+|                              | SmemAB       ProdAcq<-     0 |                              |
+|                              | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 |                              |                              |
+| SmemAB       ConsWrk       0 |                              |                              |
+| SmemAB     <-ConsRel       0 |                              |                              |
+| GmemC        ProdWrk    T  0 |                              |                              |
+
+==============================> End Full (Head + Loop + Tail) <===============================
+
+Phase tags:  H — Head (prefetch, before the loop)  |  F — FirstIter (first iteration only)  |  L — LastIter (last iteration only)  |  T — Tail (drain, after the loop)
+Task  0 'MmaTask             ', numWarps x (defaultMaxNumRegs - numRegsPerThread) = 4 x (256 - 232) = 96
+Task  1 'LoadTask            ', numWarps x (defaultMaxNumRegs - numRegsPerThread) = 1 x (256 -  40) = 216
+Task  2 'PaddingTask         ', numWarps x (defaultMaxNumRegs - numRegsPerThread) = 3 x (256 -  40) = 648
+Num. regs: 34816 (free reg blocks: 30)
+Reg budget: 960
+SMEM usage: 98352 B (data 98304 B + barriers 48 B) / 101376 B capacity
+
+[smem-layout] SMEM Usage Report
+  Name                             Size  Align    Offset       End
+  ────────────────────────────────────────────────────────────────
+  smem_a                          49152   1024         0     49152
+  smem_b                          49152   1024     49152     98304
+  ────────────────────────────────────────────────────────────────
+  Data SMEM:           98304 B
+  Barrier SMEM:           48 B
+  Total SMEM:          98352 B  (data + barriers)
+  Total:             98304 B
+
+verify M=2048 N=2048 K=2048: PASS
+M=N=K=2048: ts=0.253 ms (67.86 TFLOP/s)  torch=0.188 ms (91.57 TFLOP/s)
+=== verify M=4096 N=4096 K=4096 (variant=good) ===
+
+==============================================================================================
+
+|         MmaTask[0:4)         |        LoadTask[4:5)         |       PaddingTask[5:8)       |
+
+==============================>   Full (Head + Loop + Tail)   <===============================
+
+| SmemAB       ConsAux    H  0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdTrA       0 |                              |
+|                              | SmemAB       ProdAcq<-     0 |                              |
+|                              | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 |                              |                              |
+| SmemAB       ConsWrk       0 |                              |                              |
+| SmemAB     <-ConsRel       0 |                              |                              |
+| GmemC        ProdWrk    T  0 |                              |                              |
+
+==============================> End Full (Head + Loop + Tail) <===============================
+
+Phase tags:  H — Head (prefetch, before the loop)  |  F — FirstIter (first iteration only)  |  L — LastIter (last iteration only)  |  T — Tail (drain, after the loop)
+Task  0 'MmaTask             ', numWarps x (defaultMaxNumRegs - numRegsPerThread) = 4 x (256 - 232) = 96
+Task  1 'LoadTask            ', numWarps x (defaultMaxNumRegs - numRegsPerThread) = 1 x (256 -  40) = 216
+Task  2 'PaddingTask         ', numWarps x (defaultMaxNumRegs - numRegsPerThread) = 3 x (256 -  40) = 648
+Num. regs: 34816 (free reg blocks: 30)
+Reg budget: 960
+SMEM usage: 98352 B (data 98304 B + barriers 48 B) / 101376 B capacity
+
+[smem-layout] SMEM Usage Report
+  Name                             Size  Align    Offset       End
+  ────────────────────────────────────────────────────────────────
+  smem_a                          49152   1024         0     49152
+  smem_b                          49152   1024     49152     98304
+  ────────────────────────────────────────────────────────────────
+  Data SMEM:           98304 B
+  Barrier SMEM:           48 B
+  Total SMEM:          98352 B  (data + barriers)
+  Total:             98304 B
+
+verify M=4096 N=4096 K=4096: PASS
+M=N=K=4096: ts=1.632 ms (84.19 TFLOP/s)  torch=1.481 ms (92.78 TFLOP/s)
+wrote bench_results.json

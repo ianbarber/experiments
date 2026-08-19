@@ -1,0 +1,217 @@
+################################################################################
+# TS static-analysis output for the two deliberately-broken schedule variants.
+# Both fail at cute.compile time, inside TaskManager.__init__ (print_and_verify
+# -> credit-model schedule simulator), BEFORE any kernel is launched.
+# Commands (each wrapped in 'timeout 90'; both exited in ~15s, no hang):
+#   timeout 90 .venv-cutedsl/bin/python gemm_ws_ts_broken1.py
+#   timeout 90 .venv-cutedsl/bin/python gemm_ws_ts_broken2.py
+################################################################################
+
+================================================================================
+BROKEN 1: consumer schedule with release() REMOVED (variant=no_release)
+  MmaTask loop body:  try_wait; wait; mma_step        # no release
+  Verbatim output (stderr traceback interleaved before stdout table):
+================================================================================
+Traceback (most recent call last):
+  File "/home/ianbarber/Projects/cute/comparison/ts/gemm_ws_ts_broken1.py", line 29, in <module>
+    verify(512, 512, 512, variant="no_release", exhaustive_check=True)
+  File "/home/ianbarber/Projects/cute/comparison/ts/gemm_ws_ts.py", line 610, in verify
+    fn, (a, b, c), (mA, mB, mC) = compile_for(m, n, k, variant, exhaustive_check)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ianbarber/Projects/cute/comparison/ts/gemm_ws_ts.py", line 604, in compile_for
+    fn = cute.compile(gemm_ws_ts_host, mA, mB, mC, variant, exhaustive_check)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/base_dsl/compiler.py", line 1386, in __call__
+    return self._compile(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/base_dsl/compiler.py", line 1549, in _compile
+    return func._dsl_object._func(func, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/base_dsl/dsl.py", line 2932, in _func
+    return self._func_impl(funcBody, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/base_dsl/dsl.py", line 2952, in _func_impl
+    result = self.generate_mlir(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/base_dsl/dsl.py", line 2466, in generate_mlir
+    module, module_hash, result = self.generate_original_ir(
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/base_dsl/dsl.py", line 2111, in generate_original_ir
+    module, result = build_ir_module()
+                     ^^^^^^^^^^^^^^^^^
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/base_dsl/dsl.py", line 2072, in build_ir_module
+    result = funcBody(*ir_args, **ir_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ianbarber/Projects/cute/comparison/ts/gemm_ws_ts.py", line 586, in gemm_ws_ts_host
+    ).launch(
+      ^^^^^^^
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/cutlass_dsl/cutlass.py", line 2311, in launch
+    ret, name = kernel_generator(
+                ^^^^^^^^^^^^^^^^^
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/base_dsl/dsl.py", line 3299, in kernel_wrapper
+    kernel_ret = funcBody(*ir_args, **ir_kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ianbarber/Projects/cute/comparison/ts/gemm_ws_ts.py", line 498, in gemm_ws_ts_kernel
+    task_manager = TaskManager(
+                   ^^^^^^^^^^^^
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/experimental/task_scheduling/task_manager.py", line 761, in __init__
+    self.print_and_verify()
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/experimental/task_scheduling/task_manager.py", line 4360, in print_and_verify
+    self._run_check(self._print_task_schedules)
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/experimental/task_scheduling/task_manager.py", line 4448, in _run_check
+    check_fn()
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/experimental/task_scheduling/task_manager.py", line 892, in _print_task_schedules
+    run_section(
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/experimental/task_scheduling/task_manager.py", line 851, in run_section
+    out_commit, out_release = print_schedule_list(
+                              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/experimental/task_scheduling/task_manager.py", line 466, in print_schedule_list
+    raise ValueError(
+ValueError: SmemAB     ConsumerWait    0 is blocked!  NOTE: if the domain is not a compile-time Python int, this may be a FALSE POSITIVE (domain defaults to 1).  Re-run with a realistic int domain via validate-only mode for accurate results.
+=== verify M=512 N=512 K=512 (variant=no_release) ===
+
+==============================================================================================
+
+|         MmaTask[0:4)         |        LoadTask[4:5)         |       PaddingTask[5:8)       |
+
+==============================>   Full (Head + Loop + Tail)   <===============================
+
+| SmemAB       ConsAux    H  0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdTrA       0 |                              |
+|                              | SmemAB       ProdAcq<-     0 |                              |
+|                              | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdAcq<-     0 |                              |
+|                              | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdAcq<-     0 |                              |
+|                              | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB       ConsTrW       0 |                              |                              |
+
+========================================================================
+TS STATIC ANALYSIS REJECTED THE SCHEDULE AT COMPILE TIME (expected):
+========================================================================
+
+================================================================================
+BROKEN 2: consumer waits TWICE per produced stage (variant=double_wait)
+  MmaTask loop body:  try_wait; wait; mma_step; release; wait; release
+  Verbatim output (stderr traceback interleaved before stdout table):
+================================================================================
+Traceback (most recent call last):
+  File "/home/ianbarber/Projects/cute/comparison/ts/gemm_ws_ts_broken2.py", line 30, in <module>
+    verify(512, 512, 512, variant="double_wait", exhaustive_check=True)
+  File "/home/ianbarber/Projects/cute/comparison/ts/gemm_ws_ts.py", line 610, in verify
+    fn, (a, b, c), (mA, mB, mC) = compile_for(m, n, k, variant, exhaustive_check)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ianbarber/Projects/cute/comparison/ts/gemm_ws_ts.py", line 604, in compile_for
+    fn = cute.compile(gemm_ws_ts_host, mA, mB, mC, variant, exhaustive_check)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/base_dsl/compiler.py", line 1386, in __call__
+    return self._compile(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/base_dsl/compiler.py", line 1549, in _compile
+    return func._dsl_object._func(func, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/base_dsl/dsl.py", line 2932, in _func
+    return self._func_impl(funcBody, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/base_dsl/dsl.py", line 2952, in _func_impl
+    result = self.generate_mlir(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/base_dsl/dsl.py", line 2466, in generate_mlir
+    module, module_hash, result = self.generate_original_ir(
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/base_dsl/dsl.py", line 2111, in generate_original_ir
+    module, result = build_ir_module()
+                     ^^^^^^^^^^^^^^^^^
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/base_dsl/dsl.py", line 2072, in build_ir_module
+    result = funcBody(*ir_args, **ir_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ianbarber/Projects/cute/comparison/ts/gemm_ws_ts.py", line 586, in gemm_ws_ts_host
+    ).launch(
+      ^^^^^^^
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/cutlass_dsl/cutlass.py", line 2311, in launch
+    ret, name = kernel_generator(
+                ^^^^^^^^^^^^^^^^^
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/base_dsl/dsl.py", line 3299, in kernel_wrapper
+    kernel_ret = funcBody(*ir_args, **ir_kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ianbarber/Projects/cute/comparison/ts/gemm_ws_ts.py", line 498, in gemm_ws_ts_kernel
+    task_manager = TaskManager(
+                   ^^^^^^^^^^^^
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/experimental/task_scheduling/task_manager.py", line 761, in __init__
+    self.print_and_verify()
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/experimental/task_scheduling/task_manager.py", line 4360, in print_and_verify
+    self._run_check(self._print_task_schedules)
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/experimental/task_scheduling/task_manager.py", line 4448, in _run_check
+    check_fn()
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/experimental/task_scheduling/task_manager.py", line 892, in _print_task_schedules
+    run_section(
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/experimental/task_scheduling/task_manager.py", line 851, in run_section
+    out_commit, out_release = print_schedule_list(
+                              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ianbarber/Projects/cute/.venv-cutedsl/lib/python3.12/site-packages/nvidia_cutlass_dsl/dsl_packages/cutlass/experimental/task_scheduling/task_manager.py", line 466, in print_schedule_list
+    raise ValueError(
+ValueError: SmemAB     ConsumerWait    0 is blocked!  NOTE: if the domain is not a compile-time Python int, this may be a FALSE POSITIVE (domain defaults to 1).  Re-run with a realistic int domain via validate-only mode for accurate results.
+=== verify M=512 N=512 K=512 (variant=double_wait) ===
+
+==============================================================================================
+
+|         MmaTask[0:4)         |        LoadTask[4:5)         |       PaddingTask[5:8)       |
+
+==============================>   Full (Head + Loop + Tail)   <===============================
+
+| SmemAB       ConsAux    H  0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdTrA       0 |                              |
+|                              | SmemAB       ProdAcq<-     0 |                              |
+|                              | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+|                              | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       1 | GmemAB       ConsWrk       0 |                              |
+| SmemAB     <-ConsRel       1 | SmemAB       ProdTrA       0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdAcq<-     0 |                              |
+|                              | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+|                              | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       1 | GmemAB       ConsWrk       0 |                              |
+| SmemAB     <-ConsRel       1 | SmemAB       ProdTrA       0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdAcq<-     0 |                              |
+|                              | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+|                              | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       1 | GmemAB       ConsWrk       0 |                              |
+| SmemAB     <-ConsRel       1 | SmemAB       ProdTrA       0 |                              |
+| SmemAB       ConsTrW       0 | SmemAB       ProdAcq<-     0 |                              |
+|                              | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       0 | GmemAB       ConsWrk       0 |                              |
+| SmemAB       ConsWrk       0 | SmemAB       ProdTrA       0 |                              |
+| SmemAB     <-ConsRel       0 | SmemAB       ProdAcq<-     0 |                              |
+|                              | SmemAB       ProdWrk       0 |                              |
+|                              | SmemAB       ProdCmt->     0 |                              |
+| SmemAB     ->ConsWai       1 |                              |                              |
+| SmemAB     <-ConsRel       1 |                              |                              |
+| SmemAB       ConsTrW       0 |                              |                              |
+
+========================================================================
+TS STATIC ANALYSIS REJECTED THE SCHEDULE AT COMPILE TIME (expected):
+========================================================================

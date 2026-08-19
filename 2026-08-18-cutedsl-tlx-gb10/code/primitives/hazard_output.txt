@@ -1,0 +1,138 @@
+Captured verbatim compiler diagnostics (ANSI stripped) from hazard_demo.py
+CUTE_DSL_COMPILER_OPT="warnings{nvvm}" — GB10 / sm_121a — CUTLASS 4.7.0
+
+==============================================================================
+A. C3/C4 — mbarrier_arrive unguarded on a count=1 barrier
+==============================================================================
+error[nvvm-diag:C3/C4]: mbarrier arrive reaches a count=1 barrier from multiple threads
+
+  --> /home/ianbarber/Projects/cute/comparison/primitives/hazard_demo.py:110:4
+      in function `kernel_a(...)`:
+   |
+  108 |     prims.fence_mbarrier_init()
+  109 |     prims.barrier_cta_sync(0)
+> 110 |     prims.mbarrier_arrive(mbar)  # BUG: unguarded — all 32 threads over-arrive
+      |    ^
+  111 |     while not prims.mbarrier_try_wait_parity(mbar, 0, time_limit=10_000_000):
+  112 |         pass
+  error: mbarrier.init sets the expected arrive count to 1, but this arrive is not guarded by a
+         single-issuer predicate. Every active thread that executes the operation can arrive,
+         over-arriving the barrier and flipping phases unexpectedly.
+  suggestion: guard this arrive with a single-issuer predicate such as `if nvvm.elect_sync(): ...`
+              or `if tidx == 0: ...`, or initialize the barrier with the number of threads that can
+              reach the arrive
+  note: PTX ISA mbarrier arrive and elect.sync
+        docs: https://docs.nvidia.com/cuda/parallel-thread-execution/index.html#parallel-synchronization-and-communication-instructions-mbarrier-arrive--> outcome: compile FAILED with CompilerDiagnosticError   (expected: error, compile fails)
+
+==============================================================================
+B. C3 — mbarrier_init count 32 vs 1 elected arrive
+==============================================================================
+warning[nvvm-diag:C3]: mbarrier static arrive count does not match init count (1 vs 32)
+
+  --> /home/ianbarber/Projects/cute/comparison/primitives/hazard_demo.py:122:8
+      in function `kernel_b(...)`:
+   |
+  120 |     mbar = cutlass.Array(cutlass.Int64, 1, space=cutlass.AddressSpace.smem, alignment=8)
+  121 |     if prims.elect_sync():
+> 122 |         prims.mbarrier_init(mbar, 32)  # BUG: expects 32 arrivals per phase
+      |        ^
+  123 |     prims.fence_mbarrier_init()
+  124 |     prims.barrier_cta_sync(0)
+  warning: The pass can statically count the arrives that reach this barrier, and that count differs
+           from the mbarrier.init expected count.
+  suggestion: make mbarrier.init match the number of participating arrivals in each phase, or guard
+              the arrives so the intended execution unit is clear
+  note: PTX ISA mbarrier.init
+        docs: https://docs.nvidia.com/cuda/parallel-thread-execution/index.html#parallel-synchronization-and-communication-instructions-mbarrier-init
+
+warning[nvvm-diag:C3]: mbarrier.init count 32 does not match elect.sync-guarded arrivals
+
+  --> /home/ianbarber/Projects/cute/comparison/primitives/hazard_demo.py:122:8
+      in function `kernel_b(...)`:
+   |
+  120 |     mbar = cutlass.Array(cutlass.Int64, 1, space=cutlass.AddressSpace.smem, alignment=8)
+  121 |     if prims.elect_sync():
+> 122 |         prims.mbarrier_init(mbar, 32)  # BUG: expects 32 arrivals per phase
+      |        ^
+  123 |     prims.fence_mbarrier_init()
+  124 |     prims.barrier_cta_sync(0)
+  warning: All statically-visible arrive operations on this barrier are guarded by elect.sync, so
+           only one elected thread arrives, but mbarrier.init expects a different count. An async
+           completion source not visible here may make up the difference.
+  suggestion: set mbarrier.init count to 1, or remove the elect.sync guard if more threads are
+              intended to arrive
+  note: PTX ISA mbarrier.init
+        docs: https://docs.nvidia.com/cuda/parallel-thread-execution/index.html#parallel-synchronization-and-communication-instructions-mbarrier-init
+--> outcome: compile SUCCEEDED   (expected: warning, compiles (would hang if run))
+
+==============================================================================
+C. C5 — arrive_expect_tx with no completion source
+==============================================================================
+warning[nvvm-diag:C5]: mbarrier.arrive.expect_tx has no completion source for 128 registered transaction bytes
+
+  --> /home/ianbarber/Projects/cute/comparison/primitives/hazard_demo.py:142:8
+      in function `kernel_c(...)`:
+   |
+  140 |     prims.barrier_cta_sync(0)
+  141 |     if prims.elect_sync():
+> 142 |         prims.mbarrier_arrive_expect_tx(mbar, 128)  # BUG: no TMA / complete_tx follows
+      |        ^
+  143 |     while not prims.mbarrier_try_wait_parity(mbar, 0, time_limit=10_000_000):
+  144 |         pass
+  warning: arrive.expect_tx increments the barrier transaction count and no explicit
+           mbarrier.complete_tx targets this barrier. If the count is retired by an async op (TMA /
+           cp.async.bulk) this is expected; otherwise the count is never retired and the barrier
+           stalls.
+  suggestion: ensure a complete_tx source retires the count — an explicit
+              nvvm.mbarrier_complete_tx(...) or a TMA op whose completion targets this barrier
+  note: PTX ISA mbarrier.arrive.expect_tx
+        docs: https://docs.nvidia.com/cuda/parallel-thread-execution/index.html#parallel-synchronization-and-communication-instructions-mbarrier-expect-tx-operation
+--> outcome: compile SUCCEEDED   (expected: warning, compiles (would hang if run))
+
+==============================================================================
+D. C16 — nested elect_sync
+==============================================================================
+error[nvvm-diag:C16]: {0}
+
+  --> /home/ianbarber/Projects/cute/comparison/primitives/hazard_demo.py:154:11
+      in function `kernel_d(...)`:
+   |
+  152 |     val = cutlass.Int32(0)
+  153 |     if prims.elect_sync():
+> 154 |         if prims.elect_sync():  # BUG: inner elect executed by a single lane
+      |           ^
+  155 |             val = cutlass.Int32(1)
+  156 |     out[tidx] = val
+  note: PTX ISA elect.sync
+        docs: https://docs.nvidia.com/cuda/parallel-thread-execution/index.html#parallel-synchronization-and-communication-instructions-elect-sync--> outcome: compile FAILED with CompilerDiagnosticError   (expected: error, compile fails)
+
+==============================================================================
+E. C13 attempt — elect_sync under `if tidx < 16` divergence
+==============================================================================
+--> outcome: compile SUCCEEDED   (expected: C13 did NOT fire in this build)
+
+==============================================================================
+G. remarks{ptx} — runtime-indexed register array
+==============================================================================
+remark[ptxas]: ptxas detected local memory usage
+
+  --> /home/ianbarber/Projects/cute/comparison/primitives/hazard_demo.py:192:10
+      in function `kernel_g(...)`:
+   |
+  190 | def kernel_g(out: cutlass.Array):
+  191 |     tidx, _, _ = cute.arch.thread_idx()
+> 192 |     arr = cutlass.Array(cutlass.Float32, 256)
+      |          ^
+  193 |     for i in cutlass.range_constexpr(256):
+  194 |         arr[i] = cutlass.Float32(i) * cutlass.Float32(0.5)
+  remark: Runtime-indexed per-thread arrays often require addressable PTX local memory instead of
+          scalar registers; this can add memory traffic and latency.
+  suggestion: avoid runtime indexing of per-thread arrays when possible; prefer constexpr
+              indexing/unrolling, or use shared/global memory when dynamic indexing is required
+--> outcome: compile SUCCEEDED   (expected: ptxas local-memory remark, compiles)
+
+==============================================================================
+F. corrected kernel — elected arrive, matching count
+==============================================================================
+--> compile SUCCEEDED, NO nvvm diagnostics emitted
+--> ran on GPU: out == 42 on all 32 lanes: PASS
