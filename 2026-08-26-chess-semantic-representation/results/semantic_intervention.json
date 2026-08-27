@@ -1,0 +1,17 @@
+{
+  "layout": [
+    "input A",
+    "input B",
+    "decode(s_A, z_A)",
+    "decode(s_B, z_A)",
+    "5x absolute decode difference"
+  ],
+  "sample_a": "chesssight-train5-013516",
+  "sample_b": "chessred-06607",
+  "fen_a": "4r3/2kPN1b1/2pP3P/1QKp1B2/1Ppr3N/pQ1bP1pP/1nP2BR1/b2q1r1q",
+  "fen_b": "8/7p/7b/5p2/kpbB1P2/6P1/1P1K3P/2N5",
+  "changed_squares": 36,
+  "mean_change_in_changed_squares": 0.06805419921875,
+  "mean_change_in_unchanged_squares": 0.0184478759765625,
+  "locality_ratio": 3.688999172870141
+}

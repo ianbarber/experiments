@@ -1,0 +1,49 @@
+{
+  "checkpoint": "runs/E0008_perceptual_seed_20260828/checkpoint.pt",
+  "manifest": "data/manifests/position_disjoint_validation_balanced.jsonl",
+  "examples": 512,
+  "image_size": 256,
+  "appearance_dimensions": 64,
+  "mean_total_bytes": 128.1640625,
+  "median_total_bytes": 130.0,
+  "min_total_bytes": 108,
+  "max_total_bytes": 135,
+  "mean_semantic_base_bytes": 53.1640625,
+  "mean_enhancement_bytes": 75.0,
+  "mean_bits_per_pixel": 0.01564502716064453,
+  "mean_base_bits_per_pixel": 0.006489753723144531,
+  "metrics": {
+    "base_l1": 0.21446307841688395,
+    "exact_board_accuracy": 0.064453125,
+    "full_l1": 0.12599529745057225,
+    "full_mse": 0.031038706307299435,
+    "quantization_delta_l1": 6.499141454696655e-05,
+    "quantized_l1": 0.12599591445177794,
+    "quantized_mse": 0.031038900197017938,
+    "square_accuracy": 0.8963623046875,
+    "full_psnr_db": 15.080963884225406,
+    "quantized_psnr_db": 15.080936755204304
+  },
+  "by_source": {
+    "chessred": {
+      "base_l1": 0.27908413781551644,
+      "exact_board_accuracy": 0.109375,
+      "full_l1": 0.10503841830359306,
+      "full_mse": 0.029931366443634033,
+      "quantization_delta_l1": 5.47564122825861e-05,
+      "quantized_l1": 0.1050385124690365,
+      "quantized_mse": 0.029931437591585563,
+      "square_accuracy": 0.95458984375
+    },
+    "chesssight": {
+      "base_l1": 0.14984201856714208,
+      "exact_board_accuracy": 0.01953125,
+      "full_l1": 0.14695217747066636,
+      "full_mse": 0.03214604537788546,
+      "quantization_delta_l1": 7.522967644035816e-05,
+      "quantized_l1": 0.14695331672555767,
+      "quantized_mse": 0.032146362736966694,
+      "square_accuracy": 0.838134765625
+    }
+  }
+}

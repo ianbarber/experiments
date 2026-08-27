@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "chess-repr"
+version = "0.1.0"
+description = "Interpretable chess-state representation and semantic compression"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "numpy>=1.26.4,<2",
+  "pillow>=11.3,<13",
+  "python-chess>=1.999,<2",
+  "pyyaml>=6.0.2,<7",
+]
+
+[project.optional-dependencies]
+data = [
+  "pyarrow>=21,<24",
+]
+dev = [
+  "pytest>=8.4,<10",
+  "ruff>=0.12,<1",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/chess_repr"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]

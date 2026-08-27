@@ -1,0 +1,30 @@
+{
+  "elapsed_seconds": 168.6473955870606,
+  "steps": 150,
+  "train": {
+    "empty_square_l1": 0.11930772587656975,
+    "exact_board_accuracy": 0.15333333333333332,
+    "kl": 14.339351819356283,
+    "loss": 0.4863213781515757,
+    "mean_square_errors": 5.612916666666667,
+    "occupied_square_l1": 0.14925905828674635,
+    "reconstruction_l1": 0.1293715328971545,
+    "reconstruction_objective": 0.14072473153471945,
+    "semantic_loss": 0.28659785360097884,
+    "semantic_perceptual_loss": 0.575648584763209,
+    "square_accuracy": 0.9122981770833334
+  },
+  "validation": {
+    "empty_square_l1": 0.1169618375133723,
+    "exact_board_accuracy": 0.064453125,
+    "kl": 16.31717151403427,
+    "loss": 0.5061653545126319,
+    "mean_square_errors": 6.6328125,
+    "occupied_square_l1": 0.14636036846786737,
+    "reconstruction_l1": 0.12599529861472547,
+    "reconstruction_objective": 0.13716796529479325,
+    "semantic_loss": 0.3224054789170623,
+    "semantic_perceptual_loss": 0.44960195384919643,
+    "square_accuracy": 0.8963623046875
+  }
+}

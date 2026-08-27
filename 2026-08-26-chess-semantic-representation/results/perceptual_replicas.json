@@ -1,0 +1,117 @@
+{
+  "replicas": 3,
+  "selection_rule": "lowest validation total loss",
+  "selected_metrics_path": "runs/E0008_perceptual_seed_20260828/metrics.json",
+  "runs": [
+    {
+      "metrics_path": "runs/E0008_perceptual_seed_20260826/metrics.json",
+      "empty_square_l1": 0.11560633033514023,
+      "exact_board_accuracy": 0.056640625,
+      "kl": 15.667105972766876,
+      "loss": 0.5186945125460625,
+      "mean_square_errors": 6.798828125,
+      "occupied_square_l1": 0.1471123737283051,
+      "reconstruction_l1": 0.12530086212791502,
+      "reconstruction_objective": 0.13727379404008389,
+      "semantic_loss": 0.33242638781666756,
+      "semantic_perceptual_loss": 0.47427610494196415,
+      "square_accuracy": 0.893768310546875
+    },
+    {
+      "metrics_path": "runs/E0008_perceptual_seed_20260827/metrics.json",
+      "empty_square_l1": 0.11666234256699681,
+      "exact_board_accuracy": 0.0703125,
+      "kl": 16.42681872844696,
+      "loss": 0.5092492466792464,
+      "mean_square_errors": 6.474609375,
+      "occupied_square_l1": 0.14617139240726829,
+      "reconstruction_l1": 0.1257286467589438,
+      "reconstruction_objective": 0.13694222853519022,
+      "semantic_loss": 0.3254330330528319,
+      "semantic_perceptual_loss": 0.4523130105808377,
+      "square_accuracy": 0.898834228515625
+    },
+    {
+      "metrics_path": "runs/E0008_perceptual_seed_20260828/metrics.json",
+      "empty_square_l1": 0.1169618375133723,
+      "exact_board_accuracy": 0.064453125,
+      "kl": 16.31717151403427,
+      "loss": 0.5061653545126319,
+      "mean_square_errors": 6.6328125,
+      "occupied_square_l1": 0.14636036846786737,
+      "reconstruction_l1": 0.12599529861472547,
+      "reconstruction_objective": 0.13716796529479325,
+      "semantic_loss": 0.3224054789170623,
+      "semantic_perceptual_loss": 0.44960195384919643,
+      "square_accuracy": 0.8963623046875
+    }
+  ],
+  "summary": {
+    "empty_square_l1": {
+      "mean": 0.11641017013850312,
+      "sample_standard_deviation": 0.0007120696088367885,
+      "min": 0.11560633033514023,
+      "max": 0.1169618375133723
+    },
+    "exact_board_accuracy": {
+      "mean": 0.06380208333333333,
+      "sample_standard_deviation": 0.006859149578680168,
+      "min": 0.056640625,
+      "max": 0.0703125
+    },
+    "kl": {
+      "mean": 16.13703207174937,
+      "sample_standard_deviation": 0.4106440451118139,
+      "min": 15.667105972766876,
+      "max": 16.42681872844696
+    },
+    "loss": {
+      "mean": 0.5113697045793136,
+      "sample_standard_deviation": 0.006528185547005955,
+      "min": 0.5061653545126319,
+      "max": 0.5186945125460625
+    },
+    "mean_square_errors": {
+      "mean": 6.635416666666667,
+      "sample_standard_deviation": 0.162125061992005,
+      "min": 6.474609375,
+      "max": 6.798828125
+    },
+    "occupied_square_l1": {
+      "mean": 0.1465480448678136,
+      "sample_standard_deviation": 0.0004977733268844623,
+      "min": 0.14617139240726829,
+      "max": 0.1471123737283051
+    },
+    "reconstruction_l1": {
+      "mean": 0.12567493583386144,
+      "sample_standard_deviation": 0.0003503200767274283,
+      "min": 0.12530086212791502,
+      "max": 0.12599529861472547
+    },
+    "reconstruction_objective": {
+      "mean": 0.13712799595668912,
+      "sample_standard_deviation": 0.00016935785190007763,
+      "min": 0.13694222853519022,
+      "max": 0.13727379404008389
+    },
+    "semantic_loss": {
+      "mean": 0.32675496659552056,
+      "sample_standard_deviation": 0.0051395802369465105,
+      "min": 0.3224054789170623,
+      "max": 0.33242638781666756
+    },
+    "semantic_perceptual_loss": {
+      "mean": 0.4587303564573328,
+      "sample_standard_deviation": 0.013531081963801287,
+      "min": 0.44960195384919643,
+      "max": 0.47427610494196415
+    },
+    "square_accuracy": {
+      "mean": 0.8963216145833334,
+      "sample_standard_deviation": 0.002533204093625078,
+      "min": 0.893768310546875,
+      "max": 0.898834228515625
+    }
+  }
+}

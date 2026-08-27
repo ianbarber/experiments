@@ -1,0 +1,38 @@
+[
+  {
+    "sample_id": "chesssight-train5-013516",
+    "expected": "4r3/2kPN1b1/2pP3P/1QKp1B2/1Ppr3N/pQ1bP1pP/1nP2BR1/b2q1r1q",
+    "predicted": "3bn3/3NQ1p1/3P3B/1QNp4/1P1q1P1p/3p4/1r2pN2/R2b1n1R",
+    "incorrect_squares": 29
+  },
+  {
+    "sample_id": "chessred-00862",
+    "expected": "3r1r2/2R1Np1k/3P2pp/p3P3/2bn1PP1/P6P/5R2/6K1",
+    "predicted": "3r1r2/2N1Qp1k/3N2pp/p3P3/2rb1PP1/P6P/5N2/6K1",
+    "incorrect_squares": 6
+  },
+  {
+    "sample_id": "chessred-05495",
+    "expected": "8/8/1P1K4/8/8/8/6kp/R4r2",
+    "predicted": "8/8/1P1R4/8/8/8/6kp/R4b2",
+    "incorrect_squares": 2
+  },
+  {
+    "sample_id": "chessred-00911",
+    "expected": "8/5P2/6R1/5Np1/6P1/5rk1/8/4K3",
+    "predicted": "8/5P2/6R1/5Rp1/6P1/5rk1/8/2R1K3",
+    "incorrect_squares": 2
+  },
+  {
+    "sample_id": "chesssight-train6_border-002460",
+    "expected": "rn1qk2r/5ppp/p3bp2/1pbN4/3NP3/1B6/PPP2PPP/R2Q1RK1",
+    "predicted": "rn1qk2r/5ppp/p7/1p1P4/3QN3/1P6/PPP2PPP/R2Q1RN1",
+    "incorrect_squares": 8
+  },
+  {
+    "sample_id": "chessred-06607",
+    "expected": "8/7p/7b/5p2/kpbB1P2/6P1/1P1K3P/2N5",
+    "predicted": "8/7p/7k/5p2/rnpB1P2/6P1/1B1K3P/2R5",
+    "incorrect_squares": 6
+  }
+]

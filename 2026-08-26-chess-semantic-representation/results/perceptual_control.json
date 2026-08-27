@@ -1,0 +1,18 @@
+{
+  "elapsed_seconds": 0.0,
+  "steps": 0,
+  "train": null,
+  "validation": {
+    "empty_square_l1": 0.11649058968760073,
+    "exact_board_accuracy": 0.06640625,
+    "kl": 11.519202202558517,
+    "loss": 0.4612207291647792,
+    "mean_square_errors": 6.642578125,
+    "occupied_square_l1": 0.14538720156997442,
+    "reconstruction_l1": 0.12535511888563633,
+    "reconstruction_objective": 0.13633595081046224,
+    "semantic_loss": 0.3237328506074846,
+    "semantic_perceptual_loss": 0.6782668028026819,
+    "square_accuracy": 0.896209716796875
+  }
+}

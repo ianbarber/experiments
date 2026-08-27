@@ -1,0 +1,19 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Datasets, generated manifests, and generated artifacts stay outside this archive.
+data/
+runs/
+artifacts/
+checkpoints/
+
+# Local editor and OS state.
+.idea/
+.vscode/
+.DS_Store

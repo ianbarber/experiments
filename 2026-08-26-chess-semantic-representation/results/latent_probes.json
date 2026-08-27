@@ -1,0 +1,23 @@
+{
+  "checkpoint": "runs/E0008_perceptual_seed_20260828/checkpoint.pt",
+  "train_examples": 1024,
+  "validation_examples": 512,
+  "sources": [
+    "chessred",
+    "chesssight"
+  ],
+  "position_disjoint_validation": true,
+  "appearance_board_probe": {
+    "square_accuracy": 0.722015380859375,
+    "exact_board_accuracy": 0.0,
+    "mean_square_errors": 17.791015625
+  },
+  "majority_board_baseline": {
+    "square_accuracy": 0.68218994140625,
+    "exact_board_accuracy": 0.0
+  },
+  "semantic_source_probe_accuracy": 0.658203125,
+  "appearance_source_probe_accuracy": 1.0,
+  "source_chance_accuracy": 0.5,
+  "caveat": "Hard-semantic source prediction includes real differences in position distributions and is not a pure visual-style leakage measure."
+}
