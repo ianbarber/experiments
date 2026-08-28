@@ -1,0 +1,82 @@
+# lsp-tool
+
+`lsp` gives you language-server-grade code navigation from the command line:
+precise go-to-definition, workspace-wide references, type info, symbol search,
+diagnostics, and dry-run renames. Results come back as code, not bare
+file:line lists — each hit shows the surrounding lines with the match marked
+by `>`. It is much more precise than grep for questions like "who calls
+this?" or "where is this defined?".
+
+## Usage
+
+Positions are 1-based `FILE:LINE[:COL]`. If you omit `:COL`, the symbol
+declared on that line is used — so `lsp refs app/models.py:14` on the line
+`class User:` means "references to User".
+
+```
+lsp def  FILE:LINE[:COL]      definition of the symbol at that position
+lsp refs FILE:LINE[:COL]      every reference to it, workspace-wide
+lsp hover FILE:LINE[:COL]     type / signature / docstring
+lsp sym  NAME                 find symbols by name anywhere in the workspace
+lsp outline FILE              classes/functions/methods in a file, with lines
+lsp diag FILE                 errors and warnings for a file
+lsp rename FILE:LINE[:COL] NEWNAME --dry-run
+                              preview every edit a rename would make
+                              (never applies anything; use it to enumerate
+                              all sites that must change)
+```
+
+Notes:
+
+- Run from the repository root (or pass `--workspace DIR`). Language is
+  inferred from the file extension; override with `--language` or
+  `LSP_TOOL_LANGUAGE` (python, typescript, java, go, rust, cpp).
+- A background daemon keeps the language server warm. The first call starts
+  it and may take a few seconds while the codebase is indexed; later calls
+  return in well under a second. `lsp daemon start` pre-warms it;
+  `lsp daemon status` / `lsp daemon stop` manage it.
+- On failure you get exit code 1 and a one-line reason on stderr
+  (e.g. `no definition found`, `language server not ready yet (indexing)`).
+- `refs` prints at most 40 locations; a final line summarizes the rest as
+  `... and N more in: file (count), ...`. Output is capped at ~250 lines.
+- Line numbers in the output are real file line numbers — you can jump
+  straight to them.
+
+## Maintainer notes
+
+Architecture: `lsp` (thin client, `lsp_tool/cli.py`) talks JSON-lines over a
+Unix socket (`/tmp/lsp-tool.sock`, override `LSP_TOOL_SOCKET`) to a daemon
+(`lsp_tool/daemon.py`, auto-started on first use) that hosts
+[solidlsp](https://github.com/oraios/serena) language servers — one per
+(workspace, language-server) pair, started lazily and kept warm. solidlsp is
+imported from the `serena-agent` PyPI distribution (pinned `==1.7.0`; it is
+not published standalone). The daemon renders all output text; the client
+just prints it and sets the exit code.
+
+Language → solidlsp `LanguageServerId` mapping (`lsp_tool/languages.py`):
+python → `python_pyrefly` (default; `LSP_TOOL_PYTHON_SERVER` selects
+`basedpyright`/`pyright`/`jedi`/`ty`), typescript → `typescript`,
+java → `java` (Eclipse JDTLS), go → `go` (gopls), rust → `rust`
+(rust-analyzer), c/cpp → `cpp` (clangd).
+
+For the Python servers the daemon prefers a `pyrefly` /
+`basedpyright-langserver` executable found next to its own interpreter (i.e.
+pip-installed into the same venv, which `install.sh` does) and passes it to
+solidlsp via `ls_specific_settings["ls_path"]`; otherwise solidlsp falls back
+to running them via `uvx`, which needs `uv` plus network. Non-Python servers
+use solidlsp's own resolution: gopls and rust-analyzer must be on PATH;
+clangd and JDTLS are downloaded by solidlsp on first use; the TypeScript
+server is npm-installed by solidlsp on first use (needs node/npm + network).
+
+Env vars: `LSP_TOOL_SOCKET`, `LSP_TOOL_WORKSPACE`, `LSP_TOOL_LANGUAGE`,
+`LSP_TOOL_PYTHON_SERVER`, `LSP_TOOL_TIMEOUT` (seconds to wait for
+indexing/requests, default 240), `LSP_TOOL_DATA_DIR` (solidlsp data, default
+`~/.solidlsp`), `LSP_TOOL_LOG_LEVEL`. Daemon log: `<socket>.log`.
+
+Install: `./install.sh` creates a venv at `/opt/lsp-tool` (`LSP_TOOL_HOME`),
+installs this package plus pinned `pyrefly==1.2.0` and
+`basedpyright==1.39.10` (basedpyright bundles node via
+`nodejs-wheel-binaries`), and symlinks `lsp` into `/usr/local/bin`
+(`BIN_DIR`). Requires Python >=3.11 (serena-agent's floor) or `uv` to fetch
+one. Tests: `bash tests/e2e.sh` builds a scratch repo + venv under /tmp and
+exercises every command against both pyrefly and basedpyright.

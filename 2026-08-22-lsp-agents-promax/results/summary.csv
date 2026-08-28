@@ -1,0 +1,15 @@
+run,instances,golden_valid,resolved,rate
+s1-arm-a-r1,29,25,19,76
+s1-arm-a-r2,29,25,17,68
+s1-arm-b-r1,29,24,18,75
+s1-arm-b-r2,29,25,17,68
+s1-arm-c2-r1,29,25,16,64
+s1-arm-c2-r2,29,25,18,72
+s1-arm-d-r1,29,25,13,52
+s1-arm-d-r2,29,25,16,64
+s1-arm-d2-r1,29,25,16,64
+s1-arm-d2-r2,29,25,16,64
+s1h-arm-a-r1,29,25,24,96
+s1h-arm-a-r2,29,25,23,92
+s1h-arm-d2-r1,29,25,23,92
+s1h-arm-d2-r2,29,25,19,76

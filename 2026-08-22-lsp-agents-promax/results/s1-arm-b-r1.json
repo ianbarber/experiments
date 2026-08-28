@@ -1,0 +1,205 @@
+[
+ {
+  "instance_id": "stanfordnlp__dspy-9193",
+  "language": "python",
+  "golden": "non zero exit",
+  "model": "non zero exit",
+  "passed": false
+ },
+ {
+  "instance_id": "huggingface__transformers-38788",
+  "language": "python",
+  "golden": "non zero exit",
+  "model": "non zero exit",
+  "passed": false
+ },
+ {
+  "instance_id": "albumentations-team__albumentations-2495",
+  "language": "python",
+  "golden": "success",
+  "model": "non zero exit",
+  "passed": false
+ },
+ {
+  "instance_id": "albumentations-team__albumentations-2337",
+  "language": "python",
+  "golden": "success",
+  "model": "non zero exit",
+  "passed": false
+ },
+ {
+  "instance_id": "confident-ai__deepeval-c_ce72651",
+  "language": "python",
+  "golden": "success",
+  "model": "success",
+  "passed": true
+ },
+ {
+  "instance_id": "confident-ai__deepeval-2345",
+  "language": "python",
+  "golden": "success",
+  "model": "success",
+  "passed": true
+ },
+ {
+  "instance_id": "confident-ai__deepeval-c_08844c8",
+  "language": "python",
+  "golden": "success",
+  "model": "success",
+  "passed": true
+ },
+ {
+  "instance_id": "django__django-19643",
+  "language": "python",
+  "golden": "success",
+  "model": "non zero exit",
+  "passed": false
+ },
+ {
+  "instance_id": "google__adk-python-c_61adfcd",
+  "language": "python",
+  "golden": "success",
+  "model": "success",
+  "passed": true
+ },
+ {
+  "instance_id": "google__adk-python-c_19315fe",
+  "language": "python",
+  "golden": "success",
+  "model": "success",
+  "passed": true
+ },
+ {
+  "instance_id": "huggingface__lerobot-2808",
+  "language": "python",
+  "golden": "success",
+  "model": "success",
+  "passed": true
+ },
+ {
+  "instance_id": "google__langextract-239",
+  "language": "python",
+  "golden": "non zero exit",
+  "model": "non zero exit",
+  "passed": false
+ },
+ {
+  "instance_id": "icloud-photos-downloader__icloud_photos_downloader-c_f52826c",
+  "language": "python",
+  "golden": "success",
+  "model": "success",
+  "passed": true
+ },
+ {
+  "instance_id": "huggingface__transformers-38332",
+  "language": "python",
+  "golden": "non zero exit",
+  "model": "success",
+  "passed": false
+ },
+ {
+  "instance_id": "hummingbot__hummingbot-c_1ce05af",
+  "language": "python",
+  "golden": "success",
+  "model": "success",
+  "passed": true
+ },
+ {
+  "instance_id": "langchain-ai__langchain-32996",
+  "language": "python",
+  "golden": "success",
+  "model": "non zero exit",
+  "passed": false
+ },
+ {
+  "instance_id": "optuna__optuna-6197",
+  "language": "python",
+  "golden": "success",
+  "model": "success",
+  "passed": true
+ },
+ {
+  "instance_id": "optuna__optuna-c_058e8bc",
+  "language": "python",
+  "golden": "success",
+  "model": "success",
+  "passed": true
+ },
+ {
+  "instance_id": "optuna__optuna-6166",
+  "language": "python",
+  "golden": "success",
+  "model": "success",
+  "passed": true
+ },
+ {
+  "instance_id": "mikf__gallery-dl-7872",
+  "language": "python",
+  "golden": "success",
+  "model": "non zero exit",
+  "passed": false
+ },
+ {
+  "instance_id": "pypa__pipenv-6373",
+  "language": "python",
+  "golden": "success",
+  "model": "success",
+  "passed": true
+ },
+ {
+  "instance_id": "roboflow__supervision-1943",
+  "language": "python",
+  "golden": "success",
+  "model": "success",
+  "passed": true
+ },
+ {
+  "instance_id": "pandas-dev__pandas-61244",
+  "language": "python",
+  "golden": "success",
+  "model": "success",
+  "passed": true
+ },
+ {
+  "instance_id": "stanfordnlp__dspy-1801",
+  "language": "python",
+  "golden": "non zero exit",
+  "model": "non zero exit",
+  "passed": false
+ },
+ {
+  "instance_id": "stanfordnlp__dspy-9047",
+  "language": "python",
+  "golden": "success",
+  "model": "non zero exit",
+  "passed": false
+ },
+ {
+  "instance_id": "stanfordnlp__dspy-8105",
+  "language": "python",
+  "golden": "success",
+  "model": "success",
+  "passed": true
+ },
+ {
+  "instance_id": "verl-project__verl-3915",
+  "language": "python",
+  "golden": "success",
+  "model": "success",
+  "passed": true
+ },
+ {
+  "instance_id": "verl-project__verl-4185",
+  "language": "python",
+  "golden": "success",
+  "model": "success",
+  "passed": true
+ },
+ {
+  "instance_id": "vibrantlabsai__ragas-2333",
+  "language": "python",
+  "golden": "success",
+  "model": "success",
+  "passed": true
+ }
+]

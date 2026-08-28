@@ -1,0 +1,25 @@
+# arm_a_or.yaml: hosted (OpenRouter) variant of arm_a.yaml — fp8 providers pinned, 8h container wall.
+# Protocol notes: reasoning_effort passthrough unverified on hosted (kept in extra_body,
+# harmless); hosted arms are only compared with each other, never with local runs.
+agent:
+  step_limit: 300
+  cost_limit: 100000.0
+model:
+  model_name: openrouter/qwen/qwen3.8-27b
+  model_kwargs:
+    temperature: 1.0
+    top_p: 0.95
+    max_tokens: 16384
+    drop_params: true
+    parallel_tool_calls: true
+    extra_body:
+      top_k: 20
+      chat_template_kwargs:
+        reasoning_effort: medium
+      provider:
+        order:
+        - CoreWeave
+        - Parasail
+        allow_fallbacks: false
+environment:
+  container_timeout: 8h

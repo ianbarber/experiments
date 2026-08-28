@@ -1,0 +1,29 @@
+s1-arm-a-r1    resolved   n=19 | steps 47.1 | first-gold-touch step 1.5 (never: 0) | searches 17.9 (pre-gold 1.3) | non-gold files seen 10.7 | edit P 0.97 R 0.76 | gold files missed 1.9
+s1-arm-a-r1    unresolved n= 6 | steps 82.0 | first-gold-touch step 0.7 (never: 0) | searches 12.3 (pre-gold 0.8) | non-gold files seen 6.8 | edit P 1.00 R 0.32 | gold files missed 6.2
+s1-arm-b-r1    resolved   n=18 | steps 32.8 | first-gold-touch step 0.8 (never: 0) | searches 11.6 (pre-gold 1.0) | non-gold files seen 7.9 | edit P 0.94 R 0.75 | gold files missed 2.7
+s1-arm-b-r1    unresolved n= 6 | steps 104.3 | first-gold-touch step 1.8 (never: 0) | searches 18.8 (pre-gold 2.2) | non-gold files seen 13.5 | edit P 0.97 R 0.43 | gold files missed 3.0
+s1-arm-c2-r1   resolved   n=16 | steps 42.7 | first-gold-touch step 1.1 (never: 0) | searches 14.4 (pre-gold 1.2) | non-gold files seen 8.8 | edit P 0.94 R 0.74 | gold files missed 2.4
+s1-arm-c2-r1   unresolved n= 9 | steps 131.1 | first-gold-touch step 2.1 (never: 0) | searches 20.7 (pre-gold 1.7) | non-gold files seen 10.4 | edit P 1.00 R 0.35 | gold files missed 4.9
+
+Per-instance detail (unresolved episodes):
+  s1-arm-a-r1 django__django-19643                         steps=300 1st-gold=    1 searches= 12 nongold=  8 P=- R=0.00 missed=9
+  s1-arm-a-r1 huggingface__lerobot-2808                    steps= 31 1st-gold=    0 searches= 11 nongold=  5 P=1.0 R=0.28 missed=13
+  s1-arm-a-r1 langchain-ai__langchain-32996                steps= 56 1st-gold=    1 searches= 16 nongold= 11 P=1.0 R=0.50 missed=2
+  s1-arm-a-r1 mikf__gallery-dl-7872                        steps= 63 1st-gold=    0 searches= 20 nongold=  7 P=1.0 R=0.50 missed=2
+  s1-arm-a-r1 stanfordnlp__dspy-9047                       steps= 14 1st-gold=    1 searches=  8 nongold=  5 P=1.0 R=0.50 missed=1
+  s1-arm-a-r1 verl-project__verl-3915                      steps= 28 1st-gold=    1 searches=  7 nongold=  5 P=1.0 R=0.17 missed=10
+  s1-arm-b-r1 albumentations-team__albumentations-2337     steps=300 1st-gold=    3 searches= 14 nongold=  4 P=- R=0.00 missed=4
+  s1-arm-b-r1 albumentations-team__albumentations-2495     steps= 67 1st-gold=    4 searches= 24 nongold= 24 P=1.0 R=0.55 missed=5
+  s1-arm-b-r1 django__django-19643                         steps= 87 1st-gold=    2 searches= 19 nongold= 14 P=0.8333333333333334 R=0.56 missed=4
+  s1-arm-b-r1 langchain-ai__langchain-32996                steps= 52 1st-gold=    1 searches= 17 nongold= 13 P=1.0 R=0.50 missed=2
+  s1-arm-b-r1 mikf__gallery-dl-7872                        steps=105 1st-gold=    0 searches= 36 nongold= 24 P=1.0 R=0.50 missed=2
+  s1-arm-b-r1 stanfordnlp__dspy-9047                       steps= 15 1st-gold=    1 searches=  3 nongold=  2 P=1.0 R=0.50 missed=1
+  s1-arm-c2-r1 albumentations-team__albumentations-2337     steps=300 1st-gold=    3 searches= 41 nongold= 13 P=- R=0.00 missed=4
+  s1-arm-c2-r1 albumentations-team__albumentations-2495     steps= 78 1st-gold=    4 searches= 25 nongold= 13 P=1.0 R=0.45 missed=6
+  s1-arm-c2-r1 django__django-19643                         steps=300 1st-gold=    2 searches= 24 nongold= 10 P=- R=0.00 missed=9
+  s1-arm-c2-r1 google__adk-python-c_19315fe                 steps= 36 1st-gold=    1 searches= 15 nongold= 12 P=1.0 R=1.00 missed=0
+  s1-arm-c2-r1 huggingface__transformers-38332              steps=300 1st-gold=    6 searches= 18 nongold= 13 P=- R=0.00 missed=10
+  s1-arm-c2-r1 langchain-ai__langchain-32996                steps= 64 1st-gold=    1 searches= 19 nongold= 14 P=1.0 R=0.50 missed=2
+  s1-arm-c2-r1 mikf__gallery-dl-7872                        steps= 65 1st-gold=    0 searches= 35 nongold= 10 P=1.0 R=0.50 missed=2
+  s1-arm-c2-r1 stanfordnlp__dspy-9047                       steps= 12 1st-gold=    1 searches=  3 nongold=  4 P=1.0 R=0.50 missed=1
+  s1-arm-c2-r1 verl-project__verl-3915                      steps= 25 1st-gold=    1 searches=  6 nongold=  5 P=1.0 R=0.17 missed=10

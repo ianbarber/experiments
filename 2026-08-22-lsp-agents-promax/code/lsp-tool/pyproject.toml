@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lsp-tool"
+version = "0.1.0"
+description = "Language Server Protocol capabilities as a simple CLI for LLM coding agents"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    # solidlsp (the language-server layer from the Serena project) is not published
+    # standalone on PyPI; serena-agent ships it as an importable top-level package.
+    # NOTE: serena-agent itself requires Python >=3.11.
+    "serena-agent==1.7.0",
+]
+
+[project.scripts]
+lsp = "lsp_tool.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,22 @@
+# Arm A (baseline): mini-swe-agent overlay for SWE-Bench ProMax with local Qwen3.8-27B-FP8.
+# Use with the builtin default:  -c swebench.yaml -c arm_a.yaml
+# Deviations from paper protocol are documented in PLAN.md (sampling per model card,
+# reasoning_effort=medium, cost limit disabled for a local model).
+agent:
+  step_limit: 300
+  cost_limit: 100000.
+
+model:
+  model_name: "openai/qwen3.8-27b-sglang"
+  model_kwargs:
+    api_base: "http://192.168.1.92:8888/v1"
+    api_key: "EMPTY"
+    temperature: 1.0
+    top_p: 0.95
+    max_tokens: 16384
+    drop_params: true
+    parallel_tool_calls: true
+    extra_body:
+      top_k: 20
+      chat_template_kwargs:
+        reasoning_effort: "medium"

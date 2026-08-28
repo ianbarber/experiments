@@ -1,0 +1,208 @@
+# ARM_D: baseline prompt + submission-time delta-scoped Pyrefly acceptance gate.
+# Gate scripts delivered via env_startup_command (base64) into promax-lsp images
+# (which carry pyrefly at /opt/lsp-tool). Only prompt change vs arm A: Submission
+# Step-3 block (submit wrapper + gate note). No lsp docs, no standing orders.
+agent:
+  step_limit: 300
+  cost_limit: 100000.0
+  instance_template: '<pr_description>
+
+    Consider the following PR description:
+
+    {{task}}
+
+    </pr_description>
+
+
+    <instructions>
+
+    # Task Instructions
+
+
+    ## Overview
+
+
+    You''re a software engineer interacting continuously with a computer by submitting commands.
+
+    You''ll be helping implement necessary changes to meet requirements in the PR description.
+
+    Your task is specifically to make changes to non-test files in the current directory in order to fix the issue described in the PR description in a way that is general and consistent with the codebase.
+
+    <IMPORTANT>This is an interactive process where you will think and issue AT LEAST ONE command, see the result, then think and issue your next command(s).</important>
+
+
+    For each response:
+
+
+    1. Include a THOUGHT section explaining your reasoning and what you''re trying to accomplish
+
+    2. Provide one or more bash tool calls to execute
+
+
+    ## Important Boundaries
+
+
+    - MODIFY: Regular source code files in /testbed (this is the working directory for all your subsequent commands)
+
+    - DO NOT MODIFY: Tests, configuration files (pyproject.toml, setup.cfg, etc.)
+
+
+    ## Recommended Workflow
+
+
+    1. Analyze the codebase by finding and reading relevant files
+
+    2. Create a script to reproduce the issue
+
+    3. Edit the source code to resolve the issue
+
+    4. Verify your fix works by running your script again
+
+    5. Test edge cases to ensure your fix is robust
+
+
+    ## Command Execution Rules
+
+
+    You are operating in an environment where
+
+
+    1. You issue at least one command
+
+    2. The system executes the command(s) in a subshell
+
+    3. You see the result(s)
+
+    4. You write your next command(s)
+
+
+    Each response should include:
+
+
+    1. **Reasoning text** where you explain your analysis and plan
+
+    2. At least one tool call with your command
+
+
+    **CRITICAL REQUIREMENTS:**
+
+
+    - Your response SHOULD include reasoning text explaining what you''re doing
+
+    - Your response MUST include AT LEAST ONE bash tool call. You can make MULTIPLE tool calls in a single response when the commands are independent (e.g., searching multiple files, reading different parts of the codebase).
+
+    - Directory or environment variable changes are not persistent. Every action is executed in a new subshell.
+
+    - However, you can prefix any action with `MY_ENV_VAR=MY_VALUE cd /path/to/working/dir && ...` or write/load environment variables from files
+
+
+    Example of a CORRECT response:
+
+    <example_response>
+
+    I need to understand the Builder-related code. Let me find relevant files and check the project structure.
+
+
+    [Makes multiple bash tool calls: {"command": "ls -la"}, {"command": "find src -name ''*.java'' | grep -i builder"}, {"command": "cat README.md | head -50"}]
+
+    </example_response>
+
+
+    ## Environment Details
+
+
+    - You have a full Linux shell environment
+
+    - Always use non-interactive flags (-y, -f) for commands
+
+    - Avoid interactive tools like vi, nano, or any that require user input
+
+    - You can use bash commands or invoke any tool that is available in the environment
+
+    - You can also create new tools or scripts to help you with the task
+
+    - If a tool isn''t available, you can also install it
+
+
+    ## Submission
+
+
+    When you''ve completed your work, you MUST submit your changes as a git patch.
+
+    Follow these steps IN ORDER, with SEPARATE commands:
+
+
+    Step 1: Create the patch file
+
+    Run `git diff -- path/to/file1 path/to/file2 > patch.txt` listing only the source files you modified.
+
+    Do NOT commit your changes.
+
+
+    <IMPORTANT>
+
+    The patch must only contain changes to the specific source files you modified to fix the issue.
+
+    Do not submit file creations or changes to any of the following files:
+
+
+    - test and reproduction files
+
+    - helper scripts, tests, or tools that you created
+
+    - installation, build, packaging, configuration, or setup scripts unless they are directly part of the issue you were fixing (you can assume that the environment is already set up for your client)
+
+    - binary or compiled files
+
+    </IMPORTANT>
+
+
+    Step 2: Verify your patch
+
+    Inspect patch.txt to confirm it only contains your intended changes and headers show `--- a/` and `+++ b/` paths.
+
+
+    Step 3: Submit (EXACT command required)
+
+    You MUST use this EXACT command to submit:
+
+
+    ```bash
+
+    submit
+
+    ```
+
+
+    Submission runs an automatic acceptance gate: a type checker compares the codebase against its pre-change state, and if your changes introduced new type errors the gate rejects the submission and shows you the diagnostics; you can revise your changes, regenerate patch.txt, and run `submit` again. If the command fails (nonzero exit status), it did not submit.
+
+
+    <CRITICAL>
+
+    - Creating/viewing the patch and submitting it MUST be separate commands (not combined with &&).
+
+    - If you modify patch.txt after verifying, you SHOULD verify again before submitting.
+
+    - You CANNOT continue working (reading, editing, testing) in any way on this task after submitting.
+
+    </CRITICAL>
+
+    </instructions>
+
+    '
+run:
+  env_startup_command: bash -c 'echo IyEvdXNyL2Jpbi9lbnYgcHl0aG9uMwoiIiJEZWx0YS1zY29wZWQgUHlyZWZseSBhY2NlcHRhbmNlIGdhdGUgZm9yIEFybSBELgoKLS1yZWNvcmQtYmFzZWxpbmU6IHJ1biBweXJlZmx5IG92ZXIgL3Rlc3RiZWQsIHNhdmUgZXJyb3IgZmluZ2VycHJpbnRzLgpkZWZhdWx0OiAgICAgICAgICAgcnVuIHB5cmVmbHksIGRpZmYgYWdhaW5zdCBiYXNlbGluZTsgZXhpdCAwIGlmIG5vIG5ldyBlcnJvcnMsCiAgICAgICAgICAgICAgICAgICBlbHNlIHByaW50IGFuIDxhY2NlcHRhbmNlX2dhdGU+IHJlamVjdGlvbiAoY2FwIDgpIGFuZCBleGl0IDEuCgpEZXNpZ24gZm9sbG93cyBpYW5iYXJiZXIvbHNwcy1mb3ItbGxtcyBSRVBPUlQubWQ6IGRlbHRhIHNjb3BpbmcgYWdhaW5zdCBhCnByZS1lZGl0IGJhc2VsaW5lLCBzeW50YXgtY2FzY2FkZSBkZW1vdGlvbiwgY2FwcGVkIG91dHB1dCwgZGlyZWN0aXZlIHRleHQgb25seQphdCBnYXRlIHRpbWUgKG5vIHN0YW5kaW5nIHBlci10dXJuIG9yZGVycykuCiIiIgppbXBvcnQganNvbiwgc3VicHJvY2Vzcywgc3lzLCBvcywgYXN0LCB0aW1lCgpCQVNFTElORSA9ICIvdG1wLy50eXBlY2hlY2tfYmFzZWxpbmUuanNvbiIKUFlSRUZMWSA9ICIvb3B0L2xzcC10b29sL2Jpbi9weXJlZmx5IgpST09UID0gIi90ZXN0YmVkIgpDQVAgPSA4CgoKZGVmIHJ1bl9weXJlZmx5KCk6CiAgICB0cnk6CiAgICAgICAgcCA9IHN1YnByb2Nlc3MucnVuKAogICAgICAgICAgICBbUFlSRUZMWSwgImNoZWNrIiwgIi0tb3V0cHV0LWZvcm1hdCIsICJqc29uIl0sCiAgICAgICAgICAgIGN3ZD1ST09ULCBjYXB0dXJlX291dHB1dD1UcnVlLCB0ZXh0PVRydWUsIHRpbWVvdXQ9MjQwLAogICAgICAgICkKICAgIGV4Y2VwdCBFeGNlcHRpb24gYXMgZToKICAgICAgICByZXR1cm4gTm9uZSwgZiJjaGVja2VyIGZhaWxlZCB0byBydW46IHtlfSIKICAgIG91dCA9IHAuc3Rkb3V0LnN0cmlwKCkKICAgIGlmIG5vdCBvdXQ6CiAgICAgICAgcmV0dXJuIFtdLCBOb25lCiAgICB0cnk6CiAgICAgICAgZGF0YSA9IGpzb24ubG9hZHMob3V0KQogICAgZXhjZXB0IGpzb24uSlNPTkRlY29kZUVycm9yOgogICAgICAgIHJldHVybiBOb25lLCAiY2hlY2tlciBwcm9kdWNlZCB1bnBhcnNlYWJsZSBvdXRwdXQiCiAgICBlcnJzID0gZGF0YS5nZXQoImVycm9ycyIsIGRhdGEgaWYgaXNpbnN0YW5jZShkYXRhLCBsaXN0KSBlbHNlIFtdKQogICAgbm9ybSA9IFtdCiAgICBmb3IgZSBpbiBlcnJzOgogICAgICAgIGlmIG5vdCBpc2luc3RhbmNlKGUsIGRpY3QpOgogICAgICAgICAgICBjb250aW51ZQogICAgICAgIHBhdGggPSBlLmdldCgicGF0aCIpIG9yIGUuZ2V0KCJmaWxlIikgb3IgIiIKICAgICAgICBwYXRoID0gb3MucGF0aC5yZWxwYXRoKHBhdGgsIFJPT1QpIGlmIG9zLnBhdGguaXNhYnMocGF0aCkgZWxzZSBwYXRoCiAgICAgICAgbm9ybS5hcHBlbmQoewogICAgICAgICAgICAicGF0aCI6IHBhdGgsCiAgICAgICAgICAgICJsaW5lIjogZS5nZXQoImxpbmUiKSBvciAoZS5nZXQoInJhbmdlIikgb3Ige30pLmdldCgic3RhcnQiLCB7fSkuZ2V0KCJsaW5lIikgb3IgMCwKICAgICAgICAgICAgImNvbCI6IGUuZ2V0KCJjb2x1bW4iKSBvciAoZS5nZXQoInJhbmdlIikgb3Ige30pLmdldCgic3RhcnQiLCB7fSkuZ2V0KCJjb2x1bW4iKSBvciAwLAogICAgICAgICAgICAiY29kZSI6IGUuZ2V0KCJuYW1lIikgb3IgZS5nZXQoImNvZGUiKSBvciBlLmdldCgia2luZCIpIG9yICJlcnJvciIsCiAgICAgICAgICAgICJtc2ciOiAoZS5nZXQoImRlc2NyaXB0aW9uIikgb3IgZS5nZXQoIm1lc3NhZ2UiKSBvciAiIikuc3BsaXQoIlxuIilbMF1bOjIwMF0sCiAgICAgICAgfSkKICAgIHJldHVybiBub3JtLCBOb25lCgoKZGVmIGZpbmdlcnByaW50KGUpOgogICAgcmV0dXJuIGYie2VbJ3BhdGgnXX18e2VbJ2NvZGUnXX18e2VbJ21zZyddfSIKCgpkZWYgcGFyc2VzKHBhdGgpOgogICAgdHJ5OgogICAgICAgIGFzdC5wYXJzZShvcGVuKG9zLnBhdGguam9pbihST09ULCBwYXRoKSwgZW5jb2Rpbmc9InV0Zi04IiwgZXJyb3JzPSJyZXBsYWNlIikucmVhZCgpKQogICAgICAgIHJldHVybiBUcnVlCiAgICBleGNlcHQgU3ludGF4RXJyb3I6CiAgICAgICAgcmV0dXJuIEZhbHNlCiAgICBleGNlcHQgRXhjZXB0aW9uOgogICAgICAgIHJldHVybiBUcnVlCgoKZGVmIG1haW4oKToKICAgIGlmICItLXJlY29yZC1iYXNlbGluZSIgaW4gc3lzLmFyZ3Y6CiAgICAgICAgZXJycywgZmFpbCA9IHJ1bl9weXJlZmx5KCkKICAgICAgICBqc29uLmR1bXAoeyJmcHMiOiBbZmluZ2VycHJpbnQoZSkgZm9yIGUgaW4gKGVycnMgb3IgW10pXSwgIm9rIjogZXJycyBpcyBub3QgTm9uZX0sCiAgICAgICAgICAgICAgICAgIG9wZW4oQkFTRUxJTkUgKyAiLnRtcCIsICJ3IikpCiAgICAgICAgb3MucmVwbGFjZShCQVNFTElORSArICIudG1wIiwgQkFTRUxJTkUpCiAgICAgICAgcmV0dXJuIDAKCiAgICAjIHdhaXQgYnJpZWZseSBmb3IgdGhlIHN0YXJ0dXAgYmFzZWxpbmUgaWYgaXQgaGFzbid0IGxhbmRlZCB5ZXQKICAgIGZvciBfIGluIHJhbmdlKDYwKToKICAgICAgICBpZiBvcy5wYXRoLmV4aXN0cyhCQVNFTElORSk6CiAgICAgICAgICAgIGJyZWFrCiAgICAgICAgdGltZS5zbGVlcCgyKQogICAgaWYgbm90IG9zLnBhdGguZXhpc3RzKEJBU0VMSU5FKToKICAgICAgICByZXR1cm4gMCAgIyBubyBiYXNlbGluZSAtPiBnYXRlIGNhbm5vdCBqdWRnZTsgbmV2ZXIgYmxvY2sgc3VibWlzc2lvbiBvbiBpbmZyYSBmYWlsdXJlCiAgICBiYXNlID0ganNvbi5sb2FkKG9wZW4oQkFTRUxJTkUpKQogICAgaWYgbm90IGJhc2UuZ2V0KCJvayIsIEZhbHNlKToKICAgICAgICByZXR1cm4gMAoKICAgIGVycnMsIGZhaWwgPSBydW5fcHlyZWZseSgpCiAgICBpZiBlcnJzIGlzIE5vbmU6CiAgICAgICAgcmV0dXJuIDAgICMgY2hlY2tlciBpbmZyYSBmYWlsdXJlIC0+IGRvIG5vdCBibG9jawogICAga25vd24gPSBzZXQoYmFzZS5nZXQoImZwcyIsIFtdKSkKICAgIG5ldyA9IFtlIGZvciBlIGluIGVycnMgaWYgZmluZ2VycHJpbnQoZSkgbm90IGluIGtub3duXQogICAgIyBkZW1vdGUgY2FzY2FkZXMgZnJvbSBmaWxlcyB0aGF0IG5vIGxvbmdlciBwYXJzZTogc3ludGF4IGZpcnN0LCBjYXAgdG90YWwKICAgIHN5bnRheF9maWxlcyA9IHtlWyJwYXRoIl0gZm9yIGUgaW4gbmV3IGlmIG5vdCBwYXJzZXMoZVsicGF0aCJdKX0KICAgIG5ldy5zb3J0KGtleT1sYW1iZGEgZTogKGVbInBhdGgiXSBub3QgaW4gc3ludGF4X2ZpbGVzLCBlWyJwYXRoIl0sIGVbImxpbmUiXSkpCiAgICBpZiBub3QgbmV3OgogICAgICAgIHJldHVybiAwCiAgICBzaG93biA9IG5ld1s6Q0FQXQogICAgcHJpbnQoJzxhY2NlcHRhbmNlX2dhdGUgc3RhdHVzPSJyZWplY3RlZCI+JykKICAgIHByaW50KGYiU3VibWlzc2lvbiBub3QgYWNjZXB0ZWQ6IHRoZSB0eXBlIGNoZWNrZXIgcmVwb3J0cyB7bGVuKG5ldyl9IG5ldyBpc3N1ZShzKSBhZnRlciB5b3VyIGNoYW5nZXMuIikKICAgIGZvciBlIGluIHNob3duOgogICAgICAgIHRhZyA9ICJzeW50YXgiIGlmIGVbInBhdGgiXSBpbiBzeW50YXhfZmlsZXMgZWxzZSAidHlwZSIKICAgICAgICBwcmludChmIlt7dGFnfV0ge2VbJ3BhdGgnXX06e2VbJ2xpbmUnXX06e2VbJ2NvbCddfSB7ZVsnY29kZSddfToge2VbJ21zZyddfSIpCiAgICBpZiBsZW4obmV3KSA+IENBUDoKICAgICAgICBwcmludChmIi4uLiB7bGVuKG5ldykgLSBDQVB9IGFkZGl0aW9uYWwgaXNzdWUocykgbm90IHNob3duLiIpCiAgICBwcmludCgiUmV2aXNlIHlvdXIgY2hhbmdlcywgcmVnZW5lcmF0ZSBwYXRjaC50eHQsIHRoZW4gcnVuIGBzdWJtaXRgIGFnYWluLiIpCiAgICBwcmludCgiPC9hY2NlcHRhbmNlX2dhdGU+IikKICAgIHJldHVybiAxCgoKaWYgX19uYW1lX18gPT0gIl9fbWFpbl9fIjoKICAgIHN5cy5leGl0KG1haW4oKSkK | base64 -d > /usr/local/bin/typecheck_gate.py; echo IyEvYmluL2Jhc2gKIyBBcm0gRCBzdWJtaXNzaW9uIHdyYXBwZXI6IHR5cGUtY2hlY2sgYWNjZXB0YW5jZSBnYXRlLCB0aGVuIHRoZSBzdGFuZGFyZAojIG1pbmktc3dlLWFnZW50IHN1Ym1pc3Npb24gbWFya2VyLgpjZCAvdGVzdGJlZCB8fCBleGl0IDEKaWYgWyAhIC1mIHBhdGNoLnR4dCBdOyB0aGVuCiAgZWNobyAic3VibWl0OiBwYXRjaC50eHQgbm90IGZvdW5kLiBDcmVhdGUgaXQgZmlyc3QgKFN0ZXAgMSksIHRoZW4gcnVuIHN1Ym1pdC4iCiAgZXhpdCAxCmZpCi9vcHQvbHNwLXRvb2wvYmluL3B5dGhvbiAvdXNyL2xvY2FsL2Jpbi90eXBlY2hlY2tfZ2F0ZS5weQpyYz0kPwppZiBbICIkcmMiIC1uZSAwIF07IHRoZW4KICBleGl0IDEKZmkKZWNobyBDT01QTEVURV9UQVNLX0FORF9TVUJNSVRfRklOQUxfT1VUUFVUICYmIGNhdCBwYXRjaC50eHQK | base64 -d > /usr/local/bin/submit; chmod +x /usr/local/bin/submit; cd /testbed && nohup /opt/lsp-tool/bin/python /usr/local/bin/typecheck_gate.py --record-baseline >/tmp/.baseline.log 2>&1 & true'
+model:
+  model_name: openai/qwen3.8-27b-sglang
+  model_kwargs:
+    api_base: http://192.168.1.92:8888/v1
+    api_key: EMPTY
+    temperature: 1.0
+    top_p: 0.95
+    max_tokens: 16384
+    drop_params: true
+    parallel_tool_calls: true
+    extra_body:
+      top_k: 20
+      chat_template_kwargs:
+        reasoning_effort: medium
