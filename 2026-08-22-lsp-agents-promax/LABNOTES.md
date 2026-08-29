@@ -436,3 +436,28 @@ total_usage predates this project (activity dashboard).
   (order-interleaving already partial via concurrency); lsp-usage vs outcome within C.
 - cortical still out of the pool (needs sudo for docker; busy with muse-glimmer).
 - Report ProMax issues upstream when done: proxy-baked images, golden flakiness by host.
+
+## 2026-08-28 — review round & retroactive gate measurement
+
+- External review received (via Ian). Actioned: TL;DR → bullets; wall warning moved under
+  the §3 results table; §4 reframed to non-adoption with two named untested confounds
+  (grep familiarity; trigger density); §5 split into "entry-point localization =
+  non-problem" vs "refs-for-completeness = untested because unadopted"; §6 decomposed
+  honestly ("didn't help, probably hurt" — one clean, non-significant comparison) with C2
+  elevated as a third gate-free type-feedback data point; §7 retitled and reframed as an
+  anomaly requiring validation, contamination language hardened, weak rebuttals
+  acknowledged as weak, perturbation test named as the decisive follow-up; stats: Holm
+  note, Wilson CIs, instance-level pairing made explicit, denominators defined.
+  Transferable harness findings extracted to HARNESS-NOTES.md.
+- Reviewer's local-8h-rerun request: declined (Ian's call) — the hosted pair is already a
+  wall-free within-regime A-vs-D2 comparison; a local repeat would only probe
+  regime-generalization of an already-consistent direction. Now argued explicitly in §6.
+- **Retroactive gate false-block analysis** (Ian requested): apply the delta-scoped gate
+  to every resolved baseline-A patch (local + hosted, both rounds; 83 patches) in fresh
+  containers. Early rows already show test-passing patches with 8–18 new type errors.
+  Results → REPORT.md §6 and `results/retro_gate.jsonl`.
+- Retro-gate v1 filled chunklebox's disk (no image eviction — the waved runner's lesson,
+  re-learned); v2 (instance-major, per-instance evict, resume) completed all 83.
+  **Result: the gate would have rejected 29/83 (35%) of test-passing baseline patches**,
+  stable across runs (29–39%); median 4 new type errors per false-blocked patch (max 43);
+  11/24 distinct instances affected. Type cleanliness ⊥ test success, now quantified.
