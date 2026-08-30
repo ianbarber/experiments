@@ -24,8 +24,10 @@ rate with paired two-round runs per arm.
   density is untested.
 - **Type-check acceptance gates didn't help and probably hurt**: A 72% · B 71% · C2 68% ·
   D (hard gate) 58% (p≈0.016 nominal, ≈0.08 Holm; wall-confounded) · D2 (silent soft)
-  64% · hosted (clean, wall-free): A 94% vs D2 84% (n.s.). Retroactive measurement shows
-  why: the gate would have rejected 35% of patches that pass the full test suite — type cleanliness is nearly orthogonal to the scoring criterion.
+  64% · hosted (clean, wall-free): A 94% vs D2 84% (n.s.). Retroactive 2×2: the gate
+  would have rejected 35% of test-passing patches vs 14% of failing ones — its signal is
+  uncorrelated-to-inverted with the score, because the dominant failure (incomplete
+  refactoring) emits no type errors.
 - **Two transferable harness findings** (`HARNESS-NOTES.md`): mini-swe-agent's default 2h
   `container_timeout` kills long episodes mid-flight and masquerades as step-cap
   exhaustion (deaths monotone in episode length, A 4 → D2 16; zero after the 8h fix);

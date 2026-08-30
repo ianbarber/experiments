@@ -1,0 +1,14 @@
+{"run":"s1-arm-a-r2","iid":"albumentations-team__albumentations-2495","apply_rc":0,"would_reject":true,"new_errors":43}
+{"run":"s1-arm-a-r2","iid":"django__django-19643","apply_rc":0,"would_reject":false,"new_errors":0}
+{"run":"s1h-arm-a-r1","iid":"django__django-19643","apply_rc":0,"would_reject":false,"new_errors":0}
+{"run":"s1-arm-a-r1","iid":"huggingface__lerobot-2808","apply_rc":0,"would_reject":false,"new_errors":0}
+{"run":"s1-arm-a-r2","iid":"huggingface__lerobot-2808","apply_rc":0,"would_reject":false,"new_errors":0}
+{"run":"s1-arm-a-r1","iid":"langchain-ai__langchain-32996","apply_rc":0,"would_reject":false,"new_errors":0}
+{"run":"s1-arm-a-r2","iid":"langchain-ai__langchain-32996","apply_rc":0,"would_reject":false,"new_errors":0}
+{"run":"s1-arm-a-r1","iid":"mikf__gallery-dl-7872","apply_rc":0,"would_reject":false,"new_errors":0}
+{"run":"s1-arm-a-r2","iid":"mikf__gallery-dl-7872","apply_rc":0,"would_reject":false,"new_errors":0}
+{"run":"s1h-arm-a-r2","iid":"mikf__gallery-dl-7872","apply_rc":0,"would_reject":false,"new_errors":0}
+{"run":"s1-arm-a-r2","iid":"optuna__optuna-6166","apply_rc":0,"would_reject":true,"new_errors":8}
+{"run":"s1-arm-a-r1","iid":"stanfordnlp__dspy-9047","apply_rc":0,"would_reject":false,"new_errors":0}
+{"run":"s1-arm-a-r2","iid":"stanfordnlp__dspy-9047","apply_rc":0,"would_reject":false,"new_errors":0}
+{"run":"s1-arm-a-r1","iid":"verl-project__verl-3915","apply_rc":0,"would_reject":false,"new_errors":0}

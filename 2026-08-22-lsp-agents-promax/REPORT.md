@@ -14,9 +14,10 @@ OpenRouter fp8 hosted)
 - **Type-check acceptance gates didn't help and probably hurt**: three same-direction
   point estimates (−14 local hard, −8 local soft, −10 hosted soft); only the local hard
   gate is nominally significant, and it is partly a fail-closed design artifact (§6).
-  Retroactive measurement: the gate would have rejected **35% (29/83)** of patches that
-  passed the full test suite — type cleanliness and test success are nearly orthogonal
-  here.
+  Retroactive 2×2 measurement: the gate would have rejected **35% (29/83) of patches
+  that passed the full test suite, versus only 14% (2/14) of failing ones** — no evidence
+  of discriminative value, with the point estimate inverted. Mechanism: failures here are
+  *incomplete* patches, and unwritten code emits no type errors.
 - **Two transferable harness findings** (see also `HARNESS-NOTES.md`): mini-swe-agent's
   default 2h `container_timeout` silently kills long episodes and masquerades as step-cap
   exhaustion (§6.5); and the same model/scaffold/instances scored **72% local vs 94%
@@ -49,8 +50,10 @@ OpenRouter fp8 hosted)
   score, 0–2, per arm; discordant counts below are counts of *distinct instances*), on
   the intersection of golden-valid sets; exact two-sided sign tests. Five paired
   comparisons are reported; Holm-corrected thresholds are noted where relevant. Rate
-  columns carry 95% Wilson intervals — at n≈50 these are ±11–13 points, which is the
-  right lens for reading 3–8 point gaps.
+  columns carry 95% Wilson intervals computed at n≈50 episode-slots; because those are
+  25 instances × 2 correlated rounds, effective n lies between 25 and 50 and the
+  intervals are **optimistic** — at the n=25 cluster level, A's 72% is [52–86]. Read
+  3–8 point gaps through the paired tests, not the rate column.
 - **LSP tooling**: `code/lsp-tool/` — a bash CLI (`lsp def/refs/hover/sym/outline/diag/
   rename --dry-run`) over a warm daemon wrapping solidlsp (serena-agent 1.7.0), Pyrefly
   1.2.0 as the Python server, content-enriched output. Baked into per-instance image
@@ -64,7 +67,7 @@ OpenRouter fp8 hosted)
 | B | `lsp` CLI present + neutral tool docs in prompt |
 | C (pilot) | B + polite "prefer lsp" paragraph — abandoned after 5 episodes: 0 lsp calls |
 | C2 | B + imperative, workflow-integrated instruction (lsp-first analysis; refs before change; diag before submit) |
-| D | A's prompt + `submit` wrapper running a delta-scoped Pyrefly acceptance gate (fail-closed: rejection blocks submission) |
+| D | A's prompt + `submit` wrapper running a delta-scoped Pyrefly acceptance gate — **rejects on ≥1 new error fingerprint** (the "cap 8" is display-only); fail-closed: rejection blocks submission |
 | D2 | Silent soft gate: prompt byte-identical to A; submission marker intercepted in the environment; after 2 rejections the next attempt passes silently |
 | A/D2 hosted | A and D2 re-run via OpenRouter with `container_timeout: 8h` |
 
@@ -121,8 +124,7 @@ But two mundane explanations remain open, and our design cannot rule either out:
 What stands regardless: if you want this model using semantic navigation, prompt
 engineering at any strength we tried is not the lever.
 
-## 5. Finding: entry-point localization is a non-problem; reference completeness is the
-failure — and it went untested
+## 5. Finding: entry-point localization is a non-problem; the real failure went untested
 
 Trace analysis over round 1 (`code/analysis/localization.py`, output in
 `results/localization-round1.txt`):
@@ -162,10 +164,12 @@ Honest decomposition of "the gate arms trailed":
   deaths on both sides — and not significant.
 
 So the defensible claim is: **no gate variant showed benefit; all three point estimates
-are negative; the one clean comparison is a non-significant −10.** We did not re-run the
-local pair under an 8h wall: the hosted pair already provides a wall-free, within-regime
-A-vs-D2 comparison, and a local repeat would only probe whether the (consistent)
-direction generalizes across serving regimes.
+are negative; the one clean comparison is a non-significant −10.** A caveat on that
+clean comparison: budget pressure — our causal story for gate cost — is weakest in the
+hosted regime (fast decode, 8h wall), so the hosted pair under-tests the mechanism. We
+did not re-run the local pair under an 8h wall for the honest reason that at ~15 tok/s
+it is a multi-day run; instead the retroactive measurement below establishes the
+mechanism directly, without needing the arm.
 
 Mechanism evidence that the negative direction is real and not just noise:
 
@@ -173,21 +177,32 @@ Mechanism evidence that the negative direction is real and not just noise:
    on (D2 local: 6/9 gate-fired episodes still resolved; hosted: 12/17). One rejection
    caught a genuinely broken patch (43 new type errors). The loop functions — and still
    doesn't pay.
-2. **Type errors ≠ test failures (measured).** Retroactively applying the gate to every
-   *resolved* baseline-A patch (local + hosted, both rounds): **the gate would have rejected 29 of 83 (35%), consistently across all four runs (29–39%), with a median of 4 new type errors per false-blocked patch (max 43), spanning 11 of 24 distinct instances** (`results/retro_gate.jsonl`; `code/analysis/retro_gate.sh`).
-   Each of those is a patch the benchmark scores as success that the gate would have
-   turned into repair detours or, unrepaired, a certain failure. On dynamically-typed
-   repos with outcome-focused suites, type cleanliness is close to orthogonal to the
-   scoring criterion.
+2. **The gate's signal points the wrong way (measured 2×2).** Retroactively applying
+   the identical gate predicate (reject on ≥1 new delta-scoped fingerprint; the "cap 8"
+   is display-only) to every golden-valid baseline-A patch:
+   **P(flag | patch passed suite) = 29/83 (35%)** — consistent across all four runs
+   (29–39%), median 4 new type errors per false-blocked patch (max 43) —
+   versus **P(flag | patch failed suite) = 2/14 (14%)** (Fisher exact p≈0.21: no
+   evidence the gate discriminates outcomes; the point estimate runs *inverse*).
+   The inversion is mechanistically expected given §5: the dominant failure mode is
+   under-editing (~⅓ of needed files), and code the agent never wrote produces no new
+   diagnostics — **the gate scores the risk of what the agent did, while the benchmark
+   punishes what it didn't do.** Flagging also concentrates in 11 of 24 instances,
+   suggesting type-messiness is substantially a repo property; if gating anywhere, a
+   per-repo policy beats a blanket one.
+   (`results/retro_gate.jsonl`, `results/retro_gate_unresolved.jsonl`;
+   `code/analysis/retro_gate.sh`.)
 3. **A third, gate-free data point.** C2's imperative prompt produced 60 *voluntary*
    `lsp diag` verifications — a non-gate mechanism for the same type-feedback — and C2
-   ran −4 vs A (n.s.). Together with the −0.131 imperative-diagnostic arm in
-   [ianbarber/lsps-for-llms](https://github.com/ianbarber/lsps-for-llms) (the only
-   FDR-significant arm in that delivery grid), that is two studies and three mechanisms
-   pointing the same way: on tasks scored by tests, pushing this class of model to chase
-   type diagnostics costs more than it saves. The regime matters: the same gate design
-   *won* in lsps-for-llms on seeded single-defect revision, where the type error was the
-   bug — perfect billability.
+   ran −4 vs A (n.s.). In [ianbarber/lsps-for-llms](https://github.com/ianbarber/lsps-for-llms), two distinct
+   arms bear on this: the *imperative-prompting* delivery arm ("treat diagnostics as
+   squigglies, fix before moving on") **hurt** (−0.131, the only FDR-significant delivery
+   effect), while the *acceptance-gate* arm **won** — on seeded single-defect revision
+   tasks where the type error was the bug and billability was perfect. Our setting
+   (test-scored multi-file refactors, 35% of passing patches type-dirty) sits at the
+   opposite billability pole, and both studies' results are consistent with the same
+   rule: diagnostic pressure pays exactly in proportion to how billable the diagnostics
+   are under the task's scoring.
 
 ### 6.5 The 2-hour wall (transferable harness finding)
 
@@ -200,8 +215,7 @@ local decode the wall binds hard; at API speeds it doesn't (hosted, 8h: 0 deaths
 runs). Any slow-serving agent evaluation on mini-swe-agent defaults should audit this
 before interpreting step-cap statistics. See `HARNESS-NOTES.md`.
 
-## 7. The local/hosted gap dwarfs every intervention — and the hosted number is an
-anomaly to validate, not a result to quote
+## 7. The local/hosted gap dwarfs every intervention; both headline rates need validation
 
 Hosted A resolved 94% vs local A 72% on identical instances, prompts, and scaffold. The
 wall fix explains ~2 slots. We could not separate the remaining suspects: (a) local
@@ -210,21 +224,31 @@ serving quality loss (DSpark speculative decoding, fp8 KV cache, sm121 triton ke
 pass through OpenRouter — verified). A local xhigh run would separate them; at local
 decode speeds with xhigh thinking volumes it is a multi-day run and was not prioritized.
 
-**Why the 94% demands validation before belief**: it is ~5× the best published number
+**Why both headline rates demand validation before belief** (local 72% is itself ~4×
+the published field, lower CI bound still ~3×): it is ~5× the best published number
 for this subset and scaffold (§8). The correct prior for a 5× gap is a measurement
 difference, not a 5× better model. What we have checked: same eval harness and eval
 scripts as the paper's repo, same images, same 300-step cap, same dataset revision;
 golden-validation drops (our denominator excludes 4 instances that fail their own gold
 patch on our network — the paper's infra would not drop these; on an all-29 denominator
-hosted A is 90%, still ~5×). What we have not checked: the paper's sampling temperature
-(unstated) and any provider-side serving differences.
+hosted A is 90%, still ~5×). Everything in that list is static configuration comparison; none of it is an empirical
+control. **The decisive check is a reference-model run**: push one of the paper's tied
+models (GLM-5 is the cheapest) through this exact pipeline for one round. ~17% validates
+the harness and isolates the anomaly to the model; a much higher number means our
+harness scores differently and every headline rate here — local and hosted — collapses
+to internally-paired evidence only. This is follow-up #1; the perturbation test below is
+#2 (it addresses contamination, not harness comparability). Not yet run: OpenRouter
+balance (~$16) does not cover it comfortably.
 
-**Contamination is the leading candidate.** All 29 instances' source commits (2025-02 →
-2026-01) predate the model's 2026-08 release. Local resolved patches overlap gold
-added-lines at mean 0.39 — mostly materially different solutions (one verbatim 1.00
-reproduction: transformers-38332). **Hosted resolved patches overlap at mean 0.62,
-median 0.61, with 18/47 above 0.75 — on refactors averaging 11 files, that is close to
-reproduction, and "longer thinking retrieves memorized commits" fits it.** We note the
+**Contamination is the leading candidate for the model-side gap.** All 29 instances'
+source commits (2025-02 → 2026-01) predate the model's 2026-08 release. The informative
+signal is the **shift**: on identical instances under identical scoring, resolved-patch
+gold overlap moves from 0.39 (local, medium effort) to 0.62 (hosted, xhigh) — with
+18/47 hosted patches above 0.75 and one verbatim 1.00 (transformers-38332). The absolute
+level is weaker evidence than it looks — mechanical propagation refactors admit few
+distinct correct solutions, so high overlap partly reflects task mechanicalness — but
+task mechanicalness is constant across the local/hosted comparison, and "longer thinking
+retrieves memorized commits" fits the shift. We note the
 weaknesses of our own counter-evidence: the no-date-gradient observation has no power
 (every instance is inside the contamination window — there is no control arm), and
 "the paper's 2026 models saw the same commits" assumes cross-lab uniformity of training
@@ -251,13 +275,18 @@ current OpenRouter balance (~$16) doesn't cover it — flagged as the first foll
    adoption never happened (§5). Forced integration or training are the remaining
    levers.
 2. Type-check gating in test-scored, dynamically-typed settings: no variant helped, all
-   trended negative, and the measured orthogonality of type errors to test outcomes
-   (35% false-block rate on passing patches) explains why. Reserve gates for
+   trended negative, and the measured 2×2 explains why: a 35% false-block
+   rate on passing patches against a 14% flag rate on failing ones — the checker's
+   signal is uncorrelated-to-inverted with the scoring criterion, because the dominant
+   failure (incomplete refactoring) is invisible to it. Reserve gates for
    settings where type cleanliness is part of the acceptance criterion.
 3. Audit hidden harness budgets (container lifetime vs decode speed) before trusting
    step-cap statistics; quantify your serving stack against a reference endpoint before
    attributing differences to interventions (`HARNESS-NOTES.md`).
-4. Treat the hosted 94% as unvalidated pending the perturbation test.
+4. Treat **both** headline rates (local 72%, hosted 94%) as unvalidated against the
+   published field pending the reference-model harness control; the intervention
+   comparisons are internally paired on identical harness/instances and survive this
+   concern — which is precisely why the study's within-arm conclusions stand regardless.
 
 ## 10. Reproduction map
 

@@ -461,3 +461,22 @@ total_usage predates this project (activity dashboard).
   **Result: the gate would have rejected 29/83 (35%) of test-passing baseline patches**,
   stable across runs (29–39%); median 4 new type errors per false-blocked patch (max 43);
   11/24 distinct instances affected. Type cleanliness ⊥ test success, now quantified.
+
+## 2026-08-29 — review round 2: the 2×2 completed
+
+- Reviewer (correctly): 35% was one cell. Ran the gate over all 14 golden-valid
+  *unresolved* baseline-A patches: **flag rate 2/14 (14%) vs 29/83 (35%) on resolved**
+  (Fisher p≈0.21). Point estimate inverted — the gate flags passing patches MORE than
+  failing ones. Mechanism connects to the recall finding: failures are under-edits, and
+  unwritten code is type-silent. "Orthogonality" language replaced with the measured 2×2
+  throughout.
+- Other round-2 fixes: gate threshold made explicit (reject ≥1; cap-8 is display-only —
+  retro analysis used the identical predicate); CI caveat (episode-level intervals are
+  optimistic; n=25 cluster bound given); local 72% quarantined alongside hosted 94%
+  (both ~4× field; internal paired comparisons survive — now said explicitly);
+  lsps-for-llms citation disambiguated (imperative-prompt arm hurt; gate arm won on
+  seeded defects — billability rule covers both); contamination reframed to lead with
+  the 0.39→0.62 shift (level confounded by task mechanicalness); local-8h skip given
+  its honest reason (multi-day at 15 tok/s; retro-gate establishes mechanism without
+  the arm); follow-up order flipped — reference-model harness control (GLM-5, cheapest)
+  first, perturbation second; §5/§7 headings unwrapped.
