@@ -47,38 +47,28 @@ Companion to PLAN.md — what actually happened and every deviation, so results 
 
 | Run | Arm | Host | Status |
 |-----|-----|------|--------|
-| s1-arm-a-r1 | A baseline | chunklebox | **DONE: 19/25 (76%) golden-valid** (4 golden-invalid: transformers-38788, dspy-9193, dspy-1801, langextract-239 — proxy) |
-| s1-arm-b-r1 | B lsp-available | leejr | **DONE: 18/24 (75%); 0 lsp calls in 29 episodes** |
-| s1-arm-c-r1-pilot | C lsp-preferred (weak phrasing) | chunklebox | STOPPED after wave 1: 0 lsp calls in 5 episodes — inert manipulation; archived |
-| s1-arm-c2-r1 | C2 lsp-preferred (imperative, workflow-integrated — `agent/arm_c2.yaml`) | chunklebox | **DONE: 16/25 (64%); 21 lsp calls (all `diag`), 16/29 episodes** |
-| s1-arm-a-r2 | A round 2 | leejr | **DONE: 17/25 (68%)** |
-| s1-arm-b-r2 | B round 2 | chunklebox | **DONE: 17/25 (68%); 0 lsp calls** |
-| s1-arm-c2-r2 | C2 round 2 | leejr | **DONE: 18/25 (72%)** |
-| s1-arm-d-r1 | D type-check acceptance gate | chunklebox | **DONE: 13/25 (52%)** |
-| s1-arm-d-r2 | D round 2 | leejr | **DONE: 16/25 (64%)** |
+| s1-arm-a-r1 | A baseline | chunklebox | 19/25 (76%) — 4 golden-invalid: transformers-38788, dspy-9193, dspy-1801, langextract-239 (proxy) |
+| s1-arm-b-r1 | B lsp-available | leejr | 18/24 (75%); 0 lsp calls in 29 episodes|
+| s1-arm-c-r1-pilot | C lsp-preferred (weak phrasing) | chunklebox | stopped after wave 1: 0 lsp calls in 5 episodes (inert manipulation) |
+| s1-arm-c2-r1 | C2 lsp-preferred (imperative, workflow-integrated — `agent/arm_c2.yaml`) | chunklebox | 16/25 (64%); 21 lsp calls (all `diag`), 16/29 episodes|
+| s1-arm-a-r2 | A round 2 | leejr | 17/25 (68%)|
+| s1-arm-b-r2 | B round 2 | chunklebox | 17/25 (68%); 0 lsp calls|
+| s1-arm-c2-r2 | C2 round 2 | leejr | 18/25 (72%)|
+| s1-arm-d-r1 | D type-check acceptance gate | chunklebox | 13/25 (52%)|
+| s1-arm-d-r2 | D round 2 | leejr | 16/25 (64%) |
+| s1-arm-d2-r1 | D2 silent soft gate | chunklebox | 16/25 (64%)|
+| s1-arm-d2-r2 | D2 round 2 | leejr | 16/25 (64%) |
+| s1h-arm-a-r1 | A hosted (OpenRouter, 8h wall) | chunklebox | 24/25 (96%) |
+| s1h-arm-a-r2 | A hosted round 2 | leejr | 23/25 (92%) |
+| s1h-arm-d2-r1 | D2 hosted | chunklebox | 23/25 (92%) |
+| s1h-arm-d2-r2 | D2 hosted round 2 | leejr | 19/25 (76%) |
 
-| s1-arm-d2-r1 | D2 silent soft gate | chunklebox | **DONE: 16/25 (64%)** |
-| s1-arm-d2-r2 | D2 round 2 | leejr | **DONE: 16/25 (64%)** |
+**Final rates (2 rounds each, golden-valid): local A 72%, B 71%, C2 68%, D 58%, D2 64%;
+hosted A 94%, D2 84%.** Local gate-arm deficits are partly attributable to the 2-hour
+`container_timeout` wall (deaths: A 4, B 7, C2 10, D 13, D2 16); the hosted pair, run
+with an 8h wall, had zero wall deaths. Full analysis, paired statistics, and the gate
+2×2 are in REPORT.md; chronology in LABNOTES.md.
 
-**STAGE 1 FINAL (2 rounds each): A 72%, B 71%, C2 68%, D 58%, D2 64%. Only significant
-paired difference: A>D (7-vs-0, sign p≈0.016) — but see LABBOOK 2026-08-27: the 2-hour
-`container_timeout` wall kills long episodes mid-flight (deaths: A 4, B 7, C2 10, D 13,
-D2 16) and partially explains the gate arms' deficits. Decision pending: accept-and-
-document vs re-run A/D2 with an 8h wall.**
-
-Analysis: paired per-instance resolve matrix, McNemar A↔B and B↔C; manipulation check =
-`lsp` invocation counts in trajectories (B vs C); secondary: steps, tokens, files-modified
-vs gold. Golden-invalid instances excluded per harness convention.
-
-### Early wave-1 observations (2026-08-23)
-
-- Arm A wave 1: 4/4 resolved on golden-valid python (albumentations ×2, deepeval ×2);
-  audited one pass — genuine (real multi-file patch, suite green). transformers-38788 and
-  dspy-9193 golden-invalid as expected.
-- **Arm B wave 1: 0 `lsp` calls in 539 commands across 4 episodes** — tool docs verified
-  present in the prompt. Mere availability → zero adoption on this model (replicates
-  arXiv:2608.13568's unprompted-usage finding). Arm B is effectively a negative control;
-  Arm C (preference instruction) is the decisive arm. Arm B also 0/2 on its golden-valid
-  wave-1 instances vs Arm A 2/2 on the same two (small-n, watch).
-- (Correction: an earlier live-container "daemon running" check was a self-matching grep
-  artifact — no daemon had run.)
+Analysis conventions: paired per-instance two-round scores on the intersection of
+golden-valid sets (exact sign tests); manipulation checks = `lsp` invocation counts from
+trajectories; golden-invalid instances excluded per harness convention.

@@ -7,26 +7,26 @@ OpenRouter fp8 hosted)
 
 ## TL;DR
 
-- **Provisioning LSP navigation to this model did nothing, at any instruction strength**
-  — 1 navigation call in ~180 tool-equipped episodes. What the data shows is
-  *non-adoption*, not mechanistic uselessness: the completeness tool (`lsp refs`) targets
-  exactly the measured failure mode, and the agent never picks it up (§4–5).
-- **Type-check acceptance gates didn't help and probably hurt**: three same-direction
-  point estimates (−14 local hard, −8 local soft, −10 hosted soft); only the local hard
-  gate is nominally significant, and it is partly a fail-closed design artifact (§6).
-  Retroactive 2×2 measurement: the gate would have rejected **35% (29/83) of patches
-  that passed the full test suite, versus only 14% (2/14) of failing ones** — no evidence
-  of discriminative value, with the point estimate inverted. Mechanism: failures here are
-  *incomplete* patches, and unwritten code emits no type errors.
-- **Two transferable harness findings** (see also `HARNESS-NOTES.md`): mini-swe-agent's
-  default 2h `container_timeout` silently kills long episodes and masquerades as step-cap
-  exhaustion (§6.5); and the same model/scaffold/instances scored **72% local vs 94%
-  hosted** — serving configuration and reasoning-effort defaults move this benchmark more
-  than any intervention we tested (§7).
-- The hosted 94% is an **anomaly requiring validation, not a headline**: it is 5× the
-  best published number for this subset/scaffold, and hosted resolved patches overlap
-  gold added-lines at 0.62 mean (18/47 > 0.75) — close to reproduction on 11-file
-  refactors (§7).
+- **The central finding: the dominant failure mode — incomplete refactoring — is
+  invisible to a type checker.** Traces show the agent finds the right files instantly
+  (edit precision ≈1.0) but covers only ~⅓ of the needed set when it fails; and because
+  unwritten code emits no diagnostics, a delta-scoped type gate flags *passing* patches
+  more often than failing ones (35% vs 14%). The tool most aimed at this failure
+  (`lsp refs`) is the one the agent never voluntarily uses (§4–6).
+- **Provisioning LSP navigation did nothing at any instruction strength** — 1 navigation
+  call in ~180 tool-equipped episodes; only verification-shaped asks (`lsp diag`) get
+  compliance. This is non-adoption, not evidence the tools are mechanistically useless
+  (§4–5).
+- **Type-check acceptance gates didn't help and probably hurt**: −14 (local hard), −8
+  (local soft), −10 (hosted soft) — one nominally significant, wall-confounded; the
+  clean hosted comparison is a non-significant −10; the 2×2 above explains the
+  economics (§6).
+- Validity notes: both headline rates (72% local / 94% hosted) are ~4–5× the published
+  field for this subset+scaffold and are treated as unvalidated pending a
+  reference-model harness control; the paired intervention comparisons are unaffected.
+  The local/hosted gap itself traced to local serving implementation (effort knob +
+  stack) — an aside for this study, written up separately in `HARNESS-NOTES.md`
+  alongside the 2h-container-wall pitfall (§7).
 
 ## 1. Setup
 
@@ -215,46 +215,35 @@ local decode the wall binds hard; at API speeds it doesn't (hosted, 8h: 0 deaths
 runs). Any slow-serving agent evaluation on mini-swe-agent defaults should audit this
 before interpreting step-cap statistics. See `HARNESS-NOTES.md`.
 
-## 7. The local/hosted gap dwarfs every intervention; both headline rates need validation
+## 7. Validity: the headline rates need external validation; the serving gap is an aside
 
-Hosted A resolved 94% vs local A 72% on identical instances, prompts, and scaffold. The
-wall fix explains ~2 slots. We could not separate the remaining suspects: (a) local
-serving quality loss (DSpark speculative decoding, fp8 KV cache, sm121 triton kernels);
-(b) hosted default **xhigh** reasoning vs local pinned medium (the effort knob does not
-pass through OpenRouter — verified). A local xhigh run would separate them; at local
-decode speeds with xhigh thinking volumes it is a multi-day run and was not prioritized.
+Local A resolved 72% [58–83] and hosted A 94% [84–98] — roughly 4–5× the best published
+number for this subset and scaffold (§8). The correct prior for a gap that size is a
+measurement or setup difference, not a 5× better model. Static checks (same harness,
+eval scripts, images, step cap, dataset revision) all match the paper; none of that is
+an empirical control. **The decisive check is a reference-model run**: one of the
+paper's tied models (GLM-5 is cheapest) through this exact pipeline for one round —
+~17% validates the harness; much higher collapses every headline rate here to
+internally-paired evidence only. That is follow-up #1 (not yet run; requires an
+OpenRouter top-up). The **paired intervention comparisons are unaffected** either way —
+identical harness and instances on both sides of every pair.
 
-**Why both headline rates demand validation before belief** (local 72% is itself ~4×
-the published field, lower CI bound still ~3×): it is ~5× the best published number
-for this subset and scaffold (§8). The correct prior for a 5× gap is a measurement
-difference, not a 5× better model. What we have checked: same eval harness and eval
-scripts as the paper's repo, same images, same 300-step cap, same dataset revision;
-golden-validation drops (our denominator excludes 4 instances that fail their own gold
-patch on our network — the paper's infra would not drop these; on an all-29 denominator
-hosted A is 90%, still ~5×). Everything in that list is static configuration comparison; none of it is an empirical
-control. **The decisive check is a reference-model run**: push one of the paper's tied
-models (GLM-5 is the cheapest) through this exact pipeline for one round. ~17% validates
-the harness and isolates the anomaly to the model; a much higher number means our
-harness scores differently and every headline rate here — local and hosted — collapses
-to internally-paired evidence only. This is follow-up #1; the perturbation test below is
-#2 (it addresses contamination, not harness comparability). Not yet run: OpenRouter
-balance (~$16) does not cover it comfortably.
+**Contamination is the leading model-side candidate.** All 29 instances' source commits
+(2025-02 → 2026-01) predate the model's 2026-08 release. The informative signal is the
+shift: on identical instances under identical scoring, resolved-patch gold overlap moves
+from 0.39 (local, medium effort) to 0.62 (hosted, default xhigh), with 18/47 hosted
+patches above 0.75 and one verbatim reproduction (transformers-38332). The absolute
+level is confounded by task mechanicalness (propagation refactors admit few distinct
+correct solutions), but mechanicalness is constant across the comparison — "longer
+thinking retrieves memorized commits" fits the shift. A symbol/path perturbation re-run
+is follow-up #2.
 
-**Contamination is the leading candidate for the model-side gap.** All 29 instances'
-source commits (2025-02 → 2026-01) predate the model's 2026-08 release. The informative
-signal is the **shift**: on identical instances under identical scoring, resolved-patch
-gold overlap moves from 0.39 (local, medium effort) to 0.62 (hosted, xhigh) — with
-18/47 hosted patches above 0.75 and one verbatim 1.00 (transformers-38332). The absolute
-level is weaker evidence than it looks — mechanical propagation refactors admit few
-distinct correct solutions, so high overlap partly reflects task mechanicalness — but
-task mechanicalness is constant across the local/hosted comparison, and "longer thinking
-retrieves memorized commits" fits the shift. We note the
-weaknesses of our own counter-evidence: the no-date-gradient observation has no power
-(every instance is inside the contamination window — there is no control arm), and
-"the paper's 2026 models saw the same commits" assumes cross-lab uniformity of training
-data, which is exactly what can't be assumed. The decisive cheap test is **perturbation**:
-rename symbols / move paths on 5–8 instances and re-run hosted A (≈$35–50 at xhigh; the
-current OpenRouter balance (~$16) doesn't cover it — flagged as the first follow-up).
+**The local/hosted gap (72% → 94% on identical everything else) is, for this study's
+question, an implementation aside**: it says nothing about LSPs or refactoring — it says
+our local serving stack (and a reasoning-effort knob that silently fails to pass through
+OpenRouter) understated the model by ~20 points. It matters operationally — calibrate a
+local stack against a reference endpoint before attributing anything to interventions —
+and is written up with the container-wall finding in `HARNESS-NOTES.md`.
 
 ## 8. Benchmark notes (SWE-Bench ProMax, python subset)
 
@@ -274,11 +263,11 @@ current OpenRouter balance (~$16) doesn't cover it — flagged as the first foll
    completeness) is real and measured, but its tooling value is untested because
    adoption never happened (§5). Forced integration or training are the remaining
    levers.
-2. Type-check gating in test-scored, dynamically-typed settings: no variant helped, all
-   trended negative, and the measured 2×2 explains why: a 35% false-block
-   rate on passing patches against a 14% flag rate on failing ones — the checker's
-   signal is uncorrelated-to-inverted with the scoring criterion, because the dominant
-   failure (incomplete refactoring) is invisible to it. Reserve gates for
+2. **Incomplete refactoring is the dominant failure mode, and it produces no type
+   errors** — the study's central observation. Consequently type-check gating in
+   test-scored, dynamically-typed settings showed no benefit and trended negative in
+   every variant: the gate flagged 35% of passing patches vs 14% of failing ones.
+   Reserve gates for settings where diagnostics are billable under the task's scoring. Reserve gates for
    settings where type cleanliness is part of the acceptance criterion.
 3. Audit hidden harness budgets (container lifetime vs decode speed) before trusting
    step-cap statistics; quantify your serving stack against a reference endpoint before

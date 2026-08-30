@@ -1,3 +1,6 @@
+> Historical planning document, written before execution; kept verbatim apart from
+> formatting. Outcomes and deviations are in REPORT.md and NOTES.md.
+
 # SWE-Bench ProMax × Qwen3.8-27B × LSP tools — experiment plan
 
 **Question:** Does giving a local open-weight coding agent (Qwen3.8-27B on this GB10) LSP tools —
@@ -88,8 +91,8 @@ file:line locations**. That finding drives the tool design below.
 
 | # | Severity | Mismatch | Mitigation |
 |---|----------|----------|------------|
-| M1 | ~~Critical~~ **solved by lab** | All 170 instance images are **amd64-only**; the GB10 is **aarch64**. Rollout *and* eval run inside these containers. | Run containers natively on the lab x86 hosts (`cortical` primary) with the GB10 serving the model over the LAN — see D3. No emulation, no cloud. Residual task: install Docker on cortical. |
-| M2 | ~~High~~ **mostly solved** | 317 GB compressed images (likely 600–900 GB uncompressed) vs 111 GB free on spark; plus 29 GB model + ~15 GB serving stack. | Spark only needs the model + serving stack now (fits easily). Images live on the x86 hosts: cortical's 409 GB holds large batches; NAS tar cache (`/mnt/nas`, 6.8 TB free) means each image is pulled from Docker Hub once ever. Still batch + `docker rmi` on chunklebox/leejr (147/80 GB free). Spark cleanup candidates (*for Ian to move to NAS, not doing this unilaterally*): `~/models/ttblt_v3` 285 GB, dsv4 GGUFs 87 GB. |
+| M1 | Critical (resolved: lab topology) | All 170 instance images are **amd64-only**; the GB10 is **aarch64**. Rollout *and* eval run inside these containers. | Run containers natively on the lab x86 hosts (`cortical` primary) with the GB10 serving the model over the LAN — see D3. No emulation, no cloud. Residual task: install Docker on cortical. |
+| M2 | High (resolved: NAS cache + waves) | 317 GB compressed images (likely 600–900 GB uncompressed) vs 111 GB free on spark; plus 29 GB model + ~15 GB serving stack. | Spark only needs the model + serving stack now (fits easily). Images live on the x86 hosts: cortical's 409 GB holds large batches; NAS tar cache (`/mnt/nas`, 6.8 TB free) means each image is pulled from Docker Hub once ever. Still batch + `docker rmi` on chunklebox/leejr (147/80 GB free). Spark cleanup candidates (*for Ian to move to NAS, not doing this unilaterally*): `~/models/ttblt_v3` 285 GB, dsv4 GGUFs 87 GB. |
 | M3 | **High** | Wall-clock: ~273 GB/s bandwidth → est. 15–25 tok/s single-stream decode (FP8). Thinking tokens dominate. | fp8 weights + fp8 KV, `reasoning_effort: medium`, 4–8 concurrent episodes (batched aggregate est. 60–120 tok/s), MTP speculative decoding if the stack supports it. Estimates in §6; measured in Phase 1 before committing to full runs. |
 | M4 | Medium | Model is 8 days old; NVIDIA's DGX-Spark vLLM/SGLang container images may not support the hybrid GDN architecture yet on aarch64/CUDA 13. | Try in order: (1) SGLang recent build (day-0 Qwen3.8 support), (2) vLLM nightly, (3) llama.cpp GGUF (proven on Spark; sufficient because the scaffold is text-only). Phase 0 task with a hard timebox. |
 | M5 | Medium | Paper baselines exist only for frontier/large-MoE models; and paper omits sampling temperature. | Compare against Qwen3.5-MoE mini-swe-agent 20.6% as an upper anchor; document our sampling (model-card defaults) and reasoning effort as protocol deviations. |

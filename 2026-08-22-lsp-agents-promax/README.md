@@ -15,27 +15,23 @@ rate with paired two-round runs per arm.
 
 ## Headline results
 
-- **The model never adopts navigation tools, at any instruction strength** — 1 `lsp refs`
-  call in ~180 tool-equipped episodes (only verification-shaped `lsp diag` asks get
-  compliance). Traces show entry-point localization is already instant (gold file by step
-  ~2, edit precision ≈1.0) while failures are reference-completeness recall (~⅓ of needed
-  files) — i.e. **the one thing the tool is demonstrably good for is the one thing the
-  agent won't use it for**. Whether that's ask-shape, grep familiarity, or trigger
-  density is untested.
-- **Type-check acceptance gates didn't help and probably hurt**: A 72% · B 71% · C2 68% ·
-  D (hard gate) 58% (p≈0.016 nominal, ≈0.08 Holm; wall-confounded) · D2 (silent soft)
-  64% · hosted (clean, wall-free): A 94% vs D2 84% (n.s.). Retroactive 2×2: the gate
-  would have rejected 35% of test-passing patches vs 14% of failing ones — its signal is
-  uncorrelated-to-inverted with the score, because the dominant failure (incomplete
-  refactoring) emits no type errors.
-- **Two transferable harness findings** (`HARNESS-NOTES.md`): mini-swe-agent's default 2h
-  `container_timeout` kills long episodes mid-flight and masquerades as step-cap
-  exhaustion (deaths monotone in episode length, A 4 → D2 16; zero after the 8h fix);
-  and the local/hosted serving gap (72% vs 94%, same everything else) dwarfs every
-  intervention tested.
-- The hosted 94% is treated as an **unvalidated anomaly** (5× the published field for
-  this subset/scaffold; hosted resolved patches overlap gold at 0.62 mean, 18/47 > 0.75
-  — close to reproduction). Decisive next step: symbol/path perturbation re-run.
+- **The dominant failure mode — incomplete refactoring — is invisible to a type
+  checker.** The agent localizes instantly (gold file by step ~2, edit precision ≈1.0)
+  but failed episodes cover only ~⅓ of the needed files; since unwritten code emits no
+  diagnostics, a delta-scoped Pyrefly gate flagged *passing* patches at 35% vs *failing*
+  ones at 14%. The tool aimed at exactly this failure (`lsp refs`) is the one the agent
+  never voluntarily used.
+- **Navigation tools go unadopted at any instruction strength** — 1 `lsp refs` call in
+  ~180 tool-equipped episodes; only verification-shaped `lsp diag` asks get compliance
+  (non-adoption, not mechanistic uselessness; grep-familiarity and trigger-density
+  confounds untested).
+- **Acceptance gates didn't help and probably hurt**: A 72% · B 71% · C2 68% · D 58% ·
+  D2 64% local; hosted (wall-free): A 94% vs D2 84% (n.s.). The 2×2 above explains the
+  economics.
+- Both headline rates are ~4–5× the published field for this subset/scaffold and are
+  treated as unvalidated pending a reference-model harness control; paired comparisons
+  are unaffected. Two operational asides — mini-swe-agent's 2h container wall and a
+  ~20-point local-serving understatement — are in `HARNESS-NOTES.md`.
 
 ## Contents
 
