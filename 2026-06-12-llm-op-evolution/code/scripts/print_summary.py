@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Print a compact summary table from results/metrics.json."""
+"""Print a compact summary table from results/metrics.json.
+
+Usage: print_summary.py [path/to/metrics.json]
+"""
 
 from __future__ import annotations
 
@@ -11,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def main() -> int:
-    metrics_path = ROOT / "results" / "metrics.json"
+    metrics_path = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "results" / "metrics.json"
     if not metrics_path.exists():
         print(f"No metrics at {metrics_path}", file=sys.stderr)
         return 1

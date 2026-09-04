@@ -1,7 +1,7 @@
 # LLM Operator-Graph Density: Results & Interpretation
 
-This directory contains the exported FX-graph metrics and figures for the
-`llm-op-evolution` study. The goal is to track how the *frontend complexity* of
+`results/` contains the exported FX-graph metrics and figures for the
+`llm-op-evolution` study; `code/` the pipeline that produced them. The goal is to track how the *frontend complexity* of
 open causal language models has changed from 2022 to 2026, measured through the
 lens of PyTorch Core ATen operators.
 
@@ -23,8 +23,8 @@ It is a structural measure of graph density / architectural complexity.
 
 ## Dataset
 
-22 open models spanning April 2022 to May 2026 (see `summary.txt` and
-`metrics.json`). The manifest is in `config/models.yaml`.
+22 open models spanning April 2022 to May 2026 (see `results/summary.txt` and
+`results/metrics.json`). The manifest is in `code/config/models.yaml`.
 
 Notable recent additions:
 
@@ -189,13 +189,15 @@ The scatter of density vs. heterogeneity shows three clusters:
 
 ## Reproducing
 
+From `code/` (see `code/README.md`):
+
 ```bash
 # Export all models, analyze mechanisms, and regenerate figures
-HF_HUB_ENABLE_HF_TRANSFER=0 python scripts/run_analysis.py --device cuda
-python scripts/analyze_mechanisms.py
-python scripts/run_analysis.py --plot-only
+HF_HUB_ENABLE_HF_TRANSFER=0 python scripts/run_analysis.py --device cuda --output ../results
+python scripts/analyze_mechanisms.py --output ../results
+python scripts/run_analysis.py --plot-only --output ../results
 
 # Regenerate figures from existing metrics.json
-python scripts/analyze_mechanisms.py
-python scripts/run_analysis.py --plot-only
+python scripts/analyze_mechanisms.py --output ../results
+python scripts/run_analysis.py --plot-only --output ../results
 ```
