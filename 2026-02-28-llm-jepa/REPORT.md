@@ -121,18 +121,18 @@ Directions that might have more traction:
 ## Project Structure
 
 ```
-src/
+code/src/
   extract_states.py    — Batched hidden state extraction from Qwen3-4B
   analysis.py          — Cosine similarity, PCA, linear probe analysis
   mlp_probe.py         — MLP probe diagnostic (linear vs nonlinear)
   train_jepa.py        — Phase 1: JEPA predictor training + baselines
   inject_jepa.py       — Phase 2: Injection during decoding + evaluation
 
-experiments/
-  jepa_phase1/         — JEPA checkpoints and results
-  jepa_phase2/         — Injection experiment results (JSON + per-example JSONL)
+results/
+  jepa_phase1/         — JEPA training results (checkpoints not committed)
+  jepa_phase2/         — Injection experiment results (per-example JSONL not committed)
 
-EXPERIMENT_PLAN.md     — Original 4-phase plan
-EXPERIMENT_LOG.md      — Detailed log of all experiments with results
+PLAN.md                — Original 4-phase plan
+LABNOTES.md            — Detailed log of all experiments with results
 GUIDELINES.md          — Working discipline and go/no-go criteria
 ```
