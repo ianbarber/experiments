@@ -1,0 +1,138 @@
+diff --git a/extensions/utlx/uTLXPlugin.cpp b/extensions/utlx/uTLXPlugin.cpp
+index 2fcf36a..c613618 100644
+--- a/extensions/utlx/uTLXPlugin.cpp
++++ b/extensions/utlx/uTLXPlugin.cpp
+@@ -308,6 +308,62 @@ static void createBarrierExpect(TritonOpBuilder &self,
+ 
+ // Named barrier ops are now handled by runtime op wrappers in ops/NewOps.cpp
+ 
++// The verifier requires the !tt.tensordesc block type to carry the same
++// shared encoding as the SMEM buffer (it also drives the tensormap swizzle).
++// Plain tl.make_tensor_descriptor leaves sharedLayout null, so stamp the
++// buffer's encoding onto the descriptor's type (Gluon descs are born encoded).
++static void alignDescLayoutToMem(mlir::Value desc, mlir::Value mem) {
++  auto descTy = llvm::dyn_cast<mlir::triton::TensorDescType>(desc.getType());
++  auto memTy = llvm::dyn_cast<ttg::MemDescType>(mem.getType());
++  if (!descTy || !memTy || !memTy.getEncoding() || descTy.getSharedLayout())
++    return;
++  desc.setType(mlir::triton::TensorDescType::get(
++      descTy.getShape(), descTy.getElementType(), memTy.getEncoding()));
++}
++
++// --- utlx_async_TMA_load: upstream ttng.async_tma_copy_global_to_local ---
++// operands: [result slot, desc, barrier, result memdesc, pred, coord...]
++static void createAsyncTMALoadUpstream(TritonOpBuilder &self,
++                                       std::vector<mlir::Value> &operands) {
++  if (operands.size() < 6)
++    return;
++  mlir::Value desc = operands[1];
++  mlir::Value barrier = operands[2];
++  mlir::Value result = operands[3];
++  mlir::Value pred = operands[4];
++  alignDescLayoutToMem(desc, result);
++  llvm::SmallVector<mlir::Value> coord(operands.begin() + 5, operands.end());
++  self.create<ttng::AsyncTMACopyGlobalToLocalOp>(
++      desc, coord, mlir::ValueRange{}, barrier, result, pred,
++      /*multicast=*/false);
++}
++
++// --- utlx_async_TMA_store: upstream ttng.async_tma_copy_local_to_global ---
++// operands: [result slot, desc, src memdesc, coord...]
++static void createAsyncTMAStoreUpstream(TritonOpBuilder &self,
++                                        std::vector<mlir::Value> &operands) {
++  if (operands.size() < 4)
++    return;
++  mlir::Value desc = operands[1];
++  mlir::Value src = operands[2];
++  alignDescLayoutToMem(desc, src);
++  llvm::SmallVector<mlir::Value> coord(operands.begin() + 3, operands.end());
++  self.create<ttng::AsyncTMACopyLocalToGlobalOp>(desc, coord, src);
++}
++
++// --- utlx_async_TMA_store_wait: upstream ttng.async_tma_store_wait ---
++// operands: [result slot, pendings (const i32)]
++static void createAsyncTMAStoreWaitUpstream(
++    TritonOpBuilder &self, std::vector<mlir::Value> &operands) {
++  if (operands.size() < 2)
++    return;
++  auto pendings = extractConstantInt(operands[1]);
++  if (!pendings)
++    return;
++  self.create<ttng::TMAStoreWaitOp>(static_cast<int>(*pendings),
++                                    /*readOnly=*/false);
++}
++
+ // --- utlx_storage_alias_spec: Create a storage alias specification ---
+ static void createStorageAliasSpec(TritonOpBuilder &self,
+                                    std::vector<mlir::Value> &operands) {
+@@ -648,6 +704,50 @@ static void addStorageAliasLoweringPass(mlir::PassManager *pm,
+ 
+ static void noopRegister() {}
+ 
++// --- utlx_set_ws_requested_regs: re-stamp explicit requestedRegisters on
++// ttg.warp_specialize AFTER upstream's OptimizePartitionWarps clobbers them
++// with its hardcoded estimates (estRegs = tensorRegs ? 88 : 24). Run at the
++// end of make_ttgir so AllocateWarpGroups sees the kernel's true requests.
++namespace {
++struct SetWSRequestedRegs
++    : public mlir::PassWrapper<SetWSRequestedRegs,
++                               mlir::OperationPass<mlir::ModuleOp>> {
++  MLIR_DEFINE_EXPLICIT_INTERNAL_INLINE_TYPE_ID(SetWSRequestedRegs)
++  llvm::SmallVector<int32_t> regs;
++  SetWSRequestedRegs() = default;
++  SetWSRequestedRegs(const SetWSRequestedRegs &o)
++      : mlir::PassWrapper<SetWSRequestedRegs,
++                          mlir::OperationPass<mlir::ModuleOp>>(o),
++        regs(o.regs) {}
++  explicit SetWSRequestedRegs(llvm::ArrayRef<int32_t> r)
++      : regs(r.begin(), r.end()) {}
++  llvm::StringRef getArgument() const override {
++    return "utlx-set-ws-requested-regs";
++  }
++  llvm::StringRef getDescription() const override {
++    return "restore explicit warp_specialize requestedRegisters";
++  }
++  void runOnOperation() override {
++    getOperation().walk([&](mlir::triton::gpu::WarpSpecializeOp op) {
++      if (regs.size() == op.getPartitionNumWarps().size())
++        op.setRequestedRegisters(regs);
++      else
++        llvm::errs() << "utlx_set_ws_requested_regs: arg count "
++                     << regs.size() << " != partitions "
++                     << op.getPartitionNumWarps().size() << ", skipping\n";
++    });
++  }
++};
++} // namespace
++
++static void addSetWSRequestedRegsPass(mlir::PassManager *pm,
++                                      const std::vector<std::string> &args) {
++  llvm::SmallVector<int32_t> regs;
++  for (const auto &a : args)
++    regs.push_back(std::atoi(a.c_str()));
++  pm->addPass(std::make_unique<SetWSRequestedRegs>(regs));
++}
++
+ // --- Ported NVIDIA passes ---
+ static void addPruneUnusedBarriersPass(mlir::PassManager *pm,
+                                        const std::vector<std::string> &) {
+@@ -708,6 +808,8 @@ TRITON_PLUGIN_API plugin::PluginInfo *tritonGetPluginInfo() {
+        registerPropagateLayoutPass},
+       {"utlx_insert_require_layout", TRITON_EXT_VERSION,
+        addInsertRequireLayoutPass, noopRegister},
++      {"utlx_set_ws_requested_regs", TRITON_EXT_VERSION,
++       addSetWSRequestedRegsPass, noopRegister},
+       {"utlx_rewrite_local_alias", TRITON_EXT_VERSION, addRewriteLocalAliasPass,
+        noopRegister},
+       {"utlx_resolve_placeholder_layouts", TRITON_EXT_VERSION,
+@@ -763,6 +865,10 @@ TRITON_PLUGIN_API plugin::PluginInfo *tritonGetPluginInfo() {
+       {"utlx_clc_query_cancel", utlx::createCLCQueryCancel},
+       {"utlx_vote_ballot_sync", utlx::createVoteBallotSync},
+       {"utlx_async_tma_prefetch", utlx::createAsyncTMAPrefetch},
++      // Upstream-op TMA path (ttng.async_tma_copy_*; fork-free on mainline)
++      {"utlx_async_TMA_load", createAsyncTMALoadUpstream},
++      {"utlx_async_TMA_store", createAsyncTMAStoreUpstream},
++      {"utlx_async_TMA_store_wait", createAsyncTMAStoreWaitUpstream},
+       {"utlx_named_barrier_arrive", utlx::createNamedBarrierArrive},
+       {"utlx_named_barrier_wait", utlx::createNamedBarrierWait},
+       // New AMD ops (runtime op creation)
