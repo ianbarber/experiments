@@ -1,134 +1,48 @@
-# NVFP4 blockscaled GEMM on upstream Triton via plugin extensions
+# NVFP4 blockscaled GEMM on unforked upstream Triton via plugin extensions (GB10)
 
-A warp-specialized, TMA-fed, K-split NVFP4 (FP4 + UE4M3 block scales) GEMM
-for consumer Blackwell (GB10 / sm_121), written in Triton TLX ops and running
-on **unforked upstream Triton** through the
-[Triton Plugin Extensions](https://pytorch.org/blog/triton-plugin-extensions-enabling-tlx-and-custom-compiler-passes-out-of-the-box/)
-architecture. It replicates the schedule of the Colfax CUTLASS recipe —
-["NVFP4 Blockscaled GEMM on NVIDIA RTX Pro Blackwell GPUs (SM12x)"](https://research.colfax-intl.com/cutlass-tutorial-nvfp4-blockscaled-gemm-on-nvidia-rtx-pro-blackwell-gpus-sm12x/)
-(CUTLASS example 79b: TMA + warp-specialized blockscaled mainloop + register
-reallocation) — without Meta's experimental Triton fork.
+**Date:** 2026-07-24 (packaged end-state of NVFP4/TLX work running 2026-04 → 2026-07) ·
+**Machine:** DGX Spark — NVIDIA GB10, sm_121, 48 SMs, CUDA 13, upstream Triton `release/3.8.x`
+source-built with `TRITON_EXT_ENABLED=ON`
 
-Measured back-to-back in one session on GB10 (sm_121), so all three columns
-see the same GPU/thermal state. "CUTLASS 79b" is the exact kernel the Colfax
-post builds (CUTLASS `examples/79_blackwell_geforce_gemm`, 79b NVFP4×NVFP4
-binary); "cuBLAS NVFP4" is `torch._scaled_mm` on the same fp4/e4m3 inputs.
-This kernel is bit-exact vs plain `tl.dot_scaled` (see `verify.py`).
+## Brief
 
-| shape | this kernel | CUTLASS 79b (Colfax) | cuBLAS NVFP4 | % of CUTLASS |
-|---|--:|--:|--:|--:|
-| 2048³ | 264 TF | 299 | 298 | 88% |
-| 4096³ | 315 TF | 389 | 348 | 81% |
-| 8192×8192×4096 | 219 TF | 374 | 327 | 59% |
+Can the Colfax CUTLASS SM12x NVFP4 recipe (example 79b: TMA producer, warp-specialised
+blockscaled mainloop, register reallocation) be expressed in Triton TLX ops and run on
+*unforked upstream Triton* through the plugin-extension ABI, without Meta's fbtriton fork?
 
-Run-to-run numbers move a few percent with GPU thermal state (we have seen
-this kernel at 262–334 TF at 4096³ across sessions); comparisons within one
-table row are the meaningful ones. The same kernel compiled on the fbtriton
-fork lands at parity (within that noise) — every fork-only ingredient
-(warp-spec, TMA descriptor ops, register realloc) rides the plugin/patch
-stack instead.
+The kernel is a persistent, TMA-fed, K-split, warp-specialised NVFP4 (FP4 × UE4M3 block
+scales) GEMM. Everything fork-only rides `libutlx.so` (triton-ext plus a small patch), the
+`triton-utlx` DSL fetched from the PyPI wheel, and a runtime patch module.
 
-## Architecture (what runs where)
+## Headline results
 
-```
-upstream triton (source, TRITON_EXT_ENABLED=ON)      ← never modified
-  └─ libutlx.so           out-of-tree plugin (triton-ext + small patch):
-                          TLX dialect/ops/passes, upstream-op TMA wrappers,
-                          warp-spec register-restore pass
-  └─ utlx_py/             triton-utlx wheel Python (fetched + 2 tiny patches)
-  └─ tlx_upstream_patch   runtime patches: visit_With dispatch for
-                          tlx.async_tasks, GluonOpBuilder swap (exposes the
-                          gluon-only create_* surface to @triton.jit codegen),
-                          WS codegen for upstream's ttg.warp_specialize,
-                          explicit-layout local_load, + compat bridges
-  └─ kernel/nvfp4_ws_ksplit.py   the GEMM (structure below)
-```
+- Bit-exact against plain `tl.dot_scaled`, and at parity (within thermal noise) with the
+  same kernel compiled on the fbtriton fork.
+- Same-session GB10 numbers: **264 TF** at 2048³ (88% of CUTLASS 79b), **315 TF** at
+  4096³ (81%), **219 TF** at 8192×8192×4096 (59%); cuBLAS NVFP4 (`torch._scaled_mm`)
+  298 / 348 / 327 on the same inputs. Run-to-run drift of a few percent with thermal
+  state (262–334 TF seen at 4096³ across sessions).
+- Upstream already ships the sm_12x `mxf4nvf4` MMA lowering, `ttg.warp_specialize` with
+  `setmaxnreg`, TMA ops and the plugin ABI. Three gaps had to be bridged, each a
+  candidate upstream change: no `with`-statement dispatch hook in the code generator;
+  TMA-descriptor / warp-specialise / memdesc-slice builder methods bound only on the
+  Gluon builder; `OptimizePartitionWarps` overwriting explicit per-partition register
+  requests.
+- Register economy *is* the schedule: launch `maxnreg=168`, producer 24 / consumers
+  232–248 registers per thread, zero spills, with a plugin pass re-stamping the requests
+  after upstream's optimiser.
+- The remaining ~17% gap to CUTLASS at 4096³ is the operand-B shared-memory restage
+  that CUTLASS's co-designed swizzle avoids; wide-N shapes collapse to ~97 TF from
+  tile-order / persistent-scheduler tuning, identically on the fork.
 
-Kernel structure (mirrors the CUTLASS mainloop):
+## Contents
 
-- **Persistent scheduler**: grid = #SMs, each CTA loops over tiles.
-- **TMA producer partition** (4 warps, `registers=24`): descriptor loads of
-  A, B halves, and both scale tensors into a double-buffered NVMMA-swizzled
-  SMEM ring, `full`/`empty` mbarrier handshake.
-- **Two full-width consumers** split over N (4 warps each, 232 registers):
-  one lives in the *default* warp-spec region (upstream's register
-  allocator grants the default the leftover budget — put the heavy task
-  there), one is a worker partition with `registers=232`.
-- **K-split**: two 128-deep `tl.dot_scaled` calls per ring slot keep
-  operand liveness low enough that 8 MMA warps never spill.
-- **Explicit layouts**: B loads pinned to a vectorized blocked layout
-  (`tlx.local_load_blocked`) — otherwise upstream anchors the staging load
-  on a scalar layout (hundreds of `ld.shared.b8`).
-- **Register economy**: launch `maxnreg=168` (64K regfile / 384 threads);
-  the plugin pass re-stamps the kernel's register requests after upstream's
-  `OptimizePartitionWarps` would overwrite them.
-  Result: 248/232/24 per-thread across the three roles, zero spills.
+| Path | What |
+|---|---|
+| `REPORT.md` | Results table, architecture (what runs where), kernel structure, setup, why each patch exists, known limitations |
+| `LABNOTES.md` | Where this sits in the NVFP4/TLX sequence and what was recorded when |
+| `code/` | Kernel, runtime patch module, triton-ext patch, DSL fetch and plugin build scripts, `verify.py`, `bench.py`; `code/README.md` has the four-step setup |
+| `background/` | The TLX / plugin-ABI investigation this builds on, snapshotted from `ianbarber/tritonext` @ `2d0435d` (2026-07-13): writeup, how-to, deep-dive report, op-by-op inventory |
 
-## Setup
-
-Prereqs: CUDA 13 toolkit, PyTorch (cu13x build), `pip install cmake ninja lit`, an sm_12x GPU.
-(Block sizes are tuned for GB10/sm_121; other sm_12x parts will want a
-config sweep.)
-
-**1. Build upstream Triton with the plugin ABI enabled** (once):
-
-```bash
-git clone https://github.com/triton-lang/triton && cd triton
-git checkout release/3.8.x           # or main; both validated
-pip install -r python/requirements.txt
-TRITON_EXT_ENABLED=ON pip install -e . --no-build-isolation
-```
-
-**2. Build the plugin** (clones triton-ext, applies `patches/triton-ext-nvfp4.patch`):
-
-```bash
-export TRITON_SOURCE_DIR=/path/to/triton
-export TRITON_BUILD_DIR=$TRITON_SOURCE_DIR/build/cmake.linux-<arch>-cpython-3.12
-export LLVM_INSTALL_DIR=$HOME/.triton/llvm/llvm-<hash>-<platform>   # created by step 1
-scripts/build_plugin.sh              # -> lib/libutlx.so
-```
-
-**3. Fetch the TLX DSL** (pure Python from the `triton-utlx` wheel, patched):
-
-```bash
-python scripts/fetch_utlx.py         # -> utlx_py/
-```
-
-**4. Run:**
-
-```bash
-. scripts/env.sh
-python verify.py                     # bit-exact vs plain dot_scaled
-python bench.py                      # shape table
-python bench.py 4096 4096 4096      # single shape
-```
-
-Import order matters in your own drivers: `import utlx_plugin` (registers
-`triton.language.extra.tlx` and the compile-pipeline hook), then
-`import tlx_upstream_patch` (applies the warp-spec/codegen patches), then
-the kernel.
-
-## Why the patches exist
-
-Upstream Triton ships almost everything this kernel needs — the native
-`mxf4nvf4.block_scale` MMA lowering for sm_12x, `ttg.warp_specialize` with
-full lowering including `setmaxnreg`, TMA ops, and the plugin ABI itself.
-Three gaps remain, each bridged here and each a candidate upstream change:
-
-1. No `with`-statement dispatch hook in `CodeGenerator` — bridged by a
-   monkeypatch (approach due to [wychi/wheels](https://github.com/wychi/wheels)).
-2. Several builder methods (TMA descriptor copies, `warp_specialize`,
-   memdesc slicing) are bound only on the Gluon builder — bridged by the
-   builder swap plus plugin-owned op wrappers.
-3. `OptimizePartitionWarps` overwrites explicit warp-spec register requests
-   with hardcoded estimates — bridged by a plugin pass that re-stamps them.
-
-## Known limitations
-
-- Wide-N shapes (e.g. 4096×12288×4096) collapse to ~97 TF — a persistent-
-  scheduler/tile-order tuning issue in the kernel, identical on the fork.
-- The remaining gap to CUTLASS (~17% at 4096³) is dominated by the
-  operand-B shared-memory restage that CUTLASS's co-designed B swizzle
-  avoids; closing it needs deeper layout work than a kernel can express.
-- sm_121-tuned constants (`BM=BN=128, BK=256, NS=2`); `NS=3` exceeds the
-  99KB SMEM/CTA limit.
+The plugin build, fetched DSL and the upstream Triton checkout live outside the tree
+(`code/.gitignore`). Imported from `ianbarber/nvfp4-triton-extensions` with history.
