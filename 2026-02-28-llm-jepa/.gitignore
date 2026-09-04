@@ -1,0 +1,26 @@
+# Data (13GB+ of hidden states)
+data/
+
+# Model checkpoints (large .pt files)
+experiments/jepa_phase1/*.pt
+
+# Per-example JSONL (can regenerate)
+experiments/jepa_phase2/per_example/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.eggs/
+
+# Notebooks
+notebooks/.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

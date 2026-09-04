@@ -1,0 +1,57 @@
+{
+  "config": {
+    "layer": 21,
+    "loss": "cosine",
+    "hidden_mult": 2,
+    "lr": 0.0001,
+    "epochs_trained": 289,
+    "batch_size": 128,
+    "train_size": 5548,
+    "val_size": 693,
+    "test_size": 694,
+    "dim": 2560,
+    "train_time_s": 38.03148698806763
+  },
+  "metrics": {
+    "Mean": {
+      "cos_sim_mean": 0.9663838148117065,
+      "cos_sim_std": 0.036829765886068344,
+      "mse": 0.1326027512550354,
+      "r2": -0.0013756653061136603,
+      "delta_direction_cos": 0.9504278302192688
+    },
+    "Identity": {
+      "cos_sim_mean": 0.6253634691238403,
+      "cos_sim_std": 0.010882899165153503,
+      "mse": 1.3663101196289062,
+      "r2": -9.001424789428711,
+      "delta_direction_cos": 0.0
+    },
+    "Ridge": {
+      "cos_sim_mean": 0.9874613881111145,
+      "cos_sim_std": 0.02011232078075409,
+      "mse": 0.04918200522661209,
+      "r2": 0.6393416523933411,
+      "delta_direction_cos": 0.9819017648696899
+    },
+    "k-NN (k=5)": {
+      "cos_sim_mean": 0.9807112812995911,
+      "cos_sim_std": 0.025506827980279922,
+      "mse": 0.07573560625314713,
+      "r2": 0.39483752846717834,
+      "delta_direction_cos": 0.9719356894493103
+    },
+    "JEPA": {
+      "cos_sim_mean": 0.9884478449821472,
+      "cos_sim_std": 0.019341129809617996,
+      "mse": 0.11962492763996124,
+      "r2": 0.36001497507095337,
+      "delta_direction_cos": 0.9565401673316956
+    }
+  },
+  "go_no_go": {
+    "cos_sim_vs_ridge": true,
+    "delta_direction_gt_0.2": true,
+    "pass": true
+  }
+}
