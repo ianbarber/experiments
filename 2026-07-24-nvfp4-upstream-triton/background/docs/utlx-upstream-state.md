@@ -325,7 +325,7 @@ fork-only / unregistered dialect surface; stock pip triton is not enough.
 the **out-of-tree plugin source build** — the boundary case that validates the
 extension ABI, not a path you need for using TLX.
 
-See `benchmarks/README.md`. Build (RTX 5090 / leejr): Triton `a18b1bb3` builds
+See `benchmarks/README.md`. Build (RTX 5090): Triton `a18b1bb3` builds
 from repo root (`pip install -e .`), needs
 `LLVM_SYSPATH=~/.triton/llvm/llvm-62b7cf96-ubuntu-x64-2` (has `clang++` for the
 mandatory GSan runtime). libutlx: source mode, `TRITON_SOURCE_DIR`+

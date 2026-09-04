@@ -1,7 +1,7 @@
 # LSP tools for a local coding agent: SWE-Bench ProMax × Qwen3.8-27B
 
-**Date:** 2026-08-22 → 2026-08-28 · **Fleet:** DGX Spark (GB10) serving + chunklebox/leejr
-x86 workers + NAS · **Benchmark:** SWE-Bench ProMax python subset · **Scaffold:**
+**Date:** 2026-08-22 → 2026-08-28 · **Fleet:** DGX Spark (GB10) serving + two x86 docker workers
+(worker-a, worker-b) + NAS · **Benchmark:** SWE-Bench ProMax python subset · **Scaffold:**
 mini-swe-agent 2.4.6
 
 ## Brief

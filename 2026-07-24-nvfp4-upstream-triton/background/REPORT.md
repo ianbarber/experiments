@@ -479,7 +479,7 @@ FP16 × FP16 → FP16, 15 warmup + 80 measured iterations, TF/s via CUDA events.
 | 8192×2048×2048 | 70.7 | 66.4 | 1.06 |
 | 2048×2048×8192 | 63.7 | 67.5 | 0.94 |
 
-**leejr 5090 (Blackwell consumer, sm_120) — stock Triton (built from source 3.7.0+gitf1ff6575) vs cuBLAS vs µTLX. All three at warmup=25, iters=100, identical autotune search space (72 configs: BM∈{64,128}, BN∈{64,128,256}, BK∈{32,64}, num_stages∈{2,3,4}, num_warps∈{4,8}):**
+**RTX 5090 (Blackwell consumer, sm_120) — stock Triton (built from source 3.7.0+gitf1ff6575) vs cuBLAS vs µTLX. All three at warmup=25, iters=100, identical autotune search space (72 configs: BM∈{64,128}, BN∈{64,128,256}, BK∈{32,64}, num_stages∈{2,3,4}, num_warps∈{4,8}):**
 
 | Shape (MxNxK) | Stock Triton TF/s | cuBLAS TF/s | µTLX pipelined TF/s | TLX/stock | TLX best cfg |
 |---|---:|---:|---:|---:|---|
@@ -520,7 +520,7 @@ Also: µTLX uses two `TritonSemantic` private methods that were removed/renamed 
 - `tlx_pipelined_gemm_annotated.py` — annotated copy of `hopper_gemm_pipelined.py`; sm_90+ only.
 - `tlx_ws_gemm_annotated.py` — annotated copy of `hopper_gemm_ws.py`; sm_90+ only.
 - `run_local.sh` — drives the 3090 baseline.
-- The leejr 5090 numbers above were produced by the out-of-tree plugin source build (now retired in favour of `fbtriton`); raw results are in `benchmarks/results/blackwell_stock.json` + `blackwell_tlx.json`. The runnable-today path is `pip install fbtriton` + `benchmarks/fbtriton_tlx_gemm_demo.py` / `fbtriton_tlx_ws_gemm_demo.py` — see `WRITEUP.md` and `HOWTO.md`.
+- The RTX 5090 numbers above were produced by the out-of-tree plugin source build (now retired in favour of `fbtriton`); raw results are in `benchmarks/results/blackwell_stock.json` + `blackwell_tlx.json`. The runnable-today path is `pip install fbtriton` + `benchmarks/fbtriton_tlx_gemm_demo.py` / `fbtriton_tlx_ws_gemm_demo.py` — see `WRITEUP.md` and `HOWTO.md`.
 
 ---
 

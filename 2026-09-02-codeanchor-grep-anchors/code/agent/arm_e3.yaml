@@ -26,7 +26,7 @@ environment:
 model:
   model_name: "openai/qwen3.8-27b-sglang"
   model_kwargs:
-    api_base: "http://192.168.1.92:8888/v1"
+    api_base: "http://dgx-spark:8888/v1"  # GB10 serving box (LAN address redacted)
     api_key: "EMPTY"
     temperature: 1.0
     top_p: 0.95

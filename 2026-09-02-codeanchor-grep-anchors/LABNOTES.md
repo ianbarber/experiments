@@ -48,7 +48,7 @@ reasoning), 0.64/0.87 h wall (from response timestamps).
   Telemetry per grep to `anchor_log.jsonl` (status anchored/empty/no_hits/not_ready/
   timeout, hits, symbols, chars, seconds).
 - Unit tests of the command parser on the 533 real grep commands of A-r1: 30 yield no
-  identifier token, the rest 1–5 (cap 12). In-container tests (chunklebox):
+  identifier token, the rest 1–5 (cap 12). In-container tests (worker-a):
   albumentations 40 hits → 5 symbols in 1.3 s; transformers (3,556 py files; Pyrefly
   ready in 2 s) 8 hits → 3 symbols 4.2 s cold / 1.0 s warm, hub symbol `PreTrainedModel`
   (946 refs, 393 files) 4.3 s. Output ~1.2–3.4k chars before the 2800 cap.
@@ -62,7 +62,7 @@ emptied (blobs gone, snapshot symlinks dangling); spark's cached `alpine` image 
 (exec format error). Restored the 29 GB FP8 weights from `/mnt/nas/hf-cache` with an
 arm64 alpine container, then `start-dspark.sh` (DSpark draft re-downloads from HF).
 
-## 2026-09-02 (evening) — round 1 launched: s1-arm-e-r1 (chunklebox) + s1-arm-a8-r1 (leejr)
+## 2026-09-02 (evening) — round 1 launched: s1-arm-e-r1 (worker-a) + s1-arm-a8-r1 (worker-b)
 
 - Harness-level smoke of `AnchorDockerEnvironment` in a live promax-lsp container: anchored
   greps cost 0.2–2.5 s including the docker exec; `-l`/`-c`/pipe-from-python greps
@@ -77,8 +77,8 @@ arm64 alpine container, then `start-dspark.sh` (DSpark draft re-downloads from H
   mapping + `swebench --help` through the shim.
 - Serving restored: DSpark stack up at 25.6 tok/s single-stream (short prompt), reasoning
   separated at `reasoning_effort: medium`.
-- **Launched** (~20:40 PT): `s1-arm-e-r1` chunklebox, mode anchor, waves of 5, 3 rollout
-  workers, 2 eval workers; `s1-arm-a8-r1` leejr, mode base, waves of 4, 3/2. Same 29-id
+- **Launched** (~20:40 PT): `s1-arm-e-r1` worker-a, mode anchor, waves of 5, 3 rollout
+  workers, 2 eval workers; `s1-arm-a8-r1` worker-b, mode base, waves of 4, 3/2. Same 29-id
   regex and data order as stage 1. Analysis script: `analysis/anchor_compare.py` (paired
   resolve + Δsteps/Δtokens/Δwall/Δgreps/Δrecall, anchor telemetry).
 - **E-r1 restarted once more (~20:55 PT)** after its first 5 minutes had already produced
@@ -89,8 +89,8 @@ arm64 alpine container, then `start-dspark.sh` (DSpark draft re-downloads from H
   boundary to the room left under 10,000 chars, or skipped (`no_room`, logged) when <500
   chars remain. Partial output of the first attempt kept as `s1-arm-e-r1-aborted-v1`.
 - Plan: when a host's round-1 run prints `[waved] done`, launch round 2 there with arms
-  swapped (`s1-arm-e-r2` on leejr in mode anchor, waves of 4; `s1-arm-a8-r2` on
-  chunklebox in mode base, waves of 6). Then `analysis/anchor_compare.py --e
+  swapped (`s1-arm-e-r2` on worker-b in mode anchor, waves of 4; `s1-arm-a8-r2` on
+  worker-a in mode base, waves of 6). Then `analysis/anchor_compare.py --e
   s1-arm-e-r1,s1-arm-e-r2 --a s1-arm-a8-r1,s1-arm-a8-r2`.
 - **E-r1 restarted a third time (~21:35 PT) — parser coverage bug.** The first 30 min of
   telemetry showed 27 `no_hits` / 2 anchored: `grep -n PAT file.py` (single file operand)
@@ -116,7 +116,7 @@ arm64 alpine container, then `start-dspark.sh` (DSpark draft re-downloads from H
   else anywhere in the candidate) to choose the file. Verified on the scratch repo.
   Restarted E-r1 a fourth time so all counted episodes share one mechanism; partial
   outputs kept as `s1-arm-e-r1-aborted-v{1,2,3}` (not used). Cost ≈ 3 h on the critical
-  path (E-r1 now ends ~13:00; A8-r1 on leejr unaffected, wave 2 of 8 in progress).
+  path (E-r1 now ends ~13:00; A8-r1 on worker-b unaffected, wave 2 of 8 in progress).
 - A8-r1 wave 1: albumentations-2337 resolved, albumentations-2495 not; dspy-9193 and
   transformers-38788 golden-invalid as always.
 - **E-r1 wave 1 rolled out (~04:00 PT), first qualitative look** (5 trajectories):
@@ -134,35 +134,35 @@ arm64 alpine container, then `start-dspark.sh` (DSpark draft re-downloads from H
   events → 165 anchored (50%), 113 no_hits, 40 empty, 11 unattributed (3%), 1 no_room;
   median anchor 0.25 s, p90 1.6 s, 0 errors.
 - Round-2 launches chained on the workers themselves (robust to my session's watchers
-  being killed): `~/refactorbench-eval/chain_e_r2.sh` on leejr waits for
+  being killed): `~/refactorbench-eval/chain_e_r2.sh` on worker-b waits for
   `[waved] done: s1-arm-a8-r1` then runs E-r2 (anchor, waves of 4, 3/2);
-  `chain_a8_r2.sh` on chunklebox waits for `[waved] done: s1-arm-e-r1` then runs A8-r2
+  `chain_a8_r2.sh` on worker-a waits for `[waved] done: s1-arm-e-r1` then runs A8-r2
   (base, waves of 6, 3/2). Logs: `runs/chain_*.log`, `runs/s1-arm-{e,a8}-r2.log`.
 
 ## 2026-09-03 (afternoon) — A8-r1 complete; E-r2 auto-launched
 
-- **s1-arm-a8-r1 (leejr, 8 h wall): 18/25 golden-valid (72%)**, 29/29 Submitted, **0 wall
+- **s1-arm-a8-r1 (worker-b, 8 h wall): 18/25 golden-valid (72%)**, 29/29 Submitted, **0 wall
   deaths**; mean 54 steps (median 42), 19.2 grep cmds/episode, 2.89M cumulative input
   tokens, 28.8k output (16.6k reasoning), 0.68 h wall/episode (median 0.32 h). Matches
   the stage-1 A average (72%) — the 8 h wall changed nothing for A, as expected (A had
   few wall deaths). Archived to NAS.
-- The leejr chain fired: `s1-arm-e-r2` started (anchor mode, waves of 4) right after.
+- The worker-b chain fired: `s1-arm-e-r2` started (anchor mode, waves of 4) right after.
 
 ## 2026-09-03/04 — ROUND 1 COMPLETE: E 16/25 (64%) vs A8 18/25 (72%)
 
-- **s1-arm-e-r1 (chunklebox): 16/25 golden-valid (64%)**, 29/29 Submitted, 0 wall deaths.
+- **s1-arm-e-r1 (worker-a): 16/25 golden-valid (64%)**, 29/29 Submitted, 0 wall deaths.
   Mean 52.6 steps (median 41), 18.3 greps/episode, 2.72M cumulative input tokens
   (median 1.30M), 28.9k output (17.0k reasoning), 0.71 h wall (median 0.42 h). Anchor
   telemetry: 509 grep-family commands → 256 anchored (50%), mean 8.8 anchored
   observations and ~10k addendum chars per episode, 4.9 s of anchor computation per
   episode, 0 not-ready/timeouts/errors.
-- **s1-arm-a8-r1 (leejr): 18/25 (72%)** — see above.
+- **s1-arm-a8-r1 (worker-b): 18/25 (72%)** — see above.
 - **Paired (25 golden-valid instances): E better 1, A better 3, sign p=0.625.**
   Δsteps −1.3 (E lower on 14/24, p=0.54), Δinput-tokens −0.10M mean / +0.03M median
   (13 vs 12), Δwall +0.08 h mean (E higher on 14/25, p=0.69), Δgreps +0.8, Δedit-recall
   −0.015. **Round-1 read: null on resolve, steps, tokens and wall; anchors cost
   nothing measurable in latency (≈5 s/episode) but also bought nothing.** Round 2
-  (hosts swapped) is running: E-r2 leejr, A8-r2 chunklebox (auto-chained).
+  (hosts swapped) is running: E-r2 worker-b, A8-r2 worker-a (auto-chained).
 - **Round-1 mechanism diagnostics (E-r1 trajectories, 29 episodes)**:
   1. *Uptake*: anchors flagged 316 distinct source files as "referenced but NOT in this
      grep output"; the agent later opened 21% of them. Of the 45 flagged source files
@@ -220,7 +220,7 @@ arm64 alpine container, then `start-dspark.sh` (DSpark draft re-downloads from H
 
 ## 2026-09-04 — STAGE E COMPLETE: two rounds, E 32/50 (64%) vs A8 34/50 (68%) — null
 
-- **s1-arm-e-r2 (leejr): 16/25**; **s1-arm-a8-r2 (chunklebox): 16/25**; both 29/29
+- **s1-arm-e-r2 (worker-b): 16/25**; **s1-arm-a8-r2 (worker-a): 16/25**; both 29/29
   Submitted, 0 wall deaths (8 h wall). Two-round totals: **E 32/50 (64%), A8 34/50 (68%)**.
 - **Paired, 25 shared golden-valid instances, instance scores summed over rounds: E better
   2 (adk-19315fe, transformers-38332), A8 better 3 (albumentations-2337, optuna-6166,
@@ -269,6 +269,6 @@ arm64 alpine container, then `start-dspark.sh` (DSpark draft re-downloads from H
   `cat -n f | sed -n 1,80p` → 3 tags (0.6 s); `cat` of a 287k-char file → `no_room`
   (harness already elides it; untouched); uncapped grep on the hub `loss_function`
   (224 refs / 153 files) → 9.6k-char addendum trimmed to fit (4.1 s).
-- Launched concurrently (both workers free): `s1-arm-e3-r1` chunklebox (waves of 5,
-  3/2), `s1-arm-e3-r2` leejr (waves of 4, 3/2). Control = the existing A8 rounds (same
+- Launched concurrently (both workers free): `s1-arm-e3-r1` worker-a (waves of 5,
+  3/2), `s1-arm-e3-r2` worker-b (waves of 4, 3/2). Control = the existing A8 rounds (same
   serving stack, 2 days apart — documented).

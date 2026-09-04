@@ -1,7 +1,7 @@
 # CodeAnchor-style anchors on grep output: does passive structural injection help a local coding agent refactor?
 
 **Date:** 2026-09-02 → 2026-09-04 (E3 follow-up running) · **Fleet:** DGX Spark (GB10)
-serving + chunklebox/leejr x86 workers + NAS · **Benchmark:** SWE-Bench ProMax python
+serving + two x86 docker workers (worker-a, worker-b) + NAS · **Benchmark:** SWE-Bench ProMax python
 subset · **Scaffold:** mini-swe-agent 2.4.6 · **Model:** Qwen3.8-27B-FP8 (local)
 
 Follow-up to [LSP tools for a local coding agent](../2026-08-22-lsp-agents-promax/),

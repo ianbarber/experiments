@@ -24,10 +24,10 @@ Base protocol (model, sampling, harness, images, eval) is that of the
 
 | Run | Arm | Host | Status |
 |-----|-----|------|--------|
-| s1-arm-e-r1 | E anchors | chunklebox | **DONE: 16/25 (64%)**; launched 4× before any counted episode (see LABBOOK 09-02/03); aborted partials `s1-arm-e-r1-aborted-v{1,2,3}` are not results |
-| s1-arm-a8-r1 | A8 control | leejr | **DONE: 18/25 (72%)** |
-| s1-arm-e-r2 | E round 2 | leejr | **DONE: 16/25 (64%)** |
-| s1-arm-a8-r2 | A8 round 2 | chunklebox | **DONE: 16/25 (64%)** |
+| s1-arm-e-r1 | E anchors | worker-a | **DONE: 16/25 (64%)**; launched 4× before any counted episode (see LABBOOK 09-02/03); aborted partials `s1-arm-e-r1-aborted-v{1,2,3}` are not results |
+| s1-arm-a8-r1 | A8 control | worker-b | **DONE: 18/25 (72%)** |
+| s1-arm-e-r2 | E round 2 | worker-b | **DONE: 16/25 (64%)** |
+| s1-arm-a8-r2 | A8 round 2 | worker-a | **DONE: 16/25 (64%)** |
 
 **STAGE E FINAL: E 32/50 (64%) vs A8 34/50 (68%); paired 2-vs-3, p=1.0; Δsteps −4.3 (n.s.), Δtokens ≈0, Δwall ≈0. Protocol deviation from CodeAnchor: addendum caps (4 symbols / 6 not-shown files / 2,800 chars) — measured by uncapped replay to hide 3/69 missed gold files (4%).**
 
@@ -40,5 +40,5 @@ Base protocol (model, sampling, harness, images, eval) is that of the
 
 | Run | Arm | Host | Status |
 |-----|-----|------|--------|
-| s1-arm-e3-r1 | E3 | chunklebox | running (launched 2026-09-04) |
-| s1-arm-e3-r2 | E3 | leejr | running (launched 2026-09-04) |
+| s1-arm-e3-r1 | E3 | worker-a | running (launched 2026-09-04) |
+| s1-arm-e3-r2 | E3 | worker-b | running (launched 2026-09-04) |

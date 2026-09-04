@@ -16,7 +16,7 @@ Companion to PLAN.md — what actually happened and every deviation, so results 
   state temperature), `reasoning_effort: medium` (xhigh default overthinks), max_tokens
   16384/step, `MSWEA_COST_TRACKING=ignore_errors` (cost cap meaningless locally; step cap
   300 enforced), mini-swe-agent **v2.4.6** (tool-calling variant, `swebench.yaml` default).
-- **Gold gate**: albumentations-2337 golden patch → SUCCESS via harness on chunklebox (42s).
+- **Gold gate**: albumentations-2337 golden patch → SUCCESS via harness on worker-a (42s).
 - **Env-flaky instances** (golden fails on our LAN): `stanfordnlp__dspy-9193`,
   `huggingface__transformers-38788`. Root cause (likely): several images bake in an
   unreachable ByteDance proxy (`sys-proxy-rd-relay.byted.org`) → all in-container network
@@ -26,7 +26,7 @@ Companion to PLAN.md — what actually happened and every deviation, so results 
   golden-valid instances (maven ✓, cli ✓, s2n-tls ✓); 8/10 submitted; 2 hit the 300-step
   cap with empty patches. dev-10 instances overlap stage sets — dev results are for
   debugging only, not headline numbers.
-- **Disk lesson**: 29 python images don't fit chunklebox (verl image bundles CUDA libs).
+- **Disk lesson**: 29 python images don't fit worker-a (verl image bundles CUDA libs).
   All runs use `agent/run_batch_waved.sh`: NAS-cached load → rollout → eval → evict, waves
   of 4–6. Eval always grades in the ORIGINAL key4127 images regardless of arm.
 
@@ -35,7 +35,7 @@ Companion to PLAN.md — what actually happened and every deviation, so results 
 - `lsp-tool/` CLI+daemon over solidlsp (serena-agent 1.7.0), Pyrefly 1.2.0 default
   (basedpyright 1.39.10 swap via `LSP_TOOL_PYTHON_SERVER`), content-enriched output.
   Validated in-container: cross-file refs 2.6s cold / ~50ms warm.
-- All 29 python `promax-lsp:<id>` images built on leejr, verified, cached at
+- All 29 python `promax-lsp:<id>` images built on worker-b, verified, cached at
   `/mnt/nas/refactorbench/images-lsp/`. Build fixes: `env -u` proxy neutralization
   (build steps only — final env identical to base), uv bootstrap for images without
   Python ≥3.11, partial-venv cleanup, size-aware verify file selection.
@@ -47,21 +47,21 @@ Companion to PLAN.md — what actually happened and every deviation, so results 
 
 | Run | Arm | Host | Status |
 |-----|-----|------|--------|
-| s1-arm-a-r1 | A baseline | chunklebox | 19/25 (76%) — 4 golden-invalid: transformers-38788, dspy-9193, dspy-1801, langextract-239 (proxy) |
-| s1-arm-b-r1 | B lsp-available | leejr | 18/24 (75%); 0 lsp calls in 29 episodes|
-| s1-arm-c-r1-pilot | C lsp-preferred (weak phrasing) | chunklebox | stopped after wave 1: 0 lsp calls in 5 episodes (inert manipulation) |
-| s1-arm-c2-r1 | C2 lsp-preferred (imperative, workflow-integrated — `agent/arm_c2.yaml`) | chunklebox | 16/25 (64%); 21 lsp calls (all `diag`), 16/29 episodes|
-| s1-arm-a-r2 | A round 2 | leejr | 17/25 (68%)|
-| s1-arm-b-r2 | B round 2 | chunklebox | 17/25 (68%); 0 lsp calls|
-| s1-arm-c2-r2 | C2 round 2 | leejr | 18/25 (72%)|
-| s1-arm-d-r1 | D type-check acceptance gate | chunklebox | 13/25 (52%)|
-| s1-arm-d-r2 | D round 2 | leejr | 16/25 (64%) |
-| s1-arm-d2-r1 | D2 silent soft gate | chunklebox | 16/25 (64%)|
-| s1-arm-d2-r2 | D2 round 2 | leejr | 16/25 (64%) |
-| s1h-arm-a-r1 | A hosted (OpenRouter, 8h wall) | chunklebox | 24/25 (96%) |
-| s1h-arm-a-r2 | A hosted round 2 | leejr | 23/25 (92%) |
-| s1h-arm-d2-r1 | D2 hosted | chunklebox | 23/25 (92%) |
-| s1h-arm-d2-r2 | D2 hosted round 2 | leejr | 19/25 (76%) |
+| s1-arm-a-r1 | A baseline | worker-a | 19/25 (76%) — 4 golden-invalid: transformers-38788, dspy-9193, dspy-1801, langextract-239 (proxy) |
+| s1-arm-b-r1 | B lsp-available | worker-b | 18/24 (75%); 0 lsp calls in 29 episodes|
+| s1-arm-c-r1-pilot | C lsp-preferred (weak phrasing) | worker-a | stopped after wave 1: 0 lsp calls in 5 episodes (inert manipulation) |
+| s1-arm-c2-r1 | C2 lsp-preferred (imperative, workflow-integrated — `agent/arm_c2.yaml`) | worker-a | 16/25 (64%); 21 lsp calls (all `diag`), 16/29 episodes|
+| s1-arm-a-r2 | A round 2 | worker-b | 17/25 (68%)|
+| s1-arm-b-r2 | B round 2 | worker-a | 17/25 (68%); 0 lsp calls|
+| s1-arm-c2-r2 | C2 round 2 | worker-b | 18/25 (72%)|
+| s1-arm-d-r1 | D type-check acceptance gate | worker-a | 13/25 (52%)|
+| s1-arm-d-r2 | D round 2 | worker-b | 16/25 (64%) |
+| s1-arm-d2-r1 | D2 silent soft gate | worker-a | 16/25 (64%)|
+| s1-arm-d2-r2 | D2 round 2 | worker-b | 16/25 (64%) |
+| s1h-arm-a-r1 | A hosted (OpenRouter, 8h wall) | worker-a | 24/25 (96%) |
+| s1h-arm-a-r2 | A hosted round 2 | worker-b | 23/25 (92%) |
+| s1h-arm-d2-r1 | D2 hosted | worker-a | 23/25 (92%) |
+| s1h-arm-d2-r2 | D2 hosted round 2 | worker-b | 19/25 (76%) |
 
 **Final rates (2 rounds each, golden-valid): local A 72%, B 71%, C2 68%, D 58%, D2 64%;
 hosted A 94%, D2 84%.** Local gate-arm deficits are partly attributable to the 2-hour

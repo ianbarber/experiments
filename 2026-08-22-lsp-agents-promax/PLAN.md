@@ -71,11 +71,11 @@ file:line locations**. That finding drives the tool design below.
 
   | Host | CPU / threads | RAM | Free disk | Docker |
   |------|---------------|-----|-----------|--------|
-  | `cortical` | Ryzen AI MAX+ 395 / 32 | 122 GiB | 409 GB | **none — install in Phase 0** (⚠ ~34 GB RAM in use by something; check before saturating) |
-  | `chunklebox` | Ryzen 7 8845HS / 16 | 29 GiB | 147 GB | 29.1.3 |
-  | `leejr` | Ryzen 7 3700X / 16 | 125 GiB | 80 GB (91% full) | 29.6.1 |
+  | `strix-halo` | Ryzen AI MAX+ 395 / 32 | 122 GiB | 409 GB | **none — install in Phase 0** (⚠ ~34 GB RAM in use by something; check before saturating) |
+  | `worker-a` | Ryzen 7 8845HS / 16 | 29 GiB | 147 GB | 29.1.3 |
+  | `worker-b` | Ryzen 7 3700X / 16 | 125 GiB | 80 GB (91% full) | 29.6.1 |
 
-- **NAS**: `192.168.1.37:/Public` mounted at `/mnt/nas` on spark and all three hosts —
+- **NAS**: `nas:/Public` mounted at `/mnt/nas` on spark and all three hosts —
   **6.8 TB free**. Use for: docker image tar cache (`docker save`/`load`, pulled once,
   shared across hosts and batches), run archives/trajectories, dataset artifacts, model
   checkpoint backups. Not for `/var/lib/docker` itself — overlay2 on NFS is unreliable;
@@ -91,8 +91,8 @@ file:line locations**. That finding drives the tool design below.
 
 | # | Severity | Mismatch | Mitigation |
 |---|----------|----------|------------|
-| M1 | Critical (resolved: lab topology) | All 170 instance images are **amd64-only**; the GB10 is **aarch64**. Rollout *and* eval run inside these containers. | Run containers natively on the lab x86 hosts (`cortical` primary) with the GB10 serving the model over the LAN — see D3. No emulation, no cloud. Residual task: install Docker on cortical. |
-| M2 | High (resolved: NAS cache + waves) | 317 GB compressed images (likely 600–900 GB uncompressed) vs 111 GB free on spark; plus 29 GB model + ~15 GB serving stack. | Spark only needs the model + serving stack now (fits easily). Images live on the x86 hosts: cortical's 409 GB holds large batches; NAS tar cache (`/mnt/nas`, 6.8 TB free) means each image is pulled from Docker Hub once ever. Still batch + `docker rmi` on chunklebox/leejr (147/80 GB free). Spark cleanup candidates (*for Ian to move to NAS, not doing this unilaterally*): `~/models/ttblt_v3` 285 GB, dsv4 GGUFs 87 GB. |
+| M1 | Critical (resolved: lab topology) | All 170 instance images are **amd64-only**; the GB10 is **aarch64**. Rollout *and* eval run inside these containers. | Run containers natively on the lab x86 hosts (`strix-halo` primary) with the GB10 serving the model over the LAN — see D3. No emulation, no cloud. Residual task: install Docker on strix-halo. |
+| M2 | High (resolved: NAS cache + waves) | 317 GB compressed images (likely 600–900 GB uncompressed) vs 111 GB free on spark; plus 29 GB model + ~15 GB serving stack. | Spark only needs the model + serving stack now (fits easily). Images live on the x86 hosts: strix-halo's 409 GB holds large batches; NAS tar cache (`/mnt/nas`, 6.8 TB free) means each image is pulled from Docker Hub once ever. Still batch + `docker rmi` on worker-a/worker-b (147/80 GB free). Spark cleanup candidates (*for Ian to move to NAS, not doing this unilaterally*): `~/models/ttblt_v3` 285 GB, dsv4 GGUFs 87 GB. |
 | M3 | **High** | Wall-clock: ~273 GB/s bandwidth → est. 15–25 tok/s single-stream decode (FP8). Thinking tokens dominate. | fp8 weights + fp8 KV, `reasoning_effort: medium`, 4–8 concurrent episodes (batched aggregate est. 60–120 tok/s), MTP speculative decoding if the stack supports it. Estimates in §6; measured in Phase 1 before committing to full runs. |
 | M4 | Medium | Model is 8 days old; NVIDIA's DGX-Spark vLLM/SGLang container images may not support the hybrid GDN architecture yet on aarch64/CUDA 13. | Try in order: (1) SGLang recent build (day-0 Qwen3.8 support), (2) vLLM nightly, (3) llama.cpp GGUF (proven on Spark; sufficient because the scaffold is text-only). Phase 0 task with a hard timebox. |
 | M5 | Medium | Paper baselines exist only for frontier/large-MoE models; and paper omits sampling temperature. | Compare against Qwen3.5-MoE mini-swe-agent 20.6% as an upper anchor; document our sampling (model-card defaults) and reasoning effort as protocol deviations. |
@@ -118,7 +118,7 @@ predates sm_121a.)* We serve with the GB10-tuned container setup vendored at
 `lmsysorg/sglang:qwen38-27b`): `QUANT=fp8` (official `Qwen/Qwen3.8-27B-FP8` checkpoint),
 `./start-dspark.sh` — DSpark speculative decoding (best for code), flashinfer attention,
 fp8 KV (~33 KB/token), tuned GDN state pool, CPU pinning to the Cortex-X925 cores, endpoint
-`http://192.168.1.92:8888/v1`, model `qwen3.8-27b-sglang`. Measured ~30 tok/s single-stream
+`http://dgx-spark:8888/v1`, model `qwen3.8-27b-sglang`. Measured ~30 tok/s single-stream
 on code. Thinking mode with `reasoning_effort: medium` via `chat_template_kwargs`;
 model-card sampling (T=1.0, top_p 0.95, top_k 20). Fallback: llama.cpp + ggml-org GGUF
 Q8_0 + MTP draft (downloaded to NAS). Note: DSpark caps context at the native 262144 (no
@@ -127,12 +127,12 @@ YaRN) — fine, episodes are capped below that anyway.
 **D3 — Topology: GB10 serves, lab x86 hosts run the containers.**
 - **spark (GB10)**: model server only — dedicated to inference, its best role. OpenAI-
   compatible endpoint on the LAN (bind LAN interface or SSH-tunnel from workers).
-- **cortical** (32 threads, 122 GiB, 409 GB free): primary worker — runs mini-swe-agent
+- **strix-halo** (32 threads, 122 GiB, 409 GB free): primary worker — runs mini-swe-agent
   rollouts inside the official amd64 instance images, and the eval harness. Needs Docker
   installed (Phase 0), and a check on what's currently using ~34 GB RAM there.
-- **chunklebox / leejr**: optional extra eval workers to parallelize the CPU-bound eval
-  phase (≤40 min/instance) and rollout env commands. chunklebox is RAM-light (29 GiB → cap
-  concurrent C++/Rust evals); leejr is disk-tight (80 GB → small batches, aggressive `rmi`).
+- **worker-a / worker-b**: optional extra eval workers to parallelize the CPU-bound eval
+  phase (≤40 min/instance) and rollout env commands. worker-a is RAM-light (29 GiB → cap
+  concurrent C++/Rust evals); worker-b is disk-tight (80 GB → small batches, aggressive `rmi`).
 - **NAS** (`/mnt/nas`, shared by all): `docker save` tar cache so each of the 170 images is
   pulled from Docker Hub exactly once; run archives (trajectories, patches, logs) written
   here so any machine can analyze them.
@@ -205,11 +205,11 @@ version, container images, eval command. Only environment/prompt vary.
 3. **Serving gate:** stand up Qwen3.8-27B-FP8 (SGLang → vLLM nightly → llama.cpp, timebox
    ~half day each). Success = OpenAI-compatible chat completion with correct chat template,
    thinking content separated, and a measured tok/s (single + 8-way concurrent).
-4. **Worker gate:** install Docker on cortical (and identify what's using ~34 GB RAM there);
-   from cortical, hit the spark endpoint (latency + a 3k-token completion); pull one Python
+4. **Worker gate:** install Docker on strix-halo (and identify what's using ~34 GB RAM there);
+   from strix-halo, hit the spark endpoint (latency + a 3k-token completion); pull one Python
    instance image, run its eval script with the **gold patch**, confirm it resolves well
    inside the 40-min timeout; `docker save` the image to `/mnt/nas` and `docker load` it on
-   chunklebox to validate the NAS cache flow.
+   worker-a to validate the NAS cache flow.
 5. Write the batch runner: shard instance list → per-host pull/load → rollout (against spark)
    → eval → archive to NAS → `docker rmi`.
 
@@ -261,7 +261,7 @@ Assumptions: medium effort ≈ 20–60k generated tokens/episode (40–120 steps
 | stage1-python, 3 arms × 2 seeds | 174 | ~1.5–3 days |
 | stage2-full, 3 arms × 1 seed | 510 | ~4–10 days |
 
-Plus eval: ≤40 min/instance, CPU-bound, parallelizable across cortical/chunklebox/leejr —
+Plus eval: ≤40 min/instance, CPU-bound, parallelizable across strix-halo/worker-a/worker-b —
 hours, not days. Env commands run natively on x86, so rollout overhead is negligible.
 Practical reading: **the Python stage is a weekend; the full 3-arm × 170 study is roughly a
 week, bottlenecked almost entirely by generation throughput on spark.** Budget levers, in
@@ -276,8 +276,8 @@ order: reasoning effort, concurrency, MTP speculative decoding, seeds.
 - **Environment drift across worker hosts** (different kernel/docker versions could flip a
   flaky test) — validate gold patches per batch on the same host that evaluates the agent
   patches; keep each instance's rollout and eval on one host.
-- **cortical has an unknown resident workload** (~34 GB RAM in use) — identify it before
-  scheduling heavy eval batches; chunklebox's 29 GiB RAM caps concurrent C++/Rust evals.
+- **strix-halo has an unknown resident workload** (~34 GB RAM in use) — identify it before
+  scheduling heavy eval batches; worker-a's 29 GiB RAM caps concurrent C++/Rust evals.
 - **27B baseline lands near 0%** on these large refactors → no headroom to measure an LSP
   effect. Detect early via dev-10/stage-1; response: relax to a easier slice (paper's
   per-language table shows C and Python are the most tractable), or measure graded proxies
@@ -285,7 +285,7 @@ order: reasoning effort, concurrency, MTP speculative decoding, seeds.
 - **LSP daemons misbehave in minimal containers** (missing glibc bits, jdtls needing a JDK
   the image lacks) — smoke-test per language in Phase 3 before committing to runs.
 - **Disk creep on the smaller workers** — every batch script ends with `docker rmi` +
-  `docker system prune -f`; alert threshold at <30 GB free per host (leejr starts at 80 GB).
+  `docker system prune -f`; alert threshold at <30 GB free per host (worker-b starts at 80 GB).
 
 ## 8. References
 

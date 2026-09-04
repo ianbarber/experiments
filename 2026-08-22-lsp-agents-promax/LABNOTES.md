@@ -28,23 +28,23 @@ container/server logs print UTC (+7h).
     output; frontier models use LSP 0–6% unprompted. No published LSP ablation with a
     local open-weight model — experiment is novel.
 - PLAN.md written; artifact: https://claude.ai/code/artifact/71117c82-8564-4341-946f-5aa471979eed
-- **Lab topology** (from Ian): cortical (32T/122G/409G free, no docker, ⚠ running
+- **Lab topology** (from Ian): strix-halo (32T/122G/409G free, no docker, ⚠ running
   muse-glimmer llama-server + opencode — left untouched, sudo needs password),
-  chunklebox (16T/29G/147G, docker), leejr (16T/125G/80G, docker), NAS
-  `192.168.1.37:/Public` → `/mnt/nas` everywhere, 6.8 TB free. Plan revised: spark serves;
+  worker-a (16T/29G/147G, docker), worker-b (16T/125G/80G, docker), NAS
+  `nas:/Public` → `/mnt/nas` everywhere, 6.8 TB free. Plan revised: spark serves;
   x86 lab hosts run containers natively; NAS = image tar cache + run archive. QEMU/cloud
   path dropped.
 
 ## 2026-08-22 — Phase 0/1 execution ("lets go for it")
 
-- **21:16** Lab probes confirm. chunklebox picked as primary worker (cortical busy+no
+- **21:16** Lab probes confirm. worker-a picked as primary worker (strix-halo busy+no
   docker). NAS cache flow validated: dspy image docker-save → 752 MB zst in 15 s (~50 MB/s).
 - **21:27** `Qwen/Qwen3.8-27B-FP8` download → landed on NAS (HF_HOME points there), 6 min.
 - Harness cloned (`harness/`); dataset: 170 instances parse; fields incl. image_name ✓.
 - **Gold gate #1** (dspy-9193): golden patch FAILS — `test_enable_net_flag`,
   CodeInterpreterError, model==golden failure → environment, not patch. → env-flaky list.
 - **Gold gate #2** (albumentations-2337): SUCCESS/SUCCESS in 42 s. **Eval pipeline valid.**
-- mini-swe-agent 2.4.6 on chunklebox; `mini-extra swebench --subset
+- mini-swe-agent 2.4.6 on worker-a; `mini-extra swebench --subset
   swe-bench-promax/SWE-Bench-ProMax --split test` loads directly, honors image_name —
   planned adapter unnecessary.
 - **Serving saga on spark (aarch64/sm121)** — chronological:
@@ -74,7 +74,7 @@ container/server logs print UTC (+7h).
 
 ## 2026-08-23 (Sun, early) — dev-10 shakeout
 
-- dev-10 (1/language + extras, arm A, 3 workers, chunklebox): rollout ~2.2 h, all
+- dev-10 (1/language + extras, arm A, 3 workers, worker-a): rollout ~2.2 h, all
   episodes ran. 8/10 Submitted (patches 2–71 KB), 2 LimitsExceeded @300 steps with empty
   patches (2337 — which the smoke run had solved: temp-1.0 variance; ruff-21445).
 - Eval: **3/9 golden-valid resolved (33%)** — maven ✓ (Java), cli ✓ (Go), s2n-tls ✓ (C);
@@ -87,10 +87,10 @@ container/server logs print UTC (+7h).
 ## 2026-08-23 — stage 1 launches & infrastructure fixes
 
 - **s1-arm-a-r1 launch #1 FAILED — disk**: flat pre-fetch of 29 python images blew
-  chunklebox's 147 GB (verl image bundles CUDA/nvshmem). Evicted images (all NAS-cached),
+  worker-a's 147 GB (verl image bundles CUDA/nvshmem). Evicted images (all NAS-cached),
   wrote **`agent/run_batch_waved.sh`**: per-wave load → rollout → eval → evict; eval
   always grades in ORIGINAL images. Relaunched (waves of 6, 3 workers).
-- **LSP image layers** (leejr): pilot failed (no py≥3.11, no uv in image) → uv bootstrap
+- **LSP image layers** (worker-b): pilot failed (no py≥3.11, no uv in image) → uv bootstrap
   in Dockerfile → pilot OK (829 MB zst; in-container refs 2.6 s cold). Batch of 29:
   20 OK + failures in 3 classes:
   1. **Baked-in ByteDance proxy** (`sys-proxy-rd-relay.byted.org`) in several images kills
@@ -99,7 +99,7 @@ container/server logs print UTC (+7h).
   2. Failed `python -m venv` leaves partial dir uv won't reuse → rm -rf before fallback.
   3. Verify picked first tracked .py = empty `__init__.py` → pick largest file instead.
   Sweep of 9 failures after fixes: **9/9 OK → 29/29 LSP images on NAS.**
-- **s1-arm-b-r1** (arm B, LSP available, leejr, lsp waves of 4) launched — runs
+- **s1-arm-b-r1** (arm B, LSP available, worker-b, lsp waves of 4) launched — runs
   CONCURRENTLY with arm A against the same server (removes serving drift; host effect to
   be counterbalanced in round 2 by swapping hosts).
 - Server under load: 6 concurrent episodes, ~14–15 tok/s per stream at 40k+ ctx.
@@ -114,11 +114,11 @@ container/server logs print UTC (+7h).
 - **Arm B (LSP available): ZERO `lsp` calls** through 16+ episodes (~1500+ commands);
   tool docs verified present in prompts. Replicates 2608.13568 unprompted-usage finding
   on an open 27B. Resolve through wave 4: 8/12 (67%). Note transformers-38332
-  golden-valid on chunklebox but golden-invalid on leejr — golden validity varies by
+  golden-valid on worker-a but golden-invalid on worker-b — golden validity varies by
   host; paired analysis must intersect golden-valid sets.
   (Correction logged: an early "daemon running in arm B" observation was a self-matching
   grep artifact.)
-- **Arm C (LSP preferred) launched** on chunklebox after arm A. Live containers show
+- **Arm C (LSP preferred) launched** on worker-a after arm A. Live containers show
   pyrefly/basedpyright server processes — the preference instruction DOES induce usage;
   first completed episode (transformers-38788, 56 cmds) used 0 — adoption is
   per-episode heterogeneous. Quantify at completion.
@@ -139,7 +139,7 @@ container/server logs print UTC (+7h).
   changing any symbol and again before patch creation, `lsp diag` on edited files).
   Rationale: still tests Ian's arm-3 intent ("prompt instructing to prefer the LSP"),
   but strong enough to produce a manipulation at all; the pilot documents that weak
-  phrasing does nothing. Relaunched as **s1-arm-c2-r1** (chunklebox, lsp waves of 5).
+  phrasing does nothing. Relaunched as **s1-arm-c2-r1** (worker-a, lsp waves of 5).
 - Interpretation note for the writeup: for a 27B agent, *availability* (B) and *polite
   preference* (C-pilot) both yield 0% adoption — instruction strength is a first-order
   variable, consistent with (and stronger than) the frontier-model finding in 2608.13568.
@@ -155,7 +155,7 @@ container/server logs print UTC (+7h).
   prime targets for judging C2's effect.
 - **First C2 episode** (transformers-38788): 2 lsp calls (`diag` ×2 of 80 cmds) —
   imperative prompt produces nonzero adoption; used for verification, not navigation.
-- Round 2 counterbalance started: **s1-arm-a-r2 on leejr** (A ran on chunklebox in r1).
+- Round 2 counterbalance started: **s1-arm-a-r2 on worker-b** (A ran on worker-a in r1).
 
 ## 2026-08-24 — round 1 complete (all three arms)
 
@@ -188,7 +188,7 @@ the "LSP value" question collapses into an instruction-following question at thi
 (3) Baseline observation of independent interest: 76% on ProMax python vs paper frontier
 mini-swe-agent numbers (Sonnet 4.6 ~30.6% overall) — Qwen3.8-27B is exceptionally strong
 on python refactoring; per-language comparison to the paper's python column pending.
-Round 2 (A on leejr running; B-r2 on chunklebox launched; C2-r2 queued) doubles n.
+Round 2 (A on worker-b running; B-r2 on worker-a launched; C2-r2 queued) doubles n.
 
 ## 2026-08-24 — localization/thrash analysis (analysis/localization.py, round-1 trajectories)
 
@@ -256,10 +256,10 @@ Per-instance 2-round sign tests: A↔C2 4-vs-2 (p≈0.69), A↔B 3-vs-4 (p=1.0),
   (C2 totals: 61 calls / 39+21 diag). B: 0 calls in 58 episodes across both rounds.
 - Instances stably discordant: transformers-38332 (A 2/2, C2 0/2), lerobot-2808
   (A 0/2, C2 2/2, B 1/2) — no pattern implicating the intervention.
-- **Arm D (acceptance gate) r1 running on chunklebox** (wave 2; wave-1 gate stats:
+- **Arm D (acceptance gate) r1 running on worker-a** (wave 2; wave-1 gate stats:
   2 rejections in 1/5 episodes; the rejected episode failed to converge and hit the
   step cap — rejection-loop budget burn is the failure mode to watch). **D-r2 launched
-  on leejr** for host counterbalance.
+  on worker-b** for host counterbalance.
 
 ## 2026-08-25 — Arm D round 1 complete
 
@@ -277,7 +277,7 @@ Per-instance 2-round sign tests: A↔C2 4-vs-2 (p≈0.69), A↔B 3-vs-4 (p=1.0),
   deficit: the gate note in the submission instructions may induce over-cautious
   polish-instead-of-submit behavior (anticipatory effect, cousin of the C2 trend and of
   Ian's −0.131 imperative-sentence result).
-- D-r2 running on leejr (counterbalance) — judgment reserved until it lands.
+- D-r2 running on worker-b (counterbalance) — judgment reserved until it lands.
 
 ## 2026-08-26 — STAGE 1 COMPLETE: final four-arm results
 
@@ -338,7 +338,7 @@ Per-instance 2-round sign tests: A↔C2 4-vs-2 (p≈0.69), A↔B 3-vs-4 (p=1.0),
   before `rejections()` reads in the same expression → counter stuck at 1. Fixed
   (count-then-write), re-embedded, retested: reject → reject → silent pass ✓. Plain-echo
   passthrough and clean-submit paths verified ✓.
-- `s1-arm-d2-r1` (chunklebox) and `s1-arm-d2-r2` (leejr) launched concurrently.
+- `s1-arm-d2-r1` (worker-a) and `s1-arm-d2-r2` (worker-b) launched concurrently.
 - Prediction to check: if D's deficit was anticipatory, D2 ≈ A with a few gated saves;
   if it was repair-burn, D2 lands between D and A with step-caps replaced by soft passes.
 
@@ -381,8 +381,8 @@ paper's API speeds it mostly wouldn't.
   template). 12 providers total; input $0.29–0.50/M, output $2.40–3.40/M.
 - Cost basis (measured from A-r1 trajectories): mean 1.69M input + ~40k output tokens per
   episode → ~$0.60/episode; revalidation ≈ $75–120 total.
-- **Launched**: `s1h-arm-a-r1`→`s1h-arm-d2-r1` chained on chunklebox (6/5 workers),
-  `s1h-arm-a-r2`→`s1h-arm-d2-r2` on leejr (4 workers). Both configs:
+- **Launched**: `s1h-arm-a-r1`→`s1h-arm-d2-r1` chained on worker-a (6/5 workers),
+  `s1h-arm-a-r2`→`s1h-arm-d2-r2` on worker-b (4 workers). Both configs:
   `container_timeout: 8h` (the fix for the 2h-wall confound), same prompts/gate as the
   local A/D2 arms. Hosted results form a self-contained comparison; never mixed with
   local numbers.
@@ -431,10 +431,10 @@ total_usage predates this project (activity dashboard).
 
 ## Open items
 
-- Round 2 (hosts swapped: A→leejr, B→chunklebox, C→leejr) after round 1.
+- Round 2 (hosts swapped: A→worker-b, B→worker-a, C→worker-b) after round 1.
 - Analysis: paired matrix on intersection of golden-valid sets, McNemar A↔B, B↔C
   (order-interleaving already partial via concurrency); lsp-usage vs outcome within C.
-- cortical still out of the pool (needs sudo for docker; busy with muse-glimmer).
+- strix-halo still out of the pool (needs sudo for docker; busy with muse-glimmer).
 - Report ProMax issues upstream when done: proxy-baked images, golden flakiness by host.
 
 ## 2026-08-28 — review round & retroactive gate measurement
@@ -456,7 +456,7 @@ total_usage predates this project (activity dashboard).
   to every resolved baseline-A patch (local + hosted, both rounds; 83 patches) in fresh
   containers. Early rows already show test-passing patches with 8–18 new type errors.
   Results → REPORT.md §6 and `results/retro_gate.jsonl`.
-- Retro-gate v1 filled chunklebox's disk (no image eviction — the waved runner's lesson,
+- Retro-gate v1 filled worker-a's disk (no image eviction — the waved runner's lesson,
   re-learned); v2 (instance-major, per-instance evict, resume) completed all 83.
   **Result: the gate would have rejected 29/83 (35%) of test-passing baseline patches**,
   stable across runs (29–39%); median 4 new type errors per false-blocked patch (max 43);
