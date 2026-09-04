@@ -1,0 +1,31 @@
+
+== E s1-arm-e-r1,s1-arm-e-r2: 2 run(s), 58 episodes, golden-valid 50: resolved 32/50 = 64%
+   exits: {'Submitted': 58}; wall deaths: 0
+   steps           mean     52.310  median     41.500
+   greps           mean     17.914  median     14.000
+   in_tok          mean 2747066.776  median 1185408.500
+   out_tok         mean  29218.138  median  19151.500
+   reason_tok      mean  17074.034  median   9602.500
+   wall_h          mean      0.758  median      0.407
+   edit_recall     mean      0.667  median      0.600
+   edit_precision  mean      0.926  median      1.000
+   anchor: grep-cmds seen 1001, anchored 487, not_ready 0, timeouts 0; anchored observations in trajs 487 (mean 8.4/episode, mean addendum chars/episode 9392); mean anchor seconds/episode 5.6
+
+== A s1-arm-a8-r1,s1-arm-a8-r2: 2 run(s), 58 episodes, golden-valid 50: resolved 34/50 = 68%
+   exits: {'Submitted': 58}; wall deaths: 0
+   steps           mean     55.983  median     45.500
+   greps           mean     20.138  median     16.000
+   in_tok          mean 2987910.914  median 1293643.000
+   out_tok         mean  29567.190  median  19023.000
+   reason_tok      mean  17023.534  median   8849.000
+   wall_h          mean      0.777  median      0.394
+   edit_recall     mean      0.666  median      0.658
+   edit_precision  mean      0.931  median      1.000
+
+== paired E vs A on 25 golden-valid instances (instance scores summed over rounds):
+   E better 2, A better 3, sign-test p=1.000
+   Δsteps        mean     -4.320 median     -2.000  (E higher on 8, lower on 16, sign p=0.152)
+   Δin_tok       mean -289985.140 median  -7756.500  (E higher on 12, lower on 13, sign p=1.000)
+   Δwall_h       mean     -0.032 median     +0.006  (E higher on 14, lower on 11, sign p=0.690)
+   Δgreps        mean     -1.860 median     -1.000  (E higher on 9, lower on 14, sign p=0.405)
+   Δedit_recall  mean     -0.003 median     +0.000  (E higher on 5, lower on 4, sign p=1.000)

@@ -1,0 +1,37 @@
+# ARM_E: CodeAnchor-style passive anchors on grep output (arXiv 2606.26979 adapted:
+# facts come from the warm language server and are appended to each grep observation
+# by the harness instead of being written into source files as comments).
+# Prompt is BYTE-IDENTICAL to arm A (stock template): no tool docs, no instruction —
+# the agent keeps using grep; every grep-family observation with source-file hits gains
+# an addendum listing, per matched symbol, its kind/definition site, who uses it
+# (grouped by file with enclosing symbols), and referencing files absent from the grep
+# output. Rollout image: promax-lsp:<id> (Pyrefly daemon); eval in original images.
+# Use with:  run_batch_waved.sh arm_e.yaml <run> <filter> anchor   (PYTHONPATH must include agent/anchor_env.py's dir)
+agent:
+  step_limit: 300
+  cost_limit: 100000.
+
+environment:
+  # environment_class stays "docker": the launcher shim (agent/anchor_runner.py, used by
+  # run_batch_waved.sh in mode "anchor") rebinds that name to AnchorDockerEnvironment,
+  # because mini-swe-agent's runner only injects the instance image for the literal name.
+  container_timeout: 8h
+  anchor_pkg_dir: /home/ianbarber/refactorbench-eval/anchor/lsp_tool
+  anchor_budget: 12
+  anchor_max_hits: 40
+  anchor_lsp_wait: 3
+
+model:
+  model_name: "openai/qwen3.8-27b-sglang"
+  model_kwargs:
+    api_base: "http://192.168.1.92:8888/v1"
+    api_key: "EMPTY"
+    temperature: 1.0
+    top_p: 0.95
+    max_tokens: 16384
+    drop_params: true
+    parallel_tool_calls: true
+    extra_body:
+      top_k: 20
+      chat_template_kwargs:
+        reasoning_effort: "medium"

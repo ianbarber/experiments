@@ -1,0 +1,23 @@
+# Arm A8: baseline (identical to arm_a.yaml) with the 8-hour container wall — the
+# same-period paired control for arm E. Prompt is the stock template.
+agent:
+  step_limit: 300
+  cost_limit: 100000.
+
+environment:
+  container_timeout: 8h
+
+model:
+  model_name: "openai/qwen3.8-27b-sglang"
+  model_kwargs:
+    api_base: "http://192.168.1.92:8888/v1"
+    api_key: "EMPTY"
+    temperature: 1.0
+    top_p: 0.95
+    max_tokens: 16384
+    drop_params: true
+    parallel_tool_calls: true
+    extra_body:
+      top_k: 20
+      chat_template_kwargs:
+        reasoning_effort: "medium"

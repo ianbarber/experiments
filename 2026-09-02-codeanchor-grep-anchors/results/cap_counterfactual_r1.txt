@@ -1,0 +1,25 @@
+instances analysed: 25 (replay rows 29); gold files missed by BOTH arms: 69
+   28 (41%)  non-python
+   27 (39%)  python source: never reachable from searched symbols
+    7 (10%)  gold creates/deletes the file
+    4 (6%)  python source: SHOWN in a capped addendum (ignored)
+    3 (4%)  python source: HIDDEN BY THE CAP (in uncapped replay only)
+
+per-instance (missed-by-both, of which hidden-by-cap python source):
+  optuna__optuna-c_058e8bc                     missed  15  hidden-by-cap 2
+  huggingface__lerobot-2808                    missed  13  hidden-by-cap 1
+  albumentations-team__albumentations-2337     missed   2  hidden-by-cap 0
+  albumentations-team__albumentations-2495     missed   8  hidden-by-cap 0
+  confident-ai__deepeval-2345                  missed   1  hidden-by-cap 0
+  django__django-19643                         missed   4  hidden-by-cap 0
+  langchain-ai__langchain-32996                missed   2  hidden-by-cap 0
+  mikf__gallery-dl-7872                        missed   2  hidden-by-cap 0
+  pandas-dev__pandas-61244                     missed   1  hidden-by-cap 0
+  pypa__pipenv-6373                            missed   2  hidden-by-cap 0
+  roboflow__supervision-1943                   missed   2  hidden-by-cap 0
+  stanfordnlp__dspy-9047                       missed   1  hidden-by-cap 0
+  verl-project__verl-3915                      missed  10  hidden-by-cap 0
+  verl-project__verl-4185                      missed   1  hidden-by-cap 0
+  vibrantlabsai__ragas-2333                    missed   5  hidden-by-cap 0
+
+files named: capped 657 vs uncapped 2389 (3.6x); symbols rendered: capped 705 vs uncapped-with-refs 937

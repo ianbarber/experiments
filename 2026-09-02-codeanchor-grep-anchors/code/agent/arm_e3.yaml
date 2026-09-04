@@ -1,0 +1,39 @@
+# ARM_E3: CodeAnchor-faithful anchors — definition-site placement + no caps.
+# Differences from arm E (agent/arm_e.yaml):
+#   * anchor_views: every def/class line visible in a file view (cat / sed -n / head /
+#     tail / nl) gets its "used by" list — tags colocated with definitions, the paper's
+#     own trigger surface — in addition to grep hits;
+#   * anchor_uncapped: no caps on symbols, files or users (CodeAnchor caps nothing); the
+#     only truncation is the harness's 10,000-char observation limit, applied by trimming
+#     the addendum at a line boundary (never the command output) and logged.
+# Prompt byte-identical to arm A. Rollout image promax-lsp:<id>; eval in original images.
+# Use with:  run_batch_waved.sh arm_e3.yaml <run> <filter> anchor
+agent:
+  step_limit: 300
+  cost_limit: 100000.
+
+environment:
+  container_timeout: 8h
+  anchor_pkg_dir: /home/ianbarber/refactorbench-eval/anchor/lsp_tool
+  anchor_views: true
+  anchor_uncapped: true
+  anchor_budget: 25
+  anchor_exec_timeout: 60
+  anchor_max_hits: 60
+  anchor_view_max_hits: 80
+  anchor_lsp_wait: 3
+
+model:
+  model_name: "openai/qwen3.8-27b-sglang"
+  model_kwargs:
+    api_base: "http://192.168.1.92:8888/v1"
+    api_key: "EMPTY"
+    temperature: 1.0
+    top_p: 0.95
+    max_tokens: 16384
+    drop_params: true
+    parallel_tool_calls: true
+    extra_body:
+      top_k: 20
+      chat_template_kwargs:
+        reasoning_effort: "medium"
