@@ -1,6 +1,6 @@
 # experiments
 
-Private lab notebook: one dated folder per experiment, each with a brief (README),
+Lab notebook: one dated folder per experiment, each with a brief (README),
 a full report, an execution log, and the code to reproduce it.
 
 | Date | Experiment |
