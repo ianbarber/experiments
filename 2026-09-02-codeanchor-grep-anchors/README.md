@@ -24,6 +24,8 @@ same-period control (A8), hosts swapped.
   (wall), but paired per instance the ratios are 0.95 (p = 0.76) and 1.03 (p = 0.40) — two
   outlier control episodes, not a saving. ~7% fewer steps (p = 0.07) is cancelled by ~8%
   higher per-step latency from the longer context. Edit recall identical.
+- **No variance win on two rounds** (per-instance round-to-round dispersion equal; extreme tail
+  shorter with anchors — variance rerun queued to test it).
 - **The mechanism works and is cheap** (half of greps anchored, ≈4% of prompt tokens,
   5.6 s/episode, zero failures) **and the agent acts on it** (99 of 99 flagged gold files
   opened, 92 patched) — but both arms miss the same 64 gold files.

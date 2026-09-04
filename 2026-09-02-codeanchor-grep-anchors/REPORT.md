@@ -14,6 +14,10 @@ Qwen3.8-27B-FP8, local SGLang/DSpark on the GB10 · **Design:** arm E (anchors) 
   p = 0.76) and 1.03 (wall, p = 0.40). The only consistent trend is ~7% fewer steps
   (p = 0.07), cancelled by ~8% higher per-step latency from the longer context. Edit recall
   against gold files is identical (0.667 vs 0.666). See §3.1.
+- **No variance win either, on two rounds.** Round-to-round dispersion per instance is the
+  same in both arms (tokens 1.68× vs 1.71×, steps 1.28× vs 1.32×, outcome flips 4 vs 4);
+  grep counts are somewhat more consistent with anchors (19/25, p = 0.14) and the extreme
+  tail is shorter (max tokens 8.6M vs 17.6M) — the queued variance rerun tests that (§3.2).
 - **The mechanism works and is cheap.** Half of the agent's grep commands received an
   addendum (8.4 per episode, ≈9.4k chars ≈ 4% of cumulative prompt tokens, 5.6 s of
   language-server work per episode, zero failures in 1,001 grep events). The agent acts
@@ -140,6 +144,45 @@ Anchor computation itself is negligible (5.6 s per episode, 12 s budget never bi
 **Answer to the cost question: not measurably cheaper in tokens or wall-clock for a
 typical instance; a modest, near-significant reduction in steps; cheaper in raw totals only
 because of two outlier control episodes.**
+
+Where the higher per-step latency comes from (step-level decomposition, ~3,000 steps per
+arm): steps taken right after an anchored observation are the *fastest* steps in either arm
+(median 18.0 s, 205 output tokens, 74 reasoning tokens) versus 26.0 s / 296 / 96 for E's
+other steps and 23.0 s / 279 / 90 for A8; decode throughput is identical across arms (12.0
+vs 11.9 output tokens per second of step time) and observation size does not explain it
+(A8 steps after 3–10k-char observations take 24 s; E's anchored ones 16 s). The anchors are
+therefore latency-neutral at the step where they appear; E's higher average is
+compositional — the steps anchors eliminate are cheap ones (a follow-up grep plus a short
+model turn), so the remaining mix is heavier. Implication for a fast API endpoint (our
+hosted reference decoded ~2.5× faster, 11 s median per step): all model time shrinks and
+tool time dominates short steps, so the achievable wall saving is the *time share* of the
+eliminated steps — roughly 3–5% — not their 7% count, and only if the step reduction holds.
+
+### 3.2 Consistency (the "variance win" hypothesis)
+
+CodeAnchor's stated motivation is that deterministic anchors "make exploration more
+disciplined under stochastic LLM control", so a positive result could take three forms:
+a correctness win (§3: none), an efficiency win (§3.1: none beyond a modest step trend), or
+a **variance win** — the same tasks done more consistently. Round-to-round dispersion per
+instance, |log(round 1 / round 2)| (0 = identical rounds), 25 instances:
+
+| Metric | E geo-mean spread | A8 geo-mean spread | E more consistent on | Wilcoxon p |
+|---|---|---|---|---|
+| Cumulative input tokens | 1.68× | 1.71× | 10/25 | 0.58 |
+| Steps | 1.28× | 1.32× | 12/25 | 0.86 |
+| Wall-clock | 1.64× | 1.50× | 9/25 | 0.29 |
+| Grep commands | 1.42× | 1.64× | 19/25 | 0.14 |
+| Output tokens | 1.50× | 1.39× | 7/25 | 0.09 |
+
+Outcome flips between rounds: 4/25 in each arm. Typical dispersion is the same; the only
+hint of discipline is in the search phase (grep counts more consistent with anchors). The
+extreme tail is shorter with anchors, though: over the 50 episodes per arm, cumulative input
+tokens p90 5.9M / max 8.6M (E) vs 4.8M / 17.6M (A8), steps p90 87 / max 109 vs 94 / 167,
+wall p90 1.5 h / max 3.7 h vs 2.0 h / 4.4 h. Both of E's albumentations-2495 episodes
+(8.6M, 7.0M tokens) were shorter than both of the control's (17.6M, 10.8M), and the
+control's transformers-38332 round 2 was a 12.8M-token failing excursion. Two rounds cannot
+separate "anchors truncate long excursions" from luck; the **variance rerun** (5 extra
+rounds of both arms on the five largest-gap instances, queued after E3) is designed to.
 
 ## 4. Why nothing moved
 
