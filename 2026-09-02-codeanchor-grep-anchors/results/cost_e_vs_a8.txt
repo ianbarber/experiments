@@ -1,0 +1,18 @@
+Cost comparison, arm E vs A8, 25 shared golden-valid instances x 2 rounds (50 episodes per arm)
+(source: episodes_e_vs_a8.csv; ratios are per-instance E/A8 of the mean over rounds)
+
+metric                    total E    total A8   E/A8   geo-mean ratio  median ratio  E cheaper on  Wilcoxon p
+cumulative input tokens   97.03M     111.53M    0.870  0.953           0.966         13/25         0.76
+output tokens             1.206M     1.221M     0.987  0.985           0.985         13/25         0.97
+wall-clock hours          31.97      33.57      0.952  1.029           1.014         11/25         0.40
+steps                     2266       2482       0.913  0.928           0.896         16/25         0.07
+grep commands             812        905        0.897  0.940           0.952         14/25         0.24
+
+largest per-instance input-token differences (E - A8, mean over rounds):
+  -6.43M albumentations-team__albumentations-2495
+  -5.01M huggingface__transformers-38332
+  -0.86M optuna__optuna-6166
+  +1.42M mikf__gallery-dl-7872
+  +2.10M django__django-19643
+  +2.40M langchain-ai__langchain-32996
+per-step latency: E 43.7 s mean / 22.0 s median; A8 40.5 s / 20.0 s. Anchor compute 5.6 s/episode.

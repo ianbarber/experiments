@@ -19,9 +19,11 @@ same-period control (A8), hosts swapped.
 
 ## Headline results
 
-- **Null.** E 32/50 (64%) vs control 34/50 (68%); paired E better 2, control better 3,
-  20 tied (p = 1.0). Steps −4.3/episode (n.s.), cumulative input tokens and wall time
-  unchanged within noise, edit recall identical.
+- **Null on outcome, and not cheaper.** E 32/50 (64%) vs control 34/50 (68%); paired E
+  better 2, control better 3, 20 tied (p = 1.0). Raw totals favour E by 13% (tokens) and 5%
+  (wall), but paired per instance the ratios are 0.95 (p = 0.76) and 1.03 (p = 0.40) — two
+  outlier control episodes, not a saving. ~7% fewer steps (p = 0.07) is cancelled by ~8%
+  higher per-step latency from the longer context. Edit recall identical.
 - **The mechanism works and is cheap** (half of greps anchored, ≈4% of prompt tokens,
   5.6 s/episode, zero failures) **and the agent acts on it** (99 of 99 flagged gold files
   opened, 92 patched) — but both arms miss the same 64 gold files.

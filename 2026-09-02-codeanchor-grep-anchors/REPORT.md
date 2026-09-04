@@ -7,11 +7,13 @@ Qwen3.8-27B-FP8, local SGLang/DSpark on the GB10 · **Design:** arm E (anchors) 
 
 ## TL;DR
 
-- **Null.** Arm E resolved 32/50 (64%) vs the control's 34/50 (68%). Paired on 25
-  instances with scores summed over rounds: E better on 2, control better on 3, 20 tied
-  (sign p = 1.0). Steps −4.3/episode (E lower on 16 of 24, p = 0.15, n.s.), cumulative
-  input tokens −0.29M mean but −0.008M median (13 vs 12), wall −0.03 h mean / +0.006 h
-  median, edit recall against gold files identical (0.667 vs 0.666).
+- **Null on outcome, and not cheaper.** Arm E resolved 32/50 (64%) vs the control's 34/50
+  (68%); paired on 25 instances: E better on 2, control better on 3, 20 tied (sign
+  p = 1.0). Raw totals show E using 13% fewer input tokens and 5% less wall-clock, but
+  that is two outlier control episodes: paired per instance the ratios are 0.95 (tokens,
+  p = 0.76) and 1.03 (wall, p = 0.40). The only consistent trend is ~7% fewer steps
+  (p = 0.07), cancelled by ~8% higher per-step latency from the longer context. Edit recall
+  against gold files is identical (0.667 vs 0.666). See §3.1.
 - **The mechanism works and is cheap.** Half of the agent's grep commands received an
   addendum (8.4 per episode, ≈9.4k chars ≈ 4% of cumulative prompt tokens, 5.6 s of
   language-server work per episode, zero failures in 1,001 grep events). The agent acts
@@ -108,10 +110,36 @@ Per-step latency: E 43.7 s mean / 22.0 s median vs A8 40.5 s / 20.0 s (output to
 step 471 vs 458). Anchor computation itself is 5.6 s per episode. All 116 episodes
 submitted; zero container-wall deaths in any run.
 
-Reading the token/wall question directly: the weak trend to fewer steps and fewer greps is
-consistent with the agent using an addendum in place of a follow-up grep, but the addendum's
-own context cost (≈4% of prompt tokens, re-read on every later step) and slightly longer
-prefill cancel it. Net tokens and wall time are unchanged within noise.
+### 3.1 Was arm E cheaper? (tokens and wall-clock)
+
+Totals over the 50 paired episodes per arm (25 shared golden-valid instances × 2 rounds):
+
+| Metric | E | A8 | E/A8 |
+|---|---|---|---|
+| Cumulative input tokens | 97.0M | 111.5M | 0.87 |
+| Output tokens | 1.21M | 1.22M | 0.99 |
+| Wall-clock | 32.0 h | 33.6 h | 0.95 |
+| Steps | 2,266 | 2,482 | 0.91 |
+| Grep commands | 812 | 905 | 0.90 |
+
+Paired per instance (ratio of E to A8, each the mean over rounds), the picture is flat:
+geometric-mean ratio 0.95 for input tokens (E cheaper on 13 of 25, Wilcoxon signed-rank
+p = 0.76), 1.03 for wall-clock (cheaper on 11 of 25, p = 0.40), 0.93 for steps (cheaper on
+16 of 25, p = 0.07), 0.94 for greps (p = 0.24). The 13% token gap in the totals comes almost
+entirely from two long control episodes (albumentations-2495 −6.4M, transformers-38332
+−5.0M tokens for E relative to A8), while three instances go the other way by +1.4M to
++2.4M each — temperature-1.0 episode-length noise, not a systematic saving.
+
+The one consistent trend is steps: ~7% fewer, with ~6% fewer greps, consistent with an
+addendum occasionally replacing a follow-up grep. It does not reach wall-clock because
+per-step latency is ~8% higher (43.7 s vs 40.5 s mean; medians 22.0 vs 20.0 s): each step
+carries a longer context — the addenda add ≈4% to cumulative prompt tokens and are re-read
+on every later step — so the tokens the anchors cost roughly pay for the steps they save.
+Anchor computation itself is negligible (5.6 s per episode, 12 s budget never binding).
+
+**Answer to the cost question: not measurably cheaper in tokens or wall-clock for a
+typical instance; a modest, near-significant reduction in steps; cheaper in raw totals only
+because of two outlier control episodes.**
 
 ## 4. Why nothing moved
 
