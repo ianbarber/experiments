@@ -1,6 +1,6 @@
 # CodeAnchor-style anchors on grep output: does passive structural injection help a local coding agent refactor?
 
-**Date:** 2026-09-02 → 2026-09-04 (E3 follow-up running) · **Fleet:** DGX Spark (GB10)
+**Date:** 2026-09-02 → 2026-09-05 (variance rerun in progress) · **Fleet:** DGX Spark (GB10)
 serving + two x86 docker workers (worker-a, worker-b) + NAS · **Benchmark:** SWE-Bench ProMax python
 subset · **Scaffold:** mini-swe-agent 2.4.6 · **Model:** Qwen3.8-27B-FP8 (local)
 
@@ -35,7 +35,9 @@ same-period control (A8), hosts swapped.
 - **Deviation audited:** my display caps (the paper caps nothing) hid only 3 of 69
   missed files, measured by an uncapped replay of every anchored grep.
 - **E3** (definition-site placement on file views, uncapped — the paper's own trigger
-  surface) is running; results will be appended.
+  surface): same outcome (32/50, paired 1-vs-4), fewer steps (−4.5%, p = 0.043) but +35%
+  wall-clock (p = 0.015) and +36% median tokens; only 9 of the 64 jointly-missed gold files
+  were ever named. More exposure is a net cost on a local server.
 
 ## Contents
 
@@ -45,4 +47,4 @@ same-period control (A8), hosts swapped.
 | `LABNOTES.md` | Chronological lab notebook (four launches of E-r1, the cap concern, the replay) |
 | `NOTES.md` | Protocol amendments + run ledger for E / A8 / E3 |
 | `code/` | Environment subclass + launcher shim, arm configs, runner, daemon `anchor` op, analysis scripts (diff vs the earlier entry) |
-| `results/` | Per-run per-instance outcomes, per-grep anchor telemetry, summary, episode CSV, uncapped replay + counterfactual |
+| `results/` | Per-run per-instance outcomes (E, A8, E3), per-grep/view anchor telemetry, summaries, episode CSVs, uncapped replay + counterfactual, cost/consistency tables |

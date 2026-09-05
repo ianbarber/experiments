@@ -1,6 +1,6 @@
 # Do CodeAnchor-style anchors on grep output help a local coding agent refactor? (Arm E)
 
-**Dates:** 2026-09-02 → 2026-09-04 · **Benchmark:** SWE-Bench ProMax python subset (29
+**Dates:** 2026-09-02 → 2026-09-05 · **Benchmark:** SWE-Bench ProMax python subset (29
 instances, 25 golden-valid on our LAN) · **Scaffold:** mini-swe-agent 2.4.6 · **Model:**
 Qwen3.8-27B-FP8, local SGLang/DSpark on the GB10 · **Design:** arm E (anchors) vs arm A8
 (stock baseline), 2 rounds each, hosts swapped between rounds, 8 h container wall.
@@ -18,6 +18,10 @@ Qwen3.8-27B-FP8, local SGLang/DSpark on the GB10 · **Design:** arm E (anchors) 
   same in both arms (tokens 1.68× vs 1.71×, steps 1.28× vs 1.32×, outcome flips 4 vs 4);
   grep counts are somewhat more consistent with anchors (19/25, p = 0.14) and the extreme
   tail is shorter (max tokens 8.6M vs 17.6M) — the queued variance rerun tests that (§3.2).
+- **E3 (definition-site tags on file views, no caps — the paper's own placement) changes
+  nothing on outcome and costs more:** 32/50 again (paired 1-vs-4, p = 0.375), steps −4.5%
+  (p = 0.043) but wall-clock +35% (p = 0.015) and tokens +36% at the median; of the 64 gold
+  files both arms miss, only 9 were ever named even by uncapped definition-site anchors (§3.3).
 - **The mechanism works and is cheap.** Half of the agent's grep commands received an
   addendum (8.4 per episode, ≈9.4k chars ≈ 4% of cumulative prompt tokens, 5.6 s of
   language-server work per episode, zero failures in 1,001 grep events). The agent acts
@@ -184,6 +188,56 @@ control's transformers-38332 round 2 was a 12.8M-token failing excursion. Two ro
 separate "anchors truncate long excursions" from luck; the **variance rerun** (5 extra
 rounds of both arms on the five largest-gap instances, queued after E3) is designed to.
 
+## 3.3 Arm E3: definition-site placement, uncapped (the paper's own trigger surface)
+
+E3 (`code/agent/arm_e3.yaml`, launched 2026-09-04) removed both deviations from the paper
+that §5 lists: no caps on symbols, files or users, and anchors also on **file views** —
+every `def`/`class` line visible in a `cat` / `sed -n` / `head` / `tail` / `nl` view gets its
+"used by" list in definition order, i.e. tags colocated with definitions. The only
+truncation is the harness's 10,000-char observation limit (applied to the addendum, never to
+the command output; it bound on 15% of addenda). Two rounds, hosts swapped, against the same
+A8 control (round 2 is a merge of three pieces after a worker reboot and an image prune
+during the run; see `LABNOTES.md`).
+
+| Arm | Round 1 | Round 2 | Total | Rate |
+|---|---|---|---|---|
+| E3 | 17/25 | 15/25 | 32/50 | 64% |
+| A8 control | 18/25 | 16/25 | 34/50 | 68% |
+
+Paired on the 25 shared instances: E3 better on 1 (`google__adk-python-c_19315fe`, both
+rounds), control better on 4, 20 tied (sign p = 0.375).
+
+| Metric (per episode) | E3 | A8 | Δ mean | Δ median | E3 lower on | sign p |
+|---|---|---|---|---|---|---|
+| Steps | 53.2 | 56.0 | −2.5 | −2.5 | 18/25 | **0.043** |
+| Cumulative input tokens | 3.16M | 2.99M | +0.17M | +0.03M | 11/25 | 0.69 |
+| Wall-clock (h) | 1.05 | 0.78 | +0.22 | +0.12 | 6/25 | **0.015** |
+| Grep commands | 19.7 | 20.1 | −0.2 | 0 | 11/23 | 1.0 |
+| Edit recall vs gold files | 0.651 | 0.666 | −0.025 | 0 | 5/8 | 0.73 |
+
+Exposure doubled: 17.1 anchored observations per episode (482 grep + 518 view addenda over
+58 episodes; median 1.2–1.3k chars, p90 4.9–7.6k), ≈38k addendum chars per episode
+(≈9.4k tokens, re-read on every later step), 11.9 s of language-server work per episode,
+zero failures. Uptake is unchanged: 1,123 flagged source files, 23% later opened; 188
+flagged gold files → 178 opened, 176 patched. **Coverage is unchanged too**: gold files
+covered by both arms 121, E3-only 3, A8-only 4, neither 64 — and of those 64 missed files
+only 9 were ever named in any E3 addendum, uncapped and with the wider trigger surface.
+
+Cost went the wrong way. Steps fell significantly (−4.5%, p = 0.043) but cumulative input
+tokens rose (+36% at the median: the larger observations raise the context carried by every
+later step) and wall-clock rose 35% on the mean, +0.12 h at the median, higher on 19 of 25
+instances (p = 0.015): per-step latency went from 50 s to 71 s as contexts grew (local
+prefill and cache pressure on the GB10), and the longest episodes got longer (max 14.7M
+tokens / 5.4 h vs 17.6M / 4.4 h for the control; p90 wall 1.96 h vs 1.98 h). Consistency
+did not improve either (round-to-round token spread 1.49× vs 1.71×, E3 more consistent on
+12/25; outcome flips 4 vs 4).
+
+**Read:** the paper's placement and the absence of caps buy nothing here. Both variants
+say the same thing from opposite ends of the exposure range: the agent reads and acts on
+anchors, and the files it misses are the ones no anchor ever names, because they are
+non-Python or are referenced only by symbols the agent never searches or opens. On a local
+server, more exposure is a net cost.
+
 ## 4. Why nothing moved
 
 **Uptake is real.** Across 58 E episodes the addenda flagged 578 distinct source files as
@@ -232,15 +286,12 @@ files the control patched and E did not, 1 was cap-hidden and 2 were shown.
 
 ## 6. Follow-ups
 
-**E3 is running** (launched 2026-09-04, both rounds concurrently; config `code/agent/arm_e3.yaml`):
-definition-site placement (tags on every def/class visible in `cat`/`sed -n`/`head`/`tail`
-views, in addition to grep hits) with no caps, per the paper. Results will be appended here.
 
-- **E3 — definition-site placement, uncapped.** Annotate `cat`/`sed -n` views of a file with
-  each function's users (full compact file list, source-first, no enclosing-scope detail),
-  in addition to grep hits. This is the paper's own trigger surface and the only variant the
-  diagnostics suggest could reach the 39% row. Cost ≈ 2 rounds × 2 arms ≈ 2 days.
-- Uncapped E2 alone is faithful but predicted to change little.
+- **E3 (definition-site placement, uncapped) was run — §3.3: null on outcome, worse on cost.**
+  The remaining lever within this technique family is the agent's own navigation, not the
+  facts it is shown.
+- **Variance rerun** (5 extra rounds of E and A8 on the five largest-gap instances) is in
+  progress to settle §3.2's tail question; results will be appended.
 - Non-Python gold files (41% of misses) need a different signal entirely (docs/config search
   hints), out of scope for LSP anchors.
 
