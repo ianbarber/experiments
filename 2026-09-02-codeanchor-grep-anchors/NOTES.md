@@ -1,4 +1,4 @@
-# Protocol amendments & run ledger — arm E / E3
+# Protocol amendments & run ledger — arm E / E3 / variance rerun
 
 Base protocol (model, sampling, harness, images, eval) is that of the
 [2026-08-22 study](../2026-08-22-lsp-agents-promax/NOTES.md).
@@ -40,13 +40,17 @@ Base protocol (model, sampling, harness, images, eval) is that of the
 
 | Run | Arm | Host | Status |
 |-----|-----|------|--------|
-| s1-arm-e3-r1 | E3 | worker-a | running (launched 2026-09-04) |
-| s1-arm-e3-r2 | E3 | worker-b | running (launched 2026-09-04) |
+| s1-arm-e3-r1 | E3 | worker-a | **DONE: 17/25 (68%)** |
+| s1-arm-e3-r2 | E3 | worker-b | **DONE: 15/25 (60%)** (merged: waves 1–5 + `-fix` + `-r2b`) |
 
-## 2026-09-05/06 — Variance rerun (Ian: "the paper signals the saving is largely variance")
+**E3 FINAL: 32/50 (64%) vs A8 34/50 (68%); paired 1-vs-4 p=0.375; steps −2.5 (p=0.043), wall +0.22 h (p=0.015), tokens +0.17M mean.**
 
-5 extra rounds of E and of A8 on the five largest-|Δ tokens| instances (`var5.re`):
-`s1-arm-e-var-r1..5` (worker-a), `s1-arm-a8-var-r1..5` (worker-b). All 50 episodes ran;
-one context-limit (262k) `BadRequestError` per arm on transformers-38332, kept as failed
-episodes with their full counts. Analysis: `code/analysis/anchor_variance.py` →
-`results/variance_rerun.txt`; report §3.4.
+## 2026-09-05/06 — Variance rerun ledger
+
+| Run | Arm | Host | Result (5 instances) |
+|-----|-----|------|----------------------|
+| s1-arm-e-var-r1..r5 | E | worker-a | 1, 1, 0, 1, 1 of 5 |
+| s1-arm-a8-var-r1..r5 | A8 | worker-b | 2, 0, 0, 0, 2 of 5 |
+
+Pooled 35 episodes/arm: level equal (geo-mean tokens 4.02M vs 4.19M); control has 3
+step-cap episodes vs 0; spread reduction n.s. (p=0.71, bootstrap CI 0.42–1.57). §3.4.

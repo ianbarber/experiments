@@ -1,6 +1,6 @@
-# Lab notebook — CodeAnchor-style anchors (arm E / E3)
+# Lab notebook — CodeAnchor-style anchors (arm E / E3 / variance rerun)
 
-Chronological, unedited except for this header. Continues the notebook of the
+Chronological, unedited except for this header and hostname scrubbing. Continues the notebook of the
 [2026-08-22 LSP study](../2026-08-22-lsp-agents-promax/LABNOTES.md).
 
 ## 2026-09-02 — Arm E: CodeAnchor-style passive anchors on grep output (design + build)
@@ -272,3 +272,96 @@ arm64 alpine container, then `start-dspark.sh` (DSpark draft re-downloads from H
 - Launched concurrently (both workers free): `s1-arm-e3-r1` worker-a (waves of 5,
   3/2), `s1-arm-e3-r2` worker-b (waves of 4, 3/2). Control = the existing A8 rounds (same
   serving stack, 2 days apart — documented).
+- Report: added §3.1 "Was arm E cheaper?" (totals E/A8 0.87 tokens, 0.95 wall, 0.91
+  steps; paired geo-mean ratios 0.95 / 1.03 / 0.93, Wilcoxon p 0.76 / 0.40 / 0.07; the token
+  total is two outlier control episodes). Pushed (`aa51c12`); remote had Ian's hostname
+  scrub commit (worker-a→worker-a, worker-b→worker-b, strix-halo→strix-halo, IPs→dgx-spark/nas)
+  — rebased on it; rule saved for future pushes.
+- **Ian: the paper signals the saving is largely variance; our long episodes might be a
+  positive example — rerun both arms on those tests a few times.** Queued the variance
+  rerun: 5 extra rounds of E and of A8 on the 5 instances with the largest |Δ tokens|
+  (albumentations-2495 −6.4M, transformers-38332 −5.0M; langchain-32996 +2.4M,
+  django-19643 +2.1M, gallery-dl-7872 +1.4M — both directions for symmetry). Runs
+  `s1-arm-e-var-r{1..5}` (worker-a, after E3-r1) and `s1-arm-a8-var-r{1..5}` (worker-b,
+  after E3-r2), chained via `~/refactorbench-eval/chain_var_*.sh`; filter `var5.re`.
+  Question: on these instances, is E's episode-length distribution genuinely shorter
+  (positive example) or is the r1/r2 gap within the per-instance variance?
+- **Ian's framing of a positive result: (1) correctness (unlikely), (2) efficiency, (3)
+  variance/consistency.** Added to the report: §3.1 step-level latency decomposition —
+  steps right after an anchored observation are the fastest in either arm (median 18 s,
+  205 out tokens) vs 26 s for E's other steps and 23 s for A8; decode proxy identical
+  (12.0 vs 11.9 tok/s) → anchors are latency-neutral where they appear, E's higher mean is
+  compositional (cheap steps removed); on a fast API the achievable wall saving is the
+  time share of the removed steps (~3–5%). §3.2 consistency — round-to-round |log(r1/r2)|
+  per instance: tokens 1.68× (E) vs 1.71× (A8), steps 1.28× vs 1.32×, outcome flips 4 vs 4
+  → no variance win on typical dispersion; greps more consistent with anchors (19/25,
+  p=0.14); extreme tail shorter (max tokens 8.6M vs 17.6M, p90 wall 1.5 h vs 2.0 h). The
+  variance rerun (queued) is the test of the tail claim. Pushed.
+- **Incident (2026-09-04 13:12 PT, worker-b)**: a Docker image prune during Ian's disk
+  cleanup (h3 models, anaconda envs, HF cache, ~/models removed; 52 → 692 GB free)
+  deleted `promax-lsp:django__django-19643` after E3-r2's wave 2 had loaded it but before
+  its container started (3 workers, 4-instance wave) → `docker run` exit 125 →
+  `CalledProcessError`, empty patch. Other wave-2 instances unaffected (their containers
+  were running); later waves reload images from the NAS. Fix: separate run
+  `s1-arm-e3-r2-fix` (django only, anchor mode) launched on worker-b; to be merged into the
+  E3-r2 results at analysis time (the waved runner would otherwise overwrite
+  `pass_rate_wave1.json`). Rule: no docker prunes on a worker while a run is active.
+- **Chain-script bug (caught in time)**: the variance-rerun chains written via an
+  unquoted remote heredoc lost the round suffix (`$r` expanded at write time) → all five
+  rounds would have shared one run name and each round's `rm -rf` would have deleted the
+  previous round. Arm E round 1 was already running as `s1-arm-e-var-r`; detached it from
+  the chain and installed `chain_var_e_fix.sh` (renames it to `-r1` on completion, then
+  runs rounds 2–5 with correct names); replaced worker-b's not-yet-fired chain with
+  `chain_var_a8.sh`. Second lesson (repeated): `pgrep -f`/`pkill -f` patterns that appear
+  literally in the invoking ssh command match the ssh shell itself — use `[c]hain…`
+  bracket patterns and verify from a separate session.
+- **E3-r1 (worker-a): 17/25 (68%)** — done; E3-r2 on its last waves.
+- **Incident 2 (2026-09-04 21:17 PT): worker-b rebooted** (uptime reset, login at 21:17,
+  dockerd restarted 21:17:36) while E3-r2 was rolling out wave 6 → runner and containers
+  gone; waves 1–5 (20 episodes, `pass_rate_wave1..5.json`) intact. Recovery: continuation
+  run `s1-arm-e3-r2b` (9 remaining instances: pandas, pipenv, supervision, dspy-1801/8105/
+  9047, verl-3915/4185, ragas; anchor mode, waves of 4) launched 22:55; A8 variance chain
+  replaced by `chain_var_a8_v2.sh` waiting for `[waved] done: s1-arm-e3-r2b`. E3-r2 =
+  merge of `s1-arm-e3-r2` (waves 1–5), `s1-arm-e3-r2-fix` (django), `s1-arm-e3-r2b`.
+  Ask Ian for a heads-up before rebooting a worker with a run active.
+
+## 2026-09-05 — E3 COMPLETE: 32/50 (64%) vs A8 34/50 — null on outcome, worse on cost
+
+- E3-r2 merged (waves 1–5 + django fix + 9-instance continuation): 15/25. Two-round E3
+  32/50; paired vs A8: E3 better 1 (adk-19315fe both rounds), A8 better 4, 20 tied
+  (p=0.375). Steps −2.5 (E3 lower on 18/25, **p=0.043**); input tokens +0.17M mean /
+  +0.03M median (median per-episode 1.76M vs 1.29M); **wall +0.22 h mean / +0.12 h median,
+  E3 higher on 19/25, p=0.015** (per-step 71 s vs 50 s as contexts grow; longest episode
+  5.4 h). Exposure 17.1 anchored observations/episode (482 grep + 518 view), ≈38k addendum
+  chars/episode, 15% trimmed by the 10k harness limit, 11.9 s LS work/episode, 0 errors.
+  Uptake 23% of flagged source files opened; 188 flagged gold files → 178 opened, 176
+  patched. Coverage: both 121, E3-only 3, A8-only 4, **neither 64; only 9 of those 64 ever
+  named in any E3 addendum**. Consistency: token spread 1.49× vs 1.71× (12/25), flips 4 vs 4.
+  Report §3.3 written; results + telemetry added to the experiments entry; pushed.
+- Variance reruns: E-var round 1 running on worker-a (rounds 2–5 chained); A8-var
+  rounds 1–5 chained on worker-b (started after E3-r2b).
+- Variance rerun progress: E-var r1 1/5, r2 1/5 (worker-a); A8-var r1 2/5 (worker-b).
+  A8-var-r2 transformers-38332 ended in `BadRequestError` — context reached 247k input
+  tokens + 16k completion > 262,144 limit (the model's native context; DSpark disables
+  YaRN). Legitimate long-excursion failure, kept as a failed episode with its full
+  token/step counts in the variance analysis (same instance as A8-r2's 12.8M-token failing
+  excursion). Prior occurrences: C2-r1 ×1, hosted A-r1 ×1.
+- Variance rerun: E-var r3 0/5, r4 1/5 (transformers-38332 hit the 262k context limit →
+  `BadRequestError`, as A8-var-r2 did on the same instance — both arms produce runaway
+  excursions there); A8-var r3 0/5. Round 5 of each in progress.
+
+## 2026-09-06 — VARIANCE RERUN COMPLETE; experiment closed
+
+- E-var r1..5: 1,1,0,1,1 / 5; A8-var r1..5: 2,0,0,0,2 / 5 (hard instances by design).
+  7 episodes per instance per arm. **Level equal** (geo-mean tokens 4.02M vs 4.19M; wall
+  1.55 vs 1.42 h; resolved 6/35 vs 5/35). **Tails favour E**: control hit the 300-step cap
+  in 3 episodes (albumentations, transformers, django) vs 0 for E; token p90 9.3M vs 17.7M,
+  max 28.8M vs 36.4M; sd of log tokens 0.74 vs 1.03. **But not significant**: pooled
+  |log x − median| rank-sum p=0.71; bootstrap CI on the spread ratio [0.42, 1.57] (point
+  0.82); per instance only albumentations-2495 tightens (p=0.13), transformers and
+  gallery-dl are more dispersed with anchors; langchain is consistently costlier with
+  anchors (1.28×, p=0.04). Wall tail NOT shorter (p90 4.9 h vs 3.7 h). Verdict on Ian's
+  three outcomes: correctness no; efficiency no; variance plausible-unproven.
+- Report §3.4 written; results (10 var runs, slim JSON) + `anchor_variance.py` +
+  `variance_rerun.txt` added to the experiments entry; pushed. Monitors stopped. Both
+  workers idle; SGLang still serving on spark.
