@@ -1,0 +1,27 @@
+Per instance, 7 episodes per arm (2 original rounds + 5 variance reruns):
+instance                           arm  res   tokens M: min   p50   max  | steps p50 max | wall h p50  max | ctx-limit
+albumentations-team__albumentation E    0/7     4.55   7.03   9.33 |   101  127 |  1.83  2.53 | 0
+albumentations-team__albumentation A8   0/7     1.92   7.81  19.58 |   105  300 |  2.11  3.28 | 0
+huggingface__transformers-38332    E    3/7     0.75   2.53  28.82 |    88  209 |  1.13  5.49 | 1
+huggingface__transformers-38332    A8   2/7     0.25  12.75  36.40 |   151  300 |  1.94  7.18 | 1
+langchain-ai__langchain-32996      E    1/7     1.98   2.96   5.09 |    63   87 |  1.01  1.87 | 0
+langchain-ai__langchain-32996      A8   1/7     1.18   2.31   2.95 |    59   71 |  1.20  1.59 | 0
+django__django-19643               E    1/7     3.84   5.29   7.87 |    92  114 |  3.65  6.11 | 0
+django__django-19643               A8   1/7     3.87   4.76  17.78 |    91  300 |  2.77  4.22 | 0
+mikf__gallery-dl-7872              E    1/7     0.83   1.63   6.04 |    59  119 |  0.86  1.80 | 0
+mikf__gallery-dl-7872              A8   1/7     1.47   3.24   4.29 |    77  103 |  0.86  1.39 | 0
+
+Per-instance tests (tokens): median ratio E/A8, rank-sum p (level); max ratio; dispersion = median |log x − median| per arm, rank-sum p (spread); wall rank-sum p
+  albumentations-team__albumentation median E/A8  0.90 (p=0.75); max E/A8  0.48; spread E 0.27 vs A8 0.58 (p=0.13); wall p=0.85
+  huggingface__transformers-38332    median E/A8  0.20 (p=0.85); max E/A8  0.79; spread E 1.21 vs A8 0.33 (p=0.90); wall p=0.85
+  langchain-ai__langchain-32996      median E/A8  1.28 (p=0.04); max E/A8  1.72; spread E 0.14 vs A8 0.19 (p=0.52); wall p=0.57
+  django__django-19643               median E/A8  1.11 (p=0.48); max E/A8  0.44; spread E 0.21 vs A8 0.14 (p=0.90); wall p=0.48
+  mikf__gallery-dl-7872              median E/A8  0.50 (p=0.41); max E/A8  1.41; spread E 0.63 vs A8 0.28 (p=0.44); wall p=0.80
+
+Pooled dispersion (35 episodes per arm, |log tokens − per-instance median|): E median 0.26 mean 0.47 | A8 median 0.28 mean 0.58; rank-sum p=0.707
+Pooled sd of log tokens about per-instance medians: E 0.74 vs A8 1.03
+bootstrap 95% CI for E/A8 mean-absolute-deviation ratio: [0.42, 1.57] (point 0.82)
+
+Pooled level: geo-mean tokens E 4.02M vs A8 4.19M; wall geo-mean E 1.55h vs A8 1.42h
+Resolved: E 6/35, A8 5/35; context-limit episodes: E 1, A8 1
+Tails (35 episodes/arm): tokens p90 E 9.3M vs A8 17.7M, max 28.8M vs 36.4M; wall p90 4.87h vs 3.69h, max 6.11h vs 7.18h

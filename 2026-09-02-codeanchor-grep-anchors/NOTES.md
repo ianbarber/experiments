@@ -42,3 +42,11 @@ Base protocol (model, sampling, harness, images, eval) is that of the
 |-----|-----|------|--------|
 | s1-arm-e3-r1 | E3 | worker-a | running (launched 2026-09-04) |
 | s1-arm-e3-r2 | E3 | worker-b | running (launched 2026-09-04) |
+
+## 2026-09-05/06 — Variance rerun (Ian: "the paper signals the saving is largely variance")
+
+5 extra rounds of E and of A8 on the five largest-|Δ tokens| instances (`var5.re`):
+`s1-arm-e-var-r1..5` (worker-a), `s1-arm-a8-var-r1..5` (worker-b). All 50 episodes ran;
+one context-limit (262k) `BadRequestError` per arm on transformers-38332, kept as failed
+episodes with their full counts. Analysis: `code/analysis/anchor_variance.py` →
+`results/variance_rerun.txt`; report §3.4.

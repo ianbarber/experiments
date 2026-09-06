@@ -1,0 +1,37 @@
+[
+ {
+  "instance_id": "huggingface__transformers-38332",
+  "language": "python",
+  "golden": "success",
+  "model": "success",
+  "passed": true
+ },
+ {
+  "instance_id": "albumentations-team__albumentations-2495",
+  "language": "python",
+  "golden": "success",
+  "model": "non zero exit",
+  "passed": false
+ },
+ {
+  "instance_id": "mikf__gallery-dl-7872",
+  "language": "python",
+  "golden": "success",
+  "model": "non zero exit",
+  "passed": false
+ },
+ {
+  "instance_id": "langchain-ai__langchain-32996",
+  "language": "python",
+  "golden": "success",
+  "model": "non zero exit",
+  "passed": false
+ },
+ {
+  "instance_id": "django__django-19643",
+  "language": "python",
+  "golden": "success",
+  "model": "non zero exit",
+  "passed": false
+ }
+]

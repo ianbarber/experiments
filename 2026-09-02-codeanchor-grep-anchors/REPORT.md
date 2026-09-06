@@ -1,6 +1,6 @@
 # Do CodeAnchor-style anchors on grep output help a local coding agent refactor? (Arm E)
 
-**Dates:** 2026-09-02 → 2026-09-05 · **Benchmark:** SWE-Bench ProMax python subset (29
+**Dates:** 2026-09-02 → 2026-09-06 · **Benchmark:** SWE-Bench ProMax python subset (29
 instances, 25 golden-valid on our LAN) · **Scaffold:** mini-swe-agent 2.4.6 · **Model:**
 Qwen3.8-27B-FP8, local SGLang/DSpark on the GB10 · **Design:** arm E (anchors) vs arm A8
 (stock baseline), 2 rounds each, hosts swapped between rounds, 8 h container wall.
@@ -14,10 +14,11 @@ Qwen3.8-27B-FP8, local SGLang/DSpark on the GB10 · **Design:** arm E (anchors) 
   p = 0.76) and 1.03 (wall, p = 0.40). The only consistent trend is ~7% fewer steps
   (p = 0.07), cancelled by ~8% higher per-step latency from the longer context. Edit recall
   against gold files is identical (0.667 vs 0.666). See §3.1.
-- **No variance win either, on two rounds.** Round-to-round dispersion per instance is the
-  same in both arms (tokens 1.68× vs 1.71×, steps 1.28× vs 1.32×, outcome flips 4 vs 4);
-  grep counts are somewhat more consistent with anchors (19/25, p = 0.14) and the extreme
-  tail is shorter (max tokens 8.6M vs 17.6M) — the queued variance rerun tests that (§3.2).
+- **Variance win: plausible, unproven.** Round-to-round dispersion on the full set is equal
+  (§3.2). A 7-episode rerun on the five largest-gap instances (§3.4) shows the control
+  producing the runaway episodes (three 300-step-cap hits vs none; token p90 17.7M vs 9.3M)
+  at equal typical cost, but the pooled spread test is flat (p = 0.71; bootstrap CI on the
+  spread ratio 0.42–1.57) and the wall-clock tail is not shorter on the local server.
 - **E3 (definition-site tags on file views, no caps — the paper's own placement) changes
   nothing on outcome and costs more:** 32/50 again (paired 1-vs-4, p = 0.375), steps −4.5%
   (p = 0.043) but wall-clock +35% (p = 0.015) and tokens +36% at the median; of the 64 gold
@@ -238,6 +239,48 @@ anchors, and the files it misses are the ones no anchor ever names, because they
 non-Python or are referenced only by symbols the agent never searches or opens. On a local
 server, more exposure is a net cost.
 
+### 3.4 Variance rerun: 7 episodes per instance on the five largest-gap instances
+
+To test whether arm E's shorter tail (§3.2) was real, both arms were rerun five more times on
+the five instances with the largest per-instance token gaps in either direction
+(albumentations-2495 and transformers-38332 favoured E; langchain-32996, django-19643 and
+gallery-dl-7872 favoured the control), giving 7 episodes per instance per arm, 35 per arm.
+
+| Instance | Arm | Resolved | Tokens min / median / max (M) | Steps median / max | Wall median / max (h) |
+|---|---|---|---|---|---|
+| albumentations-2495 | E | 0/7 | 4.6 / 7.0 / 9.3 | 101 / 127 | 1.8 / 2.5 |
+| | A8 | 0/7 | 1.9 / 7.8 / 19.6 | 105 / 300 | 2.1 / 3.3 |
+| transformers-38332 | E | 3/7 | 0.8 / 2.5 / 28.8 | 88 / 209 | 1.1 / 5.5 |
+| | A8 | 2/7 | 0.3 / 12.8 / 36.4 | 151 / 300 | 1.9 / 7.2 |
+| langchain-32996 | E | 1/7 | 2.0 / 3.0 / 5.1 | 63 / 87 | 1.0 / 1.9 |
+| | A8 | 1/7 | 1.2 / 2.3 / 3.0 | 59 / 71 | 1.2 / 1.6 |
+| django-19643 | E | 1/7 | 3.8 / 5.3 / 7.9 | 92 / 114 | 3.7 / 6.1 |
+| | A8 | 1/7 | 3.9 / 4.8 / 17.8 | 91 / 300 | 2.8 / 4.2 |
+| gallery-dl-7872 | E | 1/7 | 0.8 / 1.6 / 6.0 | 59 / 119 | 0.9 / 1.8 |
+| | A8 | 1/7 | 1.5 / 3.2 / 4.3 | 77 / 103 | 0.9 / 1.4 |
+
+- **Level: no difference.** Pooled geometric-mean tokens 4.02M (E) vs 4.19M (A8); wall 1.55 h
+  vs 1.42 h; resolved 6/35 vs 5/35; one context-limit blow-up (262k tokens) in each arm, both on
+  transformers-38332. Per instance, only langchain-32996 separates (E 1.28× the tokens,
+  rank-sum p = 0.04); the two "E was cheaper" instances from §3.1 are not cheaper at the
+  median with 7 episodes (0.90× and 0.20×, p = 0.75 and 0.85).
+- **Spread: the direction Ian predicted, not the significance.** The control produced the
+  runaway episodes — three hit the 300-step cap (albumentations, transformers, django) against
+  none for E, whose longest episode was 209 steps — so its token tail is fatter: p90 17.7M vs
+  9.3M, max 36.4M vs 28.8M, sd of log tokens about the per-instance median 1.03 vs 0.74. But the
+  pooled dispersion test is flat (median |log x − median| 0.28 vs 0.26, rank-sum p = 0.71) and a
+  bootstrap on the mean-absolute-deviation ratio gives 0.82 with 95% CI [0.42, 1.57]. Per
+  instance, albumentations-2495 is the one clear tightening (spread 0.27 vs 0.58, p = 0.13);
+  transformers-38332 and gallery-dl-7872 are *more* dispersed with anchors.
+- **Wall time does not inherit the token tail**: p90 4.9 h (E) vs 3.7 h (A8), max 6.1 h vs 7.2 h —
+  arm E's long django episodes were slow per step (large contexts), so fewer runaway steps did not
+  mean less wall.
+
+**Read:** consistent with CodeAnchor's own framing that its saving is mostly variance, the
+anchors trim the worst excursions (no step-cap hits vs three) without changing typical cost; but
+35 episodes per arm cannot establish the spread reduction (CI spans 1), and on this local server
+the wall-clock tail is not shorter. A variance win here is plausible and unproven.
+
 ## 4. Why nothing moved
 
 **Uptake is real.** Across 58 E episodes the addenda flagged 578 distinct source files as
@@ -290,8 +333,8 @@ files the control patched and E did not, 1 was cap-hidden and 2 were shown.
 - **E3 (definition-site placement, uncapped) was run — §3.3: null on outcome, worse on cost.**
   The remaining lever within this technique family is the agent's own navigation, not the
   facts it is shown.
-- **Variance rerun** (5 extra rounds of E and A8 on the five largest-gap instances) is in
-  progress to settle §3.2's tail question; results will be appended.
+- **Variance rerun done (§3.4)**: tails trimmed (0 vs 3 step-cap episodes), typical cost equal,
+  spread reduction not significant with 35 episodes per arm; wall tail not shorter locally.
 - Non-Python gold files (41% of misses) need a different signal entirely (docs/config search
   hints), out of scope for LSP anchors.
 
@@ -303,7 +346,7 @@ files the control patched and E did not, 1 was cap-hidden and 2 were shown.
 | `code/agent/run_batch_waved.sh` (mode `anchor`) | Waved runner |
 | `code/lsp-tool/src/lsp_tool/anchor.py` (+ `daemon.py`, `cli.py`) | Batch anchor op, `lsp anchor`, raw/uncapped mode |
 | `code/analysis/anchor_compare.py` | Paired comparison + telemetry |
-| `code/analysis/anchor_replay.py`, `code/analysis/anchor_cap_counterfactual.py` | Uncapped replay and missed-file classification |
+| `code/analysis/anchor_replay.py`, `code/analysis/anchor_cap_counterfactual.py`, `code/analysis/anchor_variance.py` | Uncapped replay and missed-file classification |
 | `results/s1-arm-{e,a8}-r{1,2}.json`, `results/*.anchor_log.jsonl` | Per-instance outcomes; per-grep anchor telemetry (trajectories on the lab NAS) |
-| `results/summary_e_vs_a8.txt`, `results/episodes_e_vs_a8.csv`, `results/replay_uncapped_e_r1.jsonl`, `results/cap_counterfactual_r1.txt` | Summary, episode CSV, uncapped replay data, counterfactual |
+| `results/summary_*.txt`, `results/episodes_*.csv`, `results/replay_uncapped_e_r1.jsonl`, `results/cap_counterfactual_r1.txt`, `results/cost_e_vs_a8.txt`, `results/variance_rerun.txt`, `results/s1-arm-{e,a8}-var-r*.json` | Summaries, episode CSVs, uncapped replay + counterfactual, cost/consistency tables, variance rerun |
 | `LABNOTES.md`, `NOTES.md` | Chronology incl. the four launches; protocol + run ledger |

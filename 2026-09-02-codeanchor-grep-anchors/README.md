@@ -1,6 +1,6 @@
 # CodeAnchor-style anchors on grep output: does passive structural injection help a local coding agent refactor?
 
-**Date:** 2026-09-02 → 2026-09-05 (variance rerun in progress) · **Fleet:** DGX Spark (GB10)
+**Date:** 2026-09-02 → 2026-09-06 · **Fleet:** DGX Spark (GB10)
 serving + two x86 docker workers (worker-a, worker-b) + NAS · **Benchmark:** SWE-Bench ProMax python
 subset · **Scaffold:** mini-swe-agent 2.4.6 · **Model:** Qwen3.8-27B-FP8 (local)
 
@@ -24,8 +24,10 @@ same-period control (A8), hosts swapped.
   (wall), but paired per instance the ratios are 0.95 (p = 0.76) and 1.03 (p = 0.40) — two
   outlier control episodes, not a saving. ~7% fewer steps (p = 0.07) is cancelled by ~8%
   higher per-step latency from the longer context. Edit recall identical.
-- **No variance win on two rounds** (per-instance round-to-round dispersion equal; extreme tail
-  shorter with anchors — variance rerun queued to test it).
+- **Variance win plausible, unproven:** a 7-episode rerun on the five largest-gap instances shows
+  the control producing the runaway episodes (three 300-step-cap hits vs none) at equal typical
+  cost, but the spread reduction is not significant (bootstrap CI 0.42–1.57) and the wall-clock
+  tail is not shorter locally.
 - **The mechanism works and is cheap** (half of greps anchored, ≈4% of prompt tokens,
   5.6 s/episode, zero failures) **and the agent acts on it** (99 of 99 flagged gold files
   opened, 92 patched) — but both arms miss the same 64 gold files.
