@@ -1,0 +1,468 @@
+{
+  "status": "supplemental_numerical_diagnostic",
+  "n_cases": 72,
+  "n_clusters": 72,
+  "models": {
+    "bad": {
+      "n": 72,
+      "mean_p_original": 0.772130600497781,
+      "mean_p_shared_prefix": 0.7709232674454964,
+      "mean_p_change": -0.0012073330522846151,
+      "max_abs_p_change": 0.012642649064175782,
+      "argmax_disagreements": 0,
+      "original_scored_prefix_sum_max": 1.0056356999825335,
+      "original_scored_prefix_sum_above_one_plus_1e_minus_6": 14,
+      "shared_candidate_mass_max": 0.9970043575075098,
+      "shared_candidate_mass_above_one_plus_1e_minus_10": 0
+    },
+    "prospective_s42": {
+      "n": 72,
+      "mean_p_original": 0.6803188984217988,
+      "mean_p_shared_prefix": 0.6814142748886748,
+      "mean_p_change": 0.0010953764668759204,
+      "max_abs_p_change": 0.041059980877057534,
+      "argmax_disagreements": 0,
+      "original_scored_prefix_sum_max": 0.0024831966020874637,
+      "original_scored_prefix_sum_above_one_plus_1e_minus_6": 0,
+      "shared_candidate_mass_max": 0.0023197762696492113,
+      "shared_candidate_mass_above_one_plus_1e_minus_10": 0
+    },
+    "reactive_s42": {
+      "n": 72,
+      "mean_p_original": 0.4883881867912334,
+      "mean_p_shared_prefix": 0.4925987190090002,
+      "mean_p_change": 0.004210532217766796,
+      "max_abs_p_change": 0.023401497033513186,
+      "argmax_disagreements": 3,
+      "original_scored_prefix_sum_max": 1.0113031713478238,
+      "original_scored_prefix_sum_above_one_plus_1e_minus_6": 10,
+      "shared_candidate_mass_max": 0.9941577739437344,
+      "shared_candidate_mass_above_one_plus_1e_minus_10": 0
+    },
+    "shuffled_s42": {
+      "n": 72,
+      "mean_p_original": 0.4979814208916926,
+      "mean_p_shared_prefix": 0.49872114514675775,
+      "mean_p_change": 0.0007397242550651482,
+      "max_abs_p_change": 0.024823812368083065,
+      "argmax_disagreements": 2,
+      "original_scored_prefix_sum_max": 1.0123457894624561,
+      "original_scored_prefix_sum_above_one_plus_1e_minus_6": 11,
+      "shared_candidate_mass_max": 0.9931053887918881,
+      "shared_candidate_mass_above_one_plus_1e_minus_10": 0
+    },
+    "prospective_s43": {
+      "n": 72,
+      "mean_p_original": 0.6612106358142573,
+      "mean_p_shared_prefix": 0.6613140261052927,
+      "mean_p_change": 0.0001033902910353882,
+      "max_abs_p_change": 0.03716878754648767,
+      "argmax_disagreements": 0,
+      "original_scored_prefix_sum_max": 0.007530825257539458,
+      "original_scored_prefix_sum_above_one_plus_1e_minus_6": 0,
+      "shared_candidate_mass_max": 0.006911972781663616,
+      "shared_candidate_mass_above_one_plus_1e_minus_10": 0
+    },
+    "reactive_s43": {
+      "n": 72,
+      "mean_p_original": 0.46023159125482377,
+      "mean_p_shared_prefix": 0.46349634827103997,
+      "mean_p_change": 0.0032647570162163218,
+      "max_abs_p_change": 0.027568729171834894,
+      "argmax_disagreements": 3,
+      "original_scored_prefix_sum_max": 1.0129192366646311,
+      "original_scored_prefix_sum_above_one_plus_1e_minus_6": 16,
+      "shared_candidate_mass_max": 0.994305884911919,
+      "shared_candidate_mass_above_one_plus_1e_minus_10": 0
+    },
+    "shuffled_s43": {
+      "n": 72,
+      "mean_p_original": 0.4862714695412264,
+      "mean_p_shared_prefix": 0.48727443761432926,
+      "mean_p_change": 0.0010029680731029487,
+      "max_abs_p_change": 0.023615109882209273,
+      "argmax_disagreements": 0,
+      "original_scored_prefix_sum_max": 1.0088315296238086,
+      "original_scored_prefix_sum_above_one_plus_1e_minus_6": 7,
+      "shared_candidate_mass_max": 0.9932485137565896,
+      "shared_candidate_mass_above_one_plus_1e_minus_10": 0
+    },
+    "prospective_s44": {
+      "n": 72,
+      "mean_p_original": 0.701824709403541,
+      "mean_p_shared_prefix": 0.6994754913129795,
+      "mean_p_change": -0.0023492180905615428,
+      "max_abs_p_change": 0.025425583813753816,
+      "argmax_disagreements": 0,
+      "original_scored_prefix_sum_max": 0.011511311602571305,
+      "original_scored_prefix_sum_above_one_plus_1e_minus_6": 0,
+      "shared_candidate_mass_max": 0.01170679302342463,
+      "shared_candidate_mass_above_one_plus_1e_minus_10": 0
+    },
+    "reactive_s44": {
+      "n": 72,
+      "mean_p_original": 0.5418788693139316,
+      "mean_p_shared_prefix": 0.5413668495503206,
+      "mean_p_change": -0.0005120197636110426,
+      "max_abs_p_change": 0.02363342348708658,
+      "argmax_disagreements": 1,
+      "original_scored_prefix_sum_max": 1.011534935637964,
+      "original_scored_prefix_sum_above_one_plus_1e_minus_6": 12,
+      "shared_candidate_mass_max": 0.9938569828909236,
+      "shared_candidate_mass_above_one_plus_1e_minus_10": 0
+    },
+    "shuffled_s44": {
+      "n": 72,
+      "mean_p_original": 0.5443834899084723,
+      "mean_p_shared_prefix": 0.5463873380945947,
+      "mean_p_change": 0.002003848186122575,
+      "max_abs_p_change": 0.02615138692152391,
+      "argmax_disagreements": 1,
+      "original_scored_prefix_sum_max": 1.003996141633794,
+      "original_scored_prefix_sum_above_one_plus_1e_minus_6": 3,
+      "shared_candidate_mass_max": 0.9933873359949575,
+      "shared_candidate_mass_above_one_plus_1e_minus_10": 0
+    }
+  },
+  "paired_effects": [
+    {
+      "treatment": "reactive_s42",
+      "comparator": "prospective_s42",
+      "seed": 42,
+      "original": {
+        "effect_comparator_minus_reactive": 0.19193071163056544,
+        "reactive_mean": 0.4883881867912334,
+        "comparator_mean": 0.6803188984217989,
+        "prompt_cluster_bootstrap_ci95": [
+          0.16905255831534752,
+          0.21531726662088038
+        ],
+        "n_examples": 72,
+        "n_clusters": 72,
+        "strata": [
+          "semantic_ood"
+        ],
+        "n_bootstrap": 10000,
+        "bootstrap_seed": 20260909,
+        "draws_rejected_for_absent_stratum": 0,
+        "interval_scope": "Declared cluster_id object sampling only, conditional on supplied checkpoint(s) and authored domain/templates. Linked paraphrases remain together."
+      },
+      "shared_prefix": {
+        "effect_comparator_minus_reactive": 0.18881555587967455,
+        "reactive_mean": 0.49259871900900026,
+        "comparator_mean": 0.6814142748886748,
+        "prompt_cluster_bootstrap_ci95": [
+          0.1663562627689198,
+          0.21199565127492442
+        ],
+        "n_examples": 72,
+        "n_clusters": 72,
+        "strata": [
+          "semantic_ood"
+        ],
+        "n_bootstrap": 10000,
+        "bootstrap_seed": 20260909,
+        "draws_rejected_for_absent_stratum": 0,
+        "interval_scope": "Declared cluster_id object sampling only, conditional on supplied checkpoint(s) and authored domain/templates. Linked paraphrases remain together."
+      },
+      "effect_change_shared_minus_original": -0.0031151557508908856
+    },
+    {
+      "treatment": "reactive_s42",
+      "comparator": "shuffled_s42",
+      "seed": 42,
+      "original": {
+        "effect_comparator_minus_reactive": 0.009593234100459183,
+        "reactive_mean": 0.4883881867912334,
+        "comparator_mean": 0.4979814208916926,
+        "prompt_cluster_bootstrap_ci95": [
+          0.0031010529954069214,
+          0.016212752573600397
+        ],
+        "n_examples": 72,
+        "n_clusters": 72,
+        "strata": [
+          "semantic_ood"
+        ],
+        "n_bootstrap": 10000,
+        "bootstrap_seed": 20260909,
+        "draws_rejected_for_absent_stratum": 0,
+        "interval_scope": "Declared cluster_id object sampling only, conditional on supplied checkpoint(s) and authored domain/templates. Linked paraphrases remain together."
+      },
+      "shared_prefix": {
+        "effect_comparator_minus_reactive": 0.006122426137757536,
+        "reactive_mean": 0.49259871900900026,
+        "comparator_mean": 0.49872114514675775,
+        "prompt_cluster_bootstrap_ci95": [
+          -0.0009436574493590735,
+          0.013299535776840565
+        ],
+        "n_examples": 72,
+        "n_clusters": 72,
+        "strata": [
+          "semantic_ood"
+        ],
+        "n_bootstrap": 10000,
+        "bootstrap_seed": 20260909,
+        "draws_rejected_for_absent_stratum": 0,
+        "interval_scope": "Declared cluster_id object sampling only, conditional on supplied checkpoint(s) and authored domain/templates. Linked paraphrases remain together."
+      },
+      "effect_change_shared_minus_original": -0.003470807962701648
+    },
+    {
+      "treatment": "reactive_s43",
+      "comparator": "prospective_s43",
+      "seed": 43,
+      "original": {
+        "effect_comparator_minus_reactive": 0.20097904455943363,
+        "reactive_mean": 0.46023159125482377,
+        "comparator_mean": 0.6612106358142573,
+        "prompt_cluster_bootstrap_ci95": [
+          0.17785958605260202,
+          0.22455308877092592
+        ],
+        "n_examples": 72,
+        "n_clusters": 72,
+        "strata": [
+          "semantic_ood"
+        ],
+        "n_bootstrap": 10000,
+        "bootstrap_seed": 20260909,
+        "draws_rejected_for_absent_stratum": 0,
+        "interval_scope": "Declared cluster_id object sampling only, conditional on supplied checkpoint(s) and authored domain/templates. Linked paraphrases remain together."
+      },
+      "shared_prefix": {
+        "effect_comparator_minus_reactive": 0.19781767783425272,
+        "reactive_mean": 0.4634963482710401,
+        "comparator_mean": 0.6613140261052927,
+        "prompt_cluster_bootstrap_ci95": [
+          0.17499808163915812,
+          0.2215428214982946
+        ],
+        "n_examples": 72,
+        "n_clusters": 72,
+        "strata": [
+          "semantic_ood"
+        ],
+        "n_bootstrap": 10000,
+        "bootstrap_seed": 20260909,
+        "draws_rejected_for_absent_stratum": 0,
+        "interval_scope": "Declared cluster_id object sampling only, conditional on supplied checkpoint(s) and authored domain/templates. Linked paraphrases remain together."
+      },
+      "effect_change_shared_minus_original": -0.003161366725180914
+    },
+    {
+      "treatment": "reactive_s43",
+      "comparator": "shuffled_s43",
+      "seed": 43,
+      "original": {
+        "effect_comparator_minus_reactive": 0.026039878286402647,
+        "reactive_mean": 0.46023159125482377,
+        "comparator_mean": 0.4862714695412264,
+        "prompt_cluster_bootstrap_ci95": [
+          0.018638440407390235,
+          0.033740133856359204
+        ],
+        "n_examples": 72,
+        "n_clusters": 72,
+        "strata": [
+          "semantic_ood"
+        ],
+        "n_bootstrap": 10000,
+        "bootstrap_seed": 20260909,
+        "draws_rejected_for_absent_stratum": 0,
+        "interval_scope": "Declared cluster_id object sampling only, conditional on supplied checkpoint(s) and authored domain/templates. Linked paraphrases remain together."
+      },
+      "shared_prefix": {
+        "effect_comparator_minus_reactive": 0.023778089343289274,
+        "reactive_mean": 0.4634963482710401,
+        "comparator_mean": 0.48727443761432926,
+        "prompt_cluster_bootstrap_ci95": [
+          0.01582853593399028,
+          0.032200119679329786
+        ],
+        "n_examples": 72,
+        "n_clusters": 72,
+        "strata": [
+          "semantic_ood"
+        ],
+        "n_bootstrap": 10000,
+        "bootstrap_seed": 20260909,
+        "draws_rejected_for_absent_stratum": 0,
+        "interval_scope": "Declared cluster_id object sampling only, conditional on supplied checkpoint(s) and authored domain/templates. Linked paraphrases remain together."
+      },
+      "effect_change_shared_minus_original": -0.002261788943113373
+    },
+    {
+      "treatment": "reactive_s44",
+      "comparator": "prospective_s44",
+      "seed": 44,
+      "original": {
+        "effect_comparator_minus_reactive": 0.15994584008960933,
+        "reactive_mean": 0.5418788693139316,
+        "comparator_mean": 0.701824709403541,
+        "prompt_cluster_bootstrap_ci95": [
+          0.13964133377317575,
+          0.18074702738227444
+        ],
+        "n_examples": 72,
+        "n_clusters": 72,
+        "strata": [
+          "semantic_ood"
+        ],
+        "n_bootstrap": 10000,
+        "bootstrap_seed": 20260909,
+        "draws_rejected_for_absent_stratum": 0,
+        "interval_scope": "Declared cluster_id object sampling only, conditional on supplied checkpoint(s) and authored domain/templates. Linked paraphrases remain together."
+      },
+      "shared_prefix": {
+        "effect_comparator_minus_reactive": 0.15810864176265885,
+        "reactive_mean": 0.5413668495503206,
+        "comparator_mean": 0.6994754913129795,
+        "prompt_cluster_bootstrap_ci95": [
+          0.13725249109929363,
+          0.17972739937518858
+        ],
+        "n_examples": 72,
+        "n_clusters": 72,
+        "strata": [
+          "semantic_ood"
+        ],
+        "n_bootstrap": 10000,
+        "bootstrap_seed": 20260909,
+        "draws_rejected_for_absent_stratum": 0,
+        "interval_scope": "Declared cluster_id object sampling only, conditional on supplied checkpoint(s) and authored domain/templates. Linked paraphrases remain together."
+      },
+      "effect_change_shared_minus_original": -0.0018371983269504788
+    },
+    {
+      "treatment": "reactive_s44",
+      "comparator": "shuffled_s44",
+      "seed": 44,
+      "original": {
+        "effect_comparator_minus_reactive": 0.0025046205945405903,
+        "reactive_mean": 0.5418788693139316,
+        "comparator_mean": 0.5443834899084722,
+        "prompt_cluster_bootstrap_ci95": [
+          -0.004471855229212897,
+          0.009068912191863522
+        ],
+        "n_examples": 72,
+        "n_clusters": 72,
+        "strata": [
+          "semantic_ood"
+        ],
+        "n_bootstrap": 10000,
+        "bootstrap_seed": 20260909,
+        "draws_rejected_for_absent_stratum": 0,
+        "interval_scope": "Declared cluster_id object sampling only, conditional on supplied checkpoint(s) and authored domain/templates. Linked paraphrases remain together."
+      },
+      "shared_prefix": {
+        "effect_comparator_minus_reactive": 0.005020488544274208,
+        "reactive_mean": 0.5413668495503206,
+        "comparator_mean": 0.5463873380945947,
+        "prompt_cluster_bootstrap_ci95": [
+          -0.0029176825780077398,
+          0.012661351274824338
+        ],
+        "n_examples": 72,
+        "n_clusters": 72,
+        "strata": [
+          "semantic_ood"
+        ],
+        "n_bootstrap": 10000,
+        "bootstrap_seed": 20260909,
+        "draws_rejected_for_absent_stratum": 0,
+        "interval_scope": "Declared cluster_id object sampling only, conditional on supplied checkpoint(s) and authored domain/templates. Linked paraphrases remain together."
+      },
+      "effect_change_shared_minus_original": 0.002515867949733618
+    }
+  ],
+  "seed_averaged_paired_effects": [
+    {
+      "treatment": "reactive",
+      "comparator": "prospective",
+      "aggregation": "per-case mean across the same three fixed trained seeds",
+      "original": {
+        "effect_comparator_minus_reactive": 0.18428519875986948,
+        "reactive_mean": 0.49683288245332946,
+        "comparator_mean": 0.6811180812131992,
+        "prompt_cluster_bootstrap_ci95": [
+          0.16276408001641327,
+          0.2061583338917545
+        ],
+        "n_examples": 72,
+        "n_clusters": 72,
+        "strata": [
+          "semantic_ood"
+        ],
+        "n_bootstrap": 10000,
+        "bootstrap_seed": 20260909,
+        "draws_rejected_for_absent_stratum": 0,
+        "interval_scope": "Declared cluster_id object sampling only, conditional on supplied checkpoint(s) and authored domain/templates. Linked paraphrases remain together."
+      },
+      "shared_prefix": {
+        "effect_comparator_minus_reactive": 0.18158062515886203,
+        "reactive_mean": 0.49915397227678704,
+        "comparator_mean": 0.680734597435649,
+        "prompt_cluster_bootstrap_ci95": [
+          0.16000601656355753,
+          0.2036190865106145
+        ],
+        "n_examples": 72,
+        "n_clusters": 72,
+        "strata": [
+          "semantic_ood"
+        ],
+        "n_bootstrap": 10000,
+        "bootstrap_seed": 20260909,
+        "draws_rejected_for_absent_stratum": 0,
+        "interval_scope": "Declared cluster_id object sampling only, conditional on supplied checkpoint(s) and authored domain/templates. Linked paraphrases remain together."
+      },
+      "effect_change_shared_minus_original": -0.002704573601007454
+    },
+    {
+      "treatment": "reactive",
+      "comparator": "shuffled",
+      "aggregation": "per-case mean across the same three fixed trained seeds",
+      "original": {
+        "effect_comparator_minus_reactive": 0.012712577660467475,
+        "reactive_mean": 0.49683288245332946,
+        "comparator_mean": 0.5095454601137971,
+        "prompt_cluster_bootstrap_ci95": [
+          0.006810924298630418,
+          0.018551090150443737
+        ],
+        "n_examples": 72,
+        "n_clusters": 72,
+        "strata": [
+          "semantic_ood"
+        ],
+        "n_bootstrap": 10000,
+        "bootstrap_seed": 20260909,
+        "draws_rejected_for_absent_stratum": 0,
+        "interval_scope": "Declared cluster_id object sampling only, conditional on supplied checkpoint(s) and authored domain/templates. Linked paraphrases remain together."
+      },
+      "shared_prefix": {
+        "effect_comparator_minus_reactive": 0.011640334675107009,
+        "reactive_mean": 0.49915397227678704,
+        "comparator_mean": 0.510794306951894,
+        "prompt_cluster_bootstrap_ci95": [
+          0.005329588146119572,
+          0.018025674128780183
+        ],
+        "n_examples": 72,
+        "n_clusters": 72,
+        "strata": [
+          "semantic_ood"
+        ],
+        "n_bootstrap": 10000,
+        "bootstrap_seed": 20260909,
+        "draws_rejected_for_absent_stratum": 0,
+        "interval_scope": "Declared cluster_id object sampling only, conditional on supplied checkpoint(s) and authored domain/templates. Linked paraphrases remain together."
+      },
+      "effect_change_shared_minus_original": -0.0010722429853604661
+    }
+  ],
+  "interpretation": "Positive contrast means comparator minus reactive conditional concealment probability. CIs resample scenario clusters conditional on the supplied checkpoints. This multi-change diagnostic does not replace primary batch32 estimates or identify the cause of numerical differences. Original scored-prefix sums are descriptive sums from separate forwards, not coherent pair masses; original above-one counts use tolerance1e-6. Shared-tree pair masses use tolerance1e-10."
+}

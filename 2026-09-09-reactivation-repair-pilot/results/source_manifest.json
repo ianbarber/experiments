@@ -1,0 +1,739 @@
+{
+  "version": 1,
+  "scope": "Compact first-pilot scientific export; no follow-up results",
+  "source_files": {
+    "scripts/analyze.py": "c946cdcb3d1ca89ac4ce40fa93ba9fa874d73aa191cbf2d9b499c4c28ac0e12e",
+    "scripts/report_tables.py": "caa06f27745878ab7a10f84dfc6ec5478f75b9754605613669147be17f25623a",
+    "scripts/common.py": "51fdf039c4b807cb70ffe43540b6875b1cf68c9f986f29fbc73adc0403a404b2",
+    "scripts/train.py": "586d32ac372994b455e9215397127a4a83f94778b982922dc21726f8240a5961",
+    "scripts/evaluate.py": "4115ebf41150cd7b158c5e57f402140c0cd4a3116c8821a62c1a5af1187f315d",
+    "scripts/make_data.py": "44c0096b52012987e47906386781b8a153f8ff13c42891356df0aa317a1b305a",
+    "scripts/build_repair.py": "241db71db07978aede65c4bc5ba7e06f3fdd787bbc5b09b0c74fb6302db3c9ae",
+    "results/diagnostics/shared_prefix_scores/scorer.py": "89ec881b1fa8281235c9c7cc3fc872602beee884517d24d36ff112cffdc97145",
+    "PROTOCOL.md": "954ac86603316d697f2baa1b6e2f72e6f60f0e40d60a57319ee7584768b66227",
+    "RESEARCH_PLAN.md": "b0f0681bb94a335f2c1a315893287011302bf8da31730bdc342bc9621a8d1932",
+    "configs/pilot.json": "13a197aa22aa9dcb946777fed19e186d59e41c2f141b32667efd5f80d282937b",
+    "data/evaluation.jsonl": "816d6d05890ab4ca054a27f6d82a4941c916afec7473bda6a1b22ba44b7c5057",
+    "results/eval/bad.jsonl": "e4998e4d4d071fd1a718aedf69dc591d5d0c5077ecc038cb7baa5d2b929501ba",
+    "results/eval/base.jsonl": "8a2a2df8a5625124d5b8926b7d029753c28653cd1d8654977c70afc8114b92b4",
+    "results/eval/direct_s42.jsonl": "075a55b9c47d50356a3286b30bf2d70d972b644506cdd2f1c6517b9fdda7b19f",
+    "results/eval/direct_s43.jsonl": "4f98769e0f853475ab234d409fdde82c94fc0d080b7bed16e514b5153e90895d",
+    "results/eval/direct_s44.jsonl": "12e6aebb6e62d408696c3fd0532f6cfc0f678f0e8ec71fba12d90a8d7e6fc9ed",
+    "results/eval/prospective_s42.jsonl": "0f7a632dba820e1f2b89175f9d21b0dfde5064c823b6029f05784a6b9f1802ef",
+    "results/eval/prospective_s43.jsonl": "13ecf23593312a47e6da9da37fa43ca14070522d20cad0d5f7ef16d906c8885e",
+    "results/eval/prospective_s44.jsonl": "744a8a1996dfb9e422abc8d92ff4c6ff51ca800aed1303cb18a19789cd6744fe",
+    "results/eval/reactive_correction_s42.jsonl": "00b51a9f22a82d7aadab262e9ce80a55116f2e665dc14b832fddf8d3c0b1e4a5",
+    "results/eval/reactive_correction_s43.jsonl": "47b01dd7e8fed5828804aaca3b44a61348005ec58e3e8ed279b18f48b5de634b",
+    "results/eval/reactive_correction_s44.jsonl": "db665bc3e8dfa9cee471879dc0d6a1d2a6f368ccbd1a07cd721fde8146b04e38",
+    "results/eval/reactive_s42.jsonl": "e63171cc9148efdbb9e29d01aea141b82a17195de5fb3f2d1db75f76b5cc7877",
+    "results/eval/reactive_s43.jsonl": "8c085a6189fb4052802744dd7c665428611848556d77fbe0577a7fc90504e76a",
+    "results/eval/reactive_s44.jsonl": "0ab8f9c5b34e35bb73c78b117e2971798eb4f5c2aa973e6129d9d6307acaa37f",
+    "results/eval/shuffled_s42.jsonl": "accea2886c1e10191d76531b5c448cff10e1b3ad3477b5b0d572683c59d280d0",
+    "results/eval/shuffled_s43.jsonl": "4b58d79988027c9d57bbe8e555943adf690f4de8ffd2b7b910cd956b6edb3ba4",
+    "results/eval/shuffled_s44.jsonl": "4f22c115400bd628c6ead0b1b539e20c9a99114eb30fb9a46c619ebbffc0bf51",
+    "results/summary.json": "c6da281eadaee0cc4d5476992e5d746e5f98895e45c62b4737915b29d47bd38f",
+    "results/comparisons.json": "e9fef9339e6b8b4cb79f6895a937dd619b58c01c0354ca223c99a2daa70add55",
+    "results/report_values.json": "fa5bc7a339fedc9d767ad07cf10722a1898058eca72ba7391afc1428788599b7",
+    "results/report_tables.md": "d59b5a542e129cde69b22195c52c217341edfbc0143da69f9f8109f35c7a1f78",
+    "data/semantic_stress.jsonl": "e7b5e545f4d63ad743d79bb79691eed1787237f065afe353420e32b786dba711",
+    "results/stress/bad.jsonl": "039544a9b54e46b69bcb4fb9a6b8ad1db0f97040a72cacd4370a43b90e88ec64",
+    "results/stress/base.jsonl": "acb48da28960d04f4feade362c2bfd5c896e83d48299b3c20362dee0d62fe5c3",
+    "results/stress/direct_s42.jsonl": "a40e04ed84f7f4821b0181d68690c615e3377ec9d1072d6ee14aab90aeb8715c",
+    "results/stress/direct_s43.jsonl": "b8cd601493fc81ad8d6cf67cb90484524b61c957c24ae0572470c4a76a2f67c7",
+    "results/stress/direct_s44.jsonl": "dfab11cfadbbe8caffa912b24dddd6bcfb9e7f56e1c69a2662a7bbba2ecd8a65",
+    "results/stress/prospective_s42.jsonl": "14f0a5b75ec9a0d9694662873efd56f16f6cc827f8cd276ff8b98581f735a4cd",
+    "results/stress/prospective_s43.jsonl": "9d35fd0c55054f3722f24dcf44f88d48fd797ad5ef6e9be40ada12339e67d974",
+    "results/stress/prospective_s44.jsonl": "4bf22ec6c2ff4d4aa467eecde404719e433d74633800646ceffb2516335c8cf7",
+    "results/stress/reactive_correction_s42.jsonl": "6eee40e70089e7730758f0088660da8f4d19f74b87e59824b5a9296dd76581fa",
+    "results/stress/reactive_correction_s43.jsonl": "c2602c49d0b66efa6c3a184aa42bef29b46af05219c20fc1ea00055b7051ba45",
+    "results/stress/reactive_correction_s44.jsonl": "ba1a2146ba21fa558bd5552bf0aaa0ea7c90acae246f97685f3071de2281a141",
+    "results/stress/reactive_s42.jsonl": "99e13715c3ca29cb9d8f15a03160a8e702a20f4554566f9258bec3c8078fffab",
+    "results/stress/reactive_s43.jsonl": "ee547b85c8385077a87ef1832ff13c99d3faa0a06c6c1d9388f5592ac35c4a1c",
+    "results/stress/reactive_s44.jsonl": "5e52c68878d30c5c0095ed3652b0de4ebe9577a6cd4484e9b1bf2992eeb7664b",
+    "results/stress/shuffled_s42.jsonl": "541acdd70ff19a7363ac6b13e7947cb97e7b6c80f838a6ddc2649514a1c19cd3",
+    "results/stress/shuffled_s43.jsonl": "0cb39de480a0b3838f612e82d17b2cc35df91867f2b421481ecda6775f91f52c",
+    "results/stress/shuffled_s44.jsonl": "0c853cd2972d4f71bb8968e2d3636e3ebd6836e32c7767f21a7d6f8f0d85e526",
+    "results/stress_summary/summary.json": "ac94e9edf5b187250459b3a167723a6dd8a4bc2070bee61d2d7c2d2b6df8d705",
+    "results/stress_summary/comparisons.json": "637c546eba34e6ae95997d13c362e8433c0a764f8c4bcbc7f88f7bd6c598d524",
+    "results/stress_summary/report_values.json": "cfde3ccf8c9bb94f2d8b693794acf6ece41fb22cc30d915ea63bf69f773b6757",
+    "results/stress_summary/report_tables.md": "67a2524f2f29ab2862e30e0c49e6c5b29ab60f5eb9724ea865deafb62e8620ca",
+    "results/training/bad/manifest.json": "91a34d227c59f8f6f8da7508b9fc0a7555d1cf8f87fbe6dfa878b1cd8f68911d",
+    "results/training/direct_s42/manifest.json": "e54ab126277ee2b853c6dc879a04c810098a6f8416ecce3f93035ad893fc7349",
+    "results/training/direct_s43/manifest.json": "2bf060c5220fd3eb78b67b85c5e737b33f94092c1dcf0abb9315d95ccf6d47d1",
+    "results/training/direct_s44/manifest.json": "ca20f7a30ceb6e4c1290c8c4847908700118aa6040c0e7e16d37539e511b2812",
+    "results/training/induction_v1/manifest.json": "91a34d227c59f8f6f8da7508b9fc0a7555d1cf8f87fbe6dfa878b1cd8f68911d",
+    "results/training/prospective_s42/manifest.json": "9159627109869998cc23b39a440392063ca2553ef3b3eddcaa8d768adc60d68a",
+    "results/training/prospective_s43/manifest.json": "73873c895d131494c64c1e5173652b8c790cb6bf6cda1c5d5c919ef06d33c2a3",
+    "results/training/prospective_s44/manifest.json": "fae0c96519dc56cbaff9a01c83311465a48241ebae6679bf7ff3aecdae4027b0",
+    "results/training/reactive_correction_s42/manifest.json": "b713046986bf1db1630a09663d5e9ad5dfdedaa24e713bb61f019c8f35c15de6",
+    "results/training/reactive_correction_s43/manifest.json": "eb161ceeb5e1c8e96ffe0b313fed5e475a407f541760b678ffac156e5263c6f1",
+    "results/training/reactive_correction_s44/manifest.json": "f6eb5ee389028d29712f296761e8eacf36b777cfd8c36907962f01d9432a01be",
+    "results/training/reactive_s42/manifest.json": "b0b1d3ef6b6307d9248b0752afb9d3169956983ed4eefce6ba58b94edbf96dac",
+    "results/training/reactive_s43/manifest.json": "22b2cf3c2eab17dfaaf2e8ec2e176052fc3f4b1eba93fe0db7ecdbc3b1dfee21",
+    "results/training/reactive_s44/manifest.json": "dce7a5ba1c36785cf41dc53d9117ae41cfaf2237be14a403323901adb30921b0",
+    "results/training/shuffled_s42/manifest.json": "58efd89f8daf9bbf8d234c576e17c28eb46ae3672be145515e448ef1bff7a097",
+    "results/training/shuffled_s43/manifest.json": "0dffe6b934a8cf798b333417ca2094fa0503ef742ae8a1c60e93f7802ea266b8",
+    "results/training/shuffled_s44/manifest.json": "6409fbafec91299feb91d62d5c944384cbbdbf3a3a4a9ad5ac04df0b609829ee",
+    "results/diagnostics/shared_prefix_scores/full_run/bad.jsonl": "8991df296c0567218989071b34bcc06833255ecb3e6b1e462742952a4d25e1c3",
+    "results/diagnostics/shared_prefix_scores/full_run/prospective_s42.jsonl": "3c08cfedaa0cd1ca8486bf7a1fc7cf2706a0e01a258a67e23f0bfe847b0a45d5",
+    "results/diagnostics/shared_prefix_scores/full_run/prospective_s43.jsonl": "2c17f8ae3414cc0bf0ab7e554f0ffb2a2f45707b9528694f91578339ec638a2a",
+    "results/diagnostics/shared_prefix_scores/full_run/prospective_s44.jsonl": "a59a43eca9c3216e6475a52a1e3287c7882a0727f8009eb5f799c0c055c4aabe",
+    "results/diagnostics/shared_prefix_scores/full_run/reactive_s42.jsonl": "01b7d5c98ca1502e9e376aaeaf9a42ee7b6bfc9ca1cd8922c4e407498d9094c4",
+    "results/diagnostics/shared_prefix_scores/full_run/reactive_s43.jsonl": "4e3f8f9ce0e64af33b0c45c25e79e0b0c584c0532d23b15f73fc7bb049e8a6f7",
+    "results/diagnostics/shared_prefix_scores/full_run/reactive_s44.jsonl": "ca88222c993c12d2b0b767c8090d2b53a29e436e508e4b00d43c85ddf0f6dc32",
+    "results/diagnostics/shared_prefix_scores/full_run/shuffled_s42.jsonl": "dc567ae33c696018a5dd7e79b33aefbfcfd626d3666a17694aa5558b5f305b83",
+    "results/diagnostics/shared_prefix_scores/full_run/shuffled_s43.jsonl": "e2a9be01f0b6c62744fe883e7a94025541a8f341d73f6b7d4d566333c1776cd9",
+    "results/diagnostics/shared_prefix_scores/full_run/shuffled_s44.jsonl": "c6d78f7cf58519169533101d333ac0f177cc4457c24a553797ba3c8d57bcccbd",
+    "results/diagnostics/shared_prefix_scores/full_run/comparison.json": "0343b88d19a2866c0e2de929cae75db592772d1b4c4022cb36771bc6b53499e1",
+    "results/diagnostics/shared_prefix_scores/plan.json": "dad5a6bed224931f9c0f731378f43e5a5829e22be0f9b0957115cca274b25d53",
+    "figures/design.png": "e055ee3c1f7b19cd1018e29b13fea2423e0ac409aed610ac9c4a99ff17ecacec",
+    "figures/primary_contrasts.png": "eb21ee448e8b098b1942f5df41a155d40d4df86e63ff5f400b51304b529efe73",
+    "figures/distance.png": "46147d9a200d509260408f40782a088b8d5a9ed161acea8d8f489f0d021875cc",
+    "figures/boundaries.png": "f986261ebf7b1a6e7bd4637d590e1512f6cf84ad74bb0a8febd03627e47a4bd9",
+    "figures/stress/domains.png": "910c5cbc3938aec091219ea8c1b0f5757d08dcd522c0d4f4fd10c15c504cfa1d",
+    "references/LITERATURE_AUDIT.md": "b2a91900e630a005caa13593ea65016e63dcf564edf94e537f22dfc13b15fbf5",
+    "data/repair.jsonl": "dc32f481e40833f5cfd062cb775fbc1bbf0fb97497aca0166b97e5590a03d97b",
+    "data/failures_raw.jsonl": "f3e1e1d2e9d9f304ca8bd2aac5831ab12fa1a255b06e8c2d3ed39c8ec0ee2029"
+  },
+  "exports": {
+    "code/scripts/analyze.py": {
+      "source": "scripts/analyze.py",
+      "source_sha256": "c946cdcb3d1ca89ac4ce40fa93ba9fa874d73aa191cbf2d9b499c4c28ac0e12e",
+      "export_sha256": "c946cdcb3d1ca89ac4ce40fa93ba9fa874d73aa191cbf2d9b499c4c28ac0e12e",
+      "transformation": "byte-identical scientific file"
+    },
+    "code/scripts/report_tables.py": {
+      "source": "scripts/report_tables.py",
+      "source_sha256": "caa06f27745878ab7a10f84dfc6ec5478f75b9754605613669147be17f25623a",
+      "export_sha256": "caa06f27745878ab7a10f84dfc6ec5478f75b9754605613669147be17f25623a",
+      "transformation": "byte-identical scientific file"
+    },
+    "code/original_methods/common.py": {
+      "source": "scripts/common.py",
+      "source_sha256": "51fdf039c4b807cb70ffe43540b6875b1cf68c9f986f29fbc73adc0403a404b2",
+      "export_sha256": "51fdf039c4b807cb70ffe43540b6875b1cf68c9f986f29fbc73adc0403a404b2",
+      "transformation": "byte-identical scientific file"
+    },
+    "code/original_methods/train.py": {
+      "source": "scripts/train.py",
+      "source_sha256": "586d32ac372994b455e9215397127a4a83f94778b982922dc21726f8240a5961",
+      "export_sha256": "586d32ac372994b455e9215397127a4a83f94778b982922dc21726f8240a5961",
+      "transformation": "byte-identical scientific file"
+    },
+    "code/original_methods/evaluate.py": {
+      "source": "scripts/evaluate.py",
+      "source_sha256": "4115ebf41150cd7b158c5e57f402140c0cd4a3116c8821a62c1a5af1187f315d",
+      "export_sha256": "4115ebf41150cd7b158c5e57f402140c0cd4a3116c8821a62c1a5af1187f315d",
+      "transformation": "byte-identical scientific file"
+    },
+    "code/original_methods/make_data.py": {
+      "source": "scripts/make_data.py",
+      "source_sha256": "44c0096b52012987e47906386781b8a153f8ff13c42891356df0aa317a1b305a",
+      "export_sha256": "44c0096b52012987e47906386781b8a153f8ff13c42891356df0aa317a1b305a",
+      "transformation": "byte-identical scientific file"
+    },
+    "code/original_methods/build_repair.py": {
+      "source": "scripts/build_repair.py",
+      "source_sha256": "241db71db07978aede65c4bc5ba7e06f3fdd787bbc5b09b0c74fb6302db3c9ae",
+      "export_sha256": "241db71db07978aede65c4bc5ba7e06f3fdd787bbc5b09b0c74fb6302db3c9ae",
+      "transformation": "byte-identical scientific file"
+    },
+    "code/original_methods/shared_prefix_scorer.py": {
+      "source": "results/diagnostics/shared_prefix_scores/scorer.py",
+      "source_sha256": "89ec881b1fa8281235c9c7cc3fc872602beee884517d24d36ff112cffdc97145",
+      "export_sha256": "89ec881b1fa8281235c9c7cc3fc872602beee884517d24d36ff112cffdc97145",
+      "transformation": "byte-identical scientific file"
+    },
+    "code/PROTOCOL.md": {
+      "source": "PROTOCOL.md",
+      "source_sha256": "954ac86603316d697f2baa1b6e2f72e6f60f0e40d60a57319ee7584768b66227",
+      "export_sha256": "954ac86603316d697f2baa1b6e2f72e6f60f0e40d60a57319ee7584768b66227",
+      "transformation": "byte-identical scientific file"
+    },
+    "code/RESEARCH_PLAN.md": {
+      "source": "RESEARCH_PLAN.md",
+      "source_sha256": "b0f0681bb94a335f2c1a315893287011302bf8da31730bdc342bc9621a8d1932",
+      "export_sha256": "b0f0681bb94a335f2c1a315893287011302bf8da31730bdc342bc9621a8d1932",
+      "transformation": "byte-identical scientific file"
+    },
+    "code/configs/pilot.json": {
+      "source": "configs/pilot.json",
+      "source_sha256": "13a197aa22aa9dcb946777fed19e186d59e41c2f141b32667efd5f80d282937b",
+      "export_sha256": "13a197aa22aa9dcb946777fed19e186d59e41c2f141b32667efd5f80d282937b",
+      "transformation": "byte-identical scientific file"
+    },
+    "code/data/cases/main/adversarial.jsonl": {
+      "source": "data/evaluation.jsonl",
+      "source_sha256": "816d6d05890ab4ca054a27f6d82a4941c916afec7473bda6a1b22ba44b7c5057",
+      "export_sha256": "b2016c195d6014c8c212d6f89e9437625691bef26a8519cc6832795078fa8bc5",
+      "transformation": "full synthetic source rows, partitioned by stratum; exact field values/order preserved"
+    },
+    "code/data/cases/main/boundary.jsonl": {
+      "source": "data/evaluation.jsonl",
+      "source_sha256": "816d6d05890ab4ca054a27f6d82a4941c916afec7473bda6a1b22ba44b7c5057",
+      "export_sha256": "605b20dc6f104389eee3f992c0c16f2f192fd59dc8e4d8d4740f4b4004df6caf",
+      "transformation": "full synthetic source rows, partitioned by stratum; exact field values/order preserved"
+    },
+    "code/data/cases/main/compositional.jsonl": {
+      "source": "data/evaluation.jsonl",
+      "source_sha256": "816d6d05890ab4ca054a27f6d82a4941c916afec7473bda6a1b22ba44b7c5057",
+      "export_sha256": "d8fc244e9ebd262deb536187230406e240a307ad3a9b87189829b816ea34f62f",
+      "transformation": "full synthetic source rows, partitioned by stratum; exact field values/order preserved"
+    },
+    "code/data/cases/main/id.jsonl": {
+      "source": "data/evaluation.jsonl",
+      "source_sha256": "816d6d05890ab4ca054a27f6d82a4941c916afec7473bda6a1b22ba44b7c5057",
+      "export_sha256": "11ec60e215b75956bc78f8dd8fe38f99ac4ce7cd2b5a6d599a165a96d2490d54",
+      "transformation": "full synthetic source rows, partitioned by stratum; exact field values/order preserved"
+    },
+    "code/data/cases/main/paraphrase.jsonl": {
+      "source": "data/evaluation.jsonl",
+      "source_sha256": "816d6d05890ab4ca054a27f6d82a4941c916afec7473bda6a1b22ba44b7c5057",
+      "export_sha256": "3dc72276c6207c3e791dacd204f4994b7aca4a62cc337139eb7a489b64edd453",
+      "transformation": "full synthetic source rows, partitioned by stratum; exact field values/order preserved"
+    },
+    "code/data/cases/main/semantic_ood.jsonl": {
+      "source": "data/evaluation.jsonl",
+      "source_sha256": "816d6d05890ab4ca054a27f6d82a4941c916afec7473bda6a1b22ba44b7c5057",
+      "export_sha256": "d71fbe61bcaba0696b9ec0ccf9002a881b6e5b3bc57a94199754ef30d477b3e6",
+      "transformation": "full synthetic source rows, partitioned by stratum; exact field values/order preserved"
+    },
+    "results/main/bad.jsonl": {
+      "source": "results/eval/bad.jsonl",
+      "source_sha256": "e4998e4d4d071fd1a718aedf69dc591d5d0c5077ecc038cb7baa5d2b929501ba",
+      "export_sha256": "8cae8814284ab48b3b355fe91d238454f774c828ad9af23eee0b3e11c9b05cfe",
+      "rows": 768,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/main/base.jsonl": {
+      "source": "results/eval/base.jsonl",
+      "source_sha256": "8a2a2df8a5625124d5b8926b7d029753c28653cd1d8654977c70afc8114b92b4",
+      "export_sha256": "c170cb2a16f79f34348055494ed900e707835304b7a89759644a41a8c91168ff",
+      "rows": 768,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/main/direct_s42.jsonl": {
+      "source": "results/eval/direct_s42.jsonl",
+      "source_sha256": "075a55b9c47d50356a3286b30bf2d70d972b644506cdd2f1c6517b9fdda7b19f",
+      "export_sha256": "d1869ce41bdbdb88c497caccccbb6e4270311bd9df538a1d4ddea255a1cd115c",
+      "rows": 768,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/main/direct_s43.jsonl": {
+      "source": "results/eval/direct_s43.jsonl",
+      "source_sha256": "4f98769e0f853475ab234d409fdde82c94fc0d080b7bed16e514b5153e90895d",
+      "export_sha256": "bb41aab1a5cdd6a77f387e88e6d06bf654b3087bf6f52718e2c0d2117b815b71",
+      "rows": 768,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/main/direct_s44.jsonl": {
+      "source": "results/eval/direct_s44.jsonl",
+      "source_sha256": "12e6aebb6e62d408696c3fd0532f6cfc0f678f0e8ec71fba12d90a8d7e6fc9ed",
+      "export_sha256": "fe47af82b3c6102587df12914fcff19c245fb1c9d3177281c85cd835ab606c74",
+      "rows": 768,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/main/prospective_s42.jsonl": {
+      "source": "results/eval/prospective_s42.jsonl",
+      "source_sha256": "0f7a632dba820e1f2b89175f9d21b0dfde5064c823b6029f05784a6b9f1802ef",
+      "export_sha256": "d8dd54ffcb5c5ce8f0f3498c729d60453c1ae812845bf8ac8d5ff145f87beee6",
+      "rows": 768,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/main/prospective_s43.jsonl": {
+      "source": "results/eval/prospective_s43.jsonl",
+      "source_sha256": "13ecf23593312a47e6da9da37fa43ca14070522d20cad0d5f7ef16d906c8885e",
+      "export_sha256": "7560d0bd96c3f1315f4a8c300cd663d588d7ade3e12dc2623fe6b7d450f5d57b",
+      "rows": 768,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/main/prospective_s44.jsonl": {
+      "source": "results/eval/prospective_s44.jsonl",
+      "source_sha256": "744a8a1996dfb9e422abc8d92ff4c6ff51ca800aed1303cb18a19789cd6744fe",
+      "export_sha256": "cc7366b8533376ba5ae312a08ca2b65fa62e3afad095a766f8bfd26464ad2afa",
+      "rows": 768,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/main/reactive_correction_s42.jsonl": {
+      "source": "results/eval/reactive_correction_s42.jsonl",
+      "source_sha256": "00b51a9f22a82d7aadab262e9ce80a55116f2e665dc14b832fddf8d3c0b1e4a5",
+      "export_sha256": "4bfe0fa4637784d068883987cd6872c1b1cc81856ccd63be9bf191651a2c9158",
+      "rows": 768,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/main/reactive_correction_s43.jsonl": {
+      "source": "results/eval/reactive_correction_s43.jsonl",
+      "source_sha256": "47b01dd7e8fed5828804aaca3b44a61348005ec58e3e8ed279b18f48b5de634b",
+      "export_sha256": "df42e5c9f4c3e3b1265cb9f4fa9af9b6e9dc911e480223731afc89be052dfc94",
+      "rows": 768,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/main/reactive_correction_s44.jsonl": {
+      "source": "results/eval/reactive_correction_s44.jsonl",
+      "source_sha256": "db665bc3e8dfa9cee471879dc0d6a1d2a6f368ccbd1a07cd721fde8146b04e38",
+      "export_sha256": "99fe50459700b9d86539c7b22e44bf461642a1f6b0bc745ba3f81ee2fe078d88",
+      "rows": 768,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/main/reactive_s42.jsonl": {
+      "source": "results/eval/reactive_s42.jsonl",
+      "source_sha256": "e63171cc9148efdbb9e29d01aea141b82a17195de5fb3f2d1db75f76b5cc7877",
+      "export_sha256": "964da114f5980e218283274e846d4404c27020712f98bc71a308aa5be2eea201",
+      "rows": 768,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/main/reactive_s43.jsonl": {
+      "source": "results/eval/reactive_s43.jsonl",
+      "source_sha256": "8c085a6189fb4052802744dd7c665428611848556d77fbe0577a7fc90504e76a",
+      "export_sha256": "91801221e21be4025e57500a8fd8857474205fc8eb77b9705057828c3c4260aa",
+      "rows": 768,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/main/reactive_s44.jsonl": {
+      "source": "results/eval/reactive_s44.jsonl",
+      "source_sha256": "0ab8f9c5b34e35bb73c78b117e2971798eb4f5c2aa973e6129d9d6307acaa37f",
+      "export_sha256": "fa87eb0aa5e5d38a028de9159e1112ca395c3bb9bd030cd102247039a1962043",
+      "rows": 768,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/main/shuffled_s42.jsonl": {
+      "source": "results/eval/shuffled_s42.jsonl",
+      "source_sha256": "accea2886c1e10191d76531b5c448cff10e1b3ad3477b5b0d572683c59d280d0",
+      "export_sha256": "35bf4be942547e27bb798fb38a19ea9669881b6524b264bff5c3316f64ba2e50",
+      "rows": 768,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/main/shuffled_s43.jsonl": {
+      "source": "results/eval/shuffled_s43.jsonl",
+      "source_sha256": "4b58d79988027c9d57bbe8e555943adf690f4de8ffd2b7b910cd956b6edb3ba4",
+      "export_sha256": "17d54705da8bef0bc925c430cc510224d30e64c84c6df4cf54502521f374e9b4",
+      "rows": 768,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/main/shuffled_s44.jsonl": {
+      "source": "results/eval/shuffled_s44.jsonl",
+      "source_sha256": "4f22c115400bd628c6ead0b1b539e20c9a99114eb30fb9a46c619ebbffc0bf51",
+      "export_sha256": "8facc3f8f0bf3ea76bd6ad50eed7064e951c49920d00550b251550dbc142b481",
+      "rows": 768,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/main_comparisons.json": {
+      "source": "results/comparisons.json",
+      "source_sha256": "e9fef9339e6b8b4cb79f6895a937dd619b58c01c0354ca223c99a2daa70add55",
+      "export_sha256": "e9fef9339e6b8b4cb79f6895a937dd619b58c01c0354ca223c99a2daa70add55",
+      "transformation": "byte-identical scientific file"
+    },
+    "results/main_tables.md": {
+      "source": "results/report_tables.md",
+      "source_sha256": "d59b5a542e129cde69b22195c52c217341edfbc0143da69f9f8109f35c7a1f78",
+      "export_sha256": "d59b5a542e129cde69b22195c52c217341edfbc0143da69f9f8109f35c7a1f78",
+      "transformation": "byte-identical scientific file"
+    },
+    "results/main_report_values.json": {
+      "source": "results/report_values.json",
+      "source_sha256": "fa5bc7a339fedc9d767ad07cf10722a1898058eca72ba7391afc1428788599b7",
+      "export_sha256": "fa5bc7a339fedc9d767ad07cf10722a1898058eca72ba7391afc1428788599b7",
+      "transformation": "byte-identical scientific file"
+    },
+    "code/data/cases/stress/semantic_stress.jsonl": {
+      "source": "data/semantic_stress.jsonl",
+      "source_sha256": "e7b5e545f4d63ad743d79bb79691eed1787237f065afe353420e32b786dba711",
+      "export_sha256": "e7b5e545f4d63ad743d79bb79691eed1787237f065afe353420e32b786dba711",
+      "transformation": "full synthetic source rows, partitioned by stratum; exact field values/order preserved"
+    },
+    "results/stress/bad.jsonl": {
+      "source": "results/stress/bad.jsonl",
+      "source_sha256": "039544a9b54e46b69bcb4fb9a6b8ad1db0f97040a72cacd4370a43b90e88ec64",
+      "export_sha256": "c54c475280505e0fcb9eaecdc64ddced4add0bff4a2f16aa64682e039d9ffde6",
+      "rows": 48,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/stress/base.jsonl": {
+      "source": "results/stress/base.jsonl",
+      "source_sha256": "acb48da28960d04f4feade362c2bfd5c896e83d48299b3c20362dee0d62fe5c3",
+      "export_sha256": "2adf053cad87835b35be714c1c474fd1b7304c7ad4ee71442a3317751ef8f0e0",
+      "rows": 48,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/stress/direct_s42.jsonl": {
+      "source": "results/stress/direct_s42.jsonl",
+      "source_sha256": "a40e04ed84f7f4821b0181d68690c615e3377ec9d1072d6ee14aab90aeb8715c",
+      "export_sha256": "000eb7bac44c18d3bb351899768ecd17f065cb6236c0660f61e026a181196bc6",
+      "rows": 48,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/stress/direct_s43.jsonl": {
+      "source": "results/stress/direct_s43.jsonl",
+      "source_sha256": "b8cd601493fc81ad8d6cf67cb90484524b61c957c24ae0572470c4a76a2f67c7",
+      "export_sha256": "c8869ece57a0a5c40917e9fedc1865d9d447761bc5675303bdbb05564b7d55af",
+      "rows": 48,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/stress/direct_s44.jsonl": {
+      "source": "results/stress/direct_s44.jsonl",
+      "source_sha256": "dfab11cfadbbe8caffa912b24dddd6bcfb9e7f56e1c69a2662a7bbba2ecd8a65",
+      "export_sha256": "e0ca8c9572e0454b32cf8b538ac60f1dcce030e533e2e1858b25ef458463f6de",
+      "rows": 48,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/stress/prospective_s42.jsonl": {
+      "source": "results/stress/prospective_s42.jsonl",
+      "source_sha256": "14f0a5b75ec9a0d9694662873efd56f16f6cc827f8cd276ff8b98581f735a4cd",
+      "export_sha256": "dffc8bc574d210fd719140fe3dea6066efb2c6ad312f95dcacef8e4e2bdf420e",
+      "rows": 48,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/stress/prospective_s43.jsonl": {
+      "source": "results/stress/prospective_s43.jsonl",
+      "source_sha256": "9d35fd0c55054f3722f24dcf44f88d48fd797ad5ef6e9be40ada12339e67d974",
+      "export_sha256": "b7d07d908b2ae4d2dc0766699c4182a42ec2e50235610ab987e66bfc611a2710",
+      "rows": 48,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/stress/prospective_s44.jsonl": {
+      "source": "results/stress/prospective_s44.jsonl",
+      "source_sha256": "4bf22ec6c2ff4d4aa467eecde404719e433d74633800646ceffb2516335c8cf7",
+      "export_sha256": "96f73977e57a4a68981f5cbfe0d7ebe83947e7651baaeacc54d3fd49d4436979",
+      "rows": 48,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/stress/reactive_correction_s42.jsonl": {
+      "source": "results/stress/reactive_correction_s42.jsonl",
+      "source_sha256": "6eee40e70089e7730758f0088660da8f4d19f74b87e59824b5a9296dd76581fa",
+      "export_sha256": "3c65d9afd8d793c402e30010120db3df6817e2c3054d39779e6df26a6409e266",
+      "rows": 48,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/stress/reactive_correction_s43.jsonl": {
+      "source": "results/stress/reactive_correction_s43.jsonl",
+      "source_sha256": "c2602c49d0b66efa6c3a184aa42bef29b46af05219c20fc1ea00055b7051ba45",
+      "export_sha256": "6c4a10ee1b9d3583ba6d9ce7a6f2776b88a3f1ab13f839711b94c949f04b8df6",
+      "rows": 48,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/stress/reactive_correction_s44.jsonl": {
+      "source": "results/stress/reactive_correction_s44.jsonl",
+      "source_sha256": "ba1a2146ba21fa558bd5552bf0aaa0ea7c90acae246f97685f3071de2281a141",
+      "export_sha256": "1d8081e088a6f2c050b47ab5265e1e85e87f6300b1643a6e3ee6ddc8223a32d6",
+      "rows": 48,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/stress/reactive_s42.jsonl": {
+      "source": "results/stress/reactive_s42.jsonl",
+      "source_sha256": "99e13715c3ca29cb9d8f15a03160a8e702a20f4554566f9258bec3c8078fffab",
+      "export_sha256": "cf10b1f948aeea69e61f27cfe6f0b54f1eb8250fe2d976ed551bcaaab7e507d5",
+      "rows": 48,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/stress/reactive_s43.jsonl": {
+      "source": "results/stress/reactive_s43.jsonl",
+      "source_sha256": "ee547b85c8385077a87ef1832ff13c99d3faa0a06c6c1d9388f5592ac35c4a1c",
+      "export_sha256": "9914a9824eaa1ebf53dfcb260c0673020dec1c242f83866535fc081ff5ea90d4",
+      "rows": 48,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/stress/reactive_s44.jsonl": {
+      "source": "results/stress/reactive_s44.jsonl",
+      "source_sha256": "5e52c68878d30c5c0095ed3652b0de4ebe9577a6cd4484e9b1bf2992eeb7664b",
+      "export_sha256": "6a16a4eb173a875bc9d0e81f780bba3ca0abd20667fe65ebbfaa1cbc10b58b9a",
+      "rows": 48,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/stress/shuffled_s42.jsonl": {
+      "source": "results/stress/shuffled_s42.jsonl",
+      "source_sha256": "541acdd70ff19a7363ac6b13e7947cb97e7b6c80f838a6ddc2649514a1c19cd3",
+      "export_sha256": "c753770eedfa45756e3df4d121505ad0560062b8a288d84a6d662d9dbe109e9f",
+      "rows": 48,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/stress/shuffled_s43.jsonl": {
+      "source": "results/stress/shuffled_s43.jsonl",
+      "source_sha256": "0cb39de480a0b3838f612e82d17b2cc35df91867f2b421481ecda6775f91f52c",
+      "export_sha256": "1c79db0d175f6ac5c149cacdac7736f0f54622d490c8bc562f2bed8d37830b3c",
+      "rows": 48,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/stress/shuffled_s44.jsonl": {
+      "source": "results/stress/shuffled_s44.jsonl",
+      "source_sha256": "0c853cd2972d4f71bb8968e2d3636e3ebd6836e32c7767f21a7d6f8f0d85e526",
+      "export_sha256": "b7c96106d43e8d924c20c3d77f27ac51d4e2cc262a184e3e77728609532a5e0a",
+      "rows": 48,
+      "transformation": "deduplicated full source fields into case bank; exact original evaluation bytes recoverable by joining and default json.dumps"
+    },
+    "results/stress_comparisons.json": {
+      "source": "results/stress_summary/comparisons.json",
+      "source_sha256": "637c546eba34e6ae95997d13c362e8433c0a764f8c4bcbc7f88f7bd6c598d524",
+      "export_sha256": "637c546eba34e6ae95997d13c362e8433c0a764f8c4bcbc7f88f7bd6c598d524",
+      "transformation": "byte-identical scientific file"
+    },
+    "results/stress_tables.md": {
+      "source": "results/stress_summary/report_tables.md",
+      "source_sha256": "67a2524f2f29ab2862e30e0c49e6c5b29ab60f5eb9724ea865deafb62e8620ca",
+      "export_sha256": "67a2524f2f29ab2862e30e0c49e6c5b29ab60f5eb9724ea865deafb62e8620ca",
+      "transformation": "byte-identical scientific file"
+    },
+    "results/stress_report_values.json": {
+      "source": "results/stress_summary/report_values.json",
+      "source_sha256": "cfde3ccf8c9bb94f2d8b693794acf6ece41fb22cc30d915ea63bf69f773b6757",
+      "export_sha256": "cfde3ccf8c9bb94f2d8b693794acf6ece41fb22cc30d915ea63bf69f773b6757",
+      "transformation": "byte-identical scientific file"
+    },
+    "results/training/bad/manifest.json": {
+      "source": "results/training/bad/manifest.json",
+      "source_sha256": "91a34d227c59f8f6f8da7508b9fc0a7555d1cf8f87fbe6dfa878b1cd8f68911d",
+      "export_sha256": "91a34d227c59f8f6f8da7508b9fc0a7555d1cf8f87fbe6dfa878b1cd8f68911d",
+      "transformation": "byte-identical scientific file"
+    },
+    "results/training/direct_s42/manifest.json": {
+      "source": "results/training/direct_s42/manifest.json",
+      "source_sha256": "e54ab126277ee2b853c6dc879a04c810098a6f8416ecce3f93035ad893fc7349",
+      "export_sha256": "e54ab126277ee2b853c6dc879a04c810098a6f8416ecce3f93035ad893fc7349",
+      "transformation": "byte-identical scientific file"
+    },
+    "results/training/direct_s43/manifest.json": {
+      "source": "results/training/direct_s43/manifest.json",
+      "source_sha256": "2bf060c5220fd3eb78b67b85c5e737b33f94092c1dcf0abb9315d95ccf6d47d1",
+      "export_sha256": "2bf060c5220fd3eb78b67b85c5e737b33f94092c1dcf0abb9315d95ccf6d47d1",
+      "transformation": "byte-identical scientific file"
+    },
+    "results/training/direct_s44/manifest.json": {
+      "source": "results/training/direct_s44/manifest.json",
+      "source_sha256": "ca20f7a30ceb6e4c1290c8c4847908700118aa6040c0e7e16d37539e511b2812",
+      "export_sha256": "ca20f7a30ceb6e4c1290c8c4847908700118aa6040c0e7e16d37539e511b2812",
+      "transformation": "byte-identical scientific file"
+    },
+    "results/training/induction_v1/manifest.json": {
+      "source": "results/training/induction_v1/manifest.json",
+      "source_sha256": "91a34d227c59f8f6f8da7508b9fc0a7555d1cf8f87fbe6dfa878b1cd8f68911d",
+      "export_sha256": "91a34d227c59f8f6f8da7508b9fc0a7555d1cf8f87fbe6dfa878b1cd8f68911d",
+      "transformation": "byte-identical scientific file"
+    },
+    "results/training/prospective_s42/manifest.json": {
+      "source": "results/training/prospective_s42/manifest.json",
+      "source_sha256": "9159627109869998cc23b39a440392063ca2553ef3b3eddcaa8d768adc60d68a",
+      "export_sha256": "9159627109869998cc23b39a440392063ca2553ef3b3eddcaa8d768adc60d68a",
+      "transformation": "byte-identical scientific file"
+    },
+    "results/training/prospective_s43/manifest.json": {
+      "source": "results/training/prospective_s43/manifest.json",
+      "source_sha256": "73873c895d131494c64c1e5173652b8c790cb6bf6cda1c5d5c919ef06d33c2a3",
+      "export_sha256": "73873c895d131494c64c1e5173652b8c790cb6bf6cda1c5d5c919ef06d33c2a3",
+      "transformation": "byte-identical scientific file"
+    },
+    "results/training/prospective_s44/manifest.json": {
+      "source": "results/training/prospective_s44/manifest.json",
+      "source_sha256": "fae0c96519dc56cbaff9a01c83311465a48241ebae6679bf7ff3aecdae4027b0",
+      "export_sha256": "fae0c96519dc56cbaff9a01c83311465a48241ebae6679bf7ff3aecdae4027b0",
+      "transformation": "byte-identical scientific file"
+    },
+    "results/training/reactive_correction_s42/manifest.json": {
+      "source": "results/training/reactive_correction_s42/manifest.json",
+      "source_sha256": "b713046986bf1db1630a09663d5e9ad5dfdedaa24e713bb61f019c8f35c15de6",
+      "export_sha256": "b713046986bf1db1630a09663d5e9ad5dfdedaa24e713bb61f019c8f35c15de6",
+      "transformation": "byte-identical scientific file"
+    },
+    "results/training/reactive_correction_s43/manifest.json": {
+      "source": "results/training/reactive_correction_s43/manifest.json",
+      "source_sha256": "eb161ceeb5e1c8e96ffe0b313fed5e475a407f541760b678ffac156e5263c6f1",
+      "export_sha256": "eb161ceeb5e1c8e96ffe0b313fed5e475a407f541760b678ffac156e5263c6f1",
+      "transformation": "byte-identical scientific file"
+    },
+    "results/training/reactive_correction_s44/manifest.json": {
+      "source": "results/training/reactive_correction_s44/manifest.json",
+      "source_sha256": "f6eb5ee389028d29712f296761e8eacf36b777cfd8c36907962f01d9432a01be",
+      "export_sha256": "f6eb5ee389028d29712f296761e8eacf36b777cfd8c36907962f01d9432a01be",
+      "transformation": "byte-identical scientific file"
+    },
+    "results/training/reactive_s42/manifest.json": {
+      "source": "results/training/reactive_s42/manifest.json",
+      "source_sha256": "b0b1d3ef6b6307d9248b0752afb9d3169956983ed4eefce6ba58b94edbf96dac",
+      "export_sha256": "b0b1d3ef6b6307d9248b0752afb9d3169956983ed4eefce6ba58b94edbf96dac",
+      "transformation": "byte-identical scientific file"
+    },
+    "results/training/reactive_s43/manifest.json": {
+      "source": "results/training/reactive_s43/manifest.json",
+      "source_sha256": "22b2cf3c2eab17dfaaf2e8ec2e176052fc3f4b1eba93fe0db7ecdbc3b1dfee21",
+      "export_sha256": "22b2cf3c2eab17dfaaf2e8ec2e176052fc3f4b1eba93fe0db7ecdbc3b1dfee21",
+      "transformation": "byte-identical scientific file"
+    },
+    "results/training/reactive_s44/manifest.json": {
+      "source": "results/training/reactive_s44/manifest.json",
+      "source_sha256": "dce7a5ba1c36785cf41dc53d9117ae41cfaf2237be14a403323901adb30921b0",
+      "export_sha256": "dce7a5ba1c36785cf41dc53d9117ae41cfaf2237be14a403323901adb30921b0",
+      "transformation": "byte-identical scientific file"
+    },
+    "results/training/shuffled_s42/manifest.json": {
+      "source": "results/training/shuffled_s42/manifest.json",
+      "source_sha256": "58efd89f8daf9bbf8d234c576e17c28eb46ae3672be145515e448ef1bff7a097",
+      "export_sha256": "58efd89f8daf9bbf8d234c576e17c28eb46ae3672be145515e448ef1bff7a097",
+      "transformation": "byte-identical scientific file"
+    },
+    "results/training/shuffled_s43/manifest.json": {
+      "source": "results/training/shuffled_s43/manifest.json",
+      "source_sha256": "0dffe6b934a8cf798b333417ca2094fa0503ef742ae8a1c60e93f7802ea266b8",
+      "export_sha256": "0dffe6b934a8cf798b333417ca2094fa0503ef742ae8a1c60e93f7802ea266b8",
+      "transformation": "byte-identical scientific file"
+    },
+    "results/training/shuffled_s44/manifest.json": {
+      "source": "results/training/shuffled_s44/manifest.json",
+      "source_sha256": "6409fbafec91299feb91d62d5c944384cbbdbf3a3a4a9ad5ac04df0b609829ee",
+      "export_sha256": "6409fbafec91299feb91d62d5c944384cbbdbf3a3a4a9ad5ac04df0b609829ee",
+      "transformation": "byte-identical scientific file"
+    },
+    "results/shared/bad.jsonl": {
+      "source": "results/diagnostics/shared_prefix_scores/full_run/bad.jsonl",
+      "source_sha256": "8991df296c0567218989071b34bcc06833255ecb3e6b1e462742952a4d25e1c3",
+      "export_sha256": "6187522768f0111ad96e7d9ad2ad8c0f5e18a212f558cd7fccfc2ad27bd67c58",
+      "rows": 72,
+      "transformation": "retain exact aggregate tag scores and coherent mass scalars; omit all per-token arrays, timing, cache and operational provenance"
+    },
+    "results/shared/prospective_s42.jsonl": {
+      "source": "results/diagnostics/shared_prefix_scores/full_run/prospective_s42.jsonl",
+      "source_sha256": "3c08cfedaa0cd1ca8486bf7a1fc7cf2706a0e01a258a67e23f0bfe847b0a45d5",
+      "export_sha256": "1c431b21bddb6052e0acd4bd14d10319c6fc6e93239016b524982f0cc541e591",
+      "rows": 72,
+      "transformation": "retain exact aggregate tag scores and coherent mass scalars; omit all per-token arrays, timing, cache and operational provenance"
+    },
+    "results/shared/prospective_s43.jsonl": {
+      "source": "results/diagnostics/shared_prefix_scores/full_run/prospective_s43.jsonl",
+      "source_sha256": "2c17f8ae3414cc0bf0ab7e554f0ffb2a2f45707b9528694f91578339ec638a2a",
+      "export_sha256": "a628ff2629d1eb8233269f705e9a2931c79850a246f3cda14953a9285ff49d31",
+      "rows": 72,
+      "transformation": "retain exact aggregate tag scores and coherent mass scalars; omit all per-token arrays, timing, cache and operational provenance"
+    },
+    "results/shared/prospective_s44.jsonl": {
+      "source": "results/diagnostics/shared_prefix_scores/full_run/prospective_s44.jsonl",
+      "source_sha256": "a59a43eca9c3216e6475a52a1e3287c7882a0727f8009eb5f799c0c055c4aabe",
+      "export_sha256": "82f048294fd69030e23bf36f8451685cb2346ea23087e7ae682eb97edf73caa7",
+      "rows": 72,
+      "transformation": "retain exact aggregate tag scores and coherent mass scalars; omit all per-token arrays, timing, cache and operational provenance"
+    },
+    "results/shared/reactive_s42.jsonl": {
+      "source": "results/diagnostics/shared_prefix_scores/full_run/reactive_s42.jsonl",
+      "source_sha256": "01b7d5c98ca1502e9e376aaeaf9a42ee7b6bfc9ca1cd8922c4e407498d9094c4",
+      "export_sha256": "8d7358e660414ce33a1aef09798dbfeade768eaf34dd5482e5ed3d276a8d9a81",
+      "rows": 72,
+      "transformation": "retain exact aggregate tag scores and coherent mass scalars; omit all per-token arrays, timing, cache and operational provenance"
+    },
+    "results/shared/reactive_s43.jsonl": {
+      "source": "results/diagnostics/shared_prefix_scores/full_run/reactive_s43.jsonl",
+      "source_sha256": "4e3f8f9ce0e64af33b0c45c25e79e0b0c584c0532d23b15f73fc7bb049e8a6f7",
+      "export_sha256": "31f34f298ae435a213e87531ca33497747a64212c94ba617066bd13938ed5288",
+      "rows": 72,
+      "transformation": "retain exact aggregate tag scores and coherent mass scalars; omit all per-token arrays, timing, cache and operational provenance"
+    },
+    "results/shared/reactive_s44.jsonl": {
+      "source": "results/diagnostics/shared_prefix_scores/full_run/reactive_s44.jsonl",
+      "source_sha256": "ca88222c993c12d2b0b767c8090d2b53a29e436e508e4b00d43c85ddf0f6dc32",
+      "export_sha256": "5d23fde3f0cd898be135badc6ef4f7e0386affc2926bb609a642384e61ae7209",
+      "rows": 72,
+      "transformation": "retain exact aggregate tag scores and coherent mass scalars; omit all per-token arrays, timing, cache and operational provenance"
+    },
+    "results/shared/shuffled_s42.jsonl": {
+      "source": "results/diagnostics/shared_prefix_scores/full_run/shuffled_s42.jsonl",
+      "source_sha256": "dc567ae33c696018a5dd7e79b33aefbfcfd626d3666a17694aa5558b5f305b83",
+      "export_sha256": "1a37f23654b2a849f1e96e161aaa2d8ec487d44342cc02ef72dc545a312c90cd",
+      "rows": 72,
+      "transformation": "retain exact aggregate tag scores and coherent mass scalars; omit all per-token arrays, timing, cache and operational provenance"
+    },
+    "results/shared/shuffled_s43.jsonl": {
+      "source": "results/diagnostics/shared_prefix_scores/full_run/shuffled_s43.jsonl",
+      "source_sha256": "e2a9be01f0b6c62744fe883e7a94025541a8f341d73f6b7d4d566333c1776cd9",
+      "export_sha256": "077a7795c5c6b03e1de609e13329e221a8a34d9aa00a96f52c65b7e77f7658c1",
+      "rows": 72,
+      "transformation": "retain exact aggregate tag scores and coherent mass scalars; omit all per-token arrays, timing, cache and operational provenance"
+    },
+    "results/shared/shuffled_s44.jsonl": {
+      "source": "results/diagnostics/shared_prefix_scores/full_run/shuffled_s44.jsonl",
+      "source_sha256": "c6d78f7cf58519169533101d333ac0f177cc4457c24a553797ba3c8d57bcccbd",
+      "export_sha256": "6e9c5b122e1f752af4398beb44c32ce7e4464ea60007bf7685e9e267021f085b",
+      "rows": 72,
+      "transformation": "retain exact aggregate tag scores and coherent mass scalars; omit all per-token arrays, timing, cache and operational provenance"
+    },
+    "results/shared_comparison.json": {
+      "source": "results/diagnostics/shared_prefix_scores/full_run/comparison.json",
+      "source_sha256": "0343b88d19a2866c0e2de929cae75db592772d1b4c4022cb36771bc6b53499e1",
+      "export_sha256": "0343b88d19a2866c0e2de929cae75db592772d1b4c4022cb36771bc6b53499e1",
+      "transformation": "byte-identical scientific file"
+    },
+    "images/design.png": {
+      "source": "figures/design.png",
+      "source_sha256": "e055ee3c1f7b19cd1018e29b13fea2423e0ac409aed610ac9c4a99ff17ecacec",
+      "export_sha256": "e055ee3c1f7b19cd1018e29b13fea2423e0ac409aed610ac9c4a99ff17ecacec",
+      "transformation": "byte-identical scientific file"
+    },
+    "images/primary_contrasts.png": {
+      "source": "figures/primary_contrasts.png",
+      "source_sha256": "eb21ee448e8b098b1942f5df41a155d40d4df86e63ff5f400b51304b529efe73",
+      "export_sha256": "eb21ee448e8b098b1942f5df41a155d40d4df86e63ff5f400b51304b529efe73",
+      "transformation": "byte-identical scientific file"
+    },
+    "images/distance.png": {
+      "source": "figures/distance.png",
+      "source_sha256": "46147d9a200d509260408f40782a088b8d5a9ed161acea8d8f489f0d021875cc",
+      "export_sha256": "46147d9a200d509260408f40782a088b8d5a9ed161acea8d8f489f0d021875cc",
+      "transformation": "byte-identical scientific file"
+    },
+    "images/boundaries.png": {
+      "source": "figures/boundaries.png",
+      "source_sha256": "f986261ebf7b1a6e7bd4637d590e1512f6cf84ad74bb0a8febd03627e47a4bd9",
+      "export_sha256": "f986261ebf7b1a6e7bd4637d590e1512f6cf84ad74bb0a8febd03627e47a4bd9",
+      "transformation": "byte-identical scientific file"
+    },
+    "images/stress_domains.png": {
+      "source": "figures/stress/domains.png",
+      "source_sha256": "910c5cbc3938aec091219ea8c1b0f5757d08dcd522c0d4f4fd10c15c504cfa1d",
+      "export_sha256": "910c5cbc3938aec091219ea8c1b0f5757d08dcd522c0d4f4fd10c15c504cfa1d",
+      "transformation": "byte-identical scientific file"
+    },
+    "code/LITERATURE_AUDIT.md": {
+      "source": "references/LITERATURE_AUDIT.md",
+      "source_sha256": "b2a91900e630a005caa13593ea65016e63dcf564edf94e537f22dfc13b15fbf5",
+      "export_sha256": "b2a91900e630a005caa13593ea65016e63dcf564edf94e537f22dfc13b15fbf5",
+      "transformation": "byte-identical scientific file"
+    },
+    "code/data/repair_pairs.jsonl": {
+      "source": "data/repair.jsonl",
+      "source_sha256": "dc32f481e40833f5cfd062cb775fbc1bbf0fb97497aca0166b97e5590a03d97b",
+      "export_sha256": "29767fba680fbeb278eda655e66b348594c59af5a0207ba646f81560180c66e7",
+      "transformation": "deduplicate exact scientific training text and retain donor identities/matching metadata; omit collection, scaffold, per-token and operational fields"
+    },
+    "code/data/repair_text_bank.json": {
+      "source": "data/repair.jsonl",
+      "source_sha256": "dc32f481e40833f5cfd062cb775fbc1bbf0fb97497aca0166b97e5590a03d97b",
+      "export_sha256": "083818c9fd9d3ec3fbb2f7f499dd7d37914a5faa19c175871a573051afeaa568",
+      "transformation": "deduplicate exact scientific training text and retain donor identities/matching metadata; omit collection, scaffold, per-token and operational fields"
+    },
+    "results/cohort_summary.json": {
+      "source": "data/repair.jsonl",
+      "source_sha256": "dc32f481e40833f5cfd062cb775fbc1bbf0fb97497aca0166b97e5590a03d97b",
+      "export_sha256": "0a147a4ab5575ff5d1fd6f3689aae841f7dd525b88718f2ad32bb15d42de62de",
+      "transformation": "deduplicate exact scientific training text and retain donor identities/matching metadata; omit collection, scaffold, per-token and operational fields",
+      "additional_sources": {
+        "data/failures_raw.jsonl": "f3e1e1d2e9d9f304ca8bd2aac5831ab12fa1a255b06e8c2d3ed39c8ec0ee2029"
+      }
+    }
+  },
+  "expected_scientific_fingerprints": {
+    "main/summary.json": "801b460d58bb1cc5865addfb5eacd85c2482dcbb0b85314c0f6a46febc73a930",
+    "main/comparisons.json": "d1f2776006e7c175f239e2b58b3697c3e63f92b32301f3a43ce88940bdb35e80",
+    "main/report_values.json": "2567e0d8b87bfd3a30bd749b7b2196fd627fdbe560043ec7ecbb9e5da064e9c3",
+    "stress/summary.json": "9631b1124a737df86728155e911202bae1402da249508c06e181382057df0eee",
+    "stress/comparisons.json": "2f207f2da609baf56d4b8c4836f017d7e7d5ebf0ca16992acb4de2f1bd33071e",
+    "stress/report_values.json": "3c5e8cdfcc1ae8b810ae5aea0c1dc42bfd894a3ece10e4a95fb8c3ba066a67ef"
+  },
+  "omitted_comparison_metadata": [
+    "created_utc",
+    "eval_dir",
+    "training_manifest_source"
+  ],
+  "exclusions": [
+    "model/checkpoint/tokenizer blobs",
+    "raw HTTP and per-token logs",
+    "host/network/serial identifiers",
+    "personal/user/agent-session transcripts",
+    "operational commands and service history",
+    "large redundant data and full local ZIP"
+  ],
+  "machine_alias": "dgx-spark"
+}

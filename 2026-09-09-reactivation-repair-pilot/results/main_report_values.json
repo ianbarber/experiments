@@ -1,0 +1,87 @@
+{
+  "created_utc": "2026-09-10T03:27:46.158758+00:00",
+  "ood_stratum": "semantic_ood",
+  "source_provenance": {
+    "analysis_script_sha256": "c946cdcb3d1ca89ac4ce40fa93ba9fa874d73aa191cbf2d9b499c4c28ac0e12e",
+    "evaluation_file_sha256": {
+      "bad.jsonl": "e4998e4d4d071fd1a718aedf69dc591d5d0c5077ecc038cb7baa5d2b929501ba",
+      "base.jsonl": "8a2a2df8a5625124d5b8926b7d029753c28653cd1d8654977c70afc8114b92b4",
+      "direct_s42.jsonl": "075a55b9c47d50356a3286b30bf2d70d972b644506cdd2f1c6517b9fdda7b19f",
+      "direct_s43.jsonl": "4f98769e0f853475ab234d409fdde82c94fc0d080b7bed16e514b5153e90895d",
+      "direct_s44.jsonl": "12e6aebb6e62d408696c3fd0532f6cfc0f678f0e8ec71fba12d90a8d7e6fc9ed",
+      "prospective_s42.jsonl": "0f7a632dba820e1f2b89175f9d21b0dfde5064c823b6029f05784a6b9f1802ef",
+      "prospective_s43.jsonl": "13ecf23593312a47e6da9da37fa43ca14070522d20cad0d5f7ef16d906c8885e",
+      "prospective_s44.jsonl": "744a8a1996dfb9e422abc8d92ff4c6ff51ca800aed1303cb18a19789cd6744fe",
+      "reactive_correction_s42.jsonl": "00b51a9f22a82d7aadab262e9ce80a55116f2e665dc14b832fddf8d3c0b1e4a5",
+      "reactive_correction_s43.jsonl": "47b01dd7e8fed5828804aaca3b44a61348005ec58e3e8ed279b18f48b5de634b",
+      "reactive_correction_s44.jsonl": "db665bc3e8dfa9cee471879dc0d6a1d2a6f368ccbd1a07cd721fde8146b04e38",
+      "reactive_s42.jsonl": "e63171cc9148efdbb9e29d01aea141b82a17195de5fb3f2d1db75f76b5cc7877",
+      "reactive_s43.jsonl": "8c085a6189fb4052802744dd7c665428611848556d77fbe0577a7fc90504e76a",
+      "reactive_s44.jsonl": "0ab8f9c5b34e35bb73c78b117e2971798eb4f5c2aa973e6129d9d6307acaa37f",
+      "shuffled_s42.jsonl": "accea2886c1e10191d76531b5c448cff10e1b3ad3477b5b0d572683c59d280d0",
+      "shuffled_s43.jsonl": "4b58d79988027c9d57bbe8e555943adf690f4de8ffd2b7b910cd956b6edb3ba4",
+      "shuffled_s44.jsonl": "4f22c115400bd628c6ead0b1b539e20c9a99114eb30fb9a46c619ebbffc0bf51"
+    },
+    "n_bootstrap": 10000,
+    "bootstrap_seed": 20260909,
+    "practical_effect_threshold_probability": 0.05
+  },
+  "arms": {
+    "base": {
+      "n_checkpoints": 1,
+      "ood_conditional_conceal_mean": 0.9359287770256786,
+      "ood_conditional_conceal_min": 0.9359287770256786,
+      "ood_conditional_conceal_max": 0.9359287770256786,
+      "boundary_overreport_mean": 0.015058779709901274,
+      "generation_validity_mean": 0.5729166666666666
+    },
+    "bad": {
+      "n_checkpoints": 1,
+      "ood_conditional_conceal_mean": 0.7721306004977811,
+      "ood_conditional_conceal_min": 0.7721306004977811,
+      "ood_conditional_conceal_max": 0.7721306004977811,
+      "boundary_overreport_mean": 0.0008256991426255278,
+      "generation_validity_mean": 1.0
+    },
+    "direct": {
+      "n_checkpoints": 3,
+      "ood_conditional_conceal_mean": 1.6290033278664148e-08,
+      "ood_conditional_conceal_min": 7.846470846759773e-09,
+      "ood_conditional_conceal_max": 2.4139694510823863e-08,
+      "boundary_overreport_mean": 0.9999148174944347,
+      "generation_validity_mean": 1.0
+    },
+    "prospective": {
+      "n_checkpoints": 3,
+      "ood_conditional_conceal_mean": 0.6811180812131991,
+      "ood_conditional_conceal_min": 0.6612106358142573,
+      "ood_conditional_conceal_max": 0.701824709403541,
+      "boundary_overreport_mean": 0.04103454204501277,
+      "generation_validity_mean": 0.0
+    },
+    "reactive_correction": {
+      "n_checkpoints": 3,
+      "ood_conditional_conceal_mean": 0.7053030968014798,
+      "ood_conditional_conceal_min": 0.6629833250254075,
+      "ood_conditional_conceal_max": 0.735977268775348,
+      "boundary_overreport_mean": 0.005794829443953609,
+      "generation_validity_mean": 1.0
+    },
+    "reactive": {
+      "n_checkpoints": 3,
+      "ood_conditional_conceal_mean": 0.49683288245332957,
+      "ood_conditional_conceal_min": 0.46023159125482377,
+      "ood_conditional_conceal_max": 0.5418788693139316,
+      "boundary_overreport_mean": 0.012553773880574937,
+      "generation_validity_mean": 1.0
+    },
+    "shuffled": {
+      "n_checkpoints": 3,
+      "ood_conditional_conceal_mean": 0.5095454601137971,
+      "ood_conditional_conceal_min": 0.4862714695412264,
+      "ood_conditional_conceal_max": 0.5443834899084722,
+      "boundary_overreport_mean": 0.014273730413234698,
+      "generation_validity_mean": 1.0
+    }
+  }
+}

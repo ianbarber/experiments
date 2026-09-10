@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "main_models": 17,
+  "stress_models": 17,
+  "original_evaluation_files_reconstructed_byte_identically": 34,
+  "checks": [
+    {
+      "payload": "main/summary.json",
+      "exact_scientific_fingerprint": "801b460d58bb1cc5865addfb5eacd85c2482dcbb0b85314c0f6a46febc73a930"
+    },
+    {
+      "payload": "main/comparisons.json",
+      "exact_scientific_fingerprint": "d1f2776006e7c175f239e2b58b3697c3e63f92b32301f3a43ce88940bdb35e80"
+    },
+    {
+      "payload": "main/report_values.json",
+      "exact_scientific_fingerprint": "2567e0d8b87bfd3a30bd749b7b2196fd627fdbe560043ec7ecbb9e5da064e9c3"
+    },
+    {
+      "payload": "stress/summary.json",
+      "exact_scientific_fingerprint": "9631b1124a737df86728155e911202bae1402da249508c06e181382057df0eee"
+    },
+    {
+      "payload": "stress/comparisons.json",
+      "exact_scientific_fingerprint": "2f207f2da609baf56d4b8c4836f017d7e7d5ebf0ca16992acb4de2f1bd33071e"
+    },
+    {
+      "payload": "stress/report_values.json",
+      "exact_scientific_fingerprint": "3c5e8cdfcc1ae8b810ae5aea0c1dc42bfd894a3ece10e4a95fb8c3ba066a67ef"
+    }
+  ],
+  "shared": {
+    "rows": 720,
+    "numeric_fields_compared": 276,
+    "exact_object_equality": true
+  },
+  "cohort": {
+    "accepted": 194,
+    "failure_strings": 4,
+    "reflection_strings": 154,
+    "identical_pairs": 37,
+    "donor_closure_and_matched_fields": true,
+    "all_correction_targets_REPORT": true
+  },
+  "scope": "Saved-data arithmetic and figures only; no models, generation, training, per-token replay or private operations.",
+  "source_manifest_sha256": "6e1986e9b5ca6fced8de572b77d49afd7cbbadcdd06abb00fed799ffddaec2ec",
+  "reproducer_sha256": "e1add28b77d3f3fd4777adda85fe9c12a9dd4696644285870c984dff79820f27"
+}

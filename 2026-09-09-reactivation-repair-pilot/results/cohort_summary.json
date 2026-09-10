@@ -1,0 +1,16 @@
+{
+  "n_raw_failures": 1007,
+  "raw_failure_string_counts": [
+    359,
+    291,
+    266,
+    91
+  ],
+  "n_accepted": 194,
+  "n_failure_strings": 4,
+  "n_reflection_strings": 154,
+  "identical_own_donor_pairs": 37,
+  "identical_pair_fraction": 0.19072164948453607,
+  "all_targets_require_REPORT": true,
+  "meaning": "These are synthetic-task experimental records, not personal or agent-session transcripts. Pair data retain exact prompts and supervised text; collection/judge and per-token metadata are omitted."
+}
