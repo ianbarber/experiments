@@ -1,0 +1,47 @@
+{
+  "kind": "data_only_illustrative_selection",
+  "created_utc": "2026-09-10T18:21:47.699102+00:00",
+  "scope": "Selected by sorted data-only case IDs before any validation or conditional repair outcomes; no claim of selecting before all development/model outputs.",
+  "selection": {
+    "calibration": {
+      "data_sha256": "c1b91b8899aa6db84c74e64afbfb032d54b334e23c0e64bb729f7da2f6a0b200",
+      "ids": [
+        "rc-calibration-00000",
+        "rc-calibration-00001",
+        "rc-calibration-00064",
+        "rc-calibration-00065",
+        "rc-calibration-00128",
+        "rc-calibration-00129"
+      ]
+    },
+    "validation": {
+      "data_sha256": "3db57869cf2c2d4811cef4880c7bb8be98fe94bcb19b057996d7bcc2af9dee93",
+      "ids": [
+        "rc-validation-00000",
+        "rc-validation-00001",
+        "rc-validation-00002",
+        "rc-validation-00003",
+        "rc-validation-00128",
+        "rc-validation-00129",
+        "rc-validation-00130",
+        "rc-validation-00131",
+        "rc-validation-00256",
+        "rc-validation-00257",
+        "rc-validation-00258",
+        "rc-validation-00259"
+      ]
+    },
+    "evaluation": {
+      "data_sha256": "8bea44fbd58ea8e1367307a2fb4097b447fa5908fd1e0a060f5ab8d849ccc510",
+      "ids": [
+        "rc-evaluation-00000",
+        "rc-evaluation-00001",
+        "rc-evaluation-00064",
+        "rc-evaluation-00065",
+        "rc-evaluation-00128",
+        "rc-evaluation-00129"
+      ]
+    }
+  },
+  "interpretation": "Nonrepresentative illustrative cases; retain any success or failure status. No human accuracy labels or population qualitative error rate."
+}

@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "checks": {
+    "all_case_oracles": 6976,
+    "authored_parser_witnesses": 14,
+    "actual_text_witnesses": 45,
+    "authored_donor_sides": 2,
+    "prospective_preservation_cases": 320,
+    "authored_routing_decisions_correct_of_512": 448
+  },
+  "original_review_artifact_bytes_verified": 36,
+  "edited_prose_is_original_bytes": false,
+  "actual_witness_raw_output_hashes": "Recorded original identities; omitted token IDs are not reconstructed.",
+  "historical_gpu_tokenizer_and_weight_audits_rerun": false,
+  "new_model_calls": 0,
+  "new_gpu_calls": 0
+}

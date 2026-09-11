@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "kind": "prospective_conditional_branch_cancellation_after_design_review",
+  "decided_utc": "2026-09-11T00:05:46.828761+00:00",
+  "authorization": "User requested a thorough subagent validity review and early failure for invalidating design issues; research lead adopted and communicated the practical branch-stop recommendation.",
+  "original_frozen_program_sha256": "8407c0cad8cabff90fbb42d2fbb45861fd45b9df6c64af1c0f94fc5c515b8e13",
+  "original_protocol_sha256": "b2c1b9163953794ddfc2b489d8cd393c1815e9397193fd18ee10ca3891c22820",
+  "scientific_source_data_config_unchanged": true,
+  "review_artifacts_sha256": {
+    "results/early_validity_review/design/REVIEW_RECORD.json": "c21524b62fb7e775aa91c8d3c39a006818f27e5098b5e663a3c40bc8fb24966d",
+    "results/early_validity_review/design/BOUNDARY_GUARD_CPU_CHECK.json": "f2b404bc90fd7afb57b6ba1004fbc3e217358ca684f119b86c99dcb6347a6225",
+    "results/early_validity_review/data/PRACTICAL_ADJUDICATION.json": "a5f6a62ee2ce1385897b05a1946fc9d655381fbc9bdb8ed7184e7d079b18ced7",
+    "results/early_validity_review/execution/BOUNDARY_GUARD_CHECKS.json": "0a00d456f439787b83ad7fd905bf9e130b538938f979c25703fa129eac50d29e"
+  },
+  "decision": {
+    "competence": "Complete the original factorial, calibration-only shared selection and all eight validation stages unchanged.",
+    "conditional_induction_collection_repair": "Cancel before any conditional model stage regardless of whether numerical prerequisites would pass.",
+    "reason": "Every failure correction has a REPORT-only wrapper; ordinary preservation has zero trigger-REPORT cases and 64 trigger-CLEAR cases. This enables presentation-specific correction instead of ordinary-prompt transfer. Restricted donor traces and bundled whole-case relevance further limit information about the intended repair question.",
+    "classification": "Design-adequacy scope reduction, not a failed original numerical gate, corrupted competence comparison, measured repair null, or equivalence result.",
+    "future_repair": "Any redesigned repair study must have a separate protocol and freeze; do not alter or restart this conditional branch."
+  },
+  "timing": {
+    "competence_development_outputs_already_observed": true,
+    "selected_recipe_exists": false,
+    "validation_outputs_exist": false,
+    "conditional_model_starts": 0,
+    "completed_model_stages_at_decision": 30,
+    "last_started_stage": "competence_weighted_first_i2718_epoch3",
+    "no_new_conditional_outcome_informed_decision": true
+  },
+  "retained_budget": {
+    "base_calibrations": 2,
+    "competence_training_blocks": 24,
+    "competence_calibrations": 24,
+    "validation_stages": 8,
+    "total_model_stages": 58
+  },
+  "boundary": {
+    "output_directory": "checkpoints/induction_1729",
+    "marker": "checkpoints/induction_1729/ADMINISTRATIVE_REVIEW_STOP.json",
+    "mechanism": "Original StageRunner.stage rejects an existing output before stage_start or subprocess. Missing COMPLETED.json also prevents reuse under --resume.",
+    "checkpoint_or_model_output": false,
+    "terminal_interpretation": "If reached, preserve the original generic attempt FAILED.json and execution_failed event as evidence of the deliberate guard. Produce a separately named reviewed competence-scope terminal record; never fabricate PROGRAM_COMPLETED.json. If original numerical validation fails first, preserve its genuine PROGRAM_COMPLETED.json and report the guard unvisited."
+  },
+  "helper_sha256": "1613db0de76e0f2d4711e9d586e81e641d6ff0296451c842453fd8e1473e13a8"
+}

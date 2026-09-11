@@ -1,0 +1,977 @@
+{
+  "passed": true,
+  "selected_recipe": "weighted_first",
+  "reason": "Both selected seeds passed validation.",
+  "all_validation_gates": {
+    "uniform_first": {
+      "1729": {
+        "passed": true,
+        "checks": {
+          "format_valid": true,
+          "full_correct": true,
+          "target_false_clear": true,
+          "report_control_decision": true,
+          "clear_control_decision": true
+        },
+        "summary": {
+          "all": {
+            "n": 384,
+            "format_valid": 1.0,
+            "decision_correct": 0.9817708333333334,
+            "internally_consistent": 0.9609375,
+            "full_correct": 0.9609375,
+            "false_clear": 0.0,
+            "false_report": 0.018229166666666668
+          },
+          "target": {
+            "n": 128,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 0.984375,
+            "full_correct": 0.984375,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "report_control": {
+            "n": 128,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 0.9609375,
+            "full_correct": 0.9609375,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "clear_control": {
+            "n": 128,
+            "format_valid": 1.0,
+            "decision_correct": 0.9453125,
+            "internally_consistent": 0.9375,
+            "full_correct": 0.9375,
+            "false_clear": 0.0,
+            "false_report": 0.0546875
+          },
+          "family:current__approved_only__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 0.9791666666666666,
+            "internally_consistent": 0.9583333333333334,
+            "full_correct": 0.9583333333333334,
+            "false_clear": 0.0,
+            "false_report": 0.020833333333333332
+          },
+          "family:current__approved_only__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 0.9791666666666666,
+            "full_correct": 0.9791666666666666,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:all__approved_only__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:all__none__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:all__approved_only__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 0.9791666666666666,
+            "internally_consistent": 0.9791666666666666,
+            "full_correct": 0.9791666666666666,
+            "false_clear": 0.0,
+            "false_report": 0.020833333333333332
+          },
+          "family:all__none__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 0.9791666666666666,
+            "internally_consistent": 0.8958333333333334,
+            "full_correct": 0.8958333333333334,
+            "false_clear": 0.0,
+            "false_report": 0.020833333333333332
+          },
+          "family:current__none__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 0.9791666666666666,
+            "internally_consistent": 0.9583333333333334,
+            "full_correct": 0.9583333333333334,
+            "false_clear": 0.0,
+            "false_report": 0.020833333333333332
+          },
+          "family:current__none__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 0.9375,
+            "internally_consistent": 0.9166666666666666,
+            "full_correct": 0.9166666666666666,
+            "false_clear": 0.0,
+            "false_report": 0.0625
+          }
+        }
+      },
+      "2718": {
+        "passed": false,
+        "checks": {
+          "format_valid": true,
+          "full_correct": true,
+          "target_false_clear": true,
+          "report_control_decision": true,
+          "clear_control_decision": false
+        },
+        "summary": {
+          "all": {
+            "n": 384,
+            "format_valid": 1.0,
+            "decision_correct": 0.9453125,
+            "internally_consistent": 0.90625,
+            "full_correct": 0.90625,
+            "false_clear": 0.0,
+            "false_report": 0.0546875
+          },
+          "target": {
+            "n": 128,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 0.9609375,
+            "full_correct": 0.9609375,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "report_control": {
+            "n": 128,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 0.9296875,
+            "full_correct": 0.9296875,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "clear_control": {
+            "n": 128,
+            "format_valid": 1.0,
+            "decision_correct": 0.8359375,
+            "internally_consistent": 0.828125,
+            "full_correct": 0.828125,
+            "false_clear": 0.0,
+            "false_report": 0.1640625
+          },
+          "family:current__approved_only__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 0.9375,
+            "full_correct": 0.9375,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:current__approved_only__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 0.9791666666666666,
+            "internally_consistent": 0.9791666666666666,
+            "full_correct": 0.9791666666666666,
+            "false_clear": 0.0,
+            "false_report": 0.020833333333333332
+          },
+          "family:all__approved_only__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 0.9583333333333334,
+            "internally_consistent": 0.9583333333333334,
+            "full_correct": 0.9583333333333334,
+            "false_clear": 0.0,
+            "false_report": 0.041666666666666664
+          },
+          "family:all__none__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 0.9791666666666666,
+            "internally_consistent": 0.9791666666666666,
+            "full_correct": 0.9791666666666666,
+            "false_clear": 0.0,
+            "false_report": 0.020833333333333332
+          },
+          "family:all__approved_only__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 0.875,
+            "internally_consistent": 0.8333333333333334,
+            "full_correct": 0.8333333333333334,
+            "false_clear": 0.0,
+            "false_report": 0.125
+          },
+          "family:all__none__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 0.9583333333333334,
+            "internally_consistent": 0.8958333333333334,
+            "full_correct": 0.8958333333333334,
+            "false_clear": 0.0,
+            "false_report": 0.041666666666666664
+          },
+          "family:current__none__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 0.8958333333333334,
+            "internally_consistent": 0.75,
+            "full_correct": 0.75,
+            "false_clear": 0.0,
+            "false_report": 0.10416666666666667
+          },
+          "family:current__none__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 0.9166666666666666,
+            "internally_consistent": 0.9166666666666666,
+            "full_correct": 0.9166666666666666,
+            "false_clear": 0.0,
+            "false_report": 0.08333333333333333
+          }
+        }
+      }
+    },
+    "weighted_first": {
+      "1729": {
+        "passed": true,
+        "checks": {
+          "format_valid": true,
+          "full_correct": true,
+          "target_false_clear": true,
+          "report_control_decision": true,
+          "clear_control_decision": true
+        },
+        "summary": {
+          "all": {
+            "n": 384,
+            "format_valid": 1.0,
+            "decision_correct": 0.9921875,
+            "internally_consistent": 0.9505208333333334,
+            "full_correct": 0.9505208333333334,
+            "false_clear": 0.0,
+            "false_report": 0.0078125
+          },
+          "target": {
+            "n": 128,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 0.953125,
+            "full_correct": 0.953125,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "report_control": {
+            "n": 128,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 0.9453125,
+            "full_correct": 0.9453125,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "clear_control": {
+            "n": 128,
+            "format_valid": 1.0,
+            "decision_correct": 0.9765625,
+            "internally_consistent": 0.953125,
+            "full_correct": 0.953125,
+            "false_clear": 0.0,
+            "false_report": 0.0234375
+          },
+          "family:current__approved_only__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 0.9791666666666666,
+            "full_correct": 0.9791666666666666,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:current__approved_only__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:all__approved_only__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 0.9583333333333334,
+            "full_correct": 0.9583333333333334,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:all__none__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:all__approved_only__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 0.9791666666666666,
+            "internally_consistent": 0.8958333333333334,
+            "full_correct": 0.8958333333333334,
+            "false_clear": 0.0,
+            "false_report": 0.020833333333333332
+          },
+          "family:all__none__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 0.8333333333333334,
+            "full_correct": 0.8333333333333334,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:current__none__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 0.9791666666666666,
+            "full_correct": 0.9791666666666666,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:current__none__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 0.9583333333333334,
+            "internally_consistent": 0.9583333333333334,
+            "full_correct": 0.9583333333333334,
+            "false_clear": 0.0,
+            "false_report": 0.041666666666666664
+          }
+        }
+      },
+      "2718": {
+        "passed": true,
+        "checks": {
+          "format_valid": true,
+          "full_correct": true,
+          "target_false_clear": true,
+          "report_control_decision": true,
+          "clear_control_decision": true
+        },
+        "summary": {
+          "all": {
+            "n": 384,
+            "format_valid": 1.0,
+            "decision_correct": 0.9791666666666666,
+            "internally_consistent": 0.953125,
+            "full_correct": 0.953125,
+            "false_clear": 0.0,
+            "false_report": 0.020833333333333332
+          },
+          "target": {
+            "n": 128,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 0.96875,
+            "full_correct": 0.96875,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "report_control": {
+            "n": 128,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 0.96875,
+            "full_correct": 0.96875,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "clear_control": {
+            "n": 128,
+            "format_valid": 1.0,
+            "decision_correct": 0.9375,
+            "internally_consistent": 0.921875,
+            "full_correct": 0.921875,
+            "false_clear": 0.0,
+            "false_report": 0.0625
+          },
+          "family:current__approved_only__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 0.9791666666666666,
+            "full_correct": 0.9791666666666666,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:current__approved_only__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 0.9583333333333334,
+            "full_correct": 0.9583333333333334,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:all__approved_only__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 0.9791666666666666,
+            "internally_consistent": 0.9583333333333334,
+            "full_correct": 0.9583333333333334,
+            "false_clear": 0.0,
+            "false_report": 0.020833333333333332
+          },
+          "family:all__none__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 0.9791666666666666,
+            "internally_consistent": 0.9583333333333334,
+            "full_correct": 0.9583333333333334,
+            "false_clear": 0.0,
+            "false_report": 0.020833333333333332
+          },
+          "family:all__approved_only__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 0.9375,
+            "internally_consistent": 0.9375,
+            "full_correct": 0.9375,
+            "false_clear": 0.0,
+            "false_report": 0.0625
+          },
+          "family:all__none__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 0.9791666666666666,
+            "internally_consistent": 0.9166666666666666,
+            "full_correct": 0.9166666666666666,
+            "false_clear": 0.0,
+            "false_report": 0.020833333333333332
+          },
+          "family:current__none__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 0.9791666666666666,
+            "full_correct": 0.9791666666666666,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:current__none__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 0.9583333333333334,
+            "internally_consistent": 0.9375,
+            "full_correct": 0.9375,
+            "false_clear": 0.0,
+            "false_report": 0.041666666666666664
+          }
+        }
+      }
+    },
+    "uniform_last": {
+      "1729": {
+        "passed": true,
+        "checks": {
+          "format_valid": true,
+          "full_correct": true,
+          "target_false_clear": true,
+          "report_control_decision": true,
+          "clear_control_decision": true
+        },
+        "summary": {
+          "all": {
+            "n": 384,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 0.9947916666666666,
+            "full_correct": 0.9947916666666666,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "target": {
+            "n": 128,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "report_control": {
+            "n": 128,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "clear_control": {
+            "n": 128,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 0.984375,
+            "full_correct": 0.984375,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:current__approved_only__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:current__approved_only__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:all__approved_only__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:all__none__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:all__approved_only__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:all__none__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:current__none__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 0.9791666666666666,
+            "full_correct": 0.9791666666666666,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:current__none__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 0.9791666666666666,
+            "full_correct": 0.9791666666666666,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          }
+        }
+      },
+      "2718": {
+        "passed": true,
+        "checks": {
+          "format_valid": true,
+          "full_correct": true,
+          "target_false_clear": true,
+          "report_control_decision": true,
+          "clear_control_decision": true
+        },
+        "summary": {
+          "all": {
+            "n": 384,
+            "format_valid": 1.0,
+            "decision_correct": 0.9947916666666666,
+            "internally_consistent": 0.9895833333333334,
+            "full_correct": 0.9895833333333334,
+            "false_clear": 0.005208333333333333,
+            "false_report": 0.0
+          },
+          "target": {
+            "n": 128,
+            "format_valid": 1.0,
+            "decision_correct": 0.984375,
+            "internally_consistent": 0.984375,
+            "full_correct": 0.984375,
+            "false_clear": 0.015625,
+            "false_report": 0.0
+          },
+          "report_control": {
+            "n": 128,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 0.9921875,
+            "full_correct": 0.9921875,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "clear_control": {
+            "n": 128,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 0.9921875,
+            "full_correct": 0.9921875,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:current__approved_only__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 0.9791666666666666,
+            "full_correct": 0.9791666666666666,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:current__approved_only__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:all__approved_only__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:all__none__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:all__approved_only__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:all__none__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:current__none__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 0.9583333333333334,
+            "internally_consistent": 0.9375,
+            "full_correct": 0.9375,
+            "false_clear": 0.041666666666666664,
+            "false_report": 0.0
+          },
+          "family:current__none__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          }
+        }
+      }
+    },
+    "weighted_last": {
+      "1729": {
+        "passed": true,
+        "checks": {
+          "format_valid": true,
+          "full_correct": true,
+          "target_false_clear": true,
+          "report_control_decision": true,
+          "clear_control_decision": true
+        },
+        "summary": {
+          "all": {
+            "n": 384,
+            "format_valid": 1.0,
+            "decision_correct": 0.9973958333333334,
+            "internally_consistent": 0.9895833333333334,
+            "full_correct": 0.9895833333333334,
+            "false_clear": 0.0026041666666666665,
+            "false_report": 0.0
+          },
+          "target": {
+            "n": 128,
+            "format_valid": 1.0,
+            "decision_correct": 0.9921875,
+            "internally_consistent": 0.9765625,
+            "full_correct": 0.9765625,
+            "false_clear": 0.0078125,
+            "false_report": 0.0
+          },
+          "report_control": {
+            "n": 128,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "clear_control": {
+            "n": 128,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 0.9921875,
+            "full_correct": 0.9921875,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:current__approved_only__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:current__approved_only__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:all__approved_only__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 0.9791666666666666,
+            "full_correct": 0.9791666666666666,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:all__none__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:all__approved_only__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:all__none__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:current__none__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 0.9791666666666666,
+            "full_correct": 0.9791666666666666,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:current__none__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 0.9791666666666666,
+            "internally_consistent": 0.9583333333333334,
+            "full_correct": 0.9583333333333334,
+            "false_clear": 0.020833333333333332,
+            "false_report": 0.0
+          }
+        }
+      },
+      "2718": {
+        "passed": true,
+        "checks": {
+          "format_valid": true,
+          "full_correct": true,
+          "target_false_clear": true,
+          "report_control_decision": true,
+          "clear_control_decision": true
+        },
+        "summary": {
+          "all": {
+            "n": 384,
+            "format_valid": 1.0,
+            "decision_correct": 0.9973958333333334,
+            "internally_consistent": 0.9947916666666666,
+            "full_correct": 0.9947916666666666,
+            "false_clear": 0.0026041666666666665,
+            "false_report": 0.0
+          },
+          "target": {
+            "n": 128,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "report_control": {
+            "n": 128,
+            "format_valid": 1.0,
+            "decision_correct": 0.9921875,
+            "internally_consistent": 0.9921875,
+            "full_correct": 0.9921875,
+            "false_clear": 0.0078125,
+            "false_report": 0.0
+          },
+          "clear_control": {
+            "n": 128,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 0.9921875,
+            "full_correct": 0.9921875,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:current__approved_only__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:current__approved_only__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 0.9791666666666666,
+            "internally_consistent": 0.9791666666666666,
+            "full_correct": 0.9791666666666666,
+            "false_clear": 0.020833333333333332,
+            "false_report": 0.0
+          },
+          "family:all__approved_only__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:all__none__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:all__approved_only__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:all__none__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:current__none__issues": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 0.9791666666666666,
+            "full_correct": 0.9791666666666666,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          },
+          "family:current__none__events": {
+            "n": 48,
+            "format_valid": 1.0,
+            "decision_correct": 1.0,
+            "internally_consistent": 1.0,
+            "full_correct": 1.0,
+            "false_clear": 0.0,
+            "false_report": 0.0
+          }
+        }
+      }
+    }
+  },
+  "fallback_allowed": false,
+  "selected_recipe_sha256": "2aef065bd6d70311622b148dad51e138e6dcd7da862fd55e88e9c8c4a0d31e52"
+}

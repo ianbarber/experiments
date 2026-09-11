@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "checked_utc": "2026-09-11T04:45:12.837851+00:00",
+  "machine": "dgx-spark",
+  "wrapper_restored_utc": "2026-09-11T04:43:02.139694+00:00",
+  "same_original_container_and_image": true,
+  "original_service_running": true,
+  "health_status": 200,
+  "exact_research_container_stopped": true,
+  "original_guard_returncode": 1,
+  "scope": "Read-only identity/state/health verification; private runtime identities omitted from this portable proof."
+}

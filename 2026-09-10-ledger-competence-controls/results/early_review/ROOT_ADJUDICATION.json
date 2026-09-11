@@ -1,0 +1,37 @@
+{
+  "adjudicated_utc": "2026-09-11T00:12:18.570130+00:00",
+  "decision": "Complete the original 58-stage competence, selection and validation scope; cancel induction, collection and repair for scientific adequacy before any conditional outcome.",
+  "basis": "The globally balanced proposed repair mixture has a REPORT-only correction wrapper and no ordinary trigger-REPORT preservation. Restricted donor traces also change full-instance relevance rather than isolate wrong-mechanism congruence.",
+  "not_based_on_repair_results": true,
+  "not_a_numerical_gate_failure": true,
+  "competence_numerical_design_changed": false,
+  "review_report_read_by_root": {
+    "data": true,
+    "design": true,
+    "execution": true
+  },
+  "root_manifest_verification": {
+    "data_artifacts": 14,
+    "design_bound_artifacts": 10,
+    "execution_artifacts": 17,
+    "note": "These are per-manifest verification counts, with overlapping files; not a count of unique or independent experiments."
+  },
+  "evidence_sha256": {
+    "results/early_validity_review/data/REVIEW_MANIFEST.json": "d50b56402abc08e1168826f2afabe0b9471127a5e97ebb24fdd0bdb3a7a66b22",
+    "results/early_validity_review/data/PRACTICAL_ADJUDICATION.json": "a5f6a62ee2ce1385897b05a1946fc9d655381fbc9bdb8ed7184e7d079b18ced7",
+    "results/early_validity_review/design/REVIEW_RECORD.json": "c21524b62fb7e775aa91c8d3c39a006818f27e5098b5e663a3c40bc8fb24966d",
+    "results/early_validity_review/execution/REVIEW_MANIFEST.json": "18934146d8d964f2a4ea1d2d37085f633930ce487f6b169030b32c1a069b987a",
+    "results/independent_review/scope_review/ACTUAL_ARMING_AUDIT.json": "8936d7767cc98556a57316631d03f0f03a4e3daf326ae8ad5265aad927e11424",
+    "results/SCOPE_AMENDMENT.json": "57300ae169c07b062b7d592599674caf1977c696b138ddf90c065a420b65a4b7",
+    "results/SCOPE_BOUNDARY_ARMED.json": "4099c5759dd1088def6cf406c9eb3410e5fd78d398a9f4f937a09a4362554661"
+  },
+  "interpretation": "No implementation/scoring/data defect invalidating the finite competence comparison was found. Formal identification of a finite conditional training-bundle effect is insufficient to justify its practical use as a test of broader failure-context repair. Initial continue recommendations addressed the former; practical recommendations and this decision address the latter.",
+  "operational_state": "Boundary armed; original controller and wrapper still running; no service-restoration claim yet.",
+  "final_requirements": [
+    "Verify all 58 retained model stages and unchanged selection, validation and analysis.",
+    "Verify the genuine numerical terminal or exact deliberate boundary failure, with no conditional launch.",
+    "Restore and verify the original service, then perform a separate recheck.",
+    "Complete actual CPU analysis and executed notebook, independent final review, and portable public replay.",
+    "Publish a new experiments entry with the scope amendment and unrun repair status."
+  ]
+}

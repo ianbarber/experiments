@@ -1,0 +1,39 @@
+{
+  "status": "verified_completed_competence_scope",
+  "route": "administrative_guard_reached",
+  "numerical_result": "both_selected_validation_gates_passed",
+  "administrative_guard_reached": true,
+  "conditional_branch_cancelled_by_design": true,
+  "conditional_model_stages": 0,
+  "retained_model_stages": 58,
+  "training_blocks": 24,
+  "calibration_stages": 26,
+  "validation_stages": 8,
+  "amendment_precedes_selection_and_validation": true,
+  "interpretation": "Design cancellation is distinct from numerical prerequisites and is not a repair null or full-program completion.",
+  "independent_factorial_recomputed": true,
+  "independent_scored_stages": 34,
+  "independent_case_checkpoint_records": 8064,
+  "original_workspace_weight_bytes_reverified": true,
+  "selected_recipe": "weighted_first",
+  "both_selected_validation_gates_passed": true,
+  "source_sha256": {
+    "scope_terminal": "0b578e8ab04d8797810c680a4d6e2b9ae01ec2fe9b54c1b580703307e880dbf5",
+    "original_terminal": "4d9831a97f868138bcd84df291a50107b1245a8ee2ff2d6fc89d528d86153cea",
+    "original_events": "3cf2c27e7d2189fa5e32c6110db66fbbb8b5062e49fd69dc9e92961a0b831732",
+    "amendment": "57300ae169c07b062b7d592599674caf1977c696b138ddf90c065a420b65a4b7",
+    "arming": "4099c5759dd1088def6cf406c9eb3410e5fd78d398a9f4f937a09a4362554661",
+    "factorial_analysis": "a0226e5a23351507a41113a2e6a6719a477e1704b86dc8096f5e1b7325d6cca2",
+    "factorial_completion": "a07dcb29ba4484557230b87c662c908b0ae5b4b89f886fe15aeb201f5693f7a4",
+    "review_script": "e8b9553da1bc182b7e571f49c45f68c613abf67d311c388bcdee9acdebc30294",
+    "original_review": "4d730be17593eda5b1cc405c5afaeff3b4a0ebecd652cd6a1900f1ccff3efbf1",
+    "original_factorial": "99fffc31b57eb424737548df2ec3a57a76496a183918499e4b42c69865e8b317",
+    "original_implementation_freeze": "fc9e5cb95f729d8c60ee7623ebd8bdfcbc836088ff04702eb0648143f3da7eb2"
+  },
+  "arming_checks": {
+    "marker_only_directory": true,
+    "conditional_stage_starts": 0,
+    "frozen_pins_verified": 26
+  },
+  "model_gpu_service_calls": 0
+}

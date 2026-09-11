@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "status": "frozen",
+  "kind": "additive_competence_scope_analysis",
+  "created_utc": "2026-09-11T00:34:23.356646+00:00",
+  "scope": "Additive scope-finalization and saved-data reporting implementation, frozen during competence development before recipe selection or any validation output. Does not amend original scientific source, metrics or bootstrap.",
+  "files_sha256": {
+    "results/scope_analysis_tools/ORIGINAL_IMPLEMENTATION_FREEZE.json": "d8f76a47a1c63747f9ef626d16c2d96cbf45a096edce010086d96fd57e0c268f",
+    "results/scope_analysis_tools/README.md": "23f50a0f90ae8b5a36f5750541916b3d8d4e5fe603c610ebb430267b87d4e2cf",
+    "results/scope_analysis_tools/analyze.py": "5a4a6f171a23b1651fd13f9c96ede9a88b3b7ca0e47392d254c141e78edc810e",
+    "results/scope_analysis_tools/execute_notebook.py": "54c2403c119bcea2f8bf84266a073b7f0bdebf4a0f091d1acce42d0c8f0208c0",
+    "results/scope_analysis_tools/fixtures.py": "dc96ddd4e52987a2781d6ba42319a162a3a3608810199c0e3187a0f5b62cabb5",
+    "results/scope_analysis_tools/make_notebook.py": "180188ba538ae3cda5352eb48f6b4c8352a001dd5de44b512e2ad573beca420a",
+    "results/scope_analysis_tools/original_analyze.py": "ddd6ac505e7809aec5b29468da73428e0c3ecd0667d9a158dd3a4873bafcf7f4",
+    "results/scope_analysis_tools/qualitative_plan.json": "82080b8819febea32a27668b440acdceb6eb252eef294d23e50158d0c27d56a9",
+    "results/scope_analysis_tools/requirements-analysis.txt": "183d75d431def73f2a39f71e5798e9f4863dfd232f32f933207765b1e1bdd4dc",
+    "results/scope_analysis_tools/scope_support.py": "81ead26bf57dece9a73d86cd7641cc29bd71413c5dc1d96e8de7fa6c9646d49d",
+    "results/scope_analysis_tools/test_scope_analysis.py": "154c3738d96f33da8b7f1e03618a0c2de5fbce88183594a21cd4a2f0916cec58",
+    "results/scope_analysis_tools/tests.log": "1fa631142ef897f11b51b7adf4bb4b5cea781859cb9c728e0fd9ce9cdfef2474",
+    "results/scope_tools/finalize_competence.py": "24d17f987724f318b812c44f6ca4d348094a17565d6ffb36abadffc2ff69c45e"
+  },
+  "original_analysis_freeze_sha256": "d8f76a47a1c63747f9ef626d16c2d96cbf45a096edce010086d96fd57e0c268f",
+  "program_freeze_sha256": "8407c0cad8cabff90fbb42d2fbb45861fd45b9df6c64af1c0f94fc5c515b8e13",
+  "scope_amendment_sha256": "57300ae169c07b062b7d592599674caf1977c696b138ddf90c065a420b65a4b7",
+  "verified_unchanged_scientific_pins": 26,
+  "verified_original_analysis_files_unchanged": 9,
+  "selection_exists_at_freeze": false,
+  "validation_started_at_freeze": false,
+  "tests": {
+    "status": "passed",
+    "methods": 5,
+    "seconds": 105.446,
+    "synthetic_routes": [
+      "guard",
+      "no_selection",
+      "validation_fail"
+    ],
+    "retained_stages_per_route": 58,
+    "responses_per_route": 8064,
+    "scope_notebook_code_cells_executed": 9,
+    "original_factorial_function_ast_and_numeric_parity": true,
+    "projected_weights_free_full_scientific_json_equal": true,
+    "refuses_partial_changed_marker_unexpected_failure_conditional_invocation_or_log": true,
+    "refuses_live_controller_source_drift_and_unrecorded_adapters": true,
+    "temporary_fixture_roots_external_and_removed": true
+  },
+  "actual_scope_finalizer_or_analysis_run": false,
+  "model_gpu_or_service_calls": 0
+}

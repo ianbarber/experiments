@@ -1,0 +1,9 @@
+# Scientific snapshots and receipts are verified by exact byte hashes.
+* -text
+# Standard CSV writer line endings and generated matplotlib SVG path formatting.
+*.csv whitespace=cr-at-eol
+*.svg whitespace=-blank-at-eol
+# Preserve exact frozen helper bytes, including their terminal blank lines.
+code/analysis/fixtures.py whitespace=-blank-at-eof
+code/independent_review/review.py whitespace=-blank-at-eof
+results/evidence/results/scope_analysis_tools/fixtures.py whitespace=-blank-at-eof

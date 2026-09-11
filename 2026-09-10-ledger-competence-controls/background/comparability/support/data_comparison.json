@@ -1,0 +1,203 @@
+{
+  "kind": "derived_data_comparison",
+  "datasets": [
+    {
+      "study": "old",
+      "split": "competence",
+      "source_sha256": "8d6e58802881ddd2f89059be67df9c4c51524df078b285e6697bf8b323e072fb",
+      "n": 1536,
+      "stratum_counts": {
+        "clear": 512,
+        "control_report": 512,
+        "trigger_report": 512
+      },
+      "oracle_count_counts": {
+        "0": 185,
+        "1": 164,
+        "2": 210,
+        "3": 239,
+        "4": 396,
+        "5": 88,
+        "6": 84,
+        "7": 85,
+        "8": 85
+      }
+    },
+    {
+      "study": "old",
+      "split": "calibration",
+      "source_sha256": "13903f30fc474cd51b98d1ed4fc9cddfe2adbc83a803d01fa86c9ecab56d421d",
+      "n": 192,
+      "stratum_counts": {
+        "clear": 64,
+        "control_report": 64,
+        "trigger_report": 64
+      },
+      "oracle_count_counts": {
+        "0": 25,
+        "1": 17,
+        "2": 29,
+        "3": 25,
+        "4": 53,
+        "5": 12,
+        "6": 10,
+        "7": 14,
+        "8": 7
+      }
+    },
+    {
+      "study": "new",
+      "split": "competence",
+      "source_sha256": "11bfa6331f792d0729011fa1e82d3e96ed7dcb3d705710aa0d8fd925c74f4bd6",
+      "n": 1536,
+      "stratum_counts": {
+        "clear": 512,
+        "control_report": 512,
+        "trigger_report": 512
+      },
+      "oracle_count_counts": {
+        "0": 167,
+        "1": 198,
+        "2": 210,
+        "3": 238,
+        "4": 368,
+        "5": 93,
+        "6": 86,
+        "7": 96,
+        "8": 80
+      }
+    },
+    {
+      "study": "new",
+      "split": "calibration",
+      "source_sha256": "c1b91b8899aa6db84c74e64afbfb032d54b334e23c0e64bb729f7da2f6a0b200",
+      "n": 192,
+      "stratum_counts": {
+        "clear": 64,
+        "control_report": 64,
+        "trigger_report": 64
+      },
+      "oracle_count_counts": {
+        "0": 25,
+        "1": 22,
+        "2": 24,
+        "3": 24,
+        "4": 47,
+        "5": 11,
+        "6": 9,
+        "7": 22,
+        "8": 8
+      }
+    }
+  ],
+  "same_prompt_target_reconstruction": {
+    "old": {
+      "n": 1728,
+      "stored_prompts_equal_inherited_and_new_first_renderer": true,
+      "all_supplied_targets_unchanged": true,
+      "custom_messages_rows": 0
+    },
+    "new": {
+      "n": 1728,
+      "stored_prompts_equal_inherited_and_new_first_renderer": true,
+      "all_supplied_targets_unchanged": true,
+      "custom_messages_rows": 0
+    }
+  },
+  "comparisons": [
+    {
+      "split": "competence",
+      "fields": [
+        "family",
+        "threshold",
+        "stratum"
+      ],
+      "same_counts": true
+    },
+    {
+      "split": "competence",
+      "fields": [
+        "domain"
+      ],
+      "same_counts": true
+    },
+    {
+      "split": "competence",
+      "fields": [
+        "pressure",
+        "oversight"
+      ],
+      "same_counts": true
+    },
+    {
+      "split": "competence",
+      "fields": [
+        "family",
+        "threshold",
+        "stratum",
+        "domain",
+        "pressure",
+        "oversight"
+      ],
+      "same_counts": false
+    },
+    {
+      "split": "calibration",
+      "fields": [
+        "family",
+        "threshold",
+        "stratum"
+      ],
+      "same_counts": true
+    },
+    {
+      "split": "calibration",
+      "fields": [
+        "domain"
+      ],
+      "same_counts": true
+    },
+    {
+      "split": "calibration",
+      "fields": [
+        "pressure",
+        "oversight"
+      ],
+      "same_counts": true
+    },
+    {
+      "split": "calibration",
+      "fields": [
+        "family",
+        "threshold",
+        "stratum",
+        "domain",
+        "pressure",
+        "oversight"
+      ],
+      "same_counts": false
+    }
+  ],
+  "generation": {
+    "old_master_seed": 20260910,
+    "new_split_seeds": {
+      "calibration": 202609102,
+      "competence": 202609101,
+      "evaluation": 202609107,
+      "induction": 202609104,
+      "pool": 202609105,
+      "preservation": 202609106,
+      "validation": 202609103
+    },
+    "new_semantic_dedupe": {
+      "definition": "Original task.semantic_signature; ignores IDs/order/issue-label names/domain/style/pressure/oversight/output order/targets",
+      "new_cases": 6976,
+      "new_cross_split_overlap": 0,
+      "new_unique": 6976,
+      "prior_cases": 6592,
+      "prior_new_overlap": 0
+    },
+    "old_manifest_sha256": "3aa03d5153089985741762a0d238f25c356b31a1a7034c403c07edeb3db67d85",
+    "new_manifest_sha256": "76cc1cd928ef256b2b50b0b23686d14157755cfb8b322cf7fa7a6c069cc6b759"
+  }
+}

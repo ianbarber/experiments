@@ -1,0 +1,10 @@
+test_both_terminal_routes_and_actual_gate_reasons (__main__.ScopeTests.test_both_terminal_routes_and_actual_gate_reasons) ... ok
+test_preserved_factorial_calculations_and_parsed_metrics (__main__.ScopeTests.test_preserved_factorial_calculations_and_parsed_metrics) ... ok
+test_public_projection_without_weights_and_nine_cell_notebook (__main__.ScopeTests.test_public_projection_without_weights_and_nine_cell_notebook) ... ok
+test_refuse_partial_marker_failure_invocation_and_live_controller (__main__.ScopeTests.test_refuse_partial_marker_failure_invocation_and_live_controller) ... ok
+test_reject_identity_boolean_selection_and_saved_verification_drift (__main__.ScopeTests.test_reject_identity_boolean_selection_and_saved_verification_drift) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 105.446s
+
+OK

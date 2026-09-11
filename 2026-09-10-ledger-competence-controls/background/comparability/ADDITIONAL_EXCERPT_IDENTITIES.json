@@ -1,0 +1,18 @@
+[
+  {
+    "id": "new_training_loop",
+    "source_path": "scripts/model_stage.py",
+    "source_sha256": "026a07baa55eb76a6d90bc8b21178cdb6d19fc4b07a8ceac6267c22d4f709816",
+    "first_line": 37,
+    "last_line": 125,
+    "excerpt_sha256": "bcc10c974abaf9009be394a0718e5088bb918f420eca7ff888bada549d695b9e"
+  },
+  {
+    "id": "new_split_generation",
+    "source_path": "scripts/make_data.py",
+    "source_sha256": "d2ccf9cf996496204bbe726bf3a88ae2ad3e84e0a49e052cf7d98b18ee8cb252",
+    "first_line": 266,
+    "last_line": 302,
+    "excerpt_sha256": "366374543deb36ecd82f0728ff4ae5c9975b3641a1574a51ff62024ec9276cc6"
+  }
+]

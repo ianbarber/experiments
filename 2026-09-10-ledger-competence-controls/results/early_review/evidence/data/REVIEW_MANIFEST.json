@@ -1,0 +1,78 @@
+{
+  "created_utc": "2026-09-10T23:57:00.975122+00:00",
+  "recommendation": "continue_frozen_program",
+  "stop_level_findings": 0,
+  "scope_sha256": "4c9fa1054a96d70392ba2a62cbcda9d3f1b948b638441b3f290615c82e14e1b7",
+  "scientific_freeze_sha256": "8407c0cad8cabff90fbb42d2fbb45861fd45b9df6c64af1c0f94fc5c515b8e13",
+  "scientific_pins_still_match": true,
+  "review_cutoff_utc": "2026-09-10T23:48:14.096204+00:00",
+  "actual_completed_generation_stages": 15,
+  "actual_responses": 2880,
+  "actual_completed_training_blocks": 13,
+  "synthetic_artifacts_not_model_inputs": true,
+  "new_model_calls": 0,
+  "findings": [
+    "Decision credit may survive schema failure; observed only in bases at cutoff.",
+    "Decision-only structural shortcuts can be strong; full/control gates reject the tested shortcut.",
+    "Signature-specific disjointness does not imply no task-equivalent neighbors or new policy families.",
+    "Matched-versus-donor estimates whole archived instance context, including facts and identity cues."
+  ],
+  "artifacts": {
+    "CPU_CHECKS.json": {
+      "sha256": "080a2be9af903c0fc0a9ead00aeb39aab171d91e9a84c904dbbc4f6754fdf609",
+      "bytes": 1453
+    },
+    "EXTRA_CPU_CHECKS.json": {
+      "sha256": "41a1dcbafebf633cbf7faf799f9810f77bb168d1fa7c6b31b71473ad8d0ae589",
+      "bytes": 11297
+    },
+    "REVIEW.md": {
+      "sha256": "fdc0917fdb67f0fa010f507d063515923ffae9e322f9e5c8d9eba6051098998f",
+      "bytes": 14968
+    },
+    "REVIEW_PLAN.md": {
+      "sha256": "2561be28b04c0e7db73a5a080d059260525a34e96dc6e02f709556238a9add99",
+      "bytes": 2487
+    },
+    "SIGNATURE_AND_CONTEXT_CHECKS.json": {
+      "sha256": "b4dd6dc8e679415ef3624afdb4d560cab60b3ea519101dbeba7e9e8c2831da3c",
+      "bytes": 16420
+    },
+    "SYNTHETIC_cohort_review.json": {
+      "sha256": "1ed0fcdaa3ef9441bdabeb75e0260a10ac6f71ee088490c5912951b066f88f3b",
+      "bytes": 37841
+    },
+    "actual_completed_output_review.json": {
+      "sha256": "f20b66b2e271233d3c367d256afeab4259d2c8233ef88a89f94cf00f749f7882",
+      "bytes": 19326
+    },
+    "actual_schema_invalid_credit_witnesses.json": {
+      "sha256": "1ffaa1549c62a2f78e6b2e39a0ca821dc478ba61114863a56611a687b4481575",
+      "bytes": 295017
+    },
+    "actual_training_exposure_review.json": {
+      "sha256": "947c1d41eb5e446f4af30fe57a373dee38402c006ab0ead8a26e876e8c0f61b3",
+      "bytes": 10606
+    },
+    "audit.py": {
+      "sha256": "36df79d1aa3b03339edff61b8cfed087e856ed4b1f372990e02bc6422d508f04",
+      "bytes": 25498
+    },
+    "data_checks.json": {
+      "sha256": "6d2cecb2f8c6e742f56e270492711b0682ceb3d4d2b9f1ff4ce1e9e8445dc1e7",
+      "bytes": 13262
+    },
+    "extra_checks.py": {
+      "sha256": "1e9382224771bb0b84ae6e8b3966b7dbf3b462da6421710ea7abf9aa6d9baa30",
+      "bytes": 7801
+    },
+    "parser_counterexamples.json": {
+      "sha256": "ace75b18a752881d80edc03ebecb362ecf0b3aa9fdf4034f784801b30fa6a89c",
+      "bytes": 85808
+    },
+    "scope.json": {
+      "sha256": "4c9fa1054a96d70392ba2a62cbcda9d3f1b948b638441b3f290615c82e14e1b7",
+      "bytes": 6956
+    }
+  }
+}

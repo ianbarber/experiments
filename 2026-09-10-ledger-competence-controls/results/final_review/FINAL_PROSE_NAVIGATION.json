@@ -1,0 +1,479 @@
+{
+  "checked_utc": "2026-09-11T04:48:16.561513+00:00",
+  "status": "passed",
+  "scope": "Final assembled entry README/REPORT/LABNOTES/replay guide, comparability prose and early/training review entrypoints. External URLs were not fetched. The existing pilot sibling link was resolved against the public repository layout. Historical source-relative paths inside provenance JSON are not navigation links.",
+  "files_sha256": {
+    "README.md": "a4ef524dc7d25813ff1d2970695d34d10554847db9fa1c68ba77618363e0d089",
+    "REPORT.md": "1f8157aca495a238e7dec943693a6a0dff6971674c67eec033b95f2c8c0ea119",
+    "LABNOTES.md": "887fa9ea9db15449540e64802853f120ef97e1268761b90469326eb8ca7a3bea",
+    "code/REPLAY_USAGE.md": "5fc90922bade9233bcf53a3e12a8786c1d91b134504d04ed14bcba27b241b94e",
+    "background/comparability/README.md": "18f9c1e71a0ffec087b8af0a18140239412d666ff81c48330c1ed4133c4a2435",
+    "background/comparability/CROSS_STUDY_COMPARABILITY.md": "fa6accd825194c261c932ed8d021448f62c847fd85d045d962b2f29462adde7a",
+    "background/comparability/ADDITIONAL_SOURCE_EXCERPTS.md": "7a61b00ef94df98d0ea8cb13a361e8cdb8b15b3ec992d266968ee317c3d2dec7",
+    "background/comparability/support/README.md": "277dd335b46edce167eab4293b77bdcccd89ad01829f8f19b02ae8565f6178f9",
+    "background/comparability/support/source_excerpts.md": "7b63a1d5cbf8deee85a45498fb36a19c8723f81f26a11d966db19072d45c3f7d",
+    "results/early_review/REPORT.md": "ac3b7dc94bcc226a6a6b5e587c986a3280aee813c4c47ccc34631ea24f60a1f4",
+    "results/training_execution_review/README.md": "6ee93a5da4da0f6b6242c8d50ee0b1bcecc59d1376367a3fa014915fd1901bae"
+  },
+  "local_links_checked": 91,
+  "missing_links_or_anchors": [],
+  "links": [
+    {
+      "source": "README.md",
+      "target": "images/factorial_cells.png",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "README.md",
+      "target": "REPORT.md",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "README.md",
+      "target": "LABNOTES.md",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "README.md",
+      "target": "results/notebooks/ledger_public_executed.ipynb",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "README.md",
+      "target": "results/analysis/",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "README.md",
+      "target": "code/REPLAY_USAGE.md",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "README.md",
+      "target": "code/frozen/",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "README.md",
+      "target": "results/early_review/REPORT.md",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "README.md",
+      "target": "results/independent_review/",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "README.md",
+      "target": "results/training_execution_review/README.md",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "README.md",
+      "target": "background/comparability/CROSS_STUDY_COMPARABILITY.md",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "README.md",
+      "target": "results/PUBLIC_REPLAY.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "README.md",
+      "target": "results/notebooks/PUBLIC_NOTEBOOK_EXECUTION.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "REPORT.md",
+      "target": "../2026-09-09-reactivation-repair-pilot/REPORT.md",
+      "existing_public_sibling": true
+    },
+    {
+      "source": "REPORT.md",
+      "target": "background/prior_competence.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "REPORT.md",
+      "target": "code/frozen/PROTOCOL.md",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "REPORT.md",
+      "target": "results/independent_review/illustrations/base_calibration_decision_first.jsonl",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "REPORT.md",
+      "target": "background/comparability/CROSS_STUDY_COMPARABILITY.md",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "REPORT.md",
+      "target": "results/analysis/training_budgets.csv",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "REPORT.md",
+      "target": "results/training_execution_review/",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "REPORT.md",
+      "target": "results/early_review/DECODING_METHOD_SUPPLEMENT.md",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "REPORT.md",
+      "target": "images/factorial_cells.png",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "REPORT.md",
+      "target": "results/analysis/factorial_cells.csv",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "REPORT.md",
+      "target": "results/analysis/factorial_effects.csv",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "REPORT.md",
+      "target": "results/analysis/analysis.json.gz",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "REPORT.md",
+      "target": "results/independent_review/illustrations/competence_uniform_first_i1729_epoch2_calibration.jsonl",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "REPORT.md",
+      "target": "results/independent_review/illustrations/validation_uniform_first_i1729.jsonl",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "REPORT.md",
+      "target": "results/independent_review/illustrations/validation_uniform_last_i1729.jsonl",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "REPORT.md",
+      "target": "results/independent_review/illustrations/validation_uniform_first_i2718.jsonl",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "REPORT.md",
+      "target": "results/independent_review/illustrations/validation_weighted_first_i2718.jsonl",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "REPORT.md",
+      "target": "results/early_review/REPORT.md",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "REPORT.md",
+      "target": "results/independent_review/scope_review_summary.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "REPORT.md",
+      "target": "results/PUBLIC_REPLAY.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "REPORT.md",
+      "target": "results/notebooks/ledger_public_executed.ipynb",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "REPORT.md",
+      "target": "results/notebooks/PUBLIC_NOTEBOOK_EXECUTION.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "REPORT.md",
+      "target": "code/REPLAY_USAGE.md",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "REPORT.md",
+      "target": "results/SERVICE_RESTORATION_CHECK.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "code/REPLAY_USAGE.md",
+      "target": "README.md",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "code/REPLAY_USAGE.md",
+      "target": "../results/early_review/DECODING_METHOD_SUPPLEMENT.md",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "code/REPLAY_USAGE.md",
+      "target": "../results/PUBLIC_REPLAY.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "code/REPLAY_USAGE.md",
+      "target": "../results/PUBLIC_BUNDLE.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "code/REPLAY_USAGE.md",
+      "target": "../results/notebooks/PUBLIC_NOTEBOOK_EXECUTION.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/README.md",
+      "target": "CROSS_STUDY_COMPARABILITY.md",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/README.md",
+      "target": "../../results/training_execution_review/RESULT.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/README.md",
+      "target": "support/README.md",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/README.md",
+      "target": "ADDITIONAL_SOURCE_EXCERPTS.md",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/README.md",
+      "target": "ADDITIONAL_EXCERPT_IDENTITIES.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/README.md",
+      "target": "../../results/PUBLIC_SUPPORT_PACKET.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/CROSS_STUDY_COMPARABILITY.md",
+      "target": "support/contract_comparison.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/CROSS_STUDY_COMPARABILITY.md",
+      "target": "support/source_excerpts.md#old_uniform_training",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/CROSS_STUDY_COMPARABILITY.md",
+      "target": "ADDITIONAL_SOURCE_EXCERPTS.md#new_training_loop",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/CROSS_STUDY_COMPARABILITY.md",
+      "target": "support/source_excerpts.md#new_class_weights_and_uniform_reduction",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/CROSS_STUDY_COMPARABILITY.md",
+      "target": "support/source_excerpts.md#old_message_construction",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/CROSS_STUDY_COMPARABILITY.md",
+      "target": "support/source_excerpts.md#new_message_construction",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/CROSS_STUDY_COMPARABILITY.md",
+      "target": "support/source_excerpts.md#old_chat_encoding_loss_and_generation",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/CROSS_STUDY_COMPARABILITY.md",
+      "target": "support/source_excerpts.md#old_complete_user_prompt_renderer",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/CROSS_STUDY_COMPARABILITY.md",
+      "target": "support/source_excerpts.md#new_answer_order_and_unchanged_first_prompt",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/CROSS_STUDY_COMPARABILITY.md",
+      "target": "support/source_excerpts.md#old_chat_encoding_loss_and_generation",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/CROSS_STUDY_COMPARABILITY.md",
+      "target": "support/source_identities.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/CROSS_STUDY_COMPARABILITY.md",
+      "target": "support/source_identities.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/CROSS_STUDY_COMPARABILITY.md",
+      "target": "support/source_identities.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/CROSS_STUDY_COMPARABILITY.md",
+      "target": "ADDITIONAL_SOURCE_EXCERPTS.md#new_split_generation",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/CROSS_STUDY_COMPARABILITY.md",
+      "target": "support/source_excerpts.md#old_calibration_arguments_and_first_passing_selection",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/CROSS_STUDY_COMPARABILITY.md",
+      "target": "support/source_excerpts.md#new_fixed_three_epoch_selection_and_validation",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/CROSS_STUDY_COMPARABILITY.md",
+      "target": "../../results/training_execution_review/REVIEW.md",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/CROSS_STUDY_COMPARABILITY.md",
+      "target": "../../results/training_execution_review/RESULT.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/CROSS_STUDY_COMPARABILITY.md",
+      "target": "support/source_identities.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/CROSS_STUDY_COMPARABILITY.md",
+      "target": "support/manifest.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/support/README.md",
+      "target": "contract_comparison.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/support/README.md",
+      "target": "source_excerpts.md#old_uniform_training",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/support/README.md",
+      "target": "source_excerpts.md#new_class_weights_and_uniform_reduction",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/support/README.md",
+      "target": "contract_comparison.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/support/README.md",
+      "target": "source_excerpts.md#old_complete_user_prompt_renderer",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/support/README.md",
+      "target": "source_excerpts.md#new_answer_order_and_unchanged_first_prompt",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/support/README.md",
+      "target": "data_comparison.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/support/README.md",
+      "target": "source_identities.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/support/README.md",
+      "target": "data_comparison.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/support/README.md",
+      "target": "source_excerpts.md#old_calibration_arguments_and_first_passing_selection",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/support/README.md",
+      "target": "source_excerpts.md#new_fixed_three_epoch_selection_and_validation",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/support/README.md",
+      "target": "source_excerpts.md",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/support/README.md",
+      "target": "source_excerpt_index.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/support/README.md",
+      "target": "source_identities.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/support/README.md",
+      "target": "contract_comparison.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/support/README.md",
+      "target": "data_comparison.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "background/comparability/support/README.md",
+      "target": "manifest.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "results/training_execution_review/README.md",
+      "target": "REVIEW.md",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "results/training_execution_review/README.md",
+      "target": "RESULT.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "results/training_execution_review/README.md",
+      "target": "CONTRACT_AUDIT_EXTENDED.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "results/training_execution_review/README.md",
+      "target": "MANIFEST.json",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "results/training_execution_review/README.md",
+      "target": "audit_training.py",
+      "existing_public_sibling": false
+    },
+    {
+      "source": "results/training_execution_review/README.md",
+      "target": "../PUBLIC_SUPPORT_PACKET.json",
+      "existing_public_sibling": false
+    }
+  ],
+  "placeholder_check": "passed",
+  "model_service_calls": false
+}

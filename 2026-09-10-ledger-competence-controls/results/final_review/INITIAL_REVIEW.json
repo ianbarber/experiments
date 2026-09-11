@@ -1,0 +1,27 @@
+{
+  "created_utc": "2026-09-11T04:27:15.912844+00:00",
+  "scope": "Initial skeptical source/design/editorial review before this reviewer reads any validation response. Internal agent review, not external blind replication. Final result and release review remains pending.",
+  "inputs_sha256": {
+    "PROTOCOL.md": "b2c1b9163953794ddfc2b489d8cd393c1815e9397193fd18ee10ca3891c22820",
+    "SCOPE_AMENDMENT.md": "70e78ee88bd00c657df56537c32b79bc623c1640ccce5dd49dbbb5171254ff03",
+    "results/report_drafts/FINAL_REPORT_DRAFT.md": "dde4e62f080946b746f323648a513a2a46c1195867e684c33ccb8324b3e0f6f6",
+    "scripts/task.py": "94aae593c4bd6c7d3157ee5396c340ddf5f0acdc13133a8856d6103cb444c8e9",
+    "scripts/objective.py": "bd6c15bc255126ac2e9815f42cbdcd853bf5696174565b902976f9a33a62520a",
+    "scripts/serialization.py": "c9ab167310f59a020f25335a343f58ff2df2beed5e90ca1f4339f71100761f22",
+    "results/scope_analysis_tools/original_analyze.py": "ddd6ac505e7809aec5b29468da73428e0c3ecd0667d9a158dd3a4873bafcf7f4",
+    "results/scope_analysis_tools/analyze.py": "5a4a6f171a23b1651fd13f9c96ede9a88b3b7ca0e47392d254c141e78edc810e",
+    "results/independent_review/factorial.py": "99fffc31b57eb424737548df2ec3a57a76496a183918499e4b42c69865e8b317",
+    "results/independent_review/PLAN.json": "d18e3a1f81f70025adcaf45a5ff89e169f0d0b2cc611dc2daca1a173b587c146"
+  },
+  "initial_verdict": "No blocker identified for the finite retained competence comparison. Final outcomes, terminal and public artifact checks remain required.",
+  "required_claim_boundaries": [
+    "Joint prompt/serialization and specified decoder treatment; no hidden-reasoning identification.",
+    "Fixed cases and two optimization seeds; case bootstrap is descriptive and conditional, no seed-population uncertainty or equivalence.",
+    "Calibration-only shared priority selection, epoch three only, all eight validation cells, no post-validation fallback.",
+    "Mid-run conditional cancellation before validation is disclosed; no induction/repair result or null.",
+    "Uniform-control calibration success is specific to seed 1729, not both seeds or an improvement attributable across studies.",
+    "Emitted declaration and schema/decision/list-order/complete metrics remain separate."
+  ],
+  "response_access": false,
+  "model_service_calls": false
+}

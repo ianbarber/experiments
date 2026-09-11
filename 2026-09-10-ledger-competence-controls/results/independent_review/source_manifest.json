@@ -1,0 +1,300 @@
+[
+  {
+    "public_path": "code/independent_review/review.py",
+    "original_relative_path": "results/independent_review/review.py",
+    "sha256": "4d730be17593eda5b1cc405c5afaeff3b4a0ebecd652cd6a1900f1ccff3efbf1",
+    "copy_kind": "exact_original_bytes"
+  },
+  {
+    "public_path": "code/independent_review/factorial.py",
+    "original_relative_path": "results/independent_review/factorial.py",
+    "sha256": "99fffc31b57eb424737548df2ec3a57a76496a183918499e4b42c69865e8b317",
+    "copy_kind": "exact_original_bytes"
+  },
+  {
+    "public_path": "code/independent_review/phase2.py",
+    "original_relative_path": "results/independent_review/phase2.py",
+    "sha256": "f3694d2b5b5c89e78ec169e5f1c7e4280f25e818f994420fdac5f77420b5733c",
+    "copy_kind": "exact_original_bytes"
+  },
+  {
+    "public_path": "code/independent_review/test_review.py",
+    "original_relative_path": "results/independent_review/test_review.py",
+    "sha256": "fd574c8cf821c06786d51c9b08859bd15e3e5cf51ea6953385a89ec42b983bfa",
+    "copy_kind": "exact_original_bytes"
+  },
+  {
+    "public_path": "code/independent_review/test_factorial.py",
+    "original_relative_path": "results/independent_review/test_factorial.py",
+    "sha256": "7967ba3eaf227c71e5c6efb3e6cecee03fff4df2b3170ca7357872c902de7942",
+    "copy_kind": "exact_original_bytes"
+  },
+  {
+    "public_path": "code/independent_review/test_phase2.py",
+    "original_relative_path": "results/independent_review/test_phase2.py",
+    "sha256": "24724606f03d6af92d743f221a6ad804cfee5e0ee01d858acdcca568d475e55e",
+    "copy_kind": "exact_original_bytes"
+  },
+  {
+    "public_path": "code/independent_review/test_analysis_parity.py",
+    "original_relative_path": "results/independent_review/test_analysis_parity.py",
+    "sha256": "30f16334f4ca1c828d995bb94e0f1daf6277b33e78a005ee8acc7158530da124",
+    "copy_kind": "exact_original_bytes"
+  },
+  {
+    "public_path": "code/independent_review/PLAN.json",
+    "original_relative_path": "results/independent_review/PLAN.json",
+    "sha256": "d18e3a1f81f70025adcaf45a5ff89e169f0d0b2cc611dc2daca1a173b587c146",
+    "copy_kind": "exact_original_bytes"
+  },
+  {
+    "public_path": "code/independent_review/PHASE2_PLAN.json",
+    "original_relative_path": "results/independent_review/PHASE2_PLAN.json",
+    "sha256": "a5c5fa2182f49953d73366758b0c9ca9d6dcc9d34273ca0e23aca3f96419804f",
+    "copy_kind": "exact_original_bytes"
+  },
+  {
+    "public_path": "code/independent_review/execution_diagnostics.py",
+    "original_relative_path": "results/independent_review/execution_diagnostics.py",
+    "sha256": "656efb17fffe553978b25cb14a9b50237b72f8371205faad0385bd93e34eb9b6",
+    "copy_kind": "exact_original_bytes"
+  },
+  {
+    "public_path": "code/independent_review/test_execution_diagnostics.py",
+    "original_relative_path": "results/independent_review/test_execution_diagnostics.py",
+    "sha256": "7b67ab7d2be17fc00b53f04486c32e872816361bd13947c98128bd6297cc8fbb",
+    "copy_kind": "exact_original_bytes"
+  },
+  {
+    "public_path": "code/independent_review/public_replay.py",
+    "sha256": "fce912d9c5336e7a0d96645f3073c05a6470521035c0568e4539cebee82a928b",
+    "copy_kind": "additive_publication_utility"
+  },
+  {
+    "public_path": "code/independent_review/package.py",
+    "sha256": "c259c37c8189860e39731437b6dae294d168ca506c98ad11bc5710c9e15d4a38",
+    "copy_kind": "additive_publication_utility"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/competence_uniform_first_i1729_epoch1_calibration.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/competence_uniform_first_i1729_epoch1_calibration.json",
+    "sha256": "0b030d385caba9c6e92ab58a415f25ed403f8eea531febc5b90fbb328f598c02",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/competence_uniform_first_i1729_epoch2_calibration.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/competence_uniform_first_i1729_epoch2_calibration.json",
+    "sha256": "ffa41f36bdd6f6a9994c9f0b82c254aec6db583f010e80f7faaca534dcd67f14",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/competence_uniform_first_i1729_epoch3_calibration.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/competence_uniform_first_i1729_epoch3_calibration.json",
+    "sha256": "bd16d8010948ed04f3c5c969043604dbf04d9715ac9eefe2edd153318879d90d",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/competence_uniform_first_i2718_epoch1_calibration.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/competence_uniform_first_i2718_epoch1_calibration.json",
+    "sha256": "4be961b137575dd1981996f4689181e718c21caa48edefde80f9ce239a9770e5",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/competence_uniform_first_i2718_epoch2_calibration.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/competence_uniform_first_i2718_epoch2_calibration.json",
+    "sha256": "031d526fca920ad4f9516311d86a6c0acdb409bab869cac4e88a3b445c8fcfa4",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/competence_uniform_first_i2718_epoch3_calibration.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/competence_uniform_first_i2718_epoch3_calibration.json",
+    "sha256": "0eb36d74a3c6fd528a53980999fde3d4415d2b76495787c46ca70445c5f00f01",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/competence_weighted_first_i1729_epoch1_calibration.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/competence_weighted_first_i1729_epoch1_calibration.json",
+    "sha256": "3fd08f04b82053b33a3d2b6f76cae67395273c7743e6793bc6ac5911dda8984e",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/competence_weighted_first_i1729_epoch2_calibration.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/competence_weighted_first_i1729_epoch2_calibration.json",
+    "sha256": "bc01014ed794f8e82ad9e6854904484199dff60ea926ba3ffd5c38ca41538c40",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/competence_weighted_first_i1729_epoch3_calibration.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/competence_weighted_first_i1729_epoch3_calibration.json",
+    "sha256": "e1e3f007b87311993a747bc94d948cca780232ad3a6ba5d761550c6aaa90b160",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/competence_weighted_first_i2718_epoch1_calibration.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/competence_weighted_first_i2718_epoch1_calibration.json",
+    "sha256": "a8b79654d6a31aae23439dd653727aaca1b86812614ea060a35e86d5fbf92840",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/competence_weighted_first_i2718_epoch2_calibration.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/competence_weighted_first_i2718_epoch2_calibration.json",
+    "sha256": "b05047c5630ad121a46064fd8137a5051d071bd4ef6f0e8e573266f9702ff4fb",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/competence_weighted_first_i2718_epoch3_calibration.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/competence_weighted_first_i2718_epoch3_calibration.json",
+    "sha256": "a789d7411a26445711a562a9ed8a50ea3c8b022befa9ded4f343760ee03dd591",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/competence_uniform_last_i1729_epoch1_calibration.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/competence_uniform_last_i1729_epoch1_calibration.json",
+    "sha256": "f17be3fe850d0a3d47624fcfb04d224884ad3bface0f9243cf91f659d6845131",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/competence_uniform_last_i1729_epoch2_calibration.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/competence_uniform_last_i1729_epoch2_calibration.json",
+    "sha256": "f92cdac0a9a99a3b969f65d462dbdeb83f1ad4c813fd206dda748e4eda86a1e5",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/competence_uniform_last_i1729_epoch3_calibration.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/competence_uniform_last_i1729_epoch3_calibration.json",
+    "sha256": "d621353140c2fb2e35bb368c3f56af63c8e2e0411cd23091bbd66709d0a0f92f",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/competence_uniform_last_i2718_epoch1_calibration.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/competence_uniform_last_i2718_epoch1_calibration.json",
+    "sha256": "0f755980bdf414b7512d2d45024b2aaff1e54e69a9e55794854971c97109b6f1",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/competence_uniform_last_i2718_epoch2_calibration.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/competence_uniform_last_i2718_epoch2_calibration.json",
+    "sha256": "57c94324cea65a8dd7b4790d20fc22a70e8360bf82d38a16f2f5e11d4bbe0b0e",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/competence_uniform_last_i2718_epoch3_calibration.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/competence_uniform_last_i2718_epoch3_calibration.json",
+    "sha256": "afcc64768d32d54cbf09059016a00ca15a164dcf6e9016f2dc7a8d0ced8f87ba",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/competence_weighted_last_i1729_epoch1_calibration.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/competence_weighted_last_i1729_epoch1_calibration.json",
+    "sha256": "bc03d8b5aa2a388274be740858c9be74aa0cc30a96ce9b9d377e83ce1b3c5865",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/competence_weighted_last_i1729_epoch2_calibration.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/competence_weighted_last_i1729_epoch2_calibration.json",
+    "sha256": "0f30669cdfa95ed861c25c1c83d0718584af6144dcab761fe66a9399a24efcb3",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/competence_weighted_last_i1729_epoch3_calibration.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/competence_weighted_last_i1729_epoch3_calibration.json",
+    "sha256": "07657555da7857a1f9aa6e30d7e997865fa37ab4f036832dd576f1294bb39b98",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/competence_weighted_last_i2718_epoch1_calibration.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/competence_weighted_last_i2718_epoch1_calibration.json",
+    "sha256": "95331637639a17622a2362ff232c7e1f10945dcdd76b2bc02d07bdeb72d353e9",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/competence_weighted_last_i2718_epoch2_calibration.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/competence_weighted_last_i2718_epoch2_calibration.json",
+    "sha256": "afd22b171f0ec4308f259e61999cb12f013a79ee689c03c375b18acbb38a5ddb",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/competence_weighted_last_i2718_epoch3_calibration.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/competence_weighted_last_i2718_epoch3_calibration.json",
+    "sha256": "a7cff48c348ed01c52535b3efb1692e2b243e8cce733814c3355e67fe8959605",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/validation_uniform_first_i1729.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/validation_uniform_first_i1729.json",
+    "sha256": "9ae4f1ae86aad83d8fe4cb803405123764bc6d965b9becbadcb753d8c0e73aaf",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/validation_uniform_first_i2718.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/validation_uniform_first_i2718.json",
+    "sha256": "886c16ef8cc83ea80e75611b21ed90c26ce922b360b52515bfbb0709fad7bbf5",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/validation_weighted_first_i1729.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/validation_weighted_first_i1729.json",
+    "sha256": "3b887dcac100b5f3b4547f8e98d8c5d5c8d596e76892ce2eb1ba48f2e0706f6f",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/validation_weighted_first_i2718.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/validation_weighted_first_i2718.json",
+    "sha256": "26d8be35c6c1efbcf5b0336821d90490cf6e323dfc9360f36f226d90d408e996",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/validation_uniform_last_i1729.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/validation_uniform_last_i1729.json",
+    "sha256": "2a8b50c99b2dc33b19c287f15288e8ac77a87f27fc46f3b542a867ca5a16ff58",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/validation_uniform_last_i2718.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/validation_uniform_last_i2718.json",
+    "sha256": "4c5e74dcf70b7372794fb312d14d861d527f976f9f9a773b9b961a5798138ac6",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/validation_weighted_last_i1729.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/validation_weighted_last_i1729.json",
+    "sha256": "204a97f447c830a34ac05e77847025e9ca7f8b9e4e41e074d1e1499d82531f53",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "results/independent_review/execution_diagnostics/validation_weighted_last_i2718.json",
+    "original_relative_path": "results/independent_review/execution_diagnostics/validation_weighted_last_i2718.json",
+    "sha256": "66628a1c25df189fc67400d9e9b35c4843506db09a8348e32929de394a95fa50",
+    "copy_kind": "exact_original_scientific_component_audit"
+  },
+  {
+    "public_path": "code/independent_review/package_scope.py",
+    "original_relative_path": "results/independent_review/publication_scope/package_scope.py",
+    "sha256": "5963738084c1c443a9ae451c45c8064ee0b74eec82db74b32d78758131d5463b",
+    "copy_kind": "exact_additive_scope_review_source"
+  },
+  {
+    "public_path": "code/independent_review/scope_public_replay.py",
+    "original_relative_path": "results/independent_review/publication_scope/scope_public_replay.py",
+    "sha256": "8ea39fa7a991d11658b411f17606b01a747af06b7c970e7ddb2d2da51a384964",
+    "copy_kind": "exact_additive_scope_review_source"
+  },
+  {
+    "public_path": "code/independent_review/terminal_review.py",
+    "original_relative_path": "results/independent_review/scope_review/terminal_review.py",
+    "sha256": "e8b9553da1bc182b7e571f49c45f68c613abf67d311c388bcdee9acdebc30294",
+    "copy_kind": "exact_additive_scope_review_source"
+  },
+  {
+    "public_path": "code/independent_review/audit_arming.py",
+    "original_relative_path": "results/independent_review/scope_review/audit_arming.py",
+    "sha256": "0ed40a7f0b98676f620d7b26eb82d49f6435127d8f1a18e6aa1c6d652fc8ad67",
+    "copy_kind": "exact_additive_scope_review_source"
+  },
+  {
+    "public_path": "code/independent_review/SCOPE_REVIEW_PLAN.json",
+    "original_relative_path": "results/independent_review/scope_review/PLAN.json",
+    "sha256": "2b89e62ab39ba67f495e977c2bf1a609d7bfa757621662fc7d758f5a98ac43f2",
+    "copy_kind": "exact_additive_scope_review_source"
+  }
+]

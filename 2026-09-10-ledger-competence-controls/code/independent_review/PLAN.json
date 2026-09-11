@@ -1,0 +1,76 @@
+{
+  "created_utc": "2026-09-10T18:34:04.248125+00:00",
+  "status": "fixed_before_reviewer_reads_any_new_study_model_output",
+  "scope": "Read-only independent audit of completed base/competence calibration and final factorial validation only; no GPU/model/service calls or scientific-source edits.",
+  "maximum_stages": 34,
+  "expected_calibration_stages": 26,
+  "expected_validation_stages": 8,
+  "expected_case_checkpoint_records_if_competence_grid_completes": 8064,
+  "source_files": {
+    "PROTOCOL.md": "b2c1b9163953794ddfc2b489d8cd393c1815e9397193fd18ee10ca3891c22820",
+    "scripts/program.py": "6abb8fb3b86d444540fea3f037c2994f183fd17cb9189dc9f1b01c6c28bc8818",
+    "scripts/task.py": "94aae593c4bd6c7d3157ee5396c340ddf5f0acdc13133a8856d6103cb444c8e9",
+    "scripts/serialization.py": "c9ab167310f59a020f25335a343f58ff2df2beed5e90ca1f4339f71100761f22",
+    "data/calibration.jsonl": "c1b91b8899aa6db84c74e64afbfb032d54b334e23c0e64bb729f7da2f6a0b200",
+    "data/validation.jsonl": "3db57869cf2c2d4811cef4880c7bb8be98fe94bcb19b057996d7bcc2af9dee93"
+  },
+  "frozen_program_sha256": "8407c0cad8cabff90fbb42d2fbb45861fd45b9df6c64af1c0f94fc5c515b8e13",
+  "completion_rule": "Do not read any stage outputs.jsonl until that stage COMPLETED.json exists and passes source/settings/checkpoint/artifact validation. Partial stages remain pending.",
+  "metrics": [
+    "strict_json",
+    "exact_schema_valid",
+    "decision_valid",
+    "decision_correct",
+    "internal_execution_consistent",
+    "full_correct",
+    "false_CLEAR",
+    "false_REPORT",
+    "declared_reason_correct",
+    "selected_list_exact",
+    "count_exact",
+    "EOS_finished",
+    "requested_top_level_order_followed"
+  ],
+  "gate_rule": "Recompute five competence gates from exact integer counts at every completed stage; only epoch3 calibration and the frozen selected recipe validation control program progression. Reviewer never changes progression.",
+  "aggregation": "All cases and fixed target/report_control/clear_control strata plus policy families; compare independent parsing/execution with saved frozen parser and driver counts.",
+  "fixed_longitudinal_ids_by_frozen_source_order": {
+    "calibration": {
+      "trigger_report": [
+        "rc-calibration-00020",
+        "rc-calibration-00010"
+      ],
+      "control_report": [
+        "rc-calibration-00085",
+        "rc-calibration-00064"
+      ],
+      "clear": [
+        "rc-calibration-00156",
+        "rc-calibration-00185"
+      ]
+    },
+    "validation": {
+      "trigger_report": [
+        "rc-validation-00056",
+        "rc-validation-00004"
+      ],
+      "control_report": [
+        "rc-validation-00175",
+        "rc-validation-00185"
+      ],
+      "clear": [
+        "rc-validation-00329",
+        "rc-validation-00275"
+      ]
+    }
+  },
+  "fixed_illustration_scope": "First two source IDs per stratum are chosen now independently of model outputs and followed unchanged across every applicable checkpoint. They are illustrative, not representative or a prevalence estimate.",
+  "additional_error_illustrations": "For each completed stage separately, take the first two full-incorrect cases in each stratum by frozen source-file order (zero, one, or two if fewer exist). Clearly label this outcome-dependent deterministic illustration rule separately from fixed longitudinal cases.",
+  "final_factorial_review": "After all8validation checkpoints complete, recompute all4cell scores perseed, both main effects on CLEARdecisionaccuracy and fullcorrect384, and interaction; verify frozen calibration-only recipe selection and nofallback validation. Stratified paired10000case bootstrap seed20260910 retains all4recipes and bothseeds perdraw. No main repair outcomes in this audit scope.",
+  "interpretation_limits": [
+    "Cases are reused across checkpoints; case/checkpoint record count is not independent case count.",
+    "Two optimization seed blocks do not establish a model-family distribution.",
+    "Emitted programs are observable output, not hidden-reasoning measurements.",
+    "Invalidity may make CLEARaccuracy differ from one-minus-falseREPORT.",
+    "CPU checks do not imply any scientific prerequisite has passed."
+  ]
+}

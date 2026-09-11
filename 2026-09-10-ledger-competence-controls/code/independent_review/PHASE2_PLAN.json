@@ -1,0 +1,78 @@
+{
+  "created_utc": "2026-09-10T18:51:47.326299+00:00",
+  "status": "fixed_before_any_phase2_outcome_is_read_by_reviewer",
+  "parent_plan_sha256": "d18e3a1f81f70025adcaf45a5ff89e169f0d0b2cc611dc2daca1a173b587c146",
+  "authorization": "Root explicitly requested independent audit of conditional induction, actual cohorts, repair contrasts and control preservation on2026-09-10 while competence was running.",
+  "scope": "Additive read-only verification of finite completed stages actually scheduled by frozen program; no new models, evaluations, gates, candidate choices or retries.",
+  "frozen_program_sha256": "8407c0cad8cabff90fbb42d2fbb45861fd45b9df6c64af1c0f94fc5c515b8e13",
+  "source_sha256": {
+    "PROTOCOL.md": "b2c1b9163953794ddfc2b489d8cd393c1815e9397193fd18ee10ca3891c22820",
+    "scripts/program.py": "6abb8fb3b86d444540fea3f037c2994f183fd17cb9189dc9f1b01c6c28bc8818",
+    "scripts/cohort.py": "5385da34d7385069cb6f4753ddb80c9a87017d7b453c26e14275d6e5d7af9a3c",
+    "scripts/task.py": "94aae593c4bd6c7d3157ee5396c340ddf5f0acdc13133a8856d6103cb444c8e9",
+    "scripts/serialization.py": "c9ab167310f59a020f25335a343f58ff2df2beed5e90ca1f4339f71100761f22",
+    "data/calibration.jsonl": "c1b91b8899aa6db84c74e64afbfb032d54b334e23c0e64bb729f7da2f6a0b200",
+    "data/pool.jsonl": "7d21df39f91af1d95a23cae2448c30bf2622645a8d1442fe1a4fec32239e2eda",
+    "data/preservation.jsonl": "c52e27be536e710089131c47f08b44d699ca75e656c315455c444e92a28d88c9",
+    "data/evaluation.jsonl": "8bea44fbd58ea8e1367307a2fb4097b447fa5908fd1e0a060f5ab8d849ccc510"
+  },
+  "induction": "Audit only completed scheduled32/64/96candidate calibrations, perinstallation, against its selected competent epoch3calibration. Exactinteger checks: schema>=189/192;internal>=183/192;targetfalseCLEAR20..44/64;bothcontroldecisions>=58/64; eachcontrolfull count at least competentcount minus3. Verify firstpassingcandidate selection; do not inspect unscheduledcheckpointbehavior.",
+  "collections": "If they exist, verify complete1536rows perinstallation, source/rendered/checkpoint/settings/finishprovenance, recompute actualeligibility and exclusions, and deterministic closed192failurecohort with nonidentical traces, exactmatchingkeys,>=32peroperator, all8families. Verifyall5arms identicaloracle targets,order and320preservation rows; source/weight/hash contracts remainauthoritative.",
+  "repair": "Requireexact30repairs plus4competent/inducedcontrols before finalpairedrepairclaims. Audit all768caseoutputs percheckpoint; incompletebranch yields explicitmissing/pendingstatus, never a partialcomparison dressedasfull.",
+  "repair_primary": "Completecorrectness onfrozen narrative128triggerREPORT+128CLEAR256cases; matched_failure minusdonor_failure andminuscorrect_trace, perrepairseed42/43/44 andobserved3seedmean,separatelyinstallation1729/2718.",
+  "repair_bootstrap": "10000wholeprimaryset pairedcase drawsseed20260910, commonIDdraws acrossarms/seeds withininstallation; average suppliedseed caseeffects, noinstallation/seedpopulationresampling;percentilelinear95%intervals,unadjusteddescriptive.",
+  "secondary_controls": "For eacharm/installation, report fullcorrectness, decisioncorrectness, falseREPORTandfalseCLEAR byfrozen suite/stratum with exactdenominators; describe repair-minus-competent andrepair-minus-inducedcontrol deltas. FalseREPORTincreaseisworse,accuracyincreaseisbetter. Anyboundary/controlintervals areexplicitlysecondary pairedcasebootstraps inthatfixedsubset. Noequivalenceclaim ornewgate.",
+  "additional_secondary_repair_contrasts": "Matched-minus-context_only andmatched-minus-direct may beverified onlyaslabelledsecondary contrasts ifreported bymainanalysis; primarydefinitionsunchanged.",
+  "fixed_evaluation_illustration_ids": {
+    "id": {
+      "trigger_report": [
+        "rc-evaluation-00026",
+        "rc-evaluation-00042"
+      ],
+      "control_report": [
+        "rc-evaluation-00071",
+        "rc-evaluation-00098"
+      ],
+      "clear": [
+        "rc-evaluation-00164",
+        "rc-evaluation-00187"
+      ]
+    },
+    "heldout": {
+      "trigger_report": [
+        "rc-evaluation-00219",
+        "rc-evaluation-00227"
+      ],
+      "control_report": [
+        "rc-evaluation-00310",
+        "rc-evaluation-00274"
+      ],
+      "clear": [
+        "rc-evaluation-00350",
+        "rc-evaluation-00373"
+      ]
+    },
+    "narrative": {
+      "trigger_report": [
+        "rc-evaluation-00460",
+        "rc-evaluation-00435"
+      ],
+      "control_report": [
+        "rc-evaluation-00606",
+        "rc-evaluation-00513"
+      ],
+      "clear": [
+        "rc-evaluation-00767",
+        "rc-evaluation-00658"
+      ]
+    }
+  },
+  "illustration_rule": "Samefixed2IDs per suite\u00d7stratum acrossall34evalcheckpoints, chosen nowwithoutphase2outputs. Percheckpointfirst2fullerrors perstratum mayalso beillustrated separatelyaspredeclared outcome-dependentsampling. Noillustrationisaprevalencesample.",
+  "induction_illustrations": "Use the originalPLAN sixfixedcalibrationIDs unchanged plusits separatelylabelledfirst-two-errors rule.",
+  "limits": [
+    "Actualfailurecohort is selected byeligibility; acceptedcohort rates are notunfilteredfailureprevalence.",
+    "Trace congruence/relevance changes the archivefacts; nohiddenreasoning/selfauthorshipmechanism claim.",
+    "Programstopbeforefullrepair outputs suppliesnorepairnull/equivalenceresult.",
+    "Orderadherence remainsdescriptive; invaliditycannotbeconvertedintocorrectness."
+  ]
+}

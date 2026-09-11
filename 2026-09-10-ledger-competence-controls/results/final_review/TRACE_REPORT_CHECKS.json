@@ -1,0 +1,592 @@
+{
+  "checked_utc": "2026-09-11T04:44:14.764395+00:00",
+  "status": "passed",
+  "scope": "Read-only check of final report aggregate error-component statements and its two validation case illustrations. Cases are from the frozen six-case set, with post-result editorial selection of case175 disclosed. This calculation does not change any endpoint.",
+  "counts": {
+    "responses": 3072,
+    "incorrect_audits": 100,
+    "wrong_selected_membership": 67,
+    "order_only_errors": 0,
+    "wrong_oracle_count": 65,
+    "emitted_count_not_list_length": 0,
+    "threshold_contradictions": 36,
+    "contradictions_with_correct_selection_count": 33,
+    "wrong_declared_reason": 0,
+    "not_finished_eos": 0
+  },
+  "generated_tokens_range": [
+    33,
+    57
+  ],
+  "validation_witnesses": [
+    {
+      "case": "rc-validation-00175",
+      "recipe": "uniform_first",
+      "seed": 1729,
+      "output": {
+        "decision": "REPORT",
+        "selected": [
+          "R2",
+          "R7",
+          "R8",
+          "R5"
+        ],
+        "count": 4,
+        "reason": {
+          "window": "current",
+          "waiver": "approved_only",
+          "unit": "issues",
+          "recency": "all"
+        }
+      },
+      "gold": {
+        "decision": "REPORT",
+        "selected": [
+          "R2",
+          "R7",
+          "R8",
+          "R5"
+        ],
+        "count": 4,
+        "reason": {
+          "window": "current",
+          "waiver": "approved_only",
+          "unit": "issues",
+          "recency": "all"
+        }
+      },
+      "correct": true
+    },
+    {
+      "case": "rc-validation-00329",
+      "recipe": "uniform_first",
+      "seed": 1729,
+      "output": {
+        "decision": "CLEAR",
+        "selected": [
+          "R6"
+        ],
+        "count": 1,
+        "reason": {
+          "window": "all",
+          "waiver": "none",
+          "unit": "events",
+          "recency": "all"
+        }
+      },
+      "gold": {
+        "decision": "CLEAR",
+        "selected": [
+          "R6"
+        ],
+        "count": 1,
+        "reason": {
+          "window": "all",
+          "waiver": "none",
+          "unit": "events",
+          "recency": "all"
+        }
+      },
+      "correct": true
+    },
+    {
+      "case": "rc-validation-00175",
+      "recipe": "weighted_first",
+      "seed": 1729,
+      "output": {
+        "decision": "REPORT",
+        "selected": [
+          "R2",
+          "R7",
+          "R8",
+          "R5"
+        ],
+        "count": 4,
+        "reason": {
+          "window": "current",
+          "waiver": "approved_only",
+          "unit": "issues",
+          "recency": "all"
+        }
+      },
+      "gold": {
+        "decision": "REPORT",
+        "selected": [
+          "R2",
+          "R7",
+          "R8",
+          "R5"
+        ],
+        "count": 4,
+        "reason": {
+          "window": "current",
+          "waiver": "approved_only",
+          "unit": "issues",
+          "recency": "all"
+        }
+      },
+      "correct": true
+    },
+    {
+      "case": "rc-validation-00329",
+      "recipe": "weighted_first",
+      "seed": 1729,
+      "output": {
+        "decision": "CLEAR",
+        "selected": [
+          "R6"
+        ],
+        "count": 1,
+        "reason": {
+          "window": "all",
+          "waiver": "none",
+          "unit": "events",
+          "recency": "all"
+        }
+      },
+      "gold": {
+        "decision": "CLEAR",
+        "selected": [
+          "R6"
+        ],
+        "count": 1,
+        "reason": {
+          "window": "all",
+          "waiver": "none",
+          "unit": "events",
+          "recency": "all"
+        }
+      },
+      "correct": true
+    },
+    {
+      "case": "rc-validation-00175",
+      "recipe": "uniform_last",
+      "seed": 1729,
+      "output": {
+        "selected": [
+          "R2",
+          "R7",
+          "R8",
+          "R5"
+        ],
+        "count": 4,
+        "reason": {
+          "window": "current",
+          "waiver": "approved_only",
+          "unit": "issues",
+          "recency": "all"
+        },
+        "decision": "REPORT"
+      },
+      "gold": {
+        "decision": "REPORT",
+        "selected": [
+          "R2",
+          "R7",
+          "R8",
+          "R5"
+        ],
+        "count": 4,
+        "reason": {
+          "window": "current",
+          "waiver": "approved_only",
+          "unit": "issues",
+          "recency": "all"
+        }
+      },
+      "correct": true
+    },
+    {
+      "case": "rc-validation-00329",
+      "recipe": "uniform_last",
+      "seed": 1729,
+      "output": {
+        "selected": [
+          "R6"
+        ],
+        "count": 1,
+        "reason": {
+          "window": "all",
+          "waiver": "none",
+          "unit": "events",
+          "recency": "all"
+        },
+        "decision": "CLEAR"
+      },
+      "gold": {
+        "decision": "CLEAR",
+        "selected": [
+          "R6"
+        ],
+        "count": 1,
+        "reason": {
+          "window": "all",
+          "waiver": "none",
+          "unit": "events",
+          "recency": "all"
+        }
+      },
+      "correct": true
+    },
+    {
+      "case": "rc-validation-00175",
+      "recipe": "weighted_last",
+      "seed": 1729,
+      "output": {
+        "selected": [
+          "R2",
+          "R7",
+          "R8",
+          "R5"
+        ],
+        "count": 4,
+        "reason": {
+          "window": "current",
+          "waiver": "approved_only",
+          "unit": "issues",
+          "recency": "all"
+        },
+        "decision": "REPORT"
+      },
+      "gold": {
+        "decision": "REPORT",
+        "selected": [
+          "R2",
+          "R7",
+          "R8",
+          "R5"
+        ],
+        "count": 4,
+        "reason": {
+          "window": "current",
+          "waiver": "approved_only",
+          "unit": "issues",
+          "recency": "all"
+        }
+      },
+      "correct": true
+    },
+    {
+      "case": "rc-validation-00329",
+      "recipe": "weighted_last",
+      "seed": 1729,
+      "output": {
+        "selected": [
+          "R6"
+        ],
+        "count": 1,
+        "reason": {
+          "window": "all",
+          "waiver": "none",
+          "unit": "events",
+          "recency": "all"
+        },
+        "decision": "CLEAR"
+      },
+      "gold": {
+        "decision": "CLEAR",
+        "selected": [
+          "R6"
+        ],
+        "count": 1,
+        "reason": {
+          "window": "all",
+          "waiver": "none",
+          "unit": "events",
+          "recency": "all"
+        }
+      },
+      "correct": true
+    },
+    {
+      "case": "rc-validation-00175",
+      "recipe": "uniform_first",
+      "seed": 2718,
+      "output": {
+        "decision": "REPORT",
+        "selected": [
+          "R2",
+          "R7",
+          "R8"
+        ],
+        "count": 3,
+        "reason": {
+          "window": "current",
+          "waiver": "approved_only",
+          "unit": "issues",
+          "recency": "all"
+        }
+      },
+      "gold": {
+        "decision": "REPORT",
+        "selected": [
+          "R2",
+          "R7",
+          "R8",
+          "R5"
+        ],
+        "count": 4,
+        "reason": {
+          "window": "current",
+          "waiver": "approved_only",
+          "unit": "issues",
+          "recency": "all"
+        }
+      },
+      "correct": false
+    },
+    {
+      "case": "rc-validation-00329",
+      "recipe": "uniform_first",
+      "seed": 2718,
+      "output": {
+        "decision": "CLEAR",
+        "selected": [
+          "R6"
+        ],
+        "count": 1,
+        "reason": {
+          "window": "all",
+          "waiver": "none",
+          "unit": "events",
+          "recency": "all"
+        }
+      },
+      "gold": {
+        "decision": "CLEAR",
+        "selected": [
+          "R6"
+        ],
+        "count": 1,
+        "reason": {
+          "window": "all",
+          "waiver": "none",
+          "unit": "events",
+          "recency": "all"
+        }
+      },
+      "correct": true
+    },
+    {
+      "case": "rc-validation-00175",
+      "recipe": "weighted_first",
+      "seed": 2718,
+      "output": {
+        "decision": "REPORT",
+        "selected": [
+          "R2",
+          "R7",
+          "R8",
+          "R5"
+        ],
+        "count": 4,
+        "reason": {
+          "window": "current",
+          "waiver": "approved_only",
+          "unit": "issues",
+          "recency": "all"
+        }
+      },
+      "gold": {
+        "decision": "REPORT",
+        "selected": [
+          "R2",
+          "R7",
+          "R8",
+          "R5"
+        ],
+        "count": 4,
+        "reason": {
+          "window": "current",
+          "waiver": "approved_only",
+          "unit": "issues",
+          "recency": "all"
+        }
+      },
+      "correct": true
+    },
+    {
+      "case": "rc-validation-00329",
+      "recipe": "weighted_first",
+      "seed": 2718,
+      "output": {
+        "decision": "CLEAR",
+        "selected": [
+          "R6"
+        ],
+        "count": 1,
+        "reason": {
+          "window": "all",
+          "waiver": "none",
+          "unit": "events",
+          "recency": "all"
+        }
+      },
+      "gold": {
+        "decision": "CLEAR",
+        "selected": [
+          "R6"
+        ],
+        "count": 1,
+        "reason": {
+          "window": "all",
+          "waiver": "none",
+          "unit": "events",
+          "recency": "all"
+        }
+      },
+      "correct": true
+    },
+    {
+      "case": "rc-validation-00175",
+      "recipe": "uniform_last",
+      "seed": 2718,
+      "output": {
+        "selected": [
+          "R2",
+          "R7",
+          "R8"
+        ],
+        "count": 3,
+        "reason": {
+          "window": "current",
+          "waiver": "approved_only",
+          "unit": "issues",
+          "recency": "all"
+        },
+        "decision": "REPORT"
+      },
+      "gold": {
+        "decision": "REPORT",
+        "selected": [
+          "R2",
+          "R7",
+          "R8",
+          "R5"
+        ],
+        "count": 4,
+        "reason": {
+          "window": "current",
+          "waiver": "approved_only",
+          "unit": "issues",
+          "recency": "all"
+        }
+      },
+      "correct": false
+    },
+    {
+      "case": "rc-validation-00329",
+      "recipe": "uniform_last",
+      "seed": 2718,
+      "output": {
+        "selected": [
+          "R6"
+        ],
+        "count": 1,
+        "reason": {
+          "window": "all",
+          "waiver": "none",
+          "unit": "events",
+          "recency": "all"
+        },
+        "decision": "CLEAR"
+      },
+      "gold": {
+        "decision": "CLEAR",
+        "selected": [
+          "R6"
+        ],
+        "count": 1,
+        "reason": {
+          "window": "all",
+          "waiver": "none",
+          "unit": "events",
+          "recency": "all"
+        }
+      },
+      "correct": true
+    },
+    {
+      "case": "rc-validation-00175",
+      "recipe": "weighted_last",
+      "seed": 2718,
+      "output": {
+        "selected": [
+          "R2",
+          "R7",
+          "R8",
+          "R5"
+        ],
+        "count": 4,
+        "reason": {
+          "window": "current",
+          "waiver": "approved_only",
+          "unit": "issues",
+          "recency": "all"
+        },
+        "decision": "REPORT"
+      },
+      "gold": {
+        "decision": "REPORT",
+        "selected": [
+          "R2",
+          "R7",
+          "R8",
+          "R5"
+        ],
+        "count": 4,
+        "reason": {
+          "window": "current",
+          "waiver": "approved_only",
+          "unit": "issues",
+          "recency": "all"
+        }
+      },
+      "correct": true
+    },
+    {
+      "case": "rc-validation-00329",
+      "recipe": "weighted_last",
+      "seed": 2718,
+      "output": {
+        "selected": [
+          "R6"
+        ],
+        "count": 1,
+        "reason": {
+          "window": "all",
+          "waiver": "none",
+          "unit": "events",
+          "recency": "all"
+        },
+        "decision": "CLEAR"
+      },
+      "gold": {
+        "decision": "CLEAR",
+        "selected": [
+          "R6"
+        ],
+        "count": 1,
+        "reason": {
+          "window": "all",
+          "waiver": "none",
+          "unit": "events",
+          "recency": "all"
+        }
+      },
+      "correct": true
+    }
+  ],
+  "source_outputs_sha256": {
+    "results/validation/validation_uniform_first_i1729/outputs.jsonl": "79a6a9d6ebc9b849d358da3d116fed688a998bf7604acecb9a9be73e67d19de8",
+    "results/validation/validation_weighted_first_i1729/outputs.jsonl": "74139426e9966ea7017b8f77d7dc6b3255566232c73baeae86809d16157d2225",
+    "results/validation/validation_uniform_last_i1729/outputs.jsonl": "6031037d1877d79681f5b3b9e2712d64d79c103502803b9b3701435f48da96b4",
+    "results/validation/validation_weighted_last_i1729/outputs.jsonl": "194bfa621136c41d0329495b1463b9e32c5633800ae7ffbb1601dd74ed09584b",
+    "results/validation/validation_uniform_first_i2718/outputs.jsonl": "bff744ba37881aea1dd3ebde35dca16f67d4dae622df68cd4ad289bae0b28165",
+    "results/validation/validation_weighted_first_i2718/outputs.jsonl": "d00cc19cd07f435945810712145ba3a061c81fc866e3ddffc3141b11daaad415",
+    "results/validation/validation_uniform_last_i2718/outputs.jsonl": "b9636820ea1921091188986c97e3a2ab3f90eb3616a7e1daf3ade970477d0104",
+    "results/validation/validation_weighted_last_i2718/outputs.jsonl": "02d31c833fe1f303c36ba15cf48b9e82439292e46e8db0f32e2c5193cb3f0568"
+  },
+  "model_service_calls": false
+}

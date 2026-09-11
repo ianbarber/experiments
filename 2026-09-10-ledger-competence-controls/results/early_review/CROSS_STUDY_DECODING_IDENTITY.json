@@ -1,0 +1,8 @@
+{
+  "scope": "Identical prior/current generation helper and recorded base generation-configuration identity; not independent prior environment equality",
+  "prior_source_manifest_sha256": "9a96a33b5039861cd21c6e24cd0a1b301b072090eb9ef9dad0ea8e7f6bfc51bc",
+  "prior_base_identity_record_sha256": "5db6e4ad873a7d8d9b6dcf35f94d359beae3d9e73c7ad81f32ecbf6f4b248c77",
+  "shared_common_py_sha256": "d5460eedc9519b02115e3fa6d1714a5747e805c8378d4ec29e048c0c4492cc1e",
+  "shared_generation_config_sha256": "ea35dfb6fc5051b01114f9b995820d55dab01ed33ee490f6378b442af82c09f9",
+  "current_freeze_sha256": "8407c0cad8cabff90fbb42d2fbb45861fd45b9df6c64af1c0f94fc5c515b8e13"
+}

@@ -1,0 +1,10 @@
+{
+  "armed_utc": "2026-09-11T00:05:46.852046+00:00",
+  "scope_amendment_sha256": "57300ae169c07b062b7d592599674caf1977c696b138ddf90c065a420b65a4b7",
+  "marker_sha256": "34dc8372e59c00c4fdffb1902e12530d6f83ae0efd59524fd58e8f44362f5a67",
+  "marker_only_directory": true,
+  "all_26_scientific_pins_and_archived_sources_unchanged": true,
+  "model_or_service_calls": 0,
+  "no_conditional_stage_has_started": true,
+  "independent_guard_checks_passed": 8
+}

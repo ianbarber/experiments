@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "checked_utc": "2026-09-11T04:54:12.719840+00:00",
+  "scope": "Whole worktree text/decompressed-text privacy scan; new entry file sizes, artifacts, Markdown file links, response projection, editorial placeholders and git diff hygiene.",
+  "repository_files_checked": 931,
+  "text_or_gzip_text_files_checked": 910,
+  "entry_files_checked": 540,
+  "entry_bytes": 15132572,
+  "largest_entry_file_bytes": 551093,
+  "checker_sha256": "b90ce0e1bb03b0d0a58701fa3f4894faf969582a81714246f870c08beb74e0c2",
+  "issues": [],
+  "unchanged_prior_entry_home_path_observations": [
+    "2026-08-22-lsp-agents-promax/LABNOTES.md",
+    "2026-08-18-cutedsl-tlx-gb10/code/README.md",
+    "2026-08-18-cutedsl-tlx-gb10/code/tlx/gemm_ws_tlx_broken.py",
+    "2026-08-18-cutedsl-tlx-gb10/code/tlx/NOTES.md",
+    "2026-08-18-cutedsl-tlx-gb10/code/tlx/gemm_ws_tlx.py",
+    "2026-08-18-cutedsl-tlx-gb10/code/primitives/three_ways.py",
+    "2026-08-18-cutedsl-tlx-gb10/code/primitives/hazard_output.txt",
+    "2026-08-18-cutedsl-tlx-gb10/code/primitives/tile_mma_prims.py",
+    "2026-08-18-cutedsl-tlx-gb10/code/primitives/hazard_demo.py",
+    "2026-08-18-cutedsl-tlx-gb10/code/primitives/NOTES.md",
+    "2026-08-18-cutedsl-tlx-gb10/code/ts/NOTES.md",
+    "2026-08-18-cutedsl-tlx-gb10/code/ts/broken_output.txt",
+    "2026-08-22-lsp-agents-promax/code/analysis/retro_gate.sh",
+    "2026-08-22-lsp-agents-promax/code/agent/arm_d2.yaml",
+    "2026-08-22-lsp-agents-promax/code/agent/arm_d2_or.yaml",
+    "2026-08-22-lsp-agents-promax/code/lsp-tool/docker/Dockerfile",
+    "2026-09-02-codeanchor-grep-anchors/code/agent/arm_e3.yaml",
+    "2026-09-02-codeanchor-grep-anchors/code/agent/arm_e.yaml"
+  ],
+  "limitations": "No network publication attestation; mandatory repository grep is recorded separately. Older entry home/container paths are inventoried only after exact HEAD-byte equality; this release does not alter those historical artifacts. All new-entry home paths and whole-repository credential/private-network/private-host hits remain failures. Markdown file existence is checked here; final reviewer separately inspected navigation and claims."
+}

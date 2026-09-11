@@ -1,0 +1,202 @@
+{
+  "scope": "Compact background from the separate closed prerequisite study; no new-study results.",
+  "date": "2026-09-10",
+  "machine": "dgx-spark",
+  "outcome": "feasibility_gate_failed",
+  "reason": "Installation 1729: no competence candidate passed the fixed three-block budget.",
+  "source_program_completion_sha256": "18d41cb44f1dfc7122796a3d4a2feacbed4fd2b383a613743bc66627666878b3",
+  "source_pins": {
+    "scripts/cohort.py": "3d9ee05d9f8b7998190de9b8f5343f7b3bd5fabaadfb2f2c3bf17500e6ae05e8",
+    "scripts/common.py": "d5460eedc9519b02115e3fa6d1714a5747e805c8378d4ec29e048c0c4492cc1e",
+    "scripts/gpu_entry.py": "2c79ced6b31be7d912dd65b042da3aefcf12d2cb33c70c9f24356c8f57eb64a6",
+    "scripts/make_data.py": "03e764769af36693d6b2c102e43b73a78966e7fbdefade86ff85c39abda2519f",
+    "scripts/model_stage.py": "923b7ed542ec464356bef088135e8ae899b4b06bb22bd3af669bdcc98584843a",
+    "scripts/narrative.py": "9501236263a0383791306090650972528750c502890e157e3aacc6cd9dcbc9e1",
+    "scripts/preflight.py": "540daf1b3817647c460978cd0116edb18bc2d4ac392526b8a09ca0cceef37000",
+    "scripts/program.py": "5d306e39b532302812956408879759f8b148fcb6d2944ef29d956c6e0b0ebbad",
+    "scripts/run_session.py": "5de8242518b816f75b81ed361f322ef04b910136187b46628d6efed21602de32",
+    "scripts/service_pause_session.py": "63b443cc569e53d106213255491eda7f7f0ceb753685b41d1bbdd0fcd5d8c946",
+    "scripts/task.py": "94aae593c4bd6c7d3157ee5396c340ddf5f0acdc13133a8856d6103cb444c8e9",
+    "PROTOCOL.md": "7e555d9f732db4769a2ec83f5de50a07c5b86ac4301d0a88937f970f6c7ae2d2",
+    "configs/pilot.json": "c7f4cae94e15ac5c73da6c9e4d278f2fe6244fe3ff40666c997cef2704527cab",
+    "data/calibration.jsonl": "13903f30fc474cd51b98d1ed4fc9cddfe2adbc83a803d01fa86c9ecab56d421d",
+    "data/competence.jsonl": "8d6e58802881ddd2f89059be67df9c4c51524df078b285e6697bf8b323e072fb",
+    "data/evaluation.jsonl": "11d6d716559fbaf0c7f1ae54730a8a44bc8552cd8727f5bdde65d0e6ee8e4810",
+    "data/induction.jsonl": "2bedef45bf35301b0b8873e8d9747cbc160ee5c9ed7be3ae64d7f335a77fdb72",
+    "data/pool.jsonl": "c7eeb71d656ae1c654dec32dca815c63ac9cc1b8c92ff22e05ffa9ba1b90636b",
+    "data/preservation.jsonl": "4eae671abb5fed02503a8ca62370c5b371aebcf6593b108220d40203713d7bb2",
+    "data/manifest.json": "3aa03d5153089985741762a0d238f25c356b31a1a7034c403c07edeb3db67d85",
+    "data/evaluation_manifest.json": "181ff3985cb008a656abb3ee28f6a8cb340c76f085f706b3021c5d47e66ecb83"
+  },
+  "calibration_trajectory": [
+    {
+      "stage": "base_calibration",
+      "completion_sha256": "0bd9a37b0191dbb5a26fc85e8e693c56b0835824ce8c0b4b770b172aa149340f",
+      "outputs_sha256": "deaa24b6741e767586fad71a37d55846646e83e1edeae2cbe4f966ddaa449505",
+      "counts": {
+        "all": {
+          "n": 192,
+          "full_correct": 0,
+          "format_valid": 156,
+          "decision_correct": 129,
+          "false_clear": 5,
+          "false_report": 58
+        },
+        "target": {
+          "n": 64,
+          "full_correct": 0,
+          "format_valid": 54,
+          "decision_correct": 62,
+          "false_clear": 2,
+          "false_report": 0
+        },
+        "report_control": {
+          "n": 64,
+          "full_correct": 0,
+          "format_valid": 48,
+          "decision_correct": 61,
+          "false_clear": 3,
+          "false_report": 0
+        },
+        "clear_control": {
+          "n": 64,
+          "full_correct": 0,
+          "format_valid": 54,
+          "decision_correct": 6,
+          "false_clear": 0,
+          "false_report": 58
+        }
+      }
+    },
+    {
+      "stage": "competence_1729_epoch1_calibration",
+      "completion_sha256": "cf1d7200a56cfa11a268a9c6eaadbca1bd7590b2bc7efd815893355849a77c60",
+      "outputs_sha256": "635edbb84c6015c9ee05fd36ae21502ce47c2437a5403b538872c3eaa7922501",
+      "counts": {
+        "all": {
+          "n": 192,
+          "full_correct": 145,
+          "format_valid": 192,
+          "decision_correct": 172,
+          "false_clear": 16,
+          "false_report": 4
+        },
+        "target": {
+          "n": 64,
+          "full_correct": 53,
+          "format_valid": 64,
+          "decision_correct": 63,
+          "false_clear": 1,
+          "false_report": 0
+        },
+        "report_control": {
+          "n": 64,
+          "full_correct": 45,
+          "format_valid": 64,
+          "decision_correct": 49,
+          "false_clear": 15,
+          "false_report": 0
+        },
+        "clear_control": {
+          "n": 64,
+          "full_correct": 47,
+          "format_valid": 64,
+          "decision_correct": 60,
+          "false_clear": 0,
+          "false_report": 4
+        }
+      }
+    },
+    {
+      "stage": "competence_1729_epoch2_calibration",
+      "completion_sha256": "244b83730597b79d99fb72eba204045e7b4e3535def88cc51449e728db5189fe",
+      "outputs_sha256": "7b7ddbf0be6f49c4ba68e43e8b0556741db8cc552cb7fe4d7bb162f763a2f5a6",
+      "counts": {
+        "all": {
+          "n": 192,
+          "full_correct": 172,
+          "format_valid": 192,
+          "decision_correct": 179,
+          "false_clear": 1,
+          "false_report": 12
+        },
+        "target": {
+          "n": 64,
+          "full_correct": 58,
+          "format_valid": 64,
+          "decision_correct": 63,
+          "false_clear": 1,
+          "false_report": 0
+        },
+        "report_control": {
+          "n": 64,
+          "full_correct": 62,
+          "format_valid": 64,
+          "decision_correct": 64,
+          "false_clear": 0,
+          "false_report": 0
+        },
+        "clear_control": {
+          "n": 64,
+          "full_correct": 52,
+          "format_valid": 64,
+          "decision_correct": 52,
+          "false_clear": 0,
+          "false_report": 12
+        }
+      }
+    },
+    {
+      "stage": "competence_1729_epoch3_calibration",
+      "completion_sha256": "1b28122b515f4f9d32147c29ad70c35a19dec2d04bdb334c3f5b4facde49cd4d",
+      "outputs_sha256": "2f3c9eabd9693b63dd717847cc8977f05c461832665a14c0af65a021f073fc88",
+      "counts": {
+        "all": {
+          "n": 192,
+          "full_correct": 180,
+          "format_valid": 192,
+          "decision_correct": 182,
+          "false_clear": 0,
+          "false_report": 10
+        },
+        "target": {
+          "n": 64,
+          "full_correct": 63,
+          "format_valid": 64,
+          "decision_correct": 64,
+          "false_clear": 0,
+          "false_report": 0
+        },
+        "report_control": {
+          "n": 64,
+          "full_correct": 63,
+          "format_valid": 64,
+          "decision_correct": 64,
+          "false_clear": 0,
+          "false_report": 0
+        },
+        "clear_control": {
+          "n": 64,
+          "full_correct": 54,
+          "format_valid": 64,
+          "decision_correct": 54,
+          "false_clear": 0,
+          "false_report": 10
+        }
+      }
+    }
+  ],
+  "training": {
+    "installation": 1729,
+    "blocks": 3,
+    "updates_per_block": 96,
+    "unique_cases": 1536,
+    "report_cases": 1024,
+    "clear_cases": 512,
+    "learning_rate": 0.0001
+  },
+  "induction_runs": 0,
+  "repair_runs": 0,
+  "heldout_evaluation_runs": 0,
+  "interpretation": "No competent candidate passed all fixed gates. This supplies no repair effect, null, or equivalence estimate."
+}

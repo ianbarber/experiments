@@ -1,0 +1,649 @@
+{
+  "bytes": 3701599,
+  "development_manifest_sha256": "76cc1cd928ef256b2b50b0b23686d14157755cfb8b322cf7fa7a6c069cc6b759",
+  "freeze_scope": "Fresh cases frozen before new-study model calls; conditional phase-two evaluation only",
+  "kind": "evaluation",
+  "primary": {
+    "n": 256,
+    "strata": [
+      "trigger_report",
+      "clear"
+    ],
+    "stratum_counts": {
+      "clear": 128,
+      "trigger_report": 128
+    },
+    "suite": "narrative"
+  },
+  "seed": 202609107,
+  "sha256": "8bea44fbd58ea8e1367307a2fb4097b447fa5908fd1e0a060f5ab8d849ccc510",
+  "source_hashes": {
+    "scripts/make_data.py": "d2ccf9cf996496204bbe726bf3a88ae2ad3e84e0a49e052cf7d98b18ee8cb252",
+    "scripts/narrative.py": "9501236263a0383791306090650972528750c502890e157e3aacc6cd9dcbc9e1",
+    "scripts/serialization.py": "c9ab167310f59a020f25335a343f58ff2df2beed5e90ca1f4339f71100761f22",
+    "scripts/task.py": "94aae593c4bd6c7d3157ee5396c340ddf5f0acdc13133a8856d6103cb444c8e9"
+  },
+  "suite_counts": {
+    "heldout": 192,
+    "id": 192,
+    "narrative": 384
+  },
+  "summary": {
+    "designated_operators": {
+      "collapse_issues": 168,
+      "recent_only": 174,
+      "requested_waivers": 170
+    },
+    "domains": {
+      "aviation maintenance": 80,
+      "customer support": 56,
+      "data pipeline": 56,
+      "event operations": 56,
+      "field survey": 56,
+      "financial audit": 80,
+      "grant administration": 56,
+      "manufacturing quality": 56,
+      "scientific trial": 80,
+      "software release": 56,
+      "warehouse dispatch": 56,
+      "water quality": 80
+    },
+    "families": {
+      "all__approved_only__events": 96,
+      "all__approved_only__issues": 96,
+      "all__none__events": 96,
+      "all__none__issues": 96,
+      "current__approved_only__events": 96,
+      "current__approved_only__issues": 96,
+      "current__none__events": 96,
+      "current__none__issues": 96
+    },
+    "family_threshold_stratum_class_counts": [
+      {
+        "family": "all__approved_only__events",
+        "gold_decision": "CLEAR",
+        "n": 12,
+        "stratum": "clear",
+        "threshold": 2
+      },
+      {
+        "family": "all__approved_only__events",
+        "gold_decision": "REPORT",
+        "n": 11,
+        "stratum": "control_report",
+        "threshold": 2
+      },
+      {
+        "family": "all__approved_only__events",
+        "gold_decision": "REPORT",
+        "n": 9,
+        "stratum": "trigger_report",
+        "threshold": 2
+      },
+      {
+        "family": "all__approved_only__events",
+        "gold_decision": "CLEAR",
+        "n": 9,
+        "stratum": "clear",
+        "threshold": 3
+      },
+      {
+        "family": "all__approved_only__events",
+        "gold_decision": "REPORT",
+        "n": 11,
+        "stratum": "control_report",
+        "threshold": 3
+      },
+      {
+        "family": "all__approved_only__events",
+        "gold_decision": "REPORT",
+        "n": 12,
+        "stratum": "trigger_report",
+        "threshold": 3
+      },
+      {
+        "family": "all__approved_only__events",
+        "gold_decision": "CLEAR",
+        "n": 11,
+        "stratum": "clear",
+        "threshold": 4
+      },
+      {
+        "family": "all__approved_only__events",
+        "gold_decision": "REPORT",
+        "n": 10,
+        "stratum": "control_report",
+        "threshold": 4
+      },
+      {
+        "family": "all__approved_only__events",
+        "gold_decision": "REPORT",
+        "n": 11,
+        "stratum": "trigger_report",
+        "threshold": 4
+      },
+      {
+        "family": "all__approved_only__issues",
+        "gold_decision": "CLEAR",
+        "n": 11,
+        "stratum": "clear",
+        "threshold": 2
+      },
+      {
+        "family": "all__approved_only__issues",
+        "gold_decision": "REPORT",
+        "n": 10,
+        "stratum": "control_report",
+        "threshold": 2
+      },
+      {
+        "family": "all__approved_only__issues",
+        "gold_decision": "REPORT",
+        "n": 11,
+        "stratum": "trigger_report",
+        "threshold": 2
+      },
+      {
+        "family": "all__approved_only__issues",
+        "gold_decision": "CLEAR",
+        "n": 12,
+        "stratum": "clear",
+        "threshold": 3
+      },
+      {
+        "family": "all__approved_only__issues",
+        "gold_decision": "REPORT",
+        "n": 11,
+        "stratum": "control_report",
+        "threshold": 3
+      },
+      {
+        "family": "all__approved_only__issues",
+        "gold_decision": "REPORT",
+        "n": 9,
+        "stratum": "trigger_report",
+        "threshold": 3
+      },
+      {
+        "family": "all__approved_only__issues",
+        "gold_decision": "CLEAR",
+        "n": 9,
+        "stratum": "clear",
+        "threshold": 4
+      },
+      {
+        "family": "all__approved_only__issues",
+        "gold_decision": "REPORT",
+        "n": 11,
+        "stratum": "control_report",
+        "threshold": 4
+      },
+      {
+        "family": "all__approved_only__issues",
+        "gold_decision": "REPORT",
+        "n": 12,
+        "stratum": "trigger_report",
+        "threshold": 4
+      },
+      {
+        "family": "all__none__events",
+        "gold_decision": "CLEAR",
+        "n": 9,
+        "stratum": "clear",
+        "threshold": 2
+      },
+      {
+        "family": "all__none__events",
+        "gold_decision": "REPORT",
+        "n": 11,
+        "stratum": "control_report",
+        "threshold": 2
+      },
+      {
+        "family": "all__none__events",
+        "gold_decision": "REPORT",
+        "n": 12,
+        "stratum": "trigger_report",
+        "threshold": 2
+      },
+      {
+        "family": "all__none__events",
+        "gold_decision": "CLEAR",
+        "n": 11,
+        "stratum": "clear",
+        "threshold": 3
+      },
+      {
+        "family": "all__none__events",
+        "gold_decision": "REPORT",
+        "n": 10,
+        "stratum": "control_report",
+        "threshold": 3
+      },
+      {
+        "family": "all__none__events",
+        "gold_decision": "REPORT",
+        "n": 11,
+        "stratum": "trigger_report",
+        "threshold": 3
+      },
+      {
+        "family": "all__none__events",
+        "gold_decision": "CLEAR",
+        "n": 12,
+        "stratum": "clear",
+        "threshold": 4
+      },
+      {
+        "family": "all__none__events",
+        "gold_decision": "REPORT",
+        "n": 11,
+        "stratum": "control_report",
+        "threshold": 4
+      },
+      {
+        "family": "all__none__events",
+        "gold_decision": "REPORT",
+        "n": 9,
+        "stratum": "trigger_report",
+        "threshold": 4
+      },
+      {
+        "family": "all__none__issues",
+        "gold_decision": "CLEAR",
+        "n": 12,
+        "stratum": "clear",
+        "threshold": 2
+      },
+      {
+        "family": "all__none__issues",
+        "gold_decision": "REPORT",
+        "n": 11,
+        "stratum": "control_report",
+        "threshold": 2
+      },
+      {
+        "family": "all__none__issues",
+        "gold_decision": "REPORT",
+        "n": 9,
+        "stratum": "trigger_report",
+        "threshold": 2
+      },
+      {
+        "family": "all__none__issues",
+        "gold_decision": "CLEAR",
+        "n": 9,
+        "stratum": "clear",
+        "threshold": 3
+      },
+      {
+        "family": "all__none__issues",
+        "gold_decision": "REPORT",
+        "n": 11,
+        "stratum": "control_report",
+        "threshold": 3
+      },
+      {
+        "family": "all__none__issues",
+        "gold_decision": "REPORT",
+        "n": 12,
+        "stratum": "trigger_report",
+        "threshold": 3
+      },
+      {
+        "family": "all__none__issues",
+        "gold_decision": "CLEAR",
+        "n": 11,
+        "stratum": "clear",
+        "threshold": 4
+      },
+      {
+        "family": "all__none__issues",
+        "gold_decision": "REPORT",
+        "n": 10,
+        "stratum": "control_report",
+        "threshold": 4
+      },
+      {
+        "family": "all__none__issues",
+        "gold_decision": "REPORT",
+        "n": 11,
+        "stratum": "trigger_report",
+        "threshold": 4
+      },
+      {
+        "family": "current__approved_only__events",
+        "gold_decision": "CLEAR",
+        "n": 9,
+        "stratum": "clear",
+        "threshold": 2
+      },
+      {
+        "family": "current__approved_only__events",
+        "gold_decision": "REPORT",
+        "n": 11,
+        "stratum": "control_report",
+        "threshold": 2
+      },
+      {
+        "family": "current__approved_only__events",
+        "gold_decision": "REPORT",
+        "n": 12,
+        "stratum": "trigger_report",
+        "threshold": 2
+      },
+      {
+        "family": "current__approved_only__events",
+        "gold_decision": "CLEAR",
+        "n": 11,
+        "stratum": "clear",
+        "threshold": 3
+      },
+      {
+        "family": "current__approved_only__events",
+        "gold_decision": "REPORT",
+        "n": 10,
+        "stratum": "control_report",
+        "threshold": 3
+      },
+      {
+        "family": "current__approved_only__events",
+        "gold_decision": "REPORT",
+        "n": 11,
+        "stratum": "trigger_report",
+        "threshold": 3
+      },
+      {
+        "family": "current__approved_only__events",
+        "gold_decision": "CLEAR",
+        "n": 12,
+        "stratum": "clear",
+        "threshold": 4
+      },
+      {
+        "family": "current__approved_only__events",
+        "gold_decision": "REPORT",
+        "n": 11,
+        "stratum": "control_report",
+        "threshold": 4
+      },
+      {
+        "family": "current__approved_only__events",
+        "gold_decision": "REPORT",
+        "n": 9,
+        "stratum": "trigger_report",
+        "threshold": 4
+      },
+      {
+        "family": "current__approved_only__issues",
+        "gold_decision": "CLEAR",
+        "n": 12,
+        "stratum": "clear",
+        "threshold": 2
+      },
+      {
+        "family": "current__approved_only__issues",
+        "gold_decision": "REPORT",
+        "n": 11,
+        "stratum": "control_report",
+        "threshold": 2
+      },
+      {
+        "family": "current__approved_only__issues",
+        "gold_decision": "REPORT",
+        "n": 9,
+        "stratum": "trigger_report",
+        "threshold": 2
+      },
+      {
+        "family": "current__approved_only__issues",
+        "gold_decision": "CLEAR",
+        "n": 9,
+        "stratum": "clear",
+        "threshold": 3
+      },
+      {
+        "family": "current__approved_only__issues",
+        "gold_decision": "REPORT",
+        "n": 11,
+        "stratum": "control_report",
+        "threshold": 3
+      },
+      {
+        "family": "current__approved_only__issues",
+        "gold_decision": "REPORT",
+        "n": 12,
+        "stratum": "trigger_report",
+        "threshold": 3
+      },
+      {
+        "family": "current__approved_only__issues",
+        "gold_decision": "CLEAR",
+        "n": 11,
+        "stratum": "clear",
+        "threshold": 4
+      },
+      {
+        "family": "current__approved_only__issues",
+        "gold_decision": "REPORT",
+        "n": 10,
+        "stratum": "control_report",
+        "threshold": 4
+      },
+      {
+        "family": "current__approved_only__issues",
+        "gold_decision": "REPORT",
+        "n": 11,
+        "stratum": "trigger_report",
+        "threshold": 4
+      },
+      {
+        "family": "current__none__events",
+        "gold_decision": "CLEAR",
+        "n": 11,
+        "stratum": "clear",
+        "threshold": 2
+      },
+      {
+        "family": "current__none__events",
+        "gold_decision": "REPORT",
+        "n": 10,
+        "stratum": "control_report",
+        "threshold": 2
+      },
+      {
+        "family": "current__none__events",
+        "gold_decision": "REPORT",
+        "n": 11,
+        "stratum": "trigger_report",
+        "threshold": 2
+      },
+      {
+        "family": "current__none__events",
+        "gold_decision": "CLEAR",
+        "n": 12,
+        "stratum": "clear",
+        "threshold": 3
+      },
+      {
+        "family": "current__none__events",
+        "gold_decision": "REPORT",
+        "n": 11,
+        "stratum": "control_report",
+        "threshold": 3
+      },
+      {
+        "family": "current__none__events",
+        "gold_decision": "REPORT",
+        "n": 9,
+        "stratum": "trigger_report",
+        "threshold": 3
+      },
+      {
+        "family": "current__none__events",
+        "gold_decision": "CLEAR",
+        "n": 9,
+        "stratum": "clear",
+        "threshold": 4
+      },
+      {
+        "family": "current__none__events",
+        "gold_decision": "REPORT",
+        "n": 11,
+        "stratum": "control_report",
+        "threshold": 4
+      },
+      {
+        "family": "current__none__events",
+        "gold_decision": "REPORT",
+        "n": 12,
+        "stratum": "trigger_report",
+        "threshold": 4
+      },
+      {
+        "family": "current__none__issues",
+        "gold_decision": "CLEAR",
+        "n": 9,
+        "stratum": "clear",
+        "threshold": 2
+      },
+      {
+        "family": "current__none__issues",
+        "gold_decision": "REPORT",
+        "n": 11,
+        "stratum": "control_report",
+        "threshold": 2
+      },
+      {
+        "family": "current__none__issues",
+        "gold_decision": "REPORT",
+        "n": 12,
+        "stratum": "trigger_report",
+        "threshold": 2
+      },
+      {
+        "family": "current__none__issues",
+        "gold_decision": "CLEAR",
+        "n": 11,
+        "stratum": "clear",
+        "threshold": 3
+      },
+      {
+        "family": "current__none__issues",
+        "gold_decision": "REPORT",
+        "n": 10,
+        "stratum": "control_report",
+        "threshold": 3
+      },
+      {
+        "family": "current__none__issues",
+        "gold_decision": "REPORT",
+        "n": 11,
+        "stratum": "trigger_report",
+        "threshold": 3
+      },
+      {
+        "family": "current__none__issues",
+        "gold_decision": "CLEAR",
+        "n": 12,
+        "stratum": "clear",
+        "threshold": 4
+      },
+      {
+        "family": "current__none__issues",
+        "gold_decision": "REPORT",
+        "n": 11,
+        "stratum": "control_report",
+        "threshold": 4
+      },
+      {
+        "family": "current__none__issues",
+        "gold_decision": "REPORT",
+        "n": 9,
+        "stratum": "trigger_report",
+        "threshold": 4
+      }
+    ],
+    "gold_counts": {
+      "0": 101,
+      "1": 90,
+      "2": 84,
+      "3": 118,
+      "4": 193,
+      "5": 45,
+      "6": 49,
+      "7": 42,
+      "8": 46
+    },
+    "gold_decisions": {
+      "CLEAR": 256,
+      "REPORT": 512
+    },
+    "induction_operators": {},
+    "mean_prompt_words": 448.2395833333333,
+    "ordered_ids_sha256": "c04ff1bf47405a566b4b420c38eeac0467f97e746cbc71767fe43d6870b6fad0",
+    "ordered_semantic_hashes_sha256": "c661a52f528bdade554babdcf082709ebeb837ca30e96293dacf3fb879231aaf",
+    "pressure_oversight_counts": [
+      {
+        "n": 64,
+        "oversight": "high",
+        "pressure": "high",
+        "stratum": "clear"
+      },
+      {
+        "n": 64,
+        "oversight": "low",
+        "pressure": "high",
+        "stratum": "clear"
+      },
+      {
+        "n": 64,
+        "oversight": "high",
+        "pressure": "low",
+        "stratum": "clear"
+      },
+      {
+        "n": 64,
+        "oversight": "low",
+        "pressure": "low",
+        "stratum": "clear"
+      },
+      {
+        "n": 87,
+        "oversight": "high",
+        "pressure": "high",
+        "stratum": "control_report"
+      },
+      {
+        "n": 85,
+        "oversight": "high",
+        "pressure": "low",
+        "stratum": "control_report"
+      },
+      {
+        "n": 84,
+        "oversight": "low",
+        "pressure": "low",
+        "stratum": "control_report"
+      },
+      {
+        "n": 256,
+        "oversight": "low",
+        "pressure": "high",
+        "stratum": "trigger_report"
+      }
+    ],
+    "rows": 768,
+    "strata": {
+      "clear": 256,
+      "control_report": 256,
+      "trigger_report": 256
+    },
+    "thresholds": {
+      "2": 256,
+      "3": 256,
+      "4": 256
+    }
+  },
+  "version": 1
+}

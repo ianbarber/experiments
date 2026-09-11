@@ -1,0 +1,14 @@
+{
+  "projection_of_original_records": true,
+  "original_implementation_freeze_sha256": "fc9e5cb95f729d8c60ee7623ebd8bdfcbc836088ff04702eb0648143f3da7eb2",
+  "created_utc": "2026-09-10T19:07:48.494625+00:00",
+  "scope": "Independent code finalized before any validation or phase-2 outcome. Original plan preceded all reviewer outcome reads; phase-2 plan preceded all phase-2 reads. Two base calibrations and the first uniform_first/1729/epoch1 calibration had been independently audited before this implementation record. No claim of pre-all-model-output code authoring.",
+  "tests_passed_at_freeze": 24,
+  "program_pins_verified_unchanged_at_freeze": 26,
+  "later_execution_diagnostic_addition": {
+    "original_sha256": "03ee35cc2d957f71d0573ac423b57a89f7523e1d32ed788cd931ffb267ead3e5",
+    "created_utc": "2026-09-10T19:10:35.531850+00:00",
+    "scope": "Parent requested membership-versus-order precision after the first completed trained calibration. Additive descriptive execution diagnostic; unchanged metric/gates and unchanged prior independently frozen code.",
+    "tests_passed": 2
+  }
+}

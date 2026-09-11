@@ -1,0 +1,441 @@
+{
+  "created_utc": "2026-09-10T23:59:26.888514+00:00",
+  "method": "stdlib distribution metadata and source reads only; no torch/transformers/PEFT import",
+  "versions": {
+    "torch": "2.13.0+cu130",
+    "transformers": "5.12.1",
+    "peft": "0.18.1",
+    "bitsandbytes": "0.49.2"
+  },
+  "sources": {
+    "transformers/generation/configuration_utils.py": {
+      "sha256": "5feaa3dd36a0f9096a0c92dcc8394db73a9d5e86bc21eeaaed69290cb6650e44",
+      "excerpts": [
+        {
+          "first_line": 368,
+          "last_line": 469,
+          "text": "368:     def __init__(self, **kwargs):\n369:         # Snapshot of the attributes the caller explicitly provided (before the `kwargs.pop(...)` calls below\n370:         # consume them). Used by `validate()` to restrict \"minor issue\" warnings to flags actually set by the user,\n371:         # as opposed to defaults inherited from a model's `generation_config.json`.\n372:         user_set_attributes = set(kwargs.keys())\n373: \n374:         # Parameters that control the length of the output\n375:         self.max_length = kwargs.pop(\"max_length\", None)\n376:         self.max_new_tokens = kwargs.pop(\"max_new_tokens\", None)\n377:         self.min_length = kwargs.pop(\"min_length\", None)\n378:         self.min_new_tokens = kwargs.pop(\"min_new_tokens\", None)\n379:         self.early_stopping = kwargs.pop(\"early_stopping\", None)\n380:         self.max_time = kwargs.pop(\"max_time\", None)\n381:         self.stop_strings = kwargs.pop(\"stop_strings\", None)\n382: \n383:         # Parameters that control the generation strategy used\n384:         self.do_sample = kwargs.pop(\"do_sample\", None)\n385:         self.num_beams = kwargs.pop(\"num_beams\", None)\n386: \n387:         # Parameters that control the cache\n388:         self.use_cache = kwargs.pop(\"use_cache\", None)\n389:         self.cache_implementation = kwargs.pop(\"cache_implementation\", None)\n390:         self.cache_config = kwargs.pop(\"cache_config\", None)\n391: \n392:         # Parameters for manipulation of the model output logits\n393:         self.temperature = kwargs.pop(\"temperature\", None)\n394:         self.top_k = kwargs.pop(\"top_k\", None)\n395:         self.top_p = kwargs.pop(\"top_p\", None)\n396:         self.min_p = kwargs.pop(\"min_p\", None)\n397:         self.top_h = kwargs.pop(\"top_h\", None)\n398:         self.typical_p = kwargs.pop(\"typical_p\", None)\n399:         self.epsilon_cutoff = kwargs.pop(\"epsilon_cutoff\", None)\n400:         self.eta_cutoff = kwargs.pop(\"eta_cutoff\", None)\n401:         self.repetition_penalty = kwargs.pop(\"repetition_penalty\", None)\n402:         self.encoder_repetition_penalty = kwargs.pop(\"encoder_repetition_penalty\", None)\n403:         self.length_penalty = kwargs.pop(\"length_penalty\", None)\n404:         self.no_repeat_ngram_size = kwargs.pop(\"no_repeat_ngram_size\", None)\n405:         self.bad_words_ids = kwargs.pop(\"bad_words_ids\", None)\n406:         self.renormalize_logits = kwargs.pop(\"renormalize_logits\", None)\n407:         self.forced_bos_token_id = kwargs.pop(\"forced_bos_token_id\", None)\n408:         self.forced_eos_token_id = kwargs.pop(\"forced_eos_token_id\", None)\n409:         self.remove_invalid_values = kwargs.pop(\"remove_invalid_values\", None)\n410:         self.exponential_decay_length_penalty = kwargs.pop(\"exponential_decay_length_penalty\", None)\n411:         self.suppress_tokens = kwargs.pop(\"suppress_tokens\", None)\n412:         self.begin_suppress_tokens = kwargs.pop(\"begin_suppress_tokens\", None)\n413:         self.sequence_bias = kwargs.pop(\"sequence_bias\", None)\n414:         self.token_healing = kwargs.pop(\"token_healing\", None)\n415:         self.guidance_scale = kwargs.pop(\"guidance_scale\", None)\n416: \n417:         self.watermarking_config = kwargs.pop(\"watermarking_config\", None)\n418:         if isinstance(self.watermarking_config, dict):\n419:             self.watermarking_config = WatermarkingConfig.from_dict(self.watermarking_config)\n420: \n421:         # Parameters that define the output variables of `generate`\n422:         self.num_return_sequences = kwargs.pop(\"num_return_sequences\", None)\n423:         self.output_attentions = kwargs.pop(\"output_attentions\", None)\n424:         self.output_hidden_states = kwargs.pop(\"output_hidden_states\", None)\n425:         self.output_scores = kwargs.pop(\"output_scores\", None)\n426:         self.output_logits = kwargs.pop(\"output_logits\", None)\n427:         self.return_dict_in_generate = kwargs.pop(\"return_dict_in_generate\", None)\n428: \n429:         # Special tokens that can be used at generation time\n430:         self.pad_token_id = kwargs.pop(\"pad_token_id\", None)\n431:         self.bos_token_id = kwargs.pop(\"bos_token_id\", None)\n432:         self.eos_token_id = kwargs.pop(\"eos_token_id\", None)\n433: \n434:         # Generation parameters exclusive to encoder-decoder models\n435:         self.encoder_no_repeat_ngram_size = kwargs.pop(\"encoder_no_repeat_ngram_size\", None)\n436:         self.decoder_start_token_id = kwargs.pop(\"decoder_start_token_id\", None)\n437: \n438:         # Assistant generation\n439:         self.is_assistant = kwargs.pop(\"is_assistant\", None)\n440:         self.num_assistant_tokens = kwargs.pop(\"num_assistant_tokens\", None)\n441:         self.num_assistant_tokens_schedule = kwargs.pop(\"num_assistant_tokens_schedule\", None)\n442:         self.assistant_confidence_threshold = kwargs.pop(\"assistant_confidence_threshold\", None)\n443:         self.prompt_lookup_num_tokens = kwargs.pop(\"prompt_lookup_num_tokens\", None)\n444:         self.max_matching_ngram_size = kwargs.pop(\"max_matching_ngram_size\", None)\n445:         self.assistant_early_exit = kwargs.pop(\"assistant_early_exit\", None)\n446:         self.assistant_lookbehind = kwargs.pop(\"assistant_lookbehind\", None)\n447:         self.target_lookbehind = kwargs.pop(\"target_lookbehind\", None)\n448: \n449:         # Performance\n450:         self.compile_config = kwargs.pop(\"compile_config\", None)\n451:         self.disable_compile = kwargs.pop(\"disable_compile\", None)\n452: \n453:         self.continuous_batching_config = kwargs.pop(\"continuous_batching_config\", None)\n454: \n455:         # Deprecated (moved to the Hub). TODO remove for v5\n456:         self.low_memory = kwargs.pop(\"low_memory\", None)\n457:         self.penalty_alpha = kwargs.pop(\"penalty_alpha\", None)\n458:         self.dola_layers = kwargs.pop(\"dola_layers\", None)\n459:         self.diversity_penalty = kwargs.pop(\"diversity_penalty\", None)\n460:         self.num_beam_groups = kwargs.pop(\"num_beam_groups\", None)\n461:         self.constraints = kwargs.pop(\"constraints\", None)\n462:         self.force_words_ids = kwargs.pop(\"force_words_ids\", None)\n463: \n464:         self.prefill_chunk_size = kwargs.pop(\"prefill_chunk_size\", None)\n465: \n466:         # Common attributes\n467:         self._commit_hash = kwargs.pop(\"_commit_hash\", None)\n468:         self._from_model_config = kwargs.pop(\"_from_model_config\", None)\n469:         self.transformers_version = kwargs.pop(\"transformers_version\", None)"
+        },
+        {
+          "first_line": 517,
+          "last_line": 540,
+          "text": "517:         \"\"\"\n518:         # TODO joao: find out a way of not depending on external fields (e.g. `assistant_model`), then make this a\n519:         # property and part of the `__repr__`\n520:         if self.constraints is not None or self.force_words_ids is not None:\n521:             generation_mode = GenerationMode.CONSTRAINED_BEAM_SEARCH\n522:         elif self.num_beams is None or self.num_beams == 1:\n523:             if self.do_sample is not True:\n524:                 if (\n525:                     self.top_k is not None\n526:                     and self.top_k > 1\n527:                     and self.penalty_alpha is not None\n528:                     and self.penalty_alpha > 0\n529:                 ):\n530:                     generation_mode = GenerationMode.CONTRASTIVE_SEARCH\n531:                 else:\n532:                     generation_mode = GenerationMode.GREEDY_SEARCH\n533:             else:\n534:                 generation_mode = GenerationMode.SAMPLE\n535:         else:\n536:             if self.num_beam_groups is not None and self.num_beam_groups > 1:\n537:                 generation_mode = GenerationMode.GROUP_BEAM_SEARCH\n538:             elif self.do_sample is True:\n539:                 generation_mode = GenerationMode.BEAM_SAMPLE\n540:             else:"
+        },
+        {
+          "first_line": 571,
+          "last_line": 616,
+          "text": "571:     @staticmethod\n572:     def _get_default_generation_params() -> dict[str, Any]:\n573:         \"\"\"\n574:         Defaults to be applied when unset by the model OR by the user, such that `model.generate()` works with minimal\n575:         paremeterization.\n576: \n577:         Pretrained checkpoints should set these as appropriate in their `generation_config.json`, to establish\n578:         a better default baseline. Be mindful that tests will often use these values.\n579:         \"\"\"\n580:         return {\n581:             \"max_length\": 20,\n582:             \"min_length\": 0,\n583:             \"do_sample\": False,\n584:             \"use_cache\": True,\n585:             \"early_stopping\": False,\n586:             \"num_beams\": 1,\n587:             \"temperature\": 1.0,\n588:             \"top_k\": 50,\n589:             \"top_p\": 1.0,\n590:             \"typical_p\": 1.0,\n591:             \"repetition_penalty\": 1.0,\n592:             \"length_penalty\": 1.0,\n593:             \"no_repeat_ngram_size\": 0,\n594:             \"encoder_no_repeat_ngram_size\": 0,\n595:             \"bad_words_ids\": None,\n596:             \"num_return_sequences\": 1,\n597:             \"output_scores\": False,\n598:             \"return_dict_in_generate\": False,\n599:             \"forced_bos_token_id\": None,\n600:             \"forced_eos_token_id\": None,\n601:             \"remove_invalid_values\": False,\n602:             \"exponential_decay_length_penalty\": None,\n603:             \"suppress_tokens\": None,\n604:             \"begin_suppress_tokens\": None,\n605:             \"epsilon_cutoff\": 0.0,\n606:             \"eta_cutoff\": 0.0,\n607:             \"encoder_repetition_penalty\": 1.0,\n608:             \"num_assistant_tokens\": 20,\n609:             \"num_assistant_tokens_schedule\": \"constant\",\n610:             \"assistant_confidence_threshold\": 0.4,\n611:             \"assistant_lookbehind\": 10,\n612:             \"target_lookbehind\": 10,\n613:             # Deprecated arguments (moved to the Hub). TODO joao, manuel: remove in v4.62.0\n614:             \"num_beam_groups\": 1,\n615:             \"diversity_penalty\": 0.0,\n616:         }"
+        }
+      ]
+    },
+    "transformers/generation/utils.py": {
+      "sha256": "1eaf0aebe61f9616968f298bc33c78f6bfc83cb43f563db4d7ce572824131c7b",
+      "excerpts": [
+        {
+          "first_line": 713,
+          "last_line": 735,
+          "text": "713:     def _prepare_position_ids_for_generation(self, inputs_tensor, model_kwargs):\n714:         \"\"\"\n715:         Tries to infer position ids given attention mask and past kv cache length. All instances when\n716:         `position_ids=None` should call this method.\n717:         \"\"\"\n718:         # `input_ids` may be present in the model kwargs, instead of being the main input (e.g. multimodal model)\n719:         if \"input_ids\" in model_kwargs and model_kwargs[\"input_ids\"].shape[1] > 0:\n720:             inputs_tensor = model_kwargs[\"input_ids\"]\n721: \n722:         seq_length = inputs_tensor.shape[1]\n723: \n724:         if (attention_mask := model_kwargs.get(\"attention_mask\")) is not None:\n725:             position_ids = attention_mask.long().cumsum(-1) - 1\n726:             # We need this as otherwise padding tokens appear as -1 in position\n727:             position_ids = position_ids.masked_fill(attention_mask == 0, 0)\n728:         else:\n729:             past_length = 0\n730:             if (cache := model_kwargs.get(\"past_key_values\")) is not None:\n731:                 past_length = cache.get_seq_length()\n732: \n733:             position_ids = torch.arange(seq_length + past_length, dtype=torch.long, device=inputs_tensor.device)\n734:             position_ids = position_ids.unsqueeze(0)\n735:         return position_ids"
+        },
+        {
+          "first_line": 1106,
+          "last_line": 1126,
+          "text": "1106:                         penalty=generation_config.encoder_repetition_penalty,\n1107:                         encoder_input_ids=encoder_input_ids,\n1108:                     )\n1109:                 )\n1110:             else:\n1111:                 warnings.warn(\n1112:                     \"Passing `encoder_repetition_penalty` requires some form of `input_ids` to be passed to \"\n1113:                     \"`generate`, ignoring the argument.\",\n1114:                     UserWarning,\n1115:                 )\n1116:         if generation_config.repetition_penalty is not None and generation_config.repetition_penalty != 1.0:\n1117:             processors.append(RepetitionPenaltyLogitsProcessor(penalty=generation_config.repetition_penalty))\n1118:             if not self.config.is_encoder_decoder and (input_ids_seq_length is None or input_ids_seq_length == 0):\n1119:                 warnings.warn(\n1120:                     \"Passing `repetition_penalty` with `inputs_embeds` and without `input_ids` to `generate` will \"\n1121:                     \"apply the penalty only to newly generated tokens, not to the prompt.\",\n1122:                     UserWarning,\n1123:                 )\n1124:         if generation_config.no_repeat_ngram_size is not None and generation_config.no_repeat_ngram_size > 0:\n1125:             processors.append(NoRepeatNGramLogitsProcessor(generation_config.no_repeat_ngram_size))\n1126:             if not self.config.is_encoder_decoder and (input_ids_seq_length is None or input_ids_seq_length == 0):"
+        },
+        {
+          "first_line": 1235,
+          "last_line": 1271,
+          "text": "1235:         processors = self._merge_criteria_processor_list(processors, logits_processor)\n1236: \n1237:         # Processors previously known as `LogitsWarpers`, only applied with sampling strategies\n1238:         if generation_config.do_sample:\n1239:             # In beam methods, we need to keep at least one non-eos token to explore continuations that might have a\n1240:             # better score (i.e. keep len(list(generation_config._eos_token_tensor)) + 1)\n1241:             if generation_config.num_beams is not None and generation_config.num_beams > 1:\n1242:                 if isinstance(generation_config._eos_token_tensor, list):\n1243:                     min_tokens_to_keep = len(generation_config._eos_token_tensor) + 1\n1244:                 elif isinstance(generation_config._eos_token_tensor, torch.Tensor):\n1245:                     min_tokens_to_keep = generation_config._eos_token_tensor.shape[0] + 1\n1246:                 else:\n1247:                     min_tokens_to_keep = 2\n1248:             else:\n1249:                 min_tokens_to_keep = 1\n1250: \n1251:             # the following idea is largely copied from this PR: https://github.com/huggingface/transformers/pull/5420/files\n1252:             # all samplers can be found in `generation_utils_samplers.py`\n1253:             if generation_config.temperature is not None and generation_config.temperature != 1.0:\n1254:                 processors.append(TemperatureLogitsWarper(generation_config.temperature))\n1255:             if generation_config.top_h is not None:\n1256:                 processors.append(TopHLogitsWarper(top_h=generation_config.top_h))\n1257:             if generation_config.top_k is not None and generation_config.top_k != 0:\n1258:                 processors.append(\n1259:                     TopKLogitsWarper(top_k=generation_config.top_k, min_tokens_to_keep=min_tokens_to_keep)\n1260:                 )\n1261:             if generation_config.top_p is not None and generation_config.top_p < 1.0:\n1262:                 processors.append(\n1263:                     TopPLogitsWarper(top_p=generation_config.top_p, min_tokens_to_keep=min_tokens_to_keep)\n1264:                 )\n1265:             if generation_config.min_p is not None:\n1266:                 # Applied after temperature scaling (see https://github.com/ggerganov/llama.cpp/pull/3841#issuecomment-2073826084)\n1267:                 processors.append(\n1268:                     MinPLogitsWarper(min_p=generation_config.min_p, min_tokens_to_keep=min_tokens_to_keep)\n1269:                 )\n1270:             if generation_config.typical_p is not None and generation_config.typical_p < 1.0:\n1271:                 processors.append("
+        },
+        {
+          "first_line": 1295,
+          "last_line": 1298,
+          "text": "1295:         # `LogitNormalization` should always be the last logit processor, when present\n1296:         if generation_config.renormalize_logits is True:\n1297:             processors.append(LogitNormalization())\n1298:         return processors"
+        },
+        {
+          "first_line": 1661,
+          "last_line": 1675,
+          "text": "1661:         input_ids_length,\n1662:         inputs_tensor,\n1663:     ):\n1664:         \"\"\"Prepared max and min length in generation configs to avoid clashes between similar attributes\"\"\"\n1665: \n1666:         if generation_config.max_new_tokens is not None:\n1667:             if not has_default_max_length and generation_config.max_length is not None:\n1668:                 logger.warning(\n1669:                     f\"Both `max_new_tokens` (={generation_config.max_new_tokens}) and `max_length`(=\"\n1670:                     f\"{generation_config.max_length}) seem to have been set. `max_new_tokens` will take precedence. \"\n1671:                     \"Please refer to the documentation for more information. \"\n1672:                     \"(https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)\"\n1673:                 )\n1674:             generation_config.max_length = generation_config.max_new_tokens + input_ids_length\n1675: "
+        },
+        {
+          "first_line": 1711,
+          "last_line": 1754,
+          "text": "1711:     def _prepare_generation_config(\n1712:         self: \"GenerativePreTrainedModel\",\n1713:         generation_config: GenerationConfig | None,\n1714:         **kwargs: Any,\n1715:     ) -> tuple[GenerationConfig, dict]:\n1716:         \"\"\"\n1717:         Prepares the base generation config, then applies any generation configuration options from kwargs. This\n1718:         function handles retrocompatibility with respect to configuration files.\n1719:         \"\"\"\n1720:         # parameterization priority:\n1721:         # user-defined kwargs or `generation_config` > `self.generation_config` > global default values\n1722:         # TODO (joao): per-model generation config classes.\n1723: \n1724:         generation_config_provided = generation_config is not None\n1725:         if generation_config is None:\n1726:             # Users may modify `model.config` to control generation. This is a legacy behavior and is not supported anymore\n1727:             if len(self.config._get_generation_parameters()) > 0:\n1728:                 raise ValueError(\n1729:                     \"You have modified the pretrained model configuration to control generation \"\n1730:                     f\"We detected the following values set - {self.config._get_generation_parameters()}. \"\n1731:                     \"This strategy to control generation is not supported anymore. Please use and modify `model.generation_config` \"\n1732:                     \"(see https://huggingface.co/docs/transformers/generation_strategies#default-text-generation-configuration )\",\n1733:                 )\n1734:             generation_config = GenerationConfig()\n1735: \n1736:         # `torch.export.export` usually raises an exception if it is called\n1737:         # with ``strict=True``. deepcopy can only be processed if ``strict=False``.\n1738:         generation_config = copy.deepcopy(generation_config)\n1739: \n1740:         # First set values from the loaded `self.generation_config`, then set default values (BC)\n1741:         #\n1742:         # Only update values that are `None`, i.e. these values were not explicitly set by users to `generate()`,\n1743:         # or values that are not present in the current config, i.e. custom entries that were set via `**kwargs`.\n1744:         # Thus we use the specific kwargs `defaults_only=True` (`None` values only) and `allow_custom_entries=True`\n1745:         # (custom entries are carried over).\n1746:         global_defaults = self.generation_config._get_default_generation_params()\n1747:         generation_config.update(**self.generation_config.to_dict(), defaults_only=True, allow_custom_entries=True)\n1748:         generation_config.update(**global_defaults, defaults_only=True)\n1749: \n1750:         # Finally, if there are any kwargs, update config with it -> highest priority at the end\n1751:         model_kwargs = generation_config.update(**kwargs)\n1752: \n1753:         # Related to #40039: prior to this PR, models with sliding window attention were forced to have\n1754:         # `cache_implementation=\"hybrid\"` (the static sliding window cache). For these models, we now want to use"
+        },
+        {
+          "first_line": 2478,
+          "last_line": 2484,
+          "text": "2478:                 raise ValueError(\"`attention_mask` passed to `generate` must be 2D.\")\n2479: \n2480:         kwargs_has_position_ids = model_kwargs.get(\"position_ids\", None) is not None\n2481:         accepts_position_ids = \"position_ids\" in set(inspect.signature(self.forward).parameters.keys())\n2482:         if not kwargs_has_position_ids and accepts_position_ids and not self.config.is_encoder_decoder:\n2483:             model_kwargs[\"position_ids\"] = self._prepare_position_ids_for_generation(inputs_tensor, model_kwargs)\n2484: "
+        },
+        {
+          "first_line": 2804,
+          "last_line": 2857,
+          "text": "2804:             )\n2805:             if synced_gpus and this_peer_finished:\n2806:                 continue\n2807: \n2808:             # Copy is needed to avoid keeping a hanging ref to outputs.logits which may be very large for first iteration\n2809:             # (the clone itself is always small)\n2810:             next_token_logits = outputs.logits[:, -1, :].to(copy=True, dtype=torch.float32, device=input_ids.device)\n2811: \n2812:             # pre-process distribution\n2813:             next_token_scores = logits_processor(input_ids, next_token_logits)\n2814: \n2815:             # Store scores, attentions and hidden_states when required\n2816:             if return_dict_in_generate:\n2817:                 if output_scores:\n2818:                     scores += (next_token_scores,)\n2819:                 if output_logits:\n2820:                     raw_logits += (next_token_logits,)\n2821:                 if output_attentions:\n2822:                     decoder_attentions += (\n2823:                         (outputs.decoder_attentions,) if self.config.is_encoder_decoder else (outputs.attentions,)\n2824:                     )\n2825:                     if self.config.is_encoder_decoder:\n2826:                         cross_attentions += (outputs.cross_attentions,)\n2827: \n2828:                 if output_hidden_states:\n2829:                     decoder_hidden_states += (\n2830:                         (outputs.decoder_hidden_states,)\n2831:                         if self.config.is_encoder_decoder\n2832:                         else (outputs.hidden_states,)\n2833:                     )\n2834: \n2835:             # token selection\n2836:             if do_sample:\n2837:                 probs = nn.functional.softmax(next_token_scores, dim=-1)\n2838:                 # TODO (joao): this OP throws \"skipping cudagraphs due to ['incompatible ops']\", find solution\n2839:                 next_tokens = torch.multinomial(probs, num_samples=1).squeeze(1)\n2840:             else:\n2841:                 next_tokens = torch.argmax(next_token_scores, dim=-1)\n2842: \n2843:             # finished sentences should have their next token be a padding token\n2844:             if has_eos_stopping_criteria:\n2845:                 next_tokens = next_tokens * unfinished_sequences + pad_token_id * (1 - unfinished_sequences)\n2846: \n2847:             # update generated ids, model inputs, and length for next step\n2848:             input_ids = torch.cat([input_ids, next_tokens[:, None]], dim=-1)\n2849:             if streamer is not None:\n2850:                 streamer.put(next_tokens.cpu())\n2851: \n2852:             unfinished_sequences = unfinished_sequences & ~stopping_criteria(input_ids, scores)\n2853:             this_peer_finished = unfinished_sequences.max() == 0\n2854: \n2855:             # This is needed to properly delete outputs.logits which may be very large for first iteration\n2856:             # Otherwise a reference to outputs is kept which keeps the logits alive in the next iteration\n2857:             del outputs"
+        }
+      ]
+    },
+    "transformers/generation/logits_process.py": {
+      "sha256": "3aefb9fd5d35a2efb37c2bde596b0a2c55ab1bfa82b55de2df2b16062b3eb957",
+      "excerpts": [
+        {
+          "first_line": 306,
+          "last_line": 326,
+          "text": "306: class RepetitionPenaltyLogitsProcessor(LogitsProcessor):\n307:     r\"\"\"\n308:     [`LogitsProcessor`] that prevents the repetition of previous tokens through a penalty. This penalty is applied at\n309:     most once per token. Note that, for decoder-only models like most LLMs, the considered tokens include the prompt\n310:     by default.\n311: \n312:     In the original [paper](https://huggingface.co/papers/1909.05858), the authors suggest the use of a penalty of around\n313:     1.2 to achieve a good balance between truthful generation and lack of repetition. To penalize and reduce\n314:     repetition, use `penalty` values above 1.0, where a higher value penalizes more strongly. To reward and encourage\n315:     repetition, use `penalty` values between 0.0 and 1.0, where a lower value rewards more strongly.\n316: \n317:     Args:\n318:         penalty (`float`):\n319:             The parameter for repetition penalty. 1.0 means no penalty. Above 1.0 penalizes previously generated\n320:             tokens. Between 0.0 and 1.0 rewards previously generated tokens.\n321:         prompt_ignore_length (`int`, *optional*):\n322:             The original input ids sequence length, which if provided, will not be used in the penalty calculation.\n323: \n324:     Examples:\n325: \n326:     ```py"
+        },
+        {
+          "first_line": 357,
+          "last_line": 375,
+          "text": "357: \n358:     def __init__(self, penalty: float, prompt_ignore_length: int | None = None):\n359:         if not isinstance(penalty, float) or not (penalty > 0):\n360:             raise ValueError(f\"`penalty` has to be a strictly positive float, but is {penalty}\")\n361: \n362:         if prompt_ignore_length is not None and (\n363:             not isinstance(prompt_ignore_length, int) or prompt_ignore_length < 0\n364:         ):\n365:             raise ValueError(f\"`prompt_ignore_length` has to be a positive integer, but is {prompt_ignore_length}\")\n366: \n367:         self.penalty = penalty\n368:         self.prompt_ignore_length = prompt_ignore_length\n369:         self.logits_indices = None\n370:         self.cu_seq_lens_q = None\n371: \n372:     @add_start_docstrings(LOGITS_PROCESSOR_INPUTS_DOCSTRING)\n373:     def __call__(self, input_ids: torch.LongTensor, scores: torch.FloatTensor) -> torch.FloatTensor:\n374:         if self.prompt_ignore_length:\n375:             input_ids = input_ids[:, self.prompt_ignore_length :]"
+        },
+        {
+          "first_line": 406,
+          "last_line": 413,
+          "text": "406:         if input_ids.dim() == 1:\n407:             input_ids = input_ids.unsqueeze(1)\n408: \n409:         score = torch.gather(scores, 1, input_ids)\n410:         # if score < 0 then repetition penalty has to be multiplied to reduce the token probabilities\n411:         score = torch.where(score < 0, score * self.penalty, score / self.penalty)\n412:         scores_processed = scores.scatter(1, input_ids, score)\n413:         return scores_processed"
+        }
+      ]
+    },
+    "transformers/models/qwen2/modeling_qwen2.py": {
+      "sha256": "99fa98c5676604cf6ef505892b70fda5c1c4cd835971459f38d61090cccab1e4",
+      "excerpts": [
+        {
+          "first_line": 430,
+          "last_line": 485,
+          "text": "430: \n431:     @can_return_tuple\n432:     @auto_docstring\n433:     def forward(\n434:         self,\n435:         input_ids: torch.LongTensor | None = None,\n436:         attention_mask: torch.Tensor | None = None,\n437:         position_ids: torch.LongTensor | None = None,\n438:         past_key_values: Cache | None = None,\n439:         inputs_embeds: torch.FloatTensor | None = None,\n440:         labels: torch.LongTensor | None = None,\n441:         use_cache: bool | None = None,\n442:         logits_to_keep: int | torch.Tensor = 0,\n443:         **kwargs: Unpack[TransformersKwargs],\n444:     ) -> CausalLMOutputWithPast:\n445:         r\"\"\"\n446:         Example:\n447: \n448:         ```python\n449:         >>> from transformers import AutoTokenizer, Qwen2ForCausalLM\n450: \n451:         >>> model = Qwen2ForCausalLM.from_pretrained(\"meta-qwen2/Qwen2-2-7b-hf\")\n452:         >>> tokenizer = AutoTokenizer.from_pretrained(\"meta-qwen2/Qwen2-2-7b-hf\")\n453: \n454:         >>> prompt = \"Hey, are you conscious? Can you talk to me?\"\n455:         >>> inputs = tokenizer(prompt, return_tensors=\"pt\")\n456: \n457:         >>> # Generate\n458:         >>> generate_ids = model.generate(inputs.input_ids, max_length=30)\n459:         >>> tokenizer.batch_decode(generate_ids, skip_special_tokens=True, clean_up_tokenization_spaces=False)[0]\n460:         \"Hey, are you conscious? Can you talk to me?\\nI'm not conscious, but I can talk to you.\"\n461:         ```\"\"\"\n462:         outputs: BaseModelOutputWithPast = self.model(\n463:             input_ids=input_ids,\n464:             attention_mask=attention_mask,\n465:             position_ids=position_ids,\n466:             past_key_values=past_key_values,\n467:             inputs_embeds=inputs_embeds,\n468:             use_cache=use_cache,\n469:             **kwargs,\n470:         )\n471: \n472:         hidden_states = outputs.last_hidden_state\n473:         # Only compute necessary logits, and do not upcast them to float if we are not computing the loss\n474:         slice_indices = slice(-logits_to_keep, None) if isinstance(logits_to_keep, int) else logits_to_keep\n475:         logits = self.lm_head(hidden_states[:, slice_indices, :])\n476: \n477:         loss = None\n478:         if labels is not None:\n479:             loss = self.loss_function(logits=logits, labels=labels, vocab_size=self.config.vocab_size, **kwargs)\n480: \n481:         return CausalLMOutputWithPast(\n482:             loss=loss,\n483:             logits=logits,\n484:             past_key_values=outputs.past_key_values,\n485:             hidden_states=outputs.hidden_states,"
+        }
+      ]
+    },
+    "peft/peft_model.py": {
+      "sha256": "b847795c28bc4b00b3224c0dcea90edbee40ee60384cd104fdafd7056afcb13e",
+      "excerpts": [
+        {
+          "first_line": 464,
+          "last_line": 485,
+          "text": "464:         else:\n465:             raise ValueError(f\"The input config must be a PeftConfig, got {config.__class__}\")\n466: \n467:         # See discussion in https://github.com/huggingface/transformers/pull/38627\n468:         # Some transformers models can have a _checkpoint_conversion_mapping dict that is used to map state_dicts\n469:         # stemming from updated model architectures so that they still correspond to the initial architecture. When\n470:         # loading a PEFT state_dict created with the initial architecture on a model with the new architecture, we need\n471:         # to map it too according to the same rules. Note that we skip prompt learning methods. This is because they\n472:         # don't have the \"base_model.model.\" prefix, which we need to remove before mapping. Instead just using\n473:         # \"base_model.\". This could be fine, we could only remove \"base_model.\", However, the subsequent sub-module\n474:         # could also be called \"model\", resulting in what looks like \"base_model.model.\". To avoid this confusion, we\n475:         # skip prompt learning. Since it applies itself directly to the pre-trained model (unlike LoRA et al that target\n476:         # sub-modules), skipping should be fine.\n477:         if (key_mapping is None) and (not config.is_prompt_learning):\n478:             key_mapping = getattr(model, \"_checkpoint_conversion_mapping\", {})\n479: \n480:         # Runtime configuration, if supported\n481:         if hasattr(config, \"runtime_config\"):\n482:             config.runtime_config.ephemeral_gpu_offload = ephemeral_gpu_offload\n483:         else:\n484:             if ephemeral_gpu_offload:\n485:                 warnings.warn(\"Ephemeral GPU offloading is not supported for this model. Ignoring.\")"
+        },
+        {
+          "first_line": 522,
+          "last_line": 525,
+          "text": "522:         if config.is_prompt_learning and is_trainable:\n523:             raise ValueError(\"Cannot set a prompt learning adapter to trainable when loading pretrained adapter.\")\n524:         else:\n525:             config.inference_mode = not is_trainable"
+        },
+        {
+          "first_line": 540,
+          "last_line": 580,
+          "text": "540:                     ]\n541:                     # Prepare a dict of adapter paths, which really just point to the hf id; we will use the subfolders\n542:                     adapter_paths = {}\n543:                     for adapter_name in adapter_names:\n544:                         adapter_paths[adapter_name] = os.path.join(model_id, model_id)\n545:                     config.adapters = adapter_paths\n546:                     config._subfolders = adapter_names\n547:                 else:\n548:                     if \"adapters\" not in kwargs:\n549:                         raise ValueError(\"If model_id is a local path, then `adapters` must be passed in kwargs.\")\n550: \n551:         if config.task_type not in MODEL_TYPE_TO_PEFT_MODEL_MAPPING.keys():\n552:             model = cls(\n553:                 model,\n554:                 config,\n555:                 adapter_name,\n556:                 autocast_adapter_dtype=autocast_adapter_dtype,\n557:                 low_cpu_mem_usage=low_cpu_mem_usage,\n558:             )\n559:         else:\n560:             model = MODEL_TYPE_TO_PEFT_MODEL_MAPPING[config.task_type](\n561:                 model,\n562:                 config,\n563:                 adapter_name,\n564:                 autocast_adapter_dtype=autocast_adapter_dtype,\n565:                 low_cpu_mem_usage=low_cpu_mem_usage,\n566:             )\n567: \n568:         load_result = model.load_adapter(\n569:             model_id,\n570:             adapter_name,\n571:             is_trainable=is_trainable,\n572:             autocast_adapter_dtype=autocast_adapter_dtype,\n573:             low_cpu_mem_usage=low_cpu_mem_usage,\n574:             key_mapping=key_mapping,\n575:             **kwargs,\n576:         )\n577: \n578:         # 1. Remove VB-LoRA vector bank, since it's a shared parameter set via the VBLoRAModel\n579:         # 2. Remove the prompt encoder, as it does not need to be part of the checkpoint\n580:         missing_keys = ["
+        },
+        {
+          "first_line": 920,
+          "last_line": 926,
+          "text": "920:             kwargs = {k: v for k, v in kwargs.items() if k not in self.special_peft_forward_args}\n921:             return self.get_base_model()(*args, **kwargs)\n922: \n923:     def generate(self, *args, **kwargs):\n924:         with self._enable_peft_forward_hooks(*args, **kwargs):\n925:             kwargs = {k: v for k, v in kwargs.items() if k not in self.special_peft_forward_args}\n926:             return self.get_base_model().generate(*args, **kwargs)"
+        },
+        {
+          "first_line": 1353,
+          "last_line": 1374,
+          "text": "1353:             ].from_pretrained(\n1354:                 model_id,\n1355:                 ephemeral_gpu_offload=ephemeral_gpu_offload,\n1356:                 **hf_hub_download_kwargs,\n1357:             )\n1358:             self._check_new_adapter_config(peft_config, is_trainable=is_trainable)\n1359:             peft_config.inference_mode = not is_trainable\n1360:             self.add_adapter(adapter_name, peft_config, low_cpu_mem_usage=low_cpu_mem_usage)\n1361: \n1362:         adapters_weights = load_peft_weights(\n1363:             model_id, device=torch_device, key_mapping=key_mapping, **hf_hub_download_kwargs\n1364:         )\n1365: \n1366:         # load the weights into the model\n1367:         ignore_mismatched_sizes = kwargs.get(\"ignore_mismatched_sizes\", False)\n1368:         load_result = set_peft_model_state_dict(\n1369:             self,\n1370:             adapters_weights,\n1371:             adapter_name=adapter_name,\n1372:             ignore_mismatched_sizes=ignore_mismatched_sizes,\n1373:             low_cpu_mem_usage=low_cpu_mem_usage,\n1374:         )"
+        },
+        {
+          "first_line": 2035,
+          "last_line": 2056,
+          "text": "2035:     def generate(self, *args, **kwargs):\n2036:         peft_config = self.active_peft_config\n2037:         self.base_model.prepare_inputs_for_generation = self.prepare_inputs_for_generation\n2038:         if hasattr(self.base_model, \"model\"):\n2039:             self.base_model.model.generation_config = self.generation_config\n2040:         else:\n2041:             self.base_model.generation_config = self.generation_config\n2042:         try:\n2043:             if not peft_config.is_prompt_learning:\n2044:                 # Adds alora_offsets to kwargs if relevant. No other changes.\n2045:                 kwargs = get_alora_offsets_for_generate(self, *args, **kwargs)\n2046:                 with self._enable_peft_forward_hooks(*args, **kwargs):\n2047:                     kwargs = {k: v for k, v in kwargs.items() if k not in self.special_peft_forward_args}\n2048:                     outputs = self.base_model.generate(*args, **kwargs)\n2049:             else:\n2050:                 outputs = self.base_model.generate(**kwargs)\n2051:         except:\n2052:             self.base_model.prepare_inputs_for_generation = self.base_model_prepare_inputs_for_generation\n2053:             raise\n2054:         else:\n2055:             self.base_model.prepare_inputs_for_generation = self.base_model_prepare_inputs_for_generation\n2056:             return outputs"
+        }
+      ]
+    },
+    "peft/utils/other.py": {
+      "sha256": "c5e3db7e853791235b110e5ecbf0a77095179b7ba42491da4bcb8c80a6c0c53d",
+      "excerpts": [
+        {
+          "first_line": 130,
+          "last_line": 179,
+          "text": "130: def prepare_model_for_kbit_training(model, use_gradient_checkpointing=True, gradient_checkpointing_kwargs=None):\n131:     r\"\"\"\n132:     Note this method only works for `transformers` models.\n133: \n134:     This method wraps the entire protocol for preparing a model before running a training. This includes:\n135:         1- Cast the layernorm in fp32 2- making output embedding layer require grads 3- Add the upcasting of the lm\n136:         head to fp32 4- Freezing the base model layers to ensure they are not updated during training\n137: \n138: \n139:     Args:\n140:         model (`transformers.PreTrainedModel`):\n141:             The loaded model from `transformers`\n142:         use_gradient_checkpointing (`bool`, *optional*, defaults to `True`):\n143:             If True, use gradient checkpointing to save memory at the expense of slower backward pass.\n144:         gradient_checkpointing_kwargs (`dict`, *optional*, defaults to `None`):\n145:             Keyword arguments to pass to the gradient checkpointing function, please refer to the documentation of\n146:             `torch.utils.checkpoint.checkpoint` for more details about the arguments that you can pass to that method.\n147:             Note this is only available in the latest transformers versions (> 4.34.1).\n148:     \"\"\"\n149:     loaded_in_kbit = getattr(model, \"is_loaded_in_8bit\", False) or getattr(model, \"is_loaded_in_4bit\", False)\n150:     is_gptq_quantized = getattr(model, \"quantization_method\", None) == \"gptq\"\n151:     is_aqlm_quantized = getattr(model, \"quantization_method\", None) == \"aqlm\"\n152:     is_eetq_quantized = getattr(model, \"quantization_method\", None) == \"eetq\"\n153:     is_torchao_quantized = getattr(model, \"quantization_method\", None) == \"torchao\"\n154:     is_hqq_quantized = getattr(model, \"quantization_method\", None) == \"hqq\" or getattr(model, \"hqq_quantized\", False)\n155: \n156:     if gradient_checkpointing_kwargs is None:\n157:         gradient_checkpointing_kwargs = {}\n158: \n159:     for name, param in model.named_parameters():\n160:         # freeze base model's layers\n161:         param.requires_grad = False\n162: \n163:     if (\n164:         not is_gptq_quantized\n165:         and not is_aqlm_quantized\n166:         and not is_eetq_quantized\n167:         and not is_hqq_quantized\n168:         and not is_torchao_quantized\n169:     ):\n170:         # cast all non INT8 parameters to fp32\n171:         for param in model.parameters():\n172:             if (\n173:                 (param.dtype == torch.float16) or (param.dtype == torch.bfloat16)\n174:             ) and param.__class__.__name__ != \"Params4bit\":\n175:                 param.data = param.data.to(torch.float32)\n176: \n177:     if (\n178:         loaded_in_kbit\n179:         or is_gptq_quantized"
+        }
+      ]
+    },
+    "peft/tuners/lora/layer.py": {
+      "sha256": "e8a47a49cf69f92ded68bf7ab286aeaf068f0ac809ab3465ad16f78a8f9f8b63",
+      "excerpts": [
+        {
+          "first_line": 246,
+          "last_line": 266,
+          "text": "246:                     self.lora_arrow[adapter].on_adapter_change(self.lora_A, self.lora_B)\n247: \n248:     def reset_lora_parameters(self, adapter_name, init_lora_weights):\n249:         if init_lora_weights is False:\n250:             return\n251: \n252:         if adapter_name in self.lora_A.keys():\n253:             if init_lora_weights is True:\n254:                 # initialize A the same way as the default for nn.Linear and B to zero\n255:                 # https://github.com/microsoft/LoRA/blob/a0a92e0f26c067cf94747bdbf1ce73793fa44d19/loralib/layers.py#L124\n256:                 nn.init.kaiming_uniform_(self.lora_A[adapter_name].weight, a=math.sqrt(5))\n257:             elif init_lora_weights.lower() == \"gaussian\":\n258:                 nn.init.normal_(self.lora_A[adapter_name].weight, std=1 / self.r[adapter_name])\n259:             else:\n260:                 raise ValueError(f\"Unknown initialization {init_lora_weights=}\")\n261:             nn.init.zeros_(self.lora_B[adapter_name].weight)\n262:             if self.lora_bias[adapter_name]:\n263:                 nn.init.zeros_(self.lora_B[adapter_name].bias)\n264:         if adapter_name in self.lora_embedding_A.keys():\n265:             # Initialize A to zeros and B the same way as the default for nn.Embedding, see:\n266:             # https://github.com/microsoft/LoRA/blob/4c0333854cb905966f8cc4e9a74068c1e507c7b7/loralib/layers.py#L59-L60"
+        }
+      ]
+    },
+    "torch/optim/adamw.py": {
+      "sha256": "d0f3a2d889a43b65ed48175900f634bb5a244c8cd79a3f1117dc852ddad4b1e9",
+      "excerpts": [
+        {
+          "first_line": 21,
+          "last_line": 66,
+          "text": "21:     def __init__(\n22:         self,\n23:         params: ParamsT,\n24:         lr: float | Tensor = 1e-3,\n25:         betas: tuple[float | Tensor, float | Tensor] = (0.9, 0.999),\n26:         eps: float = 1e-8,\n27:         weight_decay: float = 1e-2,\n28:         amsgrad: bool = False,\n29:         *,\n30:         maximize: bool = False,\n31:         foreach: bool | None = None,\n32:         capturable: bool = False,\n33:         differentiable: bool = False,\n34:         fused: bool | None = None,\n35:     ) -> None:\n36:         super().__init__(\n37:             params,\n38:             lr,\n39:             betas,\n40:             eps,\n41:             weight_decay,\n42:             amsgrad,\n43:             foreach=foreach,\n44:             maximize=maximize,\n45:             capturable=capturable,\n46:             differentiable=differentiable,\n47:             fused=fused,\n48:             decoupled_weight_decay=True,\n49:         )\n50: \n51:     # Preserve decoupled_weight_decay from AdamW for backwards compatibility. The following\n52:     # guarantees that decoupled_weight_decay will always be True for loading any state into\n53:     # AdamW\n54:     def __setstate__(self, state):\n55:         super().__setstate__(state)\n56:         for group in self.param_groups:\n57:             group[\"decoupled_weight_decay\"] = True\n58: \n59: \n60: AdamW.__doc__ = (\n61:     r\"\"\"Implements AdamW algorithm, where weight decay does not accumulate in the momentum nor variance.\n62: \n63:     .. math::\n64:        \\begin{aligned}\n65:             &\\rule{110mm}{0.4pt}                                                                 \\\\\n66:             &\\textbf{input}      : \\gamma \\text{(lr)}, \\: \\beta_1, \\beta_2"
+        }
+      ]
+    }
+  },
+  "library_generation_fallbacks": {
+    "max_length": 20,
+    "min_length": 0,
+    "do_sample": false,
+    "use_cache": true,
+    "early_stopping": false,
+    "num_beams": 1,
+    "temperature": 1.0,
+    "top_k": 50,
+    "top_p": 1.0,
+    "typical_p": 1.0,
+    "repetition_penalty": 1.0,
+    "length_penalty": 1.0,
+    "no_repeat_ngram_size": 0,
+    "encoder_no_repeat_ngram_size": 0,
+    "bad_words_ids": null,
+    "num_return_sequences": 1,
+    "output_scores": false,
+    "return_dict_in_generate": false,
+    "forced_bos_token_id": null,
+    "forced_eos_token_id": null,
+    "remove_invalid_values": false,
+    "exponential_decay_length_penalty": null,
+    "suppress_tokens": null,
+    "begin_suppress_tokens": null,
+    "epsilon_cutoff": 0.0,
+    "eta_cutoff": 0.0,
+    "encoder_repetition_penalty": 1.0,
+    "num_assistant_tokens": 20,
+    "num_assistant_tokens_schedule": "constant",
+    "assistant_confidence_threshold": 0.4,
+    "assistant_lookbehind": 10,
+    "target_lookbehind": 10,
+    "num_beam_groups": 1,
+    "diversity_penalty": 0.0
+  },
+  "constructor_generation_defaults": {
+    "max_length": null,
+    "max_new_tokens": null,
+    "min_length": null,
+    "min_new_tokens": null,
+    "early_stopping": null,
+    "max_time": null,
+    "stop_strings": null,
+    "do_sample": null,
+    "num_beams": null,
+    "use_cache": null,
+    "cache_implementation": null,
+    "cache_config": null,
+    "temperature": null,
+    "top_k": null,
+    "top_p": null,
+    "min_p": null,
+    "top_h": null,
+    "typical_p": null,
+    "epsilon_cutoff": null,
+    "eta_cutoff": null,
+    "repetition_penalty": null,
+    "encoder_repetition_penalty": null,
+    "length_penalty": null,
+    "no_repeat_ngram_size": null,
+    "bad_words_ids": null,
+    "renormalize_logits": null,
+    "forced_bos_token_id": null,
+    "forced_eos_token_id": null,
+    "remove_invalid_values": null,
+    "exponential_decay_length_penalty": null,
+    "suppress_tokens": null,
+    "begin_suppress_tokens": null,
+    "sequence_bias": null,
+    "token_healing": null,
+    "guidance_scale": null,
+    "watermarking_config": null,
+    "num_return_sequences": null,
+    "output_attentions": null,
+    "output_hidden_states": null,
+    "output_scores": null,
+    "output_logits": null,
+    "return_dict_in_generate": null,
+    "pad_token_id": null,
+    "bos_token_id": null,
+    "eos_token_id": null,
+    "encoder_no_repeat_ngram_size": null,
+    "decoder_start_token_id": null,
+    "is_assistant": null,
+    "num_assistant_tokens": null,
+    "num_assistant_tokens_schedule": null,
+    "assistant_confidence_threshold": null,
+    "prompt_lookup_num_tokens": null,
+    "max_matching_ngram_size": null,
+    "assistant_early_exit": null,
+    "assistant_lookbehind": null,
+    "target_lookbehind": null,
+    "compile_config": null,
+    "disable_compile": null,
+    "continuous_batching_config": null,
+    "low_memory": null,
+    "penalty_alpha": null,
+    "dola_layers": null,
+    "diversity_penalty": null,
+    "num_beam_groups": null,
+    "constraints": null,
+    "force_words_ids": null,
+    "prefill_chunk_size": null,
+    "_commit_hash": null,
+    "_from_model_config": null,
+    "transformers_version": null
+  },
+  "base_generation_config": {
+    "bos_token_id": 151643,
+    "pad_token_id": 151643,
+    "do_sample": true,
+    "eos_token_id": [
+      151645,
+      151643
+    ],
+    "repetition_penalty": 1.05,
+    "temperature": 0.7,
+    "top_p": 0.8,
+    "top_k": 20,
+    "transformers_version": "4.37.0"
+  },
+  "base_generation_config_exact_text": "{\n  \"bos_token_id\": 151643,\n  \"pad_token_id\": 151643,\n  \"do_sample\": true,\n  \"eos_token_id\": [\n    151645,\n    151643\n  ],\n  \"repetition_penalty\": 1.05,\n  \"temperature\": 0.7,\n  \"top_p\": 0.8,\n  \"top_k\": 20,\n  \"transformers_version\": \"4.37.0\"\n}",
+  "base_generation_config_sha256": "ea35dfb6fc5051b01114f9b995820d55dab01ed33ee490f6378b442af82c09f9",
+  "effective_greedy": {
+    "max_length": 20,
+    "max_new_tokens": 192,
+    "min_length": 0,
+    "min_new_tokens": null,
+    "early_stopping": false,
+    "max_time": null,
+    "stop_strings": null,
+    "do_sample": false,
+    "num_beams": 1,
+    "use_cache": true,
+    "cache_implementation": null,
+    "cache_config": null,
+    "temperature": 0.7,
+    "top_k": 20,
+    "top_p": 0.8,
+    "min_p": null,
+    "top_h": null,
+    "typical_p": 1.0,
+    "epsilon_cutoff": 0.0,
+    "eta_cutoff": 0.0,
+    "repetition_penalty": 1.05,
+    "encoder_repetition_penalty": 1.0,
+    "length_penalty": 1.0,
+    "no_repeat_ngram_size": 0,
+    "bad_words_ids": null,
+    "renormalize_logits": null,
+    "forced_bos_token_id": null,
+    "forced_eos_token_id": null,
+    "remove_invalid_values": false,
+    "exponential_decay_length_penalty": null,
+    "suppress_tokens": null,
+    "begin_suppress_tokens": null,
+    "sequence_bias": null,
+    "token_healing": null,
+    "guidance_scale": null,
+    "watermarking_config": null,
+    "num_return_sequences": 1,
+    "output_attentions": null,
+    "output_hidden_states": null,
+    "output_scores": false,
+    "output_logits": null,
+    "return_dict_in_generate": false,
+    "pad_token_id": 151643,
+    "bos_token_id": 151643,
+    "eos_token_id": 151645,
+    "encoder_no_repeat_ngram_size": 0,
+    "decoder_start_token_id": null,
+    "is_assistant": null,
+    "num_assistant_tokens": 20,
+    "num_assistant_tokens_schedule": "constant",
+    "assistant_confidence_threshold": 0.4,
+    "prompt_lookup_num_tokens": null,
+    "max_matching_ngram_size": null,
+    "assistant_early_exit": null,
+    "assistant_lookbehind": 10,
+    "target_lookbehind": 10,
+    "compile_config": null,
+    "disable_compile": null,
+    "continuous_batching_config": null,
+    "low_memory": null,
+    "penalty_alpha": null,
+    "dola_layers": null,
+    "diversity_penalty": 0.0,
+    "num_beam_groups": 1,
+    "constraints": null,
+    "force_words_ids": null,
+    "prefill_chunk_size": null,
+    "_commit_hash": null,
+    "_from_model_config": null,
+    "transformers_version": "4.37.0"
+  },
+  "effective_sampling": {
+    "max_length": 20,
+    "max_new_tokens": 192,
+    "min_length": 0,
+    "min_new_tokens": null,
+    "early_stopping": false,
+    "max_time": null,
+    "stop_strings": null,
+    "do_sample": true,
+    "num_beams": 1,
+    "use_cache": true,
+    "cache_implementation": null,
+    "cache_config": null,
+    "temperature": 0.7,
+    "top_k": 20,
+    "top_p": 0.95,
+    "min_p": null,
+    "top_h": null,
+    "typical_p": 1.0,
+    "epsilon_cutoff": 0.0,
+    "eta_cutoff": 0.0,
+    "repetition_penalty": 1.05,
+    "encoder_repetition_penalty": 1.0,
+    "length_penalty": 1.0,
+    "no_repeat_ngram_size": 0,
+    "bad_words_ids": null,
+    "renormalize_logits": null,
+    "forced_bos_token_id": null,
+    "forced_eos_token_id": null,
+    "remove_invalid_values": false,
+    "exponential_decay_length_penalty": null,
+    "suppress_tokens": null,
+    "begin_suppress_tokens": null,
+    "sequence_bias": null,
+    "token_healing": null,
+    "guidance_scale": null,
+    "watermarking_config": null,
+    "num_return_sequences": 1,
+    "output_attentions": null,
+    "output_hidden_states": null,
+    "output_scores": false,
+    "output_logits": null,
+    "return_dict_in_generate": false,
+    "pad_token_id": 151643,
+    "bos_token_id": 151643,
+    "eos_token_id": 151645,
+    "encoder_no_repeat_ngram_size": 0,
+    "decoder_start_token_id": null,
+    "is_assistant": null,
+    "num_assistant_tokens": 20,
+    "num_assistant_tokens_schedule": "constant",
+    "assistant_confidence_threshold": 0.4,
+    "prompt_lookup_num_tokens": null,
+    "max_matching_ngram_size": null,
+    "assistant_early_exit": null,
+    "assistant_lookbehind": 10,
+    "target_lookbehind": 10,
+    "compile_config": null,
+    "disable_compile": null,
+    "continuous_batching_config": null,
+    "low_memory": null,
+    "penalty_alpha": null,
+    "dola_layers": null,
+    "diversity_penalty": 0.0,
+    "num_beam_groups": 1,
+    "constraints": null,
+    "force_words_ids": null,
+    "prefill_chunk_size": null,
+    "_commit_hash": null,
+    "_from_model_config": null,
+    "transformers_version": "4.37.0"
+  },
+  "effective_dictionary_scope": "Resolved configuration before max_length preparation; max_length=20 is replaced by padded_input_length+max_new_tokens=192. Sampling warpers are inactive when do_sample=False. None-valued optional constraints are absent."
+}

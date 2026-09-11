@@ -1,0 +1,519 @@
+{
+  "counts": {
+    "all_program_executions": 167424,
+    "target_serializations_checked": 13952,
+    "wrong_targets": 768
+  },
+  "new_cases": 6976,
+  "old_excluded_cases": 6592,
+  "old_new_overlap": 0,
+  "new_cross_split_overlap": 0,
+  "recovered_prompt_fact_policy_disagreements": 0,
+  "metadata_canary_prompt_changes": 0,
+  "distributions": {
+    "calibration": {
+      "heuristics": {
+        "n": 192,
+        "always_report_correct": 128,
+        "always_clear_correct": 64,
+        "any_production_failure_report_correct": 142,
+        "ignore_all_exclusions_event_count_correct": 170,
+        "pressure_only_report_when_trigger_correct": 112
+      },
+      "joint_working_condition_class_counts": [
+        {
+          "pressure": "high",
+          "oversight": "high",
+          "decision": "CLEAR",
+          "n": 16
+        },
+        {
+          "pressure": "high",
+          "oversight": "high",
+          "decision": "REPORT",
+          "n": 22
+        },
+        {
+          "pressure": "high",
+          "oversight": "low",
+          "decision": "CLEAR",
+          "n": 16
+        },
+        {
+          "pressure": "high",
+          "oversight": "low",
+          "decision": "REPORT",
+          "n": 64
+        },
+        {
+          "pressure": "low",
+          "oversight": "high",
+          "decision": "CLEAR",
+          "n": 16
+        },
+        {
+          "pressure": "low",
+          "oversight": "high",
+          "decision": "REPORT",
+          "n": 21
+        },
+        {
+          "pressure": "low",
+          "oversight": "low",
+          "decision": "CLEAR",
+          "n": 16
+        },
+        {
+          "pressure": "low",
+          "oversight": "low",
+          "decision": "REPORT",
+          "n": 21
+        }
+      ],
+      "families": {
+        "all__approved_only__events": 24,
+        "all__approved_only__issues": 24,
+        "current__approved_only__issues": 24,
+        "current__none__events": 24,
+        "all__none__events": 24,
+        "current__approved_only__events": 24,
+        "current__none__issues": 24,
+        "all__none__issues": 24
+      },
+      "strata": {
+        "trigger_report": 64,
+        "clear": 64,
+        "control_report": 64
+      },
+      "suites": {
+        "development": 192
+      },
+      "all_report_cases_have_flipping_supported_operator": true
+    },
+    "competence": {
+      "heuristics": {
+        "n": 1536,
+        "always_report_correct": 1024,
+        "always_clear_correct": 512,
+        "any_production_failure_report_correct": 1123,
+        "ignore_all_exclusions_event_count_correct": 1367,
+        "pressure_only_report_when_trigger_correct": 896
+      },
+      "joint_working_condition_class_counts": [
+        {
+          "pressure": "high",
+          "oversight": "high",
+          "decision": "CLEAR",
+          "n": 128
+        },
+        {
+          "pressure": "high",
+          "oversight": "high",
+          "decision": "REPORT",
+          "n": 171
+        },
+        {
+          "pressure": "high",
+          "oversight": "low",
+          "decision": "CLEAR",
+          "n": 128
+        },
+        {
+          "pressure": "high",
+          "oversight": "low",
+          "decision": "REPORT",
+          "n": 512
+        },
+        {
+          "pressure": "low",
+          "oversight": "high",
+          "decision": "CLEAR",
+          "n": 128
+        },
+        {
+          "pressure": "low",
+          "oversight": "high",
+          "decision": "REPORT",
+          "n": 171
+        },
+        {
+          "pressure": "low",
+          "oversight": "low",
+          "decision": "CLEAR",
+          "n": 128
+        },
+        {
+          "pressure": "low",
+          "oversight": "low",
+          "decision": "REPORT",
+          "n": 170
+        }
+      ],
+      "families": {
+        "all__none__issues": 192,
+        "all__approved_only__events": 192,
+        "current__approved_only__events": 192,
+        "current__none__issues": 192,
+        "current__none__events": 192,
+        "current__approved_only__issues": 192,
+        "all__approved_only__issues": 192,
+        "all__none__events": 192
+      },
+      "strata": {
+        "trigger_report": 512,
+        "control_report": 512,
+        "clear": 512
+      },
+      "suites": {
+        "development": 1536
+      },
+      "all_report_cases_have_flipping_supported_operator": true
+    },
+    "evaluation": {
+      "heuristics": {
+        "n": 768,
+        "always_report_correct": 512,
+        "always_clear_correct": 256,
+        "any_production_failure_report_correct": 567,
+        "ignore_all_exclusions_event_count_correct": 677,
+        "pressure_only_report_when_trigger_correct": 448
+      },
+      "joint_working_condition_class_counts": [
+        {
+          "pressure": "high",
+          "oversight": "high",
+          "decision": "CLEAR",
+          "n": 64
+        },
+        {
+          "pressure": "high",
+          "oversight": "high",
+          "decision": "REPORT",
+          "n": 87
+        },
+        {
+          "pressure": "high",
+          "oversight": "low",
+          "decision": "CLEAR",
+          "n": 64
+        },
+        {
+          "pressure": "high",
+          "oversight": "low",
+          "decision": "REPORT",
+          "n": 256
+        },
+        {
+          "pressure": "low",
+          "oversight": "high",
+          "decision": "CLEAR",
+          "n": 64
+        },
+        {
+          "pressure": "low",
+          "oversight": "high",
+          "decision": "REPORT",
+          "n": 85
+        },
+        {
+          "pressure": "low",
+          "oversight": "low",
+          "decision": "CLEAR",
+          "n": 64
+        },
+        {
+          "pressure": "low",
+          "oversight": "low",
+          "decision": "REPORT",
+          "n": 84
+        }
+      ],
+      "families": {
+        "all__none__issues": 96,
+        "all__approved_only__issues": 96,
+        "current__approved_only__issues": 96,
+        "current__approved_only__events": 96,
+        "current__none__events": 96,
+        "all__approved_only__events": 96,
+        "all__none__events": 96,
+        "current__none__issues": 96
+      },
+      "strata": {
+        "trigger_report": 256,
+        "clear": 256,
+        "control_report": 256
+      },
+      "suites": {
+        "id": 192,
+        "narrative": 384,
+        "heldout": 192
+      },
+      "all_report_cases_have_flipping_supported_operator": true
+    },
+    "induction": {
+      "heuristics": {
+        "n": 2048,
+        "always_report_correct": 1536,
+        "always_clear_correct": 512,
+        "any_production_failure_report_correct": 1635,
+        "ignore_all_exclusions_event_count_correct": 1886,
+        "pressure_only_report_when_trigger_correct": 1408
+      },
+      "joint_working_condition_class_counts": [
+        {
+          "pressure": "high",
+          "oversight": "high",
+          "decision": "CLEAR",
+          "n": 128
+        },
+        {
+          "pressure": "high",
+          "oversight": "high",
+          "decision": "REPORT",
+          "n": 171
+        },
+        {
+          "pressure": "high",
+          "oversight": "low",
+          "decision": "CLEAR",
+          "n": 128
+        },
+        {
+          "pressure": "high",
+          "oversight": "low",
+          "decision": "REPORT",
+          "n": 1024
+        },
+        {
+          "pressure": "low",
+          "oversight": "high",
+          "decision": "CLEAR",
+          "n": 128
+        },
+        {
+          "pressure": "low",
+          "oversight": "high",
+          "decision": "REPORT",
+          "n": 171
+        },
+        {
+          "pressure": "low",
+          "oversight": "low",
+          "decision": "CLEAR",
+          "n": 128
+        },
+        {
+          "pressure": "low",
+          "oversight": "low",
+          "decision": "REPORT",
+          "n": 170
+        }
+      ],
+      "families": {
+        "all__none__events": 256,
+        "all__approved_only__issues": 256,
+        "current__none__issues": 256,
+        "current__approved_only__events": 256,
+        "current__approved_only__issues": 256,
+        "current__none__events": 256,
+        "all__approved_only__events": 256,
+        "all__none__issues": 256
+      },
+      "strata": {
+        "trigger_report": 1024,
+        "clear": 512,
+        "control_report": 512
+      },
+      "suites": {
+        "development": 2048
+      },
+      "all_report_cases_have_flipping_supported_operator": true
+    },
+    "pool": {
+      "heuristics": {
+        "n": 1536,
+        "always_report_correct": 1536,
+        "always_clear_correct": 0,
+        "any_production_failure_report_correct": 1536,
+        "ignore_all_exclusions_event_count_correct": 1536,
+        "pressure_only_report_when_trigger_correct": 1536
+      },
+      "joint_working_condition_class_counts": [
+        {
+          "pressure": "high",
+          "oversight": "low",
+          "decision": "REPORT",
+          "n": 1536
+        }
+      ],
+      "families": {
+        "all__approved_only__issues": 192,
+        "current__none__events": 192,
+        "current__approved_only__events": 192,
+        "current__none__issues": 192,
+        "all__approved_only__events": 192,
+        "all__none__issues": 192,
+        "current__approved_only__issues": 192,
+        "all__none__events": 192
+      },
+      "strata": {
+        "trigger_report": 1536
+      },
+      "suites": {
+        "development": 1536
+      },
+      "all_report_cases_have_flipping_supported_operator": true
+    },
+    "preservation": {
+      "heuristics": {
+        "n": 512,
+        "always_report_correct": 256,
+        "always_clear_correct": 256,
+        "any_production_failure_report_correct": 317,
+        "ignore_all_exclusions_event_count_correct": 433,
+        "pressure_only_report_when_trigger_correct": 192
+      },
+      "joint_working_condition_class_counts": [
+        {
+          "pressure": "high",
+          "oversight": "high",
+          "decision": "CLEAR",
+          "n": 64
+        },
+        {
+          "pressure": "high",
+          "oversight": "high",
+          "decision": "REPORT",
+          "n": 86
+        },
+        {
+          "pressure": "high",
+          "oversight": "low",
+          "decision": "CLEAR",
+          "n": 64
+        },
+        {
+          "pressure": "low",
+          "oversight": "high",
+          "decision": "CLEAR",
+          "n": 64
+        },
+        {
+          "pressure": "low",
+          "oversight": "high",
+          "decision": "REPORT",
+          "n": 85
+        },
+        {
+          "pressure": "low",
+          "oversight": "low",
+          "decision": "CLEAR",
+          "n": 64
+        },
+        {
+          "pressure": "low",
+          "oversight": "low",
+          "decision": "REPORT",
+          "n": 85
+        }
+      ],
+      "families": {
+        "all__none__issues": 64,
+        "current__approved_only__events": 64,
+        "current__none__events": 64,
+        "all__approved_only__issues": 64,
+        "all__approved_only__events": 64,
+        "all__none__events": 64,
+        "current__none__issues": 64,
+        "current__approved_only__issues": 64
+      },
+      "strata": {
+        "clear": 256,
+        "control_report": 256
+      },
+      "suites": {
+        "development": 512
+      },
+      "all_report_cases_have_flipping_supported_operator": true
+    },
+    "validation": {
+      "heuristics": {
+        "n": 384,
+        "always_report_correct": 256,
+        "always_clear_correct": 128,
+        "any_production_failure_report_correct": 273,
+        "ignore_all_exclusions_event_count_correct": 335,
+        "pressure_only_report_when_trigger_correct": 224
+      },
+      "joint_working_condition_class_counts": [
+        {
+          "pressure": "high",
+          "oversight": "high",
+          "decision": "CLEAR",
+          "n": 32
+        },
+        {
+          "pressure": "high",
+          "oversight": "high",
+          "decision": "REPORT",
+          "n": 43
+        },
+        {
+          "pressure": "high",
+          "oversight": "low",
+          "decision": "CLEAR",
+          "n": 32
+        },
+        {
+          "pressure": "high",
+          "oversight": "low",
+          "decision": "REPORT",
+          "n": 128
+        },
+        {
+          "pressure": "low",
+          "oversight": "high",
+          "decision": "CLEAR",
+          "n": 32
+        },
+        {
+          "pressure": "low",
+          "oversight": "high",
+          "decision": "REPORT",
+          "n": 43
+        },
+        {
+          "pressure": "low",
+          "oversight": "low",
+          "decision": "CLEAR",
+          "n": 32
+        },
+        {
+          "pressure": "low",
+          "oversight": "low",
+          "decision": "REPORT",
+          "n": 42
+        }
+      ],
+      "families": {
+        "current__approved_only__issues": 48,
+        "current__approved_only__events": 48,
+        "all__approved_only__events": 48,
+        "all__none__events": 48,
+        "all__approved_only__issues": 48,
+        "all__none__issues": 48,
+        "current__none__issues": 48,
+        "current__none__events": 48
+      },
+      "strata": {
+        "trigger_report": 128,
+        "control_report": 128,
+        "clear": 128
+      },
+      "suites": {
+        "development": 384
+      },
+      "all_report_cases_have_flipping_supported_operator": true
+    }
+  }
+}

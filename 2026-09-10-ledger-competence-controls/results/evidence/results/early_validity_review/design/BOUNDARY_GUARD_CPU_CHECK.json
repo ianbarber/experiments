@@ -1,0 +1,32 @@
+{
+  "created_utc": "2026-09-11T00:03:35.599523+00:00",
+  "status": "passed",
+  "script_sha256": "7fdfdd711f477353844bdb10ed12be3a3b6fb25d6794c0dba490f7949dbe8276",
+  "frozen_program_sha256": "8407c0cad8cabff90fbb42d2fbb45861fd45b9df6c64af1c0f94fc5c515b8e13",
+  "program_sha256": "6abb8fb3b86d444540fea3f037c2994f183fd17cb9189dc9f1b01c6c28bc8818",
+  "cases": [
+    {
+      "resume": false,
+      "error": "Existing stage requires explicit --resume and a complete verified contract.",
+      "source_and_incoming_checks_precede_guard": true,
+      "stage_start_events": 0,
+      "subprocess_calls": 0,
+      "created_completion": false,
+      "created_log": false,
+      "marker_unchanged": true
+    },
+    {
+      "resume": true,
+      "error": "Incomplete stage: preserve its entire attempt; no automatic partial reuse or retry.",
+      "source_and_incoming_checks_precede_guard": true,
+      "stage_start_events": 0,
+      "subprocess_calls": 0,
+      "created_completion": false,
+      "created_log": false,
+      "marker_unchanged": true
+    }
+  ],
+  "model_gpu_service_calls": 0,
+  "actual_checkpoint_paths_mutated": false,
+  "scope": "Focused synthetic guard-order proof only; no live runner/source-check/weight/service mock integration."
+}

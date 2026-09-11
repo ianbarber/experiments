@@ -1,0 +1,67 @@
+{
+  "created_utc": "2026-09-11T04:49:23.221297+00:00",
+  "kind": "portable_internal_skeptical_final_review",
+  "status": "passed",
+  "merge_path": "results/final_review",
+  "files": {
+    "results/final_review/REVIEW.md": {
+      "sha256": "a2784d3d3d8c7098cb9bb264e4d04f89ae79ff45511e235fdd196add7be81d0c",
+      "bytes": 11340,
+      "operation": "authored_public_review_report"
+    },
+    "results/final_review/TRACE_REPORT_CHECKS.json": {
+      "sha256": "4e5d83eacc3346c1944ae519d67e7cfc9a141a28bef83a14091c1ac0862806b0",
+      "bytes": 13342,
+      "operation": "exact_review_artifact"
+    },
+    "results/final_review/PUBLIC_ARTIFACT_FINAL_RECHECK.json": {
+      "sha256": "c102d1c13d4029c8d22a13e8decf6ce6bfb22d75c22c7903a4f7b69e21d70182",
+      "bytes": 58870,
+      "operation": "exact_review_artifact"
+    },
+    "results/final_review/FINAL_PROSE_NAVIGATION.json": {
+      "sha256": "ca2ca31bcc4ba24098ecfe6ae09e6dd5457548bd20a0020d95ca0b107149d52a",
+      "bytes": 16382,
+      "operation": "exact_review_artifact"
+    },
+    "results/final_review/ORIGINAL_TERMINAL_CHECK.json": {
+      "sha256": "f243c7e6b16dd0970139607d9d1b4465f978072d52929ef2aee787f4d8998c4b",
+      "bytes": 1762,
+      "operation": "exact_review_artifact"
+    },
+    "results/final_review/FINAL_REVIEW.json": {
+      "sha256": "45c053007da0a0ebe50182796fed0598355fcef2ab3062e34a03542128d41f54",
+      "bytes": 3332,
+      "operation": "exact_review_artifact"
+    },
+    "results/final_review/INITIAL_REVIEW.json": {
+      "sha256": "3997c122a61738ad6a4107c3734f92f186a01ab671aa17bbbc4eb7f1e6098d1b",
+      "bytes": 2313,
+      "operation": "exact_review_artifact"
+    },
+    "results/final_review/VALIDATION_RECOMPUTATION.json": {
+      "sha256": "fe25b512067d517c5cbe4afbfd6d52b034b1e24126c30f930d05f7d1991296ac",
+      "bytes": 14625,
+      "operation": "exact_review_artifact"
+    },
+    "results/final_review/PUBLIC_ARTIFACT_REVIEW.json": {
+      "sha256": "3c29b61f3bd4d47cb932281bb4f104cb99b6b4853c9047486b81590f8aac0bd0",
+      "bytes": 58870,
+      "operation": "exact_review_artifact"
+    },
+    "results/final_review/review_public.py": {
+      "sha256": "dfba0ca0d285e4d8516f249c258e8e2ceaa5301a2986d794e22769a6207bffcd",
+      "bytes": 7573,
+      "operation": "exact_review_artifact"
+    },
+    "results/final_review/recompute.py": {
+      "sha256": "61692a92cdc1edeedfad426fa0f48827850f9c13404a20d2cafb5487ecaf6197",
+      "bytes": 12316,
+      "operation": "exact_review_artifact"
+    }
+  },
+  "original_local_sources_mutated": false,
+  "model_service_calls": false,
+  "operational_service_health_independently_attested": false,
+  "privacy_scan": "All packet UTF-8/JSON/source content checked for secrets, private-network patterns and private home paths; no hits; every file below 2MB."
+}

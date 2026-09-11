@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "kind": "portable_comparability_support",
+  "created_utc": "2026-09-10T20:10:28.269718+00:00",
+  "scope": "Old and new uniform decision-first seed-1729 competence training and calibration, completed epochs 1-3 only. Descriptive, not paired across studies or causal.",
+  "reviewer": "Codex assistant; CPU source and saved-data review",
+  "machine_role": "dgx-spark",
+  "original_review_sha256": "6bc52df099f869004a93bf6ec46f23f187c82645298cf7e6e9aa4243723acac0",
+  "original_review_preserved": true,
+  "labels": {
+    "exact": "source_excerpts.md code blocks only; excerpt index identifies original bytes, full-source hashes and inclusive bounds",
+    "derived": "All comparison summaries, counts, prose and identity projections"
+  },
+  "verification": {
+    "exact_excerpt_count": 14,
+    "excerpt_bytes_and_full_original_source_hashes_verified": true,
+    "completed_training_stages": 6,
+    "completed_calibration_stages": 6,
+    "calibration_raw_outputs_reparsed": 1152,
+    "source_prompt_rows_reconstructed": 3456,
+    "training_nonweight_artifact_hashes_verified": true,
+    "calibration_all_artifact_hashes_verified": true,
+    "source_data_config_and_row_hashes_verified": true,
+    "stored_parser_flags_match_recomputation": true,
+    "model_calls": 0,
+    "weight_bytes_rehashed": false,
+    "all_package_links_internal_and_resolving": true,
+    "repository_secret_pattern_plus_home_private_address_and_operational_literal_scan": "passed on package files; publisher must rerun required whole-repository scan before push"
+  },
+  "limitations": [
+    "Derived counts cannot be independently reproduced from old raw responses using this support directory alone; the original raw responses are intentionally excluded.",
+    "Exact excerpts cannot reconstruct or independently authenticate full original source files.",
+    "Shared image provenance does not establish bitwise runtime identity; no separate old machine-readable package inventory was found."
+  ],
+  "excluded": [
+    "full raw contracts",
+    "raw generations and token IDs",
+    "model and checkpoint bytes",
+    "raw HTTP or per-token logs",
+    "operational records and their identity hashes",
+    "container or image identifiers",
+    "private lab references",
+    "hostnames and network addresses",
+    "home paths",
+    "personal or session transcripts"
+  ],
+  "files": {
+    "README.md": {
+      "sha256": "277dd335b46edce167eab4293b77bdcccd89ad01829f8f19b02ae8565f6178f9",
+      "bytes": 7364
+    },
+    "contract_comparison.json": {
+      "sha256": "3f57de404ec8421bec527813bc0cbab78d4053495a4b30fe8f987f18f62cc81e",
+      "bytes": 18000
+    },
+    "data_comparison.json": {
+      "sha256": "72d76540e17827a11a42ee88a9e9070cb057c4aaa97c1b42bcb54fdfd2dc6bca",
+      "bytes": 4461
+    },
+    "source_excerpt_index.json": {
+      "sha256": "a9e57ce6fa0f389e3a75c88ce0ec5274e617e67fe77dfcc41f50969bc44c6a98",
+      "bytes": 5898
+    },
+    "source_excerpts.md": {
+      "sha256": "7b63a1d5cbf8deee85a45498fb36a19c8723f81f26a11d966db19072d45c3f7d",
+      "bytes": 28007
+    },
+    "source_identities.json": {
+      "sha256": "3a4f1e28ae3df62966aaa314aad038af23aa6e4577d701309b06bc97688a1e33",
+      "bytes": 6152
+    }
+  }
+}

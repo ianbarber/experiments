@@ -1,0 +1,12 @@
+{
+  "scope": "Observed versions, not a demonstrated complete GPU environment rebuild.",
+  "machine": "dgx-spark",
+  "source_record_sha256": "506ebd68910d3fcad1f02db489e06b0317f66fca47247c119b603c220d14133d",
+  "versions": {
+    "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+    "torch": "2.13.0+cu130",
+    "transformers": "5.12.1",
+    "peft": "0.18.1",
+    "bitsandbytes": "0.49.2"
+  }
+}

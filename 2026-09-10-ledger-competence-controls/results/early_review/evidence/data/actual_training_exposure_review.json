@@ -1,0 +1,330 @@
+{
+  "completed_stages": 13,
+  "stages": [
+    {
+      "stage": "competence_uniform_first_i1729_epoch1",
+      "completion_sha256": "46142656be954127bb27d1eaba04fcb597db667478dd051f88f9eba75982c27d",
+      "seed": 1729,
+      "order": "decision_first",
+      "weighting": "uniform",
+      "sample_order_sha256": "4705d484f9b7ad69db503728f05901ac0bdde27b07fa1d1081fc9ec7c2913357",
+      "steps": 96,
+      "target_tokens": 65378,
+      "prefix_tokens": 760323,
+      "unique_class_budget": {
+        "REPORT": {
+          "unique_examples": 1024,
+          "weight_sum": 1024.0,
+          "target_tokens": 46987,
+          "weighted_target_tokens": 46987.0
+        },
+        "CLEAR": {
+          "unique_examples": 512,
+          "weight_sum": 512.0,
+          "target_tokens": 18391,
+          "weighted_target_tokens": 18391.0
+        }
+      }
+    },
+    {
+      "stage": "competence_uniform_first_i1729_epoch2",
+      "completion_sha256": "412f9f7d8e6067f86a2dc401bae071038b75c88bef900157e9781885ef42896f",
+      "seed": 1730,
+      "order": "decision_first",
+      "weighting": "uniform",
+      "sample_order_sha256": "a02f557f4104b48637e21452ba9a6ba9e610cb64750f3f33358084fb3ccd4829",
+      "steps": 96,
+      "target_tokens": 65378,
+      "prefix_tokens": 760323,
+      "unique_class_budget": {
+        "REPORT": {
+          "unique_examples": 1024,
+          "weight_sum": 1024.0,
+          "target_tokens": 46987,
+          "weighted_target_tokens": 46987.0
+        },
+        "CLEAR": {
+          "unique_examples": 512,
+          "weight_sum": 512.0,
+          "target_tokens": 18391,
+          "weighted_target_tokens": 18391.0
+        }
+      }
+    },
+    {
+      "stage": "competence_uniform_first_i1729_epoch3",
+      "completion_sha256": "665fb46096b0790d30298f170ef4b535c601c282b07b8d5842a3453f587c743a",
+      "seed": 1731,
+      "order": "decision_first",
+      "weighting": "uniform",
+      "sample_order_sha256": "366a9a0bc0a1efaa7176e2683b56ab724b37e5ec19a7383a608c0724dffe27b1",
+      "steps": 96,
+      "target_tokens": 65378,
+      "prefix_tokens": 760323,
+      "unique_class_budget": {
+        "REPORT": {
+          "unique_examples": 1024,
+          "weight_sum": 1024.0,
+          "target_tokens": 46987,
+          "weighted_target_tokens": 46987.0
+        },
+        "CLEAR": {
+          "unique_examples": 512,
+          "weight_sum": 512.0,
+          "target_tokens": 18391,
+          "weighted_target_tokens": 18391.0
+        }
+      }
+    },
+    {
+      "stage": "competence_uniform_last_i1729_epoch1",
+      "completion_sha256": "85dc51050e779d0001b919c8093477aef23f7e99879d9a9a1fbcd7f786a6312f",
+      "seed": 1729,
+      "order": "decision_last",
+      "weighting": "uniform",
+      "sample_order_sha256": "4705d484f9b7ad69db503728f05901ac0bdde27b07fa1d1081fc9ec7c2913357",
+      "steps": 96,
+      "target_tokens": 65378,
+      "prefix_tokens": 760323,
+      "unique_class_budget": {
+        "REPORT": {
+          "unique_examples": 1024,
+          "weight_sum": 1024.0,
+          "target_tokens": 46987,
+          "weighted_target_tokens": 46987.0
+        },
+        "CLEAR": {
+          "unique_examples": 512,
+          "weight_sum": 512.0,
+          "target_tokens": 18391,
+          "weighted_target_tokens": 18391.0
+        }
+      }
+    },
+    {
+      "stage": "competence_uniform_last_i1729_epoch2",
+      "completion_sha256": "b943cffbf85e7dab0ff8ba330d720bf37abde9df3333e42a1a66ae140d2d02b7",
+      "seed": 1730,
+      "order": "decision_last",
+      "weighting": "uniform",
+      "sample_order_sha256": "a02f557f4104b48637e21452ba9a6ba9e610cb64750f3f33358084fb3ccd4829",
+      "steps": 96,
+      "target_tokens": 65378,
+      "prefix_tokens": 760323,
+      "unique_class_budget": {
+        "REPORT": {
+          "unique_examples": 1024,
+          "weight_sum": 1024.0,
+          "target_tokens": 46987,
+          "weighted_target_tokens": 46987.0
+        },
+        "CLEAR": {
+          "unique_examples": 512,
+          "weight_sum": 512.0,
+          "target_tokens": 18391,
+          "weighted_target_tokens": 18391.0
+        }
+      }
+    },
+    {
+      "stage": "competence_uniform_last_i1729_epoch3",
+      "completion_sha256": "8ecc774f026a01b21c9e8645b6a97d0d7ff88517f6f34a56135878992eb6e020",
+      "seed": 1731,
+      "order": "decision_last",
+      "weighting": "uniform",
+      "sample_order_sha256": "366a9a0bc0a1efaa7176e2683b56ab724b37e5ec19a7383a608c0724dffe27b1",
+      "steps": 96,
+      "target_tokens": 65378,
+      "prefix_tokens": 760323,
+      "unique_class_budget": {
+        "REPORT": {
+          "unique_examples": 1024,
+          "weight_sum": 1024.0,
+          "target_tokens": 46987,
+          "weighted_target_tokens": 46987.0
+        },
+        "CLEAR": {
+          "unique_examples": 512,
+          "weight_sum": 512.0,
+          "target_tokens": 18391,
+          "weighted_target_tokens": 18391.0
+        }
+      }
+    },
+    {
+      "stage": "competence_weighted_first_i1729_epoch1",
+      "completion_sha256": "ad7a850e09ffd5cf67aebdef5ded8b7fd7213ff1fa3ff2f4c18d4adfd333504f",
+      "seed": 1729,
+      "order": "decision_first",
+      "weighting": "reweighted",
+      "sample_order_sha256": "4705d484f9b7ad69db503728f05901ac0bdde27b07fa1d1081fc9ec7c2913357",
+      "steps": 96,
+      "target_tokens": 65378,
+      "prefix_tokens": 760323,
+      "unique_class_budget": {
+        "REPORT": {
+          "unique_examples": 1024,
+          "weight_sum": 768.0,
+          "target_tokens": 46987,
+          "weighted_target_tokens": 35240.25
+        },
+        "CLEAR": {
+          "unique_examples": 512,
+          "weight_sum": 768.0,
+          "target_tokens": 18391,
+          "weighted_target_tokens": 27586.5
+        }
+      }
+    },
+    {
+      "stage": "competence_weighted_first_i1729_epoch2",
+      "completion_sha256": "d576f4914f342c286e3c5e55a1199b11d3d20f92366c8082909ab314c3f876cd",
+      "seed": 1730,
+      "order": "decision_first",
+      "weighting": "reweighted",
+      "sample_order_sha256": "a02f557f4104b48637e21452ba9a6ba9e610cb64750f3f33358084fb3ccd4829",
+      "steps": 96,
+      "target_tokens": 65378,
+      "prefix_tokens": 760323,
+      "unique_class_budget": {
+        "REPORT": {
+          "unique_examples": 1024,
+          "weight_sum": 768.0,
+          "target_tokens": 46987,
+          "weighted_target_tokens": 35240.25
+        },
+        "CLEAR": {
+          "unique_examples": 512,
+          "weight_sum": 768.0,
+          "target_tokens": 18391,
+          "weighted_target_tokens": 27586.5
+        }
+      }
+    },
+    {
+      "stage": "competence_weighted_first_i1729_epoch3",
+      "completion_sha256": "2b950f5069128668c6b761e47f455a23198ded3f63d31fb2e0e131683ad148d4",
+      "seed": 1731,
+      "order": "decision_first",
+      "weighting": "reweighted",
+      "sample_order_sha256": "366a9a0bc0a1efaa7176e2683b56ab724b37e5ec19a7383a608c0724dffe27b1",
+      "steps": 96,
+      "target_tokens": 65378,
+      "prefix_tokens": 760323,
+      "unique_class_budget": {
+        "REPORT": {
+          "unique_examples": 1024,
+          "weight_sum": 768.0,
+          "target_tokens": 46987,
+          "weighted_target_tokens": 35240.25
+        },
+        "CLEAR": {
+          "unique_examples": 512,
+          "weight_sum": 768.0,
+          "target_tokens": 18391,
+          "weighted_target_tokens": 27586.5
+        }
+      }
+    },
+    {
+      "stage": "competence_weighted_first_i2718_epoch1",
+      "completion_sha256": "f7bf555b235720dfa8bdf86a307d6396f03d8d70eee58f2ce5ec4c524c16fdec",
+      "seed": 2718,
+      "order": "decision_first",
+      "weighting": "reweighted",
+      "sample_order_sha256": "3fc93a04cc975b70b6ee7cd79e69f62e00dd2f729baee194c9623193e87abd3a",
+      "steps": 96,
+      "target_tokens": 65378,
+      "prefix_tokens": 760323,
+      "unique_class_budget": {
+        "REPORT": {
+          "unique_examples": 1024,
+          "weight_sum": 768.0,
+          "target_tokens": 46987,
+          "weighted_target_tokens": 35240.25
+        },
+        "CLEAR": {
+          "unique_examples": 512,
+          "weight_sum": 768.0,
+          "target_tokens": 18391,
+          "weighted_target_tokens": 27586.5
+        }
+      }
+    },
+    {
+      "stage": "competence_weighted_last_i1729_epoch1",
+      "completion_sha256": "85f0e67b061c58adf9f617c5dd5f91d6525d79a7d8344538b2861ff7d1e7de11",
+      "seed": 1729,
+      "order": "decision_last",
+      "weighting": "reweighted",
+      "sample_order_sha256": "4705d484f9b7ad69db503728f05901ac0bdde27b07fa1d1081fc9ec7c2913357",
+      "steps": 96,
+      "target_tokens": 65378,
+      "prefix_tokens": 760323,
+      "unique_class_budget": {
+        "REPORT": {
+          "unique_examples": 1024,
+          "weight_sum": 768.0,
+          "target_tokens": 46987,
+          "weighted_target_tokens": 35240.25
+        },
+        "CLEAR": {
+          "unique_examples": 512,
+          "weight_sum": 768.0,
+          "target_tokens": 18391,
+          "weighted_target_tokens": 27586.5
+        }
+      }
+    },
+    {
+      "stage": "competence_weighted_last_i1729_epoch2",
+      "completion_sha256": "00e517be8ca1926825b0021d4b04343e45b873dd7cbc7420b85d23ae75da3c4a",
+      "seed": 1730,
+      "order": "decision_last",
+      "weighting": "reweighted",
+      "sample_order_sha256": "a02f557f4104b48637e21452ba9a6ba9e610cb64750f3f33358084fb3ccd4829",
+      "steps": 96,
+      "target_tokens": 65378,
+      "prefix_tokens": 760323,
+      "unique_class_budget": {
+        "REPORT": {
+          "unique_examples": 1024,
+          "weight_sum": 768.0,
+          "target_tokens": 46987,
+          "weighted_target_tokens": 35240.25
+        },
+        "CLEAR": {
+          "unique_examples": 512,
+          "weight_sum": 768.0,
+          "target_tokens": 18391,
+          "weighted_target_tokens": 27586.5
+        }
+      }
+    },
+    {
+      "stage": "competence_weighted_last_i1729_epoch3",
+      "completion_sha256": "bd8b982014e20c122529b9aa620147c6020c99834ece27dc9f14a99e3feddfdd",
+      "seed": 1731,
+      "order": "decision_last",
+      "weighting": "reweighted",
+      "sample_order_sha256": "366a9a0bc0a1efaa7176e2683b56ab724b37e5ec19a7383a608c0724dffe27b1",
+      "steps": 96,
+      "target_tokens": 65378,
+      "prefix_tokens": 760323,
+      "unique_class_budget": {
+        "REPORT": {
+          "unique_examples": 1024,
+          "weight_sum": 768.0,
+          "target_tokens": 46987,
+          "weighted_target_tokens": 35240.25
+        },
+        "CLEAR": {
+          "unique_examples": 512,
+          "weight_sum": 768.0,
+          "target_tokens": 18391,
+          "weighted_target_tokens": 27586.5
+        }
+      }
+    }
+  ]
+}

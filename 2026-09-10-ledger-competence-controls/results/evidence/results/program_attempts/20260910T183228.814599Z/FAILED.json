@@ -1,0 +1,1708 @@
+{
+  "at": "2026-09-11T04:35:38.689782+00:00",
+  "error": "ValueError('Existing stage requires explicit --resume and a complete verified contract.')",
+  "completed_stages": [
+    {
+      "name": "base_calibration_decision_first",
+      "output": "results/development/base_calibration_decision_first",
+      "completion_sha256": "5641827e2fd209ae0f77b7ec83fc0923a435fafa3e05173cbb5c7dbf1f9ca871",
+      "plan": {
+        "name": "base_calibration_decision_first",
+        "output": "results/development/base_calibration_decision_first",
+        "args": {
+          "mode": "generate",
+          "data": "data/calibration.jsonl",
+          "output": "results/development/base_calibration_decision_first",
+          "adapter": null,
+          "output_order": "decision_first",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        }
+      }
+    },
+    {
+      "name": "base_calibration_decision_last",
+      "output": "results/development/base_calibration_decision_last",
+      "completion_sha256": "1a4ed9b72c768c61191bbd44ef78d34753472d2650d911fd89a114da747d6d58",
+      "plan": {
+        "name": "base_calibration_decision_last",
+        "output": "results/development/base_calibration_decision_last",
+        "args": {
+          "mode": "generate",
+          "data": "data/calibration.jsonl",
+          "output": "results/development/base_calibration_decision_last",
+          "adapter": null,
+          "output_order": "decision_last",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        }
+      }
+    },
+    {
+      "name": "competence_uniform_first_i1729_epoch1",
+      "output": "checkpoints/competence_uniform_first_i1729_epoch1",
+      "completion_sha256": "46142656be954127bb27d1eaba04fcb597db667478dd051f88f9eba75982c27d",
+      "plan": {
+        "name": "competence_uniform_first_i1729_epoch1",
+        "output": "checkpoints/competence_uniform_first_i1729_epoch1",
+        "args": {
+          "mode": "train",
+          "data": "data/competence.jsonl",
+          "output": "checkpoints/competence_uniform_first_i1729_epoch1",
+          "adapter": null,
+          "output_order": "decision_first",
+          "class_weighting": "uniform",
+          "seed": 1729,
+          "batch_size": 8,
+          "effective_batch": 16,
+          "steps": 96,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "uniform_first",
+        "installation": 1729,
+        "epoch": 1,
+        "kind": "competence_train"
+      }
+    },
+    {
+      "name": "competence_uniform_first_i1729_epoch1_calibration",
+      "output": "results/development/competence_uniform_first_i1729_epoch1_calibration",
+      "completion_sha256": "9e2a2f3c3928a771e5f2811ba6c3b5ee88ec25d6141ec8ff4b6fc78f29bb11b1",
+      "plan": {
+        "name": "competence_uniform_first_i1729_epoch1_calibration",
+        "output": "results/development/competence_uniform_first_i1729_epoch1_calibration",
+        "args": {
+          "mode": "generate",
+          "data": "data/calibration.jsonl",
+          "output": "results/development/competence_uniform_first_i1729_epoch1_calibration",
+          "adapter": "checkpoints/competence_uniform_first_i1729_epoch1/step_0096",
+          "output_order": "decision_first",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "uniform_first",
+        "installation": 1729,
+        "epoch": 1,
+        "kind": "competence_calibration"
+      }
+    },
+    {
+      "name": "competence_uniform_first_i1729_epoch2",
+      "output": "checkpoints/competence_uniform_first_i1729_epoch2",
+      "completion_sha256": "412f9f7d8e6067f86a2dc401bae071038b75c88bef900157e9781885ef42896f",
+      "plan": {
+        "name": "competence_uniform_first_i1729_epoch2",
+        "output": "checkpoints/competence_uniform_first_i1729_epoch2",
+        "args": {
+          "mode": "train",
+          "data": "data/competence.jsonl",
+          "output": "checkpoints/competence_uniform_first_i1729_epoch2",
+          "adapter": "checkpoints/competence_uniform_first_i1729_epoch1/step_0096",
+          "output_order": "decision_first",
+          "class_weighting": "uniform",
+          "seed": 1730,
+          "batch_size": 8,
+          "effective_batch": 16,
+          "steps": 96,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "uniform_first",
+        "installation": 1729,
+        "epoch": 2,
+        "kind": "competence_train"
+      }
+    },
+    {
+      "name": "competence_uniform_first_i1729_epoch2_calibration",
+      "output": "results/development/competence_uniform_first_i1729_epoch2_calibration",
+      "completion_sha256": "64bfa663401559a5278112ed9d44557fe445afc1b66ac95d47f9a179e60c64e6",
+      "plan": {
+        "name": "competence_uniform_first_i1729_epoch2_calibration",
+        "output": "results/development/competence_uniform_first_i1729_epoch2_calibration",
+        "args": {
+          "mode": "generate",
+          "data": "data/calibration.jsonl",
+          "output": "results/development/competence_uniform_first_i1729_epoch2_calibration",
+          "adapter": "checkpoints/competence_uniform_first_i1729_epoch2/step_0096",
+          "output_order": "decision_first",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "uniform_first",
+        "installation": 1729,
+        "epoch": 2,
+        "kind": "competence_calibration"
+      }
+    },
+    {
+      "name": "competence_uniform_first_i1729_epoch3",
+      "output": "checkpoints/competence_uniform_first_i1729_epoch3",
+      "completion_sha256": "665fb46096b0790d30298f170ef4b535c601c282b07b8d5842a3453f587c743a",
+      "plan": {
+        "name": "competence_uniform_first_i1729_epoch3",
+        "output": "checkpoints/competence_uniform_first_i1729_epoch3",
+        "args": {
+          "mode": "train",
+          "data": "data/competence.jsonl",
+          "output": "checkpoints/competence_uniform_first_i1729_epoch3",
+          "adapter": "checkpoints/competence_uniform_first_i1729_epoch2/step_0096",
+          "output_order": "decision_first",
+          "class_weighting": "uniform",
+          "seed": 1731,
+          "batch_size": 8,
+          "effective_batch": 16,
+          "steps": 96,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "uniform_first",
+        "installation": 1729,
+        "epoch": 3,
+        "kind": "competence_train"
+      }
+    },
+    {
+      "name": "competence_uniform_first_i1729_epoch3_calibration",
+      "output": "results/development/competence_uniform_first_i1729_epoch3_calibration",
+      "completion_sha256": "104a0e38fed3a68cb2eb1d79a72dfb4aaa0f155c8417437a0f4174587153d09e",
+      "plan": {
+        "name": "competence_uniform_first_i1729_epoch3_calibration",
+        "output": "results/development/competence_uniform_first_i1729_epoch3_calibration",
+        "args": {
+          "mode": "generate",
+          "data": "data/calibration.jsonl",
+          "output": "results/development/competence_uniform_first_i1729_epoch3_calibration",
+          "adapter": "checkpoints/competence_uniform_first_i1729_epoch3/step_0096",
+          "output_order": "decision_first",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "uniform_first",
+        "installation": 1729,
+        "epoch": 3,
+        "kind": "competence_calibration"
+      }
+    },
+    {
+      "name": "competence_weighted_first_i1729_epoch1",
+      "output": "checkpoints/competence_weighted_first_i1729_epoch1",
+      "completion_sha256": "ad7a850e09ffd5cf67aebdef5ded8b7fd7213ff1fa3ff2f4c18d4adfd333504f",
+      "plan": {
+        "name": "competence_weighted_first_i1729_epoch1",
+        "output": "checkpoints/competence_weighted_first_i1729_epoch1",
+        "args": {
+          "mode": "train",
+          "data": "data/competence.jsonl",
+          "output": "checkpoints/competence_weighted_first_i1729_epoch1",
+          "adapter": null,
+          "output_order": "decision_first",
+          "class_weighting": "reweighted",
+          "seed": 1729,
+          "batch_size": 8,
+          "effective_batch": 16,
+          "steps": 96,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "weighted_first",
+        "installation": 1729,
+        "epoch": 1,
+        "kind": "competence_train"
+      }
+    },
+    {
+      "name": "competence_weighted_first_i1729_epoch1_calibration",
+      "output": "results/development/competence_weighted_first_i1729_epoch1_calibration",
+      "completion_sha256": "34b631a0338e383bb2bb95e16587ebb4963bf5264c664cd8149b97c636e13cde",
+      "plan": {
+        "name": "competence_weighted_first_i1729_epoch1_calibration",
+        "output": "results/development/competence_weighted_first_i1729_epoch1_calibration",
+        "args": {
+          "mode": "generate",
+          "data": "data/calibration.jsonl",
+          "output": "results/development/competence_weighted_first_i1729_epoch1_calibration",
+          "adapter": "checkpoints/competence_weighted_first_i1729_epoch1/step_0096",
+          "output_order": "decision_first",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "weighted_first",
+        "installation": 1729,
+        "epoch": 1,
+        "kind": "competence_calibration"
+      }
+    },
+    {
+      "name": "competence_weighted_first_i1729_epoch2",
+      "output": "checkpoints/competence_weighted_first_i1729_epoch2",
+      "completion_sha256": "d576f4914f342c286e3c5e55a1199b11d3d20f92366c8082909ab314c3f876cd",
+      "plan": {
+        "name": "competence_weighted_first_i1729_epoch2",
+        "output": "checkpoints/competence_weighted_first_i1729_epoch2",
+        "args": {
+          "mode": "train",
+          "data": "data/competence.jsonl",
+          "output": "checkpoints/competence_weighted_first_i1729_epoch2",
+          "adapter": "checkpoints/competence_weighted_first_i1729_epoch1/step_0096",
+          "output_order": "decision_first",
+          "class_weighting": "reweighted",
+          "seed": 1730,
+          "batch_size": 8,
+          "effective_batch": 16,
+          "steps": 96,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "weighted_first",
+        "installation": 1729,
+        "epoch": 2,
+        "kind": "competence_train"
+      }
+    },
+    {
+      "name": "competence_weighted_first_i1729_epoch2_calibration",
+      "output": "results/development/competence_weighted_first_i1729_epoch2_calibration",
+      "completion_sha256": "ea43401c8ee7065b69fa5a31a9cf2eb107fcb643e4e4b1b4ee096cd4d3fbc581",
+      "plan": {
+        "name": "competence_weighted_first_i1729_epoch2_calibration",
+        "output": "results/development/competence_weighted_first_i1729_epoch2_calibration",
+        "args": {
+          "mode": "generate",
+          "data": "data/calibration.jsonl",
+          "output": "results/development/competence_weighted_first_i1729_epoch2_calibration",
+          "adapter": "checkpoints/competence_weighted_first_i1729_epoch2/step_0096",
+          "output_order": "decision_first",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "weighted_first",
+        "installation": 1729,
+        "epoch": 2,
+        "kind": "competence_calibration"
+      }
+    },
+    {
+      "name": "competence_weighted_first_i1729_epoch3",
+      "output": "checkpoints/competence_weighted_first_i1729_epoch3",
+      "completion_sha256": "2b950f5069128668c6b761e47f455a23198ded3f63d31fb2e0e131683ad148d4",
+      "plan": {
+        "name": "competence_weighted_first_i1729_epoch3",
+        "output": "checkpoints/competence_weighted_first_i1729_epoch3",
+        "args": {
+          "mode": "train",
+          "data": "data/competence.jsonl",
+          "output": "checkpoints/competence_weighted_first_i1729_epoch3",
+          "adapter": "checkpoints/competence_weighted_first_i1729_epoch2/step_0096",
+          "output_order": "decision_first",
+          "class_weighting": "reweighted",
+          "seed": 1731,
+          "batch_size": 8,
+          "effective_batch": 16,
+          "steps": 96,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "weighted_first",
+        "installation": 1729,
+        "epoch": 3,
+        "kind": "competence_train"
+      }
+    },
+    {
+      "name": "competence_weighted_first_i1729_epoch3_calibration",
+      "output": "results/development/competence_weighted_first_i1729_epoch3_calibration",
+      "completion_sha256": "595e4d602ffbb05ab5cea80d572af310de671916facd4a815f72a5489e19641f",
+      "plan": {
+        "name": "competence_weighted_first_i1729_epoch3_calibration",
+        "output": "results/development/competence_weighted_first_i1729_epoch3_calibration",
+        "args": {
+          "mode": "generate",
+          "data": "data/calibration.jsonl",
+          "output": "results/development/competence_weighted_first_i1729_epoch3_calibration",
+          "adapter": "checkpoints/competence_weighted_first_i1729_epoch3/step_0096",
+          "output_order": "decision_first",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "weighted_first",
+        "installation": 1729,
+        "epoch": 3,
+        "kind": "competence_calibration"
+      }
+    },
+    {
+      "name": "competence_uniform_last_i1729_epoch1",
+      "output": "checkpoints/competence_uniform_last_i1729_epoch1",
+      "completion_sha256": "85dc51050e779d0001b919c8093477aef23f7e99879d9a9a1fbcd7f786a6312f",
+      "plan": {
+        "name": "competence_uniform_last_i1729_epoch1",
+        "output": "checkpoints/competence_uniform_last_i1729_epoch1",
+        "args": {
+          "mode": "train",
+          "data": "data/competence.jsonl",
+          "output": "checkpoints/competence_uniform_last_i1729_epoch1",
+          "adapter": null,
+          "output_order": "decision_last",
+          "class_weighting": "uniform",
+          "seed": 1729,
+          "batch_size": 8,
+          "effective_batch": 16,
+          "steps": 96,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "uniform_last",
+        "installation": 1729,
+        "epoch": 1,
+        "kind": "competence_train"
+      }
+    },
+    {
+      "name": "competence_uniform_last_i1729_epoch1_calibration",
+      "output": "results/development/competence_uniform_last_i1729_epoch1_calibration",
+      "completion_sha256": "86f03a37015eb12435423019706b86241bf43eb1dac294768b6022a6632e8436",
+      "plan": {
+        "name": "competence_uniform_last_i1729_epoch1_calibration",
+        "output": "results/development/competence_uniform_last_i1729_epoch1_calibration",
+        "args": {
+          "mode": "generate",
+          "data": "data/calibration.jsonl",
+          "output": "results/development/competence_uniform_last_i1729_epoch1_calibration",
+          "adapter": "checkpoints/competence_uniform_last_i1729_epoch1/step_0096",
+          "output_order": "decision_last",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "uniform_last",
+        "installation": 1729,
+        "epoch": 1,
+        "kind": "competence_calibration"
+      }
+    },
+    {
+      "name": "competence_uniform_last_i1729_epoch2",
+      "output": "checkpoints/competence_uniform_last_i1729_epoch2",
+      "completion_sha256": "b943cffbf85e7dab0ff8ba330d720bf37abde9df3333e42a1a66ae140d2d02b7",
+      "plan": {
+        "name": "competence_uniform_last_i1729_epoch2",
+        "output": "checkpoints/competence_uniform_last_i1729_epoch2",
+        "args": {
+          "mode": "train",
+          "data": "data/competence.jsonl",
+          "output": "checkpoints/competence_uniform_last_i1729_epoch2",
+          "adapter": "checkpoints/competence_uniform_last_i1729_epoch1/step_0096",
+          "output_order": "decision_last",
+          "class_weighting": "uniform",
+          "seed": 1730,
+          "batch_size": 8,
+          "effective_batch": 16,
+          "steps": 96,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "uniform_last",
+        "installation": 1729,
+        "epoch": 2,
+        "kind": "competence_train"
+      }
+    },
+    {
+      "name": "competence_uniform_last_i1729_epoch2_calibration",
+      "output": "results/development/competence_uniform_last_i1729_epoch2_calibration",
+      "completion_sha256": "9bdfdc77adbefa2f5ff3995cdae96c7218169cd9cc364093a351c46330c0292d",
+      "plan": {
+        "name": "competence_uniform_last_i1729_epoch2_calibration",
+        "output": "results/development/competence_uniform_last_i1729_epoch2_calibration",
+        "args": {
+          "mode": "generate",
+          "data": "data/calibration.jsonl",
+          "output": "results/development/competence_uniform_last_i1729_epoch2_calibration",
+          "adapter": "checkpoints/competence_uniform_last_i1729_epoch2/step_0096",
+          "output_order": "decision_last",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "uniform_last",
+        "installation": 1729,
+        "epoch": 2,
+        "kind": "competence_calibration"
+      }
+    },
+    {
+      "name": "competence_uniform_last_i1729_epoch3",
+      "output": "checkpoints/competence_uniform_last_i1729_epoch3",
+      "completion_sha256": "8ecc774f026a01b21c9e8645b6a97d0d7ff88517f6f34a56135878992eb6e020",
+      "plan": {
+        "name": "competence_uniform_last_i1729_epoch3",
+        "output": "checkpoints/competence_uniform_last_i1729_epoch3",
+        "args": {
+          "mode": "train",
+          "data": "data/competence.jsonl",
+          "output": "checkpoints/competence_uniform_last_i1729_epoch3",
+          "adapter": "checkpoints/competence_uniform_last_i1729_epoch2/step_0096",
+          "output_order": "decision_last",
+          "class_weighting": "uniform",
+          "seed": 1731,
+          "batch_size": 8,
+          "effective_batch": 16,
+          "steps": 96,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "uniform_last",
+        "installation": 1729,
+        "epoch": 3,
+        "kind": "competence_train"
+      }
+    },
+    {
+      "name": "competence_uniform_last_i1729_epoch3_calibration",
+      "output": "results/development/competence_uniform_last_i1729_epoch3_calibration",
+      "completion_sha256": "fca4368e94ebadc2244a23d05d190eb7d789bdd43f94d778ecabe608d19b88a2",
+      "plan": {
+        "name": "competence_uniform_last_i1729_epoch3_calibration",
+        "output": "results/development/competence_uniform_last_i1729_epoch3_calibration",
+        "args": {
+          "mode": "generate",
+          "data": "data/calibration.jsonl",
+          "output": "results/development/competence_uniform_last_i1729_epoch3_calibration",
+          "adapter": "checkpoints/competence_uniform_last_i1729_epoch3/step_0096",
+          "output_order": "decision_last",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "uniform_last",
+        "installation": 1729,
+        "epoch": 3,
+        "kind": "competence_calibration"
+      }
+    },
+    {
+      "name": "competence_weighted_last_i1729_epoch1",
+      "output": "checkpoints/competence_weighted_last_i1729_epoch1",
+      "completion_sha256": "85f0e67b061c58adf9f617c5dd5f91d6525d79a7d8344538b2861ff7d1e7de11",
+      "plan": {
+        "name": "competence_weighted_last_i1729_epoch1",
+        "output": "checkpoints/competence_weighted_last_i1729_epoch1",
+        "args": {
+          "mode": "train",
+          "data": "data/competence.jsonl",
+          "output": "checkpoints/competence_weighted_last_i1729_epoch1",
+          "adapter": null,
+          "output_order": "decision_last",
+          "class_weighting": "reweighted",
+          "seed": 1729,
+          "batch_size": 8,
+          "effective_batch": 16,
+          "steps": 96,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "weighted_last",
+        "installation": 1729,
+        "epoch": 1,
+        "kind": "competence_train"
+      }
+    },
+    {
+      "name": "competence_weighted_last_i1729_epoch1_calibration",
+      "output": "results/development/competence_weighted_last_i1729_epoch1_calibration",
+      "completion_sha256": "adcc07354db2d0fc6a6413e51f70cfcd37933718908cc02d5327432d3383ff98",
+      "plan": {
+        "name": "competence_weighted_last_i1729_epoch1_calibration",
+        "output": "results/development/competence_weighted_last_i1729_epoch1_calibration",
+        "args": {
+          "mode": "generate",
+          "data": "data/calibration.jsonl",
+          "output": "results/development/competence_weighted_last_i1729_epoch1_calibration",
+          "adapter": "checkpoints/competence_weighted_last_i1729_epoch1/step_0096",
+          "output_order": "decision_last",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "weighted_last",
+        "installation": 1729,
+        "epoch": 1,
+        "kind": "competence_calibration"
+      }
+    },
+    {
+      "name": "competence_weighted_last_i1729_epoch2",
+      "output": "checkpoints/competence_weighted_last_i1729_epoch2",
+      "completion_sha256": "00e517be8ca1926825b0021d4b04343e45b873dd7cbc7420b85d23ae75da3c4a",
+      "plan": {
+        "name": "competence_weighted_last_i1729_epoch2",
+        "output": "checkpoints/competence_weighted_last_i1729_epoch2",
+        "args": {
+          "mode": "train",
+          "data": "data/competence.jsonl",
+          "output": "checkpoints/competence_weighted_last_i1729_epoch2",
+          "adapter": "checkpoints/competence_weighted_last_i1729_epoch1/step_0096",
+          "output_order": "decision_last",
+          "class_weighting": "reweighted",
+          "seed": 1730,
+          "batch_size": 8,
+          "effective_batch": 16,
+          "steps": 96,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "weighted_last",
+        "installation": 1729,
+        "epoch": 2,
+        "kind": "competence_train"
+      }
+    },
+    {
+      "name": "competence_weighted_last_i1729_epoch2_calibration",
+      "output": "results/development/competence_weighted_last_i1729_epoch2_calibration",
+      "completion_sha256": "535c2acd97f11d2b1c19c3b7fb0a9658b0a472a0ec815191cc2df32089ca94af",
+      "plan": {
+        "name": "competence_weighted_last_i1729_epoch2_calibration",
+        "output": "results/development/competence_weighted_last_i1729_epoch2_calibration",
+        "args": {
+          "mode": "generate",
+          "data": "data/calibration.jsonl",
+          "output": "results/development/competence_weighted_last_i1729_epoch2_calibration",
+          "adapter": "checkpoints/competence_weighted_last_i1729_epoch2/step_0096",
+          "output_order": "decision_last",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "weighted_last",
+        "installation": 1729,
+        "epoch": 2,
+        "kind": "competence_calibration"
+      }
+    },
+    {
+      "name": "competence_weighted_last_i1729_epoch3",
+      "output": "checkpoints/competence_weighted_last_i1729_epoch3",
+      "completion_sha256": "bd8b982014e20c122529b9aa620147c6020c99834ece27dc9f14a99e3feddfdd",
+      "plan": {
+        "name": "competence_weighted_last_i1729_epoch3",
+        "output": "checkpoints/competence_weighted_last_i1729_epoch3",
+        "args": {
+          "mode": "train",
+          "data": "data/competence.jsonl",
+          "output": "checkpoints/competence_weighted_last_i1729_epoch3",
+          "adapter": "checkpoints/competence_weighted_last_i1729_epoch2/step_0096",
+          "output_order": "decision_last",
+          "class_weighting": "reweighted",
+          "seed": 1731,
+          "batch_size": 8,
+          "effective_batch": 16,
+          "steps": 96,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "weighted_last",
+        "installation": 1729,
+        "epoch": 3,
+        "kind": "competence_train"
+      }
+    },
+    {
+      "name": "competence_weighted_last_i1729_epoch3_calibration",
+      "output": "results/development/competence_weighted_last_i1729_epoch3_calibration",
+      "completion_sha256": "aee341b65c99ce473d91dad49219ce507300120a3caf6f94e374f9b0b95ece27",
+      "plan": {
+        "name": "competence_weighted_last_i1729_epoch3_calibration",
+        "output": "results/development/competence_weighted_last_i1729_epoch3_calibration",
+        "args": {
+          "mode": "generate",
+          "data": "data/calibration.jsonl",
+          "output": "results/development/competence_weighted_last_i1729_epoch3_calibration",
+          "adapter": "checkpoints/competence_weighted_last_i1729_epoch3/step_0096",
+          "output_order": "decision_last",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "weighted_last",
+        "installation": 1729,
+        "epoch": 3,
+        "kind": "competence_calibration"
+      }
+    },
+    {
+      "name": "competence_weighted_first_i2718_epoch1",
+      "output": "checkpoints/competence_weighted_first_i2718_epoch1",
+      "completion_sha256": "f7bf555b235720dfa8bdf86a307d6396f03d8d70eee58f2ce5ec4c524c16fdec",
+      "plan": {
+        "name": "competence_weighted_first_i2718_epoch1",
+        "output": "checkpoints/competence_weighted_first_i2718_epoch1",
+        "args": {
+          "mode": "train",
+          "data": "data/competence.jsonl",
+          "output": "checkpoints/competence_weighted_first_i2718_epoch1",
+          "adapter": null,
+          "output_order": "decision_first",
+          "class_weighting": "reweighted",
+          "seed": 2718,
+          "batch_size": 8,
+          "effective_batch": 16,
+          "steps": 96,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "weighted_first",
+        "installation": 2718,
+        "epoch": 1,
+        "kind": "competence_train"
+      }
+    },
+    {
+      "name": "competence_weighted_first_i2718_epoch1_calibration",
+      "output": "results/development/competence_weighted_first_i2718_epoch1_calibration",
+      "completion_sha256": "192cb39180f10a514fbb232ed8e86a07d9ef00419a62bc8a50ddd0b43277abc0",
+      "plan": {
+        "name": "competence_weighted_first_i2718_epoch1_calibration",
+        "output": "results/development/competence_weighted_first_i2718_epoch1_calibration",
+        "args": {
+          "mode": "generate",
+          "data": "data/calibration.jsonl",
+          "output": "results/development/competence_weighted_first_i2718_epoch1_calibration",
+          "adapter": "checkpoints/competence_weighted_first_i2718_epoch1/step_0096",
+          "output_order": "decision_first",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "weighted_first",
+        "installation": 2718,
+        "epoch": 1,
+        "kind": "competence_calibration"
+      }
+    },
+    {
+      "name": "competence_weighted_first_i2718_epoch2",
+      "output": "checkpoints/competence_weighted_first_i2718_epoch2",
+      "completion_sha256": "b5006b77bf2051482e0944cda0e45d46b1a0309c081a7f9e55e936844457a572",
+      "plan": {
+        "name": "competence_weighted_first_i2718_epoch2",
+        "output": "checkpoints/competence_weighted_first_i2718_epoch2",
+        "args": {
+          "mode": "train",
+          "data": "data/competence.jsonl",
+          "output": "checkpoints/competence_weighted_first_i2718_epoch2",
+          "adapter": "checkpoints/competence_weighted_first_i2718_epoch1/step_0096",
+          "output_order": "decision_first",
+          "class_weighting": "reweighted",
+          "seed": 2719,
+          "batch_size": 8,
+          "effective_batch": 16,
+          "steps": 96,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "weighted_first",
+        "installation": 2718,
+        "epoch": 2,
+        "kind": "competence_train"
+      }
+    },
+    {
+      "name": "competence_weighted_first_i2718_epoch2_calibration",
+      "output": "results/development/competence_weighted_first_i2718_epoch2_calibration",
+      "completion_sha256": "4273bb4a8840d30a0c9d6e9a43cdd0459cb34dd05e181445a35150fa10bd9048",
+      "plan": {
+        "name": "competence_weighted_first_i2718_epoch2_calibration",
+        "output": "results/development/competence_weighted_first_i2718_epoch2_calibration",
+        "args": {
+          "mode": "generate",
+          "data": "data/calibration.jsonl",
+          "output": "results/development/competence_weighted_first_i2718_epoch2_calibration",
+          "adapter": "checkpoints/competence_weighted_first_i2718_epoch2/step_0096",
+          "output_order": "decision_first",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "weighted_first",
+        "installation": 2718,
+        "epoch": 2,
+        "kind": "competence_calibration"
+      }
+    },
+    {
+      "name": "competence_weighted_first_i2718_epoch3",
+      "output": "checkpoints/competence_weighted_first_i2718_epoch3",
+      "completion_sha256": "78a9463b2358fa398ae9d235cf05692418ffe48de66e842b013a931b1b270929",
+      "plan": {
+        "name": "competence_weighted_first_i2718_epoch3",
+        "output": "checkpoints/competence_weighted_first_i2718_epoch3",
+        "args": {
+          "mode": "train",
+          "data": "data/competence.jsonl",
+          "output": "checkpoints/competence_weighted_first_i2718_epoch3",
+          "adapter": "checkpoints/competence_weighted_first_i2718_epoch2/step_0096",
+          "output_order": "decision_first",
+          "class_weighting": "reweighted",
+          "seed": 2720,
+          "batch_size": 8,
+          "effective_batch": 16,
+          "steps": 96,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "weighted_first",
+        "installation": 2718,
+        "epoch": 3,
+        "kind": "competence_train"
+      }
+    },
+    {
+      "name": "competence_weighted_first_i2718_epoch3_calibration",
+      "output": "results/development/competence_weighted_first_i2718_epoch3_calibration",
+      "completion_sha256": "d9a92c1cbae89d0565c485c100abc852432e4cb1ef94391ef1411e75ac6dfd4d",
+      "plan": {
+        "name": "competence_weighted_first_i2718_epoch3_calibration",
+        "output": "results/development/competence_weighted_first_i2718_epoch3_calibration",
+        "args": {
+          "mode": "generate",
+          "data": "data/calibration.jsonl",
+          "output": "results/development/competence_weighted_first_i2718_epoch3_calibration",
+          "adapter": "checkpoints/competence_weighted_first_i2718_epoch3/step_0096",
+          "output_order": "decision_first",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "weighted_first",
+        "installation": 2718,
+        "epoch": 3,
+        "kind": "competence_calibration"
+      }
+    },
+    {
+      "name": "competence_uniform_last_i2718_epoch1",
+      "output": "checkpoints/competence_uniform_last_i2718_epoch1",
+      "completion_sha256": "e7e91468c7a1c2f59e3ccd4ca977ad73cf7a6db2dafabdf3811422bdfae9f733",
+      "plan": {
+        "name": "competence_uniform_last_i2718_epoch1",
+        "output": "checkpoints/competence_uniform_last_i2718_epoch1",
+        "args": {
+          "mode": "train",
+          "data": "data/competence.jsonl",
+          "output": "checkpoints/competence_uniform_last_i2718_epoch1",
+          "adapter": null,
+          "output_order": "decision_last",
+          "class_weighting": "uniform",
+          "seed": 2718,
+          "batch_size": 8,
+          "effective_batch": 16,
+          "steps": 96,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "uniform_last",
+        "installation": 2718,
+        "epoch": 1,
+        "kind": "competence_train"
+      }
+    },
+    {
+      "name": "competence_uniform_last_i2718_epoch1_calibration",
+      "output": "results/development/competence_uniform_last_i2718_epoch1_calibration",
+      "completion_sha256": "17f3611b8f4d6897b17389e8e0d00b254a1773b260abdb59d4494a5f0d6441f7",
+      "plan": {
+        "name": "competence_uniform_last_i2718_epoch1_calibration",
+        "output": "results/development/competence_uniform_last_i2718_epoch1_calibration",
+        "args": {
+          "mode": "generate",
+          "data": "data/calibration.jsonl",
+          "output": "results/development/competence_uniform_last_i2718_epoch1_calibration",
+          "adapter": "checkpoints/competence_uniform_last_i2718_epoch1/step_0096",
+          "output_order": "decision_last",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "uniform_last",
+        "installation": 2718,
+        "epoch": 1,
+        "kind": "competence_calibration"
+      }
+    },
+    {
+      "name": "competence_uniform_last_i2718_epoch2",
+      "output": "checkpoints/competence_uniform_last_i2718_epoch2",
+      "completion_sha256": "efb92943d35266c429198c520e99a8c8393c88053dfc69e0c7cbea08b9633fa8",
+      "plan": {
+        "name": "competence_uniform_last_i2718_epoch2",
+        "output": "checkpoints/competence_uniform_last_i2718_epoch2",
+        "args": {
+          "mode": "train",
+          "data": "data/competence.jsonl",
+          "output": "checkpoints/competence_uniform_last_i2718_epoch2",
+          "adapter": "checkpoints/competence_uniform_last_i2718_epoch1/step_0096",
+          "output_order": "decision_last",
+          "class_weighting": "uniform",
+          "seed": 2719,
+          "batch_size": 8,
+          "effective_batch": 16,
+          "steps": 96,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "uniform_last",
+        "installation": 2718,
+        "epoch": 2,
+        "kind": "competence_train"
+      }
+    },
+    {
+      "name": "competence_uniform_last_i2718_epoch2_calibration",
+      "output": "results/development/competence_uniform_last_i2718_epoch2_calibration",
+      "completion_sha256": "c606683d3dd1c1b03d29148c3e633fc002bfda9398e02a9beddda0680ef000b1",
+      "plan": {
+        "name": "competence_uniform_last_i2718_epoch2_calibration",
+        "output": "results/development/competence_uniform_last_i2718_epoch2_calibration",
+        "args": {
+          "mode": "generate",
+          "data": "data/calibration.jsonl",
+          "output": "results/development/competence_uniform_last_i2718_epoch2_calibration",
+          "adapter": "checkpoints/competence_uniform_last_i2718_epoch2/step_0096",
+          "output_order": "decision_last",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "uniform_last",
+        "installation": 2718,
+        "epoch": 2,
+        "kind": "competence_calibration"
+      }
+    },
+    {
+      "name": "competence_uniform_last_i2718_epoch3",
+      "output": "checkpoints/competence_uniform_last_i2718_epoch3",
+      "completion_sha256": "0472395f7385a8fe4168dd4a45e4d8e985b130404d755a5e82a98297f774cd43",
+      "plan": {
+        "name": "competence_uniform_last_i2718_epoch3",
+        "output": "checkpoints/competence_uniform_last_i2718_epoch3",
+        "args": {
+          "mode": "train",
+          "data": "data/competence.jsonl",
+          "output": "checkpoints/competence_uniform_last_i2718_epoch3",
+          "adapter": "checkpoints/competence_uniform_last_i2718_epoch2/step_0096",
+          "output_order": "decision_last",
+          "class_weighting": "uniform",
+          "seed": 2720,
+          "batch_size": 8,
+          "effective_batch": 16,
+          "steps": 96,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "uniform_last",
+        "installation": 2718,
+        "epoch": 3,
+        "kind": "competence_train"
+      }
+    },
+    {
+      "name": "competence_uniform_last_i2718_epoch3_calibration",
+      "output": "results/development/competence_uniform_last_i2718_epoch3_calibration",
+      "completion_sha256": "c700a82124041e6412fc8aacb16b4186d9bed24e602aa539ca064305ce143e09",
+      "plan": {
+        "name": "competence_uniform_last_i2718_epoch3_calibration",
+        "output": "results/development/competence_uniform_last_i2718_epoch3_calibration",
+        "args": {
+          "mode": "generate",
+          "data": "data/calibration.jsonl",
+          "output": "results/development/competence_uniform_last_i2718_epoch3_calibration",
+          "adapter": "checkpoints/competence_uniform_last_i2718_epoch3/step_0096",
+          "output_order": "decision_last",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "uniform_last",
+        "installation": 2718,
+        "epoch": 3,
+        "kind": "competence_calibration"
+      }
+    },
+    {
+      "name": "competence_weighted_last_i2718_epoch1",
+      "output": "checkpoints/competence_weighted_last_i2718_epoch1",
+      "completion_sha256": "4f2e21a305ea5dd6bedbbc8ba475c3aa5fce3f05ff97bf43eb2073f20e79bb27",
+      "plan": {
+        "name": "competence_weighted_last_i2718_epoch1",
+        "output": "checkpoints/competence_weighted_last_i2718_epoch1",
+        "args": {
+          "mode": "train",
+          "data": "data/competence.jsonl",
+          "output": "checkpoints/competence_weighted_last_i2718_epoch1",
+          "adapter": null,
+          "output_order": "decision_last",
+          "class_weighting": "reweighted",
+          "seed": 2718,
+          "batch_size": 8,
+          "effective_batch": 16,
+          "steps": 96,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "weighted_last",
+        "installation": 2718,
+        "epoch": 1,
+        "kind": "competence_train"
+      }
+    },
+    {
+      "name": "competence_weighted_last_i2718_epoch1_calibration",
+      "output": "results/development/competence_weighted_last_i2718_epoch1_calibration",
+      "completion_sha256": "765acaef37e9894414823e9fc45047b945e083813cb37677377bdcb2f0c1a763",
+      "plan": {
+        "name": "competence_weighted_last_i2718_epoch1_calibration",
+        "output": "results/development/competence_weighted_last_i2718_epoch1_calibration",
+        "args": {
+          "mode": "generate",
+          "data": "data/calibration.jsonl",
+          "output": "results/development/competence_weighted_last_i2718_epoch1_calibration",
+          "adapter": "checkpoints/competence_weighted_last_i2718_epoch1/step_0096",
+          "output_order": "decision_last",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "weighted_last",
+        "installation": 2718,
+        "epoch": 1,
+        "kind": "competence_calibration"
+      }
+    },
+    {
+      "name": "competence_weighted_last_i2718_epoch2",
+      "output": "checkpoints/competence_weighted_last_i2718_epoch2",
+      "completion_sha256": "6a23ebb24eaacb47baabfd6ee19a325988ccf2616003ff4f5a1f907845518e09",
+      "plan": {
+        "name": "competence_weighted_last_i2718_epoch2",
+        "output": "checkpoints/competence_weighted_last_i2718_epoch2",
+        "args": {
+          "mode": "train",
+          "data": "data/competence.jsonl",
+          "output": "checkpoints/competence_weighted_last_i2718_epoch2",
+          "adapter": "checkpoints/competence_weighted_last_i2718_epoch1/step_0096",
+          "output_order": "decision_last",
+          "class_weighting": "reweighted",
+          "seed": 2719,
+          "batch_size": 8,
+          "effective_batch": 16,
+          "steps": 96,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "weighted_last",
+        "installation": 2718,
+        "epoch": 2,
+        "kind": "competence_train"
+      }
+    },
+    {
+      "name": "competence_weighted_last_i2718_epoch2_calibration",
+      "output": "results/development/competence_weighted_last_i2718_epoch2_calibration",
+      "completion_sha256": "3f5c84edb1d2b8d387845bf28efaca92aff339ad3108aebb233fbe68ad48b6de",
+      "plan": {
+        "name": "competence_weighted_last_i2718_epoch2_calibration",
+        "output": "results/development/competence_weighted_last_i2718_epoch2_calibration",
+        "args": {
+          "mode": "generate",
+          "data": "data/calibration.jsonl",
+          "output": "results/development/competence_weighted_last_i2718_epoch2_calibration",
+          "adapter": "checkpoints/competence_weighted_last_i2718_epoch2/step_0096",
+          "output_order": "decision_last",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "weighted_last",
+        "installation": 2718,
+        "epoch": 2,
+        "kind": "competence_calibration"
+      }
+    },
+    {
+      "name": "competence_weighted_last_i2718_epoch3",
+      "output": "checkpoints/competence_weighted_last_i2718_epoch3",
+      "completion_sha256": "283359e15778c93410e0c959e9f24fc86df3781a9ec08cc01e6db426c87b94ce",
+      "plan": {
+        "name": "competence_weighted_last_i2718_epoch3",
+        "output": "checkpoints/competence_weighted_last_i2718_epoch3",
+        "args": {
+          "mode": "train",
+          "data": "data/competence.jsonl",
+          "output": "checkpoints/competence_weighted_last_i2718_epoch3",
+          "adapter": "checkpoints/competence_weighted_last_i2718_epoch2/step_0096",
+          "output_order": "decision_last",
+          "class_weighting": "reweighted",
+          "seed": 2720,
+          "batch_size": 8,
+          "effective_batch": 16,
+          "steps": 96,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "weighted_last",
+        "installation": 2718,
+        "epoch": 3,
+        "kind": "competence_train"
+      }
+    },
+    {
+      "name": "competence_weighted_last_i2718_epoch3_calibration",
+      "output": "results/development/competence_weighted_last_i2718_epoch3_calibration",
+      "completion_sha256": "025334c98d4ea273f2430270f9c1cee223cde010c1b6659fc9e4b9521d398376",
+      "plan": {
+        "name": "competence_weighted_last_i2718_epoch3_calibration",
+        "output": "results/development/competence_weighted_last_i2718_epoch3_calibration",
+        "args": {
+          "mode": "generate",
+          "data": "data/calibration.jsonl",
+          "output": "results/development/competence_weighted_last_i2718_epoch3_calibration",
+          "adapter": "checkpoints/competence_weighted_last_i2718_epoch3/step_0096",
+          "output_order": "decision_last",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "weighted_last",
+        "installation": 2718,
+        "epoch": 3,
+        "kind": "competence_calibration"
+      }
+    },
+    {
+      "name": "competence_uniform_first_i2718_epoch1",
+      "output": "checkpoints/competence_uniform_first_i2718_epoch1",
+      "completion_sha256": "04d384bee76206a95961ec34f72e19c0d61a8f2956ff0926291d32ca6b9f86b4",
+      "plan": {
+        "name": "competence_uniform_first_i2718_epoch1",
+        "output": "checkpoints/competence_uniform_first_i2718_epoch1",
+        "args": {
+          "mode": "train",
+          "data": "data/competence.jsonl",
+          "output": "checkpoints/competence_uniform_first_i2718_epoch1",
+          "adapter": null,
+          "output_order": "decision_first",
+          "class_weighting": "uniform",
+          "seed": 2718,
+          "batch_size": 8,
+          "effective_batch": 16,
+          "steps": 96,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "uniform_first",
+        "installation": 2718,
+        "epoch": 1,
+        "kind": "competence_train"
+      }
+    },
+    {
+      "name": "competence_uniform_first_i2718_epoch1_calibration",
+      "output": "results/development/competence_uniform_first_i2718_epoch1_calibration",
+      "completion_sha256": "3f0aaf1c216c575e56d0b67a6d9b3ab30896b2b07be45045227a33171dea55f8",
+      "plan": {
+        "name": "competence_uniform_first_i2718_epoch1_calibration",
+        "output": "results/development/competence_uniform_first_i2718_epoch1_calibration",
+        "args": {
+          "mode": "generate",
+          "data": "data/calibration.jsonl",
+          "output": "results/development/competence_uniform_first_i2718_epoch1_calibration",
+          "adapter": "checkpoints/competence_uniform_first_i2718_epoch1/step_0096",
+          "output_order": "decision_first",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "uniform_first",
+        "installation": 2718,
+        "epoch": 1,
+        "kind": "competence_calibration"
+      }
+    },
+    {
+      "name": "competence_uniform_first_i2718_epoch2",
+      "output": "checkpoints/competence_uniform_first_i2718_epoch2",
+      "completion_sha256": "92cc7797d0fd1389ff03dbb92f6af5c6a374f2ae07b2718c371a58998a8773d3",
+      "plan": {
+        "name": "competence_uniform_first_i2718_epoch2",
+        "output": "checkpoints/competence_uniform_first_i2718_epoch2",
+        "args": {
+          "mode": "train",
+          "data": "data/competence.jsonl",
+          "output": "checkpoints/competence_uniform_first_i2718_epoch2",
+          "adapter": "checkpoints/competence_uniform_first_i2718_epoch1/step_0096",
+          "output_order": "decision_first",
+          "class_weighting": "uniform",
+          "seed": 2719,
+          "batch_size": 8,
+          "effective_batch": 16,
+          "steps": 96,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "uniform_first",
+        "installation": 2718,
+        "epoch": 2,
+        "kind": "competence_train"
+      }
+    },
+    {
+      "name": "competence_uniform_first_i2718_epoch2_calibration",
+      "output": "results/development/competence_uniform_first_i2718_epoch2_calibration",
+      "completion_sha256": "82cfb4eb9b4998e79625ca5f122c30e7ca8af5933f396c77c6ee28725520d910",
+      "plan": {
+        "name": "competence_uniform_first_i2718_epoch2_calibration",
+        "output": "results/development/competence_uniform_first_i2718_epoch2_calibration",
+        "args": {
+          "mode": "generate",
+          "data": "data/calibration.jsonl",
+          "output": "results/development/competence_uniform_first_i2718_epoch2_calibration",
+          "adapter": "checkpoints/competence_uniform_first_i2718_epoch2/step_0096",
+          "output_order": "decision_first",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "uniform_first",
+        "installation": 2718,
+        "epoch": 2,
+        "kind": "competence_calibration"
+      }
+    },
+    {
+      "name": "competence_uniform_first_i2718_epoch3",
+      "output": "checkpoints/competence_uniform_first_i2718_epoch3",
+      "completion_sha256": "3a1ecf0037b3ee7e2a93963e3fa3602417f1d452aaf4a79d98b395f17322e0c0",
+      "plan": {
+        "name": "competence_uniform_first_i2718_epoch3",
+        "output": "checkpoints/competence_uniform_first_i2718_epoch3",
+        "args": {
+          "mode": "train",
+          "data": "data/competence.jsonl",
+          "output": "checkpoints/competence_uniform_first_i2718_epoch3",
+          "adapter": "checkpoints/competence_uniform_first_i2718_epoch2/step_0096",
+          "output_order": "decision_first",
+          "class_weighting": "uniform",
+          "seed": 2720,
+          "batch_size": 8,
+          "effective_batch": 16,
+          "steps": 96,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "uniform_first",
+        "installation": 2718,
+        "epoch": 3,
+        "kind": "competence_train"
+      }
+    },
+    {
+      "name": "competence_uniform_first_i2718_epoch3_calibration",
+      "output": "results/development/competence_uniform_first_i2718_epoch3_calibration",
+      "completion_sha256": "0ed2acc25f08b3b421489a0077423e190843003caa7eebd78ee7c1fc1fe48ceb",
+      "plan": {
+        "name": "competence_uniform_first_i2718_epoch3_calibration",
+        "output": "results/development/competence_uniform_first_i2718_epoch3_calibration",
+        "args": {
+          "mode": "generate",
+          "data": "data/calibration.jsonl",
+          "output": "results/development/competence_uniform_first_i2718_epoch3_calibration",
+          "adapter": "checkpoints/competence_uniform_first_i2718_epoch3/step_0096",
+          "output_order": "decision_first",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        },
+        "recipe": "uniform_first",
+        "installation": 2718,
+        "epoch": 3,
+        "kind": "competence_calibration"
+      }
+    },
+    {
+      "name": "validation_uniform_first_i1729",
+      "output": "results/validation/validation_uniform_first_i1729",
+      "completion_sha256": "d660071637ce39960017579e9aa096001da4d4a306b674e115a916d024971465",
+      "plan": {
+        "name": "validation_uniform_first_i1729",
+        "output": "results/validation/validation_uniform_first_i1729",
+        "args": {
+          "mode": "generate",
+          "data": "data/validation.jsonl",
+          "output": "results/validation/validation_uniform_first_i1729",
+          "adapter": "checkpoints/competence_uniform_first_i1729_epoch3/step_0096",
+          "output_order": "decision_first",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        }
+      }
+    },
+    {
+      "name": "validation_weighted_first_i1729",
+      "output": "results/validation/validation_weighted_first_i1729",
+      "completion_sha256": "25400fc96089f6b270f7307304eec6b574261cdd21d268e70e170f52160864c0",
+      "plan": {
+        "name": "validation_weighted_first_i1729",
+        "output": "results/validation/validation_weighted_first_i1729",
+        "args": {
+          "mode": "generate",
+          "data": "data/validation.jsonl",
+          "output": "results/validation/validation_weighted_first_i1729",
+          "adapter": "checkpoints/competence_weighted_first_i1729_epoch3/step_0096",
+          "output_order": "decision_first",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        }
+      }
+    },
+    {
+      "name": "validation_uniform_last_i1729",
+      "output": "results/validation/validation_uniform_last_i1729",
+      "completion_sha256": "ab7165f74a861022cf09fe103ff1ea7e5c6b5ba104227d7bb84cdf97737cf65a",
+      "plan": {
+        "name": "validation_uniform_last_i1729",
+        "output": "results/validation/validation_uniform_last_i1729",
+        "args": {
+          "mode": "generate",
+          "data": "data/validation.jsonl",
+          "output": "results/validation/validation_uniform_last_i1729",
+          "adapter": "checkpoints/competence_uniform_last_i1729_epoch3/step_0096",
+          "output_order": "decision_last",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        }
+      }
+    },
+    {
+      "name": "validation_weighted_last_i1729",
+      "output": "results/validation/validation_weighted_last_i1729",
+      "completion_sha256": "61898b112cac5f659702da9595dd627b08c492105a42ed5e65e654482e619893",
+      "plan": {
+        "name": "validation_weighted_last_i1729",
+        "output": "results/validation/validation_weighted_last_i1729",
+        "args": {
+          "mode": "generate",
+          "data": "data/validation.jsonl",
+          "output": "results/validation/validation_weighted_last_i1729",
+          "adapter": "checkpoints/competence_weighted_last_i1729_epoch3/step_0096",
+          "output_order": "decision_last",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        }
+      }
+    },
+    {
+      "name": "validation_weighted_first_i2718",
+      "output": "results/validation/validation_weighted_first_i2718",
+      "completion_sha256": "46b4a5f85ff296976ca09a78cf451af03324c954cd2e7344efa0b08bbecbc737",
+      "plan": {
+        "name": "validation_weighted_first_i2718",
+        "output": "results/validation/validation_weighted_first_i2718",
+        "args": {
+          "mode": "generate",
+          "data": "data/validation.jsonl",
+          "output": "results/validation/validation_weighted_first_i2718",
+          "adapter": "checkpoints/competence_weighted_first_i2718_epoch3/step_0096",
+          "output_order": "decision_first",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        }
+      }
+    },
+    {
+      "name": "validation_uniform_last_i2718",
+      "output": "results/validation/validation_uniform_last_i2718",
+      "completion_sha256": "739870c22be3200134b34f03ff9c00af54c0e9ff11a1a867468e21f0ab0df195",
+      "plan": {
+        "name": "validation_uniform_last_i2718",
+        "output": "results/validation/validation_uniform_last_i2718",
+        "args": {
+          "mode": "generate",
+          "data": "data/validation.jsonl",
+          "output": "results/validation/validation_uniform_last_i2718",
+          "adapter": "checkpoints/competence_uniform_last_i2718_epoch3/step_0096",
+          "output_order": "decision_last",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        }
+      }
+    },
+    {
+      "name": "validation_weighted_last_i2718",
+      "output": "results/validation/validation_weighted_last_i2718",
+      "completion_sha256": "640b59ce0f86dd7e463f0469e0fdaad012c2c6603f6facd56c1f78392049c1ca",
+      "plan": {
+        "name": "validation_weighted_last_i2718",
+        "output": "results/validation/validation_weighted_last_i2718",
+        "args": {
+          "mode": "generate",
+          "data": "data/validation.jsonl",
+          "output": "results/validation/validation_weighted_last_i2718",
+          "adapter": "checkpoints/competence_weighted_last_i2718_epoch3/step_0096",
+          "output_order": "decision_last",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        }
+      }
+    },
+    {
+      "name": "validation_uniform_first_i2718",
+      "output": "results/validation/validation_uniform_first_i2718",
+      "completion_sha256": "037f4836c72610fb59e022603c72ba602729ebc6358ec6b91ba463f87314def7",
+      "plan": {
+        "name": "validation_uniform_first_i2718",
+        "output": "results/validation/validation_uniform_first_i2718",
+        "args": {
+          "mode": "generate",
+          "data": "data/validation.jsonl",
+          "output": "results/validation/validation_uniform_first_i2718",
+          "adapter": "checkpoints/competence_uniform_first_i2718_epoch3/step_0096",
+          "output_order": "decision_first",
+          "class_weighting": "uniform",
+          "seed": 90210,
+          "batch_size": 16,
+          "effective_batch": 16,
+          "steps": null,
+          "save_steps": null,
+          "lr": 0.0001,
+          "sample": false,
+          "score_decision": false,
+          "max_new_tokens": 192
+        }
+      }
+    }
+  ],
+  "selected_installations": {},
+  "partial_stage_policy": "No automatic reuse. Preserve the attempt; a manual whole-stage retry from its incoming checkpoint requires a documented new attempt path."
+}

@@ -1,0 +1,17 @@
+recipe,installation,endpoint,count,denominator,rate
+uniform_first,1729,clear_decision_accuracy,121,128,0.9453125
+uniform_first,2718,clear_decision_accuracy,107,128,0.8359375
+weighted_first,1729,clear_decision_accuracy,125,128,0.9765625
+weighted_first,2718,clear_decision_accuracy,120,128,0.9375
+uniform_last,1729,clear_decision_accuracy,128,128,1.0
+uniform_last,2718,clear_decision_accuracy,128,128,1.0
+weighted_last,1729,clear_decision_accuracy,128,128,1.0
+weighted_last,2718,clear_decision_accuracy,128,128,1.0
+uniform_first,1729,complete_correctness,369,384,0.9609375
+uniform_first,2718,complete_correctness,348,384,0.90625
+weighted_first,1729,complete_correctness,365,384,0.9505208333333334
+weighted_first,2718,complete_correctness,366,384,0.953125
+uniform_last,1729,complete_correctness,382,384,0.9947916666666666
+uniform_last,2718,complete_correctness,380,384,0.9895833333333334
+weighted_last,1729,complete_correctness,380,384,0.9895833333333334
+weighted_last,2718,complete_correctness,382,384,0.9947916666666666

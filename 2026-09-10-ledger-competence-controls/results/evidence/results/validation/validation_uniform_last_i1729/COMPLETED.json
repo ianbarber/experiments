@@ -1,0 +1,90 @@
+{
+  "started_at": "2026-09-11T04:03:40.722096+00:00",
+  "mode": "generate",
+  "args": {
+    "mode": "generate",
+    "data": "data/validation.jsonl",
+    "output": "results/validation/validation_uniform_last_i1729",
+    "adapter": "checkpoints/competence_uniform_last_i1729_epoch3/step_0096",
+    "output_order": "decision_last",
+    "class_weighting": "uniform",
+    "seed": 90210,
+    "batch_size": 16,
+    "effective_batch": 16,
+    "steps": null,
+    "save_steps": null,
+    "lr": 0.0001,
+    "sample": false,
+    "score_decision": false,
+    "max_new_tokens": 192
+  },
+  "config": {
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "model_path": "/models/Qwen2.5-3B-Instruct",
+    "repair_seeds": [
+      42,
+      43,
+      44
+    ],
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.0,
+    "lora_targets": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "dtype": "bfloat16",
+    "induction_lr": 0.0001,
+    "repair_lr": 0.0001,
+    "batch_size": 16,
+    "micro_batch_size": 8,
+    "repair_epochs": 1,
+    "repair_max_examples": 512,
+    "max_sequence_length": 2048,
+    "failure_max_new_tokens": 192,
+    "quantization": "nf4_double_quant",
+    "cuda_allocator_limit_gib": 24,
+    "model_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "installation_seeds": [
+      1729,
+      2718
+    ],
+    "generation_max_new_tokens": 192,
+    "induction_max_steps": 96,
+    "repair_steps": 32
+  },
+  "config_sha256": "c7f4cae94e15ac5c73da6c9e4d278f2fe6244fe3ff40666c997cef2704527cab",
+  "source_sha256": {
+    "scripts/cohort.py": "5385da34d7385069cb6f4753ddb80c9a87017d7b453c26e14275d6e5d7af9a3c",
+    "scripts/common.py": "d5460eedc9519b02115e3fa6d1714a5747e805c8378d4ec29e048c0c4492cc1e",
+    "scripts/gpu_entry.py": "2c79ced6b31be7d912dd65b042da3aefcf12d2cb33c70c9f24356c8f57eb64a6",
+    "scripts/make_data.py": "d2ccf9cf996496204bbe726bf3a88ae2ad3e84e0a49e052cf7d98b18ee8cb252",
+    "scripts/model_stage.py": "026a07baa55eb76a6d90bc8b21178cdb6d19fc4b07a8ceac6267c22d4f709816",
+    "scripts/narrative.py": "9501236263a0383791306090650972528750c502890e157e3aacc6cd9dcbc9e1",
+    "scripts/objective.py": "bd6c15bc255126ac2e9815f42cbdcd853bf5696174565b902976f9a33a62520a",
+    "scripts/preflight.py": "9693ceac46ebcebd6cc5f129e0869869f44e6d878af82281e1eaa4e476fa10f7",
+    "scripts/program.py": "6abb8fb3b86d444540fea3f037c2994f183fd17cb9189dc9f1b01c6c28bc8818",
+    "scripts/run_session.py": "c2c6804b7390532fd16a2d438f2c1ee2391989d514453e11bbe49b89669e707e",
+    "scripts/serialization.py": "c9ab167310f59a020f25335a343f58ff2df2beed5e90ca1f4339f71100761f22",
+    "scripts/service_pause_session.py": "906d620934798b73fb6b37496033a9e7d4218ce4dbe34cca55418810fcd81326",
+    "scripts/task.py": "94aae593c4bd6c7d3157ee5396c340ddf5f0acdc13133a8856d6103cb444c8e9"
+  },
+  "data_sha256": "3db57869cf2c2d4811cef4880c7bb8be98fe94bcb19b057996d7bcc2af9dee93",
+  "source_examples": 384,
+  "initial_adapter_sha256": "e1671aab0e0a595dc3c9dc10de3bbeba2e9c62d01e99b5ee9d42cd0f7a5373c8",
+  "outputs": 384,
+  "elapsed_s": 269.6482874881476,
+  "peak_cuda_allocated_bytes": 5146928128,
+  "scoring_scope": "All-case free generation; canonical-prefix token scoring disabled in this study",
+  "finished_at": "2026-09-11T04:08:57.464627+00:00",
+  "status": "complete",
+  "artifacts_sha256": {
+    "outputs.jsonl": "6031037d1877d79681f5b3b9e2712d64d79c103502803b9b3701435f48da96b4",
+    "started.json": "7cf09f252bed635358f6c6f70d22f408bd5cc154fa6ba3c3f8756247d106891a"
+  }
+}

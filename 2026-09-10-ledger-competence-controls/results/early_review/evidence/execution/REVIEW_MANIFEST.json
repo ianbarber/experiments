@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "created_utc": "2026-09-11T00:06:03.750613+00:00",
+  "kind": "post_start_execution_validity_review_and_administrative_guard_proof",
+  "recommendation": "finish_frozen_competence_selection_all_eight_validation_then_stop_before_induction",
+  "implementation_fatal_findings": 0,
+  "decoding_documentation_correction": true,
+  "administrative_stop_basis": "Separate practical repair-design adjudication; not corrupted competence implementation",
+  "scientific_freeze_sha256": "8407c0cad8cabff90fbb42d2fbb45861fd45b9df6c64af1c0f94fc5c515b8e13",
+  "all26_scientific_pins_match_at_close": true,
+  "completed_contract_sample": 28,
+  "completed_updates_verified": 1248,
+  "saved_responses_verified": 2880,
+  "cpu_tokenized_frozen_cases_both_orders": 6976,
+  "guard_synthetic_cases_passed": 8,
+  "new_model_calls": 0,
+  "gpu_computation": false,
+  "real_guard_created_by_this_reviewer": false,
+  "portable_public_supplement": [
+    "DECODING_METHOD_SUPPLEMENT.md",
+    "LIBRARY_AUDIT.json",
+    "CROSS_STUDY_DECODING_IDENTITY.json"
+  ],
+  "commands": [
+    "CUDA_VISIBLE_DEVICES='' python results/early_validity_review/execution/numerical_checks.py",
+    "docker exec -e CUDA_VISIBLE_DEVICES= -e TOKENIZERS_PARALLELISM=false reactivation-competence-research python3 /workspace/results/early_validity_review/execution/token_audit.py",
+    "python results/early_validity_review/execution/contract_audit.py",
+    "docker exec -e CUDA_VISIBLE_DEVICES= -e TOKENIZERS_PARALLELISM=false reactivation-competence-research python3 /workspace/results/early_validity_review/execution/output_token_audit.py",
+    "docker exec -e CUDA_VISIBLE_DEVICES= reactivation-competence-research python3 /workspace/results/early_validity_review/execution/library_audit.py",
+    "python results/early_validity_review/execution/boundary_guard_checks.py"
+  ],
+  "artifacts": {
+    "BOUNDARY_GUARD_CHECKS.json": {
+      "sha256": "0a00d456f439787b83ad7fd905bf9e130b538938f979c25703fa129eac50d29e",
+      "bytes": 2346
+    },
+    "BOUNDARY_GUARD_REVIEW.md": {
+      "sha256": "6d846cb8a8a1fed37694e2db213b8168d37a493529634d7a1cf9a8870230c330",
+      "bytes": 4782
+    },
+    "CONTRACT_AUDIT.json": {
+      "sha256": "d551ccb07a89c93907854dfa51069397ccb4a29ae774a6744b19e31cc685c41e",
+      "bytes": 27226
+    },
+    "CROSS_STUDY_DECODING_IDENTITY.json": {
+      "sha256": "5b81419d549ffcb447a2b67920f4e53f1cb987568ca391df9e42081339b14545",
+      "bytes": 661
+    },
+    "DECODING_METHOD_SUPPLEMENT.md": {
+      "sha256": "e7734f7a7b3b7119955d0a3b1cbb6e4b3a2346f3790e63ff2ebd320c12327c59",
+      "bytes": 6736
+    },
+    "EXECUTION_REVIEW.md": {
+      "sha256": "6c5841492d835fbb957cc88a5f62cbc8efdd19a51e0c6a50d8db708ea0c17f8c",
+      "bytes": 16312
+    },
+    "EXECUTION_REVIEW_BEFORE_SCOPE_STOP.md": {
+      "sha256": "70f9d34379e84e5fa9f72cbfe4fe86fda479f523828f30f538b835538416ea16",
+      "bytes": 15056
+    },
+    "LIBRARY_AUDIT.json": {
+      "sha256": "6a5b9b64b5c55f3b8474ac8034831534241b4aa65ed92c12a3cbdb1ec26991d5",
+      "bytes": 54605
+    },
+    "NUMERICAL_CHECKS.json": {
+      "sha256": "d91792a521c6866d7bec47ad150d44868c81cc0ec9559995fb26875937cf7bbc",
+      "bytes": 815
+    },
+    "OUTPUT_TOKEN_AUDIT.json": {
+      "sha256": "2450f13ab314c6838828a47277ce1401b87fbad4485df7cb84048ffa271ae045",
+      "bytes": 3448
+    },
+    "TOKEN_AUDIT.json": {
+      "sha256": "d6c3e9db85c609e23574575c1e5f3e3e1fbd61b61442ffbcea2fe93e57afd30e",
+      "bytes": 221285
+    },
+    "boundary_guard_checks.py": {
+      "sha256": "34eaa535130b30a30a0fa98ed682fcfaaa214a678f76761d6203e90aaaa6a636",
+      "bytes": 3224
+    },
+    "contract_audit.py": {
+      "sha256": "53e45c65f106e5313d43d8094cfe293590e82c85745cd91c212043117396536b",
+      "bytes": 10808
+    },
+    "library_audit.py": {
+      "sha256": "a88459d064c84723c71e3d9d4ce407e6d0f236d049fc13f9dd920226b78cbb62",
+      "bytes": 3782
+    },
+    "numerical_checks.py": {
+      "sha256": "b9798d8035a8216e1ac8d1da513a1d51a03c40a799f40652ffabaf67df19c3ac",
+      "bytes": 4263
+    },
+    "output_token_audit.py": {
+      "sha256": "aa4e371b5af08d7598e8afcce7ad9bcde6a78972ff8c7d961104faf7a6d211ce",
+      "bytes": 1914
+    },
+    "token_audit.py": {
+      "sha256": "72d1e5456e9a6bafcd28f8a5bda0f76292bae782366a18544b9a64d662fc4350",
+      "bytes": 4128
+    }
+  }
+}

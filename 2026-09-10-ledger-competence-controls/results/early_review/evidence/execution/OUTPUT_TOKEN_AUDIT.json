@@ -1,0 +1,114 @@
+{
+  "created_utc": "2026-09-10T23:56:53.702171+00:00",
+  "no_model_constructed": true,
+  "stages": [
+    {
+      "path": "results/development/base_calibration_decision_first/COMPLETED.json",
+      "outputs": 192,
+      "minimum_tokens": 59,
+      "maximum_tokens": 92,
+      "total_tokens": 14172
+    },
+    {
+      "path": "results/development/base_calibration_decision_last/COMPLETED.json",
+      "outputs": 192,
+      "minimum_tokens": 64,
+      "maximum_tokens": 92,
+      "total_tokens": 14432
+    },
+    {
+      "path": "results/development/competence_uniform_first_i1729_epoch1_calibration/COMPLETED.json",
+      "outputs": 192,
+      "minimum_tokens": 33,
+      "maximum_tokens": 57,
+      "total_tokens": 8108
+    },
+    {
+      "path": "results/development/competence_uniform_first_i1729_epoch2_calibration/COMPLETED.json",
+      "outputs": 192,
+      "minimum_tokens": 33,
+      "maximum_tokens": 57,
+      "total_tokens": 8230
+    },
+    {
+      "path": "results/development/competence_uniform_first_i1729_epoch3_calibration/COMPLETED.json",
+      "outputs": 192,
+      "minimum_tokens": 33,
+      "maximum_tokens": 57,
+      "total_tokens": 8242
+    },
+    {
+      "path": "results/development/competence_uniform_last_i1729_epoch1_calibration/COMPLETED.json",
+      "outputs": 192,
+      "minimum_tokens": 33,
+      "maximum_tokens": 57,
+      "total_tokens": 8158
+    },
+    {
+      "path": "results/development/competence_uniform_last_i1729_epoch2_calibration/COMPLETED.json",
+      "outputs": 192,
+      "minimum_tokens": 33,
+      "maximum_tokens": 57,
+      "total_tokens": 8245
+    },
+    {
+      "path": "results/development/competence_uniform_last_i1729_epoch3_calibration/COMPLETED.json",
+      "outputs": 192,
+      "minimum_tokens": 33,
+      "maximum_tokens": 57,
+      "total_tokens": 8236
+    },
+    {
+      "path": "results/development/competence_weighted_first_i1729_epoch1_calibration/COMPLETED.json",
+      "outputs": 192,
+      "minimum_tokens": 33,
+      "maximum_tokens": 57,
+      "total_tokens": 8085
+    },
+    {
+      "path": "results/development/competence_weighted_first_i1729_epoch2_calibration/COMPLETED.json",
+      "outputs": 192,
+      "minimum_tokens": 33,
+      "maximum_tokens": 57,
+      "total_tokens": 8221
+    },
+    {
+      "path": "results/development/competence_weighted_first_i1729_epoch3_calibration/COMPLETED.json",
+      "outputs": 192,
+      "minimum_tokens": 33,
+      "maximum_tokens": 57,
+      "total_tokens": 8263
+    },
+    {
+      "path": "results/development/competence_weighted_first_i2718_epoch1_calibration/COMPLETED.json",
+      "outputs": 192,
+      "minimum_tokens": 33,
+      "maximum_tokens": 57,
+      "total_tokens": 8098
+    },
+    {
+      "path": "results/development/competence_weighted_last_i1729_epoch1_calibration/COMPLETED.json",
+      "outputs": 192,
+      "minimum_tokens": 33,
+      "maximum_tokens": 57,
+      "total_tokens": 8124
+    },
+    {
+      "path": "results/development/competence_weighted_last_i1729_epoch2_calibration/COMPLETED.json",
+      "outputs": 192,
+      "minimum_tokens": 33,
+      "maximum_tokens": 57,
+      "total_tokens": 8236
+    },
+    {
+      "path": "results/development/competence_weighted_last_i1729_epoch3_calibration/COMPLETED.json",
+      "outputs": 192,
+      "minimum_tokens": 33,
+      "maximum_tokens": 57,
+      "total_tokens": 8236
+    }
+  ],
+  "total_outputs": 2880,
+  "cuda_initialized": false,
+  "status": "passed"
+}

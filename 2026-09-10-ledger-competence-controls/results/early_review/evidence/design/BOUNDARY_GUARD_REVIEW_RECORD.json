@@ -1,0 +1,10 @@
+{
+  "created_utc": "2026-09-11T00:04:18.819141+00:00",
+  "recommendation": "Accept administrative output-directory guard, subject to exclusive creation/provenance and final actual-state checks in the review.",
+  "live_marker_created_by_reviewer": false,
+  "artifact_sha256": {
+    "BOUNDARY_GUARD_REVIEW.md": "ae53bd0f74cf69a95c9beaf8c3c01dfb71202b0cd928d001e6caa6d74c7882ea",
+    "check_boundary_guard.py": "7fdfdd711f477353844bdb10ed12be3a3b6fb25d6794c0dba490f7949dbe8276",
+    "BOUNDARY_GUARD_CPU_CHECK.json": "f2b404bc90fd7afb57b6ba1004fbc3e217358ca684f119b86c99dcb6347a6225"
+  }
+}

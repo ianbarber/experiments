@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "fixture_only_no_model": true,
+  "torch": "2.10.0+cpu",
+  "cuda_initialized": false,
+  "cases": [
+    {
+      "weights": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "denominator": 9.0,
+      "loss": 2.965731143951416,
+      "maximum_gradient_difference": 0.0,
+      "ignored_logit_gradient_sum": 0.0
+    },
+    {
+      "weights": [
+        0.75,
+        1.5,
+        0.75
+      ],
+      "denominator": 8.25,
+      "loss": 2.972111225128174,
+      "maximum_gradient_difference": 0.0,
+      "ignored_logit_gradient_sum": 0.0
+    }
+  ],
+  "repetition_penalty_example": {
+    "raw": [
+      2.0,
+      1.9500000476837158,
+      -1.0
+    ],
+    "processed": [
+      1.9047620296478271,
+      1.9500000476837158,
+      -1.0
+    ],
+    "raw_argmax": 0,
+    "processed_argmax": 1
+  }
+}

@@ -1,0 +1,730 @@
+{
+  "created_utc": "2026-09-10T23:54:40.245139+00:00",
+  "scope": "Only these atomically completed stages; later/active stages excluded",
+  "freeze_sha256": "8407c0cad8cabff90fbb42d2fbb45861fd45b9df6c64af1c0f94fc5c515b8e13",
+  "source_checks": [
+    "scripts/cohort.py",
+    "scripts/common.py",
+    "scripts/gpu_entry.py",
+    "scripts/make_data.py",
+    "scripts/model_stage.py",
+    "scripts/narrative.py",
+    "scripts/objective.py",
+    "scripts/preflight.py",
+    "scripts/program.py",
+    "scripts/run_session.py",
+    "scripts/serialization.py",
+    "scripts/service_pause_session.py",
+    "scripts/task.py",
+    "configs/pilot.json",
+    "PROTOCOL.md",
+    "data/DATASET_CARD.md",
+    "data/calibration.jsonl",
+    "data/competence.jsonl",
+    "data/evaluation.jsonl",
+    "data/evaluation_manifest.json",
+    "data/induction.jsonl",
+    "data/manifest.json",
+    "data/pool.jsonl",
+    "data/preservation.jsonl",
+    "data/prior_semantic_exclusions.json",
+    "data/validation.jsonl"
+  ],
+  "stages": [
+    {
+      "path": "checkpoints/competence_uniform_first_i1729_epoch1/COMPLETED.json",
+      "sha256": "46142656be954127bb27d1eaba04fcb597db667478dd051f88f9eba75982c27d",
+      "mode": "train",
+      "started_at": "2026-09-10T18:39:34.061941+00:00",
+      "finished_at": "2026-09-10T18:59:25.227186+00:00",
+      "incoming_adapter_sha256": null,
+      "sample_order_sha256": "4705d484f9b7ad69db503728f05901ac0bdde27b07fa1d1081fc9ec7c2913357",
+      "trainable_parameters": 29933568,
+      "target_tokens": 65378,
+      "prefix_tokens": 760323,
+      "denominator_min": 604.0,
+      "denominator_max": 740.0,
+      "processed_class_budget": {
+        "REPORT": {
+          "examples": 1024,
+          "weight_sum": 1024.0,
+          "target_tokens": 46987,
+          "weighted_target_tokens": 46987.0
+        },
+        "CLEAR": {
+          "examples": 512,
+          "weight_sum": 512.0,
+          "target_tokens": 18391,
+          "weighted_target_tokens": 18391.0
+        }
+      }
+    },
+    {
+      "path": "checkpoints/competence_uniform_first_i1729_epoch2/COMPLETED.json",
+      "sha256": "412f9f7d8e6067f86a2dc401bae071038b75c88bef900157e9781885ef42896f",
+      "mode": "train",
+      "started_at": "2026-09-10T19:02:34.084524+00:00",
+      "finished_at": "2026-09-10T19:22:27.709162+00:00",
+      "incoming_adapter_sha256": "afed84d6bac4d0651099a20209e9b426cd1bfaf645f7d53083772a981afb3afb",
+      "sample_order_sha256": "a02f557f4104b48637e21452ba9a6ba9e610cb64750f3f33358084fb3ccd4829",
+      "trainable_parameters": 29933568,
+      "target_tokens": 65378,
+      "prefix_tokens": 760323,
+      "denominator_min": 612.0,
+      "denominator_max": 745.0,
+      "processed_class_budget": {
+        "REPORT": {
+          "examples": 1024,
+          "weight_sum": 1024.0,
+          "target_tokens": 46987,
+          "weighted_target_tokens": 46987.0
+        },
+        "CLEAR": {
+          "examples": 512,
+          "weight_sum": 512.0,
+          "target_tokens": 18391,
+          "weighted_target_tokens": 18391.0
+        }
+      }
+    },
+    {
+      "path": "checkpoints/competence_uniform_first_i1729_epoch3/COMPLETED.json",
+      "sha256": "665fb46096b0790d30298f170ef4b535c601c282b07b8d5842a3453f587c743a",
+      "mode": "train",
+      "started_at": "2026-09-10T19:25:30.975789+00:00",
+      "finished_at": "2026-09-10T19:45:23.850716+00:00",
+      "incoming_adapter_sha256": "dcd4847619321414340d368f8a57ae0905a40fbe55c978beaa977a4a69dea675",
+      "sample_order_sha256": "366a9a0bc0a1efaa7176e2683b56ab724b37e5ec19a7383a608c0724dffe27b1",
+      "trainable_parameters": 29933568,
+      "target_tokens": 65378,
+      "prefix_tokens": 760323,
+      "denominator_min": 615.0,
+      "denominator_max": 760.0,
+      "processed_class_budget": {
+        "REPORT": {
+          "examples": 1024,
+          "weight_sum": 1024.0,
+          "target_tokens": 46987,
+          "weighted_target_tokens": 46987.0
+        },
+        "CLEAR": {
+          "examples": 512,
+          "weight_sum": 512.0,
+          "target_tokens": 18391,
+          "weighted_target_tokens": 18391.0
+        }
+      }
+    },
+    {
+      "path": "checkpoints/competence_uniform_last_i1729_epoch1/COMPLETED.json",
+      "sha256": "85dc51050e779d0001b919c8093477aef23f7e99879d9a9a1fbcd7f786a6312f",
+      "mode": "train",
+      "started_at": "2026-09-10T20:57:53.092278+00:00",
+      "finished_at": "2026-09-10T21:17:47.688908+00:00",
+      "incoming_adapter_sha256": null,
+      "sample_order_sha256": "4705d484f9b7ad69db503728f05901ac0bdde27b07fa1d1081fc9ec7c2913357",
+      "trainable_parameters": 29933568,
+      "target_tokens": 65378,
+      "prefix_tokens": 760323,
+      "denominator_min": 604.0,
+      "denominator_max": 740.0,
+      "processed_class_budget": {
+        "REPORT": {
+          "examples": 1024,
+          "weight_sum": 1024.0,
+          "target_tokens": 46987,
+          "weighted_target_tokens": 46987.0
+        },
+        "CLEAR": {
+          "examples": 512,
+          "weight_sum": 512.0,
+          "target_tokens": 18391,
+          "weighted_target_tokens": 18391.0
+        }
+      }
+    },
+    {
+      "path": "checkpoints/competence_uniform_last_i1729_epoch2/COMPLETED.json",
+      "sha256": "b943cffbf85e7dab0ff8ba330d720bf37abde9df3333e42a1a66ae140d2d02b7",
+      "mode": "train",
+      "started_at": "2026-09-10T21:20:52.270025+00:00",
+      "finished_at": "2026-09-10T21:40:49.889450+00:00",
+      "incoming_adapter_sha256": "33707816464b3c232a6a80b588fcd6f0b1e57586ca9d83da68f3ccd563d68d63",
+      "sample_order_sha256": "a02f557f4104b48637e21452ba9a6ba9e610cb64750f3f33358084fb3ccd4829",
+      "trainable_parameters": 29933568,
+      "target_tokens": 65378,
+      "prefix_tokens": 760323,
+      "denominator_min": 612.0,
+      "denominator_max": 745.0,
+      "processed_class_budget": {
+        "REPORT": {
+          "examples": 1024,
+          "weight_sum": 1024.0,
+          "target_tokens": 46987,
+          "weighted_target_tokens": 46987.0
+        },
+        "CLEAR": {
+          "examples": 512,
+          "weight_sum": 512.0,
+          "target_tokens": 18391,
+          "weighted_target_tokens": 18391.0
+        }
+      }
+    },
+    {
+      "path": "checkpoints/competence_uniform_last_i1729_epoch3/COMPLETED.json",
+      "sha256": "8ecc774f026a01b21c9e8645b6a97d0d7ff88517f6f34a56135878992eb6e020",
+      "mode": "train",
+      "started_at": "2026-09-10T21:44:01.746186+00:00",
+      "finished_at": "2026-09-10T22:04:00.276300+00:00",
+      "incoming_adapter_sha256": "aae5169007a27e9a1825930b9eee6347a70713c92f5510bd68ddeeff54a04ef9",
+      "sample_order_sha256": "366a9a0bc0a1efaa7176e2683b56ab724b37e5ec19a7383a608c0724dffe27b1",
+      "trainable_parameters": 29933568,
+      "target_tokens": 65378,
+      "prefix_tokens": 760323,
+      "denominator_min": 615.0,
+      "denominator_max": 760.0,
+      "processed_class_budget": {
+        "REPORT": {
+          "examples": 1024,
+          "weight_sum": 1024.0,
+          "target_tokens": 46987,
+          "weighted_target_tokens": 46987.0
+        },
+        "CLEAR": {
+          "examples": 512,
+          "weight_sum": 512.0,
+          "target_tokens": 18391,
+          "weighted_target_tokens": 18391.0
+        }
+      }
+    },
+    {
+      "path": "checkpoints/competence_weighted_first_i1729_epoch1/COMPLETED.json",
+      "sha256": "ad7a850e09ffd5cf67aebdef5ded8b7fd7213ff1fa3ff2f4c18d4adfd333504f",
+      "mode": "train",
+      "started_at": "2026-09-10T19:48:29.121352+00:00",
+      "finished_at": "2026-09-10T20:08:28.073734+00:00",
+      "incoming_adapter_sha256": null,
+      "sample_order_sha256": "4705d484f9b7ad69db503728f05901ac0bdde27b07fa1d1081fc9ec7c2913357",
+      "trainable_parameters": 29933568,
+      "target_tokens": 65378,
+      "prefix_tokens": 760323,
+      "denominator_min": 568.5,
+      "denominator_max": 746.25,
+      "processed_class_budget": {
+        "REPORT": {
+          "examples": 1024,
+          "weight_sum": 768.0,
+          "target_tokens": 46987,
+          "weighted_target_tokens": 35240.25
+        },
+        "CLEAR": {
+          "examples": 512,
+          "weight_sum": 768.0,
+          "target_tokens": 18391,
+          "weighted_target_tokens": 27586.5
+        }
+      }
+    },
+    {
+      "path": "checkpoints/competence_weighted_first_i1729_epoch2/COMPLETED.json",
+      "sha256": "d576f4914f342c286e3c5e55a1199b11d3d20f92366c8082909ab314c3f876cd",
+      "mode": "train",
+      "started_at": "2026-09-10T20:11:40.210559+00:00",
+      "finished_at": "2026-09-10T20:31:40.790082+00:00",
+      "incoming_adapter_sha256": "6c5bd084c70befa4fea20d83366d66576d4c7496ed819d63da06aab86146dd29",
+      "sample_order_sha256": "a02f557f4104b48637e21452ba9a6ba9e610cb64750f3f33358084fb3ccd4829",
+      "trainable_parameters": 29933568,
+      "target_tokens": 65378,
+      "prefix_tokens": 760323,
+      "denominator_min": 549.0,
+      "denominator_max": 744.0,
+      "processed_class_budget": {
+        "REPORT": {
+          "examples": 1024,
+          "weight_sum": 768.0,
+          "target_tokens": 46987,
+          "weighted_target_tokens": 35240.25
+        },
+        "CLEAR": {
+          "examples": 512,
+          "weight_sum": 768.0,
+          "target_tokens": 18391,
+          "weighted_target_tokens": 27586.5
+        }
+      }
+    },
+    {
+      "path": "checkpoints/competence_weighted_first_i1729_epoch3/COMPLETED.json",
+      "sha256": "2b950f5069128668c6b761e47f455a23198ded3f63d31fb2e0e131683ad148d4",
+      "mode": "train",
+      "started_at": "2026-09-10T20:34:52.014689+00:00",
+      "finished_at": "2026-09-10T20:54:49.933699+00:00",
+      "incoming_adapter_sha256": "1ea5a07de7917db4c07d21d879b906251b3c8b86e657dc7a391ec6a3648f024b",
+      "sample_order_sha256": "366a9a0bc0a1efaa7176e2683b56ab724b37e5ec19a7383a608c0724dffe27b1",
+      "trainable_parameters": 29933568,
+      "target_tokens": 65378,
+      "prefix_tokens": 760323,
+      "denominator_min": 567.75,
+      "denominator_max": 750.75,
+      "processed_class_budget": {
+        "REPORT": {
+          "examples": 1024,
+          "weight_sum": 768.0,
+          "target_tokens": 46987,
+          "weighted_target_tokens": 35240.25
+        },
+        "CLEAR": {
+          "examples": 512,
+          "weight_sum": 768.0,
+          "target_tokens": 18391,
+          "weighted_target_tokens": 27586.5
+        }
+      }
+    },
+    {
+      "path": "checkpoints/competence_weighted_first_i2718_epoch1/COMPLETED.json",
+      "sha256": "f7bf555b235720dfa8bdf86a307d6396f03d8d70eee58f2ce5ec4c524c16fdec",
+      "mode": "train",
+      "started_at": "2026-09-10T23:16:34.453118+00:00",
+      "finished_at": "2026-09-10T23:36:32.449510+00:00",
+      "incoming_adapter_sha256": null,
+      "sample_order_sha256": "3fc93a04cc975b70b6ee7cd79e69f62e00dd2f729baee194c9623193e87abd3a",
+      "trainable_parameters": 29933568,
+      "target_tokens": 65378,
+      "prefix_tokens": 760323,
+      "denominator_min": 564.75,
+      "denominator_max": 758.25,
+      "processed_class_budget": {
+        "REPORT": {
+          "examples": 1024,
+          "weight_sum": 768.0,
+          "target_tokens": 46987,
+          "weighted_target_tokens": 35240.25
+        },
+        "CLEAR": {
+          "examples": 512,
+          "weight_sum": 768.0,
+          "target_tokens": 18391,
+          "weighted_target_tokens": 27586.5
+        }
+      }
+    },
+    {
+      "path": "checkpoints/competence_weighted_last_i1729_epoch1/COMPLETED.json",
+      "sha256": "85f0e67b061c58adf9f617c5dd5f91d6525d79a7d8344538b2861ff7d1e7de11",
+      "mode": "train",
+      "started_at": "2026-09-10T22:07:12.015631+00:00",
+      "finished_at": "2026-09-10T22:27:10.602180+00:00",
+      "incoming_adapter_sha256": null,
+      "sample_order_sha256": "4705d484f9b7ad69db503728f05901ac0bdde27b07fa1d1081fc9ec7c2913357",
+      "trainable_parameters": 29933568,
+      "target_tokens": 65378,
+      "prefix_tokens": 760323,
+      "denominator_min": 568.5,
+      "denominator_max": 746.25,
+      "processed_class_budget": {
+        "REPORT": {
+          "examples": 1024,
+          "weight_sum": 768.0,
+          "target_tokens": 46987,
+          "weighted_target_tokens": 35240.25
+        },
+        "CLEAR": {
+          "examples": 512,
+          "weight_sum": 768.0,
+          "target_tokens": 18391,
+          "weighted_target_tokens": 27586.5
+        }
+      }
+    },
+    {
+      "path": "checkpoints/competence_weighted_last_i1729_epoch2/COMPLETED.json",
+      "sha256": "00e517be8ca1926825b0021d4b04343e45b873dd7cbc7420b85d23ae75da3c4a",
+      "mode": "train",
+      "started_at": "2026-09-10T22:30:19.335706+00:00",
+      "finished_at": "2026-09-10T22:50:17.324785+00:00",
+      "incoming_adapter_sha256": "5ff9cb6a1910fe4738e2cfa050f2168640f2131a06103264ff381cc226ddb177",
+      "sample_order_sha256": "a02f557f4104b48637e21452ba9a6ba9e610cb64750f3f33358084fb3ccd4829",
+      "trainable_parameters": 29933568,
+      "target_tokens": 65378,
+      "prefix_tokens": 760323,
+      "denominator_min": 549.0,
+      "denominator_max": 744.0,
+      "processed_class_budget": {
+        "REPORT": {
+          "examples": 1024,
+          "weight_sum": 768.0,
+          "target_tokens": 46987,
+          "weighted_target_tokens": 35240.25
+        },
+        "CLEAR": {
+          "examples": 512,
+          "weight_sum": 768.0,
+          "target_tokens": 18391,
+          "weighted_target_tokens": 27586.5
+        }
+      }
+    },
+    {
+      "path": "checkpoints/competence_weighted_last_i1729_epoch3/COMPLETED.json",
+      "sha256": "bd8b982014e20c122529b9aa620147c6020c99834ece27dc9f14a99e3feddfdd",
+      "mode": "train",
+      "started_at": "2026-09-10T22:53:28.959371+00:00",
+      "finished_at": "2026-09-10T23:13:28.670706+00:00",
+      "incoming_adapter_sha256": "cbdca706738e8f9c17b2e50e82cddc97ec0f27447d0b5cd844aa7b00f4169247",
+      "sample_order_sha256": "366a9a0bc0a1efaa7176e2683b56ab724b37e5ec19a7383a608c0724dffe27b1",
+      "trainable_parameters": 29933568,
+      "target_tokens": 65378,
+      "prefix_tokens": 760323,
+      "denominator_min": 567.75,
+      "denominator_max": 750.75,
+      "processed_class_budget": {
+        "REPORT": {
+          "examples": 1024,
+          "weight_sum": 768.0,
+          "target_tokens": 46987,
+          "weighted_target_tokens": 35240.25
+        },
+        "CLEAR": {
+          "examples": 512,
+          "weight_sum": 768.0,
+          "target_tokens": 18391,
+          "weighted_target_tokens": 27586.5
+        }
+      }
+    },
+    {
+      "path": "results/development/base_calibration_decision_first/COMPLETED.json",
+      "sha256": "5641827e2fd209ae0f77b7ec83fc0923a435fafa3e05173cbb5c7dbf1f9ca871",
+      "mode": "generate",
+      "started_at": "2026-09-10T18:32:31.826410+00:00",
+      "finished_at": "2026-09-10T18:35:57.707680+00:00",
+      "incoming_adapter_sha256": null,
+      "counts": {
+        "outputs": 192,
+        "eos": 192,
+        "full_correct": 1,
+        "decision_correct": 130,
+        "format_valid": 164,
+        "alternate_base_eos_151643_present": 0
+      }
+    },
+    {
+      "path": "results/development/base_calibration_decision_last/COMPLETED.json",
+      "sha256": "1a4ed9b72c768c61191bbd44ef78d34753472d2650d911fd89a114da747d6d58",
+      "mode": "generate",
+      "started_at": "2026-09-10T18:36:01.775108+00:00",
+      "finished_at": "2026-09-10T18:39:29.906089+00:00",
+      "incoming_adapter_sha256": null,
+      "counts": {
+        "outputs": 192,
+        "eos": 192,
+        "full_correct": 2,
+        "decision_correct": 128,
+        "format_valid": 153,
+        "alternate_base_eos_151643_present": 0
+      }
+    },
+    {
+      "path": "results/development/competence_uniform_first_i1729_epoch1_calibration/COMPLETED.json",
+      "sha256": "9e2a2f3c3928a771e5f2811ba6c3b5ee88ec25d6141ec8ff4b6fc78f29bb11b1",
+      "mode": "generate",
+      "started_at": "2026-09-10T18:59:29.708144+00:00",
+      "finished_at": "2026-09-10T19:02:29.664753+00:00",
+      "incoming_adapter_sha256": "afed84d6bac4d0651099a20209e9b426cd1bfaf645f7d53083772a981afb3afb",
+      "counts": {
+        "outputs": 192,
+        "eos": 192,
+        "full_correct": 125,
+        "decision_correct": 181,
+        "format_valid": 192,
+        "alternate_base_eos_151643_present": 0
+      }
+    },
+    {
+      "path": "results/development/competence_uniform_first_i1729_epoch2_calibration/COMPLETED.json",
+      "sha256": "64bfa663401559a5278112ed9d44557fe445afc1b66ac95d47f9a179e60c64e6",
+      "mode": "generate",
+      "started_at": "2026-09-10T19:22:32.378175+00:00",
+      "finished_at": "2026-09-10T19:25:26.500679+00:00",
+      "incoming_adapter_sha256": "dcd4847619321414340d368f8a57ae0905a40fbe55c978beaa977a4a69dea675",
+      "counts": {
+        "outputs": 192,
+        "eos": 192,
+        "full_correct": 186,
+        "decision_correct": 188,
+        "format_valid": 192,
+        "alternate_base_eos_151643_present": 0
+      }
+    },
+    {
+      "path": "results/development/competence_uniform_first_i1729_epoch3_calibration/COMPLETED.json",
+      "sha256": "104a0e38fed3a68cb2eb1d79a72dfb4aaa0f155c8417437a0f4174587153d09e",
+      "mode": "generate",
+      "started_at": "2026-09-10T19:45:28.321365+00:00",
+      "finished_at": "2026-09-10T19:48:24.788201+00:00",
+      "incoming_adapter_sha256": "0ae1fb954ab21dc20c24cf98849634806ebcd250b7ef0229bacf3f9d6451117c",
+      "counts": {
+        "outputs": 192,
+        "eos": 192,
+        "full_correct": 188,
+        "decision_correct": 191,
+        "format_valid": 192,
+        "alternate_base_eos_151643_present": 0
+      }
+    },
+    {
+      "path": "results/development/competence_uniform_last_i1729_epoch1_calibration/COMPLETED.json",
+      "sha256": "86f03a37015eb12435423019706b86241bf43eb1dac294768b6022a6632e8436",
+      "mode": "generate",
+      "started_at": "2026-09-10T21:17:52.191155+00:00",
+      "finished_at": "2026-09-10T21:20:47.611177+00:00",
+      "incoming_adapter_sha256": "33707816464b3c232a6a80b588fcd6f0b1e57586ca9d83da68f3ccd563d68d63",
+      "counts": {
+        "outputs": 192,
+        "eos": 192,
+        "full_correct": 158,
+        "decision_correct": 179,
+        "format_valid": 192,
+        "alternate_base_eos_151643_present": 0
+      }
+    },
+    {
+      "path": "results/development/competence_uniform_last_i1729_epoch2_calibration/COMPLETED.json",
+      "sha256": "9bdfdc77adbefa2f5ff3995cdae96c7218169cd9cc364093a351c46330c0292d",
+      "mode": "generate",
+      "started_at": "2026-09-10T21:40:54.513170+00:00",
+      "finished_at": "2026-09-10T21:43:57.170196+00:00",
+      "incoming_adapter_sha256": "aae5169007a27e9a1825930b9eee6347a70713c92f5510bd68ddeeff54a04ef9",
+      "counts": {
+        "outputs": 192,
+        "eos": 192,
+        "full_correct": 182,
+        "decision_correct": 191,
+        "format_valid": 192,
+        "alternate_base_eos_151643_present": 0
+      }
+    },
+    {
+      "path": "results/development/competence_uniform_last_i1729_epoch3_calibration/COMPLETED.json",
+      "sha256": "fca4368e94ebadc2244a23d05d190eb7d789bdd43f94d778ecabe608d19b88a2",
+      "mode": "generate",
+      "started_at": "2026-09-10T22:04:04.876649+00:00",
+      "finished_at": "2026-09-10T22:07:07.694316+00:00",
+      "incoming_adapter_sha256": "e1671aab0e0a595dc3c9dc10de3bbeba2e9c62d01e99b5ee9d42cd0f7a5373c8",
+      "counts": {
+        "outputs": 192,
+        "eos": 192,
+        "full_correct": 192,
+        "decision_correct": 192,
+        "format_valid": 192,
+        "alternate_base_eos_151643_present": 0
+      }
+    },
+    {
+      "path": "results/development/competence_weighted_first_i1729_epoch1_calibration/COMPLETED.json",
+      "sha256": "34b631a0338e383bb2bb95e16587ebb4963bf5264c664cd8149b97c636e13cde",
+      "mode": "generate",
+      "started_at": "2026-09-10T20:08:32.494094+00:00",
+      "finished_at": "2026-09-10T20:11:35.640811+00:00",
+      "incoming_adapter_sha256": "6c5bd084c70befa4fea20d83366d66576d4c7496ed819d63da06aab86146dd29",
+      "counts": {
+        "outputs": 192,
+        "eos": 192,
+        "full_correct": 130,
+        "decision_correct": 159,
+        "format_valid": 192,
+        "alternate_base_eos_151643_present": 0
+      }
+    },
+    {
+      "path": "results/development/competence_weighted_first_i1729_epoch2_calibration/COMPLETED.json",
+      "sha256": "ea43401c8ee7065b69fa5a31a9cf2eb107fcb643e4e4b1b4ee096cd4d3fbc581",
+      "mode": "generate",
+      "started_at": "2026-09-10T20:31:45.402555+00:00",
+      "finished_at": "2026-09-10T20:34:47.516654+00:00",
+      "incoming_adapter_sha256": "1ea5a07de7917db4c07d21d879b906251b3c8b86e657dc7a391ec6a3648f024b",
+      "counts": {
+        "outputs": 192,
+        "eos": 192,
+        "full_correct": 166,
+        "decision_correct": 170,
+        "format_valid": 192,
+        "alternate_base_eos_151643_present": 0
+      }
+    },
+    {
+      "path": "results/development/competence_weighted_first_i1729_epoch3_calibration/COMPLETED.json",
+      "sha256": "595e4d602ffbb05ab5cea80d572af310de671916facd4a815f72a5489e19641f",
+      "mode": "generate",
+      "started_at": "2026-09-10T20:54:54.419276+00:00",
+      "finished_at": "2026-09-10T20:57:48.633838+00:00",
+      "incoming_adapter_sha256": "878e947d9b45db9c4f2565c0fde70715b3996f60a9b5f4861f1c0da53ee49f12",
+      "counts": {
+        "outputs": 192,
+        "eos": 192,
+        "full_correct": 182,
+        "decision_correct": 191,
+        "format_valid": 192,
+        "alternate_base_eos_151643_present": 0
+      }
+    },
+    {
+      "path": "results/development/competence_weighted_first_i2718_epoch1_calibration/COMPLETED.json",
+      "sha256": "192cb39180f10a514fbb232ed8e86a07d9ef00419a62bc8a50ddd0b43277abc0",
+      "mode": "generate",
+      "started_at": "2026-09-10T23:36:36.778156+00:00",
+      "finished_at": "2026-09-10T23:39:40.819274+00:00",
+      "incoming_adapter_sha256": "2ab1762f11530008745c462733b9b6b43428b8303ebdf311d54ac94a6446dce8",
+      "counts": {
+        "outputs": 192,
+        "eos": 192,
+        "full_correct": 140,
+        "decision_correct": 164,
+        "format_valid": 192,
+        "alternate_base_eos_151643_present": 0
+      }
+    },
+    {
+      "path": "results/development/competence_weighted_last_i1729_epoch1_calibration/COMPLETED.json",
+      "sha256": "adcc07354db2d0fc6a6413e51f70cfcd37933718908cc02d5327432d3383ff98",
+      "mode": "generate",
+      "started_at": "2026-09-10T22:27:14.868690+00:00",
+      "finished_at": "2026-09-10T22:30:14.790250+00:00",
+      "incoming_adapter_sha256": "5ff9cb6a1910fe4738e2cfa050f2168640f2131a06103264ff381cc226ddb177",
+      "counts": {
+        "outputs": 192,
+        "eos": 192,
+        "full_correct": 156,
+        "decision_correct": 180,
+        "format_valid": 192,
+        "alternate_base_eos_151643_present": 0
+      }
+    },
+    {
+      "path": "results/development/competence_weighted_last_i1729_epoch2_calibration/COMPLETED.json",
+      "sha256": "535c2acd97f11d2b1c19c3b7fb0a9658b0a472a0ec815191cc2df32089ca94af",
+      "mode": "generate",
+      "started_at": "2026-09-10T22:50:21.768643+00:00",
+      "finished_at": "2026-09-10T22:53:24.478659+00:00",
+      "incoming_adapter_sha256": "cbdca706738e8f9c17b2e50e82cddc97ec0f27447d0b5cd844aa7b00f4169247",
+      "counts": {
+        "outputs": 192,
+        "eos": 192,
+        "full_correct": 192,
+        "decision_correct": 192,
+        "format_valid": 192,
+        "alternate_base_eos_151643_present": 0
+      }
+    },
+    {
+      "path": "results/development/competence_weighted_last_i1729_epoch3_calibration/COMPLETED.json",
+      "sha256": "aee341b65c99ce473d91dad49219ce507300120a3caf6f94e374f9b0b95ece27",
+      "mode": "generate",
+      "started_at": "2026-09-10T23:13:33.164403+00:00",
+      "finished_at": "2026-09-10T23:16:30.101339+00:00",
+      "incoming_adapter_sha256": "c064fa1b914ed122254340fca5c8b05c878c4af4d2035125b0efc6039f811bf6",
+      "counts": {
+        "outputs": 192,
+        "eos": 192,
+        "full_correct": 192,
+        "decision_correct": 192,
+        "format_valid": 192,
+        "alternate_base_eos_151643_present": 0
+      }
+    }
+  ],
+  "adapter_weight_hashes": [
+    "afed84d6bac4d0651099a20209e9b426cd1bfaf645f7d53083772a981afb3afb",
+    "dcd4847619321414340d368f8a57ae0905a40fbe55c978beaa977a4a69dea675",
+    "0ae1fb954ab21dc20c24cf98849634806ebcd250b7ef0229bacf3f9d6451117c",
+    "33707816464b3c232a6a80b588fcd6f0b1e57586ca9d83da68f3ccd563d68d63",
+    "aae5169007a27e9a1825930b9eee6347a70713c92f5510bd68ddeeff54a04ef9",
+    "e1671aab0e0a595dc3c9dc10de3bbeba2e9c62d01e99b5ee9d42cd0f7a5373c8",
+    "6c5bd084c70befa4fea20d83366d66576d4c7496ed819d63da06aab86146dd29",
+    "1ea5a07de7917db4c07d21d879b906251b3c8b86e657dc7a391ec6a3648f024b",
+    "878e947d9b45db9c4f2565c0fde70715b3996f60a9b5f4861f1c0da53ee49f12",
+    "2ab1762f11530008745c462733b9b6b43428b8303ebdf311d54ac94a6446dce8",
+    "5ff9cb6a1910fe4738e2cfa050f2168640f2131a06103264ff381cc226ddb177",
+    "cbdca706738e8f9c17b2e50e82cddc97ec0f27447d0b5cd844aa7b00f4169247",
+    "c064fa1b914ed122254340fca5c8b05c878c4af4d2035125b0efc6039f811bf6"
+  ],
+  "paired_sample_order_groups": {
+    "(1729, 1)": [
+      {
+        "recipe": "uniform_first",
+        "sha256": "4705d484f9b7ad69db503728f05901ac0bdde27b07fa1d1081fc9ec7c2913357"
+      },
+      {
+        "recipe": "uniform_last",
+        "sha256": "4705d484f9b7ad69db503728f05901ac0bdde27b07fa1d1081fc9ec7c2913357"
+      },
+      {
+        "recipe": "weighted_first",
+        "sha256": "4705d484f9b7ad69db503728f05901ac0bdde27b07fa1d1081fc9ec7c2913357"
+      },
+      {
+        "recipe": "weighted_last",
+        "sha256": "4705d484f9b7ad69db503728f05901ac0bdde27b07fa1d1081fc9ec7c2913357"
+      }
+    ],
+    "(1729, 2)": [
+      {
+        "recipe": "uniform_first",
+        "sha256": "a02f557f4104b48637e21452ba9a6ba9e610cb64750f3f33358084fb3ccd4829"
+      },
+      {
+        "recipe": "uniform_last",
+        "sha256": "a02f557f4104b48637e21452ba9a6ba9e610cb64750f3f33358084fb3ccd4829"
+      },
+      {
+        "recipe": "weighted_first",
+        "sha256": "a02f557f4104b48637e21452ba9a6ba9e610cb64750f3f33358084fb3ccd4829"
+      },
+      {
+        "recipe": "weighted_last",
+        "sha256": "a02f557f4104b48637e21452ba9a6ba9e610cb64750f3f33358084fb3ccd4829"
+      }
+    ],
+    "(1729, 3)": [
+      {
+        "recipe": "uniform_first",
+        "sha256": "366a9a0bc0a1efaa7176e2683b56ab724b37e5ec19a7383a608c0724dffe27b1"
+      },
+      {
+        "recipe": "uniform_last",
+        "sha256": "366a9a0bc0a1efaa7176e2683b56ab724b37e5ec19a7383a608c0724dffe27b1"
+      },
+      {
+        "recipe": "weighted_first",
+        "sha256": "366a9a0bc0a1efaa7176e2683b56ab724b37e5ec19a7383a608c0724dffe27b1"
+      },
+      {
+        "recipe": "weighted_last",
+        "sha256": "366a9a0bc0a1efaa7176e2683b56ab724b37e5ec19a7383a608c0724dffe27b1"
+      }
+    ],
+    "(2718, 1)": [
+      {
+        "recipe": "weighted_first",
+        "sha256": "3fc93a04cc975b70b6ee7cd79e69f62e00dd2f729baee194c9623193e87abd3a"
+      }
+    ]
+  },
+  "generation_counts": {
+    "outputs": 2880,
+    "eos": 2880,
+    "full_correct": 2192,
+    "decision_correct": 2628,
+    "format_valid": 2813,
+    "alternate_base_eos_151643_present": 0
+  },
+  "status": "passed",
+  "completed_stages": 28,
+  "artifacts_verified": 108,
+  "selected_recipe_exists": false,
+  "validation_completion_count": 0,
+  "evaluation_completion_count": 0
+}

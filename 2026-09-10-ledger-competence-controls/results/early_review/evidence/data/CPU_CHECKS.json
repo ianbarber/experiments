@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "review_scope_sha256": "4c9fa1054a96d70392ba2a62cbcda9d3f1b948b638441b3f290615c82e14e1b7",
+  "review_code_sha256": "36df79d1aa3b03339edff61b8cfed087e856ed4b1f372990e02bc6422d508f04",
+  "counts": {
+    "all_program_executions": 167424,
+    "target_serializations_checked": 13952,
+    "wrong_targets": 768
+  },
+  "actual_generation_stages": 15,
+  "actual_output_rows": 2880,
+  "actual_schema_invalid_decision_credit": 45,
+  "actual_training_stages": 13,
+  "synthetic_pair_and_control_checks_passed": true,
+  "artifacts": {
+    "REVIEW_PLAN.md": "2561be28b04c0e7db73a5a080d059260525a34e96dc6e02f709556238a9add99",
+    "SYNTHETIC_cohort_review.json": "1ed0fcdaa3ef9441bdabeb75e0260a10ac6f71ee088490c5912951b066f88f3b",
+    "actual_completed_output_review.json": "f20b66b2e271233d3c367d256afeab4259d2c8233ef88a89f94cf00f749f7882",
+    "actual_schema_invalid_credit_witnesses.json": "1ffaa1549c62a2f78e6b2e39a0ca821dc478ba61114863a56611a687b4481575",
+    "actual_training_exposure_review.json": "947c1d41eb5e446f4af30fe57a373dee38402c006ab0ead8a26e876e8c0f61b3",
+    "audit.py": "36df79d1aa3b03339edff61b8cfed087e856ed4b1f372990e02bc6422d508f04",
+    "data_checks.json": "6d2cecb2f8c6e742f56e270492711b0682ceb3d4d2b9f1ff4ce1e9e8445dc1e7",
+    "parser_counterexamples.json": "ace75b18a752881d80edc03ebecb362ecf0b3aa9fdf4034f784801b30fa6a89c",
+    "scope.json": "4c9fa1054a96d70392ba2a62cbcda9d3f1b948b638441b3f290615c82e14e1b7"
+  }
+}

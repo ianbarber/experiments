@@ -1,0 +1,32 @@
+{
+  "checked_utc": "2026-09-11T04:37:30.031724+00:00",
+  "status": "passed",
+  "scope": "Independent read-only observation of original terminal and chronology. Final competence-scope record and service restoration are separate checks.",
+  "checks": {
+    "all_58_started_and_completed": true,
+    "all8_validation_starts": true,
+    "completed_names_match_started": true,
+    "only_retained_stage_names": true,
+    "exact_guard_exception": true,
+    "single_selection_before_first_validation": true,
+    "amendment_armed_before_selection": true,
+    "marker_only_induction_directory": true,
+    "marker_hash_matches_receipt": true,
+    "amendment_hash_matches_receipt": true,
+    "no_fabricated_original_program_completion": true,
+    "no_original_attempt_completion": true
+  },
+  "original_terminal_event": "execution_failed",
+  "original_guard_error": "ValueError('Existing stage requires explicit --resume and a complete verified contract.')",
+  "terminal_utc": "2026-09-11T04:35:38.690734+00:00",
+  "selection_utc": "2026-09-11T03:53:00.219209+00:00",
+  "first_validation_start_utc": "2026-09-11T03:53:00.347904+00:00",
+  "inputs_sha256": {
+    "results/program.jsonl": "3cf2c27e7d2189fa5e32c6110db66fbbb8b5062e49fd69dc9e92961a0b831732",
+    "results/program_attempts/20260910T183228.814599Z/FAILED.json": "4d9831a97f868138bcd84df291a50107b1245a8ee2ff2d6fc89d528d86153cea",
+    "checkpoints/induction_1729/ADMINISTRATIVE_REVIEW_STOP.json": "34dc8372e59c00c4fdffb1902e12530d6f83ae0efd59524fd58e8f44362f5a67",
+    "results/SCOPE_AMENDMENT.json": "57300ae169c07b062b7d592599674caf1977c696b138ddf90c065a420b65a4b7",
+    "results/SCOPE_BOUNDARY_ARMED.json": "4099c5759dd1088def6cf406c9eb3410e5fd78d398a9f4f937a09a4362554661"
+  },
+  "model_service_calls": false
+}

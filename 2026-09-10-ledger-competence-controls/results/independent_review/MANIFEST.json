@@ -1,0 +1,514 @@
+{
+  "created_utc": "2026-09-11T04:39:16.363610+00:00",
+  "publication_status": "final_competence_scope_independent_review",
+  "completed_stage_count": 34,
+  "case_checkpoint_records": 8064,
+  "illustration_scope": "Fixed longitudinal cases and per-stage first two errors are separately labelled illustrations, not representative samples.",
+  "artifacts": {
+    "code/independent_review/PHASE2_PLAN.json": {
+      "sha256": "a5c5fa2182f49953d73366758b0c9ca9d6dcc9d34273ca0e23aca3f96419804f",
+      "bytes": 5459
+    },
+    "code/independent_review/PLAN.json": {
+      "sha256": "d18e3a1f81f70025adcaf45a5ff89e169f0d0b2cc611dc2daca1a173b587c146",
+      "bytes": 4180
+    },
+    "code/independent_review/README.md": {
+      "sha256": "079b4a3fcc20a21e5a02e598c020cad14cbfa6187b0f09655d3da845e8d11604",
+      "bytes": 801
+    },
+    "code/independent_review/SCOPE_REVIEW_PLAN.json": {
+      "sha256": "2b89e62ab39ba67f495e977c2bf1a609d7bfa757621662fc7d758f5a98ac43f2",
+      "bytes": 1656
+    },
+    "code/independent_review/audit_arming.py": {
+      "sha256": "0ed40a7f0b98676f620d7b26eb82d49f6435127d8f1a18e6aa1c6d652fc8ad67",
+      "bytes": 4977
+    },
+    "code/independent_review/execution_diagnostics.py": {
+      "sha256": "656efb17fffe553978b25cb14a9b50237b72f8371205faad0385bd93e34eb9b6",
+      "bytes": 6420
+    },
+    "code/independent_review/factorial.py": {
+      "sha256": "99fffc31b57eb424737548df2ec3a57a76496a183918499e4b42c69865e8b317",
+      "bytes": 11839
+    },
+    "code/independent_review/package.py": {
+      "sha256": "c259c37c8189860e39731437b6dae294d168ca506c98ad11bc5710c9e15d4a38",
+      "bytes": 21870
+    },
+    "code/independent_review/package_scope.py": {
+      "sha256": "5963738084c1c443a9ae451c45c8064ee0b74eec82db74b32d78758131d5463b",
+      "bytes": 7615
+    },
+    "code/independent_review/phase2.py": {
+      "sha256": "f3694d2b5b5c89e78ec169e5f1c7e4280f25e818f994420fdac5f77420b5733c",
+      "bytes": 32149
+    },
+    "code/independent_review/public_replay.py": {
+      "sha256": "fce912d9c5336e7a0d96645f3073c05a6470521035c0568e4539cebee82a928b",
+      "bytes": 7886
+    },
+    "code/independent_review/review.py": {
+      "sha256": "4d730be17593eda5b1cc405c5afaeff3b4a0ebecd652cd6a1900f1ccff3efbf1",
+      "bytes": 22146
+    },
+    "code/independent_review/scope_public_replay.py": {
+      "sha256": "8ea39fa7a991d11658b411f17606b01a747af06b7c970e7ddb2d2da51a384964",
+      "bytes": 6071
+    },
+    "code/independent_review/terminal_review.py": {
+      "sha256": "e8b9553da1bc182b7e571f49c45f68c613abf67d311c388bcdee9acdebc30294",
+      "bytes": 16254
+    },
+    "code/independent_review/test_analysis_parity.py": {
+      "sha256": "30f16334f4ca1c828d995bb94e0f1daf6277b33e78a005ee8acc7158530da124",
+      "bytes": 5017
+    },
+    "code/independent_review/test_execution_diagnostics.py": {
+      "sha256": "7b67ab7d2be17fc00b53f04486c32e872816361bd13947c98128bd6297cc8fbb",
+      "bytes": 2127
+    },
+    "code/independent_review/test_factorial.py": {
+      "sha256": "7967ba3eaf227c71e5c6efb3e6cecee03fff4df2b3170ca7357872c902de7942",
+      "bytes": 3610
+    },
+    "code/independent_review/test_phase2.py": {
+      "sha256": "24724606f03d6af92d743f221a6ad804cfee5e0ee01d858acdcca568d475e55e",
+      "bytes": 9575
+    },
+    "code/independent_review/test_review.py": {
+      "sha256": "fd574c8cf821c06786d51c9b08859bd15e3e5cf51ea6953385a89ec42b983bfa",
+      "bytes": 4958
+    },
+    "results/independent_review/REVIEW.md": {
+      "sha256": "8e4403deb12c440ff0627dd74952a841276ae741d92207b90ae1184547d94570",
+      "bytes": 8438
+    },
+    "results/independent_review/cases/base_calibration_decision_first.csv": {
+      "sha256": "fc16b08bfe575ae129c12385c70082e5fa4009798999f0db53c74e5cf74ff674",
+      "bytes": 17508
+    },
+    "results/independent_review/cases/base_calibration_decision_last.csv": {
+      "sha256": "66186383ef11f4949a58ede9cacdf862da88804c3d1a5766eb53386e352e971c",
+      "bytes": 17508
+    },
+    "results/independent_review/cases/competence_uniform_first_i1729_epoch1_calibration.csv": {
+      "sha256": "0ede7a138efba9947553cac274c816d203d65cec48bb5bf5f8d5f305d746830a",
+      "bytes": 17508
+    },
+    "results/independent_review/cases/competence_uniform_first_i1729_epoch2_calibration.csv": {
+      "sha256": "73b9c8efe84db5f0ae4bdcf14e7f09121366c9e81568ac80ae32e9ec35fc06cf",
+      "bytes": 17508
+    },
+    "results/independent_review/cases/competence_uniform_first_i1729_epoch3_calibration.csv": {
+      "sha256": "d458e50c7f09e2554614593fb424fc032988a8881851d0851e7152cd223f5ff8",
+      "bytes": 17508
+    },
+    "results/independent_review/cases/competence_uniform_first_i2718_epoch1_calibration.csv": {
+      "sha256": "011cf1cc2d5b372359811ffde67526c858e6283435ea37c47ef78c2691af45c4",
+      "bytes": 17508
+    },
+    "results/independent_review/cases/competence_uniform_first_i2718_epoch2_calibration.csv": {
+      "sha256": "2bab3cfff9c01adb1af3891598045c45e6fd88c456efd348cc36c812a1bee75c",
+      "bytes": 17508
+    },
+    "results/independent_review/cases/competence_uniform_first_i2718_epoch3_calibration.csv": {
+      "sha256": "014dadd98cd930b2b5cb7a91bab8960898d4958414e8f60449d75622062511f6",
+      "bytes": 17508
+    },
+    "results/independent_review/cases/competence_uniform_last_i1729_epoch1_calibration.csv": {
+      "sha256": "091596abfce0752b8c9d635b25611d7228384fe9300dd7db42037b0fa3dadd00",
+      "bytes": 17508
+    },
+    "results/independent_review/cases/competence_uniform_last_i1729_epoch2_calibration.csv": {
+      "sha256": "e4529bfc8d9748d274a2c7bcdc6d994f6925e000f79cf15d0d1c4cb9e1577179",
+      "bytes": 17508
+    },
+    "results/independent_review/cases/competence_uniform_last_i1729_epoch3_calibration.csv": {
+      "sha256": "8f1b85f347acb32d947779c75f0a5bf0d46459575ae9bd7fd7c3cdf03da3c1ff",
+      "bytes": 17508
+    },
+    "results/independent_review/cases/competence_uniform_last_i2718_epoch1_calibration.csv": {
+      "sha256": "93f1c9471984b7618a9dc6244bb0bfff162fadf937833b19b9b6785666e8cf60",
+      "bytes": 17508
+    },
+    "results/independent_review/cases/competence_uniform_last_i2718_epoch2_calibration.csv": {
+      "sha256": "e6b880d27b14819b2bcd337f8b54c9f5aa703132126d780150a8af45617fc055",
+      "bytes": 17508
+    },
+    "results/independent_review/cases/competence_uniform_last_i2718_epoch3_calibration.csv": {
+      "sha256": "8f1b85f347acb32d947779c75f0a5bf0d46459575ae9bd7fd7c3cdf03da3c1ff",
+      "bytes": 17508
+    },
+    "results/independent_review/cases/competence_weighted_first_i1729_epoch1_calibration.csv": {
+      "sha256": "dddebffef1d575dad1206fa3be16a9c464c08ed100fd61485ac41aff676839c3",
+      "bytes": 17508
+    },
+    "results/independent_review/cases/competence_weighted_first_i1729_epoch2_calibration.csv": {
+      "sha256": "8e7383038f3c69e7a3e33a9ec72077121fb09bb5fb35512281552d3b2abe3949",
+      "bytes": 17508
+    },
+    "results/independent_review/cases/competence_weighted_first_i1729_epoch3_calibration.csv": {
+      "sha256": "a3e6956710affdac7365fed08adfa7cfaeb9df41f1366c0571ba01143cbc9e57",
+      "bytes": 17508
+    },
+    "results/independent_review/cases/competence_weighted_first_i2718_epoch1_calibration.csv": {
+      "sha256": "1c1d6587c07e484a23a60c787e5396dece26871e10039ff65194c3551157cc33",
+      "bytes": 17508
+    },
+    "results/independent_review/cases/competence_weighted_first_i2718_epoch2_calibration.csv": {
+      "sha256": "d5a131f24bde18d1128ef8879bf49540f826ee882492d9aacd66259fa816f6f8",
+      "bytes": 17508
+    },
+    "results/independent_review/cases/competence_weighted_first_i2718_epoch3_calibration.csv": {
+      "sha256": "e258290c862aa71fe010cbbe8d19555080b544a3f0b9748971a9af781a90e38d",
+      "bytes": 17508
+    },
+    "results/independent_review/cases/competence_weighted_last_i1729_epoch1_calibration.csv": {
+      "sha256": "69e5b97eadbb6ae4a492e8dc01f4d9b4f30db7808eebec364e075f44f4a4dec7",
+      "bytes": 17508
+    },
+    "results/independent_review/cases/competence_weighted_last_i1729_epoch2_calibration.csv": {
+      "sha256": "8f1b85f347acb32d947779c75f0a5bf0d46459575ae9bd7fd7c3cdf03da3c1ff",
+      "bytes": 17508
+    },
+    "results/independent_review/cases/competence_weighted_last_i1729_epoch3_calibration.csv": {
+      "sha256": "8f1b85f347acb32d947779c75f0a5bf0d46459575ae9bd7fd7c3cdf03da3c1ff",
+      "bytes": 17508
+    },
+    "results/independent_review/cases/competence_weighted_last_i2718_epoch1_calibration.csv": {
+      "sha256": "e9a99ca6cc983cd05af26f16ba0a4795894b199ed7c3455b3dae291e05f7f8c3",
+      "bytes": 17508
+    },
+    "results/independent_review/cases/competence_weighted_last_i2718_epoch2_calibration.csv": {
+      "sha256": "660063cc680593096fbe2bb103c48f31076f5c06a689e2ee97e95a5ea8b5b591",
+      "bytes": 17508
+    },
+    "results/independent_review/cases/competence_weighted_last_i2718_epoch3_calibration.csv": {
+      "sha256": "8f1b85f347acb32d947779c75f0a5bf0d46459575ae9bd7fd7c3cdf03da3c1ff",
+      "bytes": 17508
+    },
+    "results/independent_review/cases/validation_uniform_first_i1729.csv": {
+      "sha256": "a09848a71f186c5006dd3667e5bfb6744702ec4a59e90d979730d48080fc038e",
+      "bytes": 34500
+    },
+    "results/independent_review/cases/validation_uniform_first_i2718.csv": {
+      "sha256": "5e5e8db7f1583b1a9854c5b17599d1264882937c6f3736b344e5a40ac117b0e3",
+      "bytes": 34500
+    },
+    "results/independent_review/cases/validation_uniform_last_i1729.csv": {
+      "sha256": "92828c92de337ac6c8c722b44f9600dd1a8ec3d05f205a003732c4cf1400b7ef",
+      "bytes": 34500
+    },
+    "results/independent_review/cases/validation_uniform_last_i2718.csv": {
+      "sha256": "8d4e933bcd5c142d8a1034729e4a73f45cdff074ea96718a37b3392f7c3c9e7d",
+      "bytes": 34500
+    },
+    "results/independent_review/cases/validation_weighted_first_i1729.csv": {
+      "sha256": "880205391d821ff705ba16feb6a0221acc3a227e734341a26bd4eca6ad1e982b",
+      "bytes": 34500
+    },
+    "results/independent_review/cases/validation_weighted_first_i2718.csv": {
+      "sha256": "dede67e6da5955485bca87964ef48466e531956d1fb7e0b1edd45ed3d99efabd",
+      "bytes": 34500
+    },
+    "results/independent_review/cases/validation_weighted_last_i1729.csv": {
+      "sha256": "80ccaa9647b72767744a6dafdaaa965ccbd6132732f80e3acebffd39844c5f1d",
+      "bytes": 34500
+    },
+    "results/independent_review/cases/validation_weighted_last_i2718.csv": {
+      "sha256": "028ff54c407829240811e1531e19ae003438ba51881de2baacc79b747d28d1d0",
+      "bytes": 34500
+    },
+    "results/independent_review/execution_diagnostics/competence_uniform_first_i1729_epoch1_calibration.json": {
+      "sha256": "0b030d385caba9c6e92ab58a415f25ed403f8eea531febc5b90fbb328f598c02",
+      "bytes": 107360
+    },
+    "results/independent_review/execution_diagnostics/competence_uniform_first_i1729_epoch2_calibration.json": {
+      "sha256": "ffa41f36bdd6f6a9994c9f0b82c254aec6db583f010e80f7faaca534dcd67f14",
+      "bytes": 105978
+    },
+    "results/independent_review/execution_diagnostics/competence_uniform_first_i1729_epoch3_calibration.json": {
+      "sha256": "bd16d8010948ed04f3c5c969043604dbf04d9715ac9eefe2edd153318879d90d",
+      "bytes": 105968
+    },
+    "results/independent_review/execution_diagnostics/competence_uniform_first_i2718_epoch1_calibration.json": {
+      "sha256": "4be961b137575dd1981996f4689181e718c21caa48edefde80f9ce239a9770e5",
+      "bytes": 106676
+    },
+    "results/independent_review/execution_diagnostics/competence_uniform_first_i2718_epoch2_calibration.json": {
+      "sha256": "031d526fca920ad4f9516311d86a6c0acdb409bab869cac4e88a3b445c8fcfa4",
+      "bytes": 106127
+    },
+    "results/independent_review/execution_diagnostics/competence_uniform_first_i2718_epoch3_calibration.json": {
+      "sha256": "0eb36d74a3c6fd528a53980999fde3d4415d2b76495787c46ca70445c5f00f01",
+      "bytes": 106171
+    },
+    "results/independent_review/execution_diagnostics/competence_uniform_last_i1729_epoch1_calibration.json": {
+      "sha256": "f17be3fe850d0a3d47624fcfb04d224884ad3bface0f9243cf91f659d6845131",
+      "bytes": 106633
+    },
+    "results/independent_review/execution_diagnostics/competence_uniform_last_i1729_epoch2_calibration.json": {
+      "sha256": "f92cdac0a9a99a3b969f65d462dbdeb83f1ad4c813fd206dda748e4eda86a1e5",
+      "bytes": 106370
+    },
+    "results/independent_review/execution_diagnostics/competence_uniform_last_i1729_epoch3_calibration.json": {
+      "sha256": "d621353140c2fb2e35bb368c3f56af63c8e2e0411cd23091bbd66709d0a0f92f",
+      "bytes": 105706
+    },
+    "results/independent_review/execution_diagnostics/competence_uniform_last_i2718_epoch1_calibration.json": {
+      "sha256": "0f755980bdf414b7512d2d45024b2aaff1e54e69a9e55794854971c97109b6f1",
+      "bytes": 106803
+    },
+    "results/independent_review/execution_diagnostics/competence_uniform_last_i2718_epoch2_calibration.json": {
+      "sha256": "57c94324cea65a8dd7b4790d20fc22a70e8360bf82d38a16f2f5e11d4bbe0b0e",
+      "bytes": 106221
+    },
+    "results/independent_review/execution_diagnostics/competence_uniform_last_i2718_epoch3_calibration.json": {
+      "sha256": "afcc64768d32d54cbf09059016a00ca15a164dcf6e9016f2dc7a8d0ced8f87ba",
+      "bytes": 105706
+    },
+    "results/independent_review/execution_diagnostics/competence_weighted_first_i1729_epoch1_calibration.json": {
+      "sha256": "3fd08f04b82053b33a3d2b6f76cae67395273c7743e6793bc6ac5911dda8984e",
+      "bytes": 107228
+    },
+    "results/independent_review/execution_diagnostics/competence_weighted_first_i1729_epoch2_calibration.json": {
+      "sha256": "bc01014ed794f8e82ad9e6854904484199dff60ea926ba3ffd5c38ca41538c40",
+      "bytes": 106172
+    },
+    "results/independent_review/execution_diagnostics/competence_weighted_first_i1729_epoch3_calibration.json": {
+      "sha256": "e1e3f007b87311993a747bc94d948cca780232ad3a6ba5d761550c6aaa90b160",
+      "bytes": 106184
+    },
+    "results/independent_review/execution_diagnostics/competence_weighted_first_i2718_epoch1_calibration.json": {
+      "sha256": "a8b79654d6a31aae23439dd653727aaca1b86812614ea060a35e86d5fbf92840",
+      "bytes": 107099
+    },
+    "results/independent_review/execution_diagnostics/competence_weighted_first_i2718_epoch2_calibration.json": {
+      "sha256": "b05047c5630ad121a46064fd8137a5051d071bd4ef6f0e8e573266f9702ff4fb",
+      "bytes": 106261
+    },
+    "results/independent_review/execution_diagnostics/competence_weighted_first_i2718_epoch3_calibration.json": {
+      "sha256": "a789d7411a26445711a562a9ed8a50ea3c8b022befa9ded4f343760ee03dd591",
+      "bytes": 106092
+    },
+    "results/independent_review/execution_diagnostics/competence_weighted_last_i1729_epoch1_calibration.json": {
+      "sha256": "bc03d8b5aa2a388274be740858c9be74aa0cc30a96ce9b9d377e83ce1b3c5865",
+      "bytes": 106583
+    },
+    "results/independent_review/execution_diagnostics/competence_weighted_last_i1729_epoch2_calibration.json": {
+      "sha256": "0f30669cdfa95ed861c25c1c83d0718584af6144dcab761fe66a9399a24efcb3",
+      "bytes": 105707
+    },
+    "results/independent_review/execution_diagnostics/competence_weighted_last_i1729_epoch3_calibration.json": {
+      "sha256": "07657555da7857a1f9aa6e30d7e997865fa37ab4f036832dd576f1294bb39b98",
+      "bytes": 105707
+    },
+    "results/independent_review/execution_diagnostics/competence_weighted_last_i2718_epoch1_calibration.json": {
+      "sha256": "95331637639a17622a2362ff232c7e1f10945dcdd76b2bc02d07bdeb72d353e9",
+      "bytes": 106843
+    },
+    "results/independent_review/execution_diagnostics/competence_weighted_last_i2718_epoch2_calibration.json": {
+      "sha256": "afd22b171f0ec4308f259e61999cb12f013a79ee689c03c375b18acbb38a5ddb",
+      "bytes": 106208
+    },
+    "results/independent_review/execution_diagnostics/competence_weighted_last_i2718_epoch3_calibration.json": {
+      "sha256": "a7cff48c348ed01c52535b3efb1692e2b243e8cce733814c3355e67fe8959605",
+      "bytes": 105707
+    },
+    "results/independent_review/execution_diagnostics/validation_uniform_first_i1729.json": {
+      "sha256": "9ae4f1ae86aad83d8fe4cb803405123764bc6d965b9becbadcb753d8c0e73aaf",
+      "bytes": 203938
+    },
+    "results/independent_review/execution_diagnostics/validation_uniform_first_i2718.json": {
+      "sha256": "886c16ef8cc83ea80e75611b21ed90c26ce922b360b52515bfbb0709fad7bbf5",
+      "bytes": 203974
+    },
+    "results/independent_review/execution_diagnostics/validation_uniform_last_i1729.json": {
+      "sha256": "2a8b50c99b2dc33b19c287f15288e8ac77a87f27fc46f3b542a867ca5a16ff58",
+      "bytes": 203578
+    },
+    "results/independent_review/execution_diagnostics/validation_uniform_last_i2718.json": {
+      "sha256": "4c5e74dcf70b7372794fb312d14d861d527f976f9f9a773b9b961a5798138ac6",
+      "bytes": 203690
+    },
+    "results/independent_review/execution_diagnostics/validation_weighted_first_i1729.json": {
+      "sha256": "3b887dcac100b5f3b4547f8e98d8c5d5c8d596e76892ce2eb1ba48f2e0706f6f",
+      "bytes": 204057
+    },
+    "results/independent_review/execution_diagnostics/validation_weighted_first_i2718.json": {
+      "sha256": "26d8be35c6c1efbcf5b0336821d90490cf6e323dfc9360f36f226d90d408e996",
+      "bytes": 203970
+    },
+    "results/independent_review/execution_diagnostics/validation_weighted_last_i1729.json": {
+      "sha256": "204a97f447c830a34ac05e77847025e9ca7f8b9e4e41e074d1e1499d82531f53",
+      "bytes": 203722
+    },
+    "results/independent_review/execution_diagnostics/validation_weighted_last_i2718.json": {
+      "sha256": "66628a1c25df189fc67400d9e9b35c4843506db09a8348e32929de394a95fa50",
+      "bytes": 203610
+    },
+    "results/independent_review/final_factorial_summary.json": {
+      "sha256": "cc8c105f2e62f4faffdc88b951de24c163afaee94630124b8143020308233583",
+      "bytes": 6794
+    },
+    "results/independent_review/illustrations/base_calibration_decision_first.jsonl": {
+      "sha256": "cd6f492c0f628fbbfc383d9bc70cef9f1afdc2af62e31ea825abdb9ed63d42f6",
+      "bytes": 12734
+    },
+    "results/independent_review/illustrations/base_calibration_decision_last.jsonl": {
+      "sha256": "53629a22aa5fb5aeaf4ca4d32c13adfce868eb5433bf563f39867f498c62a93e",
+      "bytes": 12814
+    },
+    "results/independent_review/illustrations/competence_uniform_first_i1729_epoch1_calibration.jsonl": {
+      "sha256": "5cb7fef2977c8ad23d8100df7175c9d60e9ab5cd16ea52000237de6d306c7ea5",
+      "bytes": 23342
+    },
+    "results/independent_review/illustrations/competence_uniform_first_i1729_epoch2_calibration.jsonl": {
+      "sha256": "5a7d43ab143c942c0afa3a88152906f304ddd9110c33b8e85a83ae85a44afc59",
+      "bytes": 21285
+    },
+    "results/independent_review/illustrations/competence_uniform_first_i1729_epoch3_calibration.jsonl": {
+      "sha256": "957a22a8ba25019dd317635687ef2483c54e7f8f2acadc021f75cfe3b3df2acb",
+      "bytes": 19297
+    },
+    "results/independent_review/illustrations/competence_uniform_first_i2718_epoch1_calibration.jsonl": {
+      "sha256": "e182a9549f19208d4047e33d65a127bd407642007f2f94965a6a0a7bd888a675",
+      "bytes": 21490
+    },
+    "results/independent_review/illustrations/competence_uniform_first_i2718_epoch2_calibration.jsonl": {
+      "sha256": "a7bdcd4f82f567ac780155186075b720ffd1ba7b06bbbb8dac72075cd9ddd505",
+      "bytes": 23321
+    },
+    "results/independent_review/illustrations/competence_uniform_first_i2718_epoch3_calibration.jsonl": {
+      "sha256": "1dabf501fb001ec7329366e3cd6b966246dfdaef2bfa06f2655520b817466d03",
+      "bytes": 23318
+    },
+    "results/independent_review/illustrations/competence_uniform_last_i1729_epoch1_calibration.jsonl": {
+      "sha256": "7a5cc1c94c997e4ed4e9d4afb39d1afcfbf24dce8c7077ca4f4472cb193e7777",
+      "bytes": 23381
+    },
+    "results/independent_review/illustrations/competence_uniform_last_i1729_epoch2_calibration.jsonl": {
+      "sha256": "2cbeb661881a45549fb239070ae1edbae83be89a53debff07ff0c76e4260597e",
+      "bytes": 23424
+    },
+    "results/independent_review/illustrations/competence_uniform_last_i1729_epoch3_calibration.jsonl": {
+      "sha256": "17c09fc4fe8aedd5e39f95386f4cf3ca6df7009300a37343987d43848ab9b715",
+      "bytes": 11374
+    },
+    "results/independent_review/illustrations/competence_uniform_last_i2718_epoch1_calibration.jsonl": {
+      "sha256": "ba33e5099b4f02d5e9e1bbfc4eaa8dba4ea3f3527bc978b45e903e6234a23cbb",
+      "bytes": 21402
+    },
+    "results/independent_review/illustrations/competence_uniform_last_i2718_epoch2_calibration.jsonl": {
+      "sha256": "d032ec5d12ceb16703c60b0689924e05a4f6bac071c26209f88dcb2de334235d",
+      "bytes": 19491
+    },
+    "results/independent_review/illustrations/competence_uniform_last_i2718_epoch3_calibration.jsonl": {
+      "sha256": "17c09fc4fe8aedd5e39f95386f4cf3ca6df7009300a37343987d43848ab9b715",
+      "bytes": 11374
+    },
+    "results/independent_review/illustrations/competence_weighted_first_i1729_epoch1_calibration.jsonl": {
+      "sha256": "a90f1f7aeb017a2786f83a2d0d99e16927b95065079def78d2c6271514ad104a",
+      "bytes": 21518
+    },
+    "results/independent_review/illustrations/competence_weighted_first_i1729_epoch2_calibration.jsonl": {
+      "sha256": "6509adcba1cf1b7ea70ae46d2cfe3bbbb9ac96583637742870ea145bb63eac87",
+      "bytes": 21384
+    },
+    "results/independent_review/illustrations/competence_weighted_first_i1729_epoch3_calibration.jsonl": {
+      "sha256": "f703fa74d0254ecfa3a9abc60422148db3a492ae64a31b8dd1857acbd9e1fba7",
+      "bytes": 21460
+    },
+    "results/independent_review/illustrations/competence_weighted_first_i2718_epoch1_calibration.jsonl": {
+      "sha256": "5e17bf2a12bb789e1f60bd93223907c73146d5ff90e666c3b2e5e695f7b72c45",
+      "bytes": 21416
+    },
+    "results/independent_review/illustrations/competence_weighted_first_i2718_epoch2_calibration.jsonl": {
+      "sha256": "da3b1d36cf29030e205c1612b08359f6b4195ba20c4c55a3619bfe6b65e85dde",
+      "bytes": 23368
+    },
+    "results/independent_review/illustrations/competence_weighted_first_i2718_epoch3_calibration.jsonl": {
+      "sha256": "4c202ebb2ac7aeb2b5f075cd7cbf7c6278315ee7b13617bc5bde450246b180b0",
+      "bytes": 21287
+    },
+    "results/independent_review/illustrations/competence_weighted_last_i1729_epoch1_calibration.jsonl": {
+      "sha256": "3ecab77edf6d07b6a9216746c7e85c550b30bcb1f8af553d4a09dbd75bd52daf",
+      "bytes": 23476
+    },
+    "results/independent_review/illustrations/competence_weighted_last_i1729_epoch2_calibration.jsonl": {
+      "sha256": "17c09fc4fe8aedd5e39f95386f4cf3ca6df7009300a37343987d43848ab9b715",
+      "bytes": 11374
+    },
+    "results/independent_review/illustrations/competence_weighted_last_i1729_epoch3_calibration.jsonl": {
+      "sha256": "17c09fc4fe8aedd5e39f95386f4cf3ca6df7009300a37343987d43848ab9b715",
+      "bytes": 11374
+    },
+    "results/independent_review/illustrations/competence_weighted_last_i2718_epoch1_calibration.jsonl": {
+      "sha256": "d348c864583b02209780d1342b34b425ca59cb0bfcf00729579c4c02262b385e",
+      "bytes": 19670
+    },
+    "results/independent_review/illustrations/competence_weighted_last_i2718_epoch2_calibration.jsonl": {
+      "sha256": "a86178bd7f99489f03b15d4e3afbb9d43e4f53e823f8590969d201fa5b034c99",
+      "bytes": 21371
+    },
+    "results/independent_review/illustrations/competence_weighted_last_i2718_epoch3_calibration.jsonl": {
+      "sha256": "17c09fc4fe8aedd5e39f95386f4cf3ca6df7009300a37343987d43848ab9b715",
+      "bytes": 11374
+    },
+    "results/independent_review/illustrations/validation_uniform_first_i1729.jsonl": {
+      "sha256": "0c7d1959169031f06e7a1b41fdc41ccafc2fd6c0f9e93bc5dd6d401f10e002e0",
+      "bytes": 23390
+    },
+    "results/independent_review/illustrations/validation_uniform_first_i2718.jsonl": {
+      "sha256": "c3abebbed59045e89598eb0d3c3d1a991ab91fdeca8a1f2710a5e5d7d655ef02",
+      "bytes": 21383
+    },
+    "results/independent_review/illustrations/validation_uniform_last_i1729.jsonl": {
+      "sha256": "7e3fb7b6aff48de8a5ecd478792fa2bc74779caf6d46d0191bde097364a6ffb8",
+      "bytes": 15306
+    },
+    "results/independent_review/illustrations/validation_uniform_last_i2718.jsonl": {
+      "sha256": "83dfdfaf006b2b0fe226f096a8e3d03a4c1cf943bafceebe23a1881fa78e032c",
+      "bytes": 17505
+    },
+    "results/independent_review/illustrations/validation_weighted_first_i1729.jsonl": {
+      "sha256": "2d46cea8791f1c579dc5e8f3f511d75db3759b4d4a43c1d2d2381cd8fbb06f94",
+      "bytes": 23399
+    },
+    "results/independent_review/illustrations/validation_weighted_first_i2718.jsonl": {
+      "sha256": "57b37aa5027722ed830e057b3e88c76643905cb0ccea82219bce4dbe0d67a668",
+      "bytes": 23485
+    },
+    "results/independent_review/illustrations/validation_weighted_last_i1729.jsonl": {
+      "sha256": "d3fddf2698052599c4184ab94a2176188e31e96c093c91e1b02299f65998bf27",
+      "bytes": 17382
+    },
+    "results/independent_review/illustrations/validation_weighted_last_i2718.jsonl": {
+      "sha256": "870932ee4220feff2bebec1f67136c314287a9a953cb46f36b8f338de11a379d",
+      "bytes": 15418
+    },
+    "results/independent_review/implementation_history.json": {
+      "sha256": "b94a02344dffae7b91c0d75f296974b8d778107d5adfd4c18ae113a252420889",
+      "bytes": 1099
+    },
+    "results/independent_review/scope_review_summary.json": {
+      "sha256": "28414b5ccde39834f959c80a6dabd214624e12a7748fc3c4f304a4ae11e73593",
+      "bytes": 2048
+    },
+    "results/independent_review/source_manifest.json": {
+      "sha256": "161cf2452d8b2c36d728d6fb7cb5ce3e252963e7526fb4deb994a3596a797db8",
+      "bytes": 17871
+    },
+    "results/independent_review/stage_summaries.json": {
+      "sha256": "5c011fb996ebe633d6e99c5622196a2477083206b3965a8e6cf631ab894cb6cd",
+      "bytes": 487288
+    }
+  },
+  "source_originals_preserved": true,
+  "original_stage_weight_byte_reverification_in_this_projection": false,
+  "privacy_scope": "Allowlisted scientific fields; no token IDs, local home paths, operational IDs, raw HTTP logs or private transcripts.",
+  "competence_scope_terminal_sha256": "0b578e8ab04d8797810c680a4d6e2b9ae01ec2fe9b54c1b580703307e880dbf5",
+  "final_scope_source_recomputed_during_export": true
+}

@@ -1,0 +1,72 @@
+{
+  "created_utc": "2026-09-11T00:03:29.883754+00:00",
+  "status": "passed",
+  "scope": "Synthetic temporary directories only; original stage() and validate_contract() guard code, source/incoming checks stubbed as successful CPU preconditions",
+  "frozen_program_sha256": "6abb8fb3b86d444540fea3f037c2994f183fd17cb9189dc9f1b01c6c28bc8818",
+  "cases": [
+    {
+      "recipe": "uniform_first",
+      "resume": false,
+      "blocked": true,
+      "subprocess_calls": 0,
+      "stage_start_events": 0,
+      "error": "Existing stage requires explicit --resume and a complete verified contract."
+    },
+    {
+      "recipe": "uniform_first",
+      "resume": true,
+      "blocked": true,
+      "subprocess_calls": 0,
+      "stage_start_events": 0,
+      "error": "Incomplete stage: preserve its entire attempt; no automatic partial reuse or retry."
+    },
+    {
+      "recipe": "weighted_first",
+      "resume": false,
+      "blocked": true,
+      "subprocess_calls": 0,
+      "stage_start_events": 0,
+      "error": "Existing stage requires explicit --resume and a complete verified contract."
+    },
+    {
+      "recipe": "weighted_first",
+      "resume": true,
+      "blocked": true,
+      "subprocess_calls": 0,
+      "stage_start_events": 0,
+      "error": "Incomplete stage: preserve its entire attempt; no automatic partial reuse or retry."
+    },
+    {
+      "recipe": "uniform_last",
+      "resume": false,
+      "blocked": true,
+      "subprocess_calls": 0,
+      "stage_start_events": 0,
+      "error": "Existing stage requires explicit --resume and a complete verified contract."
+    },
+    {
+      "recipe": "uniform_last",
+      "resume": true,
+      "blocked": true,
+      "subprocess_calls": 0,
+      "stage_start_events": 0,
+      "error": "Incomplete stage: preserve its entire attempt; no automatic partial reuse or retry."
+    },
+    {
+      "recipe": "weighted_last",
+      "resume": false,
+      "blocked": true,
+      "subprocess_calls": 0,
+      "stage_start_events": 0,
+      "error": "Existing stage requires explicit --resume and a complete verified contract."
+    },
+    {
+      "recipe": "weighted_last",
+      "resume": true,
+      "blocked": true,
+      "subprocess_calls": 0,
+      "stage_start_events": 0,
+      "error": "Incomplete stage: preserve its entire attempt; no automatic partial reuse or retry."
+    }
+  ]
+}

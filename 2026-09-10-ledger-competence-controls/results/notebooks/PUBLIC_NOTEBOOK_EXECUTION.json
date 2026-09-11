@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "created_utc": "2026-09-11T04:39:03.915169+00:00",
+  "scope": "Fresh public CPU notebook of the amended competence scope from projected measurements and regenerated facts.",
+  "synthetic_fixture": false,
+  "unexecuted_notebook_sha256": "bb8d76281f1d4fc5610176cc234fcd597d937316c6359d03a105333717ad0497",
+  "executed_notebook_sha256": "e0818a787134842c7fcbb0b0e747e5ff001e3fccc6dd945901beb5932931b8e4",
+  "source_bundle_sha256": "2f5c325b183bd86f9d1b4e8b21cdd2cd0a6c3a430fa3810479be82cf16926ae5",
+  "publication_helper_sha256": "1f70427550fa5fcedd3f8e8e153cfed05521428a131a3e2d639459741193cf4b",
+  "source_scope_completion_sha256": "0b578e8ab04d8797810c680a4d6e2b9ae01ec2fe9b54c1b580703307e880dbf5",
+  "original_terminal_route": "administrative_guard_reached",
+  "analyzer_sha256": "5a4a6f171a23b1651fd13f9c96ede9a88b3b7ca0e47392d254c141e78edc810e",
+  "original_maker_sha256": "180188ba538ae3cda5352eb48f6b4c8352a001dd5de44b512e2ad573beca420a",
+  "code_cells_executed": 9,
+  "kernel_verification": {
+    "same_environment_as_executor": true,
+    "same_interpreter_as_executor": true,
+    "python_version": "3.12.3",
+    "torch": false,
+    "transformers": false
+  },
+  "temporary_data_removed": true,
+  "projection_enabled": true,
+  "model_calls": 0,
+  "weight_files_loaded": false,
+  "raw_token_ids_reconstructed": false,
+  "versions": {
+    "numpy": "2.3.5",
+    "matplotlib": "3.10.8",
+    "nbformat": "5.10.4",
+    "nbclient": "0.10.4",
+    "ipykernel": "7.1.0"
+  }
+}

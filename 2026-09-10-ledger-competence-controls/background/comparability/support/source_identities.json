@@ -1,0 +1,180 @@
+{
+  "kind": "allowlisted_source_identities",
+  "derived": true,
+  "study_labels": {
+    "old": "preceding closed competence study",
+    "new": "same-data competence factorial, uniform_first seed 1729 only"
+  },
+  "snapshots": {
+    "old": {
+      "stamp": "20260910T162712Z",
+      "manifest_sha256": "9a96a33b5039861cd21c6e24cd0a1b301b072090eb9ef9dad0ea8e7f6bfc51bc"
+    },
+    "new": {
+      "stamp": "20260910T183222.947898Z",
+      "manifest_sha256": "8407c0cad8cabff90fbb42d2fbb45861fd45b9df6c64af1c0f94fc5c515b8e13"
+    }
+  },
+  "files": [
+    {
+      "study": "old",
+      "source_name": "common.py",
+      "sha256": "d5460eedc9519b02115e3fa6d1714a5747e805c8378d4ec29e048c0c4492cc1e",
+      "lines": 109
+    },
+    {
+      "study": "old",
+      "source_name": "gpu_entry.py",
+      "sha256": "2c79ced6b31be7d912dd65b042da3aefcf12d2cb33c70c9f24356c8f57eb64a6",
+      "lines": 19
+    },
+    {
+      "study": "old",
+      "source_name": "task.py",
+      "sha256": "94aae593c4bd6c7d3157ee5396c340ddf5f0acdc13133a8856d6103cb444c8e9",
+      "lines": 294
+    },
+    {
+      "study": "old",
+      "source_name": "narrative.py",
+      "sha256": "9501236263a0383791306090650972528750c502890e157e3aacc6cd9dcbc9e1",
+      "lines": 159
+    },
+    {
+      "study": "old",
+      "source_name": "model_stage.py",
+      "sha256": "923b7ed542ec464356bef088135e8ae899b4b06bb22bd3af669bdcc98584843a",
+      "lines": 216
+    },
+    {
+      "study": "old",
+      "source_name": "program.py",
+      "sha256": "5d306e39b532302812956408879759f8b148fcb6d2944ef29d956c6e0b0ebbad",
+      "lines": 288
+    },
+    {
+      "study": "old",
+      "source_name": "make_data.py",
+      "sha256": "03e764769af36693d6b2c102e43b73a78966e7fbdefade86ff85c39abda2519f",
+      "lines": 334
+    },
+    {
+      "study": "old",
+      "source_name": "pilot.json",
+      "sha256": "c7f4cae94e15ac5c73da6c9e4d278f2fe6244fe3ff40666c997cef2704527cab",
+      "lines": 40
+    },
+    {
+      "study": "old",
+      "source_name": "PROTOCOL.md",
+      "sha256": "7e555d9f732db4769a2ec83f5de50a07c5b86ac4301d0a88937f970f6c7ae2d2",
+      "lines": 63
+    },
+    {
+      "study": "new",
+      "source_name": "common.py",
+      "sha256": "d5460eedc9519b02115e3fa6d1714a5747e805c8378d4ec29e048c0c4492cc1e",
+      "lines": 109
+    },
+    {
+      "study": "new",
+      "source_name": "gpu_entry.py",
+      "sha256": "2c79ced6b31be7d912dd65b042da3aefcf12d2cb33c70c9f24356c8f57eb64a6",
+      "lines": 19
+    },
+    {
+      "study": "new",
+      "source_name": "task.py",
+      "sha256": "94aae593c4bd6c7d3157ee5396c340ddf5f0acdc13133a8856d6103cb444c8e9",
+      "lines": 294
+    },
+    {
+      "study": "new",
+      "source_name": "narrative.py",
+      "sha256": "9501236263a0383791306090650972528750c502890e157e3aacc6cd9dcbc9e1",
+      "lines": 159
+    },
+    {
+      "study": "new",
+      "source_name": "model_stage.py",
+      "sha256": "026a07baa55eb76a6d90bc8b21178cdb6d19fc4b07a8ceac6267c22d4f709816",
+      "lines": 254
+    },
+    {
+      "study": "new",
+      "source_name": "program.py",
+      "sha256": "6abb8fb3b86d444540fea3f037c2994f183fd17cb9189dc9f1b01c6c28bc8818",
+      "lines": 619
+    },
+    {
+      "study": "new",
+      "source_name": "make_data.py",
+      "sha256": "d2ccf9cf996496204bbe726bf3a88ae2ad3e84e0a49e052cf7d98b18ee8cb252",
+      "lines": 429
+    },
+    {
+      "study": "new",
+      "source_name": "objective.py",
+      "sha256": "bd6c15bc255126ac2e9815f42cbdcd853bf5696174565b902976f9a33a62520a",
+      "lines": 35
+    },
+    {
+      "study": "new",
+      "source_name": "serialization.py",
+      "sha256": "c9ab167310f59a020f25335a343f58ff2df2beed5e90ca1f4339f71100761f22",
+      "lines": 113
+    },
+    {
+      "study": "new",
+      "source_name": "pilot.json",
+      "sha256": "c7f4cae94e15ac5c73da6c9e4d278f2fe6244fe3ff40666c997cef2704527cab",
+      "lines": 40
+    },
+    {
+      "study": "new",
+      "source_name": "PROTOCOL.md",
+      "sha256": "b2c1b9163953794ddfc2b489d8cd393c1815e9397193fd18ee10ca3891c22820",
+      "lines": 88
+    }
+  ],
+  "byte_identical_source_names": [
+    "common.py",
+    "gpu_entry.py",
+    "task.py",
+    "narrative.py",
+    "pilot.json"
+  ],
+  "model_identity": {
+    "derivation": "Equal recorded file-hash inventories; weight bytes not reread for this review.",
+    "equal_recorded_files": 11,
+    "files_sha256": {
+      "LICENSE": "ef52482bb785733093dc9a2e8edd8e764c77d12d8e9d8f10a80c9b547d32d0f9",
+      "README.md": "2c74693e6ae36ba878124d465195b4dad0f71035b54ece1c9fd1553cc497ef8c",
+      "config.json": "eed00b17e22553979d090fa492e587e92885e328914c8e0b0b78f0a0d3576b3b",
+      "generation_config.json": "ea35dfb6fc5051b01114f9b995820d55dab01ed33ee490f6378b442af82c09f9",
+      "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+      "model-00001-of-00002.safetensors": "67347b23fb4165b652eb6611f5e1f2a06dfcddba8e909df1b2b0b1857bee06c2",
+      "model-00002-of-00002.safetensors": "a40d941d0e7e0b966ad8b62bb6d6b7c88cce1299197b599d9d0a4ce59aabfc1d",
+      "model.safetensors.index.json": "bc8aaa0c87d4335177e01c765f1de0db81661c67c1a72fbfb0d521b09f5ddc56",
+      "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "old_inventory_sha256": "5db6e4ad873a7d8d9b6dcf35f94d359beae3d9e73c7ad81f32ecbf6f4b248c77",
+    "new_freeze_sha256": "8407c0cad8cabff90fbb42d2fbb45861fd45b9df6c64af1c0f94fc5c515b8e13"
+  },
+  "runtime_evidence": {
+    "derived": true,
+    "same_recorded_research_image": true,
+    "image_identity_omitted": true,
+    "new_recorded_versions": {
+      "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+      "torch": "2.13.0+cu130",
+      "transformers": "5.12.1",
+      "peft": "0.18.1",
+      "bitsandbytes": "0.49.2"
+    },
+    "limitation": "No separate old machine-readable package inventory was found; common image provenance does not demonstrate bitwise runtime identity.",
+    "operational_records_and_their_identities_omitted": true
+  }
+}

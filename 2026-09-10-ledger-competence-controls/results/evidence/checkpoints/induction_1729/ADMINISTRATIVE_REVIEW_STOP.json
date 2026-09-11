@@ -1,0 +1,8 @@
+{
+  "kind": "administrative_boundary_marker_not_a_checkpoint_or_model_output",
+  "created_utc": "2026-09-11T00:05:46.828761+00:00",
+  "scope_amendment": "results/SCOPE_AMENDMENT.json",
+  "scope_amendment_sha256": "57300ae169c07b062b7d592599674caf1977c696b138ddf90c065a420b65a4b7",
+  "message": "Intentional design-review stop before induction. Do not delete, resume, replace with a completion, or treat this directory as a model attempt. Preserve all completed competence/validation evidence and let the original wrapper restore service.",
+  "contains_model_outputs": false
+}

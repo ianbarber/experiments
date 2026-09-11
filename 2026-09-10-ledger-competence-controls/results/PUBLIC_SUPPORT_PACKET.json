@@ -1,0 +1,170 @@
+{
+  "version": 1,
+  "kind": "additive_portable_comparability_and_historical_training_review",
+  "created_utc": "2026-09-11T04:25:02.376077+00:00",
+  "merge_directories": [
+    "background/comparability",
+    "results/training_execution_review"
+  ],
+  "merge_manifest": "results/PUBLIC_SUPPORT_PACKET.json",
+  "files": {
+    "background/comparability/support/README.md": {
+      "operation": "exact_original_artifact",
+      "source_path": "results/report_drafts/comparability_support/README.md",
+      "original_sha256": "277dd335b46edce167eab4293b77bdcccd89ad01829f8f19b02ae8565f6178f9",
+      "published_sha256": "277dd335b46edce167eab4293b77bdcccd89ad01829f8f19b02ae8565f6178f9",
+      "bytes": 7364
+    },
+    "background/comparability/support/contract_comparison.json": {
+      "operation": "exact_original_artifact",
+      "source_path": "results/report_drafts/comparability_support/contract_comparison.json",
+      "original_sha256": "3f57de404ec8421bec527813bc0cbab78d4053495a4b30fe8f987f18f62cc81e",
+      "published_sha256": "3f57de404ec8421bec527813bc0cbab78d4053495a4b30fe8f987f18f62cc81e",
+      "bytes": 18000
+    },
+    "background/comparability/support/data_comparison.json": {
+      "operation": "exact_original_artifact",
+      "source_path": "results/report_drafts/comparability_support/data_comparison.json",
+      "original_sha256": "72d76540e17827a11a42ee88a9e9070cb057c4aaa97c1b42bcb54fdfd2dc6bca",
+      "published_sha256": "72d76540e17827a11a42ee88a9e9070cb057c4aaa97c1b42bcb54fdfd2dc6bca",
+      "bytes": 4461
+    },
+    "background/comparability/support/manifest.json": {
+      "operation": "exact_original_artifact",
+      "source_path": "results/report_drafts/comparability_support/manifest.json",
+      "original_sha256": "0df38b17a5d15e21574b0a29d380ad31b183376ecd1b0b4aed348a577412ebcc",
+      "published_sha256": "0df38b17a5d15e21574b0a29d380ad31b183376ecd1b0b4aed348a577412ebcc",
+      "bytes": 3219
+    },
+    "background/comparability/support/source_excerpt_index.json": {
+      "operation": "exact_original_artifact",
+      "source_path": "results/report_drafts/comparability_support/source_excerpt_index.json",
+      "original_sha256": "a9e57ce6fa0f389e3a75c88ce0ec5274e617e67fe77dfcc41f50969bc44c6a98",
+      "published_sha256": "a9e57ce6fa0f389e3a75c88ce0ec5274e617e67fe77dfcc41f50969bc44c6a98",
+      "bytes": 5898
+    },
+    "background/comparability/support/source_excerpts.md": {
+      "operation": "exact_original_artifact",
+      "source_path": "results/report_drafts/comparability_support/source_excerpts.md",
+      "original_sha256": "7b63a1d5cbf8deee85a45498fb36a19c8723f81f26a11d966db19072d45c3f7d",
+      "published_sha256": "7b63a1d5cbf8deee85a45498fb36a19c8723f81f26a11d966db19072d45c3f7d",
+      "bytes": 28007
+    },
+    "background/comparability/support/source_identities.json": {
+      "operation": "exact_original_artifact",
+      "source_path": "results/report_drafts/comparability_support/source_identities.json",
+      "original_sha256": "3a4f1e28ae3df62966aaa314aad038af23aa6e4577d701309b06bc97688a1e33",
+      "published_sha256": "3a4f1e28ae3df62966aaa314aad038af23aa6e4577d701309b06bc97688a1e33",
+      "bytes": 6152
+    },
+    "results/training_execution_review/CONTRACT_AUDIT_EXTENDED.json": {
+      "operation": "exact_original_artifact",
+      "source_path": "results/final_review/training_execution/CONTRACT_AUDIT_EXTENDED.json",
+      "original_sha256": "b45afb149c73e0b9c0e49f31362cef5c24057548e4d3443589534101a2410549",
+      "published_sha256": "b45afb149c73e0b9c0e49f31362cef5c24057548e4d3443589534101a2410549",
+      "bytes": 48032
+    },
+    "results/training_execution_review/MANIFEST.json": {
+      "operation": "exact_original_artifact",
+      "source_path": "results/final_review/training_execution/MANIFEST.json",
+      "original_sha256": "e943f13de1c7ba8d860f5505d153340fb09a7df9e882605b3aa09710febba27e",
+      "published_sha256": "e943f13de1c7ba8d860f5505d153340fb09a7df9e882605b3aa09710febba27e",
+      "bytes": 2093
+    },
+    "results/training_execution_review/RESULT.json": {
+      "operation": "exact_original_artifact",
+      "source_path": "results/final_review/training_execution/RESULT.json",
+      "original_sha256": "0effb9e6c26b4fadad295c350047279164cfaf6faae39194e715a488372d5da1",
+      "published_sha256": "0effb9e6c26b4fadad295c350047279164cfaf6faae39194e715a488372d5da1",
+      "bytes": 68326
+    },
+    "results/training_execution_review/REVIEW.md": {
+      "operation": "exact_original_artifact",
+      "source_path": "results/final_review/training_execution/REVIEW.md",
+      "original_sha256": "a748dd0a99d9fdebbff0f2b821bb0564a27a8c0c1dd392e74fb6f10f1bae9d77",
+      "published_sha256": "a748dd0a99d9fdebbff0f2b821bb0564a27a8c0c1dd392e74fb6f10f1bae9d77",
+      "bytes": 7847
+    },
+    "results/training_execution_review/audit_training.py": {
+      "operation": "exact_original_artifact",
+      "source_path": "results/final_review/training_execution/audit_training.py",
+      "original_sha256": "f3fade0088880a7aeb3e7d94f087dd8bac048fef36c0a1a38f2623f47b23725a",
+      "published_sha256": "f3fade0088880a7aeb3e7d94f087dd8bac048fef36c0a1a38f2623f47b23725a",
+      "bytes": 21649
+    },
+    "background/comparability/CROSS_STUDY_COMPARABILITY.md": {
+      "operation": "edited_portable_prose",
+      "source_path": "results/report_drafts/CROSS_STUDY_COMPARABILITY.md",
+      "original_sha256": "6bc52df099f869004a93bf6ec46f23f187c82645298cf7e6e9aa4243723acac0",
+      "published_sha256": "fa6accd825194c261c932ed8d021448f62c847fd85d045d962b2f29462adde7a",
+      "bytes": 11896,
+      "original_bytes_reproduced": false,
+      "changes": [
+        "Explicit first-optimization-seed scope and two-seed uniform-first nonqualification",
+        "Local evidence links replacing private/sibling project links",
+        "Operational image identity omitted; safe derived runtime comparison retained",
+        "Explicit original-byte versus derived-evidence limits; source scientific values unchanged"
+      ]
+    },
+    "background/comparability/ADDITIONAL_EXCERPT_IDENTITIES.json": {
+      "operation": "authored_portable_explanation_or_exact_excerpt_container",
+      "published_sha256": "b4afb16cfebdcf1771e09ade80b64151f0cfa8d66ab497ce1c305d745fbb6f93",
+      "bytes": 619
+    },
+    "background/comparability/ADDITIONAL_SOURCE_EXCERPTS.md": {
+      "operation": "authored_portable_explanation_or_exact_excerpt_container",
+      "published_sha256": "7a61b00ef94df98d0ea8cb13a361e8cdb8b15b3ec992d266968ee317c3d2dec7",
+      "bytes": 8574
+    },
+    "background/comparability/README.md": {
+      "operation": "authored_portable_explanation_or_exact_excerpt_container",
+      "published_sha256": "18f9c1e71a0ffec087b8af0a18140239412d666ff81c48330c1ed4133c4a2435",
+      "bytes": 2399
+    },
+    "results/training_execution_review/README.md": {
+      "operation": "authored_portable_explanation_or_exact_excerpt_container",
+      "published_sha256": "6ee93a5da4da0f6b6242c8d50ee0b1bcecc59d1376367a3fa014915fd1901bae",
+      "bytes": 2567
+    }
+  },
+  "original_draft_sha256": "6bc52df099f869004a93bf6ec46f23f187c82645298cf7e6e9aa4243723acac0",
+  "original_comparability_support_manifest_sha256": "0df38b17a5d15e21574b0a29d380ad31b183376ecd1b0b4aed348a577412ebcc",
+  "original_training_review_manifest_sha256": "e943f13de1c7ba8d860f5505d153340fb09a7df9e882605b3aa09710febba27e",
+  "additional_exact_excerpts": [
+    {
+      "id": "new_training_loop",
+      "source_path": "scripts/model_stage.py",
+      "source_sha256": "026a07baa55eb76a6d90bc8b21178cdb6d19fc4b07a8ceac6267c22d4f709816",
+      "first_line": 37,
+      "last_line": 125,
+      "excerpt_sha256": "bcc10c974abaf9009be394a0718e5088bb918f420eca7ff888bada549d695b9e"
+    },
+    {
+      "id": "new_split_generation",
+      "source_path": "scripts/make_data.py",
+      "source_sha256": "d2ccf9cf996496204bbe726bf3a88ae2ad3e84e0a49e052cf7d98b18ee8cb252",
+      "first_line": 266,
+      "last_line": 302,
+      "excerpt_sha256": "366374543deb36ecd82f0728ff4ae5c9975b3641a1574a51ff62024ec9276cc6"
+    }
+  ],
+  "checks": {
+    "status": "passed",
+    "exact_original_copies": 12,
+    "exact_source_excerpts_reverified": 16,
+    "local_markdown_links_and_anchors_resolved": 49,
+    "all_files_below_2mb": true,
+    "privacy_secret_private_path_network_and_operational_literal_scan": "passed",
+    "original_sources_evidence_drafts_helpers_unchanged": true,
+    "model_gpu_or_service_calls": 0,
+    "validation_response_reads": 0
+  },
+  "scope_limits": [
+    "Cross-study calibration success concerns first optimization seed 1729 only; uniform_first did not qualify across both seeds.",
+    "Prior-study derived records do not reconstruct raw response, contract or omitted token bytes.",
+    "Matching declared model/image provenance is not a demonstrated complete GPU environment rebuild or bitwise equivalence.",
+    "audit_training.py is exact historical local-audit provenance requiring unavailable local paths/raw records/weights, not a public replay entrypoint.",
+    "Training review checks were completed locally; publication preparation verifies those evidence bytes, not absent model weights or GPU computations.",
+    "Original comparability support prose is retained byte-exact with its historical first-seed scope; editorial clarification is in the separate edited comparison and wrapper README."
+  ]
+}

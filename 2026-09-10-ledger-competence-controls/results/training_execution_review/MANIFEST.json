@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "created_utc": "2026-09-11T04:04:47.207306+00:00",
+  "status": "passed",
+  "kind": "additive_final_training_and_calibration_execution_review",
+  "recommendation": "continue_unchanged_retained_validation_then_enforce_the_recorded_conditional_cancellation",
+  "implementation_blockers": [],
+  "scientific_freeze_sha256": "8407c0cad8cabff90fbb42d2fbb45861fd45b9df6c64af1c0f94fc5c515b8e13",
+  "retained_scope": {
+    "training_blocks": 24,
+    "adapters_rehashed": 24,
+    "updates": 2304,
+    "calibrations": 26,
+    "saved_responses": 4992,
+    "artifact_files_rehashed": 196,
+    "completed_stage_contracts": 50
+  },
+  "artifacts": {
+    "CONTRACT_AUDIT_EXTENDED.json": {
+      "sha256": "b45afb149c73e0b9c0e49f31362cef5c24057548e4d3443589534101a2410549",
+      "bytes": 48032
+    },
+    "RESULT.json": {
+      "sha256": "0effb9e6c26b4fadad295c350047279164cfaf6faae39194e715a488372d5da1",
+      "bytes": 68326
+    },
+    "REVIEW.md": {
+      "sha256": "a748dd0a99d9fdebbff0f2b821bb0564a27a8c0c1dd392e74fb6f10f1bae9d77",
+      "bytes": 7847
+    },
+    "audit_training.py": {
+      "sha256": "f3fade0088880a7aeb3e7d94f087dd8bac048fef36c0a1a38f2623f47b23725a",
+      "bytes": 21649
+    }
+  },
+  "earlier_execution_review_manifest_sha256": "18934146d8d964f2a4ea1d2d37085f633930ce487f6b169030b32c1a069b987a",
+  "publication_preparation_sha256_unchanged": "feed046a9570016c208c1f6726f0486a2180d611971ed160ceacd7bec3280ec3",
+  "source_and_historical_checks_preserved": true,
+  "all_publication_and_scope_analysis_helper_hashes_unchanged": true,
+  "command": "PYTHONDONTWRITEBYTECODE=1 python results/final_review/training_execution/audit_training.py",
+  "exact_tokenization_and_library_audits_rerun": false,
+  "calibration_token_ids_decoded_again": false,
+  "validation_response_files_read": 0,
+  "model_gpu_container_service_calls": 0,
+  "saved_review_sanitization_scan": "passed",
+  "note": "Saved byte hashes, token-count/EOS metadata and parser results were checked now; earlier actual decoding/tokenization/library observations are retained with their original identities."
+}

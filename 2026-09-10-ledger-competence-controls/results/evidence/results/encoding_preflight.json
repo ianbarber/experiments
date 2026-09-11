@@ -1,0 +1,190 @@
+{
+  "status": "passed",
+  "scope": "CPU tokenizer and explicitly synthetic ideal-output cohort fixtures only; no model weights loaded or generated outputs.",
+  "datasets": {
+    "decision_first": {
+      "competence": {
+        "cases": 1536,
+        "max_sequence_tokens": 553,
+        "min_target_tokens": 33,
+        "max_target_tokens": 57,
+        "total_target_tokens": 65378
+      },
+      "calibration": {
+        "cases": 192,
+        "max_sequence_tokens": 553,
+        "min_target_tokens": 33,
+        "max_target_tokens": 57,
+        "total_target_tokens": 8236
+      },
+      "validation": {
+        "cases": 384,
+        "max_sequence_tokens": 553,
+        "min_target_tokens": 33,
+        "max_target_tokens": 57,
+        "total_target_tokens": 16324
+      },
+      "induction": {
+        "cases": 2048,
+        "max_sequence_tokens": 553,
+        "min_target_tokens": 33,
+        "max_target_tokens": 57,
+        "total_target_tokens": 82450
+      },
+      "pool": {
+        "cases": 1536,
+        "max_sequence_tokens": 550,
+        "min_target_tokens": 38,
+        "max_target_tokens": 57,
+        "total_target_tokens": 70527
+      },
+      "preservation": {
+        "cases": 512,
+        "max_sequence_tokens": 553,
+        "min_target_tokens": 33,
+        "max_target_tokens": 57,
+        "total_target_tokens": 20904
+      },
+      "evaluation": {
+        "cases": 768,
+        "max_sequence_tokens": 816,
+        "min_target_tokens": 33,
+        "max_target_tokens": 57,
+        "total_target_tokens": 32756
+      }
+    },
+    "decision_last": {
+      "competence": {
+        "cases": 1536,
+        "max_sequence_tokens": 553,
+        "min_target_tokens": 33,
+        "max_target_tokens": 57,
+        "total_target_tokens": 65378
+      },
+      "calibration": {
+        "cases": 192,
+        "max_sequence_tokens": 553,
+        "min_target_tokens": 33,
+        "max_target_tokens": 57,
+        "total_target_tokens": 8236
+      },
+      "validation": {
+        "cases": 384,
+        "max_sequence_tokens": 553,
+        "min_target_tokens": 33,
+        "max_target_tokens": 57,
+        "total_target_tokens": 16324
+      },
+      "induction": {
+        "cases": 2048,
+        "max_sequence_tokens": 553,
+        "min_target_tokens": 33,
+        "max_target_tokens": 57,
+        "total_target_tokens": 82450
+      },
+      "pool": {
+        "cases": 1536,
+        "max_sequence_tokens": 550,
+        "min_target_tokens": 38,
+        "max_target_tokens": 57,
+        "total_target_tokens": 70527
+      },
+      "preservation": {
+        "cases": 512,
+        "max_sequence_tokens": 553,
+        "min_target_tokens": 33,
+        "max_target_tokens": 57,
+        "total_target_tokens": 20904
+      },
+      "evaluation": {
+        "cases": 768,
+        "max_sequence_tokens": 816,
+        "min_target_tokens": 33,
+        "max_target_tokens": 57,
+        "total_target_tokens": 32756
+      }
+    }
+  },
+  "synthetic_repair_arms": {
+    "decision_first": {
+      "matched_failure": {
+        "cases": 512,
+        "target_tokens": 20882,
+        "prefix_tokens": 358659,
+        "max_sequence_tokens": 1104
+      },
+      "donor_failure": {
+        "cases": 512,
+        "target_tokens": 20882,
+        "prefix_tokens": 358659,
+        "max_sequence_tokens": 1104
+      },
+      "context_only": {
+        "cases": 512,
+        "target_tokens": 20882,
+        "prefix_tokens": 353663,
+        "max_sequence_tokens": 1075
+      },
+      "correct_trace": {
+        "cases": 512,
+        "target_tokens": 20882,
+        "prefix_tokens": 360319,
+        "max_sequence_tokens": 1117
+      },
+      "direct": {
+        "cases": 512,
+        "target_tokens": 20882,
+        "prefix_tokens": 259771,
+        "max_sequence_tokens": 583
+      }
+    },
+    "decision_last": {
+      "matched_failure": {
+        "cases": 512,
+        "target_tokens": 20882,
+        "prefix_tokens": 358659,
+        "max_sequence_tokens": 1104
+      },
+      "donor_failure": {
+        "cases": 512,
+        "target_tokens": 20882,
+        "prefix_tokens": 358659,
+        "max_sequence_tokens": 1104
+      },
+      "context_only": {
+        "cases": 512,
+        "target_tokens": 20882,
+        "prefix_tokens": 353663,
+        "max_sequence_tokens": 1075
+      },
+      "correct_trace": {
+        "cases": 512,
+        "target_tokens": 20882,
+        "prefix_tokens": 360319,
+        "max_sequence_tokens": 1117
+      },
+      "direct": {
+        "cases": 512,
+        "target_tokens": 20882,
+        "prefix_tokens": 259771,
+        "max_sequence_tokens": 583
+      }
+    }
+  },
+  "identical_encoded_targets_within_order": true,
+  "incorrect_serialization_provenance_rejected": true,
+  "source_sha256": {
+    "scripts/cohort.py": "275322cadd15a7783fb773fe4e3a36190d6de6096eca578740cd3edaf601a1e6",
+    "scripts/common.py": "d5460eedc9519b02115e3fa6d1714a5747e805c8378d4ec29e048c0c4492cc1e",
+    "scripts/gpu_entry.py": "2c79ced6b31be7d912dd65b042da3aefcf12d2cb33c70c9f24356c8f57eb64a6",
+    "scripts/make_data.py": "d2ccf9cf996496204bbe726bf3a88ae2ad3e84e0a49e052cf7d98b18ee8cb252",
+    "scripts/model_stage.py": "c6a9195933ad231acae4a03579bfab3864f69aa86fb05b5c5e027ac8f5857f7a",
+    "scripts/narrative.py": "9501236263a0383791306090650972528750c502890e157e3aacc6cd9dcbc9e1",
+    "scripts/objective.py": "bd6c15bc255126ac2e9815f42cbdcd853bf5696174565b902976f9a33a62520a",
+    "scripts/preflight.py": "9693ceac46ebcebd6cc5f129e0869869f44e6d878af82281e1eaa4e476fa10f7",
+    "scripts/run_session.py": "3bcae7c6a053436a9c98d4d85eaa576aee6fa2df095ea89598feecc7a2e44dcc",
+    "scripts/serialization.py": "c9ab167310f59a020f25335a343f58ff2df2beed5e90ca1f4339f71100761f22",
+    "scripts/service_pause_session.py": "906d620934798b73fb6b37496033a9e7d4218ce4dbe34cca55418810fcd81326",
+    "scripts/task.py": "94aae593c4bd6c7d3157ee5396c340ddf5f0acdc13133a8856d6103cb444c8e9"
+  }
+}

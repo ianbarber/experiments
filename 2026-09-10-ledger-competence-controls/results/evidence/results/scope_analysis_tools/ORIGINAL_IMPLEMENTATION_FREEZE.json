@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "created_utc": "2026-09-10T18:49:07.823340+00:00",
+  "scope": "Tested CPU saved-data utilities frozen before any validation-stage start; actual program is in development. No claim of pre-all-model-output authoring.",
+  "files": {
+    "analyze.py": {
+      "sha256": "ddd6ac505e7809aec5b29468da73428e0c3ecd0667d9a158dd3a4873bafcf7f4",
+      "bytes": 73699
+    },
+    "make_notebook.py": {
+      "sha256": "4e3ce74588486cf7f3d14908d44aab6beb803021da06c2faa0e63ff2cfe12236",
+      "bytes": 12504
+    },
+    "execute_notebook.py": {
+      "sha256": "54c2403c119bcea2f8bf84266a073b7f0bdebf4a0f091d1acce42d0c8f0208c0",
+      "bytes": 3050
+    },
+    "test_analysis.py": {
+      "sha256": "5154e9fbbec8e192bdb39c3315e5f3062941793d1e0b532168ee721818e389d1",
+      "bytes": 19278
+    },
+    "qualitative_plan.json": {
+      "sha256": "82080b8819febea32a27668b440acdceb6eb252eef294d23e50158d0c27d56a9",
+      "bytes": 1616
+    },
+    "requirements-analysis.txt": {
+      "sha256": "183d75d431def73f2a39f71e5798e9f4863dfd232f32f933207765b1e1bdd4dc",
+      "bytes": 83
+    },
+    "README.md": {
+      "sha256": "9be9d308b964226a1652c275197263fc712044488576e53f17fe3b4fadb5b3c4",
+      "bytes": 8090
+    },
+    "tests.log": {
+      "sha256": "9670000cd2befeab191a4efc9ad50f9d428a2382e0af30cdc0216245ffa84d12",
+      "bytes": 770
+    },
+    "SYNTHETIC_layout.png": {
+      "sha256": "d11cf41953774c49e51fff35ed301d5071c3d8de821cccea502d4516f6421ff1",
+      "bytes": 68240
+    }
+  },
+  "program_freeze_sha256": "8407c0cad8cabff90fbb42d2fbb45861fd45b9df6c64af1c0f94fc5c515b8e13",
+  "verified_unchanged_program_pins": 26,
+  "validation_started_files_at_freeze": [],
+  "tests": {
+    "status": "passed",
+    "methods": 5,
+    "elapsed_seconds": 165.982,
+    "scientific_fixture_paths": [
+      "no_selection",
+      "validation_fail",
+      "full_fixed_repair"
+    ],
+    "executed_notebook_cells_each": 9,
+    "notebooks_executed": 3,
+    "entire_original_projected_scientific_json_equal_all_paths": true,
+    "external_temporary_fixture_directories_removed": true
+  },
+  "layout": "SYNTHETIC_layout.png inspected; labeled fixture only, not a model measurement.",
+  "model_or_gpu_calls": 0,
+  "actual_completed_followup_analysis_produced": false
+}

@@ -1,0 +1,156 @@
+[
+  {
+    "kind": "exact_source_excerpt",
+    "id": "old_message_construction",
+    "study": "old",
+    "source_name": "model_stage.py",
+    "source_file_sha256": "923b7ed542ec464356bef088135e8ae899b4b06bb22bd3af669bdcc98584843a",
+    "first_line": 17,
+    "last_line": 21,
+    "line_numbering": "one-based inclusive",
+    "excerpt_sha256": "cd00e151abe24869c2217e775fcb837ddc538d29ec01a82dbeee9530fcbfdc19"
+  },
+  {
+    "kind": "exact_source_excerpt",
+    "id": "old_uniform_training",
+    "study": "old",
+    "source_name": "model_stage.py",
+    "source_file_sha256": "923b7ed542ec464356bef088135e8ae899b4b06bb22bd3af669bdcc98584843a",
+    "first_line": 35,
+    "last_line": 85,
+    "line_numbering": "one-based inclusive",
+    "excerpt_sha256": "fd32fb33d2a07af89c90a79a11d4fdf5a2d6513e9a8ec2ebd10cea6b663775f3"
+  },
+  {
+    "kind": "exact_source_excerpt",
+    "id": "old_generation_and_optional_scoring",
+    "study": "old",
+    "source_name": "model_stage.py",
+    "source_file_sha256": "923b7ed542ec464356bef088135e8ae899b4b06bb22bd3af669bdcc98584843a",
+    "first_line": 135,
+    "last_line": 157,
+    "line_numbering": "one-based inclusive",
+    "excerpt_sha256": "14bdda99c0f86fc8a4189232c262263e2dee1a10ddc90f018d4e92211995f320"
+  },
+  {
+    "kind": "exact_source_excerpt",
+    "id": "old_calibration_arguments_and_first_passing_selection",
+    "study": "old",
+    "source_name": "program.py",
+    "source_file_sha256": "5d306e39b532302812956408879759f8b148fcb6d2944ef29d956c6e0b0ebbad",
+    "first_line": 185,
+    "last_line": 216,
+    "line_numbering": "one-based inclusive",
+    "excerpt_sha256": "bfbbd0482e33da35b5efe1850fe745dc23ebe27ff51e692a1a6824a4a6d21b60"
+  },
+  {
+    "kind": "exact_source_excerpt",
+    "id": "old_system_message",
+    "study": "old",
+    "source_name": "common.py",
+    "source_file_sha256": "d5460eedc9519b02115e3fa6d1714a5747e805c8378d4ec29e048c0c4492cc1e",
+    "first_line": 14,
+    "last_line": 14,
+    "line_numbering": "one-based inclusive",
+    "excerpt_sha256": "91265118d0d2e4472fb95d904e49c9be77c3d3b376995aa7ce0dcdf2d95f3c47"
+  },
+  {
+    "kind": "exact_source_excerpt",
+    "id": "old_seed_model_precision_and_adapter_initialization",
+    "study": "old",
+    "source_name": "common.py",
+    "source_file_sha256": "d5460eedc9519b02115e3fa6d1714a5747e805c8378d4ec29e048c0c4492cc1e",
+    "first_line": 25,
+    "last_line": 51,
+    "line_numbering": "one-based inclusive",
+    "excerpt_sha256": "5476446a0d6400aa5874e5abc9f5911463930ef46b4b5fcbdccb8a35b620adbc"
+  },
+  {
+    "kind": "exact_source_excerpt",
+    "id": "old_chat_encoding_loss_and_generation",
+    "study": "old",
+    "source_name": "common.py",
+    "source_file_sha256": "d5460eedc9519b02115e3fa6d1714a5747e805c8378d4ec29e048c0c4492cc1e",
+    "first_line": 55,
+    "last_line": 109,
+    "line_numbering": "one-based inclusive",
+    "excerpt_sha256": "69af98310108bcea3aa4419593271afb281ce69fc9fc4dfc6aa7be093547588a"
+  },
+  {
+    "kind": "exact_source_excerpt",
+    "id": "old_complete_user_prompt_renderer",
+    "study": "old",
+    "source_name": "task.py",
+    "source_file_sha256": "94aae593c4bd6c7d3157ee5396c340ddf5f0acdc13133a8856d6103cb444c8e9",
+    "first_line": 249,
+    "last_line": 294,
+    "line_numbering": "one-based inclusive",
+    "excerpt_sha256": "709e8a8fc49478902aaf4702827d37ce27b023bcfd636c9a9b50ee7582679191"
+  },
+  {
+    "kind": "exact_source_excerpt",
+    "id": "old_continuous_development_rng",
+    "study": "old",
+    "source_name": "make_data.py",
+    "source_file_sha256": "03e764769af36693d6b2c102e43b73a78966e7fbdefade86ff85c39abda2519f",
+    "first_line": 170,
+    "last_line": 190,
+    "line_numbering": "one-based inclusive",
+    "excerpt_sha256": "8e29dfadef43b8654630152d9cf3430a57ff117b39d6e4fe686481c3c29cf4fc"
+  },
+  {
+    "kind": "exact_source_excerpt",
+    "id": "new_class_weights_and_uniform_reduction",
+    "study": "new",
+    "source_name": "objective.py",
+    "source_file_sha256": "bd6c15bc255126ac2e9815f42cbdcd853bf5696174565b902976f9a33a62520a",
+    "first_line": 9,
+    "last_line": 35,
+    "line_numbering": "one-based inclusive",
+    "excerpt_sha256": "181c326848991643447affdc8628f63fa209b121d56c27e740dcd3e68bd4acd3"
+  },
+  {
+    "kind": "exact_source_excerpt",
+    "id": "new_answer_order_and_unchanged_first_prompt",
+    "study": "new",
+    "source_name": "serialization.py",
+    "source_file_sha256": "c9ab167310f59a020f25335a343f58ff2df2beed5e90ca1f4339f71100761f22",
+    "first_line": 73,
+    "last_line": 113,
+    "line_numbering": "one-based inclusive",
+    "excerpt_sha256": "1c39cd2e5b1d2ac872421da94253a6ebcfe954424fcd73d445ca851b9000b30c"
+  },
+  {
+    "kind": "exact_source_excerpt",
+    "id": "new_message_construction",
+    "study": "new",
+    "source_name": "model_stage.py",
+    "source_file_sha256": "026a07baa55eb76a6d90bc8b21178cdb6d19fc4b07a8ceac6267c22d4f709816",
+    "first_line": 19,
+    "last_line": 23,
+    "line_numbering": "one-based inclusive",
+    "excerpt_sha256": "cd00e151abe24869c2217e775fcb837ddc538d29ec01a82dbeee9530fcbfdc19"
+  },
+  {
+    "kind": "exact_source_excerpt",
+    "id": "new_rendering_metadata_and_scoring_disabled",
+    "study": "new",
+    "source_name": "model_stage.py",
+    "source_file_sha256": "026a07baa55eb76a6d90bc8b21178cdb6d19fc4b07a8ceac6267c22d4f709816",
+    "first_line": 216,
+    "last_line": 228,
+    "line_numbering": "one-based inclusive",
+    "excerpt_sha256": "9af2adae8b8907ba5e75b4dd731a52fcf69ba7e9b87849217822635930ee3664"
+  },
+  {
+    "kind": "exact_source_excerpt",
+    "id": "new_fixed_three_epoch_selection_and_validation",
+    "study": "new",
+    "source_name": "program.py",
+    "source_file_sha256": "6abb8fb3b86d444540fea3f037c2994f183fd17cb9189dc9f1b01c6c28bc8818",
+    "first_line": 139,
+    "last_line": 196,
+    "line_numbering": "one-based inclusive",
+    "excerpt_sha256": "2bdcc8af4a0db1c903930c46e04b9871deb79e9e2512ddf3767ec1721853812c"
+  }
+]

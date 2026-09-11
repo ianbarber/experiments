@@ -1,0 +1,40 @@
+{
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "model_path": "/models/Qwen2.5-3B-Instruct",
+  "repair_seeds": [
+    42,
+    43,
+    44
+  ],
+  "lora_rank": 16,
+  "lora_alpha": 32,
+  "lora_dropout": 0.0,
+  "lora_targets": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj"
+  ],
+  "dtype": "bfloat16",
+  "induction_lr": 0.0001,
+  "repair_lr": 0.0001,
+  "batch_size": 16,
+  "micro_batch_size": 8,
+  "repair_epochs": 1,
+  "repair_max_examples": 512,
+  "max_sequence_length": 2048,
+  "failure_max_new_tokens": 192,
+  "quantization": "nf4_double_quant",
+  "cuda_allocator_limit_gib": 24,
+  "model_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+  "installation_seeds": [
+    1729,
+    2718
+  ],
+  "generation_max_new_tokens": 192,
+  "induction_max_steps": 96,
+  "repair_steps": 32
+}

@@ -1,0 +1,15 @@
+{
+  "status": "verified_public_competence_scope_independent_projection",
+  "publication_status": "final_competence_scope_independent_review",
+  "completed_stages": 34,
+  "case_checkpoint_records_recounted": 8064,
+  "published_illustrations_reexecuted": 336,
+  "execution_component_records_recounted": 7680,
+  "scope": "Recounts every projected binary score, re-executes all selected illustrations, and reconstructs factorial point estimates; main replay separately validates all raw responses, source contracts and bootstrap intervals.",
+  "route": "administrative_guard_reached",
+  "factorial_points_recomputed": {
+    "clear_decision_accuracy": true,
+    "complete_correctness": true
+  },
+  "full_original_weight_bytes_rechecked": false
+}

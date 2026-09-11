@@ -1,0 +1,58 @@
+{
+  "checked_utc": "2026-09-11T04:49:23.219107+00:00",
+  "status": "passed",
+  "verdict": "No unresolved finding invalidates the retained finite competence experiment or prevents the reviewed scientific/public artifact release. Conditional induction/repair remains canceled and supplies no repair effect.",
+  "blockers": [],
+  "scientific_result_changes_requested": [],
+  "editorial_changes_resolved": [
+    "Seed-specific cross-study uniform control scope",
+    "CLEAR ceiling versus imperfect complete audits",
+    "Weighting effect differs by seed and order",
+    "Third-person and disclosed before/after-result example selection",
+    "Historical notebook cutoff wording",
+    "Fresh public notebook output destination",
+    "Actual guard route distinct from synthetic alternate-route fixtures",
+    "Explicit decoder supplement path"
+  ],
+  "figures_inspected": [
+    "factorial_cells",
+    "factorial_effects",
+    "competence_trajectory"
+  ],
+  "calibration_baseline_caption_note": "Two base passes are reused across recipe/seed panels; no separate calibration figure is embedded in the current headline report, which states the actual baseline inventory.",
+  "final_prose_sha256": {
+    "README.md": "a4ef524dc7d25813ff1d2970695d34d10554847db9fa1c68ba77618363e0d089",
+    "REPORT.md": "1f8157aca495a238e7dec943693a6a0dff6971674c67eec033b95f2c8c0ea119",
+    "LABNOTES.md": "887fa9ea9db15449540e64802853f120ef97e1268761b90469326eb8ca7a3bea",
+    "code/REPLAY_USAGE.md": "5fc90922bade9233bcf53a3e12a8786c1d91b134504d04ed14bcba27b241b94e"
+  },
+  "restoration_statement_checked_against_portable_receipt": {
+    "receipt_sha256": "5be046f1556adb4f4a137ac2bdc87092d32a5f6a5f6b96bd24936214f0150076",
+    "recorded_health_status": 200,
+    "recorded_original_identity_preserved": true,
+    "recorded_research_stopped": true,
+    "live_service_access_by_this_reviewer": false
+  },
+  "local_links_and_anchors_checked": 91,
+  "decoded_public_texts_final_privacy_scanned": 523,
+  "private_network_secret_home_path_hits": 0,
+  "files_at_or_above_2mb": 0,
+  "review_proofs_sha256": {
+    "TRACE_REPORT_CHECKS.json": "4e5d83eacc3346c1944ae519d67e7cfc9a141a28bef83a14091c1ac0862806b0",
+    "PUBLIC_ARTIFACT_FINAL_RECHECK.json": "c102d1c13d4029c8d22a13e8decf6ce6bfb22d75c22c7903a4f7b69e21d70182",
+    "FINAL_PROSE_NAVIGATION.json": "ca2ca31bcc4ba24098ecfe6ae09e6dd5457548bd20a0020d95ca0b107149d52a",
+    "ORIGINAL_TERMINAL_CHECK.json": "f243c7e6b16dd0970139607d9d1b4465f978072d52929ef2aee787f4d8998c4b",
+    "INITIAL_REVIEW.json": "3997c122a61738ad6a4107c3734f92f186a01ab671aa17bbbc4eb7f1e6098d1b",
+    "VALIDATION_RECOMPUTATION.json": "fe25b512067d517c5cbe4afbfd6d52b034b1e24126c30f930d05f7d1991296ac",
+    "PUBLIC_ARTIFACT_REVIEW.json": "3c29b61f3bd4d47cb932281bb4f104cb99b6b4853c9047486b81590f8aac0bd0"
+  },
+  "review_limits": [
+    "Internal post-start agent review, not external blind replication.",
+    "Scorer/bootstrap independently implemented; no model/GPU/container/service call.",
+    "Actual saved public replay/notebook inspected, not rerun by this reviewer.",
+    "Historical weight/library/tokenizer checks not independently repeated by this reviewer.",
+    "Repository-wide final pre-push scan and Git publication are lead actions, not attested here."
+  ],
+  "model_service_calls": false,
+  "public_staging_mutated": false
+}
