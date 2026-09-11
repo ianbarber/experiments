@@ -1,0 +1,47 @@
+{
+  "created_at_utc": "2026-09-11T14:58:35.617620+00:00",
+  "original_release_commit": "3e8213476f78a37d55685130c411251ddafbd62d",
+  "scope": "Editorial simplification; no new experiment or scientific artifact changes.",
+  "review": {
+    "type": "Independent internal agent semantic review, followed by lead review",
+    "outcome": "pass after requested prospective-tense correction",
+    "checked": [
+      "Original hypothesis and limits of the completed study",
+      "All eight validation cells and reported effects and intervals",
+      "Authored wrapper counterexample distinguished from model measurements",
+      "Canceled repair comparison consistently described as unrun",
+      "Task competence distinguished from reflection competence and repair effectiveness"
+    ],
+    "historical_review_receipts": "Unchanged; their prose hashes apply to the original release, not this revision."
+  },
+  "documents": [
+    {
+      "path": "README.md",
+      "original_sha256": "53a2fab4d85e74d6e17206a19c74a1135f4df58382c9de46368742ae8648a9e4",
+      "revised_sha256": "1bae3a9753b4ed0a563c830e4b4280166cecb9d23042fc39644afabfe79465ba",
+      "original_words": 184,
+      "revised_words": 175
+    },
+    {
+      "path": "2026-09-10-ledger-competence-controls/README.md",
+      "original_sha256": "359a6608dc2eca79cdacb4340a84d63d862788add2e81c6190d8605c62a5caf4",
+      "revised_sha256": "12acec0c56106c40bd263c5a80667fe4765d1dea70ae9bb32cf0a049abce12af",
+      "original_words": 571,
+      "revised_words": 348
+    },
+    {
+      "path": "2026-09-10-ledger-competence-controls/REPORT.md",
+      "original_sha256": "1f8157aca495a238e7dec943693a6a0dff6971674c67eec033b95f2c8c0ea119",
+      "revised_sha256": "b0c76889c8a3898c217b98a55e9ec25f942bcf6e3a79742721f03a0d2e938647",
+      "original_words": 4511,
+      "revised_words": 1271
+    },
+    {
+      "path": "2026-09-10-ledger-competence-controls/LABNOTES.md",
+      "original_sha256": "f25592b6889ba2188b651d9e98f7b4502fdcdcbdc08bf63e1054e36858797108",
+      "revised_sha256": "f19260de07245c520efaab4fb49b37e183dcf1a251530b77262901c70241eefd",
+      "original_words": 9602,
+      "revised_words": 9750
+    }
+  ]
+}
