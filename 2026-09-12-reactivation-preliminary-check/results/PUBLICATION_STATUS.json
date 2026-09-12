@@ -1,0 +1,26 @@
+{
+  "at": "2026-09-12T18:20:15.315690+00:00",
+  "status": "publication_review_passed",
+  "scientific_status": "early_failed_at_induction_selection",
+  "independent_public_review": "pass_no_blocker",
+  "public_replay": "passed",
+  "generated_response_records_verified": 2176,
+  "regenerated_cases": 3584,
+  "gates_recomputed": 6,
+  "publication_tests_passed": 16,
+  "service_restored_healthy": true,
+  "cumulative_gpu_allocation_minutes": 50.21138465801875,
+  "publication_review_receipts": {
+    "PUBLICATION_REVIEW.md": {
+      "original_sha256": "bed28981d73b306ced46cec4b41000608e54dc8142c518d6a184a8bdc23a905f",
+      "public_sha256": "0ed664df50117a13599510cf63b02435fbf413bd75742c4902a64a4a97c1586c",
+      "projection": "Public path/operational identity removal; authored review content preserved."
+    },
+    "PUBLICATION_REVIEW.json": {
+      "original_sha256": "b6d0e9c2e0c4a8a90b8766da780c4bb829f2d47ff1c3df20a6cfdf83ae0ea07c",
+      "public_sha256": "a8f4528ebdbc9ce02c76514b07d712106c3c2de339dd270b66b92de4d7b0dbaa",
+      "projection": "Public path/operational identity removal; authored review content preserved."
+    }
+  },
+  "note": "Added after export. EXPORT_STATUS.json records the historical export-time review requirement; this record and the review receipt document its completion. Pre-push repository privacy scan is recorded in the lab notebook."
+}

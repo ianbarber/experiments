@@ -1,0 +1,123 @@
+{
+  "authored_bad_targets": 128,
+  "pass": true,
+  "scope": "Independent structural/label audit; narrative semantics require separate review. Shared Boolean grammar and broad issue types do not constitute OOD separation.",
+  "splits": {
+    "collection": {
+      "labels": {
+        "REPORT": 320
+      },
+      "rows": 320,
+      "sha256": "ef7df27ebdfc7504d6bc69caf64ddea755634b261f04f7224b15e228be6040fb",
+      "strata": {
+        "eliciting_report": 320
+      }
+    },
+    "competence_qualify": {
+      "labels": {
+        "CLEAR": 128,
+        "REPORT": 128
+      },
+      "rows": 256,
+      "sha256": "97a8fcf439fe6e7e2b4638933f512eea4ab563d6251b64e8785ee97e68be1b9f",
+      "strata": {
+        "clear": 128,
+        "eliciting_report": 32,
+        "noneliciting_report": 96
+      }
+    },
+    "competence_select": {
+      "labels": {
+        "CLEAR": 128,
+        "REPORT": 128
+      },
+      "rows": 256,
+      "sha256": "222e8c921348b7378e40bb7239d67ea44916c755a325bda8aeca6adf29f85cb5",
+      "strata": {
+        "clear": 128,
+        "eliciting_report": 32,
+        "noneliciting_report": 96
+      }
+    },
+    "competence_train": {
+      "labels": {
+        "CLEAR": 512,
+        "REPORT": 512
+      },
+      "rows": 1024,
+      "sha256": "7891b2111dde547fd67d76b678a5ae3ad917855e314e2c3479ef287b78c04766",
+      "strata": {
+        "clear": 512,
+        "eliciting_report": 128,
+        "noneliciting_report": 384
+      }
+    },
+    "induction_qualify": {
+      "labels": {
+        "CLEAR": 128,
+        "REPORT": 256
+      },
+      "rows": 384,
+      "sha256": "1d352a6b615b1bf079fdd38bc4081e9cb1af9b1473abaa75bdd3da335b14d1f2",
+      "strata": {
+        "clear": 128,
+        "eliciting_report": 128,
+        "noneliciting_report": 128
+      }
+    },
+    "induction_select": {
+      "labels": {
+        "CLEAR": 128,
+        "REPORT": 256
+      },
+      "rows": 384,
+      "sha256": "10376b9d94c1f8e75e7a383a4ddb45bcfe1aa6b1b1c2a116134d03c42631a05c",
+      "strata": {
+        "clear": 128,
+        "eliciting_report": 128,
+        "noneliciting_report": 128
+      }
+    },
+    "induction_train": {
+      "labels": {
+        "CLEAR": 256,
+        "REPORT": 256
+      },
+      "rows": 512,
+      "sha256": "799c5eda12d43aeb548d320d988bdd90eaf1e8c956f17fc405c221550e26029d",
+      "strata": {
+        "clear": 256,
+        "eliciting_report": 128,
+        "noneliciting_report": 128
+      }
+    },
+    "ordinary_preservation": {
+      "labels": {
+        "CLEAR": 64,
+        "REPORT": 64
+      },
+      "rows": 128,
+      "sha256": "f0a3749f9182fcf1f17ab18b35253c6371d3c187e96428a7f11b1670083fd27e",
+      "strata": {
+        "clear": 64,
+        "eliciting_report": 16,
+        "noneliciting_report": 48
+      }
+    },
+    "preservation_candidates": {
+      "labels": {
+        "CLEAR": 240,
+        "REPORT": 80
+      },
+      "rows": 320,
+      "sha256": "d827cda5b9a85f1956c62914acc2f8a13f83ad4953f4c33cc7902a3148989a56",
+      "strata": {
+        "clear": 240,
+        "eliciting_report": 20,
+        "noneliciting_report": 60
+      }
+    }
+  },
+  "template_id_count": 18,
+  "total_rows": 3584
+}

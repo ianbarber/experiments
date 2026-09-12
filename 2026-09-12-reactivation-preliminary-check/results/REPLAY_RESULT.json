@@ -1,0 +1,409 @@
+{
+  "status": "replayed",
+  "original_freeze_sha256": "0231a51e7efd3f0f166c0f347b4c82dfc3dc6edc008997e09ec2ce8a503f066f",
+  "frozen_sources_accounted_for": 72,
+  "public_artifacts_verified": 130,
+  "claims": "Retained text/scalar replay, not repeated GPU training. Excluded token streams, checkpoints and host identities are not publicly verified.",
+  "allocation_accounting": {
+    "allocations": 2,
+    "current_elapsed_seconds": 2357.607983112335,
+    "total_actual_elapsed_seconds": 3012.683079481125,
+    "original_budget_seconds": 28800,
+    "prior_charged_seconds": 656,
+    "current_restoration_healthy": true,
+    "prior_elapsed_seconds": 655.0750963687897,
+    "current_allowed_budget_seconds": 28144,
+    "permission_incident_was_scientific_gate_failure": false,
+    "reused_completed_stages": [
+      "s1729_competence_epoch1",
+      "s1729_competence_select_epoch1"
+    ],
+    "within_original_budget": true
+  },
+  "regenerated_cases": 3584,
+  "gates": {
+    "s1729_competence_qualification": {
+      "checks": {
+        "REPORT_correct_at_least_116": true,
+        "CLEAR_correct_at_least_116": true,
+        "valid_at_least_251": true
+      },
+      "cells": {
+        "REPORT": {
+          "n": 128,
+          "correct": 128,
+          "valid": 128,
+          "valid_clear": 0,
+          "valid_report": 128
+        },
+        "CLEAR": {
+          "n": 128,
+          "correct": 128,
+          "valid": 128,
+          "valid_clear": 128,
+          "valid_report": 0
+        }
+      },
+      "total": {
+        "n": 256,
+        "correct": 256,
+        "valid": 256,
+        "valid_clear": 128,
+        "valid_report": 128
+      },
+      "pass": true
+    },
+    "s1729_competence_select_epoch1": {
+      "checks": {
+        "REPORT_correct_at_least_116": true,
+        "CLEAR_correct_at_least_116": true,
+        "valid_at_least_251": true
+      },
+      "cells": {
+        "REPORT": {
+          "n": 128,
+          "correct": 128,
+          "valid": 128,
+          "valid_clear": 0,
+          "valid_report": 128
+        },
+        "CLEAR": {
+          "n": 128,
+          "correct": 128,
+          "valid": 128,
+          "valid_clear": 128,
+          "valid_report": 0
+        }
+      },
+      "total": {
+        "n": 256,
+        "correct": 256,
+        "valid": 256,
+        "valid_clear": 128,
+        "valid_report": 128
+      },
+      "pass": true
+    },
+    "s1729_induction_select_epoch1": {
+      "checks": {
+        "target_errors_39_to_89": false,
+        "target_error_increase_at_least_26": false,
+        "valid_at_least_377": true,
+        "noneliciting_report_correct_at_least_116": true,
+        "noneliciting_report_deterioration_at_most_6": true,
+        "clear_correct_at_least_116": true,
+        "clear_deterioration_at_most_6": true
+      },
+      "cells": {
+        "eliciting_report": {
+          "competent": {
+            "n": 128,
+            "correct": 128,
+            "valid": 128,
+            "valid_clear": 0,
+            "valid_report": 128
+          },
+          "installed": {
+            "n": 128,
+            "correct": 122,
+            "valid": 128,
+            "valid_clear": 6,
+            "valid_report": 122
+          }
+        },
+        "noneliciting_report": {
+          "competent": {
+            "n": 128,
+            "correct": 128,
+            "valid": 128,
+            "valid_clear": 0,
+            "valid_report": 128
+          },
+          "installed": {
+            "n": 128,
+            "correct": 126,
+            "valid": 128,
+            "valid_clear": 2,
+            "valid_report": 126
+          }
+        },
+        "clear": {
+          "competent": {
+            "n": 128,
+            "correct": 127,
+            "valid": 128,
+            "valid_clear": 127,
+            "valid_report": 1
+          },
+          "installed": {
+            "n": 128,
+            "correct": 128,
+            "valid": 128,
+            "valid_clear": 128,
+            "valid_report": 0
+          }
+        }
+      },
+      "target_error_count_increase": 6,
+      "total": {
+        "n": 384,
+        "correct": 376,
+        "valid": 384,
+        "valid_clear": 136,
+        "valid_report": 248
+      },
+      "pass": false
+    },
+    "s1729_induction_select_epoch2": {
+      "checks": {
+        "target_errors_39_to_89": false,
+        "target_error_increase_at_least_26": false,
+        "valid_at_least_377": true,
+        "noneliciting_report_correct_at_least_116": true,
+        "noneliciting_report_deterioration_at_most_6": true,
+        "clear_correct_at_least_116": true,
+        "clear_deterioration_at_most_6": true
+      },
+      "cells": {
+        "eliciting_report": {
+          "competent": {
+            "n": 128,
+            "correct": 128,
+            "valid": 128,
+            "valid_clear": 0,
+            "valid_report": 128
+          },
+          "installed": {
+            "n": 128,
+            "correct": 127,
+            "valid": 128,
+            "valid_clear": 1,
+            "valid_report": 127
+          }
+        },
+        "noneliciting_report": {
+          "competent": {
+            "n": 128,
+            "correct": 128,
+            "valid": 128,
+            "valid_clear": 0,
+            "valid_report": 128
+          },
+          "installed": {
+            "n": 128,
+            "correct": 126,
+            "valid": 128,
+            "valid_clear": 2,
+            "valid_report": 126
+          }
+        },
+        "clear": {
+          "competent": {
+            "n": 128,
+            "correct": 127,
+            "valid": 128,
+            "valid_clear": 127,
+            "valid_report": 1
+          },
+          "installed": {
+            "n": 128,
+            "correct": 128,
+            "valid": 128,
+            "valid_clear": 128,
+            "valid_report": 0
+          }
+        }
+      },
+      "target_error_count_increase": 1,
+      "total": {
+        "n": 384,
+        "correct": 381,
+        "valid": 384,
+        "valid_clear": 131,
+        "valid_report": 253
+      },
+      "pass": false
+    },
+    "s2718_competence_qualification": {
+      "checks": {
+        "REPORT_correct_at_least_116": true,
+        "CLEAR_correct_at_least_116": true,
+        "valid_at_least_251": true
+      },
+      "cells": {
+        "REPORT": {
+          "n": 128,
+          "correct": 128,
+          "valid": 128,
+          "valid_clear": 0,
+          "valid_report": 128
+        },
+        "CLEAR": {
+          "n": 128,
+          "correct": 124,
+          "valid": 128,
+          "valid_clear": 124,
+          "valid_report": 4
+        }
+      },
+      "total": {
+        "n": 256,
+        "correct": 252,
+        "valid": 256,
+        "valid_clear": 124,
+        "valid_report": 132
+      },
+      "pass": true
+    },
+    "s2718_competence_select_epoch1": {
+      "checks": {
+        "REPORT_correct_at_least_116": true,
+        "CLEAR_correct_at_least_116": true,
+        "valid_at_least_251": true
+      },
+      "cells": {
+        "REPORT": {
+          "n": 128,
+          "correct": 128,
+          "valid": 128,
+          "valid_clear": 0,
+          "valid_report": 128
+        },
+        "CLEAR": {
+          "n": 128,
+          "correct": 128,
+          "valid": 128,
+          "valid_clear": 128,
+          "valid_report": 0
+        }
+      },
+      "total": {
+        "n": 256,
+        "correct": 256,
+        "valid": 256,
+        "valid_clear": 128,
+        "valid_report": 128
+      },
+      "pass": true
+    }
+  },
+  "training": [
+    {
+      "stage": "s1729_competence_epoch1",
+      "status": "complete",
+      "retained_steps": 64,
+      "retained_examples": 1024,
+      "last_loss": 0.06282440572977066,
+      "target_tokens": 34482
+    },
+    {
+      "stage": "s1729_induction_epoch1",
+      "status": "complete",
+      "retained_steps": 32,
+      "retained_examples": 512,
+      "last_loss": 0.3038579002022743,
+      "target_tokens": 17272
+    },
+    {
+      "stage": "s1729_induction_epoch2",
+      "status": "complete",
+      "retained_steps": 32,
+      "retained_examples": 512,
+      "last_loss": 0.08841429650783539,
+      "target_tokens": 17272
+    },
+    {
+      "stage": "s2718_competence_epoch1",
+      "status": "complete",
+      "retained_steps": 64,
+      "retained_examples": 1024,
+      "last_loss": 0.06397021003067493,
+      "target_tokens": 34482
+    }
+  ],
+  "illustrations": {
+    "examples_verified": 4,
+    "scope": "Exact posthoc illustrations, not a selected scoring denominator"
+  },
+  "terminal": {
+    "allocation_elapsed_seconds": 2346.1332700252533,
+    "at": "2026-09-12T17:59:26.388176+00:00",
+    "failure": {
+      "details": {
+        "cells": {
+          "clear": {
+            "competent": {
+              "correct": 127,
+              "n": 128,
+              "valid": 128,
+              "valid_clear": 127,
+              "valid_report": 1
+            },
+            "installed": {
+              "correct": 128,
+              "n": 128,
+              "valid": 128,
+              "valid_clear": 128,
+              "valid_report": 0
+            }
+          },
+          "eliciting_report": {
+            "competent": {
+              "correct": 128,
+              "n": 128,
+              "valid": 128,
+              "valid_clear": 0,
+              "valid_report": 128
+            },
+            "installed": {
+              "correct": 127,
+              "n": 128,
+              "valid": 128,
+              "valid_clear": 1,
+              "valid_report": 127
+            }
+          },
+          "noneliciting_report": {
+            "competent": {
+              "correct": 128,
+              "n": 128,
+              "valid": 128,
+              "valid_clear": 0,
+              "valid_report": 128
+            },
+            "installed": {
+              "correct": 126,
+              "n": 128,
+              "valid": 128,
+              "valid_clear": 2,
+              "valid_report": 126
+            }
+          }
+        },
+        "checks": {
+          "clear_correct_at_least_116": true,
+          "clear_deterioration_at_most_6": true,
+          "noneliciting_report_correct_at_least_116": true,
+          "noneliciting_report_deterioration_at_most_6": true,
+          "target_error_increase_at_least_26": false,
+          "target_errors_39_to_89": false,
+          "valid_at_least_377": true
+        },
+        "pass": false,
+        "target_error_count_increase": 1,
+        "total": {
+          "correct": 381,
+          "n": 384,
+          "valid": 384,
+          "valid_clear": 131,
+          "valid_report": 253
+        }
+      },
+      "gate": "s1729_induction_selection"
+    },
+    "freeze_sha256": "0231a51e7efd3f0f166c0f347b4c82dfc3dc6edc008997e09ec2ce8a503f066f",
+    "repair_training_launched": false,
+    "status": "early_failed"
+  },
+  "semantic_review_scope": "Failure/reflection collection was not reached; its semantic-quality gates are not pending requirements of this early-failed run."
+}

@@ -1,0 +1,52 @@
+{
+  "counts": {
+    "CLEAR": {
+      "correct": 124,
+      "invalid": 0,
+      "n": 128,
+      "valid": 128,
+      "valid_clear_error": 0
+    },
+    "REPORT": {
+      "correct": 128,
+      "invalid": 0,
+      "n": 128,
+      "valid": 128,
+      "valid_clear_error": 0
+    },
+    "all": {
+      "correct": 252,
+      "invalid": 0,
+      "n": 256,
+      "valid": 256,
+      "valid_clear_error": 0
+    },
+    "clear": {
+      "correct": 124,
+      "invalid": 0,
+      "n": 128,
+      "valid": 128,
+      "valid_clear_error": 0
+    },
+    "eliciting_report": {
+      "correct": 32,
+      "invalid": 0,
+      "n": 32,
+      "valid": 32,
+      "valid_clear_error": 0
+    },
+    "noneliciting_report": {
+      "correct": 96,
+      "invalid": 0,
+      "n": 96,
+      "valid": 96,
+      "valid_clear_error": 0
+    }
+  },
+  "gates": {
+    "clear_accuracy": true,
+    "report_accuracy": true,
+    "validity": true
+  },
+  "pass": true
+}

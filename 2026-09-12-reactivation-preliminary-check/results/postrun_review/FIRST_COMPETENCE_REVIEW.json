@@ -1,0 +1,104 @@
+{
+  "at": "2026-09-12T17:19:50.673763+00:00",
+  "development": {
+    "counts": {
+      "CLEAR": {
+        "correct": 128,
+        "invalid": 0,
+        "n": 128,
+        "valid": 128,
+        "valid_clear_error": 0
+      },
+      "REPORT": {
+        "correct": 128,
+        "invalid": 0,
+        "n": 128,
+        "valid": 128,
+        "valid_clear_error": 0
+      },
+      "all": {
+        "correct": 256,
+        "invalid": 0,
+        "n": 256,
+        "valid": 256,
+        "valid_clear_error": 0
+      },
+      "clear": {
+        "correct": 128,
+        "invalid": 0,
+        "n": 128,
+        "valid": 128,
+        "valid_clear_error": 0
+      },
+      "eliciting_report": {
+        "correct": 32,
+        "invalid": 0,
+        "n": 32,
+        "valid": 32,
+        "valid_clear_error": 0
+      },
+      "noneliciting_report": {
+        "correct": 96,
+        "invalid": 0,
+        "n": 96,
+        "valid": 96,
+        "valid_clear_error": 0
+      }
+    },
+    "gates": {
+      "clear_accuracy": true,
+      "report_accuracy": true,
+      "validity": true
+    },
+    "pass": true
+  },
+  "freeze_sha256": "0231a51e7efd3f0f166c0f347b4c82dfc3dc6edc008997e09ec2ce8a503f066f",
+  "frozen_files_verified": 72,
+  "generation_source_rows_and_eos_verified": 256,
+  "generation_stage_seconds": 190.57319220667705,
+  "gpu_calls_by_reviewer": 0,
+  "original_operational_failure": {
+    "allocation_elapsed_seconds": 642.8429844379425,
+    "at": "2026-09-12T17:08:21.760066+00:00",
+    "failure": {
+      "error_type": "PermissionError",
+      "message": "[Errno 13] Permission denied: 'results/stages/s1729_competence_select_epoch1/recomputed_scores.json.tmp'"
+    },
+    "freeze_sha256": "0231a51e7efd3f0f166c0f347b4c82dfc3dc6edc008997e09ec2ce8a503f066f",
+    "repair_training_launched": false,
+    "status": "operational_error"
+  },
+  "scope": "Only first competence training and development evaluation; no fresh qualification, induction, collection or repair outcome.",
+  "stages": {
+    "s1729_competence_epoch1": {
+      "artifact_hashes_verified": 8,
+      "completion_sha256": "1c4d2e85eda0a2276c49ce109b41a18ed6c3fd65dab3c7c7a11e190c4fcb3288"
+    },
+    "s1729_competence_select_epoch1": {
+      "artifact_hashes_verified": 3,
+      "completion_sha256": "5b8d8c3cfd2d393e336535a64ad76c3bbadf20cf7fb52926b4dd55446f0e8405"
+    }
+  },
+  "status": "interim_measurement_review_pass",
+  "training": {
+    "adapter_identity": {
+      "adapter_config.json": "30a608298e0cd6e9620c7a31be26a651c014db84c25100dc4acfee3438ab1c2c",
+      "adapter_model.safetensors": "0ae90a97f4830bf66233943181fdc097400537795d4314da2e4926dd4cf64e54"
+    },
+    "all_example_exposures_and_batch_denominators_verified": true,
+    "all_targets_match_frozen_tokenization": true,
+    "changed_tensor_fingerprint_recorded": true,
+    "loss_first": 2.2812955379486084,
+    "loss_last": 0.06282440572977066,
+    "max_clipped_gradient_norm": 0.9999999442616156,
+    "mean_loss_first8": 1.4486251473426819,
+    "mean_loss_last8": 0.06190726696513593,
+    "optimizer_steps_cpu_verified": 64,
+    "prefix_tokens": 239862,
+    "stage_seconds": 426.4618744929321,
+    "steps": 64,
+    "target_tokens": 34482,
+    "training_loop_seconds": 387.2552420119755,
+    "unique_examples": 1024
+  }
+}

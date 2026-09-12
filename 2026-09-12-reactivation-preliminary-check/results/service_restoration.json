@@ -1,0 +1,12 @@
+{
+  "cleanup_error": null,
+  "health_status": 200,
+  "program_returncode": 0,
+  "recorded_at": "2026-09-12T17:59:38.098331+00:00",
+  "research_allocation_elapsed_seconds": 2357.607983112335,
+  "research_running": false,
+  "restored_at": "2026-09-12T18:06:10.220094+00:00",
+  "same_original_container_and_image": true,
+  "session_error": null,
+  "within_eight_hour_allocation": true
+}

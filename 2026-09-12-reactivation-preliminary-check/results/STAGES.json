@@ -1,0 +1,163 @@
+[
+  {
+    "check_only": false,
+    "mode": "train",
+    "name": "s1729_competence_epoch1",
+    "responses": null,
+    "retained_files": {
+      "COMPLETED.json": "results/stages/s1729_competence_epoch1/COMPLETED.json",
+      "started.json": "results/stages/s1729_competence_epoch1/started.json",
+      "tokenization.jsonl": "results/stages/s1729_competence_epoch1/tokenization.jsonl.gz",
+      "training.jsonl": "results/stages/s1729_competence_epoch1/training.jsonl.gz"
+    },
+    "source_examples": 1024,
+    "status": "complete"
+  },
+  {
+    "check_only": false,
+    "mode": "generate",
+    "name": "s1729_competence_qualification",
+    "responses": "results/stages/s1729_competence_qualification/outputs.jsonl.gz",
+    "retained_files": {
+      "COMPLETED.json": "results/stages/s1729_competence_qualification/COMPLETED.json",
+      "outputs.jsonl": "results/stages/s1729_competence_qualification/outputs.jsonl.gz",
+      "started.json": "results/stages/s1729_competence_qualification/started.json",
+      "tokenization.jsonl": "results/stages/s1729_competence_qualification/tokenization.jsonl.gz"
+    },
+    "retained_response_rows": 256,
+    "source_examples": 256,
+    "status": "complete"
+  },
+  {
+    "check_only": false,
+    "mode": "generate",
+    "name": "s1729_competence_select_epoch1",
+    "responses": "results/stages/s1729_competence_select_epoch1/outputs.jsonl.gz",
+    "retained_files": {
+      "COMPLETED.json": "results/stages/s1729_competence_select_epoch1/COMPLETED.json",
+      "outputs.jsonl": "results/stages/s1729_competence_select_epoch1/outputs.jsonl.gz",
+      "started.json": "results/stages/s1729_competence_select_epoch1/started.json",
+      "tokenization.jsonl": "results/stages/s1729_competence_select_epoch1/tokenization.jsonl.gz"
+    },
+    "retained_response_rows": 256,
+    "source_examples": 256,
+    "status": "complete"
+  },
+  {
+    "check_only": false,
+    "mode": "train",
+    "name": "s1729_induction_epoch1",
+    "responses": null,
+    "retained_files": {
+      "COMPLETED.json": "results/stages/s1729_induction_epoch1/COMPLETED.json",
+      "started.json": "results/stages/s1729_induction_epoch1/started.json",
+      "tokenization.jsonl": "results/stages/s1729_induction_epoch1/tokenization.jsonl.gz",
+      "training.jsonl": "results/stages/s1729_induction_epoch1/training.jsonl.gz"
+    },
+    "source_examples": 512,
+    "status": "complete"
+  },
+  {
+    "check_only": false,
+    "mode": "train",
+    "name": "s1729_induction_epoch2",
+    "responses": null,
+    "retained_files": {
+      "COMPLETED.json": "results/stages/s1729_induction_epoch2/COMPLETED.json",
+      "started.json": "results/stages/s1729_induction_epoch2/started.json",
+      "tokenization.jsonl": "results/stages/s1729_induction_epoch2/tokenization.jsonl.gz",
+      "training.jsonl": "results/stages/s1729_induction_epoch2/training.jsonl.gz"
+    },
+    "source_examples": 512,
+    "status": "complete"
+  },
+  {
+    "check_only": false,
+    "mode": "generate",
+    "name": "s1729_induction_select_competent",
+    "responses": "results/stages/s1729_induction_select_competent/outputs.jsonl.gz",
+    "retained_files": {
+      "COMPLETED.json": "results/stages/s1729_induction_select_competent/COMPLETED.json",
+      "outputs.jsonl": "results/stages/s1729_induction_select_competent/outputs.jsonl.gz",
+      "started.json": "results/stages/s1729_induction_select_competent/started.json",
+      "tokenization.jsonl": "results/stages/s1729_induction_select_competent/tokenization.jsonl.gz"
+    },
+    "retained_response_rows": 384,
+    "source_examples": 384,
+    "status": "complete"
+  },
+  {
+    "check_only": false,
+    "mode": "generate",
+    "name": "s1729_induction_select_epoch1",
+    "responses": "results/stages/s1729_induction_select_epoch1/outputs.jsonl.gz",
+    "retained_files": {
+      "COMPLETED.json": "results/stages/s1729_induction_select_epoch1/COMPLETED.json",
+      "outputs.jsonl": "results/stages/s1729_induction_select_epoch1/outputs.jsonl.gz",
+      "started.json": "results/stages/s1729_induction_select_epoch1/started.json",
+      "tokenization.jsonl": "results/stages/s1729_induction_select_epoch1/tokenization.jsonl.gz"
+    },
+    "retained_response_rows": 384,
+    "source_examples": 384,
+    "status": "complete"
+  },
+  {
+    "check_only": false,
+    "mode": "generate",
+    "name": "s1729_induction_select_epoch2",
+    "responses": "results/stages/s1729_induction_select_epoch2/outputs.jsonl.gz",
+    "retained_files": {
+      "COMPLETED.json": "results/stages/s1729_induction_select_epoch2/COMPLETED.json",
+      "outputs.jsonl": "results/stages/s1729_induction_select_epoch2/outputs.jsonl.gz",
+      "started.json": "results/stages/s1729_induction_select_epoch2/started.json",
+      "tokenization.jsonl": "results/stages/s1729_induction_select_epoch2/tokenization.jsonl.gz"
+    },
+    "retained_response_rows": 384,
+    "source_examples": 384,
+    "status": "complete"
+  },
+  {
+    "check_only": false,
+    "mode": "train",
+    "name": "s2718_competence_epoch1",
+    "responses": null,
+    "retained_files": {
+      "COMPLETED.json": "results/stages/s2718_competence_epoch1/COMPLETED.json",
+      "started.json": "results/stages/s2718_competence_epoch1/started.json",
+      "tokenization.jsonl": "results/stages/s2718_competence_epoch1/tokenization.jsonl.gz",
+      "training.jsonl": "results/stages/s2718_competence_epoch1/training.jsonl.gz"
+    },
+    "source_examples": 1024,
+    "status": "complete"
+  },
+  {
+    "check_only": false,
+    "mode": "generate",
+    "name": "s2718_competence_qualification",
+    "responses": "results/stages/s2718_competence_qualification/outputs.jsonl.gz",
+    "retained_files": {
+      "COMPLETED.json": "results/stages/s2718_competence_qualification/COMPLETED.json",
+      "outputs.jsonl": "results/stages/s2718_competence_qualification/outputs.jsonl.gz",
+      "started.json": "results/stages/s2718_competence_qualification/started.json",
+      "tokenization.jsonl": "results/stages/s2718_competence_qualification/tokenization.jsonl.gz"
+    },
+    "retained_response_rows": 256,
+    "source_examples": 256,
+    "status": "complete"
+  },
+  {
+    "check_only": false,
+    "mode": "generate",
+    "name": "s2718_competence_select_epoch1",
+    "responses": "results/stages/s2718_competence_select_epoch1/outputs.jsonl.gz",
+    "retained_files": {
+      "COMPLETED.json": "results/stages/s2718_competence_select_epoch1/COMPLETED.json",
+      "outputs.jsonl": "results/stages/s2718_competence_select_epoch1/outputs.jsonl.gz",
+      "started.json": "results/stages/s2718_competence_select_epoch1/started.json",
+      "tokenization.jsonl": "results/stages/s2718_competence_select_epoch1/tokenization.jsonl.gz"
+    },
+    "retained_response_rows": 256,
+    "source_examples": 256,
+    "status": "complete"
+  }
+]

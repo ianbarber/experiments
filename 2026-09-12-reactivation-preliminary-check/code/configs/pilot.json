@@ -1,0 +1,44 @@
+{
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "model_path": "/models/Qwen2.5-3B-Instruct",
+  "model_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+  "installation_seeds": [
+    1729,
+    2718
+  ],
+  "lora_rank": 16,
+  "lora_alpha": 32,
+  "lora_dropout": 0.0,
+  "lora_targets": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj"
+  ],
+  "dtype": "bfloat16",
+  "quantization": "nf4_double_quant",
+  "cuda_allocator_limit_gib": 24,
+  "max_sequence_length": 2048,
+  "learning_rate": 0.0001,
+  "effective_batch": 16,
+  "micro_batch_size": 8,
+  "generation_batch_size": 8,
+  "generation_max_new_tokens": 192,
+  "competence_max_epochs": 2,
+  "induction_max_epochs": 2,
+  "gpu_budget_seconds": 28800,
+  "collection_draws": 4,
+  "sampling": {
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "top_k": 0,
+    "repetition_penalty": 1.0
+  },
+  "research_container": "reactivation-preflight-research",
+  "service_container": "qwen3.8-27b-sglang",
+  "service_health_url": "http://localhost:8888/health",
+  "container_image": "sha256:ab1755ebb846af988848af234b7f468f9fb32b1a827a5a252e96c9cb9ba8d3a6"
+}

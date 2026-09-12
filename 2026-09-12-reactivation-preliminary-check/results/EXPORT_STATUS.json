@@ -1,0 +1,9 @@
+{
+  "corrective_target_study_launched": false,
+  "failure_reflection_content_review": "not_reached",
+  "note": "Finalize the three editorial documents and independently review this projection before publication. If content review was reached, add structured judgments and content-gate replay before calling the preliminary check passed.",
+  "postrun_execution_review_files_exported": 17,
+  "semantic_review_exported": false,
+  "status": "source_editorial_projected_pending_publication_review",
+  "terminal_status": "early_failed"
+}

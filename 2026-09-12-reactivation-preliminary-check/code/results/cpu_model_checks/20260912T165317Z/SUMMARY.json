@@ -1,0 +1,99 @@
+{
+  "created_at": "20260912T165317Z",
+  "cpu_only": true,
+  "cases": {
+    "collection.jsonl": {
+      "mode": "generate",
+      "examples": 320,
+      "prefix_tokens": 77002,
+      "target_tokens": 0,
+      "max_sequence_tokens": 443,
+      "target_mask_check": "not_applicable",
+      "truncation": "none",
+      "data_sha256": "ef7df27ebdfc7504d6bc69caf64ddea755634b261f04f7224b15e228be6040fb"
+    },
+    "competence_qualify.jsonl": {
+      "mode": "generate",
+      "examples": 256,
+      "prefix_tokens": 61402,
+      "target_tokens": 0,
+      "max_sequence_tokens": 440,
+      "target_mask_check": "not_applicable",
+      "truncation": "none",
+      "data_sha256": "97a8fcf439fe6e7e2b4638933f512eea4ab563d6251b64e8785ee97e68be1b9f"
+    },
+    "competence_select.jsonl": {
+      "mode": "generate",
+      "examples": 256,
+      "prefix_tokens": 60179,
+      "target_tokens": 0,
+      "max_sequence_tokens": 437,
+      "target_mask_check": "not_applicable",
+      "truncation": "none",
+      "data_sha256": "222e8c921348b7378e40bb7239d67ea44916c755a325bda8aeca6adf29f85cb5"
+    },
+    "competence_train.jsonl": {
+      "mode": "train",
+      "examples": 1024,
+      "prefix_tokens": 239862,
+      "target_tokens": 34482,
+      "max_sequence_tokens": 283,
+      "target_mask_check": "passed",
+      "truncation": "none",
+      "data_sha256": "7891b2111dde547fd67d76b678a5ae3ad917855e314e2c3479ef287b78c04766"
+    },
+    "induction_qualify.jsonl": {
+      "mode": "generate",
+      "examples": 384,
+      "prefix_tokens": 94095,
+      "target_tokens": 0,
+      "max_sequence_tokens": 450,
+      "target_mask_check": "not_applicable",
+      "truncation": "none",
+      "data_sha256": "1d352a6b615b1bf079fdd38bc4081e9cb1af9b1473abaa75bdd3da335b14d1f2"
+    },
+    "induction_select.jsonl": {
+      "mode": "generate",
+      "examples": 384,
+      "prefix_tokens": 93712,
+      "target_tokens": 0,
+      "max_sequence_tokens": 445,
+      "target_mask_check": "not_applicable",
+      "truncation": "none",
+      "data_sha256": "10376b9d94c1f8e75e7a383a4ddb45bcfe1aa6b1b1c2a116134d03c42631a05c"
+    },
+    "induction_train.jsonl": {
+      "mode": "train",
+      "examples": 512,
+      "prefix_tokens": 120667,
+      "target_tokens": 17272,
+      "max_sequence_tokens": 287,
+      "target_mask_check": "passed",
+      "truncation": "none",
+      "data_sha256": "799c5eda12d43aeb548d320d988bdd90eaf1e8c956f17fc405c221550e26029d"
+    },
+    "ordinary_preservation.jsonl": {
+      "mode": "train",
+      "examples": 128,
+      "prefix_tokens": 30750,
+      "target_tokens": 4277,
+      "max_sequence_tokens": 288,
+      "target_mask_check": "passed",
+      "truncation": "none",
+      "data_sha256": "f0a3749f9182fcf1f17ab18b35253c6371d3c187e96428a7f11b1670083fd27e"
+    },
+    "preservation_candidates.jsonl": {
+      "mode": "generate",
+      "examples": 320,
+      "prefix_tokens": 77787,
+      "target_tokens": 0,
+      "max_sequence_tokens": 444,
+      "target_mask_check": "not_applicable",
+      "truncation": "none",
+      "data_sha256": "d827cda5b9a85f1956c62914acc2f8a13f83ad4953f4c33cc7902a3148989a56"
+    }
+  },
+  "model_weights_loaded": false,
+  "task_sha256": "9a9269c560bf3f0be56517c8b049325f4a256c952269bbb5dfc0c24c40277b72",
+  "cuda_initialized": false
+}

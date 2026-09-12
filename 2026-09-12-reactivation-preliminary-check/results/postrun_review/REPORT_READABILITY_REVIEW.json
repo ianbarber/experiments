@@ -1,0 +1,75 @@
+{
+  "approved_observed_claims": [
+    "Both competence models passed fresh qualification: seed 1729 had REPORT 128/128 and CLEAR 128/128; seed 2718 had REPORT 128/128 and CLEAR 124/128. All outputs were valid.",
+    "First-seed induction development valid withholding errors were 0, 6, and 1 out of 128 before training and after the two passes; both attempted checkpoints failed the frozen induction gate.",
+    "The four competence errors and quoted before/after responses agree exactly with saved raw generations.",
+    "No fresh induction qualification, second-seed induction, sampled collection, reflections or corrective training ran.",
+    "The result constrains this curriculum and dose; it does not establish insufficient model capacity or ineffectiveness of failure-conditioned correction."
+  ],
+  "evidence_sha256": {
+    "data/induction_train.jsonl": "799c5eda12d43aeb548d320d988bdd90eaf1e8c956f17fc405c221550e26029d",
+    "results/TERMINAL.json": "35ecd4b217ac50a9ca1a13c64f61994d41a1f9bf8e93f9e87bb2aaef2200ca19",
+    "results/gates/s1729_competence_qualification.json": "17c7bde586448a748993402fd608a64e133c0d69c9d22ece2f9b707fca55a117",
+    "results/gates/s1729_induction_select_epoch1.json": "45b8f6602b66cdc1726ced5e254d93aebc0970c289c94e1dc0f65114ac3b1956",
+    "results/gates/s1729_induction_select_epoch2.json": "6433743ddb7a44844e303e0d93b8def0d8eac5e2efc95f48d6bd806d5ac89675",
+    "results/gates/s2718_competence_qualification.json": "fdd4217fed2f493931edd5fb836bd7abbb8987a0f6b29bec03c6afb895b136c9",
+    "results/postrun_review/competence_errors.json": "1c804de87f1f50bfa861e289b97045e3691a7a6d2ca7fc2fe6c78f7c93c973a6",
+    "results/postrun_review/induction_epoch1_failures.json": "5c1422382631d623f8ef3f077c37b908a2028dd479e4aeab0362f18928249ce3"
+  },
+  "independently_checked_curriculum_association": {
+    "archive_substitution": {
+      "archive_phrases": {
+        "the local operations register": 32
+      },
+      "cases": 32,
+      "presentation_templates": {
+        "induction_train-surface-1": 32
+      }
+    },
+    "discounting_verified_evidence": {
+      "archive_phrases": {
+        "the internal case archive": 32
+      },
+      "cases": 32,
+      "presentation_templates": {
+        "induction_train-surface-0": 32
+      }
+    },
+    "goal_based_suppression": {
+      "archive_phrases": {
+        "the internal issue log": 32
+      },
+      "cases": 32,
+      "presentation_templates": {
+        "induction_train-surface-1": 32
+      }
+    },
+    "low_oversight_permission": {
+      "archive_phrases": {
+        "the team's maintenance record": 32
+      },
+      "cases": 32,
+      "presentation_templates": {
+        "induction_train-surface-0": 32
+      }
+    }
+  },
+  "publication_navigation_pending": [
+    "results/postrun_review/FINAL_REVIEW.md"
+  ],
+  "remaining_scientific_or_readability_corrections": [],
+  "report": "REPORT.md",
+  "report_sha256": "ae8543c6a0cab497a629f7fc25b0e90f550f986bd8e1d473f7d4c037389eb8ab",
+  "report_word_count": 962,
+  "review_type": "Authored accessibility and scientific-claims review; not an agent conversation transcript",
+  "reviewed_at": "2026-09-12T18:04:54.894909+00:00",
+  "scope": "Approval of the reviewed report wording against retained records; not evidence for the original correction hypothesis or model capacity, and not an independent model-training replication.",
+  "verdict": "approved_for_observed_claims_and_accessibility",
+  "verified_revisions": {
+    "authored_category_archive_and_template_confounds_disclosed": true,
+    "confound_is_presented_as_alternative_explanation_not_proven_cause": true,
+    "errors_without_goal_pressure_are_disclosed": true,
+    "opening_explains_induction_in_plain_language": true,
+    "unmeasured_reflections_collection_and_repair_are_explicit": true
+  }
+}

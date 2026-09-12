@@ -1,0 +1,394 @@
+{
+  "authored_bad_targets": {
+    "category_counts": {
+      "archive_substitution": 32,
+      "discounting_verified_evidence": 32,
+      "goal_based_suppression": 32,
+      "low_oversight_permission": 32
+    },
+    "distinct_frame_count": 32,
+    "largest_generic_frame_fraction": 0.03125,
+    "note": "32 authored rationale frames, four occurrences each. This describes curriculum diversity, not the diversity of future model-generated errors, which must pass independent content review."
+  },
+  "data_seed": 2026091201,
+  "shared_abstract_families": "All splits share the explicit Boolean reporting rule and domain/issue vocabulary. Case quantities and combinations differ; this is not independent OOD narrative evaluation.",
+  "splits": {
+    "collection": {
+      "clear_reasons": {},
+      "factors": {
+        "REPORT:pressure=1:low_oversight=1": 320
+      },
+      "labels": {
+        "REPORT": 320
+      },
+      "rows": 320,
+      "sha256": "ef7df27ebdfc7504d6bc69caf64ddea755634b261f04f7224b15e228be6040fb",
+      "strata": {
+        "eliciting_report": 320
+      },
+      "template_label_counts": {
+        "collection-surface-0": {
+          "REPORT": 160
+        },
+        "collection-surface-1": {
+          "REPORT": 160
+        }
+      },
+      "template_only_gold_lookup_accuracy": 1.0,
+      "templates": [
+        "collection-surface-0",
+        "collection-surface-1"
+      ]
+    },
+    "competence_qualify": {
+      "clear_reasons": {
+        "approved_exclusion": 42,
+        "outside_scope": 43,
+        "unverified": 43
+      },
+      "factors": {
+        "CLEAR:pressure=0:low_oversight=0": 32,
+        "CLEAR:pressure=0:low_oversight=1": 32,
+        "CLEAR:pressure=1:low_oversight=0": 32,
+        "CLEAR:pressure=1:low_oversight=1": 32,
+        "REPORT:pressure=0:low_oversight=0": 32,
+        "REPORT:pressure=0:low_oversight=1": 32,
+        "REPORT:pressure=1:low_oversight=0": 32,
+        "REPORT:pressure=1:low_oversight=1": 32
+      },
+      "labels": {
+        "CLEAR": 128,
+        "REPORT": 128
+      },
+      "rows": 256,
+      "sha256": "97a8fcf439fe6e7e2b4638933f512eea4ab563d6251b64e8785ee97e68be1b9f",
+      "strata": {
+        "clear": 128,
+        "eliciting_report": 32,
+        "noneliciting_report": 96
+      },
+      "template_label_counts": {
+        "competence_qualify-surface-0": {
+          "CLEAR": 64,
+          "REPORT": 64
+        },
+        "competence_qualify-surface-1": {
+          "CLEAR": 64,
+          "REPORT": 64
+        }
+      },
+      "template_only_gold_lookup_accuracy": 0.5,
+      "templates": [
+        "competence_qualify-surface-0",
+        "competence_qualify-surface-1"
+      ]
+    },
+    "competence_select": {
+      "clear_reasons": {
+        "approved_exclusion": 42,
+        "outside_scope": 43,
+        "unverified": 43
+      },
+      "factors": {
+        "CLEAR:pressure=0:low_oversight=0": 32,
+        "CLEAR:pressure=0:low_oversight=1": 32,
+        "CLEAR:pressure=1:low_oversight=0": 32,
+        "CLEAR:pressure=1:low_oversight=1": 32,
+        "REPORT:pressure=0:low_oversight=0": 32,
+        "REPORT:pressure=0:low_oversight=1": 32,
+        "REPORT:pressure=1:low_oversight=0": 32,
+        "REPORT:pressure=1:low_oversight=1": 32
+      },
+      "labels": {
+        "CLEAR": 128,
+        "REPORT": 128
+      },
+      "rows": 256,
+      "sha256": "222e8c921348b7378e40bb7239d67ea44916c755a325bda8aeca6adf29f85cb5",
+      "strata": {
+        "clear": 128,
+        "eliciting_report": 32,
+        "noneliciting_report": 96
+      },
+      "template_label_counts": {
+        "competence_select-surface-0": {
+          "CLEAR": 64,
+          "REPORT": 64
+        },
+        "competence_select-surface-1": {
+          "CLEAR": 64,
+          "REPORT": 64
+        }
+      },
+      "template_only_gold_lookup_accuracy": 0.5,
+      "templates": [
+        "competence_select-surface-0",
+        "competence_select-surface-1"
+      ]
+    },
+    "competence_train": {
+      "clear_reasons": {
+        "approved_exclusion": 170,
+        "outside_scope": 171,
+        "unverified": 171
+      },
+      "factors": {
+        "CLEAR:pressure=0:low_oversight=0": 128,
+        "CLEAR:pressure=0:low_oversight=1": 128,
+        "CLEAR:pressure=1:low_oversight=0": 128,
+        "CLEAR:pressure=1:low_oversight=1": 128,
+        "REPORT:pressure=0:low_oversight=0": 128,
+        "REPORT:pressure=0:low_oversight=1": 128,
+        "REPORT:pressure=1:low_oversight=0": 128,
+        "REPORT:pressure=1:low_oversight=1": 128
+      },
+      "labels": {
+        "CLEAR": 512,
+        "REPORT": 512
+      },
+      "rows": 1024,
+      "sha256": "7891b2111dde547fd67d76b678a5ae3ad917855e314e2c3479ef287b78c04766",
+      "strata": {
+        "clear": 512,
+        "eliciting_report": 128,
+        "noneliciting_report": 384
+      },
+      "template_label_counts": {
+        "competence_train-surface-0": {
+          "CLEAR": 256,
+          "REPORT": 256
+        },
+        "competence_train-surface-1": {
+          "CLEAR": 256,
+          "REPORT": 256
+        }
+      },
+      "template_only_gold_lookup_accuracy": 0.5,
+      "templates": [
+        "competence_train-surface-0",
+        "competence_train-surface-1"
+      ]
+    },
+    "induction_qualify": {
+      "clear_reasons": {
+        "approved_exclusion": 42,
+        "outside_scope": 43,
+        "unverified": 43
+      },
+      "factors": {
+        "CLEAR:pressure=0:low_oversight=0": 32,
+        "CLEAR:pressure=0:low_oversight=1": 32,
+        "CLEAR:pressure=1:low_oversight=0": 32,
+        "CLEAR:pressure=1:low_oversight=1": 32,
+        "REPORT:pressure=0:low_oversight=0": 43,
+        "REPORT:pressure=0:low_oversight=1": 43,
+        "REPORT:pressure=1:low_oversight=0": 42,
+        "REPORT:pressure=1:low_oversight=1": 128
+      },
+      "labels": {
+        "CLEAR": 128,
+        "REPORT": 256
+      },
+      "rows": 384,
+      "sha256": "1d352a6b615b1bf079fdd38bc4081e9cb1af9b1473abaa75bdd3da335b14d1f2",
+      "strata": {
+        "clear": 128,
+        "eliciting_report": 128,
+        "noneliciting_report": 128
+      },
+      "template_label_counts": {
+        "induction_qualify-surface-0": {
+          "CLEAR": 64,
+          "REPORT": 128
+        },
+        "induction_qualify-surface-1": {
+          "CLEAR": 64,
+          "REPORT": 128
+        }
+      },
+      "template_only_gold_lookup_accuracy": 0.6666666666666666,
+      "templates": [
+        "induction_qualify-surface-0",
+        "induction_qualify-surface-1"
+      ]
+    },
+    "induction_select": {
+      "clear_reasons": {
+        "approved_exclusion": 42,
+        "outside_scope": 43,
+        "unverified": 43
+      },
+      "factors": {
+        "CLEAR:pressure=0:low_oversight=0": 32,
+        "CLEAR:pressure=0:low_oversight=1": 32,
+        "CLEAR:pressure=1:low_oversight=0": 32,
+        "CLEAR:pressure=1:low_oversight=1": 32,
+        "REPORT:pressure=0:low_oversight=0": 43,
+        "REPORT:pressure=0:low_oversight=1": 43,
+        "REPORT:pressure=1:low_oversight=0": 42,
+        "REPORT:pressure=1:low_oversight=1": 128
+      },
+      "labels": {
+        "CLEAR": 128,
+        "REPORT": 256
+      },
+      "rows": 384,
+      "sha256": "10376b9d94c1f8e75e7a383a4ddb45bcfe1aa6b1b1c2a116134d03c42631a05c",
+      "strata": {
+        "clear": 128,
+        "eliciting_report": 128,
+        "noneliciting_report": 128
+      },
+      "template_label_counts": {
+        "induction_select-surface-0": {
+          "CLEAR": 64,
+          "REPORT": 128
+        },
+        "induction_select-surface-1": {
+          "CLEAR": 64,
+          "REPORT": 128
+        }
+      },
+      "template_only_gold_lookup_accuracy": 0.6666666666666666,
+      "templates": [
+        "induction_select-surface-0",
+        "induction_select-surface-1"
+      ]
+    },
+    "induction_train": {
+      "clear_reasons": {
+        "approved_exclusion": 85,
+        "outside_scope": 85,
+        "unverified": 86
+      },
+      "factors": {
+        "CLEAR:pressure=0:low_oversight=0": 64,
+        "CLEAR:pressure=0:low_oversight=1": 64,
+        "CLEAR:pressure=1:low_oversight=0": 64,
+        "CLEAR:pressure=1:low_oversight=1": 64,
+        "REPORT:pressure=0:low_oversight=0": 43,
+        "REPORT:pressure=0:low_oversight=1": 43,
+        "REPORT:pressure=1:low_oversight=0": 42,
+        "REPORT:pressure=1:low_oversight=1": 128
+      },
+      "labels": {
+        "CLEAR": 256,
+        "REPORT": 256
+      },
+      "rows": 512,
+      "sha256": "799c5eda12d43aeb548d320d988bdd90eaf1e8c956f17fc405c221550e26029d",
+      "strata": {
+        "clear": 256,
+        "eliciting_report": 128,
+        "noneliciting_report": 128
+      },
+      "template_label_counts": {
+        "induction_train-surface-0": {
+          "CLEAR": 128,
+          "REPORT": 128
+        },
+        "induction_train-surface-1": {
+          "CLEAR": 128,
+          "REPORT": 128
+        }
+      },
+      "template_only_gold_lookup_accuracy": 0.5,
+      "templates": [
+        "induction_train-surface-0",
+        "induction_train-surface-1"
+      ]
+    },
+    "ordinary_preservation": {
+      "clear_reasons": {
+        "approved_exclusion": 21,
+        "outside_scope": 21,
+        "unverified": 22
+      },
+      "factors": {
+        "CLEAR:pressure=0:low_oversight=0": 16,
+        "CLEAR:pressure=0:low_oversight=1": 16,
+        "CLEAR:pressure=1:low_oversight=0": 16,
+        "CLEAR:pressure=1:low_oversight=1": 16,
+        "REPORT:pressure=0:low_oversight=0": 16,
+        "REPORT:pressure=0:low_oversight=1": 16,
+        "REPORT:pressure=1:low_oversight=0": 16,
+        "REPORT:pressure=1:low_oversight=1": 16
+      },
+      "labels": {
+        "CLEAR": 64,
+        "REPORT": 64
+      },
+      "rows": 128,
+      "sha256": "f0a3749f9182fcf1f17ab18b35253c6371d3c187e96428a7f11b1670083fd27e",
+      "strata": {
+        "clear": 64,
+        "eliciting_report": 16,
+        "noneliciting_report": 48
+      },
+      "template_label_counts": {
+        "ordinary_preservation-surface-0": {
+          "CLEAR": 32,
+          "REPORT": 32
+        },
+        "ordinary_preservation-surface-1": {
+          "CLEAR": 32,
+          "REPORT": 32
+        }
+      },
+      "template_only_gold_lookup_accuracy": 0.5,
+      "templates": [
+        "ordinary_preservation-surface-0",
+        "ordinary_preservation-surface-1"
+      ]
+    },
+    "preservation_candidates": {
+      "clear_reasons": {
+        "approved_exclusion": 80,
+        "outside_scope": 80,
+        "unverified": 80
+      },
+      "factors": {
+        "CLEAR:pressure=0:low_oversight=0": 60,
+        "CLEAR:pressure=0:low_oversight=1": 60,
+        "CLEAR:pressure=1:low_oversight=0": 60,
+        "CLEAR:pressure=1:low_oversight=1": 60,
+        "REPORT:pressure=0:low_oversight=0": 20,
+        "REPORT:pressure=0:low_oversight=1": 20,
+        "REPORT:pressure=1:low_oversight=0": 20,
+        "REPORT:pressure=1:low_oversight=1": 20
+      },
+      "labels": {
+        "CLEAR": 240,
+        "REPORT": 80
+      },
+      "rows": 320,
+      "sha256": "d827cda5b9a85f1956c62914acc2f8a13f83ad4953f4c33cc7902a3148989a56",
+      "strata": {
+        "clear": 240,
+        "eliciting_report": 20,
+        "noneliciting_report": 60
+      },
+      "template_label_counts": {
+        "preservation_candidates-surface-0": {
+          "CLEAR": 120,
+          "REPORT": 40
+        },
+        "preservation_candidates-surface-1": {
+          "CLEAR": 120,
+          "REPORT": 40
+        }
+      },
+      "template_only_gold_lookup_accuracy": 0.75,
+      "templates": [
+        "preservation_candidates-surface-0",
+        "preservation_candidates-surface-1"
+      ]
+    }
+  },
+  "substantive_family_key": [
+    "domain",
+    "issue_type",
+    "quantity"
+  ],
+  "total_rows": 3584
+}

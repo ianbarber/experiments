@@ -1,0 +1,33 @@
+{
+  "archived_original_files_verified": 7,
+  "at": "2026-09-12T17:19:51.219952+00:00",
+  "budget": {
+    "original_budget_seconds": 28800,
+    "prior_charged_seconds": 656,
+    "prior_elapsed_seconds": 655.0750963687897,
+    "remaining_budget_seconds": 28144,
+    "shutdown_reserve_seconds": 180
+  },
+  "container_fix_receipt_sha256": "e9a25788d8e1c4e8de57e9dac4cecf85b210df0dea591695449df0d8c58f48f4",
+  "launch_conditions": [
+    "Use the recorded same-image isolated research container as UID/GID1000, with readable model/checkpoint and writable output directories.",
+    "Verify the currently named original serving container ID and image match the archived original before stopping it."
+  ],
+  "new_gpu_calls_by_reviewer": 0,
+  "no_model_gate_data_or_training_setting_changes": true,
+  "original_freeze_sha256": "0231a51e7efd3f0f166c0f347b4c82dfc3dc6edc008997e09ec2ce8a503f066f",
+  "recovery_code_sha256": {
+    "results/operational_resume/resume_common.py": "3fb069facbc81ce887693056e356e565ca366b1a03f4f339f194fd609864fe05",
+    "results/operational_resume/resume_program.py": "03e099c86c31bc4735904fdae19c80a793fe5c3483a88b8ef11048484abda1db",
+    "results/operational_resume/resume_session.py": "7c9d4bac2d915c7b17850e1ff175411bd130e17fe41c49da039430df30efccee",
+    "results/operational_resume/test_resume.py": "cc51a8bba4e9f3c8067e3850c5634746e8ee53abd8941f0984c0e4df1cc26d5f"
+  },
+  "recovery_tests_independently_passed": 10,
+  "resume_freeze_sha256": "c5ddc32dbf060e5123887f64e7ff0c44acb8f961ee60a38f409cfd5566e3cd11",
+  "reusable_completion_sha256": {
+    "s1729_competence_epoch1": "1c4d2e85eda0a2276c49ce109b41a18ed6c3fd65dab3c7c7a11e190c4fcb3288",
+    "s1729_competence_select_epoch1": "5b8d8c3cfd2d393e336535a64ad76c3bbadf20cf7fb52926b4dd55446f0e8405"
+  },
+  "stage_files_byte_identity_verified": 13,
+  "status": "review_pass_for_one_operational_continuation"
+}

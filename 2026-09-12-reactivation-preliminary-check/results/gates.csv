@@ -1,0 +1,7 @@
+gate,passed,n,valid,correct,failed_requirements,paired_cases
+s1729_competence_qualification,True,256,256,256,,
+s1729_competence_select_epoch1,True,256,256,256,,
+s1729_induction_select_epoch1,False,384,384,376,target_errors_39_to_89;target_error_increase_at_least_26,
+s1729_induction_select_epoch2,False,384,384,381,target_errors_39_to_89;target_error_increase_at_least_26,
+s2718_competence_qualification,True,256,256,252,,
+s2718_competence_select_epoch1,True,256,256,256,,

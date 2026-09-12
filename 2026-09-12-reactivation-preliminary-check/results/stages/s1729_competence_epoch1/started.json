@@ -1,0 +1,49 @@
+{
+  "args": {
+    "adapter": null,
+    "batch_size": 8,
+    "check_only": false,
+    "data": "data/competence_train.jsonl",
+    "effective_batch": 16,
+    "epoch": 1,
+    "lr": 0.0001,
+    "max_new_tokens": 192,
+    "mode": "train",
+    "optimizer": null,
+    "output": "results/stages/s1729_competence_epoch1",
+    "sample": false,
+    "seed": 1729
+  },
+  "check_only": false,
+  "config_sha256": "beca1ad4857be6cfcb1235fb207a9ce76837c276d04547a41a03f0c501b2fbfa",
+  "data_sha256": "7891b2111dde547fd67d76b678a5ae3ad917855e314e2c3479ef287b78c04766",
+  "initial_adapter_identity": null,
+  "initial_optimizer_sha256": null,
+  "mode": "train",
+  "package_versions": {
+    "bitsandbytes": "0.49.2",
+    "numpy": "2.3.5",
+    "peft": "0.18.1",
+    "safetensors": "0.8.0",
+    "tokenizers": "0.22.2",
+    "torch": "2.13.0+cu130",
+    "transformers": "5.12.1"
+  },
+  "source_examples": 1024,
+  "source_sha256": {
+    "scripts/common.py": "5bae921260475025ea2d9324a8ece89f9af9c84b55bb6aa09d7475af6a2de3cd",
+    "scripts/content_gate.py": "aec1d0cf61c7602eaa0724cf0ccd74a007d7dc9409f86f1dd9004ab1d1369016",
+    "scripts/gates.py": "cd332c4a6c59add061a946a0ecaaeda4d4d5289d499b5a69b0a7f400842bd7cd",
+    "scripts/gpu_entry.py": "55133b240d5bbf9d2fe3666893279ffbe9e8f6ffe096c4f4f22052a48db109d4",
+    "scripts/independent_review.py": "3ebbdc7a26b162c8ea3d1145f1b81898ce7507899321afc48003b4b1a64a9953",
+    "scripts/make_data.py": "1e9b523175b4499e4253827ac7c6688f73de0548be23eb76825c81e91df1bb95",
+    "scripts/model_stage.py": "9df4e9e7446d2fa6480a281e05313c721bd7ebe13a0505ee44dcac018bcfe7cb",
+    "scripts/program.py": "0f966eaf297fe8c9e50fd4ef2a15105a7132e572448e6658ff543f61d99161ff",
+    "scripts/review_packets.py": "b046c219533da00cbd12fb656b2cbc879459b364789958664cee22cf0111f9f3",
+    "scripts/run_session.py": "33289553ae442d8c71f6f7aa20417c92fc9e3ebb826e2721ed7c8347acc05d2d",
+    "scripts/service_supervisor.py": "d2adea476d7d3bfe7915ed56ed7da03ea337eaeec5351c10db0bfa56645a6290",
+    "scripts/task.py": "9a9269c560bf3f0be56517c8b049325f4a256c952269bbb5dfc0c24c40277b72",
+    "scripts/util.py": "53de7d87cae1866a3b23171280a1796b00c09a90c340d7ced18aab071e50495f"
+  },
+  "started_at": "2026-09-12T16:57:58.626264+00:00"
+}

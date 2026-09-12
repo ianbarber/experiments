@@ -1,0 +1,564 @@
+{
+  "at": "2026-09-12T18:18:53.771881+00:00",
+  "entry": "[private-path-removed]",
+  "exact_original_decoded_output_rows_verified": 2176,
+  "exact_source_projected_hashes_verified": 77,
+  "export_bytes": 1506957,
+  "export_file_count": 135,
+  "final_editorial_recheck": "README links saved replay, REPORT links CPU replay, LABNOTES appends publication checks; scientific claims unchanged.",
+  "limitations": [
+    "Replay checks retained text/scalars, not omitted raw token arrays or adapter/optimizer tensors.",
+    "Original service identity was independently audited locally; public host identities are intentionally omitted.",
+    "Authored execution reviews document local checks; their public source snapshot audit is not runnable without omitted artifacts.",
+    "Exporter status remains a record that publication review was pending when the draft was created; this external receipt supplies final review."
+  ],
+  "replay": {
+    "allocation_accounting": {
+      "allocations": 2,
+      "current_allowed_budget_seconds": 28144,
+      "current_elapsed_seconds": 2357.607983112335,
+      "current_restoration_healthy": true,
+      "original_budget_seconds": 28800,
+      "permission_incident_was_scientific_gate_failure": false,
+      "prior_charged_seconds": 656,
+      "prior_elapsed_seconds": 655.0750963687897,
+      "reused_completed_stages": [
+        "s1729_competence_epoch1",
+        "s1729_competence_select_epoch1"
+      ],
+      "total_actual_elapsed_seconds": 3012.683079481125,
+      "within_original_budget": true
+    },
+    "claims": "Retained text/scalar replay, not repeated GPU training. Excluded token streams, checkpoints and host identities are not publicly verified.",
+    "frozen_sources_accounted_for": 72,
+    "gates": {
+      "s1729_competence_qualification": {
+        "cells": {
+          "CLEAR": {
+            "correct": 128,
+            "n": 128,
+            "valid": 128,
+            "valid_clear": 128,
+            "valid_report": 0
+          },
+          "REPORT": {
+            "correct": 128,
+            "n": 128,
+            "valid": 128,
+            "valid_clear": 0,
+            "valid_report": 128
+          }
+        },
+        "checks": {
+          "CLEAR_correct_at_least_116": true,
+          "REPORT_correct_at_least_116": true,
+          "valid_at_least_251": true
+        },
+        "pass": true,
+        "total": {
+          "correct": 256,
+          "n": 256,
+          "valid": 256,
+          "valid_clear": 128,
+          "valid_report": 128
+        }
+      },
+      "s1729_competence_select_epoch1": {
+        "cells": {
+          "CLEAR": {
+            "correct": 128,
+            "n": 128,
+            "valid": 128,
+            "valid_clear": 128,
+            "valid_report": 0
+          },
+          "REPORT": {
+            "correct": 128,
+            "n": 128,
+            "valid": 128,
+            "valid_clear": 0,
+            "valid_report": 128
+          }
+        },
+        "checks": {
+          "CLEAR_correct_at_least_116": true,
+          "REPORT_correct_at_least_116": true,
+          "valid_at_least_251": true
+        },
+        "pass": true,
+        "total": {
+          "correct": 256,
+          "n": 256,
+          "valid": 256,
+          "valid_clear": 128,
+          "valid_report": 128
+        }
+      },
+      "s1729_induction_select_epoch1": {
+        "cells": {
+          "clear": {
+            "competent": {
+              "correct": 127,
+              "n": 128,
+              "valid": 128,
+              "valid_clear": 127,
+              "valid_report": 1
+            },
+            "installed": {
+              "correct": 128,
+              "n": 128,
+              "valid": 128,
+              "valid_clear": 128,
+              "valid_report": 0
+            }
+          },
+          "eliciting_report": {
+            "competent": {
+              "correct": 128,
+              "n": 128,
+              "valid": 128,
+              "valid_clear": 0,
+              "valid_report": 128
+            },
+            "installed": {
+              "correct": 122,
+              "n": 128,
+              "valid": 128,
+              "valid_clear": 6,
+              "valid_report": 122
+            }
+          },
+          "noneliciting_report": {
+            "competent": {
+              "correct": 128,
+              "n": 128,
+              "valid": 128,
+              "valid_clear": 0,
+              "valid_report": 128
+            },
+            "installed": {
+              "correct": 126,
+              "n": 128,
+              "valid": 128,
+              "valid_clear": 2,
+              "valid_report": 126
+            }
+          }
+        },
+        "checks": {
+          "clear_correct_at_least_116": true,
+          "clear_deterioration_at_most_6": true,
+          "noneliciting_report_correct_at_least_116": true,
+          "noneliciting_report_deterioration_at_most_6": true,
+          "target_error_increase_at_least_26": false,
+          "target_errors_39_to_89": false,
+          "valid_at_least_377": true
+        },
+        "pass": false,
+        "target_error_count_increase": 6,
+        "total": {
+          "correct": 376,
+          "n": 384,
+          "valid": 384,
+          "valid_clear": 136,
+          "valid_report": 248
+        }
+      },
+      "s1729_induction_select_epoch2": {
+        "cells": {
+          "clear": {
+            "competent": {
+              "correct": 127,
+              "n": 128,
+              "valid": 128,
+              "valid_clear": 127,
+              "valid_report": 1
+            },
+            "installed": {
+              "correct": 128,
+              "n": 128,
+              "valid": 128,
+              "valid_clear": 128,
+              "valid_report": 0
+            }
+          },
+          "eliciting_report": {
+            "competent": {
+              "correct": 128,
+              "n": 128,
+              "valid": 128,
+              "valid_clear": 0,
+              "valid_report": 128
+            },
+            "installed": {
+              "correct": 127,
+              "n": 128,
+              "valid": 128,
+              "valid_clear": 1,
+              "valid_report": 127
+            }
+          },
+          "noneliciting_report": {
+            "competent": {
+              "correct": 128,
+              "n": 128,
+              "valid": 128,
+              "valid_clear": 0,
+              "valid_report": 128
+            },
+            "installed": {
+              "correct": 126,
+              "n": 128,
+              "valid": 128,
+              "valid_clear": 2,
+              "valid_report": 126
+            }
+          }
+        },
+        "checks": {
+          "clear_correct_at_least_116": true,
+          "clear_deterioration_at_most_6": true,
+          "noneliciting_report_correct_at_least_116": true,
+          "noneliciting_report_deterioration_at_most_6": true,
+          "target_error_increase_at_least_26": false,
+          "target_errors_39_to_89": false,
+          "valid_at_least_377": true
+        },
+        "pass": false,
+        "target_error_count_increase": 1,
+        "total": {
+          "correct": 381,
+          "n": 384,
+          "valid": 384,
+          "valid_clear": 131,
+          "valid_report": 253
+        }
+      },
+      "s2718_competence_qualification": {
+        "cells": {
+          "CLEAR": {
+            "correct": 124,
+            "n": 128,
+            "valid": 128,
+            "valid_clear": 124,
+            "valid_report": 4
+          },
+          "REPORT": {
+            "correct": 128,
+            "n": 128,
+            "valid": 128,
+            "valid_clear": 0,
+            "valid_report": 128
+          }
+        },
+        "checks": {
+          "CLEAR_correct_at_least_116": true,
+          "REPORT_correct_at_least_116": true,
+          "valid_at_least_251": true
+        },
+        "pass": true,
+        "total": {
+          "correct": 252,
+          "n": 256,
+          "valid": 256,
+          "valid_clear": 124,
+          "valid_report": 132
+        }
+      },
+      "s2718_competence_select_epoch1": {
+        "cells": {
+          "CLEAR": {
+            "correct": 128,
+            "n": 128,
+            "valid": 128,
+            "valid_clear": 128,
+            "valid_report": 0
+          },
+          "REPORT": {
+            "correct": 128,
+            "n": 128,
+            "valid": 128,
+            "valid_clear": 0,
+            "valid_report": 128
+          }
+        },
+        "checks": {
+          "CLEAR_correct_at_least_116": true,
+          "REPORT_correct_at_least_116": true,
+          "valid_at_least_251": true
+        },
+        "pass": true,
+        "total": {
+          "correct": 256,
+          "n": 256,
+          "valid": 256,
+          "valid_clear": 128,
+          "valid_report": 128
+        }
+      }
+    },
+    "illustrations": {
+      "examples_verified": 4,
+      "scope": "Exact posthoc illustrations, not a selected scoring denominator"
+    },
+    "original_freeze_sha256": "0231a51e7efd3f0f166c0f347b4c82dfc3dc6edc008997e09ec2ce8a503f066f",
+    "public_artifacts_verified": 130,
+    "regenerated_cases": 3584,
+    "semantic_review_scope": "Failure/reflection collection was not reached; its semantic-quality gates are not pending requirements of this early-failed run.",
+    "status": "replayed",
+    "terminal": {
+      "allocation_elapsed_seconds": 2346.1332700252533,
+      "at": "2026-09-12T17:59:26.388176+00:00",
+      "failure": {
+        "details": {
+          "cells": {
+            "clear": {
+              "competent": {
+                "correct": 127,
+                "n": 128,
+                "valid": 128,
+                "valid_clear": 127,
+                "valid_report": 1
+              },
+              "installed": {
+                "correct": 128,
+                "n": 128,
+                "valid": 128,
+                "valid_clear": 128,
+                "valid_report": 0
+              }
+            },
+            "eliciting_report": {
+              "competent": {
+                "correct": 128,
+                "n": 128,
+                "valid": 128,
+                "valid_clear": 0,
+                "valid_report": 128
+              },
+              "installed": {
+                "correct": 127,
+                "n": 128,
+                "valid": 128,
+                "valid_clear": 1,
+                "valid_report": 127
+              }
+            },
+            "noneliciting_report": {
+              "competent": {
+                "correct": 128,
+                "n": 128,
+                "valid": 128,
+                "valid_clear": 0,
+                "valid_report": 128
+              },
+              "installed": {
+                "correct": 126,
+                "n": 128,
+                "valid": 128,
+                "valid_clear": 2,
+                "valid_report": 126
+              }
+            }
+          },
+          "checks": {
+            "clear_correct_at_least_116": true,
+            "clear_deterioration_at_most_6": true,
+            "noneliciting_report_correct_at_least_116": true,
+            "noneliciting_report_deterioration_at_most_6": true,
+            "target_error_increase_at_least_26": false,
+            "target_errors_39_to_89": false,
+            "valid_at_least_377": true
+          },
+          "pass": false,
+          "target_error_count_increase": 1,
+          "total": {
+            "correct": 381,
+            "n": 384,
+            "valid": 384,
+            "valid_clear": 131,
+            "valid_report": 253
+          }
+        },
+        "gate": "s1729_induction_selection"
+      },
+      "freeze_sha256": "0231a51e7efd3f0f166c0f347b4c82dfc3dc6edc008997e09ec2ce8a503f066f",
+      "repair_training_launched": false,
+      "status": "early_failed"
+    },
+    "training": [
+      {
+        "last_loss": 0.06282440572977066,
+        "retained_examples": 1024,
+        "retained_steps": 64,
+        "stage": "s1729_competence_epoch1",
+        "status": "complete",
+        "target_tokens": 34482
+      },
+      {
+        "last_loss": 0.3038579002022743,
+        "retained_examples": 512,
+        "retained_steps": 32,
+        "stage": "s1729_induction_epoch1",
+        "status": "complete",
+        "target_tokens": 17272
+      },
+      {
+        "last_loss": 0.08841429650783539,
+        "retained_examples": 512,
+        "retained_steps": 32,
+        "stage": "s1729_induction_epoch2",
+        "status": "complete",
+        "target_tokens": 17272
+      },
+      {
+        "last_loss": 0.06397021003067493,
+        "retained_examples": 1024,
+        "retained_steps": 64,
+        "stage": "s2718_competence_epoch1",
+        "status": "complete",
+        "target_tokens": 34482
+      }
+    ]
+  },
+  "reviewed_file_sha256": {
+    "LABNOTES.md": "3945499e9bf86e771de86037e8586d118e581969d87ac6f1f545ad04561c650b",
+    "README.md": "b9be150fe3423b41269bba708360e0f059619555682414463fcec9d15aac4436",
+    "REPORT.md": "b260040c769c5f16d6364637706c41d97f9fc29e61d782bcfb22e63e28844e95",
+    "code/FREEZE.json": "0231a51e7efd3f0f166c0f347b4c82dfc3dc6edc008997e09ec2ce8a503f066f",
+    "code/PROTOCOL.md": "53cc81165846943dc8ca77c8ee12da30402d821710b1725ecea8340e644ee62e",
+    "code/README.md": "65ac5e6b24688e622b9e7ab1ed1c66733f5f6126d44c60fff4eab00eeacd57ef",
+    "code/RESEARCH_PLAN.md": "259cb92b0ec8a1d6b80c09012df3428f891642df2ce355f6d5a9c6adbced0e09",
+    "code/configs/base_model_manifest.json": "e01a70992d48c8d86d834f1d1faf534e19043f507011ce416288d791a9d03f45",
+    "code/configs/environment.json": "d9c8d80b2dd5c186c8cd4fdbcf1d4a735e49638814b79345157ecc465850776a",
+    "code/configs/pilot.json": "beca1ad4857be6cfcb1235fb207a9ce76837c276d04547a41a03f0c501b2fbfa",
+    "code/data/manifest.json": "faee8651c97dd743b460b85d2ef195db42f1a86578aee38eea8ac510beb47d91",
+    "code/export.py": "7402228de997dd319923ba9ac488a5f25c44d00de5f7752b98846d7522399ea3",
+    "code/references/ACTUAL_CONTENT_QUALITY_REVIEW.md": "c0ba45813dddf814fbf089994993be36fdb818f6cb2d1fcb99f25d8b00d8d7fc",
+    "code/references/CONTENT_RUBRIC.md": "ac755fe9e672359732c148fc854bca71bc3a6a752c6d9cd439a63575d028471c",
+    "code/references/CRITICAL_REVIEW.md": "5bbfdfdefcf988645e4eaadcde2aa5f60863f7ca095a7d909c4766241ec76a8d",
+    "code/references/DATA_CARD.md": "0f8855c8ae6f09866ed2e2ea073fd6b2f133320c1435b2673c965b913ff41611",
+    "code/references/DESIGN_DETAILS.md": "15eece2c97f66d043319ade77792c7c3a73aba2f4b95c44fc2352f53c6ff0bfb",
+    "code/references/FINAL_COHORT_REVIEW.md": "07b6357ac42f661fbe41264ef22e497f2c9c26f7084c4368ab2b2005fbd60728",
+    "code/references/PLAN.md": "9e9b1e81e74a4fab2a7e7dfe0360fbe81be3ad87f0960f8c9d5cc8e7f7cc2a2a",
+    "code/references/PRE_EXECUTION_REVIEW.md": "a9cffdc3705b6758aac8caf6a75e6367a70eaf54c1b0c8e528d4daab202759ac",
+    "code/references/design_20260911/CRITICAL_REVIEW.md": "52ac665afc7e42787dd7b499e0459136d1b2c8e05d994703c9c389810da73aef",
+    "code/references/design_20260911/DESIGN_DETAILS.md": "45e14fb5e30f9a24de0660a23545f651fdbd9848616c0c00b3021a32c086fab1",
+    "code/references/design_20260911/INITIAL_DRAFT.md": "fbd65bc303c1b32db9f4b3c353c94205f80f06f7ee78c822ec42fd6c23daa993",
+    "code/references/design_20260911/PLAN.md": "b2648ae701a80624a4580d4ca9954276a001bc8300fbc7c13c64e14b92731491",
+    "code/references/design_20260911/REVIEW_RECORD.json": "682ea8d11d0c36658d340d785f9d2c7fcc7b95a6abdc136a2fcc8c07e686aa76",
+    "code/replay.py": "ad509b94463498041aa44c82b8a24683f3e20c1f194f15db9518042ccf66e8a7",
+    "code/results/PRE_EXECUTION_REVIEW_RECEIPT.json": "72db6f56ae960a5bcf5f80fa3686fca5eb1b69cd8e8025430b88dc1ebbb40c7c",
+    "code/results/cpu_model_checks/20260912T165317Z/SUMMARY.json": "af760ff04994dee499586e5f0485537e81b6df743ce66b45caecd8bd71844856",
+    "code/results/independent_pre_execution_data.json": "9e043f9e17f05dc77a254f14a571a61c334080e87777fb0ef0d4ea74bddda4b6",
+    "code/results/operational_resume/RESUME_FREEZE.json": "f92d02b3c0eae948ececcd4beb60adceb4921d22505fabb0a2d7940bbf682569",
+    "code/results/operational_resume/resume_common.py": "3fb069facbc81ce887693056e356e565ca366b1a03f4f339f194fd609864fe05",
+    "code/results/operational_resume/resume_program.py": "03e099c86c31bc4735904fdae19c80a793fe5c3483a88b8ef11048484abda1db",
+    "code/results/operational_resume/resume_session.py": "7c9d4bac2d915c7b17850e1ff175411bd130e17fe41c49da039430df30efccee",
+    "code/results/operational_resume/test_resume.py": "cc51a8bba4e9f3c8067e3850c5634746e8ee53abd8941f0984c0e4df1cc26d5f",
+    "code/results/postrun_review/audit_final.py": "ea19f66c99baec513074631473b697f0634dd8c559a997a1f2c88ac5929faf0c",
+    "code/scripts/common.py": "5bae921260475025ea2d9324a8ece89f9af9c84b55bb6aa09d7475af6a2de3cd",
+    "code/scripts/content_gate.py": "aec1d0cf61c7602eaa0724cf0ccd74a007d7dc9409f86f1dd9004ab1d1369016",
+    "code/scripts/gates.py": "cd332c4a6c59add061a946a0ecaaeda4d4d5289d499b5a69b0a7f400842bd7cd",
+    "code/scripts/gpu_entry.py": "55133b240d5bbf9d2fe3666893279ffbe9e8f6ffe096c4f4f22052a48db109d4",
+    "code/scripts/independent_review.py": "3ebbdc7a26b162c8ea3d1145f1b81898ce7507899321afc48003b4b1a64a9953",
+    "code/scripts/make_data.py": "1e9b523175b4499e4253827ac7c6688f73de0548be23eb76825c81e91df1bb95",
+    "code/scripts/model_stage.py": "9df4e9e7446d2fa6480a281e05313c721bd7ebe13a0505ee44dcac018bcfe7cb",
+    "code/scripts/program.py": "0f966eaf297fe8c9e50fd4ef2a15105a7132e572448e6658ff543f61d99161ff",
+    "code/scripts/review_packets.py": "b046c219533da00cbd12fb656b2cbc879459b364789958664cee22cf0111f9f3",
+    "code/scripts/run_session.py": "33289553ae442d8c71f6f7aa20417c92fc9e3ebb826e2721ed7c8347acc05d2d",
+    "code/scripts/service_supervisor.py": "d2adea476d7d3bfe7915ed56ed7da03ea337eaeec5351c10db0bfa56645a6290",
+    "code/scripts/task.py": "9a9269c560bf3f0be56517c8b049325f4a256c952269bbb5dfc0c24c40277b72",
+    "code/scripts/util.py": "53de7d87cae1866a3b23171280a1796b00c09a90c340d7ced18aab071e50495f",
+    "code/test_publication.py": "80bf01e3ba649bcd013bb48762282b9d7a660c4eaa00dd0def5832d545812f4a",
+    "code/tests/test_controller.py": "9ec6bb013288c016676b8f19feb1a432a99cfd3e0441e6d505f0e0548eff5afc",
+    "code/tests/test_independent_review.py": "fb7ae04d6d78f60c4e1f7780e9d18550ec02d76087c1f8e7fb9bfb2f48918726",
+    "code/tests/test_model_cpu.py": "330ba19d4dfb3bec95a4bb532447416cb1adc7252946012f2afe0edf16616c39",
+    "code/tests/test_review_packets.py": "d9ff719a38c3ca2e9e812551ccf7d3a739e76175a5d1b0dfd3cd6fe0b873cfd9",
+    "code/tests/test_session.py": "646f9419663bee383c6c9f0ec6e4344789e59237710bb3ed1cf445ac785961a4",
+    "code/tests/test_task_data.py": "bbf11e1ba51a0c6bdd6c918fdb84def7f84a5e302d87daea1e2ff940aadb8275",
+    "results/EXPORT_STATUS.json": "688fe669067f5755f1bb058437d3b4c06cc9aeb235cb083a2d013188f8b1fa45",
+    "results/GATES.json": "00bdabe4ac896a14d19add863bbc0db0b081df6e98c162a5bf003a73b24722d0",
+    "results/ILLUSTRATIVE_EXAMPLES.json": "82816f1da5a51242c26b13085d4fcb20524c89ea913e999b671a5c4e9d829500",
+    "results/REPLAY_RESULT.json": "1311f38b639afc2e375dc2b52ea8df663fc4c87bb98ce21725f6f943af3f5782",
+    "results/STAGES.json": "88ffc3fed6cc5b956cf1732a4fa2137e7579e65db906fb39c35e9c8de8004706",
+    "results/TERMINAL.json": "548e907d5d8668eb1721ed82a03d92c436a6f4554caecbe1c589349f73fc1cde",
+    "results/TRANSPORT.json": "b19b751d85373dab05e601d32ca25cc01cc1a931cb0da65af36a8e40dc4eb74a",
+    "results/allocation.json": "091bcd348c7613fc9a266bedc61f04f03c68015902b906ff035571da8d79df9e",
+    "results/allocation_released.json": "2514e8375519c88a205571f62ac99a9a6654694bd3a1036699cf82ae5c96671e",
+    "results/events.jsonl.gz": "ba5a64892f639d1631d7c40ffd050cf4e28f852c5a854af51ce492235ae9b5ec",
+    "results/gates.csv": "418ae849e83c57afec3e06354f4fc9d6abab51106a73406c79599704b94754b8",
+    "results/operational_resume/ARCHIVE_RECEIPT.json": "e48398de2375ced9342a4aea0474ed0cdfe655dc21e5398c872b40f427a385bf",
+    "results/operational_resume/CONTAINER_FIX.json": "54ae7f60b3f7b3b1a6828bd004057076f735b9ee1c4637faac85fcf5619d1db5",
+    "results/operational_resume/OWNERSHIP_FIX.json": "3317aa26f7850552f9f374d4a7e32b971102b2bfa3cdaef1617632f4afbebd63",
+    "results/operational_resume/prior_attempt/TERMINAL.json": "afc68179e02c83136f75cc206ae7572aca03afaaa203fc5b20d3766e2ef290fa",
+    "results/operational_resume/prior_attempt/allocation.json": "4efcd4b8cabdec68b0e5548e8426b966ee4ae3238aa85821318a1fffbdf504dc",
+    "results/operational_resume/prior_attempt/allocation_released.json": "5232eaac0a6f4cf3d40320e66edd1b4c7bea1d540af1487975150035639028ca",
+    "results/operational_resume/prior_attempt/service_restoration.json": "2bd75e0e78104927862c44c7ab26f0857072adcdca74d3bb74b4d65c29aa265c",
+    "results/postrun_review/COMPETENCE_AND_INDUCTION_EPOCH1_REVIEW.json": "72445d8bde0e0099eb611f131e70f9d5df4eb86308d76ea5eaba76b1c0bc46d8",
+    "results/postrun_review/COMPETENCE_AND_INDUCTION_EPOCH1_REVIEW.md": "bc735d02c36a84ac447cfa8a93576b28281f7232cf51d3d24a3a137877159a75",
+    "results/postrun_review/FINAL_REVIEW.json": "79705ca68718a39e5e773d4359cf62208850c4eea2ce7c0bb8eac79e6fdf9be7",
+    "results/postrun_review/FINAL_REVIEW.md": "28a7d96f910a13672e8b8d052b17f3bc6b19e508eea916080e4d3cfa8268b2b8",
+    "results/postrun_review/FIRST_COMPETENCE_REVIEW.json": "d46de26c032b0dc9daeb82556611894c45ea09f66b32c2a4f1a7826e539552c6",
+    "results/postrun_review/FIRST_COMPETENCE_REVIEW.md": "44745145ba56e9f1197711b0a744e60d524b4fc687e24f472dceccf9526dee06",
+    "results/postrun_review/OPERATIONAL_RECOVERY_REVIEW.json": "a0d23fa6176c809b0f4e4dfb1bda46b4031ab240828eeaeb5a469fe0a9b97a94",
+    "results/postrun_review/OPERATIONAL_RECOVERY_REVIEW.md": "c826a8802141bea54bf4318d8f7fd24c6185d4d104309f9ce76289e70cf93092",
+    "results/postrun_review/REPORT_READABILITY_REVIEW.json": "59db5b6d3906b82c92051e3d3a180b4f5c88ef5c1fdb4546cf7512dfae88b770",
+    "results/postrun_review/REPORT_READABILITY_REVIEW.md": "bb0e1eed5d0db5e3da671c816e402591c588e37461b0c790b8f058431b4f696d",
+    "results/postrun_review/competence_errors.json": "7b75d744b88e197e78c0c04207554b20eab834e6d015c59639267553391d4919",
+    "results/postrun_review/induction_epoch1_failures.json": "0601e5e23672aecc1291c86e4975983c09b975e8ca129cc5d68c4d33336fc0e7",
+    "results/postrun_review/induction_epoch2_failures.json": "1f6b9d45a4fc791ecd59520cae70e8ef1416e5bbcde4d0b73f0ad9bfb03d8470",
+    "results/postrun_review/s1729_fresh_competence.json": "3801c13f202a508cabbc862dd245532e9a20260a91605d88c31b86ef4e713867",
+    "results/postrun_review/s1729_induction_development_baseline.json": "2f65325ec02a781166de08591596798c1464a4695245cba677e5c223407b9631",
+    "results/postrun_review/s2718_fresh_competence.json": "ac5d95931265a3d392f360f7a556c1d20d15bcfb68eb8cf6c3c82729111b1d15",
+    "results/service_restoration.json": "f56c899dfa1c91326f7aa899f38082a0bddd9390fac91c84a1b7bbafedcbbb3e",
+    "results/stages/s1729_competence_epoch1/COMPLETED.json": "eb3505dce1b603295e0dfe04fbbdd47b90c32a0b18173006341b315b810b8cc0",
+    "results/stages/s1729_competence_epoch1/started.json": "a0c960c7612c2e8d5cd4c1ab1ad993c2984bbc87e9f6cab9c2c5fd4e545602b7",
+    "results/stages/s1729_competence_epoch1/tokenization.jsonl.gz": "b290b08ec7a5d6e2bc57aaa15c7f16eb9271f96d4297e8b689784bb92f75f987",
+    "results/stages/s1729_competence_epoch1/training.jsonl.gz": "f8e6ab91ccfa9391513c194a90d7da33f744e0b6a07d54766b8893cabe6d6ec9",
+    "results/stages/s1729_competence_qualification/COMPLETED.json": "d9268e9890c997848542106b26ac7ec9e521111f5180f2c1c96c7814d88d0727",
+    "results/stages/s1729_competence_qualification/outputs.jsonl.gz": "406fde5736fa2f9473346e74bcdb585603beecf40682940cbe934a37fce2017b",
+    "results/stages/s1729_competence_qualification/started.json": "131575649338876f827395dbc977ec7036d1b02f2afa00d5a4ef0f61b0104d83",
+    "results/stages/s1729_competence_qualification/tokenization.jsonl.gz": "41c77bb49bfbe9ade6faeee2dec0f61f9fa589e8abb272a767c53ae2031b336a",
+    "results/stages/s1729_competence_select_epoch1/COMPLETED.json": "ae6487e25c16e95bf9c4b502d5c23029dfeeb8fcaa3fc2f8ed3d92d57486b1a7",
+    "results/stages/s1729_competence_select_epoch1/outputs.jsonl.gz": "0596c814cbcbe15548109dd9ca41a2295a6bc7599051ffc15eaeb259ba46be68",
+    "results/stages/s1729_competence_select_epoch1/started.json": "72133d9e6e4cc72b2eda0a26979ecd198289ded5242309a30915ff525a63d7c8",
+    "results/stages/s1729_competence_select_epoch1/tokenization.jsonl.gz": "084211c4962f7c3c0e15f86190a6cc22836ca73590a5145abdc6dd304834781d",
+    "results/stages/s1729_induction_epoch1/COMPLETED.json": "7c4544560dc44e8ebd1050de7510eda0cfd0fe0546e6e12a3025429ad6c5b73d",
+    "results/stages/s1729_induction_epoch1/started.json": "3256935b06efead0ef0db66e1ff718d13c728a69904c98badf39bce8185eb402",
+    "results/stages/s1729_induction_epoch1/tokenization.jsonl.gz": "041660189954419bc897b81eb9ffd965bd86a4dfa1db7e1d3c2fb48abb788054",
+    "results/stages/s1729_induction_epoch1/training.jsonl.gz": "d70da2694d97da302b6da530bfe3f0753ef600d9c0b058334b9ddde6dd706f31",
+    "results/stages/s1729_induction_epoch2/COMPLETED.json": "cc1d2e4bff00c4e17732c31e82d7bdcf2510dd84c18f526d40f9c45651ef215d",
+    "results/stages/s1729_induction_epoch2/started.json": "9dc80cb9b348745d58ad28160bfece066a63914a892a1ca049421add55b1f554",
+    "results/stages/s1729_induction_epoch2/tokenization.jsonl.gz": "041660189954419bc897b81eb9ffd965bd86a4dfa1db7e1d3c2fb48abb788054",
+    "results/stages/s1729_induction_epoch2/training.jsonl.gz": "f2baad3762bc2b0f119911b760294d563c9bff17ad277836bcf08e663742378c",
+    "results/stages/s1729_induction_select_competent/COMPLETED.json": "dddfbd9b3a103d8cc7210ba127fabaede318344cce55ae3915f0f41cda7bfeb3",
+    "results/stages/s1729_induction_select_competent/outputs.jsonl.gz": "3db77d2811aa83caaeaab89ba188ec438136451fb273f5b357eb098659a1515b",
+    "results/stages/s1729_induction_select_competent/started.json": "021b77ac9d1a9643e95d3adfdf7d5ba6d916544c26154088cef56da78bae646b",
+    "results/stages/s1729_induction_select_competent/tokenization.jsonl.gz": "ec48fc547dbe6c4ee11f2553326e96f1f84cf1793ec3d65f2cbc6e80e934a5bc",
+    "results/stages/s1729_induction_select_epoch1/COMPLETED.json": "842bab25941b95b7a34ae8584983c9a8f6f9f4f246fef92365f8fdfbad8e778c",
+    "results/stages/s1729_induction_select_epoch1/outputs.jsonl.gz": "eb7ecba868a04d5a7a0088af7cf46e4d131e369b679cb8e5fc20eae837cfac03",
+    "results/stages/s1729_induction_select_epoch1/started.json": "c713e02bb990439c14d63600b1aff7871b33154a294311599d729e5e20a2741b",
+    "results/stages/s1729_induction_select_epoch1/tokenization.jsonl.gz": "ec48fc547dbe6c4ee11f2553326e96f1f84cf1793ec3d65f2cbc6e80e934a5bc",
+    "results/stages/s1729_induction_select_epoch2/COMPLETED.json": "4f269265c2e4bad376b25c0022d60e5e3b63d502ccbc6fa5d846edaca994a73b",
+    "results/stages/s1729_induction_select_epoch2/outputs.jsonl.gz": "856ac4e7b762e4cc72c4f42646493c09266e6e7c8019cfd104a3c8478809d73e",
+    "results/stages/s1729_induction_select_epoch2/started.json": "899019f5a6756a490feb81f709fee98f6df646008c50af93e99571cc699400e1",
+    "results/stages/s1729_induction_select_epoch2/tokenization.jsonl.gz": "ec48fc547dbe6c4ee11f2553326e96f1f84cf1793ec3d65f2cbc6e80e934a5bc",
+    "results/stages/s2718_competence_epoch1/COMPLETED.json": "bed66d4fc2c99ff4531bd4fee4e8b6b06d1cee455231fda6bb5d6fa52813c42e",
+    "results/stages/s2718_competence_epoch1/started.json": "612321a40eaeef0199ed68327a315c834bb140bab448f8a2ac31f1cdbb067299",
+    "results/stages/s2718_competence_epoch1/tokenization.jsonl.gz": "b290b08ec7a5d6e2bc57aaa15c7f16eb9271f96d4297e8b689784bb92f75f987",
+    "results/stages/s2718_competence_epoch1/training.jsonl.gz": "26ff7b78d4b00709dded5580fd1fbe0cf56dd4997c359f74259495bb251ecde4",
+    "results/stages/s2718_competence_qualification/COMPLETED.json": "5ffd82604bc6280524c3ebd77ebed6fccb77f8a208bb56c7280fe9377f2c260a",
+    "results/stages/s2718_competence_qualification/outputs.jsonl.gz": "e6781a4d1e439b7c3cb34edeedfa3b5186f95db0e101acfe6d5a8c6b979fb917",
+    "results/stages/s2718_competence_qualification/started.json": "0234a6e874ad770e853c13e8b80bec24825c380aed74768e074f3f92cc308c0a",
+    "results/stages/s2718_competence_qualification/tokenization.jsonl.gz": "41c77bb49bfbe9ade6faeee2dec0f61f9fa589e8abb272a767c53ae2031b336a",
+    "results/stages/s2718_competence_select_epoch1/COMPLETED.json": "98cdafd7e2439a450c8b086a5159368063dfcdfa415200f4e0b4be4f0894b43b",
+    "results/stages/s2718_competence_select_epoch1/outputs.jsonl.gz": "eee9d08c54c916a595ab5dc02e8571bb7c5f0c33109535e4177ee7eaf39cceff",
+    "results/stages/s2718_competence_select_epoch1/started.json": "963f384dc083258b871bd4daff93772e5e44da451266a01ef079a2c4e3297e11",
+    "results/stages/s2718_competence_select_epoch1/tokenization.jsonl.gz": "084211c4962f7c3c0e15f86190a6cc22836ca73590a5145abdc6dd304834781d",
+    "results/training.csv": "9ba9b696933403c971335d30be5adf1623098098da6ac7da25b3b72bde56b9bf"
+  },
+  "saved_public_replay_equals_independent_replay": true,
+  "scope": "Read-only publication evidence/claim review; no GPU, network, service change or export edit. Root separately owns links/privacy/repository scan.",
+  "status": "pass_no_publication_blocker_in_reviewed_scope"
+}

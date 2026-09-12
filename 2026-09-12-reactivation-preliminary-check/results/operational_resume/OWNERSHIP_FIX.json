@@ -1,0 +1,113 @@
+{
+  "all_file_sha256": {
+    "results/stages/s1729_competence_epoch1/COMPLETED.json": "1c4d2e85eda0a2276c49ce109b41a18ed6c3fd65dab3c7c7a11e190c4fcb3288",
+    "results/stages/s1729_competence_epoch1/adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+    "results/stages/s1729_competence_epoch1/adapter/adapter_config.json": "30a608298e0cd6e9620c7a31be26a651c014db84c25100dc4acfee3438ab1c2c",
+    "results/stages/s1729_competence_epoch1/adapter/adapter_model.safetensors": "0ae90a97f4830bf66233943181fdc097400537795d4314da2e4926dd4cf64e54",
+    "results/stages/s1729_competence_epoch1/adapter/manifest.json": "e59d14d505f4283fb7b555844b2e74d5430452d7d8c690a3f9e6377f004942f0",
+    "results/stages/s1729_competence_epoch1/optimizer.pt": "0d161cf539db1aefcd055255585c13011fa4c59dc8270d2ad7fdf4ebe1e016de",
+    "results/stages/s1729_competence_epoch1/started.json": "2b9d7c75dbfd2e68da16be85d96c8cb483cec45cf163b8fce361a4e84bb1ba4c",
+    "results/stages/s1729_competence_epoch1/tokenization.jsonl": "4e83ca5463a23a250ad5cc9474d3d91832fe6b2cda0dbab59bb67ecc6ecd29a6",
+    "results/stages/s1729_competence_epoch1/training.jsonl": "82e5cf1f14826a65260bf5f248a70214ff4a70b60889d2ac1421f3a733288eb0",
+    "results/stages/s1729_competence_select_epoch1/COMPLETED.json": "5b8d8c3cfd2d393e336535a64ad76c3bbadf20cf7fb52926b4dd55446f0e8405",
+    "results/stages/s1729_competence_select_epoch1/outputs.jsonl": "dcc951aec641f3dc3e6ddfd345a4eeb156ed94455a6725d04a247fe728f212ed",
+    "results/stages/s1729_competence_select_epoch1/started.json": "39e3dbc877804d5c0abad9c71adb081fd52689fbbd68d47dc837e9dcc295bf3b",
+    "results/stages/s1729_competence_select_epoch1/tokenization.jsonl": "08eb5025710fc60d0f3ae3495a56a507e14a6b35ae408dc45bdf480bbab8ff12"
+  },
+  "at": "2026-09-12T17:16:55.791025+00:00",
+  "byte_identity_preserved": true,
+  "gid": 1000,
+  "prior_ownership": {
+    "results/stages": [
+      0,
+      0,
+      "0o755"
+    ],
+    "results/stages/s1729_competence_epoch1": [
+      0,
+      0,
+      "0o755"
+    ],
+    "results/stages/s1729_competence_epoch1/COMPLETED.json": [
+      0,
+      0,
+      "0o644"
+    ],
+    "results/stages/s1729_competence_epoch1/adapter": [
+      0,
+      0,
+      "0o755"
+    ],
+    "results/stages/s1729_competence_epoch1/adapter/README.md": [
+      0,
+      0,
+      "0o644"
+    ],
+    "results/stages/s1729_competence_epoch1/adapter/adapter_config.json": [
+      0,
+      0,
+      "0o644"
+    ],
+    "results/stages/s1729_competence_epoch1/adapter/adapter_model.safetensors": [
+      0,
+      0,
+      "0o600"
+    ],
+    "results/stages/s1729_competence_epoch1/adapter/manifest.json": [
+      0,
+      0,
+      "0o644"
+    ],
+    "results/stages/s1729_competence_epoch1/optimizer.pt": [
+      0,
+      0,
+      "0o644"
+    ],
+    "results/stages/s1729_competence_epoch1/started.json": [
+      0,
+      0,
+      "0o644"
+    ],
+    "results/stages/s1729_competence_epoch1/tokenization.jsonl": [
+      0,
+      0,
+      "0o644"
+    ],
+    "results/stages/s1729_competence_epoch1/training.jsonl": [
+      0,
+      0,
+      "0o644"
+    ],
+    "results/stages/s1729_competence_select_epoch1": [
+      0,
+      0,
+      "0o755"
+    ],
+    "results/stages/s1729_competence_select_epoch1/COMPLETED.json": [
+      0,
+      0,
+      "0o644"
+    ],
+    "results/stages/s1729_competence_select_epoch1/outputs.jsonl": [
+      0,
+      0,
+      "0o644"
+    ],
+    "results/stages/s1729_competence_select_epoch1/started.json": [
+      0,
+      0,
+      "0o644"
+    ],
+    "results/stages/s1729_competence_select_epoch1/tokenization.jsonl": [
+      0,
+      0,
+      "0o644"
+    ]
+  },
+  "scope": "Ownership only on existing results/stages; no content or mode changes",
+  "uid": 1000,
+  "verified_completion_manifests": [
+    "results/stages/s1729_competence_select_epoch1/COMPLETED.json",
+    "results/stages/s1729_competence_epoch1/COMPLETED.json"
+  ]
+}

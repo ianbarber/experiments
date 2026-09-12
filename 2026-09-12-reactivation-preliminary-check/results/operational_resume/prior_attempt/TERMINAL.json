@@ -1,0 +1,11 @@
+{
+  "allocation_elapsed_seconds": 642.8429844379425,
+  "at": "2026-09-12T17:08:21.760066+00:00",
+  "failure": {
+    "error_type": "PermissionError",
+    "message": "[Errno 13] Permission denied: 'results/stages/s1729_competence_select_epoch1/recomputed_scores.json.tmp'"
+  },
+  "freeze_sha256": "0231a51e7efd3f0f166c0f347b4c82dfc3dc6edc008997e09ec2ce8a503f066f",
+  "repair_training_launched": false,
+  "status": "operational_error"
+}

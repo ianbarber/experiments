@@ -1,0 +1,14 @@
+{
+  "at": "2026-09-12T17:17:10.744929+00:00",
+  "destination": "results/operational_resume/prior_attempt",
+  "files_sha256": {
+    "TERMINAL.json": "b5b09fe49848deb26158c1200428daea4e92eb8b6434700a44d24a316fc9b580",
+    "allocation.json": "b6d1b357e4735284fc73d204f8272b5d7a2106e2ede543bf4c539f0651555e43",
+    "allocation_released.json": "5232eaac0a6f4cf3d40320e66edd1b4c7bea1d540af1487975150035639028ca",
+    "service_restoration.json": "4f3fb376148c9d7a5e49d42115fe8bb9115161aaefe2636ae95967cb7fb37c58",
+    "service_supervisor.log": "7940273468da395172f0afcf4385891e057666daa371cec9de0a8c8fc75e7310",
+    "session.log": "8ed9a5148535d9b204c0e9c55a358d25650c8670f4332218488ef970b92d5add",
+    "session_pid.json": "c705254a3e142f94c35240b1434f223c79f8c444906a5bc1631683d45e0cdd0f"
+  },
+  "original_files_preserved": true
+}

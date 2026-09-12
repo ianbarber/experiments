@@ -1,0 +1,44 @@
+{
+  "CLEAR": {
+    "correct": 127,
+    "invalid": 0,
+    "n": 128,
+    "valid": 128,
+    "valid_clear_error": 0
+  },
+  "REPORT": {
+    "correct": 256,
+    "invalid": 0,
+    "n": 256,
+    "valid": 256,
+    "valid_clear_error": 0
+  },
+  "all": {
+    "correct": 383,
+    "invalid": 0,
+    "n": 384,
+    "valid": 384,
+    "valid_clear_error": 0
+  },
+  "clear": {
+    "correct": 127,
+    "invalid": 0,
+    "n": 128,
+    "valid": 128,
+    "valid_clear_error": 0
+  },
+  "eliciting_report": {
+    "correct": 128,
+    "invalid": 0,
+    "n": 128,
+    "valid": 128,
+    "valid_clear_error": 0
+  },
+  "noneliciting_report": {
+    "correct": 128,
+    "invalid": 0,
+    "n": 128,
+    "valid": 128,
+    "valid_clear_error": 0
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "authorization": "User authorized stopping SGLang and running the preliminary check on September 12, 2026.",
+  "budget_seconds": 28144,
+  "deadline_unix": 1789261584.254932,
+  "hard_allocation_deadline_unix": 1789261764.254932,
+  "shutdown_reserve_seconds": 180,
+  "started_at": "2026-09-12T17:20:20.254935+00:00",
+  "started_unix": 1789233620.254932
+}
