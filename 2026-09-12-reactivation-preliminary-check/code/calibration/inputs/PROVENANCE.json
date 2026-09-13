@@ -1,0 +1,24 @@
+{
+  "1729": {
+    "adapter_sha256": {
+      "adapter_config.json": "30a608298e0cd6e9620c7a31be26a651c014db84c25100dc4acfee3438ab1c2c",
+      "adapter_model.safetensors": "0ae90a97f4830bf66233943181fdc097400537795d4314da2e4926dd4cf64e54"
+    },
+    "source_completion_sha256": "1c4d2e85eda0a2276c49ce109b41a18ed6c3fd65dab3c7c7a11e190c4fcb3288",
+    "source_experiment_commit": "dbee114aa367cdfbda9c889cf8f5ee6b5881936b",
+    "source_fresh_qualification": 256,
+    "source_stage": "s1729_competence_epoch1",
+    "trainable_parameter_sha256": "30b91e42d06f1ef6c4bfba9135ffc494f7a5d7d2f4662c8b1d122bbcf1c424da"
+  },
+  "2718": {
+    "adapter_sha256": {
+      "adapter_config.json": "8d347aaed5e1d390191246562ab39ed869ded8cc752e93ebfab376db698ac595",
+      "adapter_model.safetensors": "0762e02ba93ea5c9e5ccc121683575e9669e0bf4ea0b03416d83141fec381663"
+    },
+    "source_completion_sha256": "0234c0a562213a1e8109da34419b3ffac2df6345dc479f8c2b6006f6a333bb84",
+    "source_experiment_commit": "dbee114aa367cdfbda9c889cf8f5ee6b5881936b",
+    "source_fresh_qualification": 252,
+    "source_stage": "s2718_competence_epoch1",
+    "trainable_parameter_sha256": "73ae338972fcb19a3a773cd5eca930784513a0f0224a489a16c8b4b828a80a6a"
+  }
+}

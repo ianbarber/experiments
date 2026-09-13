@@ -1,0 +1,101 @@
+{
+  "canonical_case_count": 3584,
+  "files": {
+    "aliases.json": {
+      "bytes": 4698,
+      "sha256": "a3a6f589114992871c8a1e7a4b3ea4b13b120eb0ec7a1f509ab35f57cd8cbfac"
+    },
+    "bad_only_diagnostic_present.jsonl": {
+      "bytes": 1152776,
+      "rows": 512,
+      "sha256": "823c9a82a139c2506fba6d47a1ca66f08ebab41a8e88e2ce2370126dff19a6d5"
+    },
+    "balance_audit.json": {
+      "bytes": 837902,
+      "sha256": "2ee77b7d8357d8a94c5bc8e4575f6e88f53d8d1d9ba16adfb358fee608ed8de1"
+    },
+    "canonical_cases.jsonl": {
+      "bytes": 3527099,
+      "rows": 3584,
+      "sha256": "695a51b6938145a1ec5b88a11b1d092537822d450a7c1eb2cb04d4dc8f27a1e0"
+    },
+    "collection_a.jsonl": {
+      "bytes": 624492,
+      "rows": 320,
+      "sha256": "dc853a6fe211d25900de849594a3584263e7d5a32e202bcca6038e820197ba65"
+    },
+    "collection_b.jsonl": {
+      "bytes": 624019,
+      "rows": 320,
+      "sha256": "75d218fe409edee7cb55cd1260d8506213d0576315724e8a2175e78b41cb9319"
+    },
+    "competence_probe.jsonl": {
+      "bytes": 502819,
+      "rows": 256,
+      "sha256": "428ece621699bd446522143df667994c0ee4841659372b581b10a7d0709fe7af"
+    },
+    "dev_familiar.jsonl": {
+      "bytes": 373387,
+      "rows": 192,
+      "sha256": "f2dea1ba72382f66de9e5479134d1cc6641587baf9d80452a186233511580c5e"
+    },
+    "dev_reworded.jsonl": {
+      "bytes": 385590,
+      "rows": 192,
+      "sha256": "000c7cd3b0133e7ae1e3607468e86cade74c4b0ae3389cce6d31683370bb8cbf"
+    },
+    "master_omitted.jsonl": {
+      "bytes": 1950276,
+      "rows": 1024,
+      "sha256": "71611cd68ad14c01ad8d947b00d1ca6a490a8cf0502ea044d48ec1505b9256da"
+    },
+    "master_present.jsonl": {
+      "bytes": 2273860,
+      "rows": 1024,
+      "sha256": "888ad87e3c384c13c5487b97972e441d6f6aef39309ffc843ee007fe816f85a7"
+    },
+    "pairing_dev.jsonl": {
+      "bytes": 124642,
+      "rows": 64,
+      "sha256": "c48b12dd46668610b37ed9435f1857c7019a37230d0e0bc39817f1c2188b45e1"
+    },
+    "preservation_a.jsonl": {
+      "bytes": 626969,
+      "rows": 320,
+      "sha256": "55f8ba4857c8fd7dda19ab2bcb98166344478025fb89d3c7c9d47274c1a0ea56"
+    },
+    "preservation_b.jsonl": {
+      "bytes": 626730,
+      "rows": 320,
+      "sha256": "d426dd1bcf8f5463e05067593d71aac9829614193a1310d8a6c90a8fa11fb459"
+    },
+    "qualification_a.jsonl": {
+      "bytes": 773789,
+      "rows": 384,
+      "sha256": "4749d82c5041690210040ab7755bd07fe0641ecd6cdbf2e546092ec2d39037ff"
+    },
+    "qualification_b.jsonl": {
+      "bytes": 779528,
+      "rows": 384,
+      "sha256": "be64d424ff58651ba66acfd927e87855b5a437ae50beadf20dab0803d60e68e3"
+    },
+    "seen_probe_omitted.jsonl": {
+      "bytes": 243554,
+      "rows": 128,
+      "sha256": "a25670e5e2a6d8a9165840a3a947a369e3c766281a235c7fda958e11403ca47c"
+    },
+    "seen_probe_present.jsonl": {
+      "bytes": 284002,
+      "rows": 128,
+      "sha256": "60cfc64dbc999d2b02d2ac03335f5e0a7a207a1d1b49c2dfd4f5c9d62f293008"
+    }
+  },
+  "generator": "scripts/make_data.py",
+  "generator_arguments": [],
+  "seed": 20260912,
+  "sources": {
+    "scripts/make_data.py": "58685641a3ad589630dc3146917990a8aec2f47934dbeb3f493dadddc853de40",
+    "scripts/task.py": "9a9269c560bf3f0be56517c8b049325f4a256c952269bbb5dfc0c24c40277b72",
+    "scripts/task_constants.py": "116dd2a237b72affeb0406307912e373597cea4639e5f7d25131ddf02e73d5a7"
+  }
+}

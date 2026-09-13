@@ -1,0 +1,54 @@
+{
+  "seen_probe_omitted": {
+    "clear": {
+      "correct": 31,
+      "n": 32,
+      "target_match": 31,
+      "valid": 32,
+      "valid_clear": 31,
+      "valid_report": 1
+    },
+    "eliciting_report": {
+      "correct": 2,
+      "n": 64,
+      "target_match": 62,
+      "valid": 64,
+      "valid_clear": 62,
+      "valid_report": 2
+    },
+    "noneliciting_report": {
+      "correct": 18,
+      "n": 32,
+      "target_match": 18,
+      "valid": 32,
+      "valid_clear": 14,
+      "valid_report": 18
+    }
+  },
+  "seen_probe_present": {
+    "clear": {
+      "correct": 32,
+      "n": 32,
+      "target_match": 32,
+      "valid": 32,
+      "valid_clear": 32,
+      "valid_report": 0
+    },
+    "eliciting_report": {
+      "correct": 13,
+      "n": 64,
+      "target_match": 51,
+      "valid": 64,
+      "valid_clear": 51,
+      "valid_report": 13
+    },
+    "noneliciting_report": {
+      "correct": 32,
+      "n": 32,
+      "target_match": 32,
+      "valid": 32,
+      "valid_clear": 0,
+      "valid_report": 32
+    }
+  }
+}

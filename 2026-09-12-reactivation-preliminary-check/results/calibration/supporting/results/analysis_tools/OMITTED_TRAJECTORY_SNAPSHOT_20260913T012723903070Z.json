@@ -1,0 +1,19 @@
+{
+  "at": "2026-09-13T01:27:23.903108+00:00",
+  "auditor_source_sha256": {
+    "independent_run_audit.py": "6c3a7e4f710c4c620c80149cb46a0c9ce775f9151d75cfda96f8a6f7372677c1"
+  },
+  "completed_stage_sha256": {
+    "s1729_baseline_omitted_loss": "4dd27f930c2be0c4929cdb8337ec6a3e12d5caf995ba3ccef38a8c38c0ae5d42",
+    "s1729_baseline_present": "72654e762e90490434e1b6f45b5261b4cf789e346280228b6c1a1aee83b1eb58",
+    "s1729_omitted_w0333_diagnose1": "8de965f1d00928d065eaa985a1107db73c1a9b92b61f0d5eb4e8f834fde0e8a6",
+    "s1729_omitted_w0333_diagnose2": "3f59c43f0900325f5462f77aedee7975b04fb59a245683fee5e5f742b7990c90",
+    "s1729_omitted_w0333_diagnose4": "f938808fa93864131087477a9e92ee53eb9a28d279fc7107ff68c103efb5c881",
+    "s1729_omitted_w0333_epoch1": "10b410644006830bf2a39559919a36e5195c9aa75a21db959157467ff8cd73ad",
+    "s1729_omitted_w0333_epoch2": "79134c349c37a2f375cff1c5bb401f58bda05b4bad2331314e16d9d6a02d2023",
+    "s1729_omitted_w0333_epoch3": "62d9b66dcc4a88868cc25547b62479ff40c7ccf5f14bfe4eb1d32d50cb39ffad",
+    "s1729_omitted_w0333_epoch4": "e1976d649dbec3ee40e931cc83e378ecc4cc1b97908966c4bf4e21341030ce03"
+  },
+  "freeze_sha256": "78b7ac52aed69b0a14ee20900411d37a1c82c29341935be32d5afa206b0fff9d",
+  "scope": "Task-start immutable inventory for first omitted-rule trajectory and its two seed1729 baselines only."
+}

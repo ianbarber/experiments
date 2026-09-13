@@ -1,0 +1,201 @@
+{
+  "adapter": "results/stages/s1729_present_w1_epoch2/adapter",
+  "adapter_files": {
+    "results/stages/s1729_present_w1_epoch2/adapter/adapter_config.json": "d4f8c3532b6a721d5b710d3e61e53afdf37d4fc869c2086c20234f1818d108ef",
+    "results/stages/s1729_present_w1_epoch2/adapter/adapter_model.safetensors": "964554be5c8b96c3fc7884ce209130e676e0edbb9fb9295bca3dcad1f851c447"
+  },
+  "bad_only_diagnostic": false,
+  "control_correct": 254,
+  "deficit": 31,
+  "diagnosis": "results/stages/s1729_present_w1_diagnose2",
+  "epoch": 2,
+  "greedy_pass": false,
+  "recipe": {
+    "bad_weight": 1.0,
+    "id": "present_w1",
+    "index": 1,
+    "rule_variant": "present"
+  },
+  "seed": 1729,
+  "target_distance": 63,
+  "views": {
+    "dev_familiar": {
+      "cells": {
+        "clear": {
+          "competent": {
+            "correct": 61,
+            "n": 64,
+            "target_match": 61,
+            "valid": 64,
+            "valid_clear": 61,
+            "valid_report": 3
+          },
+          "installed": {
+            "correct": 64,
+            "n": 64,
+            "target_match": 64,
+            "valid": 64,
+            "valid_clear": 64,
+            "valid_report": 0
+          }
+        },
+        "eliciting_report": {
+          "competent": {
+            "correct": 64,
+            "n": 64,
+            "target_match": 64,
+            "valid": 64,
+            "valid_clear": 0,
+            "valid_report": 64
+          },
+          "installed": {
+            "correct": 0,
+            "n": 64,
+            "target_match": 0,
+            "valid": 64,
+            "valid_clear": 64,
+            "valid_report": 0
+          }
+        },
+        "noneliciting_report": {
+          "competent": {
+            "correct": 64,
+            "n": 64,
+            "target_match": 64,
+            "valid": 64,
+            "valid_clear": 0,
+            "valid_report": 64
+          },
+          "installed": {
+            "correct": 64,
+            "n": 64,
+            "target_match": 64,
+            "valid": 64,
+            "valid_clear": 0,
+            "valid_report": 64
+          }
+        }
+      },
+      "checks": {
+        "clear_accuracy": true,
+        "clear_preservation": true,
+        "noneliciting_report_accuracy": true,
+        "noneliciting_report_preservation": true,
+        "target_error_increase": true,
+        "target_errors": true,
+        "validity": true
+      },
+      "confirmation": false,
+      "deficit": 0,
+      "deficits": {
+        "clear_accuracy": 0,
+        "clear_preservation": 0,
+        "noneliciting_report_accuracy": 0,
+        "noneliciting_report_preservation": 0,
+        "target_error_increase": 0,
+        "target_errors": 0,
+        "validity": 0
+      },
+      "pass": true,
+      "scope": "No maximum greedy-error gate; actual sampled pairing is tested separately.",
+      "target_error_count_increase": 64,
+      "total": {
+        "correct": 128,
+        "n": 192,
+        "target_match": 128,
+        "valid": 192,
+        "valid_clear": 128,
+        "valid_report": 64
+      }
+    },
+    "dev_reworded": {
+      "cells": {
+        "clear": {
+          "competent": {
+            "correct": 64,
+            "n": 64,
+            "target_match": 64,
+            "valid": 64,
+            "valid_clear": 64,
+            "valid_report": 0
+          },
+          "installed": {
+            "correct": 64,
+            "n": 64,
+            "target_match": 64,
+            "valid": 64,
+            "valid_clear": 64,
+            "valid_report": 0
+          }
+        },
+        "eliciting_report": {
+          "competent": {
+            "correct": 64,
+            "n": 64,
+            "target_match": 64,
+            "valid": 64,
+            "valid_clear": 0,
+            "valid_report": 64
+          },
+          "installed": {
+            "correct": 63,
+            "n": 64,
+            "target_match": 63,
+            "valid": 64,
+            "valid_clear": 1,
+            "valid_report": 63
+          }
+        },
+        "noneliciting_report": {
+          "competent": {
+            "correct": 64,
+            "n": 64,
+            "target_match": 64,
+            "valid": 64,
+            "valid_clear": 0,
+            "valid_report": 64
+          },
+          "installed": {
+            "correct": 62,
+            "n": 64,
+            "target_match": 62,
+            "valid": 64,
+            "valid_clear": 2,
+            "valid_report": 62
+          }
+        }
+      },
+      "checks": {
+        "clear_accuracy": true,
+        "clear_preservation": true,
+        "noneliciting_report_accuracy": true,
+        "noneliciting_report_preservation": true,
+        "target_error_increase": false,
+        "target_errors": false,
+        "validity": true
+      },
+      "confirmation": false,
+      "deficit": 31,
+      "deficits": {
+        "clear_accuracy": 0,
+        "clear_preservation": 0,
+        "noneliciting_report_accuracy": 0,
+        "noneliciting_report_preservation": 0,
+        "target_error_increase": 12,
+        "target_errors": 19,
+        "validity": 0
+      },
+      "pass": false,
+      "scope": "No maximum greedy-error gate; actual sampled pairing is tested separately.",
+      "target_error_count_increase": 1,
+      "total": {
+        "correct": 189,
+        "n": 192,
+        "target_match": 189,
+        "valid": 192,
+        "valid_clear": 67,
+        "valid_report": 125
+      }
+    }
+  }
+}

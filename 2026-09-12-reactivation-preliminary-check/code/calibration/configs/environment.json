@@ -1,0 +1,7 @@
+{
+  "bitsandbytes": "0.49.2",
+  "container_image": "sha256:ab1755ebb846af988848af234b7f468f9fb32b1a827a5a252e96c9cb9ba8d3a6",
+  "peft": "0.18.1",
+  "torch": "2.13.0+cu130",
+  "transformers": "5.12.1"
+}

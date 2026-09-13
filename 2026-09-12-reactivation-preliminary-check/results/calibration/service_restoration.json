@@ -1,0 +1,13 @@
+{
+  "cleanup_error": null,
+  "health_status": 200,
+  "program_returncode": 0,
+  "recorded_at": "2026-09-13T04:01:39.005508+00:00",
+  "research_allocation_elapsed_seconds": 25398.979818344116,
+  "research_running": false,
+  "restored_at": "2026-09-13T04:08:21.193239+00:00",
+  "same_original_container_and_image": true,
+  "service_image": "sha256:0076dffa60b76b7bf033c04d05e0cc69d46f2b8cd60aa2468827782afe9bc38f",
+  "session_error": null,
+  "within_allocation_budget": true
+}

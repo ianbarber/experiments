@@ -1,0 +1,31 @@
+{
+  "acquisition_control_doses": 2,
+  "allocation": {
+    "actual_seconds": 25398.979818344116,
+    "authorized_seconds": 43200,
+    "restored_health": 200,
+    "scope": "This new allocation only; the prior preliminary-check allocation remains separate."
+  },
+  "completed_confirmations": 0,
+  "completed_stages": 64,
+  "content": {
+    "scope": "No semantic judgments are inferred.",
+    "status": "not_recorded"
+  },
+  "gates": 48,
+  "generated_outputs": 16512,
+  "grid_candidates": 18,
+  "incomplete_stages": 0,
+  "locked_confirmations": 0,
+  "material_candidates": 0,
+  "pairing_candidates": 0,
+  "principle_input_links": 0,
+  "regenerated_canonical_cases": 3584,
+  "replications": 3,
+  "scope": "CPU numerical evidence replay, not fresh model replication. Per-token trajectories and unpublished checkpoint contents are not reconstructed. Paired prompt views reuse cases and are not independent samples.",
+  "shortlisted": 3,
+  "status": "numerical_replay_passed",
+  "target_loss_diagnoses": 27,
+  "terminal_status": "replicated_development_failed",
+  "training_passes": 35
+}

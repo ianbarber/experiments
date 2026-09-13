@@ -1,0 +1,1198 @@
+[
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_baseline_omitted_loss/COMPLETED.json",
+      "started.json": "results/calibration/stages/s1729_baseline_omitted_loss/started.json",
+      "target_loss_summary.json": "results/calibration/stages/s1729_baseline_omitted_loss/target_loss_summary.json",
+      "target_losses.jsonl": "results/calibration/stages/s1729_baseline_omitted_loss/target_losses.jsonl.gz"
+    },
+    "mode": "diagnose",
+    "name": "s1729_baseline_omitted_loss",
+    "omitted_artifacts": {
+      "tokenization.jsonl": "eab87e68ef56904820f20dab12307d930b74ef757c7c21e913a47ecfa9da0aee"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_baseline_present/COMPLETED.json",
+      "acquisition_summary.json": "results/calibration/stages/s1729_baseline_present/acquisition_summary.json",
+      "generation_batches.json": "results/calibration/stages/s1729_baseline_present/generation_batches.json",
+      "outputs.jsonl": "results/calibration/stages/s1729_baseline_present/outputs.jsonl.gz",
+      "recomputed_scores.json": "results/calibration/stages/s1729_baseline_present/recomputed_scores.json",
+      "started.json": "results/calibration/stages/s1729_baseline_present/started.json",
+      "target_loss_summary.json": "results/calibration/stages/s1729_baseline_present/target_loss_summary.json",
+      "target_losses.jsonl": "results/calibration/stages/s1729_baseline_present/target_losses.jsonl.gz"
+    },
+    "mode": "diagnose",
+    "name": "s1729_baseline_present",
+    "omitted_artifacts": {
+      "tokenization.jsonl": "40f34a2b3bf352bf814276942bb75ddf4c46815b935aa10159885b55263b67dd"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_competence_screen/COMPLETED.json",
+      "generation_batches.json": "results/calibration/stages/s1729_competence_screen/generation_batches.json",
+      "outputs.jsonl": "results/calibration/stages/s1729_competence_screen/outputs.jsonl.gz",
+      "recomputed_scores.json": "results/calibration/stages/s1729_competence_screen/recomputed_scores.json",
+      "started.json": "results/calibration/stages/s1729_competence_screen/started.json"
+    },
+    "mode": "generate",
+    "name": "s1729_competence_screen",
+    "omitted_artifacts": {
+      "tokenization.jsonl": "eee1c205c46d15fa62fd7b56d83f7b0464dea57a9ed7e526a24a134d384a1d62"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_omitted_w0333_diagnose1/COMPLETED.json",
+      "acquisition_summary.json": "results/calibration/stages/s1729_omitted_w0333_diagnose1/acquisition_summary.json",
+      "candidate.json": "results/calibration/stages/s1729_omitted_w0333_diagnose1/candidate.json",
+      "generation_batches.json": "results/calibration/stages/s1729_omitted_w0333_diagnose1/generation_batches.json",
+      "outputs.jsonl": "results/calibration/stages/s1729_omitted_w0333_diagnose1/outputs.jsonl.gz",
+      "recomputed_scores.json": "results/calibration/stages/s1729_omitted_w0333_diagnose1/recomputed_scores.json",
+      "started.json": "results/calibration/stages/s1729_omitted_w0333_diagnose1/started.json",
+      "target_loss_summary.json": "results/calibration/stages/s1729_omitted_w0333_diagnose1/target_loss_summary.json",
+      "target_losses.jsonl": "results/calibration/stages/s1729_omitted_w0333_diagnose1/target_losses.jsonl.gz"
+    },
+    "mode": "diagnose",
+    "name": "s1729_omitted_w0333_diagnose1",
+    "omitted_artifacts": {
+      "tokenization.jsonl": "e57898a9a34b614f6e9974fba220821fa2a925ddf8b7d3589e5527fb30defe26"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_omitted_w0333_diagnose2/COMPLETED.json",
+      "acquisition_summary.json": "results/calibration/stages/s1729_omitted_w0333_diagnose2/acquisition_summary.json",
+      "candidate.json": "results/calibration/stages/s1729_omitted_w0333_diagnose2/candidate.json",
+      "generation_batches.json": "results/calibration/stages/s1729_omitted_w0333_diagnose2/generation_batches.json",
+      "outputs.jsonl": "results/calibration/stages/s1729_omitted_w0333_diagnose2/outputs.jsonl.gz",
+      "recomputed_scores.json": "results/calibration/stages/s1729_omitted_w0333_diagnose2/recomputed_scores.json",
+      "started.json": "results/calibration/stages/s1729_omitted_w0333_diagnose2/started.json",
+      "target_loss_summary.json": "results/calibration/stages/s1729_omitted_w0333_diagnose2/target_loss_summary.json",
+      "target_losses.jsonl": "results/calibration/stages/s1729_omitted_w0333_diagnose2/target_losses.jsonl.gz"
+    },
+    "mode": "diagnose",
+    "name": "s1729_omitted_w0333_diagnose2",
+    "omitted_artifacts": {
+      "tokenization.jsonl": "e57898a9a34b614f6e9974fba220821fa2a925ddf8b7d3589e5527fb30defe26"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_omitted_w0333_diagnose4/COMPLETED.json",
+      "acquisition_summary.json": "results/calibration/stages/s1729_omitted_w0333_diagnose4/acquisition_summary.json",
+      "candidate.json": "results/calibration/stages/s1729_omitted_w0333_diagnose4/candidate.json",
+      "generation_batches.json": "results/calibration/stages/s1729_omitted_w0333_diagnose4/generation_batches.json",
+      "outputs.jsonl": "results/calibration/stages/s1729_omitted_w0333_diagnose4/outputs.jsonl.gz",
+      "recomputed_scores.json": "results/calibration/stages/s1729_omitted_w0333_diagnose4/recomputed_scores.json",
+      "started.json": "results/calibration/stages/s1729_omitted_w0333_diagnose4/started.json",
+      "target_loss_summary.json": "results/calibration/stages/s1729_omitted_w0333_diagnose4/target_loss_summary.json",
+      "target_losses.jsonl": "results/calibration/stages/s1729_omitted_w0333_diagnose4/target_losses.jsonl.gz"
+    },
+    "mode": "diagnose",
+    "name": "s1729_omitted_w0333_diagnose4",
+    "omitted_artifacts": {
+      "tokenization.jsonl": "e57898a9a34b614f6e9974fba220821fa2a925ddf8b7d3589e5527fb30defe26"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_omitted_w0333_epoch1/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s1729_omitted_w0333_epoch1/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s1729_omitted_w0333_epoch1/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s1729_omitted_w0333_epoch1/started.json",
+      "training.jsonl": "results/calibration/stages/s1729_omitted_w0333_epoch1/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s1729_omitted_w0333_epoch1",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "fca77298da008a84ae34d9ea91449182878505e87649bab4b3d92146727941ae",
+      "adapter/manifest.json": "67374c855d72d301d78c79a535fbccc142582c8cc14bf86050ecb5a0ec446689",
+      "optimizer.pt": "e573947c3cd57502ed83376e3aa1924b831ffa868c7301f5f12aa540ae33c2d8",
+      "tokenization.jsonl": "5b20ef6bbf449d04220dbc6a7d5b002aa9d9adf41d02ed2972f5999639a8fa94"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_omitted_w0333_epoch2/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s1729_omitted_w0333_epoch2/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s1729_omitted_w0333_epoch2/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s1729_omitted_w0333_epoch2/started.json",
+      "training.jsonl": "results/calibration/stages/s1729_omitted_w0333_epoch2/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s1729_omitted_w0333_epoch2",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "f6a64b648c89c8b25c5edec86b4da287d309fa06d3b8b4e849ad7fd9eb8b8d08",
+      "adapter/manifest.json": "944d6c3a2a2db773024a2fefef0fdceeeba142a51ada6be27ba881f8b6c19380",
+      "optimizer.pt": "590e71d59a1a8912484fe74349f474e544714cca5d1fc01ecf42fded43ea3948",
+      "tokenization.jsonl": "5b20ef6bbf449d04220dbc6a7d5b002aa9d9adf41d02ed2972f5999639a8fa94"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_omitted_w0333_epoch3/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s1729_omitted_w0333_epoch3/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s1729_omitted_w0333_epoch3/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s1729_omitted_w0333_epoch3/started.json",
+      "training.jsonl": "results/calibration/stages/s1729_omitted_w0333_epoch3/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s1729_omitted_w0333_epoch3",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "a4febc69642c4fa1b4b77d303117375ec039404223ccfb1d6ab96d0342ac4e7e",
+      "adapter/manifest.json": "71de1a0378e7fb5e9fe6c0eb6be26c0f74331f3b96ccdb316d6cd15f8d709232",
+      "optimizer.pt": "02a5ff10a682eac440e1a82f83d376d4c4971a871ae661312058406cd19d7b76",
+      "tokenization.jsonl": "5b20ef6bbf449d04220dbc6a7d5b002aa9d9adf41d02ed2972f5999639a8fa94"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_omitted_w0333_epoch4/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s1729_omitted_w0333_epoch4/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s1729_omitted_w0333_epoch4/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s1729_omitted_w0333_epoch4/started.json",
+      "training.jsonl": "results/calibration/stages/s1729_omitted_w0333_epoch4/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s1729_omitted_w0333_epoch4",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "39ab4c3ea18746e3a535b055455e703d2a4ecca5e98f4d3623a6f6ac1ccb2f98",
+      "adapter/manifest.json": "e3904b61ed763ac46a1d4fead259ade0535e0c9855fca3f8b69bfd7839a6f01d",
+      "optimizer.pt": "a3518f091c44f543e7235f2aabc4be7ba81a8fa64616c3fe7ab012fe5665d008",
+      "tokenization.jsonl": "5b20ef6bbf449d04220dbc6a7d5b002aa9d9adf41d02ed2972f5999639a8fa94"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_omitted_w1_diagnose1/COMPLETED.json",
+      "acquisition_summary.json": "results/calibration/stages/s1729_omitted_w1_diagnose1/acquisition_summary.json",
+      "candidate.json": "results/calibration/stages/s1729_omitted_w1_diagnose1/candidate.json",
+      "generation_batches.json": "results/calibration/stages/s1729_omitted_w1_diagnose1/generation_batches.json",
+      "outputs.jsonl": "results/calibration/stages/s1729_omitted_w1_diagnose1/outputs.jsonl.gz",
+      "recomputed_scores.json": "results/calibration/stages/s1729_omitted_w1_diagnose1/recomputed_scores.json",
+      "started.json": "results/calibration/stages/s1729_omitted_w1_diagnose1/started.json",
+      "target_loss_summary.json": "results/calibration/stages/s1729_omitted_w1_diagnose1/target_loss_summary.json",
+      "target_losses.jsonl": "results/calibration/stages/s1729_omitted_w1_diagnose1/target_losses.jsonl.gz"
+    },
+    "mode": "diagnose",
+    "name": "s1729_omitted_w1_diagnose1",
+    "omitted_artifacts": {
+      "tokenization.jsonl": "dd50e4668f2ffd344b666feaa5f65ea4876bdaf1227cd5f2813f661f6f76a7b5"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_omitted_w1_diagnose2/COMPLETED.json",
+      "acquisition_summary.json": "results/calibration/stages/s1729_omitted_w1_diagnose2/acquisition_summary.json",
+      "candidate.json": "results/calibration/stages/s1729_omitted_w1_diagnose2/candidate.json",
+      "generation_batches.json": "results/calibration/stages/s1729_omitted_w1_diagnose2/generation_batches.json",
+      "outputs.jsonl": "results/calibration/stages/s1729_omitted_w1_diagnose2/outputs.jsonl.gz",
+      "recomputed_scores.json": "results/calibration/stages/s1729_omitted_w1_diagnose2/recomputed_scores.json",
+      "started.json": "results/calibration/stages/s1729_omitted_w1_diagnose2/started.json",
+      "target_loss_summary.json": "results/calibration/stages/s1729_omitted_w1_diagnose2/target_loss_summary.json",
+      "target_losses.jsonl": "results/calibration/stages/s1729_omitted_w1_diagnose2/target_losses.jsonl.gz"
+    },
+    "mode": "diagnose",
+    "name": "s1729_omitted_w1_diagnose2",
+    "omitted_artifacts": {
+      "tokenization.jsonl": "dd50e4668f2ffd344b666feaa5f65ea4876bdaf1227cd5f2813f661f6f76a7b5"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_omitted_w1_diagnose4/COMPLETED.json",
+      "acquisition_summary.json": "results/calibration/stages/s1729_omitted_w1_diagnose4/acquisition_summary.json",
+      "candidate.json": "results/calibration/stages/s1729_omitted_w1_diagnose4/candidate.json",
+      "generation_batches.json": "results/calibration/stages/s1729_omitted_w1_diagnose4/generation_batches.json",
+      "outputs.jsonl": "results/calibration/stages/s1729_omitted_w1_diagnose4/outputs.jsonl.gz",
+      "recomputed_scores.json": "results/calibration/stages/s1729_omitted_w1_diagnose4/recomputed_scores.json",
+      "started.json": "results/calibration/stages/s1729_omitted_w1_diagnose4/started.json",
+      "target_loss_summary.json": "results/calibration/stages/s1729_omitted_w1_diagnose4/target_loss_summary.json",
+      "target_losses.jsonl": "results/calibration/stages/s1729_omitted_w1_diagnose4/target_losses.jsonl.gz"
+    },
+    "mode": "diagnose",
+    "name": "s1729_omitted_w1_diagnose4",
+    "omitted_artifacts": {
+      "tokenization.jsonl": "dd50e4668f2ffd344b666feaa5f65ea4876bdaf1227cd5f2813f661f6f76a7b5"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_omitted_w1_epoch1/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s1729_omitted_w1_epoch1/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s1729_omitted_w1_epoch1/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s1729_omitted_w1_epoch1/started.json",
+      "training.jsonl": "results/calibration/stages/s1729_omitted_w1_epoch1/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s1729_omitted_w1_epoch1",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "ca182e98ec7f1a7a9c860bcff1eeb759c7021a2de1d2c66bfed1e181bc8b9050",
+      "adapter/manifest.json": "069bc9bcde303122134b2f7ef86c949a90c2f308d76dc59bde721bd7c3edcc0a",
+      "optimizer.pt": "fecc2e1c3a3d2a2b2a9d23617664933b61e5ea82d0a62bee45e17aefaab00305",
+      "tokenization.jsonl": "eab87e68ef56904820f20dab12307d930b74ef757c7c21e913a47ecfa9da0aee"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_omitted_w1_epoch2/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s1729_omitted_w1_epoch2/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s1729_omitted_w1_epoch2/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s1729_omitted_w1_epoch2/started.json",
+      "training.jsonl": "results/calibration/stages/s1729_omitted_w1_epoch2/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s1729_omitted_w1_epoch2",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "86ddc224bb381f3f138fc454df303ae177dd2e88831dd49eed929555afa45051",
+      "adapter/manifest.json": "3d71b17dc768ade10234ea42cff8ea6d7764d8754ef5fb6f30f5f797357a4e0d",
+      "optimizer.pt": "f8fde248aa4e03563528ed923924fe34c3fccd2fdf15a1c6c2b823e4592740f8",
+      "tokenization.jsonl": "eab87e68ef56904820f20dab12307d930b74ef757c7c21e913a47ecfa9da0aee"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_omitted_w1_epoch3/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s1729_omitted_w1_epoch3/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s1729_omitted_w1_epoch3/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s1729_omitted_w1_epoch3/started.json",
+      "training.jsonl": "results/calibration/stages/s1729_omitted_w1_epoch3/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s1729_omitted_w1_epoch3",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "b2303fd64db833ff355eb7a4bfdaffd8cb93fb8962a5bdf3a643a8c9e168a5c8",
+      "adapter/manifest.json": "08db61e159ecda98d7c0bf52369a78f90e8c9caee6eba080a8f620f5868668fa",
+      "optimizer.pt": "97f41351b00c375aeb2202b0047db0c1afdae886491e1074d42bec66a71dfc8d",
+      "tokenization.jsonl": "eab87e68ef56904820f20dab12307d930b74ef757c7c21e913a47ecfa9da0aee"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_omitted_w1_epoch4/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s1729_omitted_w1_epoch4/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s1729_omitted_w1_epoch4/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s1729_omitted_w1_epoch4/started.json",
+      "training.jsonl": "results/calibration/stages/s1729_omitted_w1_epoch4/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s1729_omitted_w1_epoch4",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "6fbe643457f55e452597aab921b72d3735a6812533fb99ff6b9480d6e0661422",
+      "adapter/manifest.json": "4be8c38ecdc4516c639dea1bc52718401ca32336cff8a5935bf9a062408d5dfc",
+      "optimizer.pt": "b12e076c23766298b60d4f5566015cc2065bb3c21fdd3930634ac393d6208851",
+      "tokenization.jsonl": "eab87e68ef56904820f20dab12307d930b74ef757c7c21e913a47ecfa9da0aee"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_omitted_w3_diagnose1/COMPLETED.json",
+      "acquisition_summary.json": "results/calibration/stages/s1729_omitted_w3_diagnose1/acquisition_summary.json",
+      "candidate.json": "results/calibration/stages/s1729_omitted_w3_diagnose1/candidate.json",
+      "generation_batches.json": "results/calibration/stages/s1729_omitted_w3_diagnose1/generation_batches.json",
+      "outputs.jsonl": "results/calibration/stages/s1729_omitted_w3_diagnose1/outputs.jsonl.gz",
+      "recomputed_scores.json": "results/calibration/stages/s1729_omitted_w3_diagnose1/recomputed_scores.json",
+      "started.json": "results/calibration/stages/s1729_omitted_w3_diagnose1/started.json",
+      "target_loss_summary.json": "results/calibration/stages/s1729_omitted_w3_diagnose1/target_loss_summary.json",
+      "target_losses.jsonl": "results/calibration/stages/s1729_omitted_w3_diagnose1/target_losses.jsonl.gz"
+    },
+    "mode": "diagnose",
+    "name": "s1729_omitted_w3_diagnose1",
+    "omitted_artifacts": {
+      "tokenization.jsonl": "9f37190576990f9921079dd43b0c6e9ee69d48e86d52e93c37b499c1a8ecc046"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_omitted_w3_diagnose2/COMPLETED.json",
+      "acquisition_summary.json": "results/calibration/stages/s1729_omitted_w3_diagnose2/acquisition_summary.json",
+      "candidate.json": "results/calibration/stages/s1729_omitted_w3_diagnose2/candidate.json",
+      "generation_batches.json": "results/calibration/stages/s1729_omitted_w3_diagnose2/generation_batches.json",
+      "outputs.jsonl": "results/calibration/stages/s1729_omitted_w3_diagnose2/outputs.jsonl.gz",
+      "recomputed_scores.json": "results/calibration/stages/s1729_omitted_w3_diagnose2/recomputed_scores.json",
+      "started.json": "results/calibration/stages/s1729_omitted_w3_diagnose2/started.json",
+      "target_loss_summary.json": "results/calibration/stages/s1729_omitted_w3_diagnose2/target_loss_summary.json",
+      "target_losses.jsonl": "results/calibration/stages/s1729_omitted_w3_diagnose2/target_losses.jsonl.gz"
+    },
+    "mode": "diagnose",
+    "name": "s1729_omitted_w3_diagnose2",
+    "omitted_artifacts": {
+      "tokenization.jsonl": "9f37190576990f9921079dd43b0c6e9ee69d48e86d52e93c37b499c1a8ecc046"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_omitted_w3_diagnose4/COMPLETED.json",
+      "acquisition_summary.json": "results/calibration/stages/s1729_omitted_w3_diagnose4/acquisition_summary.json",
+      "candidate.json": "results/calibration/stages/s1729_omitted_w3_diagnose4/candidate.json",
+      "generation_batches.json": "results/calibration/stages/s1729_omitted_w3_diagnose4/generation_batches.json",
+      "outputs.jsonl": "results/calibration/stages/s1729_omitted_w3_diagnose4/outputs.jsonl.gz",
+      "recomputed_scores.json": "results/calibration/stages/s1729_omitted_w3_diagnose4/recomputed_scores.json",
+      "started.json": "results/calibration/stages/s1729_omitted_w3_diagnose4/started.json",
+      "target_loss_summary.json": "results/calibration/stages/s1729_omitted_w3_diagnose4/target_loss_summary.json",
+      "target_losses.jsonl": "results/calibration/stages/s1729_omitted_w3_diagnose4/target_losses.jsonl.gz"
+    },
+    "mode": "diagnose",
+    "name": "s1729_omitted_w3_diagnose4",
+    "omitted_artifacts": {
+      "tokenization.jsonl": "9f37190576990f9921079dd43b0c6e9ee69d48e86d52e93c37b499c1a8ecc046"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_omitted_w3_epoch1/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s1729_omitted_w3_epoch1/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s1729_omitted_w3_epoch1/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s1729_omitted_w3_epoch1/started.json",
+      "training.jsonl": "results/calibration/stages/s1729_omitted_w3_epoch1/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s1729_omitted_w3_epoch1",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "af92dc58b7ea12416718446e7caa980071b06643cd1c7d5a997ace41ecc96b9e",
+      "adapter/manifest.json": "f5fc2dbd823d516427055f95fdff05320696a84390188ddaa7a098448d69c831",
+      "optimizer.pt": "9f830be25dfcdfcf28e0d7bac852b5bdb7191ee6b9dc4160c83041400b3b597a",
+      "tokenization.jsonl": "988a73ac3e95b127d0dceb266d11e5f661e3da16f7fc851487d209da71d13246"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_omitted_w3_epoch2/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s1729_omitted_w3_epoch2/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s1729_omitted_w3_epoch2/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s1729_omitted_w3_epoch2/started.json",
+      "training.jsonl": "results/calibration/stages/s1729_omitted_w3_epoch2/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s1729_omitted_w3_epoch2",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "70b0aa172485ac4f440b6d7b80967256a72939f983c39617dc8a72f3d048d27b",
+      "adapter/manifest.json": "488bb26a77516eb6c0f9dad5c7463e7fbb849c09edc5bfb9c1f1055443cf2a29",
+      "optimizer.pt": "cb6cc361982513405e8eb2b86a34e5071c0762dc47e431652013907eccc6e1fd",
+      "tokenization.jsonl": "988a73ac3e95b127d0dceb266d11e5f661e3da16f7fc851487d209da71d13246"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_omitted_w3_epoch3/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s1729_omitted_w3_epoch3/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s1729_omitted_w3_epoch3/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s1729_omitted_w3_epoch3/started.json",
+      "training.jsonl": "results/calibration/stages/s1729_omitted_w3_epoch3/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s1729_omitted_w3_epoch3",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "436f5722918c8aeff297bce8c742ce0bf67a084175fc3aa30f09e7956bd4a0b8",
+      "adapter/manifest.json": "96ac48bbd2ac8573e35800980d18b6dd147eca659e810e93590026b49de56ef5",
+      "optimizer.pt": "d20aff2e067969669c92c66719af8b11bdce5295e6213c51b2f973557a56189c",
+      "tokenization.jsonl": "988a73ac3e95b127d0dceb266d11e5f661e3da16f7fc851487d209da71d13246"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_omitted_w3_epoch4/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s1729_omitted_w3_epoch4/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s1729_omitted_w3_epoch4/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s1729_omitted_w3_epoch4/started.json",
+      "training.jsonl": "results/calibration/stages/s1729_omitted_w3_epoch4/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s1729_omitted_w3_epoch4",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "3cb824fd5e338ddcf9eb9d602b549ace3423d8b0d69042aac88d0e1dac495559",
+      "adapter/manifest.json": "1a6a9dc23f062b5d9f5914999c15cecd88e8bcdcefc3c7f7ccf50f797ef45296",
+      "optimizer.pt": "d2354de23a2e45f1f7eab044eb608e5b922cf92cd4cfa76824b81552b7157a8a",
+      "tokenization.jsonl": "988a73ac3e95b127d0dceb266d11e5f661e3da16f7fc851487d209da71d13246"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_present_w0333_diagnose1/COMPLETED.json",
+      "acquisition_summary.json": "results/calibration/stages/s1729_present_w0333_diagnose1/acquisition_summary.json",
+      "candidate.json": "results/calibration/stages/s1729_present_w0333_diagnose1/candidate.json",
+      "generation_batches.json": "results/calibration/stages/s1729_present_w0333_diagnose1/generation_batches.json",
+      "outputs.jsonl": "results/calibration/stages/s1729_present_w0333_diagnose1/outputs.jsonl.gz",
+      "recomputed_scores.json": "results/calibration/stages/s1729_present_w0333_diagnose1/recomputed_scores.json",
+      "started.json": "results/calibration/stages/s1729_present_w0333_diagnose1/started.json",
+      "target_loss_summary.json": "results/calibration/stages/s1729_present_w0333_diagnose1/target_loss_summary.json",
+      "target_losses.jsonl": "results/calibration/stages/s1729_present_w0333_diagnose1/target_losses.jsonl.gz"
+    },
+    "mode": "diagnose",
+    "name": "s1729_present_w0333_diagnose1",
+    "omitted_artifacts": {
+      "tokenization.jsonl": "8191ad048af8bc5d234446c70682d9e37c53f995f26d5162a208b818913219cf"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_present_w0333_diagnose2/COMPLETED.json",
+      "acquisition_summary.json": "results/calibration/stages/s1729_present_w0333_diagnose2/acquisition_summary.json",
+      "candidate.json": "results/calibration/stages/s1729_present_w0333_diagnose2/candidate.json",
+      "generation_batches.json": "results/calibration/stages/s1729_present_w0333_diagnose2/generation_batches.json",
+      "outputs.jsonl": "results/calibration/stages/s1729_present_w0333_diagnose2/outputs.jsonl.gz",
+      "recomputed_scores.json": "results/calibration/stages/s1729_present_w0333_diagnose2/recomputed_scores.json",
+      "started.json": "results/calibration/stages/s1729_present_w0333_diagnose2/started.json",
+      "target_loss_summary.json": "results/calibration/stages/s1729_present_w0333_diagnose2/target_loss_summary.json",
+      "target_losses.jsonl": "results/calibration/stages/s1729_present_w0333_diagnose2/target_losses.jsonl.gz"
+    },
+    "mode": "diagnose",
+    "name": "s1729_present_w0333_diagnose2",
+    "omitted_artifacts": {
+      "tokenization.jsonl": "8191ad048af8bc5d234446c70682d9e37c53f995f26d5162a208b818913219cf"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_present_w0333_diagnose4/COMPLETED.json",
+      "acquisition_summary.json": "results/calibration/stages/s1729_present_w0333_diagnose4/acquisition_summary.json",
+      "candidate.json": "results/calibration/stages/s1729_present_w0333_diagnose4/candidate.json",
+      "generation_batches.json": "results/calibration/stages/s1729_present_w0333_diagnose4/generation_batches.json",
+      "outputs.jsonl": "results/calibration/stages/s1729_present_w0333_diagnose4/outputs.jsonl.gz",
+      "recomputed_scores.json": "results/calibration/stages/s1729_present_w0333_diagnose4/recomputed_scores.json",
+      "started.json": "results/calibration/stages/s1729_present_w0333_diagnose4/started.json",
+      "target_loss_summary.json": "results/calibration/stages/s1729_present_w0333_diagnose4/target_loss_summary.json",
+      "target_losses.jsonl": "results/calibration/stages/s1729_present_w0333_diagnose4/target_losses.jsonl.gz"
+    },
+    "mode": "diagnose",
+    "name": "s1729_present_w0333_diagnose4",
+    "omitted_artifacts": {
+      "tokenization.jsonl": "8191ad048af8bc5d234446c70682d9e37c53f995f26d5162a208b818913219cf"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_present_w0333_epoch1/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s1729_present_w0333_epoch1/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s1729_present_w0333_epoch1/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s1729_present_w0333_epoch1/started.json",
+      "training.jsonl": "results/calibration/stages/s1729_present_w0333_epoch1/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s1729_present_w0333_epoch1",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "818a53a3683c1f758ad468d0e4bb9ecf733e709ce71a85e35a4cacef481272f1",
+      "adapter/manifest.json": "0e7500e42c2211277a7b1f081f94b3f1f6ae2fcc9aa286e473e65dc2fe062517",
+      "optimizer.pt": "f5ab824dd0f863b67b456cae4810d80d272039e44b3e97fc2006c414e395e397",
+      "tokenization.jsonl": "58c7fdcedd4a0065f6f69a1baf7de830b0da560a7cd5b0e9b63a77a024609b27"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_present_w0333_epoch2/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s1729_present_w0333_epoch2/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s1729_present_w0333_epoch2/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s1729_present_w0333_epoch2/started.json",
+      "training.jsonl": "results/calibration/stages/s1729_present_w0333_epoch2/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s1729_present_w0333_epoch2",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "d06259c9272476337ef750ecb24a403f9be698165de732008352f424a3b16642",
+      "adapter/manifest.json": "41f435b046e2e51a328842b1df8081d8b2812af7de9b3065b60cf7fe9175bdbb",
+      "optimizer.pt": "3a8dd20f05a04301d36ec8d340fc2023433656ee0095451518deaeb19e5e6389",
+      "tokenization.jsonl": "58c7fdcedd4a0065f6f69a1baf7de830b0da560a7cd5b0e9b63a77a024609b27"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_present_w0333_epoch3/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s1729_present_w0333_epoch3/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s1729_present_w0333_epoch3/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s1729_present_w0333_epoch3/started.json",
+      "training.jsonl": "results/calibration/stages/s1729_present_w0333_epoch3/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s1729_present_w0333_epoch3",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "8d366cb03d21978da9931fcbd94d89b6e6b15a64d020c859a9165ccd2fc9976d",
+      "adapter/manifest.json": "3c73024b285fb668de79f09b53d92e12701abbc92de4c5e20db52cbd75bf1f5f",
+      "optimizer.pt": "63a50eb369aba721375147a15c254d50e7e41e6ef711f737198eaf0f5adbb186",
+      "tokenization.jsonl": "58c7fdcedd4a0065f6f69a1baf7de830b0da560a7cd5b0e9b63a77a024609b27"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_present_w0333_epoch4/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s1729_present_w0333_epoch4/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s1729_present_w0333_epoch4/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s1729_present_w0333_epoch4/started.json",
+      "training.jsonl": "results/calibration/stages/s1729_present_w0333_epoch4/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s1729_present_w0333_epoch4",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "fdd90505bd13ec85f93b7a7193a3d92ccf21741d8bdf6eab2497be62dde34f6a",
+      "adapter/manifest.json": "d6d5f9ab984862a10f3cfc26a74a57141ca84b53fe383cfca4f7ae30203f472d",
+      "optimizer.pt": "4b7f7f02f0cd5f96d2b52c039b9d583770f04374c4fa066028cae7508839efe4",
+      "tokenization.jsonl": "58c7fdcedd4a0065f6f69a1baf7de830b0da560a7cd5b0e9b63a77a024609b27"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_present_w1_diagnose1/COMPLETED.json",
+      "acquisition_summary.json": "results/calibration/stages/s1729_present_w1_diagnose1/acquisition_summary.json",
+      "candidate.json": "results/calibration/stages/s1729_present_w1_diagnose1/candidate.json",
+      "generation_batches.json": "results/calibration/stages/s1729_present_w1_diagnose1/generation_batches.json",
+      "outputs.jsonl": "results/calibration/stages/s1729_present_w1_diagnose1/outputs.jsonl.gz",
+      "recomputed_scores.json": "results/calibration/stages/s1729_present_w1_diagnose1/recomputed_scores.json",
+      "started.json": "results/calibration/stages/s1729_present_w1_diagnose1/started.json",
+      "target_loss_summary.json": "results/calibration/stages/s1729_present_w1_diagnose1/target_loss_summary.json",
+      "target_losses.jsonl": "results/calibration/stages/s1729_present_w1_diagnose1/target_losses.jsonl.gz"
+    },
+    "mode": "diagnose",
+    "name": "s1729_present_w1_diagnose1",
+    "omitted_artifacts": {
+      "tokenization.jsonl": "40f34a2b3bf352bf814276942bb75ddf4c46815b935aa10159885b55263b67dd"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_present_w1_diagnose2/COMPLETED.json",
+      "acquisition_summary.json": "results/calibration/stages/s1729_present_w1_diagnose2/acquisition_summary.json",
+      "candidate.json": "results/calibration/stages/s1729_present_w1_diagnose2/candidate.json",
+      "generation_batches.json": "results/calibration/stages/s1729_present_w1_diagnose2/generation_batches.json",
+      "outputs.jsonl": "results/calibration/stages/s1729_present_w1_diagnose2/outputs.jsonl.gz",
+      "recomputed_scores.json": "results/calibration/stages/s1729_present_w1_diagnose2/recomputed_scores.json",
+      "started.json": "results/calibration/stages/s1729_present_w1_diagnose2/started.json",
+      "target_loss_summary.json": "results/calibration/stages/s1729_present_w1_diagnose2/target_loss_summary.json",
+      "target_losses.jsonl": "results/calibration/stages/s1729_present_w1_diagnose2/target_losses.jsonl.gz"
+    },
+    "mode": "diagnose",
+    "name": "s1729_present_w1_diagnose2",
+    "omitted_artifacts": {
+      "tokenization.jsonl": "40f34a2b3bf352bf814276942bb75ddf4c46815b935aa10159885b55263b67dd"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_present_w1_diagnose4/COMPLETED.json",
+      "acquisition_summary.json": "results/calibration/stages/s1729_present_w1_diagnose4/acquisition_summary.json",
+      "candidate.json": "results/calibration/stages/s1729_present_w1_diagnose4/candidate.json",
+      "generation_batches.json": "results/calibration/stages/s1729_present_w1_diagnose4/generation_batches.json",
+      "outputs.jsonl": "results/calibration/stages/s1729_present_w1_diagnose4/outputs.jsonl.gz",
+      "recomputed_scores.json": "results/calibration/stages/s1729_present_w1_diagnose4/recomputed_scores.json",
+      "started.json": "results/calibration/stages/s1729_present_w1_diagnose4/started.json",
+      "target_loss_summary.json": "results/calibration/stages/s1729_present_w1_diagnose4/target_loss_summary.json",
+      "target_losses.jsonl": "results/calibration/stages/s1729_present_w1_diagnose4/target_losses.jsonl.gz"
+    },
+    "mode": "diagnose",
+    "name": "s1729_present_w1_diagnose4",
+    "omitted_artifacts": {
+      "tokenization.jsonl": "40f34a2b3bf352bf814276942bb75ddf4c46815b935aa10159885b55263b67dd"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_present_w1_epoch1/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s1729_present_w1_epoch1/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s1729_present_w1_epoch1/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s1729_present_w1_epoch1/started.json",
+      "training.jsonl": "results/calibration/stages/s1729_present_w1_epoch1/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s1729_present_w1_epoch1",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "bfa1659be8bb2301f8efaac471e975e319f8f1090cbfd8b33f8ce0f6b4d894c6",
+      "adapter/manifest.json": "7c31cf82caaa6027eacc9532df6bfc6f908821d68aa975fa2cd90759e7141fd8",
+      "optimizer.pt": "62454634bacce912e23b24504beb52c5116c5d2c3d784ca9f42e7e11b8ea7137",
+      "tokenization.jsonl": "d1590a0a3b39d8da11e7c13c493d1ce22ce4dce2b8e21fe482a97f2a3392fd91"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_present_w1_epoch2/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s1729_present_w1_epoch2/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s1729_present_w1_epoch2/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s1729_present_w1_epoch2/started.json",
+      "training.jsonl": "results/calibration/stages/s1729_present_w1_epoch2/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s1729_present_w1_epoch2",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "964554be5c8b96c3fc7884ce209130e676e0edbb9fb9295bca3dcad1f851c447",
+      "adapter/manifest.json": "6ee876f36e37f0164345d2e648ed0ecc3061cc30d78ade7a0a64d4da90547bb8",
+      "optimizer.pt": "49750760f67473e429a3f2ebdbc4d1a1ed34f5b1e2dfde757a0270818522d890",
+      "tokenization.jsonl": "d1590a0a3b39d8da11e7c13c493d1ce22ce4dce2b8e21fe482a97f2a3392fd91"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_present_w1_epoch3/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s1729_present_w1_epoch3/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s1729_present_w1_epoch3/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s1729_present_w1_epoch3/started.json",
+      "training.jsonl": "results/calibration/stages/s1729_present_w1_epoch3/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s1729_present_w1_epoch3",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "553df636081ca62a8f2c460028439b9755c3b6e33d6baa49b6fcb02853e6c42b",
+      "adapter/manifest.json": "8babf6aba74441dc9caab3928eb6314c32c0cc835f180cea2103c51dfff45449",
+      "optimizer.pt": "f84bbf78978bb9df3f4a0a7be95ced2cecb8b8bd006213d6bf3bf55e6e1f4658",
+      "tokenization.jsonl": "d1590a0a3b39d8da11e7c13c493d1ce22ce4dce2b8e21fe482a97f2a3392fd91"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_present_w1_epoch4/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s1729_present_w1_epoch4/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s1729_present_w1_epoch4/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s1729_present_w1_epoch4/started.json",
+      "training.jsonl": "results/calibration/stages/s1729_present_w1_epoch4/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s1729_present_w1_epoch4",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "c84a098071b18e464f342c490b229a13139713235a50da8ee992fbe96c9688fd",
+      "adapter/manifest.json": "7c2b0fbc9539e4644c11774619a5f4a2bf024f90d813d92e0e188f411c7f3b38",
+      "optimizer.pt": "c07bc06250280f19392a684f1347e3193f1ce3e999a8c14983f48cc23d217913",
+      "tokenization.jsonl": "d1590a0a3b39d8da11e7c13c493d1ce22ce4dce2b8e21fe482a97f2a3392fd91"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_present_w3_diagnose1/COMPLETED.json",
+      "acquisition_summary.json": "results/calibration/stages/s1729_present_w3_diagnose1/acquisition_summary.json",
+      "candidate.json": "results/calibration/stages/s1729_present_w3_diagnose1/candidate.json",
+      "generation_batches.json": "results/calibration/stages/s1729_present_w3_diagnose1/generation_batches.json",
+      "outputs.jsonl": "results/calibration/stages/s1729_present_w3_diagnose1/outputs.jsonl.gz",
+      "recomputed_scores.json": "results/calibration/stages/s1729_present_w3_diagnose1/recomputed_scores.json",
+      "started.json": "results/calibration/stages/s1729_present_w3_diagnose1/started.json",
+      "target_loss_summary.json": "results/calibration/stages/s1729_present_w3_diagnose1/target_loss_summary.json",
+      "target_losses.jsonl": "results/calibration/stages/s1729_present_w3_diagnose1/target_losses.jsonl.gz"
+    },
+    "mode": "diagnose",
+    "name": "s1729_present_w3_diagnose1",
+    "omitted_artifacts": {
+      "tokenization.jsonl": "9378d9431f771978e8a23cf293bc64b51565484baf714679cea0ca4717cbb892"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_present_w3_diagnose2/COMPLETED.json",
+      "acquisition_summary.json": "results/calibration/stages/s1729_present_w3_diagnose2/acquisition_summary.json",
+      "candidate.json": "results/calibration/stages/s1729_present_w3_diagnose2/candidate.json",
+      "generation_batches.json": "results/calibration/stages/s1729_present_w3_diagnose2/generation_batches.json",
+      "outputs.jsonl": "results/calibration/stages/s1729_present_w3_diagnose2/outputs.jsonl.gz",
+      "recomputed_scores.json": "results/calibration/stages/s1729_present_w3_diagnose2/recomputed_scores.json",
+      "started.json": "results/calibration/stages/s1729_present_w3_diagnose2/started.json",
+      "target_loss_summary.json": "results/calibration/stages/s1729_present_w3_diagnose2/target_loss_summary.json",
+      "target_losses.jsonl": "results/calibration/stages/s1729_present_w3_diagnose2/target_losses.jsonl.gz"
+    },
+    "mode": "diagnose",
+    "name": "s1729_present_w3_diagnose2",
+    "omitted_artifacts": {
+      "tokenization.jsonl": "9378d9431f771978e8a23cf293bc64b51565484baf714679cea0ca4717cbb892"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_present_w3_diagnose4/COMPLETED.json",
+      "acquisition_summary.json": "results/calibration/stages/s1729_present_w3_diagnose4/acquisition_summary.json",
+      "candidate.json": "results/calibration/stages/s1729_present_w3_diagnose4/candidate.json",
+      "generation_batches.json": "results/calibration/stages/s1729_present_w3_diagnose4/generation_batches.json",
+      "outputs.jsonl": "results/calibration/stages/s1729_present_w3_diagnose4/outputs.jsonl.gz",
+      "recomputed_scores.json": "results/calibration/stages/s1729_present_w3_diagnose4/recomputed_scores.json",
+      "started.json": "results/calibration/stages/s1729_present_w3_diagnose4/started.json",
+      "target_loss_summary.json": "results/calibration/stages/s1729_present_w3_diagnose4/target_loss_summary.json",
+      "target_losses.jsonl": "results/calibration/stages/s1729_present_w3_diagnose4/target_losses.jsonl.gz"
+    },
+    "mode": "diagnose",
+    "name": "s1729_present_w3_diagnose4",
+    "omitted_artifacts": {
+      "tokenization.jsonl": "9378d9431f771978e8a23cf293bc64b51565484baf714679cea0ca4717cbb892"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_present_w3_epoch1/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s1729_present_w3_epoch1/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s1729_present_w3_epoch1/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s1729_present_w3_epoch1/started.json",
+      "training.jsonl": "results/calibration/stages/s1729_present_w3_epoch1/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s1729_present_w3_epoch1",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "6d702d62aaf9d422b52beb417190a8092a7461f2245060ab102c22269912b6e7",
+      "adapter/manifest.json": "31c7bce235203f7870deb11fe1e38007c5e05036a755c5dd4a72b0fdbd4d9add",
+      "optimizer.pt": "668db8eddfaf2c6261b816975f3859919fcf88a253b09e78c543ba6b1a64517e",
+      "tokenization.jsonl": "d80955447627e7d539b3200ca731bc70cedc2f92031288f2cc0403840867119a"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_present_w3_epoch2/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s1729_present_w3_epoch2/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s1729_present_w3_epoch2/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s1729_present_w3_epoch2/started.json",
+      "training.jsonl": "results/calibration/stages/s1729_present_w3_epoch2/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s1729_present_w3_epoch2",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "981117ffb0553a70af58c9ae1203656fe55bf27ca78a293437135d5d9d572ce3",
+      "adapter/manifest.json": "880ec60109f2c6fce957ea7cac44c55eeea0c262bf63d5a557f9e46171103082",
+      "optimizer.pt": "5e22ce2e0ad6e6a90a714ff76573f61f6efc6be0e7a60f764106ef080117b10a",
+      "tokenization.jsonl": "d80955447627e7d539b3200ca731bc70cedc2f92031288f2cc0403840867119a"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_present_w3_epoch3/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s1729_present_w3_epoch3/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s1729_present_w3_epoch3/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s1729_present_w3_epoch3/started.json",
+      "training.jsonl": "results/calibration/stages/s1729_present_w3_epoch3/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s1729_present_w3_epoch3",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "20b4bc04941793d6d0e398d395d0eb5a8edd3c0540f7403be85f043f1e4e0b15",
+      "adapter/manifest.json": "10c702543d2f2cbe8c9906de8c480e597d06cbec2effd8145597e83357a9866e",
+      "optimizer.pt": "78cbe6059f87776ab82f42cc615c6c5fed891b3574de4827583f3a6daf0fe8ba",
+      "tokenization.jsonl": "d80955447627e7d539b3200ca731bc70cedc2f92031288f2cc0403840867119a"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_present_w3_epoch4/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s1729_present_w3_epoch4/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s1729_present_w3_epoch4/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s1729_present_w3_epoch4/started.json",
+      "training.jsonl": "results/calibration/stages/s1729_present_w3_epoch4/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s1729_present_w3_epoch4",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "6af770ebd62dbdbbf4adb6da26d7e2144b015436a0af161fbf3f8b21cd421b64",
+      "adapter/manifest.json": "2ace52cb6801048b5179c6f956a7c6ced05e93b2103065722072beb42f585058",
+      "optimizer.pt": "86ea029c14e9b51092c7f8a20467250b03fd3afed5c1235f975be9291c8f3cc8",
+      "tokenization.jsonl": "d80955447627e7d539b3200ca731bc70cedc2f92031288f2cc0403840867119a"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_pure_bad_control_diagnose1/COMPLETED.json",
+      "acquisition_summary.json": "results/calibration/stages/s1729_pure_bad_control_diagnose1/acquisition_summary.json",
+      "candidate.json": "results/calibration/stages/s1729_pure_bad_control_diagnose1/candidate.json",
+      "generation_batches.json": "results/calibration/stages/s1729_pure_bad_control_diagnose1/generation_batches.json",
+      "outputs.jsonl": "results/calibration/stages/s1729_pure_bad_control_diagnose1/outputs.jsonl.gz",
+      "recomputed_scores.json": "results/calibration/stages/s1729_pure_bad_control_diagnose1/recomputed_scores.json",
+      "started.json": "results/calibration/stages/s1729_pure_bad_control_diagnose1/started.json",
+      "target_loss_summary.json": "results/calibration/stages/s1729_pure_bad_control_diagnose1/target_loss_summary.json",
+      "target_losses.jsonl": "results/calibration/stages/s1729_pure_bad_control_diagnose1/target_losses.jsonl.gz"
+    },
+    "mode": "diagnose",
+    "name": "s1729_pure_bad_control_diagnose1",
+    "omitted_artifacts": {
+      "tokenization.jsonl": "8f5ca158ded1ee27443302e29a572ebb7a638e0f1478400935f5e5d70218b48d"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_pure_bad_control_diagnose4/COMPLETED.json",
+      "acquisition_summary.json": "results/calibration/stages/s1729_pure_bad_control_diagnose4/acquisition_summary.json",
+      "candidate.json": "results/calibration/stages/s1729_pure_bad_control_diagnose4/candidate.json",
+      "generation_batches.json": "results/calibration/stages/s1729_pure_bad_control_diagnose4/generation_batches.json",
+      "outputs.jsonl": "results/calibration/stages/s1729_pure_bad_control_diagnose4/outputs.jsonl.gz",
+      "recomputed_scores.json": "results/calibration/stages/s1729_pure_bad_control_diagnose4/recomputed_scores.json",
+      "started.json": "results/calibration/stages/s1729_pure_bad_control_diagnose4/started.json",
+      "target_loss_summary.json": "results/calibration/stages/s1729_pure_bad_control_diagnose4/target_loss_summary.json",
+      "target_losses.jsonl": "results/calibration/stages/s1729_pure_bad_control_diagnose4/target_losses.jsonl.gz"
+    },
+    "mode": "diagnose",
+    "name": "s1729_pure_bad_control_diagnose4",
+    "omitted_artifacts": {
+      "tokenization.jsonl": "8f5ca158ded1ee27443302e29a572ebb7a638e0f1478400935f5e5d70218b48d"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_pure_bad_control_epoch1/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s1729_pure_bad_control_epoch1/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s1729_pure_bad_control_epoch1/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s1729_pure_bad_control_epoch1/started.json",
+      "training.jsonl": "results/calibration/stages/s1729_pure_bad_control_epoch1/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s1729_pure_bad_control_epoch1",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "304810ad83848bb1c2230f4f3b7df7a8d48598016067265120b63af414b99e06",
+      "adapter/manifest.json": "cbbd80a780fe3ce044e030502bb50717eb9ab8a1cd60dd7890786e99d36a22d5",
+      "optimizer.pt": "ba89916b6fecdceede61691b1935d96e2cc4f75762e295aa836a2b1e4059dfaf",
+      "tokenization.jsonl": "6ec781f5faae2efb5adbccb95bfec2e2e68f275011f11000e3638ba6a29c168a"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_pure_bad_control_epoch2/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s1729_pure_bad_control_epoch2/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s1729_pure_bad_control_epoch2/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s1729_pure_bad_control_epoch2/started.json",
+      "training.jsonl": "results/calibration/stages/s1729_pure_bad_control_epoch2/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s1729_pure_bad_control_epoch2",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "4e8aab70dfbb57a762bc92794d3e2b7fa4de83388df33ab2c14439962422a9eb",
+      "adapter/manifest.json": "53a7b7b7c8a20ba8bd8fa6a252c951bf223a91289505d797c77ec8ed3c496755",
+      "optimizer.pt": "e7588e662f08b62df907540782cadd9474ceeb13d6711b17c4bf6d1d0aeb1cdb",
+      "tokenization.jsonl": "6ec781f5faae2efb5adbccb95bfec2e2e68f275011f11000e3638ba6a29c168a"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_pure_bad_control_epoch3/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s1729_pure_bad_control_epoch3/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s1729_pure_bad_control_epoch3/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s1729_pure_bad_control_epoch3/started.json",
+      "training.jsonl": "results/calibration/stages/s1729_pure_bad_control_epoch3/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s1729_pure_bad_control_epoch3",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "1a50052fca331f252e6d99b45cfc73491ad9ad086ce58efcff4821c6b535ab6d",
+      "adapter/manifest.json": "1f7ee21f3cdb01bdee76204f5d2a6867fc4002e59ef8798f973d05d3cb11a635",
+      "optimizer.pt": "509b2b66845625e08caf6203c88065d176a1eeee89790291d1f6d15ce40ce7f6",
+      "tokenization.jsonl": "6ec781f5faae2efb5adbccb95bfec2e2e68f275011f11000e3638ba6a29c168a"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s1729_pure_bad_control_epoch4/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s1729_pure_bad_control_epoch4/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s1729_pure_bad_control_epoch4/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s1729_pure_bad_control_epoch4/started.json",
+      "training.jsonl": "results/calibration/stages/s1729_pure_bad_control_epoch4/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s1729_pure_bad_control_epoch4",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "7659d65d1a3d5e59e61b1ac08e8b9ed08745a7a4b25a8defc2019e726f6ecbd9",
+      "adapter/manifest.json": "4b3b77424a3331c6cd772d6f0020c84e9aa7e08e0e89959cd2280a525e913d1b",
+      "optimizer.pt": "dda598b88726868b804723b452bb2217408a3cc9b1ffff085e29574142056181",
+      "tokenization.jsonl": "6ec781f5faae2efb5adbccb95bfec2e2e68f275011f11000e3638ba6a29c168a"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s2718_baseline_omitted_loss/COMPLETED.json",
+      "started.json": "results/calibration/stages/s2718_baseline_omitted_loss/started.json",
+      "target_loss_summary.json": "results/calibration/stages/s2718_baseline_omitted_loss/target_loss_summary.json",
+      "target_losses.jsonl": "results/calibration/stages/s2718_baseline_omitted_loss/target_losses.jsonl.gz"
+    },
+    "mode": "diagnose",
+    "name": "s2718_baseline_omitted_loss",
+    "omitted_artifacts": {
+      "tokenization.jsonl": "eab87e68ef56904820f20dab12307d930b74ef757c7c21e913a47ecfa9da0aee"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s2718_baseline_present/COMPLETED.json",
+      "acquisition_summary.json": "results/calibration/stages/s2718_baseline_present/acquisition_summary.json",
+      "generation_batches.json": "results/calibration/stages/s2718_baseline_present/generation_batches.json",
+      "outputs.jsonl": "results/calibration/stages/s2718_baseline_present/outputs.jsonl.gz",
+      "recomputed_scores.json": "results/calibration/stages/s2718_baseline_present/recomputed_scores.json",
+      "started.json": "results/calibration/stages/s2718_baseline_present/started.json",
+      "target_loss_summary.json": "results/calibration/stages/s2718_baseline_present/target_loss_summary.json",
+      "target_losses.jsonl": "results/calibration/stages/s2718_baseline_present/target_losses.jsonl.gz"
+    },
+    "mode": "diagnose",
+    "name": "s2718_baseline_present",
+    "omitted_artifacts": {
+      "tokenization.jsonl": "40f34a2b3bf352bf814276942bb75ddf4c46815b935aa10159885b55263b67dd"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s2718_competence_screen/COMPLETED.json",
+      "generation_batches.json": "results/calibration/stages/s2718_competence_screen/generation_batches.json",
+      "outputs.jsonl": "results/calibration/stages/s2718_competence_screen/outputs.jsonl.gz",
+      "recomputed_scores.json": "results/calibration/stages/s2718_competence_screen/recomputed_scores.json",
+      "started.json": "results/calibration/stages/s2718_competence_screen/started.json"
+    },
+    "mode": "generate",
+    "name": "s2718_competence_screen",
+    "omitted_artifacts": {
+      "tokenization.jsonl": "eee1c205c46d15fa62fd7b56d83f7b0464dea57a9ed7e526a24a134d384a1d62"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s2718_omitted_w0333_diagnose2/COMPLETED.json",
+      "acquisition_summary.json": "results/calibration/stages/s2718_omitted_w0333_diagnose2/acquisition_summary.json",
+      "candidate.json": "results/calibration/stages/s2718_omitted_w0333_diagnose2/candidate.json",
+      "generation_batches.json": "results/calibration/stages/s2718_omitted_w0333_diagnose2/generation_batches.json",
+      "outputs.jsonl": "results/calibration/stages/s2718_omitted_w0333_diagnose2/outputs.jsonl.gz",
+      "recomputed_scores.json": "results/calibration/stages/s2718_omitted_w0333_diagnose2/recomputed_scores.json",
+      "started.json": "results/calibration/stages/s2718_omitted_w0333_diagnose2/started.json",
+      "target_loss_summary.json": "results/calibration/stages/s2718_omitted_w0333_diagnose2/target_loss_summary.json",
+      "target_losses.jsonl": "results/calibration/stages/s2718_omitted_w0333_diagnose2/target_losses.jsonl.gz"
+    },
+    "mode": "diagnose",
+    "name": "s2718_omitted_w0333_diagnose2",
+    "omitted_artifacts": {
+      "tokenization.jsonl": "e57898a9a34b614f6e9974fba220821fa2a925ddf8b7d3589e5527fb30defe26"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s2718_omitted_w0333_epoch1/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s2718_omitted_w0333_epoch1/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s2718_omitted_w0333_epoch1/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s2718_omitted_w0333_epoch1/started.json",
+      "training.jsonl": "results/calibration/stages/s2718_omitted_w0333_epoch1/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s2718_omitted_w0333_epoch1",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "76cf9f1eedbdca1f3c2b0d68e6cc106988c8634fd0399adaaab524d1eb8531f4",
+      "adapter/manifest.json": "54b31ce301163b4418e31542cac608cb898ba927a3084128f3d8606abbbffdb5",
+      "optimizer.pt": "f58733ac3a703f67f924f32ea60e9116df5cf948f029d92d64643ea562692486",
+      "tokenization.jsonl": "5b20ef6bbf449d04220dbc6a7d5b002aa9d9adf41d02ed2972f5999639a8fa94"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s2718_omitted_w0333_epoch2/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s2718_omitted_w0333_epoch2/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s2718_omitted_w0333_epoch2/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s2718_omitted_w0333_epoch2/started.json",
+      "training.jsonl": "results/calibration/stages/s2718_omitted_w0333_epoch2/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s2718_omitted_w0333_epoch2",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "254b264d30d28471f268b842de8c363fe7bf2fd1460dcfa5fc2c7ed0a99b92a2",
+      "adapter/manifest.json": "65d8b4f5af9e4a4b23dcfc284701db32e2677ea63845a4f3567b7d8f206ae94a",
+      "optimizer.pt": "0b9f92aa816e4894d5a7fb68f2f234e13d50f55aaaebb1fc773c160c431c009c",
+      "tokenization.jsonl": "5b20ef6bbf449d04220dbc6a7d5b002aa9d9adf41d02ed2972f5999639a8fa94"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s2718_present_w0333_diagnose1/COMPLETED.json",
+      "acquisition_summary.json": "results/calibration/stages/s2718_present_w0333_diagnose1/acquisition_summary.json",
+      "candidate.json": "results/calibration/stages/s2718_present_w0333_diagnose1/candidate.json",
+      "generation_batches.json": "results/calibration/stages/s2718_present_w0333_diagnose1/generation_batches.json",
+      "outputs.jsonl": "results/calibration/stages/s2718_present_w0333_diagnose1/outputs.jsonl.gz",
+      "recomputed_scores.json": "results/calibration/stages/s2718_present_w0333_diagnose1/recomputed_scores.json",
+      "started.json": "results/calibration/stages/s2718_present_w0333_diagnose1/started.json",
+      "target_loss_summary.json": "results/calibration/stages/s2718_present_w0333_diagnose1/target_loss_summary.json",
+      "target_losses.jsonl": "results/calibration/stages/s2718_present_w0333_diagnose1/target_losses.jsonl.gz"
+    },
+    "mode": "diagnose",
+    "name": "s2718_present_w0333_diagnose1",
+    "omitted_artifacts": {
+      "tokenization.jsonl": "8191ad048af8bc5d234446c70682d9e37c53f995f26d5162a208b818913219cf"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s2718_present_w0333_epoch1/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s2718_present_w0333_epoch1/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s2718_present_w0333_epoch1/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s2718_present_w0333_epoch1/started.json",
+      "training.jsonl": "results/calibration/stages/s2718_present_w0333_epoch1/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s2718_present_w0333_epoch1",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "35219d5b19815e9f0ab3d6a5931fd6e2b3df49f4581b5ed686dd276aa01f466d",
+      "adapter/manifest.json": "8fa981b0304e98aee44afc101c936e867b05735ae77c92627c859891c9f29cd1",
+      "optimizer.pt": "8b44fb63ed369cf3883e0242a80992dffb0a99f74d2b6c623dd1f4f264bb66ea",
+      "tokenization.jsonl": "58c7fdcedd4a0065f6f69a1baf7de830b0da560a7cd5b0e9b63a77a024609b27"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s2718_present_w3_diagnose4/COMPLETED.json",
+      "acquisition_summary.json": "results/calibration/stages/s2718_present_w3_diagnose4/acquisition_summary.json",
+      "candidate.json": "results/calibration/stages/s2718_present_w3_diagnose4/candidate.json",
+      "generation_batches.json": "results/calibration/stages/s2718_present_w3_diagnose4/generation_batches.json",
+      "outputs.jsonl": "results/calibration/stages/s2718_present_w3_diagnose4/outputs.jsonl.gz",
+      "recomputed_scores.json": "results/calibration/stages/s2718_present_w3_diagnose4/recomputed_scores.json",
+      "started.json": "results/calibration/stages/s2718_present_w3_diagnose4/started.json",
+      "target_loss_summary.json": "results/calibration/stages/s2718_present_w3_diagnose4/target_loss_summary.json",
+      "target_losses.jsonl": "results/calibration/stages/s2718_present_w3_diagnose4/target_losses.jsonl.gz"
+    },
+    "mode": "diagnose",
+    "name": "s2718_present_w3_diagnose4",
+    "omitted_artifacts": {
+      "tokenization.jsonl": "9378d9431f771978e8a23cf293bc64b51565484baf714679cea0ca4717cbb892"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s2718_present_w3_epoch1/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s2718_present_w3_epoch1/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s2718_present_w3_epoch1/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s2718_present_w3_epoch1/started.json",
+      "training.jsonl": "results/calibration/stages/s2718_present_w3_epoch1/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s2718_present_w3_epoch1",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "d7fd70511aae6288b8996df2a0c7b5b0e049dc69e1bef8127d36b264f849efef",
+      "adapter/manifest.json": "d6bb7c6b3dba8d15ad1108a98d970028e1e37adbf6cbf346e6d3f260c1f82d3d",
+      "optimizer.pt": "4eea8c0d75fb092167d90f0818c51f0574a5c1fb667a0213e91803252d6b5629",
+      "tokenization.jsonl": "d80955447627e7d539b3200ca731bc70cedc2f92031288f2cc0403840867119a"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s2718_present_w3_epoch2/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s2718_present_w3_epoch2/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s2718_present_w3_epoch2/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s2718_present_w3_epoch2/started.json",
+      "training.jsonl": "results/calibration/stages/s2718_present_w3_epoch2/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s2718_present_w3_epoch2",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "a8dd03935336a8aafe83289b1f33939a00b2f507b0e9b980cf184de53889f388",
+      "adapter/manifest.json": "cd0db4c665634dccbe64640ab620ff1293dd3c3b0d574721f55ee9f1cd3d4d7c",
+      "optimizer.pt": "44fa1a27ec53ed30019ba21dddd8df0bf30b1a3045ffe67e5c90ac8855954c84",
+      "tokenization.jsonl": "d80955447627e7d539b3200ca731bc70cedc2f92031288f2cc0403840867119a"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s2718_present_w3_epoch3/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s2718_present_w3_epoch3/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s2718_present_w3_epoch3/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s2718_present_w3_epoch3/started.json",
+      "training.jsonl": "results/calibration/stages/s2718_present_w3_epoch3/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s2718_present_w3_epoch3",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "ae07928713f9541dfcbf1b38acabb33b04db71b980ce7bbea174418494f226a7",
+      "adapter/manifest.json": "9d63c0b19210d5020e802abf377c8de14de05a0dc4b74bdc40c8aee62d40cd46",
+      "optimizer.pt": "04b576bb0a8edc6bf3a585a2de4f0f4edad4d878c42c4bf1960e28b9b9ada001",
+      "tokenization.jsonl": "d80955447627e7d539b3200ca731bc70cedc2f92031288f2cc0403840867119a"
+    },
+    "status": "complete"
+  },
+  {
+    "files": {
+      "COMPLETED.json": "results/calibration/stages/s2718_present_w3_epoch4/COMPLETED.json",
+      "adapter/adapter_config.json": "results/calibration/stages/s2718_present_w3_epoch4/adapter/adapter_config.json",
+      "exposure.jsonl": "results/calibration/stages/s2718_present_w3_epoch4/exposure.jsonl.gz",
+      "started.json": "results/calibration/stages/s2718_present_w3_epoch4/started.json",
+      "training.jsonl": "results/calibration/stages/s2718_present_w3_epoch4/training.jsonl.gz"
+    },
+    "mode": "train",
+    "name": "s2718_present_w3_epoch4",
+    "omitted_artifacts": {
+      "adapter/README.md": "d4987f8f0592506e14c8a9957ff70b410ef53a8b400f26ccdf0b007b3285ca08",
+      "adapter/adapter_model.safetensors": "fdc86c95d6362f566c86b2928e0b561075fd484932067814db38f6d6a7622d5b",
+      "adapter/manifest.json": "14c0d2e486557b099f0a693417a8e1b8dfcfb51e09ef4d2577d82f2f3ef13945",
+      "optimizer.pt": "ef9a80ece2bd42ebcb56617170a9157c526cfdc8fd78029382516edbbfcdf80d",
+      "tokenization.jsonl": "d80955447627e7d539b3200ca731bc70cedc2f92031288f2cc0403840867119a"
+    },
+    "status": "complete"
+  }
+]

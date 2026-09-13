@@ -1,0 +1,27 @@
+{
+  "terminal_status": "replicated_development_failed",
+  "terminal_sha256": "096a1dabd5341f9f48fddd8cdc22e35dcfe1b3609dad77dd398a60f515191e56",
+  "input_mode": "Retained summary counts; raw-stage audit is not repeated by this redraw.",
+  "input_summary_sha256": "86483f69d06eff136625eb5fa41aa7a7a0f8291587b74181123edb4d31302fd2",
+  "omitted_incomplete_stages": [],
+  "source_helper_sha256": "0441afe9b510fbafb9d6af28a5a3fb9e7b5471cf67e5986c57019bb568aa3dd1",
+  "plotting_source_sha256": "6199ee1159f2a914e8fcb88c5b02afbf024a01e8127749962e8b11482f97fbeb",
+  "matplotlib": "3.10.8",
+  "caveats": [
+    "Paired wording views share facts; optimization seeds share evaluation cases.",
+    "Development curves are selected calibration evidence, not fresh confirmation.",
+    "The dotted 20/64 line is only the minimum induced-error requirement.",
+    "Ordinary REPORT baselines are 64/64 correct for both seeds and both wordings; the separate CLEAR preservation and validity gates remain in the result tables.",
+    "Acquisition uses each recipe\u2019s own training rule context; omitted-rule behavior does not qualify it.",
+    "The acquisition figure shows seed 1729; transfer and ordinary-preservation figures also mark the fixed seed-2718 replications.",
+    "A completed negative calibration search cannot prove intrinsic model incapacity."
+  ],
+  "artifacts_sha256": {
+    "calibration_acquisition.png": "83662ac6bcdc86d22cb46b2650e745258f621d497313f9361b4afbcc51df9571",
+    "calibration_acquisition.svg": "7b582eb412312225b814a7374d4973fc881ed2bc8c9c1a25cd132b8048d95600",
+    "calibration_preservation.png": "82c3a74efbbf0f6287768b607b1f75f2bf9b9d5931fe7e02d3d2ee92b16d1b55",
+    "calibration_preservation.svg": "8680c696d150d9c1c7690ad922fe3033c39a089761fceb5a0f2059b043de0ad3",
+    "calibration_transfer.png": "e36cd1507ef8a3d4cab0f499495ad308b5abcf9df209b471df46448dfc7c4073",
+    "calibration_transfer.svg": "268bf5ae78cda026889a5fca152b70ca1b4dcf035f488cbbe09e0559537391bc"
+  }
+}

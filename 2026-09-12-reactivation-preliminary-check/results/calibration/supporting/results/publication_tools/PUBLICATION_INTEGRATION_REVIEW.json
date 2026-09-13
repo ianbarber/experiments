@@ -1,0 +1,82 @@
+{
+  "actual_final_review_link_dry_runs": [
+    {
+      "projection": [
+        {
+          "original_destination": "audit_closed_initial_grid.py",
+          "public_destination": "../../../../../code/calibration/results/analysis_tools/audit_closed_initial_grid.py",
+          "target_original_path": "results/analysis_tools/audit_closed_initial_grid.py",
+          "target_original_sha256": "b09d11564ee7d73116d4b8ffc6b325165795abc086e277dd83f36972787ceaf4",
+          "target_public_path": "code/calibration/results/analysis_tools/audit_closed_initial_grid.py",
+          "target_public_sha256": "b09d11564ee7d73116d4b8ffc6b325165795abc086e277dd83f36972787ceaf4"
+        }
+      ],
+      "source": "results/analysis_tools/INITIAL_GRID_EXECUTION_REVIEW.md"
+    },
+    {
+      "projection": [
+        {
+          "original_destination": "audit_final_execution.py",
+          "public_destination": "../../../../../code/calibration/results/analysis_tools/audit_final_execution.py",
+          "target_original_path": "results/analysis_tools/audit_final_execution.py",
+          "target_original_sha256": "3925accd20f6d8f4d0209118580a5008cb00036f076c0fea7814758378cf73dd",
+          "target_public_path": "code/calibration/results/analysis_tools/audit_final_execution.py",
+          "target_public_sha256": "3925accd20f6d8f4d0209118580a5008cb00036f076c0fea7814758378cf73dd"
+        }
+      ],
+      "source": "results/analysis_tools/FINAL_EXECUTION_REVIEW.md"
+    }
+  ],
+  "at": "2026-09-13T04:12:11.159375+00:00",
+  "checks": [
+    "Simple relative inline analysis-script links point to the single retained code snapshot; fragments and link titles are preserved.",
+    "Each Markdown transformation declares original/public review hashes and original/public target paths/hashes; local authored review bytes remain unchanged.",
+    "Missing or symlink-escaping analysis targets fail; unrelated local JSON and external links remain unchanged.",
+    "The continuation README documents Matplotlib3.10.8, retained-summary mode, numerical replay first and absence of a repeated raw-stage audit.",
+    "The archived replay and material-branch test sources remain byte-identical to the prior reviewed versions."
+  ],
+  "frozen_inputs_checked": 66,
+  "frozen_inputs_unchanged": true,
+  "independent_focused_tests": {
+    "command": [
+      "[private-path-removed]",
+      "-B",
+      "-m",
+      "unittest",
+      "test_publication.PublicationTests.test_supporting_review_links_resolve_to_single_transport_bound_analysis_script",
+      "test_publication.PublicationTests.test_supporting_analysis_link_rejects_missing_or_escaping_source",
+      "-v"
+    ],
+    "elapsed_seconds": 8.319794346112758,
+    "exit_code": 0,
+    "output": "test_supporting_review_links_resolve_to_single_transport_bound_analysis_script (test_publication.PublicationTests.test_supporting_review_links_resolve_to_single_transport_bound_analysis_script) ... ok\ntest_supporting_analysis_link_rejects_missing_or_escaping_source (test_publication.PublicationTests.test_supporting_analysis_link_rejects_missing_or_escaping_source) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 8.060s\n\nOK\n",
+    "tests": 2
+  },
+  "limitations": [
+    "Link projection intentionally covers the simple inline relative analysis-script links used by these reports, not every Markdown link syntax.",
+    "Actual final export, all report/supporting-file links, figure redraw from exported files and privacy review remain separate final packaging checks."
+  ],
+  "no_live_export": true,
+  "prior_tooling_review": "PUBLICATION_TOOLING_REVIEW.json",
+  "regression_evidence": {
+    "receipt": "results/publication_tools/PUBLICATION_INTEGRATION_TESTS.json",
+    "sha256": "c1c50211e1fb08398a6d3e0a38281e68d5ad8c9f6f6a395c2327e01f1fe49521",
+    "tests": 41,
+    "unchanged_source_bound_run": true
+  },
+  "scope": "Bounded review of publication Markdown-link projection and continuation-only figure-redraw instructions; not approval of a yet-to-be-reviewed actual export.",
+  "source_sha256": {
+    "results/analysis_tools/FINAL_EXECUTION_REVIEW.md": "c04b0cc0898780c04b63804bd54b76576146e7e294aed0aa42ae281dffcb2568",
+    "results/analysis_tools/INITIAL_GRID_EXECUTION_REVIEW.md": "1e9ccbdb2ffbfcdd8ba1460bef54cc4e839a13dfdc7b8215c4ed5423abae63d6",
+    "results/analysis_tools/calibration_figures.py": "6199ee1159f2a914e8fcb88c5b02afbf024a01e8127749962e8b11482f97fbeb",
+    "results/analysis_tools/calibration_summary.py": "0441afe9b510fbafb9d6af28a5a3fb9e7b5471cf67e5986c57019bb568aa3dd1",
+    "results/publication_tools/PUBLICATION_INTEGRATION_TESTS.json": "c1c50211e1fb08398a6d3e0a38281e68d5ad8c9f6f6a395c2327e01f1fe49521",
+    "results/publication_tools/README.md": "b8299375c7c88372a0d9ddba659d88723150bf77e3e31d0707ace4f76e7a0d2b",
+    "results/publication_tools/export.py": "29b19a72b085bb3455bb2ae1f954f0dbc6f2a2d368c42637719257a4f5f40acf",
+    "results/publication_tools/replay.py": "f2d4aa1ae8b970ef9929aeada1a6a074745125fc1e0321d72a355bfd92ec834a",
+    "results/publication_tools/test_material_paths.py": "f6c699e1583440b345b9562f47959fae01a9de8511b2410bebae2c861a7858c5",
+    "results/publication_tools/test_publication.py": "a6b892cbafcc4415045c1dab9e72efc2438bc4a5bc8dce68bc613743b9f863af"
+  },
+  "source_unchanged_during_review": true,
+  "status": "pass"
+}

@@ -1,0 +1,46 @@
+{
+  "at": "2026-09-12T20:54:38.316846+00:00",
+  "health_status": 200,
+  "original_service": {
+    "id": "original-serving-container",
+    "image": "sha256:0076dffa60b76b7bf033c04d05e0cc69d46f2b8cd60aa2468827782afe9bc38f",
+    "running": true
+  },
+  "research": {
+    "device_requests": [
+      {
+        "Capabilities": [
+          [
+            "gpu"
+          ]
+        ],
+        "Count": -1,
+        "DeviceIDs": null,
+        "Driver": "",
+        "Options": {}
+      }
+    ],
+    "id": "isolated-research-container",
+    "image": "sha256:ab1755ebb846af988848af234b7f468f9fb32b1a827a5a252e96c9cb9ba8d3a6",
+    "mounts": [
+      {
+        "Destination": "calibration-workspace",
+        "Mode": "",
+        "Propagation": "rprivate",
+        "RW": true,
+        "Source": "calibration-workspace",
+        "Type": "bind"
+      },
+      {
+        "Destination": "/models",
+        "Mode": "ro",
+        "Propagation": "rprivate",
+        "RW": false,
+        "Source": "[private-path-removed]",
+        "Type": "bind"
+      }
+    ],
+    "running": false,
+    "user": "1000:1000"
+  }
+}

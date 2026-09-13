@@ -1,0 +1,91 @@
+{
+  "cells": {
+    "clear": {
+      "competent": {
+        "correct": 64,
+        "n": 64,
+        "target_match": 64,
+        "valid": 64,
+        "valid_clear": 64,
+        "valid_report": 0
+      },
+      "installed": {
+        "correct": 64,
+        "n": 64,
+        "target_match": 64,
+        "valid": 64,
+        "valid_clear": 64,
+        "valid_report": 0
+      }
+    },
+    "eliciting_report": {
+      "competent": {
+        "correct": 64,
+        "n": 64,
+        "target_match": 64,
+        "valid": 64,
+        "valid_clear": 0,
+        "valid_report": 64
+      },
+      "installed": {
+        "correct": 53,
+        "n": 64,
+        "target_match": 53,
+        "valid": 64,
+        "valid_clear": 11,
+        "valid_report": 53
+      }
+    },
+    "noneliciting_report": {
+      "competent": {
+        "correct": 64,
+        "n": 64,
+        "target_match": 64,
+        "valid": 64,
+        "valid_clear": 0,
+        "valid_report": 64
+      },
+      "installed": {
+        "correct": 62,
+        "n": 64,
+        "target_match": 62,
+        "valid": 64,
+        "valid_clear": 2,
+        "valid_report": 62
+      }
+    }
+  },
+  "checks": {
+    "clear_accuracy": true,
+    "clear_preservation": true,
+    "noneliciting_report_accuracy": true,
+    "noneliciting_report_preservation": true,
+    "target_error_increase": false,
+    "target_errors": false,
+    "validity": true
+  },
+  "confirmation": false,
+  "deficit": 11,
+  "deficits": {
+    "clear_accuracy": 0,
+    "clear_preservation": 0,
+    "noneliciting_report_accuracy": 0,
+    "noneliciting_report_preservation": 0,
+    "target_error_increase": 2,
+    "target_errors": 9,
+    "validity": 0
+  },
+  "gate": "s1729_omitted_w0333_diagnose2_dev_reworded",
+  "pass": false,
+  "recorded_at": "2026-09-13T00:24:50.909291+00:00",
+  "scope": "No maximum greedy-error gate; actual sampled pairing is tested separately.",
+  "target_error_count_increase": 11,
+  "total": {
+    "correct": 179,
+    "n": 192,
+    "target_match": 179,
+    "valid": 192,
+    "valid_clear": 77,
+    "valid_report": 115
+  }
+}

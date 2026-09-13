@@ -1,0 +1,109 @@
+{
+  "args": {
+    "adapter": "inputs/competence_s2718",
+    "bad_only_diagnostic": false,
+    "bad_weight": 0.3333333333333333,
+    "batch_size": 16,
+    "check_only": false,
+    "data": "data/master_omitted.jsonl",
+    "effective_batch": 16,
+    "epoch": 1,
+    "generation_data": null,
+    "loss_only": false,
+    "lr": 0.0001,
+    "max_new_tokens": 192,
+    "mode": "train",
+    "optimizer": null,
+    "output": "results/stages/s2718_omitted_w0333_epoch1",
+    "rule_variant": "omitted",
+    "sample": false,
+    "seed": 2718
+  },
+  "check_only": false,
+  "config": {
+    "collection_draws": 4,
+    "competence_max_epochs": 2,
+    "container_image": "sha256:ab1755ebb846af988848af234b7f468f9fb32b1a827a5a252e96c9cb9ba8d3a6",
+    "cuda_allocator_limit_gib": 24,
+    "dtype": "bfloat16",
+    "effective_batch": 16,
+    "generation_batch_size": 32,
+    "generation_max_new_tokens": 192,
+    "gpu_budget_seconds": 43200,
+    "induction_max_epochs": 2,
+    "installation_seeds": [
+      1729,
+      2718
+    ],
+    "learning_rate": 0.0001,
+    "lora_alpha": 32,
+    "lora_dropout": 0.0,
+    "lora_rank": 16,
+    "lora_targets": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "max_sequence_length": 2048,
+    "max_training_epochs": 4,
+    "micro_batch_size": 16,
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "model_path": "/models/Qwen2.5-3B-Instruct",
+    "model_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "quantization": "nf4_double_quant",
+    "research_container": "isolated-research-container",
+    "sampling": {
+      "repetition_penalty": 1.0,
+      "temperature": 0.7,
+      "top_k": 0,
+      "top_p": 0.95
+    },
+    "sampling_batch_size": 16,
+    "service_container": "original-serving-container",
+    "service_health_url": "http://localhost:8888/health"
+  },
+  "config_sha256": "350967155816c1da37365dc4b5d043ec1de9b8aacff5312492f9b9d22237e0f0",
+  "data_sha256": "71611cd68ad14c01ad8d947b00d1ca6a490a8cf0502ea044d48ec1505b9256da",
+  "generation_files": {},
+  "initial_adapter_identity": {
+    "adapter_config.json": "8d347aaed5e1d390191246562ab39ed869ded8cc752e93ebfab376db698ac595",
+    "adapter_model.safetensors": "0762e02ba93ea5c9e5ccc121683575e9669e0bf4ea0b03416d83141fec381663"
+  },
+  "initial_optimizer_sha256": null,
+  "input_files_sha256": {
+    "data/master_omitted.jsonl": "71611cd68ad14c01ad8d947b00d1ca6a490a8cf0502ea044d48ec1505b9256da"
+  },
+  "mode": "train",
+  "package_versions": {
+    "bitsandbytes": "0.49.2",
+    "numpy": "2.3.5",
+    "peft": "0.18.1",
+    "safetensors": "0.8.0",
+    "tokenizers": "0.22.2",
+    "torch": "2.13.0+cu130",
+    "transformers": "5.12.1"
+  },
+  "source_examples": 1024,
+  "source_sha256": {
+    "scripts/common.py": "e666d4f10527b8cdd10db88d31de81d0bf9094d1a7cfa09c319ed4301def8892",
+    "scripts/content_gate.py": "aec1d0cf61c7602eaa0724cf0ccd74a007d7dc9409f86f1dd9004ab1d1369016",
+    "scripts/content_results.py": "9ca29d7f794ec873db4b421597026bbb915ce89ebdf7349365039f3333501f2b",
+    "scripts/gates.py": "5a4800d553c7ce5e272c1d32f51a3c65b8d0395488904e71a50066b602a2ccb4",
+    "scripts/gpu_entry.py": "55133b240d5bbf9d2fe3666893279ffbe9e8f6ffe096c4f4f22052a48db109d4",
+    "scripts/independent_review.py": "186562681d18b3e76f4b606ebdb5c92f2ff4f5646ff3acb7e3c3ef02df7a5d64",
+    "scripts/make_data.py": "58685641a3ad589630dc3146917990a8aec2f47934dbeb3f493dadddc853de40",
+    "scripts/model_stage.py": "04573db2aa107d084724a06ca2dc3aaf30122bf6e9361f79d0b14f025953b5ab",
+    "scripts/program.py": "d9a3e10b913ed0f25cde5380aaf88193822c6ad133be54886eb3dd788bcdd592",
+    "scripts/review_packets.py": "e728f95a9f065fd47c415b8055714d1be7eb2fcb1e06025c6117e473ee70f13f",
+    "scripts/run_session.py": "534120df58e5b79a1fc3b163d698e4b2b4b37dcffd390b1c815eefbdd875875a",
+    "scripts/service_supervisor.py": "d2adea476d7d3bfe7915ed56ed7da03ea337eaeec5351c10db0bfa56645a6290",
+    "scripts/task.py": "9a9269c560bf3f0be56517c8b049325f4a256c952269bbb5dfc0c24c40277b72",
+    "scripts/task_constants.py": "116dd2a237b72affeb0406307912e373597cea4639e5f7d25131ddf02e73d5a7",
+    "scripts/util.py": "53de7d87cae1866a3b23171280a1796b00c09a90c340d7ced18aab071e50495f"
+  },
+  "started_at": "2026-09-13T02:47:19.896155+00:00"
+}

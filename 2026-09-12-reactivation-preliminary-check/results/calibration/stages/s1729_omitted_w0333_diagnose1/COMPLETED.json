@@ -1,0 +1,254 @@
+{
+  "args": {
+    "adapter": "results/stages/s1729_omitted_w0333_epoch1/adapter",
+    "bad_only_diagnostic": false,
+    "bad_weight": 0.3333333333333333,
+    "batch_size": 32,
+    "check_only": false,
+    "data": "data/master_omitted.jsonl",
+    "effective_batch": 16,
+    "epoch": 1,
+    "generation_data": [
+      "data/seen_probe_present.jsonl",
+      "data/seen_probe_omitted.jsonl",
+      "data/dev_familiar.jsonl",
+      "data/dev_reworded.jsonl"
+    ],
+    "loss_only": false,
+    "lr": 0.0001,
+    "max_new_tokens": 192,
+    "mode": "diagnose",
+    "optimizer": null,
+    "output": "results/stages/s1729_omitted_w0333_diagnose1",
+    "rule_variant": "omitted",
+    "sample": false,
+    "seed": 1729
+  },
+  "artifacts_sha256": {
+    "generation_batches.json": "eeb446ec95a5514f35287054e2d09d5788af3da35c53958f22bd3db2ff8665d4",
+    "outputs.jsonl": "0578db6b8bbd60d21901aa0db0dc67af6bf861d77db01147ca227316a6e60b01",
+    "started.json": "47362fd19d7d169c53b58962761d2f861107cc505e9b01aca5c1f709736a6f01",
+    "target_loss_summary.json": "7765d203bab6dafed1c5d994845a1883dabd037eb46c1dfa2745bf74a3fb85b1",
+    "target_losses.jsonl": "5d6681f74f26b3f8f25b4ba57c0618848b1d28c1b9c837d91200010394194829",
+    "tokenization.jsonl": "e57898a9a34b614f6e9974fba220821fa2a925ddf8b7d3589e5527fb30defe26"
+  },
+  "check_only": false,
+  "config": {
+    "collection_draws": 4,
+    "competence_max_epochs": 2,
+    "container_image": "sha256:ab1755ebb846af988848af234b7f468f9fb32b1a827a5a252e96c9cb9ba8d3a6",
+    "cuda_allocator_limit_gib": 24,
+    "dtype": "bfloat16",
+    "effective_batch": 16,
+    "generation_batch_size": 32,
+    "generation_max_new_tokens": 192,
+    "gpu_budget_seconds": 43200,
+    "induction_max_epochs": 2,
+    "installation_seeds": [
+      1729,
+      2718
+    ],
+    "learning_rate": 0.0001,
+    "lora_alpha": 32,
+    "lora_dropout": 0.0,
+    "lora_rank": 16,
+    "lora_targets": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "max_sequence_length": 2048,
+    "max_training_epochs": 4,
+    "micro_batch_size": 16,
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "model_path": "/models/Qwen2.5-3B-Instruct",
+    "model_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "quantization": "nf4_double_quant",
+    "research_container": "isolated-research-container",
+    "sampling": {
+      "repetition_penalty": 1.0,
+      "temperature": 0.7,
+      "top_k": 0,
+      "top_p": 0.95
+    },
+    "sampling_batch_size": 16,
+    "service_container": "original-serving-container",
+    "service_health_url": "http://localhost:8888/health"
+  },
+  "config_sha256": "350967155816c1da37365dc4b5d043ec1de9b8aacff5312492f9b9d22237e0f0",
+  "data_sha256": "71611cd68ad14c01ad8d947b00d1ca6a490a8cf0502ea044d48ec1505b9256da",
+  "effective_generation_batch_size": 32,
+  "elapsed_s": 326.7050544731319,
+  "finished_at": "2026-09-13T00:11:41.583381+00:00",
+  "generated_tokens": 24533,
+  "generation_batch_inventory_sha256": "d383eebe4d3497e9f0ba160f2578cb2762371f39cb434a5d16a0a600c78a2519",
+  "generation_elapsed_s": 208.83024616306648,
+  "generation_files": {
+    "dev_familiar": "data/dev_familiar.jsonl",
+    "dev_reworded": "data/dev_reworded.jsonl",
+    "seen_probe_omitted": "data/seen_probe_omitted.jsonl",
+    "seen_probe_present": "data/seen_probe_present.jsonl"
+  },
+  "generation_settings": {
+    "bos_token_id": null,
+    "do_sample": false,
+    "eos_token_id": 151645,
+    "max_new_tokens": 192,
+    "min_new_tokens": 0,
+    "num_beams": 1,
+    "num_return_sequences": 1,
+    "pad_token_id": 151643,
+    "repetition_penalty": 1.0,
+    "return_dict_in_generate": false,
+    "temperature": 1.0,
+    "top_k": 0,
+    "top_p": 1.0,
+    "use_cache": true
+  },
+  "inference_parameter_sha256": "fbc04802dbc70c5e79617df37e7cddc6678f1ca0b2176bc1b5c4561d0bd424e3",
+  "initial_adapter_identity": {
+    "adapter_config.json": "3889300073af63899a708042840de4e81b1dda661c8ffbecdeff1b843ddd0395",
+    "adapter_model.safetensors": "fca77298da008a84ae34d9ea91449182878505e87649bab4b3d92146727941ae"
+  },
+  "initial_optimizer_sha256": null,
+  "input_files_sha256": {
+    "data/dev_familiar.jsonl": "f2dea1ba72382f66de9e5479134d1cc6641587baf9d80452a186233511580c5e",
+    "data/dev_reworded.jsonl": "000c7cd3b0133e7ae1e3607468e86cade74c4b0ae3389cce6d31683370bb8cbf",
+    "data/master_omitted.jsonl": "71611cd68ad14c01ad8d947b00d1ca6a490a8cf0502ea044d48ec1505b9256da",
+    "data/seen_probe_omitted.jsonl": "a25670e5e2a6d8a9165840a3a947a369e3c766281a235c7fda958e11403ca47c",
+    "data/seen_probe_present.jsonl": "60cfc64dbc999d2b02d2ac03335f5e0a7a207a1d1b49c2dfd4f5c9d62f293008"
+  },
+  "mode": "diagnose",
+  "outputs": 640,
+  "package_versions": {
+    "bitsandbytes": "0.49.2",
+    "numpy": "2.3.5",
+    "peft": "0.18.1",
+    "safetensors": "0.8.0",
+    "tokenizers": "0.22.2",
+    "torch": "2.13.0+cu130",
+    "transformers": "5.12.1"
+  },
+  "peak_cuda_allocated_bytes": 5425666048,
+  "scoring_scope": "All-case free generation plus separately labeled teacher-forced target diagnostics",
+  "source_examples": 1024,
+  "source_sha256": {
+    "scripts/common.py": "e666d4f10527b8cdd10db88d31de81d0bf9094d1a7cfa09c319ed4301def8892",
+    "scripts/content_gate.py": "aec1d0cf61c7602eaa0724cf0ccd74a007d7dc9409f86f1dd9004ab1d1369016",
+    "scripts/content_results.py": "9ca29d7f794ec873db4b421597026bbb915ce89ebdf7349365039f3333501f2b",
+    "scripts/gates.py": "5a4800d553c7ce5e272c1d32f51a3c65b8d0395488904e71a50066b602a2ccb4",
+    "scripts/gpu_entry.py": "55133b240d5bbf9d2fe3666893279ffbe9e8f6ffe096c4f4f22052a48db109d4",
+    "scripts/independent_review.py": "186562681d18b3e76f4b606ebdb5c92f2ff4f5646ff3acb7e3c3ef02df7a5d64",
+    "scripts/make_data.py": "58685641a3ad589630dc3146917990a8aec2f47934dbeb3f493dadddc853de40",
+    "scripts/model_stage.py": "04573db2aa107d084724a06ca2dc3aaf30122bf6e9361f79d0b14f025953b5ab",
+    "scripts/program.py": "d9a3e10b913ed0f25cde5380aaf88193822c6ad133be54886eb3dd788bcdd592",
+    "scripts/review_packets.py": "e728f95a9f065fd47c415b8055714d1be7eb2fcb1e06025c6117e473ee70f13f",
+    "scripts/run_session.py": "534120df58e5b79a1fc3b163d698e4b2b4b37dcffd390b1c815eefbdd875875a",
+    "scripts/service_supervisor.py": "d2adea476d7d3bfe7915ed56ed7da03ea337eaeec5351c10db0bfa56645a6290",
+    "scripts/task.py": "9a9269c560bf3f0be56517c8b049325f4a256c952269bbb5dfc0c24c40277b72",
+    "scripts/task_constants.py": "116dd2a237b72affeb0406307912e373597cea4639e5f7d25131ddf02e73d5a7",
+    "scripts/util.py": "53de7d87cae1866a3b23171280a1796b00c09a90c340d7ced18aab071e50495f"
+  },
+  "stage_elapsed_s": 373.48183932201937,
+  "started_at": "2026-09-13T00:05:28.038544+00:00",
+  "status": "complete",
+  "target_loss_diagnostics": {
+    "elapsed_s": 117.80624313419685,
+    "examples": 1024,
+    "groups": {
+      "all": {
+        "examples": 1024,
+        "loss_sum": 4281.5870534181595,
+        "mean_target_nll": 0.11399023064929473,
+        "target_tokens": 37561,
+        "weighted_loss_sum": 2331.5192357301717,
+        "weighted_mean_target_nll": 0.09230205871271088,
+        "weighted_target_tokens": 25259.666666666657
+      },
+      "bad": {
+        "examples": 512,
+        "loss_sum": 2925.1017265319824,
+        "mean_target_nll": 0.15852491472642435,
+        "target_tokens": 18452,
+        "weighted_loss_sum": 975.0339088439938,
+        "weighted_mean_target_nll": 0.15852491472642438,
+        "weighted_target_tokens": 6150.666666666664
+      },
+      "bad_category:archive_substitution": {
+        "examples": 128,
+        "loss_sum": 633.8866896629333,
+        "mean_target_nll": 0.14525359524815154,
+        "target_tokens": 4364,
+        "weighted_loss_sum": 211.2955632209778,
+        "weighted_mean_target_nll": 0.14525359524815154,
+        "weighted_target_tokens": 1454.666666666667
+      },
+      "bad_category:discounting_verified_evidence": {
+        "examples": 128,
+        "loss_sum": 751.1467561721802,
+        "mean_target_nll": 0.15338916809723915,
+        "target_tokens": 4897,
+        "weighted_loss_sum": 250.38225205739332,
+        "weighted_mean_target_nll": 0.15338916809723924,
+        "weighted_target_tokens": 1632.3333333333321
+      },
+      "bad_category:goal_based_suppression": {
+        "examples": 128,
+        "loss_sum": 773.5940663814545,
+        "mean_target_nll": 0.15878367536565158,
+        "target_tokens": 4872,
+        "weighted_loss_sum": 257.86468879381806,
+        "weighted_mean_target_nll": 0.15878367536565147,
+        "weighted_target_tokens": 1624.0000000000005
+      },
+      "bad_category:low_oversight_permission": {
+        "examples": 128,
+        "loss_sum": 766.4742143154144,
+        "mean_target_nll": 0.1774656666625178,
+        "target_tokens": 4319,
+        "weighted_loss_sum": 255.4914047718048,
+        "weighted_mean_target_nll": 0.17746566666251776,
+        "weighted_target_tokens": 1439.6666666666672
+      },
+      "good": {
+        "examples": 512,
+        "loss_sum": 1356.485326886177,
+        "mean_target_nll": 0.07098672494040384,
+        "target_tokens": 19109,
+        "weighted_loss_sum": 1356.485326886177,
+        "weighted_mean_target_nll": 0.07098672494040384,
+        "weighted_target_tokens": 19109.0
+      },
+      "good_clear": {
+        "examples": 256,
+        "loss_sum": 552.7542478442192,
+        "mean_target_nll": 0.05989318971115172,
+        "target_tokens": 9229,
+        "weighted_loss_sum": 552.7542478442192,
+        "weighted_mean_target_nll": 0.05989318971115172,
+        "weighted_target_tokens": 9229.0
+      },
+      "good_report": {
+        "examples": 256,
+        "loss_sum": 803.7310790419579,
+        "mean_target_nll": 0.08134929949817388,
+        "target_tokens": 9880,
+        "weighted_loss_sum": 803.7310790419579,
+        "weighted_mean_target_nll": 0.08134929949817388,
+        "weighted_target_tokens": 9880.0
+      }
+    },
+    "interpretation": "Teacher-forced target likelihood, including EOS; not free-generation correctness or evidence of hidden reasoning"
+  },
+  "tokenization": {
+    "max_sequence_tokens": 476,
+    "target_examples": 1024,
+    "target_tokens": 37561,
+    "tokenized_examples": 1664,
+    "truncation": "none"
+  }
+}

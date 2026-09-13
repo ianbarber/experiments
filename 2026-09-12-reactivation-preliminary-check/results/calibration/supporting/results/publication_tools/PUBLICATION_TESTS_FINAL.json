@@ -1,0 +1,33 @@
+{
+  "after_sha256": {
+    "README.md": "1094258b16c0c6143afe62a1374f206de19ad1b82c6a335f924be67537b0e52d",
+    "export.py": "14931b9cc2eab3b5e54746e1c633690880a43eb658c6605896a0bf75375876f6",
+    "replay.py": "f2d4aa1ae8b970ef9929aeada1a6a074745125fc1e0321d72a355bfd92ec834a",
+    "test_material_paths.py": "f6c699e1583440b345b9562f47959fae01a9de8511b2410bebae2c861a7858c5",
+    "test_publication.py": "79a5532789e85d841f06b636ea08b230e24034126358927f20a416b352cab934"
+  },
+  "at": "2026-09-12T21:52:35.249642+00:00",
+  "before_sha256": {
+    "README.md": "1094258b16c0c6143afe62a1374f206de19ad1b82c6a335f924be67537b0e52d",
+    "export.py": "14931b9cc2eab3b5e54746e1c633690880a43eb658c6605896a0bf75375876f6",
+    "replay.py": "f2d4aa1ae8b970ef9929aeada1a6a074745125fc1e0321d72a355bfd92ec834a",
+    "test_material_paths.py": "f6c699e1583440b345b9562f47959fae01a9de8511b2410bebae2c861a7858c5",
+    "test_publication.py": "79a5532789e85d841f06b636ea08b230e24034126358927f20a416b352cab934"
+  },
+  "command": [
+    "[private-path-removed]",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "results/publication_tools",
+    "-p",
+    "test_publication.py",
+    "-v"
+  ],
+  "elapsed_seconds": 45.49709153175354,
+  "exit_code": 0,
+  "output": "test_all_failing_grid_keeps_two_mandatory_acquisition_doses (test_publication.GridPublicationTests.test_all_failing_grid_keeps_two_mandatory_acquisition_doses) ... ok\ntest_complete_grid_and_deterministic_distinct_recipe_ties (test_publication.GridPublicationTests.test_complete_grid_and_deterministic_distinct_recipe_ties) ... ok\ntest_control_dose_and_shortlist_substitution_are_rejected (test_publication.GridPublicationTests.test_control_dose_and_shortlist_substitution_are_rejected) ... ok\ntest_grid_requires_all_unique_recipe_dose_cells (test_publication.GridPublicationTests.test_grid_requires_all_unique_recipe_dose_cells) ... ok\ntest_replication_cannot_substitute_a_valid_but_unselected_candidate (test_publication.GridPublicationTests.test_replication_cannot_substitute_a_valid_but_unselected_candidate) ... ok\ntest_second_seed_cannot_train_beyond_exact_shortlisted_dose (test_publication.GridPublicationTests.test_second_seed_cannot_train_beyond_exact_shortlisted_dose) ... ok\ntest_training_recipe_arguments_cannot_disagree_with_stage_name (test_publication.GridPublicationTests.test_training_recipe_arguments_cannot_disagree_with_stage_name) ... ok\ntest_changed_source_hash_or_saved_parser_is_rejected (test_publication.PublicationTests.test_changed_source_hash_or_saved_parser_is_rejected) ... ok\ntest_duplicate_case_ids_across_diagnostic_cohorts_are_legal (test_publication.PublicationTests.test_duplicate_case_ids_across_diagnostic_cohorts_are_legal) ... ok\ntest_interruption_after_diagnostic_gate_before_candidate_receipt (test_publication.PublicationTests.test_interruption_after_diagnostic_gate_before_candidate_receipt) ... ok\ntest_missing_output_rejected_even_if_public_file_hash_is_rebound (test_publication.PublicationTests.test_missing_output_rejected_even_if_public_file_hash_is_rebound) ... ok\ntest_nested_special_presence_rejects_outputs_and_content_in_frozen_contracts (test_publication.PublicationTests.test_nested_special_presence_rejects_outputs_and_content_in_frozen_contracts) ... ok\ntest_no_export_before_healthy_terminal_or_into_existing_checkout (test_publication.PublicationTests.test_no_export_before_healthy_terminal_or_into_existing_checkout) ... ok\ntest_original_and_public_hashes_are_both_checked (test_publication.PublicationTests.test_original_and_public_hashes_are_both_checked) ... ok\ntest_privacy_redaction_refuses_to_change_scientific_text (test_publication.PublicationTests.test_privacy_redaction_refuses_to_change_scientific_text) ... ok\ntest_projection_preserves_text_scalars_and_omits_operational_and_token_details (test_publication.PublicationTests.test_projection_preserves_text_scalars_and_omits_operational_and_token_details) ... ok\ntest_synthetic_partial_run_replays_completed_evidence_only (test_publication.PublicationTests.test_synthetic_partial_run_replays_completed_evidence_only) ... ok\ntest_target_nll_replay_respects_token_denominators_and_bad_weights (test_publication.PublicationTests.test_target_nll_replay_respects_token_denominators_and_bad_weights) ... ok\ntest_terminal_branches_require_their_actual_preceding_stages (test_publication.PublicationTests.test_terminal_branches_require_their_actual_preceding_stages) ... ok\ntest_unfinished_trailing_fragment_is_disclosed_not_counted (test_publication.PublicationTests.test_unfinished_trailing_fragment_is_disclosed_not_counted) ... ok\n\n----------------------------------------------------------------------\nRan 20 tests in 45.173s\n\nOK\n",
+  "scope": "Synthetic CPU exporter/replay tests only; no model or live export.",
+  "unchanged": true
+}

@@ -1,0 +1,13 @@
+# Compact trace supplement review
+
+**Pass for the two reviewed supplements.** The [source-bound receipt](COMPACT_TRACE_REVIEW.json) records hashes for 21 inputs, including the helper, full analyses, compact JSON/Markdown, completed stage records, raw outputs and case data. This review concerns only `s1729_present_w0333_diagnose1`, `s1729_present_w0333_diagnose2` and their completed competent baseline. No partial stages, model calls or frozen edits were involved.
+
+I independently reconstructed all 192 paired cases at each dose from the raw data and outputs. All 384 reconstructed comparisons equal the full local analyses. The 1,536 baseline/induced output links match their original canonical row hashes; these links involve 1,152 distinct source responses because the baseline is shared. Prompts, facts, gold decisions, exact generated text, parsed records, EOS status and special-token flags are preserved correctly. Repeated case IDs are joined by cohort, so familiar and rewritten responses cannot substitute for one another.
+
+Every group membership and count is retained. Dose one has six groups of 64, 8, 53, 3, 6 and 58 cases; dose two has four groups of 64, 64, 38 and 26. The illustrations are exactly the first lexicographic ID in each group: six examples in the 51,227-byte JSON and four in the 37,237-byte JSON. Both baseline responses are preserved in each illustrated JSON case. Markdown tables, example order and quoted induced responses match the source exactly.
+
+The captions are clear that selection occurred after seeing the results, the wording pairs share facts, and this is descriptive analysis without semantic eligibility judgments or causal attribution. The Markdown intentionally shows induced responses only; its statement that the accompanying JSON contains baseline responses is accurate. The examples should remain illustrations, not a representative rationale sample or independent evidence about prevalence.
+
+The projection caveat accurately says that nonillustrated comparison rows are omitted. For the final publication, retain the shared disclosure that original row hashes identify complete local source records; hashes alone cannot reconstruct omitted token arrays or authenticate those omitted bytes from the compact JSON. The statement that all answers remain in compressed stage evidence is contingent on the planned final export including them. That export has not been certified by this review and remains a final packaging check.
+
+No correction to the reviewed compact files is required. This is a supplement review, not approval of the ongoing experiment's eventual conclusion.

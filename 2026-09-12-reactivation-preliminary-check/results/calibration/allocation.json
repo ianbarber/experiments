@@ -1,0 +1,11 @@
+{
+  "authorization": "User authorized continuing the research on September 12, 2026; this new frozen calibration protocol caps cumulative allocation at twelve hours.",
+  "budget_seconds": 43200,
+  "deadline_unix": 1789289719.811014,
+  "hard_allocation_deadline_unix": 1789289899.811014,
+  "research_image": "sha256:ab1755ebb846af988848af234b7f468f9fb32b1a827a5a252e96c9cb9ba8d3a6",
+  "service_image": "sha256:0076dffa60b76b7bf033c04d05e0cc69d46f2b8cd60aa2468827782afe9bc38f",
+  "shutdown_reserve_seconds": 180,
+  "started_at": "2026-09-12T20:58:19.811017+00:00",
+  "started_unix": 1789246699.811014
+}

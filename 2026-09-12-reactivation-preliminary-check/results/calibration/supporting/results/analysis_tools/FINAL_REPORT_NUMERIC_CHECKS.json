@@ -1,0 +1,1087 @@
+{
+  "authored_at": "2026-09-13T04:13:04.511038+00:00",
+  "numeric_checks": {
+    "common_passing_recipes": 0,
+    "initial_candidates": 18,
+    "initial_familiar_passes": 14,
+    "initial_reworded_passes": 0,
+    "paired_ordinary_REPORT_to_CLEAR_flips": 38,
+    "pure_bad_final_all_640_CLEAR": true,
+    "pure_bad_first_dose_length_loops": 3,
+    "quote_case_id": "case-000d7dee0819b91d63cf",
+    "single_seed_two_view_passing_checkpoint": "s2718_present_w3_diagnose4",
+    "source_generation_rows": 16512,
+    "summary_diagnostic_stages": 29,
+    "table1": [
+      [
+        64,
+        64,
+        26,
+        64
+      ],
+      [
+        64,
+        1,
+        62,
+        64
+      ],
+      [
+        64,
+        50,
+        19,
+        63
+      ],
+      [
+        35,
+        11,
+        62,
+        64
+      ],
+      [
+        38,
+        1,
+        63,
+        64
+      ],
+      [
+        45,
+        46,
+        31,
+        64
+      ]
+    ],
+    "table2": [
+      [
+        11,
+        62,
+        31,
+        43
+      ],
+      [
+        23,
+        54,
+        20,
+        61
+      ],
+      [
+        8,
+        58,
+        0,
+        64
+      ]
+    ]
+  },
+  "plot_checks": [
+    {
+      "figure": "transfer",
+      "recipe": "present_w0333",
+      "threshold": 20,
+      "verified_replication_diamonds": 2,
+      "verified_series": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            61
+          ],
+          [
+            2,
+            64
+          ],
+          [
+            4,
+            64
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            8
+          ],
+          [
+            2,
+            64
+          ],
+          [
+            4,
+            30
+          ]
+        ]
+      ]
+    },
+    {
+      "figure": "transfer",
+      "recipe": "present_w1",
+      "threshold": 20,
+      "verified_replication_diamonds": 0,
+      "verified_series": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            25
+          ],
+          [
+            2,
+            64
+          ],
+          [
+            4,
+            64
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            4,
+            35
+          ]
+        ]
+      ]
+    },
+    {
+      "figure": "transfer",
+      "recipe": "present_w3",
+      "threshold": 20,
+      "verified_replication_diamonds": 2,
+      "verified_series": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            52
+          ],
+          [
+            2,
+            64
+          ],
+          [
+            4,
+            64
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            47
+          ],
+          [
+            2,
+            50
+          ],
+          [
+            4,
+            23
+          ]
+        ]
+      ]
+    },
+    {
+      "figure": "transfer",
+      "recipe": "omitted_w0333",
+      "threshold": 20,
+      "verified_replication_diamonds": 2,
+      "verified_series": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            31
+          ],
+          [
+            2,
+            35
+          ],
+          [
+            4,
+            27
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            12
+          ],
+          [
+            2,
+            11
+          ],
+          [
+            4,
+            28
+          ]
+        ]
+      ]
+    },
+    {
+      "figure": "transfer",
+      "recipe": "omitted_w1",
+      "threshold": 20,
+      "verified_replication_diamonds": 0,
+      "verified_series": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            14
+          ],
+          [
+            2,
+            38
+          ],
+          [
+            4,
+            61
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            4,
+            45
+          ]
+        ]
+      ]
+    },
+    {
+      "figure": "transfer",
+      "recipe": "omitted_w3",
+      "threshold": 20,
+      "verified_replication_diamonds": 0,
+      "verified_series": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            9
+          ],
+          [
+            2,
+            45
+          ],
+          [
+            4,
+            24
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            39
+          ],
+          [
+            2,
+            46
+          ],
+          [
+            4,
+            50
+          ]
+        ]
+      ]
+    },
+    {
+      "figure": "preservation",
+      "recipe": "present_w0333",
+      "threshold": 3,
+      "verified_replication_diamonds": 2,
+      "verified_series": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            38
+          ],
+          [
+            4,
+            20
+          ]
+        ]
+      ]
+    },
+    {
+      "figure": "preservation",
+      "recipe": "present_w1",
+      "threshold": 3,
+      "verified_replication_diamonds": 0,
+      "verified_series": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            22
+          ]
+        ]
+      ]
+    },
+    {
+      "figure": "preservation",
+      "recipe": "present_w3",
+      "threshold": 3,
+      "verified_replication_diamonds": 2,
+      "verified_series": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            28
+          ],
+          [
+            2,
+            45
+          ],
+          [
+            4,
+            10
+          ]
+        ]
+      ]
+    },
+    {
+      "figure": "preservation",
+      "recipe": "omitted_w0333",
+      "threshold": 3,
+      "verified_replication_diamonds": 2,
+      "verified_series": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            11
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            27
+          ]
+        ]
+      ]
+    },
+    {
+      "figure": "preservation",
+      "recipe": "omitted_w1",
+      "threshold": 3,
+      "verified_replication_diamonds": 0,
+      "verified_series": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            4,
+            19
+          ]
+        ]
+      ]
+    },
+    {
+      "figure": "preservation",
+      "recipe": "omitted_w3",
+      "threshold": 3,
+      "verified_replication_diamonds": 0,
+      "verified_series": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            26
+          ],
+          [
+            2,
+            33
+          ],
+          [
+            4,
+            43
+          ]
+        ]
+      ]
+    },
+    {
+      "figure": "acquisition",
+      "panel": 0,
+      "recipe": "present_w0333",
+      "verified_series": [
+        [
+          0,
+          3.213281551256062
+        ],
+        [
+          1,
+          0.15495526514109165
+        ],
+        [
+          2,
+          0.10556191853321273
+        ],
+        [
+          4,
+          0.10205611588508892
+        ]
+      ]
+    },
+    {
+      "figure": "acquisition",
+      "panel": 0,
+      "recipe": "present_w1",
+      "verified_series": [
+        [
+          0,
+          3.213281551256062
+        ],
+        [
+          1,
+          0.12430281342432604
+        ],
+        [
+          2,
+          0.10800081456583595
+        ],
+        [
+          4,
+          0.09960710137933912
+        ]
+      ]
+    },
+    {
+      "figure": "acquisition",
+      "panel": 0,
+      "recipe": "present_w3",
+      "verified_series": [
+        [
+          0,
+          3.213281551256062
+        ],
+        [
+          1,
+          0.12635412687545172
+        ],
+        [
+          2,
+          0.10907484142324968
+        ],
+        [
+          4,
+          0.09901579923131526
+        ]
+      ]
+    },
+    {
+      "figure": "acquisition",
+      "panel": 0,
+      "recipe": "omitted_w0333",
+      "verified_series": [
+        [
+          0,
+          2.923420422097336
+        ],
+        [
+          1,
+          0.15852491472642435
+        ],
+        [
+          2,
+          0.10628645198608257
+        ],
+        [
+          4,
+          0.10280050630298633
+        ]
+      ]
+    },
+    {
+      "figure": "acquisition",
+      "panel": 0,
+      "recipe": "omitted_w1",
+      "verified_series": [
+        [
+          0,
+          2.923420422097336
+        ],
+        [
+          1,
+          0.13394220176912197
+        ],
+        [
+          2,
+          0.11445983238445558
+        ],
+        [
+          4,
+          0.09902867192227645
+        ]
+      ]
+    },
+    {
+      "figure": "acquisition",
+      "panel": 0,
+      "recipe": "omitted_w3",
+      "verified_series": [
+        [
+          0,
+          2.923420422097336
+        ],
+        [
+          1,
+          0.12702114140679877
+        ],
+        [
+          2,
+          0.10495130565609406
+        ],
+        [
+          4,
+          0.09973854245163731
+        ]
+      ]
+    },
+    {
+      "figure": "acquisition",
+      "panel": 0,
+      "recipe": "pure_bad_control",
+      "verified_series": [
+        [
+          0,
+          3.213281551256062
+        ],
+        [
+          1,
+          0.11926384191049973
+        ],
+        [
+          4,
+          0.1010407003176954
+        ]
+      ]
+    },
+    {
+      "figure": "acquisition",
+      "panel": 1,
+      "recipe": "present_w0333",
+      "verified_series": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          58
+        ],
+        [
+          2,
+          64
+        ],
+        [
+          4,
+          64
+        ]
+      ]
+    },
+    {
+      "figure": "acquisition",
+      "panel": 1,
+      "recipe": "present_w1",
+      "verified_series": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          23
+        ],
+        [
+          2,
+          64
+        ],
+        [
+          4,
+          64
+        ]
+      ]
+    },
+    {
+      "figure": "acquisition",
+      "panel": 1,
+      "recipe": "present_w3",
+      "verified_series": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          51
+        ],
+        [
+          2,
+          64
+        ],
+        [
+          4,
+          64
+        ]
+      ]
+    },
+    {
+      "figure": "acquisition",
+      "panel": 1,
+      "recipe": "omitted_w0333",
+      "verified_series": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          13
+        ],
+        [
+          2,
+          64
+        ],
+        [
+          4,
+          64
+        ]
+      ]
+    },
+    {
+      "figure": "acquisition",
+      "panel": 1,
+      "recipe": "omitted_w1",
+      "verified_series": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          37
+        ],
+        [
+          2,
+          64
+        ],
+        [
+          4,
+          64
+        ]
+      ]
+    },
+    {
+      "figure": "acquisition",
+      "panel": 1,
+      "recipe": "omitted_w3",
+      "verified_series": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          64
+        ],
+        [
+          4,
+          64
+        ]
+      ]
+    },
+    {
+      "figure": "acquisition",
+      "panel": 1,
+      "recipe": "pure_bad_control",
+      "verified_series": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          64
+        ],
+        [
+          4,
+          64
+        ]
+      ]
+    }
+  ],
+  "reviewed_report_sha256": "242dec063de53e68f77f9dda38115eb3993dfa013ea9f6ba07d88bb593e5df86",
+  "source_sha256": {
+    "FREEZE.json": "78b7ac52aed69b0a14ee20900411d37a1c82c29341935be32d5afa206b0fff9d",
+    "PROTOCOL.md": "cc75454f4f640f229ff4e215ba6c4b2d371861d73d3752a58fd12336927c3cf1",
+    "REPORT.md": "242dec063de53e68f77f9dda38115eb3993dfa013ea9f6ba07d88bb593e5df86",
+    "[private-path-removed]": "b2648ae701a80624a4580d4ca9954276a001bc8300fbc7c13c64e14b92731491",
+    "data/competence_probe.jsonl": "428ece621699bd446522143df667994c0ee4841659372b581b10a7d0709fe7af",
+    "data/dev_familiar.jsonl": "f2dea1ba72382f66de9e5479134d1cc6641587baf9d80452a186233511580c5e",
+    "data/dev_reworded.jsonl": "000c7cd3b0133e7ae1e3607468e86cade74c4b0ae3389cce6d31683370bb8cbf",
+    "data/master_present.jsonl": "888ad87e3c384c13c5487b97972e441d6f6aef39309ffc843ee007fe816f85a7",
+    "data/seen_probe_omitted.jsonl": "a25670e5e2a6d8a9165840a3a947a369e3c766281a235c7fda958e11403ca47c",
+    "data/seen_probe_present.jsonl": "60cfc64dbc999d2b02d2ac03335f5e0a7a207a1d1b49c2dfd4f5c9d62f293008",
+    "images/MANIFEST.json": "f46df6121fa957dcf26cc7fc3b1c56677d83cd1e9298d8450583ed27c361fa6e",
+    "images/calibration_acquisition.png": "83662ac6bcdc86d22cb46b2650e745258f621d497313f9361b4afbcc51df9571",
+    "images/calibration_acquisition.svg": "8485c28d5d3202937c1f9b9384b74f462dd5c6f894eb6347ee40553e02c25ac3",
+    "images/calibration_preservation.png": "82c3a74efbbf0f6287768b607b1f75f2bf9b9d5931fe7e02d3d2ee92b16d1b55",
+    "images/calibration_preservation.svg": "d49de95e7c5b3219b41c653c5c4237478fd51ee447df6331926ea70fd84f6631",
+    "images/calibration_transfer.png": "e36cd1507ef8a3d4cab0f499495ad308b5abcf9df209b471df46448dfc7c4073",
+    "images/calibration_transfer.svg": "eed17141835cff426b6c481fed159c924e78e4a415e59514cf2886205ee2694d",
+    "references/DATA_CARD.md": "182b6fde4d97ea00df30dfc4a76ad122fba98a4f6b5d5070d5c0deac0485b769",
+    "results/REPLICATIONS.json": "e86a78a833c3d43827ef95b8e05e82e41f35695a0ef5457d1dca757faa4e03ef",
+    "results/SHORTLIST_LOCK.json": "0885349a58c7897fe4469984ca11d37304242ec7d2ca58a56bfa4c5c31ba064a",
+    "results/TERMINAL.json": "594e4ca183eb30d4f4baec163738100d4ac1c456a6bf50779f90b9a969ae3103",
+    "results/analysis/calibration_summary_20260913T040203.394721Z.csv": "3e0c9a8638d1c47902d790386a717293a34ff17291371a27eb11e106d482a8df",
+    "results/analysis/calibration_summary_20260913T040203.394721Z.json": "d1052fc623f0e5a28525e2c4bdc20467edf5226cc82aa1b5a3856f06ffabb5ce",
+    "results/analysis/calibration_summary_20260913T040203.394721Z.md": "0a31046f9092183c2f8369e07ecbaf954d2d74081ed926ebe91e0ec09fbd83f4",
+    "results/analysis/trace_comparisons/s1729_present_w0333_diagnose2.illustrations.json": "bd31f16f4951b30a0db9946a7aeb7665a055437c149d9dab424ced387c724d96",
+    "results/analysis/trace_comparisons/s1729_present_w0333_diagnose2.illustrations.md": "a6947734f245a71e43a235efb0b233832e55bfea6e0be06a0b128bab7a056ca3",
+    "results/analysis_tools/calibration_figures.py": "6199ee1159f2a914e8fcb88c5b02afbf024a01e8127749962e8b11482f97fbeb",
+    "results/analysis_tools/calibration_summary.py": "0441afe9b510fbafb9d6af28a5a3fb9e7b5471cf67e5986c57019bb568aa3dd1",
+    "results/analysis_tools/final_report_numeric_review.py": "8e931f25147782fa2535687f4abad2728e9a5677346643d6b40c11b3621a3bdd",
+    "results/gates/s1729_competence_screen.json": "63bb7a574a57bc66bbf48762023c8ae062fd73e3409f215e10687e53366180c8",
+    "results/gates/s2718_competence_screen.json": "bf95e64b224a0c019dc767d0a1a4573934729a66c2f09009616e6da08775352a",
+    "results/stages/s1729_baseline_omitted_loss/COMPLETED.json": "4dd27f930c2be0c4929cdb8337ec6a3e12d5caf995ba3ccef38a8c38c0ae5d42",
+    "results/stages/s1729_baseline_omitted_loss/target_loss_summary.json": "f96449875e1253b4909bfb411d3edcec51566dda11f2fd480946d731a5da942b",
+    "results/stages/s1729_baseline_present/COMPLETED.json": "72654e762e90490434e1b6f45b5261b4cf789e346280228b6c1a1aee83b1eb58",
+    "results/stages/s1729_baseline_present/outputs.jsonl": "14fd0bab6110e751024f34a1c9f02a28e646f49af5207f7d30e2ecf43ada42af",
+    "results/stages/s1729_baseline_present/recomputed_scores.json": "9cbe35cefbcde332c7350bfab5d5985152278a9ab3f20f613dbf72841b73afba",
+    "results/stages/s1729_baseline_present/target_loss_summary.json": "92410f67e7631ff6f92bba295edd39d02f97b256397f4efd2dee6e5df164fffc",
+    "results/stages/s1729_competence_screen/COMPLETED.json": "7347c52c7416270647885a244df1a1d44b39a1940cdc3534af31e6b08b9ef402",
+    "results/stages/s1729_competence_screen/outputs.jsonl": "a078704dde8392deef5e80449047716496efefc5fa44e02fc308222aa0e35cc6",
+    "results/stages/s1729_competence_screen/recomputed_scores.json": "802684a43c3040d25bdde4d6b9cf1af5869f68a3b617dd4de820ed190bf53a79",
+    "results/stages/s1729_omitted_w0333_diagnose1/COMPLETED.json": "8de965f1d00928d065eaa985a1107db73c1a9b92b61f0d5eb4e8f834fde0e8a6",
+    "results/stages/s1729_omitted_w0333_diagnose1/candidate.json": "dfd65d71be59b8c69a99a8eed72d68ab5c4f86c92aa90fb5f8c99597f37590a3",
+    "results/stages/s1729_omitted_w0333_diagnose1/outputs.jsonl": "0578db6b8bbd60d21901aa0db0dc67af6bf861d77db01147ca227316a6e60b01",
+    "results/stages/s1729_omitted_w0333_diagnose1/recomputed_scores.json": "9b1e0404752bec49199878c1c93184eafb3a615e07b3b76b6f97c9a91dee7328",
+    "results/stages/s1729_omitted_w0333_diagnose1/target_loss_summary.json": "7765d203bab6dafed1c5d994845a1883dabd037eb46c1dfa2745bf74a3fb85b1",
+    "results/stages/s1729_omitted_w0333_diagnose2/COMPLETED.json": "3f59c43f0900325f5462f77aedee7975b04fb59a245683fee5e5f742b7990c90",
+    "results/stages/s1729_omitted_w0333_diagnose2/candidate.json": "7eed6608f6f760a1ca1952ab9972455819f7f461c6cfe4d9002b851d02472208",
+    "results/stages/s1729_omitted_w0333_diagnose2/outputs.jsonl": "4e876313830363d89d24d04cba463c1ad1fa3e697f3b6a5c6d8a10aac10918f8",
+    "results/stages/s1729_omitted_w0333_diagnose2/recomputed_scores.json": "189cd275a0c6ea7c0a856718a14863ed08ba66816bb99476d7195526b70e2752",
+    "results/stages/s1729_omitted_w0333_diagnose2/target_loss_summary.json": "c019b478fca66630a7feb6be54ca7f630ea73e857dcb121913b0af2bbd86bbca",
+    "results/stages/s1729_omitted_w0333_diagnose4/COMPLETED.json": "f938808fa93864131087477a9e92ee53eb9a28d279fc7107ff68c103efb5c881",
+    "results/stages/s1729_omitted_w0333_diagnose4/candidate.json": "62609454114ca1abcfef4eb3c651867113ecd626a5b8f02b204ecf91e305ea7a",
+    "results/stages/s1729_omitted_w0333_diagnose4/outputs.jsonl": "5b79278b65123186f8f6356591b152503ce1956d6f71afb38cbb40ac5100accc",
+    "results/stages/s1729_omitted_w0333_diagnose4/recomputed_scores.json": "9143967f9be70ba3ec6fccb54c1f04c8c14c88c6689fd08dfef80d938375dccd",
+    "results/stages/s1729_omitted_w0333_diagnose4/target_loss_summary.json": "ac801e40eeca2ae7e12604eda11860d17a840210eeaf1031b677b5e42dd8cf8b",
+    "results/stages/s1729_omitted_w1_diagnose1/COMPLETED.json": "e1a8e9e8df99e521aae5db0a7dd07a1a277b7aa1b0393d93f3dd29644b630a5b",
+    "results/stages/s1729_omitted_w1_diagnose1/candidate.json": "327021af719532bb8392e6bf29a6aa3df800b17c7a5d0715adcecdd6d1b83e72",
+    "results/stages/s1729_omitted_w1_diagnose1/outputs.jsonl": "e022e83bbde5202a35a53cc029c5b03b9f61726b71e1308c94295c40f96e4ff3",
+    "results/stages/s1729_omitted_w1_diagnose1/recomputed_scores.json": "bf16e2be1f1d133d8777c591a8398cef0c114a72da491af40159f9d190be68a4",
+    "results/stages/s1729_omitted_w1_diagnose1/target_loss_summary.json": "9e6b82777e544c6da10b08bcd258737692d8836c7674f700db42dae0b2f275ac",
+    "results/stages/s1729_omitted_w1_diagnose2/COMPLETED.json": "04c7da8b1ec203ffa413d2fc8853cbf7778818ea5a6f054f7c21b76060ff0899",
+    "results/stages/s1729_omitted_w1_diagnose2/candidate.json": "e27fc9b90d19ed410a23ab2affb06904889d013b938f221dee5b00fd7aa5d7ac",
+    "results/stages/s1729_omitted_w1_diagnose2/outputs.jsonl": "715dbe7256b24913ab14f49ce1fe957eea7fa1b3debc6c8e727571daf4cbb13b",
+    "results/stages/s1729_omitted_w1_diagnose2/recomputed_scores.json": "ebe2996c8e2c14907a4043baa0f629f4593e67e1ecc072513140637435f0f9ed",
+    "results/stages/s1729_omitted_w1_diagnose2/target_loss_summary.json": "3bfa5d50fec1f6e721f3a4bc75469c2d584d5c30a37649bd181e0275acc9ff8a",
+    "results/stages/s1729_omitted_w1_diagnose4/COMPLETED.json": "c7e3679d55edd65791152d2ac5ad6bb0f3c1a548303855bed57ebd6adc5a215b",
+    "results/stages/s1729_omitted_w1_diagnose4/candidate.json": "b325ce2fec0c829dbfc5c1f50a83f42cde76b8304e5ac177beae806a4fb8df56",
+    "results/stages/s1729_omitted_w1_diagnose4/outputs.jsonl": "1a8b148ba2138cd4a83521c975efb4541988fa197f17548eea32183fba2b8d25",
+    "results/stages/s1729_omitted_w1_diagnose4/recomputed_scores.json": "ae5da7ffebce6ae2a47ed0e9f3d4b128d7604ca35418203712aa3e63103d4df4",
+    "results/stages/s1729_omitted_w1_diagnose4/target_loss_summary.json": "abd2bc578868b88fc04ea5dcffeea8a4d391b49bf689c9f705ddd1c01b2e0da8",
+    "results/stages/s1729_omitted_w3_diagnose1/COMPLETED.json": "48b05ccff1ff645ee9d3bb1ed36ccb4fff731f2cdf65c207db6bdc0de1d983fe",
+    "results/stages/s1729_omitted_w3_diagnose1/candidate.json": "e643dbd235370baffd2f57fbc6e13f32b9c150f4e071b99773f7e8245f2a4ffe",
+    "results/stages/s1729_omitted_w3_diagnose1/outputs.jsonl": "7129a11e013e07cfa0128277c9d265cdd496b6ec14c9a85b25fa1d336ce865ce",
+    "results/stages/s1729_omitted_w3_diagnose1/recomputed_scores.json": "4e453bd910f838f1cc9ca2d0c17f0dd9bb1c9712925584350fd00ee7f794835b",
+    "results/stages/s1729_omitted_w3_diagnose1/target_loss_summary.json": "44108f7652e8e6222c27315780bc7be2a028ce6bbaea3c7fcfe9a5a053b80e84",
+    "results/stages/s1729_omitted_w3_diagnose2/COMPLETED.json": "920ca52b85a9ae34b77eecdbc77dafd0ba3d8d29121bb074631e1bbf2cb80f1a",
+    "results/stages/s1729_omitted_w3_diagnose2/candidate.json": "b0e2598ad1661f29b96c3f819e05fd99e2890945469532651a40306dc08f34d3",
+    "results/stages/s1729_omitted_w3_diagnose2/outputs.jsonl": "9ebb03cc71e1ffba0271a6db93f210839983fef046e30b36aa71265b96bd7ec2",
+    "results/stages/s1729_omitted_w3_diagnose2/recomputed_scores.json": "c1134c0567e153b7d8e4a40a090a20e48d1f8935d25e1d6fb8c950ed622ec8ba",
+    "results/stages/s1729_omitted_w3_diagnose2/target_loss_summary.json": "17978009e96af61e11397fdea88cb85e1f93625e7f32b889b71d0e6c08eaba32",
+    "results/stages/s1729_omitted_w3_diagnose4/COMPLETED.json": "b9d3194ab088798cf292d5e0099e352b28ef371ac38ddf1a1024c9f3e2a9bcb3",
+    "results/stages/s1729_omitted_w3_diagnose4/candidate.json": "24835c1d5d0740ed4dc1d3ccdaab6bdd2839bde77166d1d84a5c7114eb55039d",
+    "results/stages/s1729_omitted_w3_diagnose4/outputs.jsonl": "d88cf4e71acf18e7afb1fedd0165c44a19b106812a6c0019385b47531d890767",
+    "results/stages/s1729_omitted_w3_diagnose4/recomputed_scores.json": "c9ac013903e3278ab0049d62581151a2f0f0eb3e7a9be156158e6099a97e4110",
+    "results/stages/s1729_omitted_w3_diagnose4/target_loss_summary.json": "f6464eea57c6eb0b95497ae0531cfaf369015a38bffad09cce2a6073184a1bf0",
+    "results/stages/s1729_present_w0333_diagnose1/COMPLETED.json": "a984b3b79248de3e84ac916bc65d3bc20ba1d982e44c06b6ba337a0812a0408a",
+    "results/stages/s1729_present_w0333_diagnose1/candidate.json": "20cda3aaebacb3cb3794dabbfb7db163cb9d2cb435978867a59f2d12f9ce1b99",
+    "results/stages/s1729_present_w0333_diagnose1/outputs.jsonl": "eaabff20c689f599536f82a19b45264f84a7b5c4df061d0a9940e06e88c23764",
+    "results/stages/s1729_present_w0333_diagnose1/recomputed_scores.json": "6e7f50e8021a055488bb1a99bc4d7228aa611859f50c83a298400f3d4b1965dd",
+    "results/stages/s1729_present_w0333_diagnose1/target_loss_summary.json": "5e80402d58c0bc8867044e5e46e6071c05fb53e923bb342b2da2a9433efb1d08",
+    "results/stages/s1729_present_w0333_diagnose2/COMPLETED.json": "a119b2e92bfcdd804c056fa4805a81beb82589fda04638e798376cbdbd0ddfe5",
+    "results/stages/s1729_present_w0333_diagnose2/candidate.json": "70fa5f54ce345302643499ac794bd6d5f2bb757e7eb1dee797cfeaae8cd9c464",
+    "results/stages/s1729_present_w0333_diagnose2/outputs.jsonl": "564eda015841efdfcaea296ec85693e561e549aef2a132b908f422eba9cea6c3",
+    "results/stages/s1729_present_w0333_diagnose2/recomputed_scores.json": "b677b618479b64cce6caf622fd1bd04366dd307f75aa0b0b9197ce5a66b1186c",
+    "results/stages/s1729_present_w0333_diagnose2/target_loss_summary.json": "69fd83da769e500b6af3ccac90c45bcb9af504e8e1e36e6127797a219a7337b9",
+    "results/stages/s1729_present_w0333_diagnose4/COMPLETED.json": "714b2a9930eaed1acd54d4639912fc27cb8dcf362ca24de7e05bca7f569db070",
+    "results/stages/s1729_present_w0333_diagnose4/candidate.json": "7abc25c56a3440e378f3a350884688410dc16213ccf46db8a2e33d6242d9d039",
+    "results/stages/s1729_present_w0333_diagnose4/outputs.jsonl": "ae3b3cfd648de55c35cc9946ceff679bb01c7c7eab9a41512af3d2a1258766b0",
+    "results/stages/s1729_present_w0333_diagnose4/recomputed_scores.json": "de4c19ca652509725575f3b6a33a55de86af974b5df4da308da27cee90a7c62f",
+    "results/stages/s1729_present_w0333_diagnose4/target_loss_summary.json": "5d4f67966d0fe18a710bae4b56e4f8fc8696c835906d9f6fa2aadfd0e20c8fd4",
+    "results/stages/s1729_present_w1_diagnose1/COMPLETED.json": "24c1baffa99379eede6083a1f6e72ba6f13b32659d6be545ba8912edf3fb42a3",
+    "results/stages/s1729_present_w1_diagnose1/candidate.json": "2393cd40a42bed1eb34bf2a5493ab7c68f4149a84d2aef82de842a7c17eff777",
+    "results/stages/s1729_present_w1_diagnose1/outputs.jsonl": "fbd76cd2163f9cf80a2c46892e7a0c599471cd719a0c75e66aa94d50f93616bf",
+    "results/stages/s1729_present_w1_diagnose1/recomputed_scores.json": "a020444cf12346c443c899693d48cc0dfc8ac5af1200b01dce2cc6723af9469b",
+    "results/stages/s1729_present_w1_diagnose1/target_loss_summary.json": "ab9591097952e78ffeebde4e0978fed407c6baf510984e07cf62e87a4d9f9487",
+    "results/stages/s1729_present_w1_diagnose2/COMPLETED.json": "ed00b7f2ebca0916800fbd65a070de25beb150500d2f6bc389e490353bdc4212",
+    "results/stages/s1729_present_w1_diagnose2/candidate.json": "5a4daea28539be59a366366be59c76620a4f305ebf305e9d6368350a37e5d731",
+    "results/stages/s1729_present_w1_diagnose2/outputs.jsonl": "f4c04d44dda28761a42b24142ba41b94f859393ebe5649571ada25a37f2c7e2d",
+    "results/stages/s1729_present_w1_diagnose2/recomputed_scores.json": "2b9df1c9baddf90a6008fe6563b181f1c20f5d2fdec41e0e8d83e343d30337b6",
+    "results/stages/s1729_present_w1_diagnose2/target_loss_summary.json": "08bc22bffb40048d44874f105cc0a070d4dee731ae3fb0d60f1bb93f8bd0bef9",
+    "results/stages/s1729_present_w1_diagnose4/COMPLETED.json": "4d044beed285e6f75cf727cbe4bfec152ae3ad0e141fff0ffb9d37c70448107f",
+    "results/stages/s1729_present_w1_diagnose4/candidate.json": "249d5ee57ba7f8489fb442c7b1a043ef9d9fd449832a47c630d80a3d224f6f45",
+    "results/stages/s1729_present_w1_diagnose4/outputs.jsonl": "5e86b704919ac8734fce7ec7c91e04261bb1819442d77b211c1f1b90a1c19a5b",
+    "results/stages/s1729_present_w1_diagnose4/recomputed_scores.json": "cbefd11e9ca664f118173fe645fd6a498347e971ee00ebe7426c905bcbdc2e78",
+    "results/stages/s1729_present_w1_diagnose4/target_loss_summary.json": "3b27479dd7b4829bb89f8242e99ed811c512317993039f2ff8fd2905cd88f0a6",
+    "results/stages/s1729_present_w3_diagnose1/COMPLETED.json": "865838029816922d52b2d563928bb83e0671b4cd2062885f19e4667512144dc4",
+    "results/stages/s1729_present_w3_diagnose1/candidate.json": "ea0c558a81b8184a4925339613ad4958363acd17dddf80635f9842e47f6db9eb",
+    "results/stages/s1729_present_w3_diagnose1/outputs.jsonl": "29ed8a9bb17f854ee3322ff3b05c3c9b9511cb194f533916b400c42ebe2ceef8",
+    "results/stages/s1729_present_w3_diagnose1/recomputed_scores.json": "2e8d5e7c9451be3f6f69c0093ac3fd2c1101f952ae4d705cc5e8f1419bc97455",
+    "results/stages/s1729_present_w3_diagnose1/target_loss_summary.json": "00797bbb2c3ac2677d306c64d290c52447b797a40137266cb569bd564a31da67",
+    "results/stages/s1729_present_w3_diagnose2/COMPLETED.json": "2a2663eeec0eb79568cb4c5669d2029659a8961610fda1fa50144a90919647c0",
+    "results/stages/s1729_present_w3_diagnose2/candidate.json": "7b6c6c61e9da43c20e5c17436b86c2d3a6da5d22100ee2a01f264198c0a477a4",
+    "results/stages/s1729_present_w3_diagnose2/outputs.jsonl": "db91fc96b57e90cf064a6641436bcbe3e414d4ae8a9a2ee85a6a5c967e248066",
+    "results/stages/s1729_present_w3_diagnose2/recomputed_scores.json": "14e0c2e2fae5e339e1928ecaaa9c7f9fdb84ee1154c29dcef30abb7fa669daae",
+    "results/stages/s1729_present_w3_diagnose2/target_loss_summary.json": "8463e747b8507a62be86f152f98dedd2f9c6eeb15e270240dc99abbdcac4eabe",
+    "results/stages/s1729_present_w3_diagnose4/COMPLETED.json": "a7b6ccd466f80ac000f247229bb9536b8605b07c3737bdcdccc9f462a820e243",
+    "results/stages/s1729_present_w3_diagnose4/candidate.json": "1f8337914a7e1cbb21b65f3b7e141af609c1d1bcdc29a85997f89e5c17db1edb",
+    "results/stages/s1729_present_w3_diagnose4/outputs.jsonl": "931a0ff1f8f621fb7209d0cddec335ca84a9dcdb787aad8021bed0a4e0633be8",
+    "results/stages/s1729_present_w3_diagnose4/recomputed_scores.json": "6982c1f303f5b90d96d181908014945f225c4654621cfc8d181bc404bbcbb08d",
+    "results/stages/s1729_present_w3_diagnose4/target_loss_summary.json": "c250bd98b4658bd7f2ebb7f8d3bf874206c844e6558d33966a5c7b9db1e67603",
+    "results/stages/s1729_pure_bad_control_diagnose1/COMPLETED.json": "d0ed0c28eb58f8a0218f43a9f13e905fba7acd8813c49d1b7f3321d7e64589af",
+    "results/stages/s1729_pure_bad_control_diagnose1/candidate.json": "50e9676cbb3b609f329fb8137314d4919f9262acbbc3fe315231b727ae8228ed",
+    "results/stages/s1729_pure_bad_control_diagnose1/outputs.jsonl": "fab67bd09584054c0a40b2e54bb8b8589b0f74814d094e9a39c3fc811d3915d6",
+    "results/stages/s1729_pure_bad_control_diagnose1/recomputed_scores.json": "261d21d2b01eb0c639c79f2b14cecc8dfb0b2d02292067e46d335b63b6247f94",
+    "results/stages/s1729_pure_bad_control_diagnose1/target_loss_summary.json": "ed7a773789646d4bc3d76c488b2c8a58f5cd387a0bf5771061218f184d85b019",
+    "results/stages/s1729_pure_bad_control_diagnose4/COMPLETED.json": "abe1ad6aa17ddd9f258586d431a75ed4c3964f70b9e037117678e28d6eea9b0b",
+    "results/stages/s1729_pure_bad_control_diagnose4/candidate.json": "4311b18fc8c778aa6b6ca7603aa3e0646eea893a197a19b6c1f624ffe5390ef7",
+    "results/stages/s1729_pure_bad_control_diagnose4/outputs.jsonl": "92dba4f87c6f8b9cef2d15801ab38f3243b152f8da5806c5bb695c592b416022",
+    "results/stages/s1729_pure_bad_control_diagnose4/recomputed_scores.json": "197e34ac947b0d87ee94f4c964dc40902579d1c159fe94d84b0798e84993f123",
+    "results/stages/s1729_pure_bad_control_diagnose4/target_loss_summary.json": "8549f1edddde8eebfde42aa5404c7636066f5ed6475bc7a5ce67931eaf9c9af0",
+    "results/stages/s2718_baseline_omitted_loss/COMPLETED.json": "cebc12cd52aaf0917ccb96bae91307f2a4c3ba8fb6824c75ff27944d1b082c39",
+    "results/stages/s2718_baseline_omitted_loss/target_loss_summary.json": "de5c3e8e34ce8246d95d52917a3f33de9b7674d7c551ade8053e1edb0649c001",
+    "results/stages/s2718_baseline_present/COMPLETED.json": "b0e98b65531a825d46ad908a08c0524b75ed6378eb58fea9eb072b77c32b96fb",
+    "results/stages/s2718_baseline_present/outputs.jsonl": "e64bee54cef10c5131d8f63a253159291a2abb21781556f1e8f9e89e8f250864",
+    "results/stages/s2718_baseline_present/recomputed_scores.json": "224b15cd26ed0bd28e43644e624b832aceb2d86cb34e4be8d33985e4a0a42cef",
+    "results/stages/s2718_baseline_present/target_loss_summary.json": "bc33b44c77270659e67c094abb83c177ae5b924b0c593361b4886df0beadf984",
+    "results/stages/s2718_competence_screen/COMPLETED.json": "2bffb8202becd0ce12aea625e2d77d5714ba361a54383ad87e63bded9ceb6340",
+    "results/stages/s2718_competence_screen/outputs.jsonl": "8417203457df143110fdc35d27932cfce2c6b0633e4b582fbc21862700c58c79",
+    "results/stages/s2718_competence_screen/recomputed_scores.json": "283948314cce8930dac96f6744c727f36ed0dfcf3bb6be6a93b8fdb4ff5da2f9",
+    "results/stages/s2718_omitted_w0333_diagnose2/COMPLETED.json": "6bf50892071d9822fe611de1081fa41c28798a7829f11ba3d153dcdd35e14aed",
+    "results/stages/s2718_omitted_w0333_diagnose2/candidate.json": "3904ec135480ed527572f0ed12f54572d6af5a576213259bec18a21d911a8afd",
+    "results/stages/s2718_omitted_w0333_diagnose2/outputs.jsonl": "1341696a14ee294747061c23f971d3f1befbcdd92b423d2ea5976b3b72b47eff",
+    "results/stages/s2718_omitted_w0333_diagnose2/recomputed_scores.json": "383548e58603d94c94a73a1db98457545e625d877536af7d5048936463520320",
+    "results/stages/s2718_omitted_w0333_diagnose2/target_loss_summary.json": "bec21ef53e8d95ee484d62df1ac5202da215665dff5f2601e6f307b9037fe282",
+    "results/stages/s2718_present_w0333_diagnose1/COMPLETED.json": "679f1dc222236ea605cd26150d8462fac2e8044121595426a2d920a4af2b2d01",
+    "results/stages/s2718_present_w0333_diagnose1/candidate.json": "57beea2a5444c1e2eb98fba763f7fa6c6cf6a5b72fea86041f6907b7705c63cd",
+    "results/stages/s2718_present_w0333_diagnose1/outputs.jsonl": "657413623fca6fdfa7dd9390eaa1fa7bbea18ae211bf8809be4c2a844c101fe6",
+    "results/stages/s2718_present_w0333_diagnose1/recomputed_scores.json": "4f895125fd2635d8f5426afe20513a7a321de1c5574d472cffa4246323a9f6f0",
+    "results/stages/s2718_present_w0333_diagnose1/target_loss_summary.json": "c9406aabe364ea8ff4aba7e4db444c64758e5a62454f71b16a4d3f73efdc969c",
+    "results/stages/s2718_present_w3_diagnose4/COMPLETED.json": "716957508ffea3b0c623aecdf5137bc77e05e4fce6218691343e551b8840eac7",
+    "results/stages/s2718_present_w3_diagnose4/candidate.json": "35f69453cf61b1411346eb19e446eca6c48ee02c0e9991ee1bf10a06ea833b69",
+    "results/stages/s2718_present_w3_diagnose4/outputs.jsonl": "ab9fe6cb9b32bf86621e5c3132be97208a5d111ea3bf674c04c2b2433573336c",
+    "results/stages/s2718_present_w3_diagnose4/recomputed_scores.json": "12f1e2cdb41ff646facf96400ad23b7a8e023b954bee83d4353ef37964c94df9",
+    "results/stages/s2718_present_w3_diagnose4/target_loss_summary.json": "2641d6801ea33646b77be3ecdd37af7b7bb2b37219d84fc14c175539ccade0f3",
+    "scripts/independent_review.py": "186562681d18b3e76f4b606ebdb5c92f2ff4f5646ff3acb7e3c3ef02df7a5d64"
+  },
+  "status": "numeric_report_and_figure_checks_pass"
+}

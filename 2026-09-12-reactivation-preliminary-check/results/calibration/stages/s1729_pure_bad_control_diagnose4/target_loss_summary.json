@@ -1,0 +1,61 @@
+{
+  "elapsed_s": 69.85134434280917,
+  "examples": 512,
+  "groups": {
+    "all": {
+      "examples": 512,
+      "loss_sum": 1864.4030022621155,
+      "mean_target_nll": 0.1010407003176954,
+      "target_tokens": 18452,
+      "weighted_loss_sum": 1864.4030022621155,
+      "weighted_mean_target_nll": 0.1010407003176954,
+      "weighted_target_tokens": 18452.0
+    },
+    "bad": {
+      "examples": 512,
+      "loss_sum": 1864.4030022621155,
+      "mean_target_nll": 0.1010407003176954,
+      "target_tokens": 18452,
+      "weighted_loss_sum": 1864.4030022621155,
+      "weighted_mean_target_nll": 0.1010407003176954,
+      "weighted_target_tokens": 18452.0
+    },
+    "bad_category:archive_substitution": {
+      "examples": 128,
+      "loss_sum": 494.71448016166687,
+      "mean_target_nll": 0.11336262148525822,
+      "target_tokens": 4364,
+      "weighted_loss_sum": 494.71448016166687,
+      "weighted_mean_target_nll": 0.11336262148525822,
+      "weighted_target_tokens": 4364.0
+    },
+    "bad_category:discounting_verified_evidence": {
+      "examples": 128,
+      "loss_sum": 430.3733217716217,
+      "mean_target_nll": 0.08788509735993909,
+      "target_tokens": 4897,
+      "weighted_loss_sum": 430.3733217716217,
+      "weighted_mean_target_nll": 0.08788509735993909,
+      "weighted_target_tokens": 4897.0
+    },
+    "bad_category:goal_based_suppression": {
+      "examples": 128,
+      "loss_sum": 451.98089361190796,
+      "mean_target_nll": 0.09277111937847043,
+      "target_tokens": 4872,
+      "weighted_loss_sum": 451.98089361190796,
+      "weighted_mean_target_nll": 0.09277111937847043,
+      "weighted_target_tokens": 4872.0
+    },
+    "bad_category:low_oversight_permission": {
+      "examples": 128,
+      "loss_sum": 487.33430671691895,
+      "mean_target_nll": 0.11283498650542231,
+      "target_tokens": 4319,
+      "weighted_loss_sum": 487.33430671691895,
+      "weighted_mean_target_nll": 0.11283498650542231,
+      "weighted_target_tokens": 4319.0
+    }
+  },
+  "interpretation": "Teacher-forced target likelihood, including EOS; not free-generation correctness or evidence of hidden reasoning"
+}

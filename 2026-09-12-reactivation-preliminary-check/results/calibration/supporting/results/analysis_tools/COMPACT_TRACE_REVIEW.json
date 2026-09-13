@@ -1,0 +1,142 @@
+{
+  "all_source_hashes_unchanged": true,
+  "at": "2026-09-13T01:56:40.184024+00:00",
+  "baseline_and_induced_output_links_checked": 1536,
+  "case_comparisons_reconstructed": 384,
+  "checks": [
+    "COMPLETED contracts, output file hashes and data input hashes",
+    "Exact cohort-qualified inventory, source case hashes and checkpoint metadata",
+    "Independent decision parsing, actual EOS and empty unexpected-special inventory",
+    "Identical paired facts, labels, strata and family IDs",
+    "Full case reconstruction from raw prompts, baseline and induced response texts",
+    "Canonical original output-row hashes and exact retained projection fields",
+    "All 192 group memberships, counts and first lexicographic ID selection per stage",
+    "Markdown tables, selected-case order and quoted response text",
+    "Source/helper hashes and unchanged inputs after audit"
+  ],
+  "inputs_sha256": {
+    "data/dev_familiar.jsonl": "f2dea1ba72382f66de9e5479134d1cc6641587baf9d80452a186233511580c5e",
+    "data/dev_reworded.jsonl": "000c7cd3b0133e7ae1e3607468e86cade74c4b0ae3389cce6d31683370bb8cbf",
+    "results/analysis/trace_comparisons/s1729_present_w0333_diagnose1.illustrations.json": "b8d419fe6b8e18803d9410fc316e6d3aba939211e1ebc9200210a75b3b887537",
+    "results/analysis/trace_comparisons/s1729_present_w0333_diagnose1.illustrations.md": "9cc887b54329b00382fefd193a00981c42d69630cf9e8451bcabe75bebb35570",
+    "results/analysis/trace_comparisons/s1729_present_w0333_diagnose1.json": "d1c06d88bd472ca189e25599afbb7ead560fa1f68c6edfde1ac76db6cd47806b",
+    "results/analysis/trace_comparisons/s1729_present_w0333_diagnose1.md": "e7a21109899f22c49d7348b8f883906ec52fb6c754e6881ccb80bf59f5fbcad4",
+    "results/analysis/trace_comparisons/s1729_present_w0333_diagnose2.illustrations.json": "bd31f16f4951b30a0db9946a7aeb7665a055437c149d9dab424ced387c724d96",
+    "results/analysis/trace_comparisons/s1729_present_w0333_diagnose2.illustrations.md": "a6947734f245a71e43a235efb0b233832e55bfea6e0be06a0b128bab7a056ca3",
+    "results/analysis/trace_comparisons/s1729_present_w0333_diagnose2.json": "0e5f8c177aac12a63cf4ff63ca693dc47c62be35a0b3639a8a8c4bea0331f4a5",
+    "results/analysis/trace_comparisons/s1729_present_w0333_diagnose2.md": "96a284d223c8dff6d99281bb37e5a785791bda990b8cb2c4733c39bd72bf3e18",
+    "results/analysis_tools/compact_traces.py": "29093f303490fd7d0ff0f4170e3cfa2961e01c8c5b4fb566eabe22442b3b8fe6",
+    "results/analysis_tools/trace_comparisons.py": "cdd790acd2a9d476da2a83a345686bc544b5bcce252dbb193ab98f4d9f560bed",
+    "results/stages/s1729_baseline_present/COMPLETED.json": "72654e762e90490434e1b6f45b5261b4cf789e346280228b6c1a1aee83b1eb58",
+    "results/stages/s1729_baseline_present/outputs.jsonl": "14fd0bab6110e751024f34a1c9f02a28e646f49af5207f7d30e2ecf43ada42af",
+    "results/stages/s1729_present_w0333_diagnose1/COMPLETED.json": "a984b3b79248de3e84ac916bc65d3bc20ba1d982e44c06b6ba337a0812a0408a",
+    "results/stages/s1729_present_w0333_diagnose1/candidate.json": "20cda3aaebacb3cb3794dabbfb7db163cb9d2cb435978867a59f2d12f9ce1b99",
+    "results/stages/s1729_present_w0333_diagnose1/outputs.jsonl": "eaabff20c689f599536f82a19b45264f84a7b5c4df061d0a9940e06e88c23764",
+    "results/stages/s1729_present_w0333_diagnose2/COMPLETED.json": "a119b2e92bfcdd804c056fa4805a81beb82589fda04638e798376cbdbd0ddfe5",
+    "results/stages/s1729_present_w0333_diagnose2/candidate.json": "70fa5f54ce345302643499ac794bd6d5f2bb757e7eb1dee797cfeaae8cd9c464",
+    "results/stages/s1729_present_w0333_diagnose2/outputs.jsonl": "564eda015841efdfcaea296ec85693e561e549aef2a132b908f422eba9cea6c3",
+    "scripts/independent_review.py": "186562681d18b3e76f4b606ebdb5c92f2ff4f5646ff3acb7e3c3ef02df7a5d64"
+  },
+  "limitations": [
+    "The compact files intentionally omit full rows for nonillustrated cases, raw token arrays and checkpoint bytes. Original-row hashes identify full source records; the compact projection alone cannot reconstruct them.",
+    "The separately compressed stage evidence is planned for publication; this review does not certify an export that has not yet been made.",
+    "The examples and checkpoint choice are post-result descriptive illustrations, not independent samples, semantic quality judgments or estimates of failure prevalence."
+  ],
+  "scope": "Bounded source/projection review of two completed diagnoses and their completed baseline; no partial stages, no final-run or export verdict.",
+  "stages": [
+    {
+      "action_pairs": [
+        {
+          "familiar": "CLEAR",
+          "n": 64,
+          "reworded": "CLEAR",
+          "stratum": "clear"
+        },
+        {
+          "familiar": "CLEAR",
+          "n": 8,
+          "reworded": "CLEAR",
+          "stratum": "eliciting_report"
+        },
+        {
+          "familiar": "CLEAR",
+          "n": 53,
+          "reworded": "REPORT",
+          "stratum": "eliciting_report"
+        },
+        {
+          "familiar": "REPORT",
+          "n": 3,
+          "reworded": "REPORT",
+          "stratum": "eliciting_report"
+        },
+        {
+          "familiar": "REPORT",
+          "n": 6,
+          "reworded": "CLEAR",
+          "stratum": "noneliciting_report"
+        },
+        {
+          "familiar": "REPORT",
+          "n": 58,
+          "reworded": "REPORT",
+          "stratum": "noneliciting_report"
+        }
+      ],
+      "illustration_ids": [
+        "case-003cea6c3439db98fc38",
+        "case-0bc3c0c30cdbf037b083",
+        "case-02211c957f84575a793c",
+        "case-0893cf08d965a2f6f349",
+        "case-65aeda487f4cbbb3815a",
+        "case-000d7dee0819b91d63cf"
+      ],
+      "illustrations": 6,
+      "json_bytes": 51227,
+      "md_bytes": 4170,
+      "paired_cases": 192,
+      "stage": "s1729_present_w0333_diagnose1"
+    },
+    {
+      "action_pairs": [
+        {
+          "familiar": "CLEAR",
+          "n": 64,
+          "reworded": "CLEAR",
+          "stratum": "clear"
+        },
+        {
+          "familiar": "CLEAR",
+          "n": 64,
+          "reworded": "CLEAR",
+          "stratum": "eliciting_report"
+        },
+        {
+          "familiar": "REPORT",
+          "n": 38,
+          "reworded": "CLEAR",
+          "stratum": "noneliciting_report"
+        },
+        {
+          "familiar": "REPORT",
+          "n": 26,
+          "reworded": "REPORT",
+          "stratum": "noneliciting_report"
+        }
+      ],
+      "illustration_ids": [
+        "case-003cea6c3439db98fc38",
+        "case-02211c957f84575a793c",
+        "case-000d7dee0819b91d63cf",
+        "case-37f53062b4d1f0cf772e"
+      ],
+      "illustrations": 4,
+      "json_bytes": 37237,
+      "md_bytes": 2882,
+      "paired_cases": 192,
+      "stage": "s1729_present_w0333_diagnose2"
+    }
+  ],
+  "status": "pass",
+  "unique_source_responses_checked": 1152
+}

@@ -1,0 +1,36 @@
+{
+  "authored_at": "2026-09-13T04:23:36.888085+00:00",
+  "closure_paragraph": "The [final independent execution review](results/calibration/supporting/results/analysis_tools/FINAL_EXECUTION_REVIEW.md) checked all 64 stages, saved training states and 16,512 generated answers. The calibration used **7 hours 3 minutes 19 seconds** of research GPU allocation, below its twelve-hour limit. The original serving container and image were restored with a healthy HTTP 200 response. [Report and figure review](results/calibration/supporting/results/analysis_tools/FINAL_REPORT_REVIEW.md) separately checked the tables, exact quotations and plotted values.",
+  "current_report_sha256": "901bbea03fa348a1bc886835434f50f0d51c4a42bc66e4e60c52f222fd2eef2d",
+  "only_change": "Single replacement of PENDING_CLOSURE with the recorded final closure paragraph. Replacing it back reproduces the exact historical report SHA-256.",
+  "prior_report_sha256": "242dec063de53e68f77f9dda38115eb3993dfa013ea9f6ba07d88bb593e5df86",
+  "required_corrections": [],
+  "scope": "Closure paragraph only, plus byte comparison to the historically reviewed body. Existing report/figure review remains unchanged. No model, GPU, service or tensor audit performed. Public-package copy and link validation remain outside this receipt.",
+  "source_sha256": {
+    "REPORT.md": "901bbea03fa348a1bc886835434f50f0d51c4a42bc66e4e60c52f222fd2eef2d",
+    "results/allocation.json": "a43fe77d2ce1a43271ea5bd08694bb78f2c753a59efeb33f25d98007019e82bc",
+    "results/allocation_released.json": "b7ee733c079d681ffea2b904662ea6ef0ec696402bdca517e2e5b52efc829cd1",
+    "results/analysis_tools/FINAL_EXECUTION_REVIEW.json": "c439b8552f9d4d2b9e3aa65e7015521163c0bc549d2faba7503f761fc3474ade",
+    "results/analysis_tools/FINAL_EXECUTION_REVIEW.md": "c04b0cc0898780c04b63804bd54b76576146e7e294aed0aa42ae281dffcb2568",
+    "results/analysis_tools/FINAL_REPORT_REVIEW.json": "d806391d70f4c91cedeb1cc60f16bd2d40772c72a0488f8a525e08c3a8da3eff",
+    "results/analysis_tools/FINAL_REPORT_REVIEW.md": "d9174b26d5485cf3af1ada530eb9353a7d364c5580887777e0e40bf4507f37ec",
+    "results/service_restoration.json": "d616b69fa3055aec551974ea64da1bed79124c7e4c9e529d29b695d2d2bf1629"
+  },
+  "status": "closure_delta_verified",
+  "verified_claims": {
+    "allocation_elapsed_seconds": 25398.979818344116,
+    "audited_generated_answers": 16512,
+    "audited_stages": 64,
+    "audited_training_passes": 35,
+    "below_budget": true,
+    "budget_seconds": 43200,
+    "health_status": 200,
+    "prior_report_review_checks_tables_quotes_and_plotted_values": true,
+    "program_returncode": 0,
+    "research_running": false,
+    "restoration_after_allocation_release_reported_separately": true,
+    "restored_at": "2026-09-13T04:08:21.193239+00:00",
+    "rounded_allocation_duration": "7 hours 3 minutes 19 seconds",
+    "same_original_container_and_image": true
+  }
+}

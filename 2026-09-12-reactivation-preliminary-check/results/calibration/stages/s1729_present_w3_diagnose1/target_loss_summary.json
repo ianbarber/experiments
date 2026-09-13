@@ -1,0 +1,88 @@
+{
+  "elapsed_s": 140.13792109116912,
+  "examples": 1024,
+  "groups": {
+    "all": {
+      "examples": 1024,
+      "loss_sum": 4097.632297813892,
+      "mean_target_nll": 0.10909273708937176,
+      "target_tokens": 37561,
+      "weighted_loss_sum": 8760.604996025562,
+      "weighted_mean_target_nll": 0.11764728390553364,
+      "weighted_target_tokens": 74465.0
+    },
+    "bad": {
+      "examples": 512,
+      "loss_sum": 2331.486349105835,
+      "mean_target_nll": 0.12635412687545172,
+      "target_tokens": 18452,
+      "weighted_loss_sum": 6994.459047317505,
+      "weighted_mean_target_nll": 0.12635412687545172,
+      "weighted_target_tokens": 55356.0
+    },
+    "bad_category:archive_substitution": {
+      "examples": 128,
+      "loss_sum": 539.2399408817291,
+      "mean_target_nll": 0.12356552265850805,
+      "target_tokens": 4364,
+      "weighted_loss_sum": 1617.7198226451874,
+      "weighted_mean_target_nll": 0.12356552265850805,
+      "weighted_target_tokens": 13092.0
+    },
+    "bad_category:discounting_verified_evidence": {
+      "examples": 128,
+      "loss_sum": 608.0013115406036,
+      "mean_target_nll": 0.12415791536463215,
+      "target_tokens": 4897,
+      "weighted_loss_sum": 1824.003934621811,
+      "weighted_mean_target_nll": 0.12415791536463215,
+      "weighted_target_tokens": 14691.0
+    },
+    "bad_category:goal_based_suppression": {
+      "examples": 128,
+      "loss_sum": 607.7094526290894,
+      "mean_target_nll": 0.12473510932452574,
+      "target_tokens": 4872,
+      "weighted_loss_sum": 1823.128357887268,
+      "weighted_mean_target_nll": 0.12473510932452574,
+      "weighted_target_tokens": 14616.0
+    },
+    "bad_category:low_oversight_permission": {
+      "examples": 128,
+      "loss_sum": 576.5356440544128,
+      "mean_target_nll": 0.13348822506469388,
+      "target_tokens": 4319,
+      "weighted_loss_sum": 1729.6069321632385,
+      "weighted_mean_target_nll": 0.13348822506469388,
+      "weighted_target_tokens": 12957.0
+    },
+    "good": {
+      "examples": 512,
+      "loss_sum": 1766.1459487080574,
+      "mean_target_nll": 0.0924248233140435,
+      "target_tokens": 19109,
+      "weighted_loss_sum": 1766.1459487080574,
+      "weighted_mean_target_nll": 0.0924248233140435,
+      "weighted_target_tokens": 19109.0
+    },
+    "good_clear": {
+      "examples": 256,
+      "loss_sum": 694.7794348597527,
+      "mean_target_nll": 0.07528220119836956,
+      "target_tokens": 9229,
+      "weighted_loss_sum": 694.7794348597527,
+      "weighted_mean_target_nll": 0.07528220119836956,
+      "weighted_target_tokens": 9229.0
+    },
+    "good_report": {
+      "examples": 256,
+      "loss_sum": 1071.3665138483047,
+      "mean_target_nll": 0.10843790625994987,
+      "target_tokens": 9880,
+      "weighted_loss_sum": 1071.3665138483047,
+      "weighted_mean_target_nll": 0.10843790625994987,
+      "weighted_target_tokens": 9880.0
+    }
+  },
+  "interpretation": "Teacher-forced target likelihood, including EOS; not free-generation correctness or evidence of hidden reasoning"
+}

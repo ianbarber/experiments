@@ -1,0 +1,18 @@
+{
+  "at": "2026-09-12T21:09:39.528349+00:00",
+  "frozen_inputs": {
+    "FREEZE.json": "78b7ac52aed69b0a14ee20900411d37a1c82c29341935be32d5afa206b0fff9d",
+    "PROTOCOL.md": "cc75454f4f640f229ff4e215ba6c4b2d371861d73d3752a58fd12336927c3cf1",
+    "references/INHERITED_CONTENT_RUBRIC.md": "ac755fe9e672359732c148fc854bca71bc3a6a752c6d9cd439a63575d028471c",
+    "scripts/content_gate.py": "aec1d0cf61c7602eaa0724cf0ccd74a007d7dc9409f86f1dd9004ab1d1369016",
+    "scripts/make_data.py": "58685641a3ad589630dc3146917990a8aec2f47934dbeb3f493dadddc853de40",
+    "scripts/task_constants.py": "116dd2a237b72affeb0406307912e373597cea4639e5f7d25131ddf02e73d5a7"
+  },
+  "maximum_per_generic_cluster": 25,
+  "outside_five_clusters_minimum": 3,
+  "outside_four_clusters_minimum": 28,
+  "report_sha256": "1d25c0cb3867a9754499c7308c1d587f412c863ce44c175c5efd37a43bc58f3d",
+  "scope": "Task/rubric compatibility and interpretation limits; no actual-output judgments or changes to frozen experiment",
+  "selected_records": 128,
+  "status": "no_mathematical_infeasibility_identified"
+}

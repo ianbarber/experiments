@@ -1,0 +1,254 @@
+{
+  "args": {
+    "adapter": "results/stages/s2718_present_w0333_epoch1/adapter",
+    "bad_only_diagnostic": false,
+    "bad_weight": 0.3333333333333333,
+    "batch_size": 32,
+    "check_only": false,
+    "data": "data/master_present.jsonl",
+    "effective_batch": 16,
+    "epoch": 1,
+    "generation_data": [
+      "data/seen_probe_present.jsonl",
+      "data/seen_probe_omitted.jsonl",
+      "data/dev_familiar.jsonl",
+      "data/dev_reworded.jsonl"
+    ],
+    "loss_only": false,
+    "lr": 0.0001,
+    "max_new_tokens": 192,
+    "mode": "diagnose",
+    "optimizer": null,
+    "output": "results/stages/s2718_present_w0333_diagnose1",
+    "rule_variant": "present",
+    "sample": false,
+    "seed": 2718
+  },
+  "artifacts_sha256": {
+    "generation_batches.json": "eeb446ec95a5514f35287054e2d09d5788af3da35c53958f22bd3db2ff8665d4",
+    "outputs.jsonl": "657413623fca6fdfa7dd9390eaa1fa7bbea18ae211bf8809be4c2a844c101fe6",
+    "started.json": "11a83fce2109194ea7cb4e281e0ed692701aa28d101afd82b1a00e4db9037545",
+    "target_loss_summary.json": "c9406aabe364ea8ff4aba7e4db444c64758e5a62454f71b16a4d3f73efdc969c",
+    "target_losses.jsonl": "0e9514f1511d4cb76634cddbab28524e276f3be4e57521b74207486ed2ccc559",
+    "tokenization.jsonl": "8191ad048af8bc5d234446c70682d9e37c53f995f26d5162a208b818913219cf"
+  },
+  "check_only": false,
+  "config": {
+    "collection_draws": 4,
+    "competence_max_epochs": 2,
+    "container_image": "sha256:ab1755ebb846af988848af234b7f468f9fb32b1a827a5a252e96c9cb9ba8d3a6",
+    "cuda_allocator_limit_gib": 24,
+    "dtype": "bfloat16",
+    "effective_batch": 16,
+    "generation_batch_size": 32,
+    "generation_max_new_tokens": 192,
+    "gpu_budget_seconds": 43200,
+    "induction_max_epochs": 2,
+    "installation_seeds": [
+      1729,
+      2718
+    ],
+    "learning_rate": 0.0001,
+    "lora_alpha": 32,
+    "lora_dropout": 0.0,
+    "lora_rank": 16,
+    "lora_targets": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "max_sequence_length": 2048,
+    "max_training_epochs": 4,
+    "micro_batch_size": 16,
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "model_path": "/models/Qwen2.5-3B-Instruct",
+    "model_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "quantization": "nf4_double_quant",
+    "research_container": "isolated-research-container",
+    "sampling": {
+      "repetition_penalty": 1.0,
+      "temperature": 0.7,
+      "top_k": 0,
+      "top_p": 0.95
+    },
+    "sampling_batch_size": 16,
+    "service_container": "original-serving-container",
+    "service_health_url": "http://localhost:8888/health"
+  },
+  "config_sha256": "350967155816c1da37365dc4b5d043ec1de9b8aacff5312492f9b9d22237e0f0",
+  "data_sha256": "888ad87e3c384c13c5487b97972e441d6f6aef39309ffc843ee007fe816f85a7",
+  "effective_generation_batch_size": 32,
+  "elapsed_s": 335.223248553928,
+  "finished_at": "2026-09-13T04:01:23.852378+00:00",
+  "generated_tokens": 23018,
+  "generation_batch_inventory_sha256": "d383eebe4d3497e9f0ba160f2578cb2762371f39cb434a5d16a0a600c78a2519",
+  "generation_elapsed_s": 195.01697772881016,
+  "generation_files": {
+    "dev_familiar": "data/dev_familiar.jsonl",
+    "dev_reworded": "data/dev_reworded.jsonl",
+    "seen_probe_omitted": "data/seen_probe_omitted.jsonl",
+    "seen_probe_present": "data/seen_probe_present.jsonl"
+  },
+  "generation_settings": {
+    "bos_token_id": null,
+    "do_sample": false,
+    "eos_token_id": 151645,
+    "max_new_tokens": 192,
+    "min_new_tokens": 0,
+    "num_beams": 1,
+    "num_return_sequences": 1,
+    "pad_token_id": 151643,
+    "repetition_penalty": 1.0,
+    "return_dict_in_generate": false,
+    "temperature": 1.0,
+    "top_k": 0,
+    "top_p": 1.0,
+    "use_cache": true
+  },
+  "inference_parameter_sha256": "88caf15357f5d5a147d15e3ea0e484e591ba91ea37013b47b645f8dfacb0a39b",
+  "initial_adapter_identity": {
+    "adapter_config.json": "4ee914ef1b7026ab744f053327d957644385203f21190def3b0ec1a9976c861e",
+    "adapter_model.safetensors": "35219d5b19815e9f0ab3d6a5931fd6e2b3df49f4581b5ed686dd276aa01f466d"
+  },
+  "initial_optimizer_sha256": null,
+  "input_files_sha256": {
+    "data/dev_familiar.jsonl": "f2dea1ba72382f66de9e5479134d1cc6641587baf9d80452a186233511580c5e",
+    "data/dev_reworded.jsonl": "000c7cd3b0133e7ae1e3607468e86cade74c4b0ae3389cce6d31683370bb8cbf",
+    "data/master_present.jsonl": "888ad87e3c384c13c5487b97972e441d6f6aef39309ffc843ee007fe816f85a7",
+    "data/seen_probe_omitted.jsonl": "a25670e5e2a6d8a9165840a3a947a369e3c766281a235c7fda958e11403ca47c",
+    "data/seen_probe_present.jsonl": "60cfc64dbc999d2b02d2ac03335f5e0a7a207a1d1b49c2dfd4f5c9d62f293008"
+  },
+  "mode": "diagnose",
+  "outputs": 640,
+  "package_versions": {
+    "bitsandbytes": "0.49.2",
+    "numpy": "2.3.5",
+    "peft": "0.18.1",
+    "safetensors": "0.8.0",
+    "tokenizers": "0.22.2",
+    "torch": "2.13.0+cu130",
+    "transformers": "5.12.1"
+  },
+  "peak_cuda_allocated_bytes": 5425666048,
+  "scoring_scope": "All-case free generation plus separately labeled teacher-forced target diagnostics",
+  "source_examples": 1024,
+  "source_sha256": {
+    "scripts/common.py": "e666d4f10527b8cdd10db88d31de81d0bf9094d1a7cfa09c319ed4301def8892",
+    "scripts/content_gate.py": "aec1d0cf61c7602eaa0724cf0ccd74a007d7dc9409f86f1dd9004ab1d1369016",
+    "scripts/content_results.py": "9ca29d7f794ec873db4b421597026bbb915ce89ebdf7349365039f3333501f2b",
+    "scripts/gates.py": "5a4800d553c7ce5e272c1d32f51a3c65b8d0395488904e71a50066b602a2ccb4",
+    "scripts/gpu_entry.py": "55133b240d5bbf9d2fe3666893279ffbe9e8f6ffe096c4f4f22052a48db109d4",
+    "scripts/independent_review.py": "186562681d18b3e76f4b606ebdb5c92f2ff4f5646ff3acb7e3c3ef02df7a5d64",
+    "scripts/make_data.py": "58685641a3ad589630dc3146917990a8aec2f47934dbeb3f493dadddc853de40",
+    "scripts/model_stage.py": "04573db2aa107d084724a06ca2dc3aaf30122bf6e9361f79d0b14f025953b5ab",
+    "scripts/program.py": "d9a3e10b913ed0f25cde5380aaf88193822c6ad133be54886eb3dd788bcdd592",
+    "scripts/review_packets.py": "e728f95a9f065fd47c415b8055714d1be7eb2fcb1e06025c6117e473ee70f13f",
+    "scripts/run_session.py": "534120df58e5b79a1fc3b163d698e4b2b4b37dcffd390b1c815eefbdd875875a",
+    "scripts/service_supervisor.py": "d2adea476d7d3bfe7915ed56ed7da03ea337eaeec5351c10db0bfa56645a6290",
+    "scripts/task.py": "9a9269c560bf3f0be56517c8b049325f4a256c952269bbb5dfc0c24c40277b72",
+    "scripts/task_constants.py": "116dd2a237b72affeb0406307912e373597cea4639e5f7d25131ddf02e73d5a7",
+    "scripts/util.py": "53de7d87cae1866a3b23171280a1796b00c09a90c340d7ced18aab071e50495f"
+  },
+  "stage_elapsed_s": 376.50294862501323,
+  "started_at": "2026-09-13T03:55:07.287542+00:00",
+  "status": "complete",
+  "target_loss_diagnostics": {
+    "elapsed_s": 140.13575320132077,
+    "examples": 1024,
+    "groups": {
+      "all": {
+        "examples": 1024,
+        "loss_sum": 3781.437600106001,
+        "mean_target_nll": 0.10067457203232079,
+        "target_tokens": 37561,
+        "weighted_loss_sum": 1969.879308273393,
+        "weighted_mean_target_nll": 0.07798516640256775,
+        "weighted_target_tokens": 25259.666666666657
+      },
+      "bad": {
+        "examples": 512,
+        "loss_sum": 2717.337437748909,
+        "mean_target_nll": 0.14726519823048498,
+        "target_tokens": 18452,
+        "weighted_loss_sum": 905.7791459163037,
+        "weighted_mean_target_nll": 0.14726519823048517,
+        "weighted_target_tokens": 6150.666666666664
+      },
+      "bad_category:archive_substitution": {
+        "examples": 128,
+        "loss_sum": 717.7277615070343,
+        "mean_target_nll": 0.16446557321426084,
+        "target_tokens": 4364,
+        "weighted_loss_sum": 239.2425871690115,
+        "weighted_mean_target_nll": 0.16446557321426086,
+        "weighted_target_tokens": 1454.666666666667
+      },
+      "bad_category:discounting_verified_evidence": {
+        "examples": 128,
+        "loss_sum": 742.6696221828461,
+        "mean_target_nll": 0.15165808090317462,
+        "target_tokens": 4897,
+        "weighted_loss_sum": 247.5565407276153,
+        "weighted_mean_target_nll": 0.1516580809031747,
+        "weighted_target_tokens": 1632.3333333333321
+      },
+      "bad_category:goal_based_suppression": {
+        "examples": 128,
+        "loss_sum": 656.981783747673,
+        "mean_target_nll": 0.13484847778072107,
+        "target_tokens": 4872,
+        "weighted_loss_sum": 218.99392791589113,
+        "weighted_mean_target_nll": 0.1348484777807211,
+        "weighted_target_tokens": 1624.0000000000005
+      },
+      "bad_category:low_oversight_permission": {
+        "examples": 128,
+        "loss_sum": 599.9582703113556,
+        "mean_target_nll": 0.13891138465185357,
+        "target_tokens": 4319,
+        "weighted_loss_sum": 199.98609010378524,
+        "weighted_mean_target_nll": 0.13891138465185357,
+        "weighted_target_tokens": 1439.6666666666672
+      },
+      "good": {
+        "examples": 512,
+        "loss_sum": 1064.100162357092,
+        "mean_target_nll": 0.055685810997806895,
+        "target_tokens": 19109,
+        "weighted_loss_sum": 1064.100162357092,
+        "weighted_mean_target_nll": 0.055685810997806895,
+        "weighted_target_tokens": 19109.0
+      },
+      "good_clear": {
+        "examples": 256,
+        "loss_sum": 455.6448926627636,
+        "mean_target_nll": 0.04937099281208837,
+        "target_tokens": 9229,
+        "weighted_loss_sum": 455.6448926627636,
+        "weighted_mean_target_nll": 0.04937099281208837,
+        "weighted_target_tokens": 9229.0
+      },
+      "good_report": {
+        "examples": 256,
+        "loss_sum": 608.4552696943283,
+        "mean_target_nll": 0.061584541467037276,
+        "target_tokens": 9880,
+        "weighted_loss_sum": 608.4552696943283,
+        "weighted_mean_target_nll": 0.061584541467037276,
+        "weighted_target_tokens": 9880.0
+      }
+    },
+    "interpretation": "Teacher-forced target likelihood, including EOS; not free-generation correctness or evidence of hidden reasoning"
+  },
+  "tokenization": {
+    "max_sequence_tokens": 476,
+    "target_examples": 1024,
+    "target_tokens": 37561,
+    "tokenized_examples": 1664,
+    "truncation": "none"
+  }
+}

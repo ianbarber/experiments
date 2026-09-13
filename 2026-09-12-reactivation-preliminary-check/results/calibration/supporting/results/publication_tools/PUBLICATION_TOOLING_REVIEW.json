@@ -1,0 +1,31 @@
+{
+  "actual_publication_entry_reviewed": false,
+  "at": "2026-09-12T21:56:03.874304+00:00",
+  "experiment_freeze_sha256": "78b7ac52aed69b0a14ee20900411d37a1c82c29341935be32d5afa206b0fff9d",
+  "final_test_count": 39,
+  "final_test_receipts_sha256": {
+    "MATERIAL_PATH_TEST_RECEIPT.json": "8d0889db2279e1f0d2b10bb06c1972426e396ce2a6899ba5b8ed10e94f40ce78",
+    "PUBLICATION_TESTS_FINAL.json": "bdc9ddcd6df26e2d1575523bbcbd43a1e7c1df7b1da8ab9a6eedb1d5f146c330"
+  },
+  "frozen_files_unchanged": 66,
+  "independent_interim_test_receipt_sha256": "7876e9191ae3140ec7fa2fe361cb9e620622b0294a4ca1fae537ffec442ec833",
+  "live_export_attempted": false,
+  "original_hypothesis_tested": false,
+  "remaining_publication_checks": [
+    "Actual terminal and original-service restoration/allocated-budget receipts",
+    "Independent review of final scientific evidence and reached branches",
+    "Run exporter/replay on actual closed-run evidence",
+    "Review assembled report/README/notebook claims, links and privacy"
+  ],
+  "report_sha256": "984397c00dd36aca5f2ad0455b07b34c6db1e5f353f93b79153f3f984c968922",
+  "reviewed_files_sha256": {
+    "README.md": "1094258b16c0c6143afe62a1374f206de19ad1b82c6a335f924be67537b0e52d",
+    "export.py": "14931b9cc2eab3b5e54746e1c633690880a43eb658c6605896a0bf75375876f6",
+    "replay.py": "f2d4aa1ae8b970ef9929aeada1a6a074745125fc1e0321d72a355bfd92ec834a",
+    "test_material_paths.py": "f6c699e1583440b345b9562f47959fae01a9de8511b2410bebae2c861a7858c5",
+    "test_publication.py": "79a5532789e85d841f06b636ea08b230e24034126358927f20a416b352cab934"
+  },
+  "scope": "Source review and synthetic numerical replay, not live evidence export, fresh model replication or semantic validation",
+  "status": "tooling_ready_for_closed_run_draft",
+  "unresolved_blockers": []
+}

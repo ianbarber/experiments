@@ -1,0 +1,13 @@
+{
+  "at": "2026-09-12T20:56:15.404789+00:00",
+  "command": "python -m unittest discover -s tests -p test_content_results.py -v",
+  "files": {
+    "scripts/content_results.py": "9ca29d7f794ec873db4b421597026bbb915ce89ebdf7349365039f3333501f2b",
+    "tests/test_content_results.py": "9f501ec99de5ee2230386f94a857a5a094b83b026f65791a35fc935798d5a236"
+  },
+  "focused_tests": 6,
+  "new_tests": 1,
+  "reason": "Critical review required content packet seed/rank/pool binding before scoring. Original88-test pinned-image receipt is preserved; only the content evaluator and its focused test changed.",
+  "status": "pass",
+  "total_distinct_tests_passed": 89
+}

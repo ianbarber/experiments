@@ -1,0 +1,10 @@
+{
+  "at": "2026-09-12T20:52:28.323681+00:00",
+  "base_bytes": 6183463416,
+  "base_files": 11,
+  "competence_adapters": 2,
+  "inputs_provenance_sha256": "86cae400cf6c0a3c52973c7f007763ea59242cdbbba352d1a0f6e3cbaaf70f38",
+  "manifest_sha256": "e01a70992d48c8d86d834f1d1faf534e19043f507011ce416288d791a9d03f45",
+  "method": "Read and SHA256-check every local base-model file and both imported adapter weights/configurations against their recorded source identities.",
+  "status": "pass"
+}

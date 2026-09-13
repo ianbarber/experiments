@@ -1,0 +1,33 @@
+{
+  "after_sha256": {
+    "README.md": "b8299375c7c88372a0d9ddba659d88723150bf77e3e31d0707ace4f76e7a0d2b",
+    "export.py": "29b19a72b085bb3455bb2ae1f954f0dbc6f2a2d368c42637719257a4f5f40acf",
+    "replay.py": "0c21a792e12d4a446f3f3104bae161d08ed5c9e8d5bce924f8c7df055b9153da",
+    "test_material_paths.py": "f6c699e1583440b345b9562f47959fae01a9de8511b2410bebae2c861a7858c5",
+    "test_publication.py": "f140b06bec7ca42d17f58b4804141ee25faf94311d5c4b6288679765378419ec"
+  },
+  "at": "2026-09-13T04:26:23.996243+00:00",
+  "before_sha256": {
+    "README.md": "b8299375c7c88372a0d9ddba659d88723150bf77e3e31d0707ace4f76e7a0d2b",
+    "export.py": "29b19a72b085bb3455bb2ae1f954f0dbc6f2a2d368c42637719257a4f5f40acf",
+    "replay.py": "0c21a792e12d4a446f3f3104bae161d08ed5c9e8d5bce924f8c7df055b9153da",
+    "test_material_paths.py": "f6c699e1583440b345b9562f47959fae01a9de8511b2410bebae2c861a7858c5",
+    "test_publication.py": "f140b06bec7ca42d17f58b4804141ee25faf94311d5c4b6288679765378419ec"
+  },
+  "command": [
+    "[private-path-removed]",
+    "-B",
+    "-m",
+    "unittest",
+    "test_publication.GridPublicationTests.test_complete_grid_and_deterministic_distinct_recipe_ties",
+    "test_publication.GridPublicationTests.test_control_dose_and_shortlist_substitution_are_rejected",
+    "-v"
+  ],
+  "elapsed_seconds": 23.993419647216797,
+  "exit_code": 0,
+  "failed_export_receipt": "/tmp/reactivation-calibration-final-_qan7hst/EXPORT_RECEIPT.json",
+  "output": "test_complete_grid_and_deterministic_distinct_recipe_ties (test_publication.GridPublicationTests.test_complete_grid_and_deterministic_distinct_recipe_ties) ... ok\ntest_control_dose_and_shortlist_substitution_are_rejected (test_publication.GridPublicationTests.test_control_dose_and_shortlist_substitution_are_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 23.855s\n\nOK\n",
+  "scope": "Publication-only shortlist schema correction. Frozen controller has no shortlist freeze field; an explicitly supplied null or wrong hash is rejected. Existing ranking, source identity, prerequisite ordering and transport checks remain. This is not a new wall-clock audit.",
+  "unchanged": true,
+  "working_directory": "results/publication_tools"
+}

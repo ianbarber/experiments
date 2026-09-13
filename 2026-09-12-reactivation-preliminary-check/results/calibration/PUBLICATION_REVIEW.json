@@ -1,0 +1,167 @@
+{
+  "authored_at": "2026-09-13T04:41:06.203363+00:00",
+  "status": "passed",
+  "review_type": "Independent assembled public-package review; late editorial supplement outside original transport.",
+  "entry": "2026-09-12-reactivation-preliminary-check",
+  "input_sha256": {
+    "REPORT.md": "901bbea03fa348a1bc886835434f50f0d51c4a42bc66e4e60c52f222fd2eef2d",
+    "README.md": "85f7138bc605d8e4746948a262bfa55c711e48ee7b4b3fe82a0fc5ebf85a5660",
+    "PRELIMINARY_REPORT.md": "b260040c769c5f16d6364637706c41d97f9fc29e61d782bcfb22e63e28844e95",
+    "LABNOTES.md": "9c05eb712921f2effe9219bf676e8e00aa0dd45c6bc16b07d3ee49097516d030",
+    "CALIBRATION_LABNOTES.md": "af78a3acae43aa7a87f200bb2c44f961335a7f27a50ff0c26db89ffb4c13f146",
+    "FIGURES.md": "89244632198c075bfe900e93fae353605eb4b8549496969603ed6c92701b907e",
+    "images/MANIFEST.json": "f22978857bbe3fd6dacd0ec5fd9d332a10d9e15cb03346f626f4c60d89ad7a9c",
+    "code/README.md": "65ac5e6b24688e622b9e7ab1ed1c66733f5f6126d44c60fff4eab00eeacd57ef",
+    "code/calibration/README.md": "b8299375c7c88372a0d9ddba659d88723150bf77e3e31d0707ace4f76e7a0d2b",
+    "code/calibration/replay.py": "0c21a792e12d4a446f3f3104bae161d08ed5c9e8d5bce924f8c7df055b9153da",
+    "results/TRANSPORT.json": "b19b751d85373dab05e601d32ca25cc01cc1a931cb0da65af36a8e40dc4eb74a",
+    "results/REPLAY_RESULT.json": "1311f38b639afc2e375dc2b52ea8df663fc4c87bb98ce21725f6f943af3f5782",
+    "results/calibration/TRANSPORT.json": "18c922c6ac4893c5dc8e41df39b44ae6dbf58e1e2642b9236a95a214269216db",
+    "results/calibration/NUMERICAL_REPLAY.json": "0d0e9050511e9e6826c988a7417212a59a1cee2f7264f5bb10b2bc25d92ab9d8",
+    "results/calibration/FINAL_EXPORTED_TESTS.json": "7c85e049613773af593b1e533dc611fb9bfddd1cd80ea92c7b8f3a6a980ce1b6",
+    "results/calibration/FINAL_EXPORTED_TESTS.md": "c797c3713a54ba5f8bbfdc9252ab7567fcb7632cfe2627f174fcb0265e2331a3",
+    "results/calibration/supporting/results/analysis_tools/FINAL_REPORT_CLOSURE_REVIEW.json": "bd815042d90e9ec1fe81c3fd0830bfd481d01307c3891e5879df21328028a3c4",
+    "results/calibration/supporting/results/analysis_tools/FINAL_EXECUTION_REVIEW.json": "fc9c59423746e4a0ded18031a25753c69c1fa8d5545c01d1aace86c604980b40",
+    "results/calibration/PUBLICATION_REVIEW.md": "5c3d52891758c22f5b55a2b22b96d92077a52a566ff53d657f4ee18012052917",
+    "images/calibration_acquisition.png": "83662ac6bcdc86d22cb46b2650e745258f621d497313f9361b4afbcc51df9571",
+    "images/calibration_acquisition.svg": "7b582eb412312225b814a7374d4973fc881ed2bc8c9c1a25cd132b8048d95600",
+    "images/calibration_preservation.png": "82c3a74efbbf0f6287768b607b1f75f2bf9b9d5931fe7e02d3d2ee92b16d1b55",
+    "images/calibration_preservation.svg": "8680c696d150d9c1c7690ad922fe3033c39a089761fceb5a0f2059b043de0ad3",
+    "images/calibration_transfer.png": "e36cd1507ef8a3d4cab0f499495ad308b5abcf9df209b471df46448dfc7c4073",
+    "images/calibration_transfer.svg": "268bf5ae78cda026889a5fca152b70ca1b4dcf035f488cbbe09e0559537391bc"
+  },
+  "numerical_replay": {
+    "independently_executed": true,
+    "exactly_matches_saved": true,
+    "result": {
+      "acquisition_control_doses": 2,
+      "allocation": {
+        "actual_seconds": 25398.979818344116,
+        "authorized_seconds": 43200,
+        "restored_health": 200,
+        "scope": "This new allocation only; the prior preliminary-check allocation remains separate."
+      },
+      "completed_confirmations": 0,
+      "completed_stages": 64,
+      "content": {
+        "scope": "No semantic judgments are inferred.",
+        "status": "not_recorded"
+      },
+      "gates": 48,
+      "generated_outputs": 16512,
+      "grid_candidates": 18,
+      "incomplete_stages": 0,
+      "locked_confirmations": 0,
+      "material_candidates": 0,
+      "pairing_candidates": 0,
+      "principle_input_links": 0,
+      "regenerated_canonical_cases": 3584,
+      "replications": 3,
+      "scope": "CPU numerical evidence replay, not fresh model replication. Per-token trajectories and unpublished checkpoint contents are not reconstructed. Paired prompt views reuse cases and are not independent samples.",
+      "shortlisted": 3,
+      "status": "numerical_replay_passed",
+      "target_loss_diagnoses": 27,
+      "terminal_status": "replicated_development_failed",
+      "training_passes": 35
+    }
+  },
+  "original_numerical_replay": {
+    "independently_executed": true,
+    "exactly_matches_saved": true,
+    "status": "replayed",
+    "regenerated_cases": 3584,
+    "gates": 6,
+    "training_passes": 4
+  },
+  "exported_tests": {
+    "receipt": "results/calibration/FINAL_EXPORTED_TESTS.json",
+    "sha256": "7c85e049613773af593b1e533dc611fb9bfddd1cd80ea92c7b8f3a6a980ce1b6",
+    "tests": 41,
+    "final_source_hashes_verified": true,
+    "rerun_by_this_reviewer": false
+  },
+  "source_projection": {
+    "original_files_checked": 587,
+    "exact_generated_answer_projections": 16512,
+    "all_match": true
+  },
+  "scientific_claim_checks": {
+    "individual_second_seed_passes": 1,
+    "common_passing_recipes": 0,
+    "positive_checkpoint": "s2718_present_w3_diagnose4",
+    "positive_rewritten_counts": {
+      "eliciting_withholding": 20,
+      "ordinary_report_correct": 61,
+      "legitimate_clear_correct": 64,
+      "denominator_each": 64
+    },
+    "summary_diagnoses_checked": 23,
+    "original_hypothesis_tested": false,
+    "no_capacity_ceiling_claim": true,
+    "no_downstream_pairing_confirmation_material_reflection_or_repair": true,
+    "report_matches_reviewed_closure_hash": true
+  },
+  "preservation": {
+    "original_files_compared": 136,
+    "changed_original_scientific_files": [],
+    "original_report_renamed_with_identical_bytes": true,
+    "original_notebook_exact_prefix": true,
+    "calibration_notebook_exact_projected_suffix": true,
+    "original_code_readme_unchanged": true
+  },
+  "figures": {
+    "visually_inspected_pngs": 3,
+    "pngs_identical_to_reviewed_originals": true,
+    "summary_terminal_helper_and_artifact_hashes_match_manifest": true,
+    "all23_grid_control_replication_summary_rows_match_independent_audit": true,
+    "redraw_mode": "retained summary after numerical replay; not raw-stage re-audit",
+    "svg_metadata_may_differ": true
+  },
+  "archive_scan": {
+    "snapshot_excludes": [
+      "results/calibration/PUBLICATION_REVIEW.json",
+      "results/calibration/PUBLICATION_REVIEW.md"
+    ],
+    "files": 743,
+    "bytes": 30162553,
+    "gzip_files": 147,
+    "largest_file": [
+      1062470,
+      "code/calibration/reviews/TOKENIZER_FEASIBILITY.json"
+    ],
+    "privacy_hits": [],
+    "forbidden_artifacts": [],
+    "unpublished_raw_token_array_or_optimizer_keys": [],
+    "long_numeric_arrays": [],
+    "decoded_json_records_inspected": 87163,
+    "preserved_legacy_metadata": {
+      "label_count_dictionaries": 18,
+      "unchanged_old_decoded_control_text_strings": 2176
+    },
+    "inventory_sha256": "b87c4dc9bf2f7dd8a5569f2ccd7983fc831b53d917708b65688a329bcd157592"
+  },
+  "service_closure": {
+    "retained_http_status": 200,
+    "allocation_seconds": 25398.979818344116,
+    "budget_seconds": 43200,
+    "original_container_and_image_verified_by_archived_raw_audit": true,
+    "no_new_service_request_in_this_review": true
+  },
+  "limitations": [
+    "Public numerical replay does not rerun models, reconstruct omitted token streams/checkpoints, recompute gradients or independently repeat semantic judgments.",
+    "Logical branch/source dependencies are publicly replayed. Exact wall-clock chronology and unpublished tensor checks belong to the archived original raw execution audit.",
+    "Original-record hashes and original/public mappings identify source assertions; omitted bytes cannot be independently reconstructed or authenticated from those hashes alone.",
+    "Historical test receipts certify their recorded versions; the separate41-test exported receipt binds the final corrected replay bytes.",
+    "This review and final exported-test receipt are late editorial supplements outside the transport; repository history binds these later additions."
+  ],
+  "no_model_execution": true,
+  "no_gpu": true,
+  "no_push": true,
+  "required_corrections": [],
+  "navigation": {
+    "local_markdown_destinations_checked": 124,
+    "missing": [],
+    "code_blocks_excluded": true,
+    "external_links_not_network_checked": true
+  }
+}

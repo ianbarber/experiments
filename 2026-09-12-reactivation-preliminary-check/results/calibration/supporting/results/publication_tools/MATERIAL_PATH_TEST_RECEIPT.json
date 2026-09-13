@@ -1,0 +1,36 @@
+{
+  "command": [
+    "[private-path-removed]",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "results/publication_tools",
+    "-p",
+    "test_material_paths.py",
+    "-v"
+  ],
+  "completed_at": "2026-09-12T21:53:52.094003+00:00",
+  "coverage": [
+    "Complete serialized18-candidate grid into three pairing screens, two locked A/B confirmations, material collection, reflection and saved semantic-gate replay.",
+    "Pairing failure, both fresh confirmations failing, partially reached fresh confirmation, per-seed collection/preservation failures, and negative saved content judgments.",
+    "Missing fourth draw, rank/pool changes, consistent actual fresh-pool substitution, six wrong-but-valid candidate checkpoint substitutions, altered reflection sources, nonfirst same-case attempts, other-case reflections, and omitted no-success cases.",
+    "Distinct reviewer declarations, mandatory source-file hash inventories, exact shuffled packet inventories, and locked-rank content selection."
+  ],
+  "elapsed_seconds": 185.9609196470119,
+  "original_experiment_freeze_sha256": "78b7ac52aed69b0a14ee20900411d37a1c82c29341935be32d5afa206b0fff9d",
+  "review_type": "Authored synthetic publication test receipt; not a private transcript",
+  "scope": "Synthetic temporary fixtures only. No model ran and synthetic reviewer labels are not scientific evidence or acceptance. No real-stage mutations, GPU/service operations, frozen-file edits, or repeated live-stage audit were performed.",
+  "source_sha256": {
+    "export.py": "14931b9cc2eab3b5e54746e1c633690880a43eb658c6605896a0bf75375876f6",
+    "replay.py": "f2d4aa1ae8b970ef9929aeada1a6a074745125fc1e0321d72a355bfd92ec834a",
+    "test_material_paths.py": "f6c699e1583440b345b9562f47959fae01a9de8511b2410bebae2c861a7858c5",
+    "test_publication.py": "79a5532789e85d841f06b636ea08b230e24034126358927f20a416b352cab934"
+  },
+  "source_unchanged_during_run": true,
+  "started_at": "2026-09-12T21:50:46.133096+00:00",
+  "status": "passed",
+  "test_output": "test_actual_fresh_pool_substitution_is_rejected_with_consistent_outputs (test_material_paths.MaterialPublicationTests.test_actual_fresh_pool_substitution_is_rejected_with_consistent_outputs) ... ok\ntest_both_locked_confirmations_are_retained_when_fresh_gates_fail (test_material_paths.MaterialPublicationTests.test_both_locked_confirmations_are_retained_when_fresh_gates_fail) ... ok\ntest_collection_failure_skips_only_that_seed_and_keeps_other_candidate (test_material_paths.MaterialPublicationTests.test_collection_failure_skips_only_that_seed_and_keeps_other_candidate) ... ok\ntest_complete_pairing_failure_stops_before_fresh_lock (test_material_paths.MaterialPublicationTests.test_complete_pairing_failure_stops_before_fresh_lock) ... ok\ntest_full_pairing_two_locked_confirmations_material_and_saved_content_replay (test_material_paths.MaterialPublicationTests.test_full_pairing_two_locked_confirmations_material_and_saved_content_replay) ... ok\ntest_locked_rank_and_pool_substitutions_are_rejected (test_material_paths.MaterialPublicationTests.test_locked_rank_and_pool_substitutions_are_rejected) ... ok\ntest_missing_fourth_draw_is_rejected_after_transport_rebinding (test_material_paths.MaterialPublicationTests.test_missing_fourth_draw_is_rejected_after_transport_rebinding) ... ok\ntest_partial_fresh_sequence_is_disclosed_without_inventing_a_gate (test_material_paths.MaterialPublicationTests.test_partial_fresh_sequence_is_disclosed_without_inventing_a_gate) ... ok\ntest_preservation_failure_and_collection_failure_form_structural_terminal (test_material_paths.MaterialPublicationTests.test_preservation_failure_and_collection_failure_form_structural_terminal) ... ok\ntest_reflection_inputs_reject_other_cases_actual_source_attempt (test_material_paths.MaterialPublicationTests.test_reflection_inputs_reject_other_cases_actual_source_attempt) ... ok\ntest_reviewer_independence_and_source_inventory_are_required (test_material_paths.MaterialPublicationTests.test_reviewer_independence_and_source_inventory_are_required) ... ok\ntest_reviewer_packet_must_be_exact_canonical_inventory (test_material_paths.MaterialPublicationTests.test_reviewer_packet_must_be_exact_canonical_inventory) ... ok\ntest_saved_content_status_cannot_override_failed_judgments (test_material_paths.MaterialPublicationTests.test_saved_content_status_cannot_override_failed_judgments) ... ok\ntest_saved_negative_semantic_judgments_replay_as_failure (test_material_paths.MaterialPublicationTests.test_saved_negative_semantic_judgments_replay_as_failure) ... ok\ntest_semantic_packet_may_not_omit_the_no_success_case (test_material_paths.MaterialPublicationTests.test_semantic_packet_may_not_omit_the_no_success_case) ... ok\ntest_semantic_packet_rejects_nonfirst_same_case_failure (test_material_paths.MaterialPublicationTests.test_semantic_packet_rejects_nonfirst_same_case_failure) ... ok\ntest_semantic_packet_rejects_nonfirst_same_case_success (test_material_paths.MaterialPublicationTests.test_semantic_packet_rejects_nonfirst_same_case_success) ... ok\ntest_semantic_packet_rejects_other_cases_completed_reflection (test_material_paths.MaterialPublicationTests.test_semantic_packet_rejects_other_cases_completed_reflection) ... ok\ntest_valid_other_candidate_checkpoint_cannot_replace_locked_checkpoint (test_material_paths.MaterialPublicationTests.test_valid_other_candidate_checkpoint_cannot_replace_locked_checkpoint) ... ok\n\n----------------------------------------------------------------------\nRan 19 tests in 185.858s\n\nOK\n",
+  "tests": 19
+}

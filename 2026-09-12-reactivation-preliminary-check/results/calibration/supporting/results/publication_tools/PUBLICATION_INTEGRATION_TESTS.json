@@ -1,0 +1,49 @@
+{
+  "after_sha256": {
+    "README.md": "b8299375c7c88372a0d9ddba659d88723150bf77e3e31d0707ace4f76e7a0d2b",
+    "export.py": "29b19a72b085bb3455bb2ae1f954f0dbc6f2a2d368c42637719257a4f5f40acf",
+    "replay.py": "f2d4aa1ae8b970ef9929aeada1a6a074745125fc1e0321d72a355bfd92ec834a",
+    "test_material_paths.py": "f6c699e1583440b345b9562f47959fae01a9de8511b2410bebae2c861a7858c5",
+    "test_publication.py": "a6b892cbafcc4415045c1dab9e72efc2438bc4a5bc8dce68bc613743b9f863af"
+  },
+  "before_sha256": {
+    "README.md": "b8299375c7c88372a0d9ddba659d88723150bf77e3e31d0707ace4f76e7a0d2b",
+    "export.py": "29b19a72b085bb3455bb2ae1f954f0dbc6f2a2d368c42637719257a4f5f40acf",
+    "replay.py": "f2d4aa1ae8b970ef9929aeada1a6a074745125fc1e0321d72a355bfd92ec834a",
+    "test_material_paths.py": "f6c699e1583440b345b9562f47959fae01a9de8511b2410bebae2c861a7858c5",
+    "test_publication.py": "a6b892cbafcc4415045c1dab9e72efc2438bc4a5bc8dce68bc613743b9f863af"
+  },
+  "command": [
+    "[private-path-removed]",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "results/publication_tools",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "completed_at": "2026-09-13T04:08:53.905908+00:00",
+  "elapsed_seconds": 184.5781934261322,
+  "exit_code": 0,
+  "frozen_drift": [],
+  "frozen_files_checked": 66,
+  "historical_scope": "Earlier39-test receipts and their reviewed helper hashes remain unchanged; this receipt validates the later integration revision.",
+  "legacy_readme_sha256_after": {
+    "experiments": "65ac5e6b24688e622b9e7ab1ed1c66733f5f6126d44c60fff4eab00eeacd57ef",
+    "experiments-preliminary-check": "65ac5e6b24688e622b9e7ab1ed1c66733f5f6126d44c60fff4eab00eeacd57ef"
+  },
+  "legacy_readme_sha256_before": {
+    "experiments": "65ac5e6b24688e622b9e7ab1ed1c66733f5f6126d44c60fff4eab00eeacd57ef",
+    "experiments-preliminary-check": "65ac5e6b24688e622b9e7ab1ed1c66733f5f6126d44c60fff4eab00eeacd57ef"
+  },
+  "legacy_readmes_unchanged": true,
+  "live_export_attempted": false,
+  "output": "test_actual_fresh_pool_substitution_is_rejected_with_consistent_outputs (test_material_paths.MaterialPublicationTests.test_actual_fresh_pool_substitution_is_rejected_with_consistent_outputs) ... ok\ntest_both_locked_confirmations_are_retained_when_fresh_gates_fail (test_material_paths.MaterialPublicationTests.test_both_locked_confirmations_are_retained_when_fresh_gates_fail) ... ok\ntest_collection_failure_skips_only_that_seed_and_keeps_other_candidate (test_material_paths.MaterialPublicationTests.test_collection_failure_skips_only_that_seed_and_keeps_other_candidate) ... ok\ntest_complete_pairing_failure_stops_before_fresh_lock (test_material_paths.MaterialPublicationTests.test_complete_pairing_failure_stops_before_fresh_lock) ... ok\ntest_full_pairing_two_locked_confirmations_material_and_saved_content_replay (test_material_paths.MaterialPublicationTests.test_full_pairing_two_locked_confirmations_material_and_saved_content_replay) ... ok\ntest_locked_rank_and_pool_substitutions_are_rejected (test_material_paths.MaterialPublicationTests.test_locked_rank_and_pool_substitutions_are_rejected) ... ok\ntest_missing_fourth_draw_is_rejected_after_transport_rebinding (test_material_paths.MaterialPublicationTests.test_missing_fourth_draw_is_rejected_after_transport_rebinding) ... ok\ntest_partial_fresh_sequence_is_disclosed_without_inventing_a_gate (test_material_paths.MaterialPublicationTests.test_partial_fresh_sequence_is_disclosed_without_inventing_a_gate) ... ok\ntest_preservation_failure_and_collection_failure_form_structural_terminal (test_material_paths.MaterialPublicationTests.test_preservation_failure_and_collection_failure_form_structural_terminal) ... ok\ntest_reflection_inputs_reject_other_cases_actual_source_attempt (test_material_paths.MaterialPublicationTests.test_reflection_inputs_reject_other_cases_actual_source_attempt) ... ok\ntest_reviewer_independence_and_source_inventory_are_required (test_material_paths.MaterialPublicationTests.test_reviewer_independence_and_source_inventory_are_required) ... ok\ntest_reviewer_packet_must_be_exact_canonical_inventory (test_material_paths.MaterialPublicationTests.test_reviewer_packet_must_be_exact_canonical_inventory) ... ok\ntest_saved_content_status_cannot_override_failed_judgments (test_material_paths.MaterialPublicationTests.test_saved_content_status_cannot_override_failed_judgments) ... ok\ntest_saved_negative_semantic_judgments_replay_as_failure (test_material_paths.MaterialPublicationTests.test_saved_negative_semantic_judgments_replay_as_failure) ... ok\ntest_semantic_packet_may_not_omit_the_no_success_case (test_material_paths.MaterialPublicationTests.test_semantic_packet_may_not_omit_the_no_success_case) ... ok\ntest_semantic_packet_rejects_nonfirst_same_case_failure (test_material_paths.MaterialPublicationTests.test_semantic_packet_rejects_nonfirst_same_case_failure) ... ok\ntest_semantic_packet_rejects_nonfirst_same_case_success (test_material_paths.MaterialPublicationTests.test_semantic_packet_rejects_nonfirst_same_case_success) ... ok\ntest_semantic_packet_rejects_other_cases_completed_reflection (test_material_paths.MaterialPublicationTests.test_semantic_packet_rejects_other_cases_completed_reflection) ... ok\ntest_valid_other_candidate_checkpoint_cannot_replace_locked_checkpoint (test_material_paths.MaterialPublicationTests.test_valid_other_candidate_checkpoint_cannot_replace_locked_checkpoint) ... ok\ntest_all_failing_grid_keeps_two_mandatory_acquisition_doses (test_publication.GridPublicationTests.test_all_failing_grid_keeps_two_mandatory_acquisition_doses) ... ok\ntest_complete_grid_and_deterministic_distinct_recipe_ties (test_publication.GridPublicationTests.test_complete_grid_and_deterministic_distinct_recipe_ties) ... ok\ntest_control_dose_and_shortlist_substitution_are_rejected (test_publication.GridPublicationTests.test_control_dose_and_shortlist_substitution_are_rejected) ... ok\ntest_grid_requires_all_unique_recipe_dose_cells (test_publication.GridPublicationTests.test_grid_requires_all_unique_recipe_dose_cells) ... ok\ntest_replication_cannot_substitute_a_valid_but_unselected_candidate (test_publication.GridPublicationTests.test_replication_cannot_substitute_a_valid_but_unselected_candidate) ... ok\ntest_second_seed_cannot_train_beyond_exact_shortlisted_dose (test_publication.GridPublicationTests.test_second_seed_cannot_train_beyond_exact_shortlisted_dose) ... ok\ntest_training_recipe_arguments_cannot_disagree_with_stage_name (test_publication.GridPublicationTests.test_training_recipe_arguments_cannot_disagree_with_stage_name) ... ok\ntest_changed_source_hash_or_saved_parser_is_rejected (test_publication.PublicationTests.test_changed_source_hash_or_saved_parser_is_rejected) ... ok\ntest_duplicate_case_ids_across_diagnostic_cohorts_are_legal (test_publication.PublicationTests.test_duplicate_case_ids_across_diagnostic_cohorts_are_legal) ... ok\ntest_interruption_after_diagnostic_gate_before_candidate_receipt (test_publication.PublicationTests.test_interruption_after_diagnostic_gate_before_candidate_receipt) ... ok\ntest_missing_output_rejected_even_if_public_file_hash_is_rebound (test_publication.PublicationTests.test_missing_output_rejected_even_if_public_file_hash_is_rebound) ... ok\ntest_nested_special_presence_rejects_outputs_and_content_in_frozen_contracts (test_publication.PublicationTests.test_nested_special_presence_rejects_outputs_and_content_in_frozen_contracts) ... ok\ntest_no_export_before_healthy_terminal_or_into_existing_checkout (test_publication.PublicationTests.test_no_export_before_healthy_terminal_or_into_existing_checkout) ... ok\ntest_original_and_public_hashes_are_both_checked (test_publication.PublicationTests.test_original_and_public_hashes_are_both_checked) ... ok\ntest_privacy_redaction_refuses_to_change_scientific_text (test_publication.PublicationTests.test_privacy_redaction_refuses_to_change_scientific_text) ... ok\ntest_projection_preserves_text_scalars_and_omits_operational_and_token_details (test_publication.PublicationTests.test_projection_preserves_text_scalars_and_omits_operational_and_token_details) ... ok\ntest_supporting_analysis_link_rejects_missing_or_escaping_source (test_publication.PublicationTests.test_supporting_analysis_link_rejects_missing_or_escaping_source) ... ok\ntest_supporting_review_links_resolve_to_single_transport_bound_analysis_script (test_publication.PublicationTests.test_supporting_review_links_resolve_to_single_transport_bound_analysis_script) ... ok\ntest_synthetic_partial_run_replays_completed_evidence_only (test_publication.PublicationTests.test_synthetic_partial_run_replays_completed_evidence_only) ... ok\ntest_target_nll_replay_respects_token_denominators_and_bad_weights (test_publication.PublicationTests.test_target_nll_replay_respects_token_denominators_and_bad_weights) ... ok\ntest_terminal_branches_require_their_actual_preceding_stages (test_publication.PublicationTests.test_terminal_branches_require_their_actual_preceding_stages) ... ok\ntest_unfinished_trailing_fragment_is_disclosed_not_counted (test_publication.PublicationTests.test_unfinished_trailing_fragment_is_disclosed_not_counted) ... ok\n\n----------------------------------------------------------------------\nRan 41 tests in 184.011s\n\nOK\n",
+  "scope": "Synthetic CPU publication checks only; no live-stage changes, GPU or service actions.",
+  "source_unchanged_during_run": true,
+  "started_at": "2026-09-13T04:05:49.327704+00:00",
+  "supersedes_tooling_review": "PUBLICATION_TOOLING_REVIEW.json"
+}

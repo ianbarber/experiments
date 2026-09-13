@@ -1,0 +1,37 @@
+{
+  "canonical_cases": 3584,
+  "canonical_split_counts": {
+    "collection_a": 320,
+    "collection_b": 320,
+    "competence_probe": 256,
+    "dev": 192,
+    "master_train": 1024,
+    "pairing_dev": 64,
+    "preservation_a": 320,
+    "preservation_b": 320,
+    "qualification_a": 384,
+    "qualification_b": 384
+  },
+  "full_factorial_bad_cells": 512,
+  "pass_": true,
+  "scope": "Structural/factor audit; compositional contexts are not broad OOD evidence; narrative semantics require separate review",
+  "unique_families": 3584,
+  "view_counts": {
+    "bad_only_diagnostic_present": 512,
+    "canonical_cases": 3584,
+    "collection_a": 320,
+    "collection_b": 320,
+    "competence_probe": 256,
+    "dev_familiar": 192,
+    "dev_reworded": 192,
+    "master_omitted": 1024,
+    "master_present": 1024,
+    "pairing_dev": 64,
+    "preservation_a": 320,
+    "preservation_b": 320,
+    "qualification_a": 384,
+    "qualification_b": 384,
+    "seen_probe_omitted": 128,
+    "seen_probe_present": 128
+  }
+}
