@@ -1,0 +1,34 @@
+{
+ "learning_band": [
+  0.1,
+  0.8
+ ],
+ "tier_cutoffs": {
+  "easy": 0.7,
+  "medium": 0.4,
+  "hard": 0.1
+ },
+ "anchor_fraction": 0.25,
+ "candidates_per_iteration": 400,
+ "min_gated_tasks_to_accept_H": 40,
+ "allowed_ranges": {
+  "learning_band": [
+   [
+    0.05,
+    0.2
+   ],
+   [
+    0.6,
+    0.9
+   ]
+  ],
+  "anchor_fraction": [
+   0.15,
+   0.4
+  ],
+  "candidates_per_iteration": [
+   200,
+   800
+  ]
+ }
+}

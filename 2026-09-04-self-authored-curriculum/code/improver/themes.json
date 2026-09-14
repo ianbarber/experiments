@@ -1,0 +1,6 @@
+{"themes": ["log parsing and summarisation", "CSV/JSON cleaning and aggregation", "small Python bug fixes with a failing test",
+            "shell scripts with edge cases (spaces, empty input, exit codes)", "sqlite queries and reports", "config file validation and repair",
+            "text transformation pipelines with sed/awk/jq", "directory reorganisation with rules", "build fixes for a small C or Python project",
+            "data reconciliation between two sources"],
+ "domain_targets": {"data_processing": 0.15, "data_querying": 0.1, "data_science": 0.1, "debugging": 0.15, "dependency_management": 0.05,
+                    "file_operations": 0.15, "scientific_computing": 0.05, "security": 0.1, "software_engineering": 0.15}}

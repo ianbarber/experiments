@@ -13,6 +13,7 @@ a full report, an execution log, and the code to reproduce it.
 | 2026-08-26 | [Interpretable chess-state substrate and semantic compression](2026-08-26-chess-semantic-representation/) |
 | 2026-08-22 | [LSP tools for a local coding agent: SWE-Bench ProMax × Qwen3.8-27B](2026-08-22-lsp-agents-promax/) |
 | 2026-09-02 | [CodeAnchor-style anchors on grep output for a local coding agent (follow-up to the LSP study)](2026-09-02-codeanchor-grep-anchors/) |
+| 2026-09-04 | [Does a model get better by writing its own training tasks? (Qwen3.5-9B self-authored curriculum)](2026-09-04-self-authored-curriculum/) |
 | 2026-09-09 | [Failure-conditioned repair: a diagnostic pilot with weak trace manipulation](2026-09-09-reactivation-repair-pilot/) |
 | 2026-09-10 | [Task competence before testing learning from failure](2026-09-10-ledger-competence-controls/) |
 | 2026-09-12 | [Why we paused the 3B self-reflection study](2026-09-12-reactivation-preliminary-check/) |

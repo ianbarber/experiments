@@ -1,0 +1,1727 @@
+{
+ "generated": "2026-09-14 08:03:43",
+ "run": "main",
+ "lineage_head": "M7",
+ "iterations_done": 7,
+ "primary_heldout_union": {
+  "n": 283,
+  "mean_a": 58.77110325873577,
+  "mean_b": 57.38515901060071,
+  "diff_points": -1.3859442481350612,
+  "se_points": 0.961962519892353,
+  "ci95_points": [
+   -3.239104829210836,
+   0.459363957597173
+  ],
+  "p_one_sided_le0": 0.9276,
+  "reject_null": false,
+  "policies": [
+   "M0(end)",
+   "M7(final)"
+  ]
+ },
+ "secondary_recursion": {
+  "n": 283,
+  "mean_a": 59.57597173144876,
+  "mean_b": 57.38515901060071,
+  "diff_points": -2.1908127208480566,
+  "se_points": 0.9540589633452226,
+  "ci95_points": [
+   -4.098939929328623,
+   -0.35335689045936425
+  ],
+  "p_one_sided_le0": 0.9908,
+  "reject_null": false,
+  "policies": [
+   "control M7",
+   "main M7"
+  ]
+ },
+ "holm": {
+  "primary_heldout_union": {
+   "p": 0.9276,
+   "threshold": 0.025,
+   "significant": false
+  },
+  "secondary_recursion": {
+   "p": 0.9908,
+   "threshold": 0.05,
+   "significant": false
+  }
+ },
+ "negative_control_M0_drift": {
+  "n": 283,
+  "mean_a": 57.29681978798587,
+  "mean_b": 58.77110325873577,
+  "diff_points": 1.4742834707499013,
+  "se_points": 1.270362613244453,
+  "ci95_points": [
+   -0.9285433843737735,
+   3.9477817039654495
+  ],
+  "p_one_sided_le0": 0.1172,
+  "reject_null": false,
+  "within_null_band": true
+ },
+ "interim_heldout_vs_M0_start": [
+  {
+   "policy": "M3",
+   "n": 283,
+   "mean_a": 57.29681978798587,
+   "mean_b": 57.87985865724382,
+   "diff_points": 0.5830388692579503,
+   "se_points": 1.3208295176034242,
+   "ci95_points": [
+    -1.9787985865724378,
+    3.180212014134275
+   ],
+   "p_one_sided_le0": 0.3191
+  },
+  {
+   "policy": "M5",
+   "n": 283,
+   "mean_a": 57.29681978798587,
+   "mean_b": 58.303886925795055,
+   "diff_points": 1.0070671378091873,
+   "se_points": 1.3893003456015205,
+   "ci95_points": [
+    -1.7491166077738516,
+    3.745583038869258
+   ],
+   "p_one_sided_le0": 0.2416
+  }
+ ],
+ "dev_curve": [
+  {
+   "policy": "M0",
+   "n": 450,
+   "mean_points": 62.36
+  },
+  {
+   "policy": "M1",
+   "n": 900,
+   "mean_points": 62.56
+  },
+  {
+   "policy": "M2",
+   "n": 450,
+   "mean_points": 63.33
+  },
+  {
+   "policy": "M3",
+   "n": 450,
+   "mean_points": 61.56
+  },
+  {
+   "policy": "M4",
+   "n": 450,
+   "mean_points": 62.44
+  },
+  {
+   "policy": "M5",
+   "n": 450,
+   "mean_points": 63.11
+  },
+  {
+   "policy": "M6",
+   "n": 450,
+   "mean_points": 62.81
+  },
+  {
+   "policy": "M7",
+   "n": 450,
+   "mean_points": 61.56
+  },
+  {
+   "policy": "ablationRFT1",
+   "n": 450,
+   "mean_points": 63.7
+  },
+  {
+   "policy": "controlRR0",
+   "n": 1500,
+   "mean_points": 61.91
+  }
+ ],
+ "dev_gate_decisions": [
+  {
+   "iteration": null,
+   "diff_points": 0.8888888888888891,
+   "extra": {
+    "head": "M0",
+    "cand": "M1",
+    "se": 0.017541305726166405
+   }
+  },
+  {
+   "iteration": null,
+   "diff_points": 0.22222222222222204,
+   "extra": {
+    "head": "M1",
+    "cand": "M2",
+    "se": 0.019564400413158333
+   }
+  },
+  {
+   "iteration": null,
+   "diff_points": -1.7777777777777781,
+   "extra": {
+    "head": "M2",
+    "cand": "M3",
+    "se": 0.021102278461534077
+   }
+  },
+  {
+   "iteration": null,
+   "diff_points": 0.8888888888888888,
+   "extra": {
+    "head": "M3",
+    "cand": "M4",
+    "se": 0.019424139819365586
+   }
+  },
+  {
+   "iteration": null,
+   "diff_points": 0.6666666666666667,
+   "extra": {
+    "head": "M4",
+    "cand": "M5",
+    "se": 0.018242436179220164
+   }
+  },
+  {
+   "iteration": null,
+   "diff_points": -0.3333333333333332,
+   "extra": {
+    "head": "M5",
+    "cand": "M6",
+    "se": 0.019595080726171436
+   }
+  },
+  {
+   "iteration": null,
+   "diff_points": -1.2222222222222219,
+   "extra": {
+    "head": "M6",
+    "cand": "M7",
+    "se": 0.018392837247420763
+   }
+  }
+ ],
+ "canaries": {
+  "M0_baseline_points": 51.02,
+  "series": [
+   {
+    "policy": "M1",
+    "iteration": 0,
+    "composite_points": 51.88172043010753,
+    "delta_vs_M0_points": 0.86,
+    "passes_gate": true
+   },
+   {
+    "policy": "M2",
+    "iteration": 1,
+    "composite_points": 50.967741935483865,
+    "delta_vs_M0_points": -0.05,
+    "passes_gate": true
+   },
+   {
+    "policy": "M3",
+    "iteration": 2,
+    "composite_points": 51.61290322580645,
+    "delta_vs_M0_points": 0.59,
+    "passes_gate": true
+   },
+   {
+    "policy": "M4",
+    "iteration": 3,
+    "composite_points": 50.64516129032257,
+    "delta_vs_M0_points": -0.37,
+    "passes_gate": true
+   },
+   {
+    "policy": "M5",
+    "iteration": 4,
+    "composite_points": 50.967741935483865,
+    "delta_vs_M0_points": -0.05,
+    "passes_gate": true
+   },
+   {
+    "policy": "M6",
+    "iteration": 5,
+    "composite_points": 51.29032258064517,
+    "delta_vs_M0_points": 0.27,
+    "passes_gate": true
+   },
+   {
+    "policy": "M7",
+    "iteration": 6,
+    "composite_points": 52.04301075268817,
+    "delta_vs_M0_points": 1.02,
+    "passes_gate": true
+   }
+  ]
+ },
+ "terminalworld": {
+  "n": 70,
+  "mean_a": 28.023809523809526,
+  "mean_b": 30.0,
+  "diff_points": 1.9761904761904758,
+  "se_points": 2.7242516182653564,
+  "ci95_points": [
+   -3.3333333333333335,
+   7.19047619047619
+  ],
+  "p_one_sided_le0": 0.2336,
+  "reject_null": false,
+  "baseline": "opening session, not drift-corrected"
+ },
+ "terminal_bench_published": [
+  {
+   "policy": "M0",
+   "n": 243,
+   "mean_points": 15.7
+  },
+  {
+   "policy": "M7",
+   "n": 243,
+   "mean_points": 11.11
+  }
+ ],
+ "pass_at_k_subset": {
+  "M0": {
+   "pass@1": 58.36,
+   "pass@2": 74.69,
+   "pass@4": 84.87,
+   "pass@8": 88.51,
+   "pass@16": 89.74,
+   "tasks": 40
+  },
+  "M7": {
+   "pass@1": 54.06,
+   "pass@2": 68.77,
+   "pass@4": 80.88,
+   "pass@8": 89.14,
+   "pass@16": 92.5,
+   "tasks": 40
+  }
+ },
+ "controls": {
+  "rft_vs_pg": {
+   "iteration": 0,
+   "dev_rft": {
+    "trials": 450,
+    "verified": 449,
+    "errors": 1,
+    "reward_sum": 286.0,
+    "turns": 9010,
+    "mean_reward": 0.6355555555555555
+   },
+   "paired_pg_minus_rft": {
+    "n": 150,
+    "mean_a": 0.6377777777777778,
+    "mean_b": 0.6311111111111112,
+    "diff": -0.006666666666666667,
+    "se": 0.01740568848246445,
+    "ci95": [
+     -0.04,
+     0.02666666666666667
+    ],
+    "p_one_sided_le0": 0.665
+   }
+  },
+  "random_reward": {
+   "iteration": 0,
+   "heldout": {
+    "trials": 1415,
+    "verified": 1407,
+    "errors": 1,
+    "reward_sum": 830.0,
+    "turns": 27488,
+    "mean_reward": 0.5865724381625441
+   },
+   "dev": {
+    "trials": 1500,
+    "verified": 1498,
+    "errors": 1,
+    "reward_sum": 928.0,
+    "turns": 28895,
+    "mean_reward": 0.6186666666666667
+   },
+   "paired_dev_vs_Mk": {
+    "n": 150,
+    "mean_a": 0.6222222222222222,
+    "mean_b": 0.6187407407407408,
+    "diff": -0.0034814814814814704,
+    "se": 0.015175622508131658,
+    "ci95": [
+     -0.033333333333333326,
+     0.025703703703703715
+    ],
+    "p_one_sided_le0": 0.5825
+   }
+  },
+  "random_reward_heldout_vs_M0": {
+   "n": 283,
+   "mean_a": 58.77110325873577,
+   "mean_b": 58.657243816254415,
+   "diff_points": -0.11385944248135028,
+   "se_points": 1.1120993766403635,
+   "ci95_points": [
+    -2.2497055359246168,
+    2.069100903023165
+   ],
+   "p_one_sided_le0": 0.5369,
+   "reject_null": false
+  }
+ },
+ "proposer_yield_trend": {
+  "first": 0,
+  "last": 6,
+  "raw_pct_change": -3.19,
+  "se_points": 2.29,
+  "z": -1.39
+ },
+ "proposer_yield": [
+  {
+   "iteration": 0,
+   "parsed": 384,
+   "gated": 119,
+   "gated_pct": 31.0,
+   "raw_gated": 54,
+   "raw_pct": 14.1,
+   "repair_rescued": 65,
+   "dedup_rejects": 0
+  },
+  {
+   "iteration": 1,
+   "parsed": 365,
+   "gated": 92,
+   "gated_pct": 25.2,
+   "raw_gated": 30,
+   "raw_pct": 8.2,
+   "repair_rescued": 62,
+   "dedup_rejects": 12
+  },
+  {
+   "iteration": 2,
+   "parsed": 367,
+   "gated": 87,
+   "gated_pct": 23.7,
+   "raw_gated": 31,
+   "raw_pct": 8.4,
+   "repair_rescued": 56,
+   "dedup_rejects": 17
+  },
+  {
+   "iteration": 3,
+   "parsed": 546,
+   "gated": 146,
+   "gated_pct": 26.7,
+   "raw_gated": 54,
+   "raw_pct": 9.9,
+   "repair_rescued": 92,
+   "dedup_rejects": 16
+  },
+  {
+   "iteration": 4,
+   "parsed": 368,
+   "gated": 99,
+   "gated_pct": 26.9,
+   "raw_gated": 34,
+   "raw_pct": 9.2,
+   "repair_rescued": 65,
+   "dedup_rejects": 14
+  },
+  {
+   "iteration": 5,
+   "parsed": 357,
+   "gated": 110,
+   "gated_pct": 30.8,
+   "raw_gated": 43,
+   "raw_pct": 12.0,
+   "repair_rescued": 67,
+   "dedup_rejects": 8
+  },
+  {
+   "iteration": 6,
+   "parsed": 460,
+   "gated": 145,
+   "gated_pct": 31.5,
+   "raw_gated": 50,
+   "raw_pct": 10.9,
+   "repair_rescued": 95,
+   "dedup_rejects": 15
+  }
+ ],
+ "curriculum_difficulty": [
+  {
+   "iteration": 0,
+   "new_tasks": 119,
+   "mean_pass": 74.5,
+   "always_solved": 64,
+   "never_solved": 15,
+   "in_band": 40,
+   "in_band_pct": 33.6
+  },
+  {
+   "iteration": 1,
+   "new_tasks": 92,
+   "mean_pass": 63.6,
+   "always_solved": 41,
+   "never_solved": 22,
+   "in_band": 29,
+   "in_band_pct": 31.5
+  },
+  {
+   "iteration": 2,
+   "new_tasks": 87,
+   "mean_pass": 59.8,
+   "always_solved": 29,
+   "never_solved": 20,
+   "in_band": 38,
+   "in_band_pct": 43.7
+  },
+  {
+   "iteration": 3,
+   "new_tasks": 146,
+   "mean_pass": 55.7,
+   "always_solved": 49,
+   "never_solved": 44,
+   "in_band": 53,
+   "in_band_pct": 36.3
+  },
+  {
+   "iteration": 4,
+   "new_tasks": 99,
+   "mean_pass": 54.3,
+   "always_solved": 27,
+   "never_solved": 22,
+   "in_band": 50,
+   "in_band_pct": 50.5
+  },
+  {
+   "iteration": 5,
+   "new_tasks": 110,
+   "mean_pass": 59.1,
+   "always_solved": 42,
+   "never_solved": 28,
+   "in_band": 40,
+   "in_band_pct": 36.4
+  },
+  {
+   "iteration": 6,
+   "new_tasks": 145,
+   "mean_pass": 57.2,
+   "always_solved": 47,
+   "never_solved": 38,
+   "in_band": 60,
+   "in_band_pct": 41.4
+  }
+ ],
+ "pool_rollouts": [
+  {
+   "iteration": 0,
+   "n": 952,
+   "mean_points": 74.47,
+   "quarantined": 52
+  },
+  {
+   "iteration": 1,
+   "n": 1260,
+   "mean_points": 61.75,
+   "quarantined": 2
+  },
+  {
+   "iteration": 2,
+   "n": 1352,
+   "mean_points": 56.95,
+   "quarantined": 2
+  },
+  {
+   "iteration": 3,
+   "n": 1424,
+   "mean_points": 46.98,
+   "quarantined": 2
+  },
+  {
+   "iteration": 4,
+   "n": 1584,
+   "mean_points": 43.94,
+   "quarantined": 2
+  },
+  {
+   "iteration": 5,
+   "n": 1668,
+   "mean_points": 44.3,
+   "quarantined": 0
+  },
+  {
+   "iteration": 6,
+   "n": 1752,
+   "mean_points": 40.13,
+   "quarantined": 1
+  }
+ ],
+ "task_pool": [
+  {
+   "status": "rejected:oracle",
+   "n": 3806
+  },
+  {
+   "status": "gated",
+   "n": 798
+  },
+  {
+   "status": "rejected:build_or_oracle_error",
+   "n": 418
+  },
+  {
+   "status": "heldout",
+   "n": 177
+  },
+  {
+   "status": "dev",
+   "n": 150
+  },
+  {
+   "status": "heldout-gated",
+   "n": 121
+  },
+  {
+   "status": "heldout-supp",
+   "n": 106
+  },
+  {
+   "status": "tw-rejected:oracle",
+   "n": 96
+  },
+  {
+   "status": "rejected:dedup",
+   "n": 82
+  },
+  {
+   "status": "tbpub",
+   "n": 81
+  },
+  {
+   "status": "tw",
+   "n": 71
+  },
+  {
+   "status": "dev-rejected:build_or_oracle_error",
+   "n": 70
+  },
+  {
+   "status": "tb-rejected:oracle",
+   "n": 67
+  },
+  {
+   "status": "dev-gated",
+   "n": 55
+  },
+  {
+   "status": "heldout-supp-rejected:oracle",
+   "n": 45
+  },
+  {
+   "status": "heldout-rejected:oracle",
+   "n": 43
+  },
+  {
+   "status": "dev-rejected:oracle",
+   "n": 43
+  },
+  {
+   "status": "rejected:nop",
+   "n": 40
+  },
+  {
+   "status": "tw-rejected:build_or_oracle_error",
+   "n": 31
+  },
+  {
+   "status": "tb",
+   "n": 16
+  },
+  {
+   "status": "dev-rejected:static:no_copy_tests_solution",
+   "n": 11
+  },
+  {
+   "status": "tbpub-rejected:oracle",
+   "n": 8
+  },
+  {
+   "status": "tb-rejected:static:no_copy_tests_solution",
+   "n": 4
+  },
+  {
+   "status": "tw-rejected:static:no_copy_tests_solution",
+   "n": 2
+  },
+  {
+   "status": "tb-rejected:build_or_oracle_error",
+   "n": 2
+  },
+  {
+   "status": "heldout-supp-rejected:build_or_oracle_error",
+   "n": 1
+  },
+  {
+   "status": "heldout-rejected:build_or_oracle_error",
+   "n": 1
+  },
+  {
+   "status": "dev-rejected:nop",
+   "n": 1
+  }
+ ],
+ "episode_accounting": {
+  "totals": {
+   "n": 56982,
+   "errors": 1433,
+   "quarantined": 61,
+   "timeouts": 258,
+   "no_reward": 1428
+  },
+  "by_purpose": [
+   {
+    "purpose": "dev",
+    "n": 5100,
+    "mean_reward": 0.6247,
+    "errors": 3
+   },
+   {
+    "purpose": "dev:fp16",
+    "n": 450,
+    "mean_reward": 0.62,
+    "errors": 0
+   },
+   {
+    "purpose": "dev:start",
+    "n": 450,
+    "mean_reward": 0.6236,
+    "errors": 1
+   },
+   {
+    "purpose": "gate:delete-tests",
+    "n": 1575,
+    "mean_reward": 0.0,
+    "errors": 0
+   },
+   {
+    "purpose": "gate:nop",
+    "n": 1616,
+    "mean_reward": 0.0254,
+    "errors": 0
+   },
+   {
+    "purpose": "gate:oracle",
+    "n": 12494,
+    "mean_reward": 0.2453,
+    "errors": 1183
+   },
+   {
+    "purpose": "gate:oracle-root",
+    "n": 8770,
+    "mean_reward": 0.0653,
+    "errors": 63
+   },
+   {
+    "purpose": "heldout-reference",
+    "n": 2384,
+    "mean_reward": 0.7236,
+    "errors": 0
+   },
+   {
+    "purpose": "heldout-supp:start",
+    "n": 530,
+    "mean_reward": 0.4321,
+    "errors": 2
+   },
+   {
+    "purpose": "heldout:control",
+    "n": 1415,
+    "mean_reward": 0.587,
+    "errors": 1
+   },
+   {
+    "purpose": "heldout:end-s1",
+    "n": 566,
+    "mean_reward": 0.5982,
+    "errors": 1
+   },
+   {
+    "purpose": "heldout:end-s2",
+    "n": 566,
+    "mean_reward": 0.5717,
+    "errors": 1
+   },
+   {
+    "purpose": "heldout:end-s3",
+    "n": 566,
+    "mean_reward": 0.5724,
+    "errors": 0
+   },
+   {
+    "purpose": "heldout:end-s4",
+    "n": 566,
+    "mean_reward": 0.5936,
+    "errors": 0
+   },
+   {
+    "purpose": "heldout:end-s5",
+    "n": 566,
+    "mean_reward": 0.6042,
+    "errors": 0
+   },
+   {
+    "purpose": "heldout:final-s1",
+    "n": 566,
+    "mean_reward": 0.5735,
+    "errors": 1
+   },
+   {
+    "purpose": "heldout:final-s2",
+    "n": 566,
+    "mean_reward": 0.5848,
+    "errors": 0
+   },
+   {
+    "purpose": "heldout:final-s3",
+    "n": 566,
+    "mean_reward": 0.5671,
+    "errors": 0
+   },
+   {
+    "purpose": "heldout:final-s4",
+    "n": 566,
+    "mean_reward": 0.5707,
+    "errors": 0
+   },
+   {
+    "purpose": "heldout:final-s5",
+    "n": 566,
+    "mean_reward": 0.5752,
+    "errors": 1
+   },
+   {
+    "purpose": "heldout:interim",
+    "n": 2830,
+    "mean_reward": 0.581,
+    "errors": 2
+   },
+   {
+    "purpose": "heldout:passk",
+    "n": 1280,
+    "mean_reward": 0.5622,
+    "errors": 1
+   },
+   {
+    "purpose": "heldout:start",
+    "n": 885,
+    "mean_reward": 0.6565,
+    "errors": 0
+   },
+   {
+    "purpose": "rollout",
+    "n": 9992,
+    "mean_reward": 0.5068,
+    "errors": 0
+   },
+   {
+    "purpose": "tbpub:final",
+    "n": 243,
+    "mean_reward": 0.1111,
+    "errors": 0
+   },
+   {
+    "purpose": "tbpub:start",
+    "n": 243,
+    "mean_reward": 0.157,
+    "errors": 1
+   },
+   {
+    "purpose": "tw:final",
+    "n": 213,
+    "mean_reward": 0.3,
+    "errors": 3
+   },
+   {
+    "purpose": "tw:interim",
+    "n": 426,
+    "mean_reward": 0.3033,
+    "errors": 4
+   },
+   {
+    "purpose": "tw:start",
+    "n": 213,
+    "mean_reward": 0.2281,
+    "errors": 156
+   },
+   {
+    "purpose": "tw:start2",
+    "n": 213,
+    "mean_reward": 0.2892,
+    "errors": 9
+   }
+  ],
+  "gate_funnel": [
+   {
+    "iteration": null,
+    "check_name": "dedup",
+    "verdict": "fail",
+    "n": 82
+   },
+   {
+    "iteration": null,
+    "check_name": "dedup",
+    "verdict": "pass",
+    "n": 2765
+   },
+   {
+    "iteration": -1,
+    "check_name": "delete-tests",
+    "verdict": "pass",
+    "n": 777
+   },
+   {
+    "iteration": -1,
+    "check_name": "nop",
+    "verdict": "fail",
+    "n": 1
+   },
+   {
+    "iteration": -1,
+    "check_name": "nop",
+    "verdict": "pass",
+    "n": 777
+   },
+   {
+    "iteration": -1,
+    "check_name": "oracle",
+    "verdict": "fail",
+    "n": 407
+   },
+   {
+    "iteration": -1,
+    "check_name": "oracle",
+    "verdict": "pass",
+    "n": 778
+   },
+   {
+    "iteration": -1,
+    "check_name": "static:agent_user",
+    "verdict": "pass",
+    "n": 1202
+   },
+   {
+    "iteration": -1,
+    "check_name": "static:agent_user_value",
+    "verdict": "pass",
+    "n": 1202
+   },
+   {
+    "iteration": -1,
+    "check_name": "static:canary_guid",
+    "verdict": "fail",
+    "n": 376
+   },
+   {
+    "iteration": -1,
+    "check_name": "static:canary_guid",
+    "verdict": "pass",
+    "n": 826
+   },
+   {
+    "iteration": -1,
+    "check_name": "static:dockerfile_present",
+    "verdict": "pass",
+    "n": 1202
+   },
+   {
+    "iteration": -1,
+    "check_name": "static:from_base",
+    "verdict": "fail",
+    "n": 378
+   },
+   {
+    "iteration": -1,
+    "check_name": "static:from_base",
+    "verdict": "pass",
+    "n": 824
+   },
+   {
+    "iteration": -1,
+    "check_name": "static:instruction_present",
+    "verdict": "pass",
+    "n": 1202
+   },
+   {
+    "iteration": -1,
+    "check_name": "static:network_mode",
+    "verdict": "fail",
+    "n": 89
+   },
+   {
+    "iteration": -1,
+    "check_name": "static:network_mode",
+    "verdict": "pass",
+    "n": 1113
+   },
+   {
+    "iteration": -1,
+    "check_name": "static:no_copy_tests_solution",
+    "verdict": "fail",
+    "n": 21
+   },
+   {
+    "iteration": -1,
+    "check_name": "static:no_copy_tests_solution",
+    "verdict": "pass",
+    "n": 1181
+   },
+   {
+    "iteration": -1,
+    "check_name": "static:no_nvidia_env",
+    "verdict": "pass",
+    "n": 1202
+   },
+   {
+    "iteration": -1,
+    "check_name": "static:solution_present",
+    "verdict": "pass",
+    "n": 1202
+   },
+   {
+    "iteration": -1,
+    "check_name": "static:tests_present",
+    "verdict": "pass",
+    "n": 1202
+   },
+   {
+    "iteration": 0,
+    "check_name": "delete-tests",
+    "verdict": "pass",
+    "n": 119
+   },
+   {
+    "iteration": 0,
+    "check_name": "nop",
+    "verdict": "fail",
+    "n": 5
+   },
+   {
+    "iteration": 0,
+    "check_name": "nop",
+    "verdict": "pass",
+    "n": 119
+   },
+   {
+    "iteration": 0,
+    "check_name": "oracle",
+    "verdict": "fail",
+    "n": 570
+   },
+   {
+    "iteration": 0,
+    "check_name": "oracle",
+    "verdict": "pass",
+    "n": 124
+   },
+   {
+    "iteration": 0,
+    "check_name": "static:agent_user",
+    "verdict": "pass",
+    "n": 694
+   },
+   {
+    "iteration": 0,
+    "check_name": "static:agent_user_value",
+    "verdict": "pass",
+    "n": 694
+   },
+   {
+    "iteration": 0,
+    "check_name": "static:canary_guid",
+    "verdict": "pass",
+    "n": 694
+   },
+   {
+    "iteration": 0,
+    "check_name": "static:dockerfile_present",
+    "verdict": "pass",
+    "n": 694
+   },
+   {
+    "iteration": 0,
+    "check_name": "static:from_base",
+    "verdict": "pass",
+    "n": 694
+   },
+   {
+    "iteration": 0,
+    "check_name": "static:instruction_present",
+    "verdict": "pass",
+    "n": 694
+   },
+   {
+    "iteration": 0,
+    "check_name": "static:network_mode",
+    "verdict": "pass",
+    "n": 694
+   },
+   {
+    "iteration": 0,
+    "check_name": "static:no_copy_tests_solution",
+    "verdict": "pass",
+    "n": 694
+   },
+   {
+    "iteration": 0,
+    "check_name": "static:no_nvidia_env",
+    "verdict": "pass",
+    "n": 694
+   },
+   {
+    "iteration": 0,
+    "check_name": "static:solution_present",
+    "verdict": "pass",
+    "n": 694
+   },
+   {
+    "iteration": 0,
+    "check_name": "static:tests_present",
+    "verdict": "pass",
+    "n": 694
+   },
+   {
+    "iteration": 1,
+    "check_name": "dedup",
+    "verdict": "fail",
+    "n": 12
+   },
+   {
+    "iteration": 1,
+    "check_name": "delete-tests",
+    "verdict": "pass",
+    "n": 92
+   },
+   {
+    "iteration": 1,
+    "check_name": "nop",
+    "verdict": "fail",
+    "n": 7
+   },
+   {
+    "iteration": 1,
+    "check_name": "nop",
+    "verdict": "pass",
+    "n": 92
+   },
+   {
+    "iteration": 1,
+    "check_name": "oracle",
+    "verdict": "fail",
+    "n": 560
+   },
+   {
+    "iteration": 1,
+    "check_name": "oracle",
+    "verdict": "pass",
+    "n": 99
+   },
+   {
+    "iteration": 1,
+    "check_name": "static:agent_user",
+    "verdict": "pass",
+    "n": 659
+   },
+   {
+    "iteration": 1,
+    "check_name": "static:agent_user_value",
+    "verdict": "pass",
+    "n": 659
+   },
+   {
+    "iteration": 1,
+    "check_name": "static:canary_guid",
+    "verdict": "pass",
+    "n": 659
+   },
+   {
+    "iteration": 1,
+    "check_name": "static:dockerfile_present",
+    "verdict": "pass",
+    "n": 659
+   },
+   {
+    "iteration": 1,
+    "check_name": "static:from_base",
+    "verdict": "pass",
+    "n": 659
+   },
+   {
+    "iteration": 1,
+    "check_name": "static:instruction_present",
+    "verdict": "pass",
+    "n": 659
+   },
+   {
+    "iteration": 1,
+    "check_name": "static:network_mode",
+    "verdict": "pass",
+    "n": 659
+   },
+   {
+    "iteration": 1,
+    "check_name": "static:no_copy_tests_solution",
+    "verdict": "pass",
+    "n": 659
+   },
+   {
+    "iteration": 1,
+    "check_name": "static:no_nvidia_env",
+    "verdict": "pass",
+    "n": 659
+   },
+   {
+    "iteration": 1,
+    "check_name": "static:solution_present",
+    "verdict": "pass",
+    "n": 659
+   },
+   {
+    "iteration": 1,
+    "check_name": "static:tests_present",
+    "verdict": "pass",
+    "n": 659
+   },
+   {
+    "iteration": 2,
+    "check_name": "dedup",
+    "verdict": "fail",
+    "n": 17
+   },
+   {
+    "iteration": 2,
+    "check_name": "delete-tests",
+    "verdict": "pass",
+    "n": 87
+   },
+   {
+    "iteration": 2,
+    "check_name": "nop",
+    "verdict": "fail",
+    "n": 6
+   },
+   {
+    "iteration": 2,
+    "check_name": "nop",
+    "verdict": "pass",
+    "n": 87
+   },
+   {
+    "iteration": 2,
+    "check_name": "oracle",
+    "verdict": "fail",
+    "n": 546
+   },
+   {
+    "iteration": 2,
+    "check_name": "oracle",
+    "verdict": "pass",
+    "n": 93
+   },
+   {
+    "iteration": 2,
+    "check_name": "static:agent_user",
+    "verdict": "pass",
+    "n": 639
+   },
+   {
+    "iteration": 2,
+    "check_name": "static:agent_user_value",
+    "verdict": "pass",
+    "n": 639
+   },
+   {
+    "iteration": 2,
+    "check_name": "static:canary_guid",
+    "verdict": "pass",
+    "n": 639
+   },
+   {
+    "iteration": 2,
+    "check_name": "static:dockerfile_present",
+    "verdict": "pass",
+    "n": 639
+   },
+   {
+    "iteration": 2,
+    "check_name": "static:from_base",
+    "verdict": "pass",
+    "n": 639
+   },
+   {
+    "iteration": 2,
+    "check_name": "static:instruction_present",
+    "verdict": "pass",
+    "n": 639
+   },
+   {
+    "iteration": 2,
+    "check_name": "static:network_mode",
+    "verdict": "pass",
+    "n": 639
+   },
+   {
+    "iteration": 2,
+    "check_name": "static:no_copy_tests_solution",
+    "verdict": "pass",
+    "n": 639
+   },
+   {
+    "iteration": 2,
+    "check_name": "static:no_nvidia_env",
+    "verdict": "pass",
+    "n": 639
+   },
+   {
+    "iteration": 2,
+    "check_name": "static:solution_present",
+    "verdict": "pass",
+    "n": 639
+   },
+   {
+    "iteration": 2,
+    "check_name": "static:tests_present",
+    "verdict": "pass",
+    "n": 639
+   },
+   {
+    "iteration": 3,
+    "check_name": "dedup",
+    "verdict": "fail",
+    "n": 16
+   },
+   {
+    "iteration": 3,
+    "check_name": "delete-tests",
+    "verdict": "pass",
+    "n": 146
+   },
+   {
+    "iteration": 3,
+    "check_name": "nop",
+    "verdict": "fail",
+    "n": 8
+   },
+   {
+    "iteration": 3,
+    "check_name": "nop",
+    "verdict": "pass",
+    "n": 146
+   },
+   {
+    "iteration": 3,
+    "check_name": "oracle",
+    "verdict": "fail",
+    "n": 820
+   },
+   {
+    "iteration": 3,
+    "check_name": "oracle",
+    "verdict": "pass",
+    "n": 154
+   },
+   {
+    "iteration": 3,
+    "check_name": "static:agent_user",
+    "verdict": "pass",
+    "n": 974
+   },
+   {
+    "iteration": 3,
+    "check_name": "static:agent_user_value",
+    "verdict": "pass",
+    "n": 974
+   },
+   {
+    "iteration": 3,
+    "check_name": "static:canary_guid",
+    "verdict": "pass",
+    "n": 974
+   },
+   {
+    "iteration": 3,
+    "check_name": "static:dockerfile_present",
+    "verdict": "pass",
+    "n": 974
+   },
+   {
+    "iteration": 3,
+    "check_name": "static:from_base",
+    "verdict": "pass",
+    "n": 974
+   },
+   {
+    "iteration": 3,
+    "check_name": "static:instruction_present",
+    "verdict": "pass",
+    "n": 974
+   },
+   {
+    "iteration": 3,
+    "check_name": "static:network_mode",
+    "verdict": "pass",
+    "n": 974
+   },
+   {
+    "iteration": 3,
+    "check_name": "static:no_copy_tests_solution",
+    "verdict": "pass",
+    "n": 974
+   },
+   {
+    "iteration": 3,
+    "check_name": "static:no_nvidia_env",
+    "verdict": "pass",
+    "n": 974
+   },
+   {
+    "iteration": 3,
+    "check_name": "static:solution_present",
+    "verdict": "pass",
+    "n": 974
+   },
+   {
+    "iteration": 3,
+    "check_name": "static:tests_present",
+    "verdict": "pass",
+    "n": 974
+   },
+   {
+    "iteration": 4,
+    "check_name": "dedup",
+    "verdict": "fail",
+    "n": 14
+   },
+   {
+    "iteration": 4,
+    "check_name": "delete-tests",
+    "verdict": "pass",
+    "n": 99
+   },
+   {
+    "iteration": 4,
+    "check_name": "nop",
+    "verdict": "fail",
+    "n": 3
+   },
+   {
+    "iteration": 4,
+    "check_name": "nop",
+    "verdict": "pass",
+    "n": 99
+   },
+   {
+    "iteration": 4,
+    "check_name": "oracle",
+    "verdict": "fail",
+    "n": 550
+   },
+   {
+    "iteration": 4,
+    "check_name": "oracle",
+    "verdict": "pass",
+    "n": 102
+   },
+   {
+    "iteration": 4,
+    "check_name": "static:agent_user",
+    "verdict": "pass",
+    "n": 652
+   },
+   {
+    "iteration": 4,
+    "check_name": "static:agent_user_value",
+    "verdict": "pass",
+    "n": 652
+   },
+   {
+    "iteration": 4,
+    "check_name": "static:canary_guid",
+    "verdict": "pass",
+    "n": 652
+   },
+   {
+    "iteration": 4,
+    "check_name": "static:dockerfile_present",
+    "verdict": "pass",
+    "n": 652
+   },
+   {
+    "iteration": 4,
+    "check_name": "static:from_base",
+    "verdict": "pass",
+    "n": 652
+   },
+   {
+    "iteration": 4,
+    "check_name": "static:instruction_present",
+    "verdict": "pass",
+    "n": 652
+   },
+   {
+    "iteration": 4,
+    "check_name": "static:network_mode",
+    "verdict": "pass",
+    "n": 652
+   },
+   {
+    "iteration": 4,
+    "check_name": "static:no_copy_tests_solution",
+    "verdict": "pass",
+    "n": 652
+   },
+   {
+    "iteration": 4,
+    "check_name": "static:no_nvidia_env",
+    "verdict": "pass",
+    "n": 652
+   },
+   {
+    "iteration": 4,
+    "check_name": "static:solution_present",
+    "verdict": "pass",
+    "n": 652
+   },
+   {
+    "iteration": 4,
+    "check_name": "static:tests_present",
+    "verdict": "pass",
+    "n": 652
+   },
+   {
+    "iteration": 5,
+    "check_name": "dedup",
+    "verdict": "fail",
+    "n": 8
+   },
+   {
+    "iteration": 5,
+    "check_name": "delete-tests",
+    "verdict": "pass",
+    "n": 110
+   },
+   {
+    "iteration": 5,
+    "check_name": "nop",
+    "verdict": "fail",
+    "n": 1
+   },
+   {
+    "iteration": 5,
+    "check_name": "nop",
+    "verdict": "pass",
+    "n": 110
+   },
+   {
+    "iteration": 5,
+    "check_name": "oracle",
+    "verdict": "fail",
+    "n": 525
+   },
+   {
+    "iteration": 5,
+    "check_name": "oracle",
+    "verdict": "pass",
+    "n": 111
+   },
+   {
+    "iteration": 5,
+    "check_name": "static:agent_user",
+    "verdict": "pass",
+    "n": 636
+   },
+   {
+    "iteration": 5,
+    "check_name": "static:agent_user_value",
+    "verdict": "pass",
+    "n": 636
+   },
+   {
+    "iteration": 5,
+    "check_name": "static:canary_guid",
+    "verdict": "pass",
+    "n": 636
+   },
+   {
+    "iteration": 5,
+    "check_name": "static:dockerfile_present",
+    "verdict": "pass",
+    "n": 636
+   },
+   {
+    "iteration": 5,
+    "check_name": "static:from_base",
+    "verdict": "pass",
+    "n": 636
+   },
+   {
+    "iteration": 5,
+    "check_name": "static:instruction_present",
+    "verdict": "pass",
+    "n": 636
+   },
+   {
+    "iteration": 5,
+    "check_name": "static:network_mode",
+    "verdict": "pass",
+    "n": 636
+   },
+   {
+    "iteration": 5,
+    "check_name": "static:no_copy_tests_solution",
+    "verdict": "pass",
+    "n": 636
+   },
+   {
+    "iteration": 5,
+    "check_name": "static:no_nvidia_env",
+    "verdict": "pass",
+    "n": 636
+   },
+   {
+    "iteration": 5,
+    "check_name": "static:solution_present",
+    "verdict": "pass",
+    "n": 636
+   },
+   {
+    "iteration": 5,
+    "check_name": "static:tests_present",
+    "verdict": "pass",
+    "n": 636
+   },
+   {
+    "iteration": 6,
+    "check_name": "dedup",
+    "verdict": "fail",
+    "n": 15
+   },
+   {
+    "iteration": 6,
+    "check_name": "delete-tests",
+    "verdict": "pass",
+    "n": 145
+   },
+   {
+    "iteration": 6,
+    "check_name": "nop",
+    "verdict": "fail",
+    "n": 10
+   },
+   {
+    "iteration": 6,
+    "check_name": "nop",
+    "verdict": "pass",
+    "n": 145
+   },
+   {
+    "iteration": 6,
+    "check_name": "oracle",
+    "verdict": "fail",
+    "n": 653
+   },
+   {
+    "iteration": 6,
+    "check_name": "oracle",
+    "verdict": "pass",
+    "n": 155
+   },
+   {
+    "iteration": 6,
+    "check_name": "static:agent_user",
+    "verdict": "pass",
+    "n": 808
+   },
+   {
+    "iteration": 6,
+    "check_name": "static:agent_user_value",
+    "verdict": "pass",
+    "n": 808
+   },
+   {
+    "iteration": 6,
+    "check_name": "static:canary_guid",
+    "verdict": "pass",
+    "n": 808
+   },
+   {
+    "iteration": 6,
+    "check_name": "static:dockerfile_present",
+    "verdict": "pass",
+    "n": 808
+   },
+   {
+    "iteration": 6,
+    "check_name": "static:from_base",
+    "verdict": "pass",
+    "n": 808
+   },
+   {
+    "iteration": 6,
+    "check_name": "static:instruction_present",
+    "verdict": "pass",
+    "n": 808
+   },
+   {
+    "iteration": 6,
+    "check_name": "static:network_mode",
+    "verdict": "pass",
+    "n": 808
+   },
+   {
+    "iteration": 6,
+    "check_name": "static:no_copy_tests_solution",
+    "verdict": "pass",
+    "n": 808
+   },
+   {
+    "iteration": 6,
+    "check_name": "static:no_nvidia_env",
+    "verdict": "pass",
+    "n": 808
+   },
+   {
+    "iteration": 6,
+    "check_name": "static:solution_present",
+    "verdict": "pass",
+    "n": 808
+   },
+   {
+    "iteration": 6,
+    "check_name": "static:tests_present",
+    "verdict": "pass",
+    "n": 808
+   }
+  ]
+ },
+ "cost": {
+  "gpu_hours_by_step": {
+   "GATE": 27.16,
+   "EVALUATE": 17.1,
+   "ROLLOUT": 11.82,
+   "UPDATE": 9.16,
+   "DEVGATE": 6.88,
+   "PROPOSE": 3.4,
+   "AUDIT": 1.12,
+   "ANALYSE": 0.04,
+   "TIER": 0.0
+  },
+  "gpu_hours_total": 76.7
+ }
+}

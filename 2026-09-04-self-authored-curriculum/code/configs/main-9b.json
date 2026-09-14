@@ -1,0 +1,30 @@
+{
+ "base_model": "${RSI_MODELS_DIR}/Qwen3.5-9B",
+ "iterations": 7,
+ "candidates": 400,
+ "group_size": 8,
+ "anchor_fraction": 0.25,
+ "max_train_tasks": 150,
+ "rollout_concurrency": 24,
+ "max_num_seqs": 32,
+ "gate_concurrency": 12,
+ "objective": "pg",
+ "lr": 1e-05,
+ "tasks_per_minibatch": 8,
+ "dev_seeds": 3,
+ "thinking": true,
+ "max_tokens": 3072,
+ "harness_window": 16384,
+ "canaries_every_iteration": true,
+ "canary_limit": 0,
+ "interim_heldout_iterations": [
+  2,
+  4
+ ],
+ "heldout_seeds": 5,
+ "tw_seeds": 3,
+ "repair_rounds": 1,
+ "_note": "Docker default address pool widened 2026-09-07 (a private /16 carved into /24s): rollout concurrency 24; smoke 9 saw no gain beyond ~16-24 per-episode but larger batches keep more in flight",
+ "serve_dtype": "float16",
+ "_note_gate": "gate_concurrency raised 6 -> 12 on 2026-09-08 (from iteration 2): 6 dated from the 31-network Docker address pool. Gate trials are pure Docker work, ~17 s each, builds 0.3-20 s against a 120 s criterion, and load was 8 of 16 cores at 6; 12 keeps the box fully used without oversubscribing it."
+}

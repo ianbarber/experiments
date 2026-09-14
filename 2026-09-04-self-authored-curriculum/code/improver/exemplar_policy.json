@@ -1,0 +1,3 @@
+{"n_exemplars": 4, "pass_rate_band": [0.125, 0.5], "fallback": "random gated seed tasks", "anchor_fraction": 0.25,
+ "mix": {"mutation": 0.4, "fresh": 0.4, "frontier_reproposal": 0.2},
+ "note": "exemplars are chosen by the CURRENT policy's pass rate over 8, never a frozen list, so the brief recalibrates to whichever model executes it"}

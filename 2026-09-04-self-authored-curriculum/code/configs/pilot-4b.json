@@ -1,0 +1,18 @@
+{
+ "base_model": "${RSI_MODELS_DIR}/Qwen3.5-4B",
+ "iterations": 2,
+ "candidates": 16,
+ "group_size": 4,
+ "anchor_fraction": 0.3,
+ "max_train_tasks": 40,
+ "rollout_concurrency": 12,
+ "max_num_seqs": 32,
+ "gate_concurrency": 6,
+ "objective": "pg",
+ "lr": 1e-05,
+ "tasks_per_minibatch": 4,
+ "dev_seeds": 1,
+ "thinking": true,
+ "max_tokens": 2048,
+ "harness_window": 12288
+}
