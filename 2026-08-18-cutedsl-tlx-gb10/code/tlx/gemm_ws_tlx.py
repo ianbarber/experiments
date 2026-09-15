@@ -22,9 +22,9 @@ trunk num_warps=1, consumer 2x4 warps. SMEM: 64 KiB ring + barriers/epilogue
 = 74,344 bytes of the 101,376-byte budget.
 
 Run (venv + cwd):
-  cd /home/ianbarber/Projects/cute/tlx-triton && \
-  /home/ianbarber/Projects/cute/.venv-tlx/bin/python \
-    /home/ianbarber/Projects/cute/comparison/tlx/gemm_ws_tlx.py [--bench]
+  cd $CUTE_ROOT/tlx-triton && \
+  $CUTE_ROOT/.venv-tlx/bin/python \
+    $CUTE_ROOT/comparison/tlx/gemm_ws_tlx.py [--bench]
 
 Without --bench: correctness check only. With --bench: full protocol benchmark
 (fp16 in, fp32 acc; M=N=K in {1024,2048,4096}; 25 warmup + 100 timed iters,

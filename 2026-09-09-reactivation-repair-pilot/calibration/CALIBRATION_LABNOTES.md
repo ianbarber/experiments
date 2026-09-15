@@ -28,7 +28,7 @@ Final pinned-image CPU suite:88tests passed in3.871seconds, including independen
 
 ## 2026-09-12T20:54:38.317223+00:00
 
-Created the research container in its stopped state, with UID/GID1000:1000, the pinned image, the new workspace mounted read/write and the base-model directory read-only. Original SGLang container/image identities and HTTP200 were checked before launch. Creating the stopped container does not allocate model execution; no serving change has occurred.
+Created the research container in its stopped state, with UID/GID1000:1000, the pinned image, the new workspace mounted read/write and the base-model directory read-only. Original SGLang container/image identities and HTTP 200 were checked before launch. Creating the stopped container does not allocate model execution; no serving change has occurred.
 
 ## 2026-09-12T20:56:15.404981+00:00
 

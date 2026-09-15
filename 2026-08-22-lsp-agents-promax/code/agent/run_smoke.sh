@@ -4,11 +4,12 @@ set -euo pipefail
 export PATH=$HOME/.local/bin:$PATH
 export MSWEA_COST_TRACKING=ignore_errors
 INSTANCE="${1:-albumentations-team__albumentations-2337}"
-OUT="${2:-$HOME/refactorbench-eval/runs/smoke-arm-a}"
+EVAL="${REFACTORBENCH_EVAL:?set REFACTORBENCH_EVAL to the local eval tree}"
+OUT="${2:-$EVAL/runs/smoke-arm-a}"
 mini-extra swebench \
   --subset swe-bench-promax/SWE-Bench-ProMax --split test \
   --filter "$INSTANCE" \
-  -c swebench.yaml -c "$HOME/refactorbench-eval/agent/arm_a.yaml" \
+  -c swebench.yaml -c "$(cd "$(dirname "$0")" && pwd)/arm_a.yaml" \
   -o "$OUT" -w 1 --redo-existing
 echo "--- preds ---"
 python3 -c "import json;d=json.load(open('$OUT/preds.json'));print({k: len(v['model_patch'] or '') for k,v in d.items()})"

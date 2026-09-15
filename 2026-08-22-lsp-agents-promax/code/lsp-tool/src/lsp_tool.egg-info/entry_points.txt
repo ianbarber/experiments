@@ -1,2 +1,0 @@
-[console_scripts]
-lsp = lsp_tool.cli:main

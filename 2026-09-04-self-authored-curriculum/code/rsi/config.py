@@ -5,8 +5,8 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 PROJECT_DIR = Path(__file__).resolve().parent.parent
-RUNS_DIR = Path(os.environ.get("RSI_RUNS_DIR", Path.home() / "rsiathome-runs"))
-MODELS_DIR = Path(os.environ.get("RSI_MODELS_DIR", Path.home() / "models"))
+RUNS_DIR = Path(os.environ.get("RSI_RUNS_DIR", PROJECT_DIR.parent / "runs"))
+MODELS_DIR = Path(os.environ.get("RSI_MODELS_DIR", PROJECT_DIR.parent / "models"))
 BASE_MODEL = MODELS_DIR / "Qwen3.5-9B"
 PILOT_MODEL = MODELS_DIR / "Qwen3.5-4B"
 MERGED_PATH = MODELS_DIR / "trainee-merged"          # fixed path: vLLM compile cache is keyed on it
@@ -14,7 +14,7 @@ MERGED_ALT_PATH = MODELS_DIR / "trainee-merged-alt"  # second fixed path for abl
 VENVS = {k: PROJECT_DIR / "venvs" / k for k in ("serve", "train", "loop")}
 HARBOR = VENVS["loop"] / "bin" / "harbor"
 BASE_IMAGE = "rsi-base:latest"
-DATASETS_DIR = Path(os.environ.get("RSI_DATASETS_DIR", Path.home() / "datasets"))
+DATASETS_DIR = Path(os.environ.get("RSI_DATASETS_DIR", PROJECT_DIR.parent / "datasets"))
 
 VLLM_PORT = 8000
 VLLM_BASE_URL = f"http://127.0.0.1:{VLLM_PORT}/v1"

@@ -6,7 +6,10 @@ import json, re, sys, glob, os
 from collections import Counter
 TEST_RE = re.compile(r"(^|/)(tests?|testing)(/|$)|(^|/)test_[^/]*\.py$|_test\.py$")
 replay, erun, arun = sys.argv[1:4]
-data = {x["instance_id"]: x for x in json.load(open(os.path.expanduser("~/Projects/refactorbench/harness/data/swe-bench-promax.json")))}
+_ds = os.environ.get("PROMAX_DATASET")
+if not _ds:
+    raise SystemExit("set PROMAX_DATASET to the SWE-Bench ProMax JSON")
+data = {x["instance_id"]: x for x in json.load(open(_ds))}
 def gold_files(p):
     out = {}; cur = None
     for line in p.splitlines():

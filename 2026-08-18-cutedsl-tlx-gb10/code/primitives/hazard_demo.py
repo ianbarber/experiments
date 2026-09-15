@@ -25,7 +25,7 @@ Sections:
 None of the broken kernels is ever launched (B and C would hang the GPU).
 All compiler output is captured verbatim to hazard_output.txt.
 
-Run:  /home/ianbarber/Projects/cute/.venv-cutedsl/bin/python hazard_demo.py
+Run:  $CUTE_ROOT/.venv-cutedsl/bin/python hazard_demo.py
 """
 
 import os

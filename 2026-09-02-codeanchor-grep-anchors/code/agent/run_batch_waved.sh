@@ -3,34 +3,35 @@
 # Usage: run_batch_waved.sh <arm_yaml> <run_name> <filter_regex> <mode: base|lsp|anchor> [wave_size] [workers] [eval_workers]
 set -uo pipefail
 ARM="$1"; NAME="$2"; FILTER="$3"; MODE="$4"; WAVE="${5:-6}"; WORKERS="${6:-3}"; EVAL_WORKERS="${7:-2}"
-OUT="$HOME/refactorbench-eval/runs/$NAME"
-HARNESS="$HOME/refactorbench-eval/harness"
+EVAL="${REFACTORBENCH_EVAL:?set REFACTORBENCH_EVAL to the local eval tree}"
+OUT="$EVAL/runs/$NAME"
+HARNESS="$EVAL/harness"
 NAS_BASE=/mnt/nas/refactorbench/images
 NAS_LSP=/mnt/nas/refactorbench/images-lsp
 export PATH="$HOME/.local/bin:$PATH"
 export MSWEA_COST_TRACKING=ignore_errors
 # arm E (anchor_env.AnchorDockerEnvironment) needs the anchor module importable and a
 # telemetry sink; harmless for other arms.
-export PYTHONPATH="$HOME/refactorbench-eval/anchor${PYTHONPATH:+:$PYTHONPATH}"
+export PYTHONPATH="$(cd "$(dirname "$0")" && pwd)${PYTHONPATH:+:$PYTHONPATH}"
 export ANCHOR_LOG="$OUT/anchor_log.jsonl"
 mkdir -p "$OUT"
 
 MINI_EXTRA="mini-extra"
 if [[ "$MODE" == "lsp" || "$MODE" == "anchor" ]]; then
-  SUBSET="$HOME/refactorbench-eval/promax-lsp-dataset"; ROLLOUT_PREFIX="promax-lsp:"
+  SUBSET="$EVAL/promax-lsp-dataset"; ROLLOUT_PREFIX="promax-lsp:"
 else
   SUBSET="swe-bench-promax/SWE-Bench-ProMax"; ROLLOUT_PREFIX="key4127/refactor-dockerhub:"
 fi
 if [[ "$MODE" == "anchor" ]]; then
   # arm E: same images/dataset as lsp mode, but the "docker" environment is rebound to
   # anchor_env.AnchorDockerEnvironment via the launcher shim (see anchor_runner.py).
-  MINI_EXTRA="$HOME/.local/share/uv/tools/mini-swe-agent/bin/python $HOME/refactorbench-eval/anchor/anchor_runner.py"
+  MINI_EXTRA="python3 $(cd "$(dirname "$0")" && pwd)/anchor_runner.py"
 fi
 
 IDS=$(python3 - "$FILTER" <<'EOF'
 import json, re, sys, os
 pat = re.compile(sys.argv[1])
-data = json.load(open(os.path.expanduser("~/refactorbench-eval/harness/data/swe-bench-promax.json")))
+data = json.load(open(os.environ["PROMAX_DATASET"]))
 print("\n".join(x["instance_id"] for x in data if pat.match(x["instance_id"])))
 EOF
 )

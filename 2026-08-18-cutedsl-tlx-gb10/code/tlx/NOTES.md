@@ -12,15 +12,15 @@
 ## How to run
 
 ```bash
-cd /home/ianbarber/Projects/cute/tlx-triton   # cwd not strictly required, but used for all verified runs
-/home/ianbarber/Projects/cute/.venv-tlx/bin/python \
-  /home/ianbarber/Projects/cute/comparison/tlx/gemm_ws_tlx.py            # verify only
-/home/ianbarber/Projects/cute/.venv-tlx/bin/python \
-  /home/ianbarber/Projects/cute/comparison/tlx/gemm_ws_tlx.py --bench    # verify + benchmark, writes bench_results.json
+cd $CUTE_ROOT/tlx-triton   # cwd not strictly required, but used for all verified runs
+$CUTE_ROOT/.venv-tlx/bin/python \
+  $CUTE_ROOT/comparison/tlx/gemm_ws_tlx.py            # verify only
+$CUTE_ROOT/.venv-tlx/bin/python \
+  $CUTE_ROOT/comparison/tlx/gemm_ws_tlx.py --bench    # verify + benchmark, writes bench_results.json
 
 # broken variant — ALWAYS under timeout, it deadlocks the device queue:
-timeout 90 /home/ianbarber/Projects/cute/.venv-tlx/bin/python \
-  /home/ianbarber/Projects/cute/comparison/tlx/gemm_ws_tlx_broken.py
+timeout 90 $CUTE_ROOT/.venv-tlx/bin/python \
+  $CUTE_ROOT/comparison/tlx/gemm_ws_tlx_broken.py
 ```
 
 ## Kernel structure (config chosen)

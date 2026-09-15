@@ -2,14 +2,19 @@
 # Retroactive gate false-block analysis (v2: instance-major ordering, per-instance image
 # eviction, resume from existing valid JSONL rows).
 set -uo pipefail
-OUT=~/refactorbench-eval/runs/retro_gate.jsonl
+EVAL="${REFACTORBENCH_EVAL:?set REFACTORBENCH_EVAL to the local eval tree}"
+export REFACTORBENCH_EVAL="$EVAL"
+OUT="$EVAL/runs/retro_gate.jsonl"
 NAS_LSP=/mnt/nas/refactorbench/images-lsp
-GATE=/home/ianbarber/refactorbench-eval/agent/gate/typecheck_gate.py
+GATE="$EVAL/agent/gate/typecheck_gate.py"
 touch "$OUT"
 # drop a truncated trailing line if present
 python3 - <<'EOF'
 import json, os
-p = os.path.expanduser("~/refactorbench-eval/runs/retro_gate.jsonl")
+root = os.environ.get("REFACTORBENCH_EVAL")
+if not root:
+    raise SystemExit("set REFACTORBENCH_EVAL")
+p = os.path.join(root, "runs/retro_gate.jsonl")
 lines = open(p).read().splitlines()
 good = []
 for l in lines:
@@ -22,7 +27,10 @@ EOF
 python3 - <<'EOF' > /tmp/retro_jobs.txt
 import json, os
 done = set()
-p = os.path.expanduser("~/refactorbench-eval/runs/retro_gate.jsonl")
+root = os.environ.get("REFACTORBENCH_EVAL")
+if not root:
+    raise SystemExit("set REFACTORBENCH_EVAL")
+p = os.path.join(root, "runs/retro_gate.jsonl")
 for l in open(p):
     try:
         r = json.loads(l); done.add((r["run"], r["iid"]))

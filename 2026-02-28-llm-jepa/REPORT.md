@@ -105,18 +105,7 @@ LayerNorm, attention re-weighting, and residual connections in the 15 layers aft
 
 **The mapping is genuinely linear.** Despite having 26M parameters, the MLP adds essentially nothing over a linear map. The problem→first_step relationship is a linear subspace projection, not a complex nonlinear transformation. This suggests that what the model learns about solution approaches in its first decode step is a relatively simple function of its problem encoding.
 
-**GSM8K may be too easy.** At 90.8% baseline accuracy, most problems are already solved correctly. The ~120 failures are likely capability-limited (multi-step arithmetic errors, misunderstood problems) rather than strategy-limited (wrong approach). A harder benchmark where the model is "on the fence" more often might show more room for intervention.
-
-## If Continuing This Research
-
-Directions that might have more traction:
-
-- **Representation replacement rather than addition** — don't add a delta, replace the hidden state entirely or use a learned gate
-- **Earlier intervention** — modify attention keys/values rather than layer outputs, which are harder for the model to self-correct
-- **Contrastive steering** — push away from failure-mode representations rather than toward predicted successes
-- **Weaker models on harder tasks** — where baseline is 40-60%, there's more room for intervention
-- **Multi-layer injection** — perturb at several layers simultaneously to overwhelm self-correction
-- **Fine-tuning the model to accept injections** — train the model to expect and utilize external hidden-state modifications (Phase 3/4 of original plan)
+**GSM8K may be too easy.** At 90.8% baseline accuracy, most problems are already solved correctly. The ~120 failures are likely capability-limited (multi-step arithmetic errors, misunderstood problems) rather than strategy-limited (wrong approach). That is a limitation of this object, not a queued follow-up. Phase 3/4 of the original plan were not run.
 
 ## Project Structure
 

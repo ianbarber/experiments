@@ -30,9 +30,9 @@ RTX 5090.
 Paths come from the environment, with defaults under the home directory:
 
 ```bash
-export RSI_RUNS_DIR=~/rsiathome-runs      # run state, episodes, adapters
-export RSI_MODELS_DIR=~/models            # base weights and the merged serving path
-export RSI_DATASETS_DIR=~/datasets        # seed task collections
+export RSI_RUNS_DIR=$PWD/../runs          # run state, episodes, adapters (override)
+export RSI_MODELS_DIR=$PWD/../models      # base weights and the merged serving path
+export RSI_DATASETS_DIR=$PWD/../datasets  # seed task collections
 export RSI_MONITOR_URL=http://dgx-spark:8888/v1   # optional trajectory monitor
 ```
 

@@ -3,6 +3,9 @@
 Lab notebook: one dated folder per experiment, each with a brief (README),
 a full report, an execution log, and the code to reproduce it.
 
+How the notebook is supposed to run: [guidelines](GUIDELINES.md). What never
+goes in a public push: [AGENTS.md](AGENTS.md).
+
 | Date | Experiment |
 |---|---|
 | 2026-02-28 | [LLM-JEPA: predicting and injecting solution-state hidden representations (Qwen3-4B, GSM8K)](2026-02-28-llm-jepa/) |
@@ -10,10 +13,8 @@ a full report, an execution log, and the code to reproduce it.
 | 2026-06-12 | [LLM operator-graph evolution 2022–2026: Core ATen density and mechanism heterogeneity](2026-06-12-llm-op-evolution/) |
 | 2026-07-24 | [NVFP4 blockscaled GEMM on unforked upstream Triton via plugin extensions (GB10)](2026-07-24-nvfp4-upstream-triton/) |
 | 2026-08-18 | [CUTLASS 4.7 CuTe DSL (Task Scheduling + Primitives) vs Triton TLX async_task on GB10](2026-08-18-cutedsl-tlx-gb10/) |
-| 2026-08-26 | [Interpretable chess-state substrate and semantic compression](2026-08-26-chess-semantic-representation/) |
 | 2026-08-22 | [LSP tools for a local coding agent: SWE-Bench ProMax × Qwen3.8-27B](2026-08-22-lsp-agents-promax/) |
+| 2026-08-26 | [Interpretable chess-state substrate and semantic compression](2026-08-26-chess-semantic-representation/) |
 | 2026-09-02 | [CodeAnchor-style anchors on grep output for a local coding agent (follow-up to the LSP study)](2026-09-02-codeanchor-grep-anchors/) |
 | 2026-09-04 | [Does a model get better by writing its own training tasks? (Qwen3.5-9B self-authored curriculum)](2026-09-04-self-authored-curriculum/) |
-| 2026-09-09 | [Failure-conditioned repair: a diagnostic pilot with weak trace manipulation](2026-09-09-reactivation-repair-pilot/) |
-| 2026-09-10 | [Task competence before testing learning from failure](2026-09-10-ledger-competence-controls/) |
-| 2026-09-12 | [Why we paused the 3B self-reflection study](2026-09-12-reactivation-preliminary-check/) |
+| 2026-09-09 | [Why we paused failure-conditioned repair (3B self-reflection)](2026-09-09-reactivation-repair-pilot/) |

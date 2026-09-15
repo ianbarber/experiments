@@ -13,7 +13,7 @@ Everything TiledMMA normally derives — fragment ownership per lane, issuer
 election, tile addressing, synchronization — is written out by hand here.
 Verified against torch.matmul (fp64 reference).
 
-Run:  /home/ianbarber/Projects/cute/.venv-cutedsl/bin/python tile_mma_prims.py
+Run:  $CUTE_ROOT/.venv-cutedsl/bin/python tile_mma_prims.py
 """
 
 import torch

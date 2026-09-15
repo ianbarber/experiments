@@ -16,7 +16,7 @@ implemented at all three rungs of the CUTLASS 4.7 Primitives escape-hatch ladder
 
 All three lower to the same PTX instruction; results are verified identical on GPU.
 
-Run:  /home/ianbarber/Projects/cute/.venv-cutedsl/bin/python three_ways.py
+Run:  $CUTE_ROOT/.venv-cutedsl/bin/python three_ways.py
 """
 
 import torch

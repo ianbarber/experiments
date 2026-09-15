@@ -36,7 +36,7 @@ the predictor improve online. The work stopped after Phase 2 failed its gate.
 
 | Path | What |
 |---|---|
-| `REPORT.md` | Findings: extraction-point search, predictor training, injection sweeps, why injection failed, directions if continuing |
+| `REPORT.md` | Findings: extraction-point search, predictor training, injection sweeps, why injection failed |
 | `LABNOTES.md` | Experiment log P0.1–P2.3 with hypothesis, setup, result and interpretation per run, plus the phase decisions |
 | `PLAN.md` | The original four-phase plan and its gates |
 | `GUIDELINES.md` | Working discipline the run followed (logging, seeds, go/no-go rules) |

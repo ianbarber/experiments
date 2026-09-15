@@ -4,7 +4,7 @@ Environment: NVIDIA GB10 (DGX Spark), sm_121a, CUDA 13.0, `nvidia-cutlass-dsl==4
 Everything below was run and verified on this machine with:
 
 ```
-PY=/home/ianbarber/Projects/cute/.venv-cutedsl/bin/python
+PY=$CUTE_ROOT/.venv-cutedsl/bin/python
 $PY three_ways.py       # ~15 s (one compile)
 $PY hazard_demo.py      # ~1 min (seven compiles); rewrites hazard_output.txt
 $PY tile_mma_prims.py   # ~20 s

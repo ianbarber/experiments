@@ -1,0 +1,35 @@
+# Bytecode and packaging residue
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+*.egg
+
+# Secrets and local env
+.env
+.env.*
+!.env.example
+*.pem
+id_rsa
+id_rsa.pub
+
+# Checkpoints, weights, large artifacts
+*.pt
+*.pth
+*.pt2
+*.safetensors
+*.gguf
+*.ckpt
+*.bin
+*.npz
+*.onnx
+
+# Local venvs and tool caches
+.venv/
+venv/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# Raw logs (summarise into LABNOTES.md)
+*.log

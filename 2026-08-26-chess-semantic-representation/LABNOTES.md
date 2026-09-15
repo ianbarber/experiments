@@ -11,7 +11,7 @@ notebook; this archive retains the decisions, failures, and measured milestones.
 - Chose a hard `8 x 8 x 13` semantic bottleneck plus a separate 64-value
   appearance VAE. Prohibited encoder-decoder skips and soft semantic values at
   the decoder boundary.
-- Stopped and disabled `muse-glimmer.service` to free the APU.
+- Stopped other local serving on the APU to free it.
 - Installed AMD's ROCm 7.2 PyTorch 2.9.1 wheels in Python 3.12. A mixed-precision
   convolution/optimizer/checkpoint smoke test passed on `gfx1151`.
 

@@ -15,9 +15,9 @@ Expected behavior:
     forever. Run under `timeout 90`.
 
 Run:
-  cd /home/ianbarber/Projects/cute/tlx-triton && \
-  timeout 90 /home/ianbarber/Projects/cute/.venv-tlx/bin/python \
-    /home/ianbarber/Projects/cute/comparison/tlx/gemm_ws_tlx_broken.py
+  cd $CUTE_ROOT/tlx-triton && \
+  timeout 90 $CUTE_ROOT/.venv-tlx/bin/python \
+    $CUTE_ROOT/comparison/tlx/gemm_ws_tlx_broken.py
 """
 import sys
 from typing import Optional

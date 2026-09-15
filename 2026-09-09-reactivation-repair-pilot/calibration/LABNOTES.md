@@ -1,20 +1,24 @@
 # Preliminary-check lab notebook
 
+Edited export of an agent-run controller log. Not a first-person notebook.
+Glued numerals in the original dump were spaced out for readability. The
+program spine is [../LABNOTES.md](../LABNOTES.md).
+
 ## 2026-09-12T16:31:07.953943+00:00 — Execution authorized and preparation begun
 
-The user authorized temporarily stopping SGLang to run the reviewed preliminary check. Only the preliminary competence, induction, collection and semantic feasibility gates will run; no corrective-target study is launched by this controller. Preparation begins with CPU data and implementation review while serving remains available. The frozen eight-hour allocation cap begins with the service pause, including model loading and allocated waiting time. Both original studies and the reviewed September 11 plans remain historical records.
+Serving was paused to run the reviewed preliminary check. Only the preliminary competence, induction, collection and semantic feasibility gates will run; no corrective-target study is launched by this controller. Preparation begins with CPU data and implementation review while serving remains available. The frozen eight-hour allocation cap begins with the service pause, including model loading and allocated waiting time. Both original studies and the reviewed September 11 plans remain historical records.
 
 The new workspace isolates scripts, generated data and outcomes from earlier runs. The existing model revision and validated training image are reused. Data construction, model-stage implementation and independent validity review are delegated separately; the lead handles integration, gates, operational restoration and final interpretation.
 
 ## 2026-09-12T16:55:59.516490+00:00 — CPU preparation verified
 
-All 47 current CPU tests pass, including actual target-token masking and optimizer continuation, independent raw-output gates, cohort provenance, and mocked service restoration/deadline checks. The final frozen-image tokenizer audit covers all 3,584 cases without CUDA initialization; maximum training length288 tokens and generation prefix plus reserved output450, below 2,048. All11 local model/tokenizer files (6,183,463,416 bytes) match the inherited frozen model manifest and declared revision. Initial SGLang health returned HTTP200.
+All 47 current CPU tests pass, including actual target-token masking and optimizer continuation, independent raw-output gates, cohort provenance, and mocked service restoration/deadline checks. The final frozen-image tokenizer audit covers all 3,584 cases without CUDA initialization; maximum training length 288 tokens and generation prefix plus reserved output 450, below 2,048. All 11 local model/tokenizer files (6,183,463,416 bytes) match the inherited frozen model manifest and declared revision. Initial SGLang health returned HTTP 200.
 
-Pre-freeze review corrected a contradictory scope opening, made the label-tag syntax explicit, broadened the principle request to cover every error category, and strengthened source-closed content packets. Eight allocated GPU hours include a180 second shutdown reserve. The tests emit a minor process-local lock-file ResourceWarning; process exit releases the OS lock and no check failed. No new model output has been inspected.
+Pre-freeze review corrected a contradictory scope opening, made the label-tag syntax explicit, broadened the principle request to cover every error category, and strengthened source-closed content packets. Eight allocated GPU hours include a 180-second shutdown reserve. The tests emit a minor process-local lock-file ResourceWarning; process exit releases the OS lock and no check failed. No new model output has been inspected.
 
 ## 2026-09-12T16:57:38.857811+00:00 — Final operational freeze
 
-The independent readiness review passes. The lead verified all 27 reviewed file hashes,47 passing CPU tests and the final tokenizer/model-source receipts. FREEZE.json binds 72 source, data, configuration and review artifacts. No scientific file will change while model stages run. The initial SGLang service was healthy before the authorized pause.
+The independent readiness review passes. The lead verified all 27 reviewed file hashes, 47 passing CPU tests and the final tokenizer/model-source receipts. FREEZE.json binds 72 source, data, configuration and review artifacts. No scientific file will change while model stages run. The initial SGLang service was healthy before the authorized pause.
 
 ## 2026-09-12T16:57:38.917344+00:00
 
@@ -26,13 +30,13 @@ Original serving container restoration checked: HTTP 200. Research allocation us
 
 ## 2026-09-12T17:18:24.802965+00:00 — Explicit operational recovery, before resuming
 
-The first installation completed one training pass and development generation: 256/256 valid and correct labels (128/128 per label). The host controller then failed when writing recomputed_scores.json.tmp into a root-owned generated directory. No fresh qualification or induction ran. The original service was restored and verified HTTP200; the first allocation used 655.075 seconds. Its complete operational records, including the failure, are preserved unchanged in results/operational_resume/prior_attempt/.
+The first installation completed one training pass and development generation: 256/256 valid and correct labels (128/128 per label). The host controller then failed when writing recomputed_scores.json.tmp into a root-owned generated directory. No fresh qualification or induction ran. The original service was restored and verified HTTP 200; the first allocation used 655.075 seconds. Its complete operational records, including the failure, are preserved unchanged in results/operational_resume/prior_attempt/.
 
-A CPU-only ownership fix changed generated stage ownership to the host user, checking all 13 files before and after and against both completion manifests; no bytes or modes changed. The replacement research container uses the identical frozen image and mounts with user1000:1000. Four separately frozen recovery files reuse only the two exact completed stages, reject unbound/incomplete retries, and retain the original lifecycle supervisor. Ten CPU recovery tests and both check-only commands pass. The original 72 frozen artifacts are unchanged. Remaining budget is28,144 seconds after rounding prior use upward to 656, including a180 second shutdown reserve. Independent review is required before actual continuation.
+A CPU-only ownership fix changed generated stage ownership to the host user, checking all 13 files before and after and against both completion manifests; no bytes or modes changed. The replacement research container uses the identical frozen image and mounts with user 1000:1000. Four separately frozen recovery files reuse only the two exact completed stages, reject unbound/incomplete retries, and retain the original lifecycle supervisor. Ten CPU recovery tests and both check-only commands pass. The original 72 frozen artifacts are unchanged. Remaining budget is 28,144 seconds after rounding prior use upward to 656, including a 180-second shutdown reserve. Independent review is required before actual continuation.
 
 ## 2026-09-12T17:20:19.942986+00:00 — Reviewed continuation launched
 
-Independent stage and recovery reviews pass (results/postrun_review/). The continuation has28,144 allocated seconds remaining; any generic eight-hour start sentence emitted by the unchanged original wrapper below refers to the original total cap, not a new eight-hour allowance. Prior655.075 seconds remain charged as656 seconds. Only fresh qualification and subsequent previously authorized preliminary stages may now execute.
+Independent stage and recovery reviews pass (results/postrun_review/). The continuation has 28,144 allocated seconds remaining; any generic eight-hour start sentence emitted by the unchanged original wrapper below refers to the original total cap, not a new eight-hour allowance. Prior 655.075 seconds remain charged as 656 seconds. Only fresh qualification and subsequent previously authorized preliminary stages may now execute.
 
 ## 2026-09-12T17:20:20.255153+00:00
 
@@ -100,7 +104,7 @@ Original serving container restoration checked: HTTP 200. Research allocation us
 
 ## 2026-09-12T18:06:57.223313+00:00 — Service and cumulative budget verified
 
-The exact original SGLang container/image is healthy (HTTP200), the research container is stopped and the session process has exited. No session or cleanup error occurred during the continuation. Research allocation was 655.075096 seconds in the first attempt plus 2,357.607983 seconds in the continuation:3,012.683079 seconds total (50.211385 minutes). Charging the prior attempt conservatively as656 seconds gives 3,013.607983 seconds, below the original 28,800 second cap. Raw identities and timestamps remain local in the allocation/restoration records; public projection removes operational identities.
+The exact original SGLang container/image is healthy (HTTP 200), the research container is stopped and the session process has exited. No session or cleanup error occurred during the continuation. Research allocation was 655.075096 seconds in the first attempt plus 2,357.607983 seconds in the continuation: 3,012.683079 seconds total (50.211385 minutes). Charging the prior attempt conservatively as 656 seconds gives 3,013.607983 seconds, below the original 28,800 second cap. Raw identities and timestamps remain local in the allocation/restoration records; public projection removes operational identities.
 
 ## 2026-09-12T18:14:48.772217+00:00 — First public export replay and navigation correction
 

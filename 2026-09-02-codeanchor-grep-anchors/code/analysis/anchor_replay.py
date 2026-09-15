@@ -8,7 +8,7 @@ named. Runs on a worker (docker + NAS). Output: <out>.jsonl, one row per episode
 Usage: python3 anchor_replay.py <run_name> <out.jsonl> [--pkg DIR] [--only iid,...]
 """
 import argparse, glob, json, os, re, subprocess, sys, time
-sys.path.insert(0, os.path.expanduser("~/refactorbench-eval/anchor"))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "agent"))
 from anchor_env import extract_search, parse_hits, visible_text, GREP_FAMILY  # noqa: E402
 
 HDR = "--- code anchors (language server)"
@@ -32,7 +32,7 @@ def ensure_image(iid):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("run"); ap.add_argument("out")
-    ap.add_argument("--pkg", default=os.path.expanduser("~/refactorbench-eval/anchor-replay/lsp_tool"))
+    ap.add_argument("--pkg", default=os.path.join(os.path.dirname(__file__), "..", "lsp-tool"))
     ap.add_argument("--only", default="")
     ap.add_argument("--keep-images", action="store_true")
     args = ap.parse_args()

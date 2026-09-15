@@ -1,11 +1,11 @@
 # Lab notebook — CodeAnchor-style anchors (arm E / E3 / variance rerun)
 
-Chronological, unedited except for this header and hostname scrubbing. Continues the notebook of the
+Continues the notebook of the
 [2026-08-22 LSP study](../2026-08-22-lsp-agents-promax/LABNOTES.md).
 
 ## 2026-09-02 — Arm E: CodeAnchor-style passive anchors on grep output (design + build)
 
-Ian's ask: test the CodeAnchor idea (arXiv 2606.26979, "How Much Static Structure Do Code
+Question: test the CodeAnchor idea (arXiv 2606.26979, "How Much Static Structure Do Code
 Agents Need? A Study of Deterministic Anchoring") — inject semantic/code-linkage facts as
 an *addendum to grep/rg results*, powered by the LSP, and look at tokens/wall-time as well
 as resolve rate. CodeAnchor itself writes static-analysis tags (`# used by: fetch,
@@ -134,7 +134,7 @@ arm64 alpine container, then `start-dspark.sh` (DSpark draft re-downloads from H
   events → 165 anchored (50%), 113 no_hits, 40 empty, 11 unattributed (3%), 1 no_room;
   median anchor 0.25 s, p90 1.6 s, 0 errors.
 - Round-2 launches chained on the workers themselves (robust to my session's watchers
-  being killed): `~/refactorbench-eval/chain_e_r2.sh` on worker-b waits for
+  being killed): chain scripts on worker-b wait for
   `[waved] done: s1-arm-a8-r1` then runs E-r2 (anchor, waves of 4, 3/2);
   `chain_a8_r2.sh` on worker-a waits for `[waved] done: s1-arm-e-r1` then runs A8-r2
   (base, waves of 6, 3/2). Logs: `runs/chain_*.log`, `runs/s1-arm-{e,a8}-r2.log`.
@@ -189,11 +189,10 @@ arm64 alpine container, then `start-dspark.sh` (DSpark draft re-downloads from H
      tokens/step 471 vs 458): the mean gap is tail-driven (one E episode at 3.4 h), not
      anchoring (≈5 s/episode total). Addenda ≈4% of cumulative prompt tokens.
 
-## 2026-09-04 — cap counterfactual (Ian's confound concern): the caps are not the story
+## 2026-09-04 — cap counterfactual: the caps are not the story
 
-- Ian: "when investigating techniques, be very careful about introducing new constraints"
-  — the addendum caps (4 symbols / 6 not-shown files / 2,800 chars) are mine, CodeAnchor
-  caps nothing. Mitigation (approved): `analysis/anchor_replay.py` re-executed every
+- The addendum caps (4 symbols / 6 not-shown files / 2,800 chars) are mine; CodeAnchor
+  caps nothing. Mitigation: `analysis/anchor_replay.py` re-executed every
   anchored grep of E-r1 (29 episodes, 256 anchored observations, 241 replayed, 15 LS
   errors) in pristine promax-lsp containers with all caps removed (`raw` mode of the
   anchor op; separate package copy so E-r2/A8-r2 were untouched), then
@@ -213,10 +212,9 @@ arm64 alpine container, then `start-dspark.sh` (DSpark draft re-downloads from H
   coverage gap; the binding limits are (i) 41% non-python targets a Python reference
   graph cannot reach and (ii) 39% source files never referenced by anything the agent
   chose to grep.** Replay data: `runs/s1-arm-e-r1/replay_uncapped.jsonl` on NAS.
-- Implication for follow-ups: an uncapped E2 is the faithful thing to run and is cheap
-  to build, but the counterfactual predicts little change. A variant that would extend
-  reach is CodeAnchor's own placement — tags on *definition sites the agent reads* (i.e.
-  annotate `cat`/`sed -n` views of a file with each function's users), not only grep hits.
+- The counterfactual predicted little change from dropping the caps. E3 (below) is
+  CodeAnchor's own placement — tags on definition sites the agent reads — and was the
+  last arm. No further variants.
 
 ## 2026-09-04 — STAGE E COMPLETE: two rounds, E 32/50 (64%) vs A8 34/50 (68%) — null
 
@@ -252,8 +250,8 @@ arm64 alpine container, then `start-dspark.sh` (DSpark draft re-downloads from H
 
 ## 2026-09-04 — Arm E3 launched: definition-site anchors, uncapped (paper-faithful)
 
-- Ian: port the E write-up to the experiments repo (separate entry, referencing the
-  2026-08-22 study) and kick off E3 meanwhile.
+- Ported the E write-up to this experiments entry (referencing the
+  2026-08-22 study) and kicked off E3 meanwhile.
 - **E3 design** (`agent/arm_e3.yaml`; env flags `anchor_views`, `anchor_uncapped`):
   prompt byte-identical to A; anchors on grep hits as in E **plus file views** — every
   `def`/`class` line visible in a `cat` / `sed -n` / `head` / `tail` / `nl` view (numeric
@@ -274,20 +272,18 @@ arm64 alpine container, then `start-dspark.sh` (DSpark draft re-downloads from H
   serving stack, 2 days apart — documented).
 - Report: added §3.1 "Was arm E cheaper?" (totals E/A8 0.87 tokens, 0.95 wall, 0.91
   steps; paired geo-mean ratios 0.95 / 1.03 / 0.93, Wilcoxon p 0.76 / 0.40 / 0.07; the token
-  total is two outlier control episodes). Pushed (`aa51c12`); remote had Ian's hostname
-  scrub commit (worker-a→worker-a, worker-b→worker-b, strix-halo→strix-halo, IPs→dgx-spark/nas)
-  — rebased on it; rule saved for future pushes.
-- **Ian: the paper signals the saving is largely variance; our long episodes might be a
-  positive example — rerun both arms on those tests a few times.** Queued the variance
+  total is two outlier control episodes). Pushed (`aa51c12`).
+- The paper signals the saving is largely variance; our long episodes might be a
+  positive example — rerun both arms on those tests a few times. Queued the variance
   rerun: 5 extra rounds of E and of A8 on the 5 instances with the largest |Δ tokens|
   (albumentations-2495 −6.4M, transformers-38332 −5.0M; langchain-32996 +2.4M,
   django-19643 +2.1M, gallery-dl-7872 +1.4M — both directions for symmetry). Runs
   `s1-arm-e-var-r{1..5}` (worker-a, after E3-r1) and `s1-arm-a8-var-r{1..5}` (worker-b,
-  after E3-r2), chained via `~/refactorbench-eval/chain_var_*.sh`; filter `var5.re`.
+  after E3-r2), chained on the workers; filter `var5.re`.
   Question: on these instances, is E's episode-length distribution genuinely shorter
   (positive example) or is the r1/r2 gap within the per-instance variance?
-- **Ian's framing of a positive result: (1) correctness (unlikely), (2) efficiency, (3)
-  variance/consistency.** Added to the report: §3.1 step-level latency decomposition —
+- Framing of a positive result: (1) correctness (unlikely), (2) efficiency, (3)
+  variance/consistency. Added to the report: §3.1 step-level latency decomposition —
   steps right after an anchored observation are the fastest in either arm (median 18 s,
   205 out tokens) vs 26 s for E's other steps and 23 s for A8; decode proxy identical
   (12.0 vs 11.9 tok/s) → anchors are latency-neutral where they appear, E's higher mean is
@@ -297,8 +293,8 @@ arm64 alpine container, then `start-dspark.sh` (DSpark draft re-downloads from H
   → no variance win on typical dispersion; greps more consistent with anchors (19/25,
   p=0.14); extreme tail shorter (max tokens 8.6M vs 17.6M, p90 wall 1.5 h vs 2.0 h). The
   variance rerun (queued) is the test of the tail claim. Pushed.
-- **Incident (2026-09-04 13:12 PT, worker-b)**: a Docker image prune during Ian's disk
-  cleanup (h3 models, anaconda envs, HF cache, ~/models removed; 52 → 692 GB free)
+- **Incident (2026-09-04 13:12 PT, worker-b)**: a Docker image prune during unrelated
+  disk cleanup
   deleted `promax-lsp:django__django-19643` after E3-r2's wave 2 had loaded it but before
   its container started (3 workers, 4-instance wave) → `docker run` exit 125 →
   `CalledProcessError`, empty patch. Other wave-2 instances unaffected (their containers
@@ -323,7 +319,7 @@ arm64 alpine container, then `start-dspark.sh` (DSpark draft re-downloads from H
   9047, verl-3915/4185, ragas; anchor mode, waves of 4) launched 22:55; A8 variance chain
   replaced by `chain_var_a8_v2.sh` waiting for `[waved] done: s1-arm-e3-r2b`. E3-r2 =
   merge of `s1-arm-e3-r2` (waves 1–5), `s1-arm-e3-r2-fix` (django), `s1-arm-e3-r2b`.
-  Ask Ian for a heads-up before rebooting a worker with a run active.
+  Rule: do not reboot a worker with a run active.
 
 ## 2026-09-05 — E3 COMPLETE: 32/50 (64%) vs A8 34/50 — null on outcome, worse on cost
 
@@ -360,8 +356,10 @@ arm64 alpine container, then `start-dspark.sh` (DSpark draft re-downloads from H
   |log x − median| rank-sum p=0.71; bootstrap CI on the spread ratio [0.42, 1.57] (point
   0.82); per instance only albumentations-2495 tightens (p=0.13), transformers and
   gallery-dl are more dispersed with anchors; langchain is consistently costlier with
-  anchors (1.28×, p=0.04). Wall tail NOT shorter (p90 4.9 h vs 3.7 h). Verdict on Ian's
+  anchors (1.28×, p=0.04). Wall tail NOT shorter (p90 4.9 h vs 3.7 h). Verdict on the
   three outcomes: correctness no; efficiency no; variance plausible-unproven.
+  Experiment closed; no further arms.
+  Experiment closed; no further arms.
 - Report §3.4 written; results (10 var runs, slim JSON) + `anchor_variance.py` +
   `variance_rerun.txt` added to the experiments entry; pushed. Monitors stopped. Both
   workers idle; SGLang still serving on spark.

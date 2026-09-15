@@ -4,7 +4,10 @@ original rounds + variance reruns. Usage: anchor_variance.py (paths hardcoded be
 import sys, os, json, statistics as st, math, random
 sys.path.insert(0, os.path.dirname(__file__))
 from anchor_compare import episode_rows, patch_files
-data=json.load(open(os.path.expanduser("~/Projects/refactorbench/harness/data/swe-bench-promax.json")))
+_ds = os.environ.get("PROMAX_DATASET")
+if not _ds:
+    raise SystemExit("set PROMAX_DATASET to the SWE-Bench ProMax JSON")
+data=json.load(open(_ds))
 gold={x["instance_id"]: patch_files(x["patch"]) for x in data}
 def rows(run):
     p=f"/mnt/nas/refactorbench/runs/{run}"; return episode_rows(p, gold) if os.path.isdir(p) else {}

@@ -45,7 +45,7 @@ same-period control (A8), hosts swapped.
 
 | Path | What |
 |---|---|
-| `REPORT.md` | Full report: mechanism, results, uptake/coverage diagnostics, cap counterfactual, deviations, follow-ups |
+| `REPORT.md` | Full report: mechanism, results, uptake/coverage diagnostics, cap counterfactual, deviations |
 | `LABNOTES.md` | Chronological lab notebook (four launches of E-r1, the cap concern, the replay) |
 | `NOTES.md` | Protocol amendments + run ledger for E / A8 / E3 |
 | `code/` | Environment subclass + launcher shim, arm configs, runner, daemon `anchor` op, analysis scripts (diff vs the earlier entry) |

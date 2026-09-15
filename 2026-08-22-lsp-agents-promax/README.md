@@ -29,9 +29,9 @@ rate with paired two-round runs per arm.
   D2 64% local; hosted (wall-free): A 94% vs D2 84% (n.s.). The 2×2 above explains the
   economics.
 - Both headline rates are ~4–5× the published field for this subset/scaffold and are
-  treated as unvalidated pending a reference-model harness control; paired comparisons
-  are unaffected. Two operational asides — mini-swe-agent's 2h container wall and a
-  ~20-point local-serving understatement — are in `HARNESS-NOTES.md`.
+  treated as unvalidated (no reference-model harness control; none planned). Paired
+  comparisons are unaffected. Two operational asides — mini-swe-agent's 2h container
+  wall and a ~20-point local-serving understatement — are in `HARNESS-NOTES.md`.
 
 ## Contents
 
@@ -39,7 +39,7 @@ rate with paired two-round runs per arm.
 |---|---|
 | `REPORT.md` | Full report: setup, arms, results, findings, benchmark notes, verdict |
 | `HARNESS-NOTES.md` | Standalone write-up of the two transferable harness findings |
-| `LABNOTES.md` | Chronological lab notebook — everything in order, including failures, self-corrections, and the cost incident |
+| `LABNOTES.md` | Chronological lab notebook — everything in order, including failures and self-corrections |
 | `PLAN.md` / `NOTES.md` | Original plan; protocol amendments + run ledger |
 | `code/` | Arm configs, batch runner, `lsp` CLI + gate + image layers, serving notes, analysis scripts |
 | `results/` | Per-run per-instance outcomes, summary.csv, localization analysis output |

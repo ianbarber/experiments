@@ -6,7 +6,7 @@ A. C3/C4 — mbarrier_arrive unguarded on a count=1 barrier
 ==============================================================================
 error[nvvm-diag:C3/C4]: mbarrier arrive reaches a count=1 barrier from multiple threads
 
-  --> /home/ianbarber/Projects/cute/comparison/primitives/hazard_demo.py:110:4
+  --> $CUTE_ROOT/comparison/primitives/hazard_demo.py:110:4
       in function `kernel_a(...)`:
    |
   108 |     prims.fence_mbarrier_init()
@@ -29,7 +29,7 @@ B. C3 — mbarrier_init count 32 vs 1 elected arrive
 ==============================================================================
 warning[nvvm-diag:C3]: mbarrier static arrive count does not match init count (1 vs 32)
 
-  --> /home/ianbarber/Projects/cute/comparison/primitives/hazard_demo.py:122:8
+  --> $CUTE_ROOT/comparison/primitives/hazard_demo.py:122:8
       in function `kernel_b(...)`:
    |
   120 |     mbar = cutlass.Array(cutlass.Int64, 1, space=cutlass.AddressSpace.smem, alignment=8)
@@ -47,7 +47,7 @@ warning[nvvm-diag:C3]: mbarrier static arrive count does not match init count (1
 
 warning[nvvm-diag:C3]: mbarrier.init count 32 does not match elect.sync-guarded arrivals
 
-  --> /home/ianbarber/Projects/cute/comparison/primitives/hazard_demo.py:122:8
+  --> $CUTE_ROOT/comparison/primitives/hazard_demo.py:122:8
       in function `kernel_b(...)`:
    |
   120 |     mbar = cutlass.Array(cutlass.Int64, 1, space=cutlass.AddressSpace.smem, alignment=8)
@@ -70,7 +70,7 @@ C. C5 — arrive_expect_tx with no completion source
 ==============================================================================
 warning[nvvm-diag:C5]: mbarrier.arrive.expect_tx has no completion source for 128 registered transaction bytes
 
-  --> /home/ianbarber/Projects/cute/comparison/primitives/hazard_demo.py:142:8
+  --> $CUTE_ROOT/comparison/primitives/hazard_demo.py:142:8
       in function `kernel_c(...)`:
    |
   140 |     prims.barrier_cta_sync(0)
@@ -94,7 +94,7 @@ D. C16 — nested elect_sync
 ==============================================================================
 error[nvvm-diag:C16]: {0}
 
-  --> /home/ianbarber/Projects/cute/comparison/primitives/hazard_demo.py:154:11
+  --> $CUTE_ROOT/comparison/primitives/hazard_demo.py:154:11
       in function `kernel_d(...)`:
    |
   152 |     val = cutlass.Int32(0)
@@ -116,7 +116,7 @@ G. remarks{ptx} — runtime-indexed register array
 ==============================================================================
 remark[ptxas]: ptxas detected local memory usage
 
-  --> /home/ianbarber/Projects/cute/comparison/primitives/hazard_demo.py:192:10
+  --> $CUTE_ROOT/comparison/primitives/hazard_demo.py:192:10
       in function `kernel_g(...)`:
    |
   190 | def kernel_g(out: cutlass.Array):

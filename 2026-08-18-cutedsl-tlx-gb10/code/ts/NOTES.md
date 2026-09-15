@@ -7,7 +7,7 @@ kernel replaces the TMEM accumulator resource with a **register accumulator insi
 consumer task** and uses the sm_120-class `mma.sync` tensor-core path.
 
 Environment: NVIDIA GB10 (DGX Spark, sm_121a), CUDA 13.0, nvidia-cutlass-dsl 4.7.0,
-torch 2.13.0+cu130, venv `/home/ianbarber/Projects/cute/.venv-cutedsl`.
+torch 2.13.0+cu130, venv `$CUTE_ROOT/.venv-cutedsl`.
 
 ## Files
 

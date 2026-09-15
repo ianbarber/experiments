@@ -14,7 +14,9 @@ an exact two-sided sign test on discordant instances.
 import argparse, glob, json, math, os, re, statistics as st
 from collections import Counter, defaultdict
 
-DATASET = os.path.expanduser("~/Projects/refactorbench/harness/data/swe-bench-promax.json")
+DATASET = os.environ.get("PROMAX_DATASET")
+if not DATASET:
+    raise SystemExit("set PROMAX_DATASET to the SWE-Bench ProMax JSON")
 GREP_RE = re.compile(r"(?<![\w./-])(grep|rg|egrep|fgrep)\b")
 ANCHOR_HDR = "--- code anchors (language server)"
 

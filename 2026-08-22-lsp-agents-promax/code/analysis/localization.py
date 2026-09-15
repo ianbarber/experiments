@@ -12,7 +12,9 @@ Usage: python3 localization.py <run_dir> [<run_dir> ...]
 import json, re, sys, glob, os
 from collections import defaultdict
 
-DATASET = os.path.expanduser("~/Projects/refactorbench/harness/data/swe-bench-promax.json")
+DATASET = os.environ.get("PROMAX_DATASET")
+if not DATASET:
+    raise SystemExit("set PROMAX_DATASET to the SWE-Bench ProMax JSON")
 
 def patch_files(patch: str):
     return set(m.group(1) for m in re.finditer(r"^diff --git a/(\S+) b/", patch or "", re.M))

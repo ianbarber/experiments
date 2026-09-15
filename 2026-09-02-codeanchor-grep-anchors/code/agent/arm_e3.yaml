@@ -14,7 +14,7 @@ agent:
 
 environment:
   container_timeout: 8h
-  anchor_pkg_dir: /home/ianbarber/refactorbench-eval/anchor/lsp_tool
+  anchor_pkg_dir: ../lsp-tool
   anchor_views: true
   anchor_uncapped: true
   anchor_budget: 25

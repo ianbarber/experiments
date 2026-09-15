@@ -22,11 +22,11 @@ OpenRouter fp8 hosted)
   clean hosted comparison is a non-significant −10; the 2×2 above explains the
   economics (§6).
 - Validity notes: both headline rates (72% local / 94% hosted) are ~4–5× the published
-  field for this subset+scaffold and are treated as unvalidated pending a
-  reference-model harness control; the paired intervention comparisons are unaffected.
-  The local/hosted gap itself traced to local serving implementation (effort knob +
-  stack) — an aside for this study, written up separately in `HARNESS-NOTES.md`
-  alongside the 2h-container-wall pitfall (§7).
+  field for this subset+scaffold and are treated as unvalidated; no reference-model
+  harness control was run, and none is planned. The paired intervention comparisons
+  are unaffected. The local/hosted gap itself traced to local serving implementation
+  (effort knob + stack) — an aside for this study, written up separately in
+  `HARNESS-NOTES.md` alongside the 2h-container-wall pitfall (§7).
 
 ## 1. Setup
 
@@ -221,11 +221,10 @@ Local A resolved 72% [58–83] and hosted A 94% [84–98] — roughly 4–5× th
 number for this subset and scaffold (§8). The correct prior for a gap that size is a
 measurement or setup difference, not a 5× better model. Static checks (same harness,
 eval scripts, images, step cap, dataset revision) all match the paper; none of that is
-an empirical control. **The decisive check is a reference-model run**: one of the
-paper's tied models (GLM-5 is cheapest) through this exact pipeline for one round —
-~17% validates the harness; much higher collapses every headline rate here to
-internally-paired evidence only. That is follow-up #1 (not yet run; requires an
-OpenRouter top-up). The **paired intervention comparisons are unaffected** either way —
+an empirical control. A reference-model run (one of the paper's tied models through
+this exact pipeline) would decide whether ~17% validates the harness or the headline
+rates collapse to internally-paired evidence only. **That check was not run and is
+not planned.** The **paired intervention comparisons are unaffected** either way —
 identical harness and instances on both sides of every pair.
 
 **Contamination is the leading model-side candidate.** All 29 instances' source commits
@@ -235,8 +234,8 @@ from 0.39 (local, medium effort) to 0.62 (hosted, default xhigh), with 18/47 hos
 patches above 0.75 and one verbatim reproduction (transformers-38332). The absolute
 level is confounded by task mechanicalness (propagation refactors admit few distinct
 correct solutions), but mechanicalness is constant across the comparison — "longer
-thinking retrieves memorized commits" fits the shift. A symbol/path perturbation re-run
-is follow-up #2.
+thinking retrieves memorized commits" fits the shift. A symbol/path perturbation
+re-run was not run and is not planned.
 
 **The local/hosted gap (72% → 94% on identical everything else) is, for this study's
 question, an implementation aside**: it says nothing about LSPs or refactoring — it says
@@ -258,24 +257,23 @@ and is written up with the container-wall finding in `HARNESS-NOTES.md`.
 ## 9. Verdict
 
 1. Prompting — at any strength tried — does not get this model to adopt semantic
-   navigation tools; whether that is tool-unfamiliarity, trigger density, or
-   ask-shape is untested (§4). The refactoring failure such tools target (reference
-   completeness) is real and measured, but its tooling value is untested because
-   adoption never happened (§5). Forced integration or training are the remaining
-   levers.
+   navigation tools. Whether that is tool-unfamiliarity, trigger density, or
+   ask-shape is untested (§4) and is not a queued follow-up. The refactoring
+   failure such tools target (reference completeness) is real and measured, but
+   its tooling value is untested because adoption never happened (§5).
 2. **Incomplete refactoring is the dominant failure mode, and it produces no type
    errors** — the study's central observation. Consequently type-check gating in
    test-scored, dynamically-typed settings showed no benefit and trended negative in
    every variant: the gate flagged 35% of passing patches vs 14% of failing ones.
-   Reserve gates for settings where diagnostics are billable under the task's scoring. Reserve gates for
-   settings where type cleanliness is part of the acceptance criterion.
+   Reserve gates for settings where type cleanliness is part of the acceptance
+   criterion.
 3. Audit hidden harness budgets (container lifetime vs decode speed) before trusting
    step-cap statistics; quantify your serving stack against a reference endpoint before
    attributing differences to interventions (`HARNESS-NOTES.md`).
 4. Treat **both** headline rates (local 72%, hosted 94%) as unvalidated against the
-   published field pending the reference-model harness control; the intervention
-   comparisons are internally paired on identical harness/instances and survive this
-   concern — which is precisely why the study's within-arm conclusions stand regardless.
+   published field. The intervention comparisons are internally paired on identical
+   harness/instances and survive this concern — which is precisely why the study's
+   within-arm conclusions stand regardless.
 
 ## 10. Reproduction map
 

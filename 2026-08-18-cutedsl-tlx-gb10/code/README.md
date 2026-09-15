@@ -7,12 +7,15 @@ this machine's NVIDIA GB10 (sm_121a: has TMA/mbarriers/mma.sync, no tcgen05/TMEM
 
 ## Environments
 
+`$CUTE_ROOT` is a local CUTLASS 4.7 + TLX checkout (not in this tree). Point it at
+that tree before reproducing.
+
 | | Path | Notes |
 |---|---|---|
-| CuTe DSL venv | `/home/ianbarber/Projects/cute/.venv-cutedsl` | `nvidia-cutlass-dsl==4.7.0`, torch 2.13+cu130, `apache-tvm-ffi` (required by primitives examples). Arch auto-detects `sm_121a`. |
-| TLX venv | `/home/ianbarber/Projects/cute/.venv-tlx` | Editable build of `../tlx-triton` (Triton 3.3 base). Two local fixes applied for sm_121a: `python/triton/backends/nvidia/bin/ptxas` → symlink to CUDA 13 ptxas (orig saved as `ptxas-cuda128.orig`), and `ptx_get_version()` patched to map CUDA 13 → PTX ISA 8.8. Never `pip install torch` here again (clobbers the editable triton). |
-| CUTLASS source | `/home/ianbarber/Projects/cute/cutlass` | tag v4.7.0 |
-| TLX source | `/home/ianbarber/Projects/cute/tlx-triton` | branch `tlx` @ 927d1e04 |
+| CuTe DSL venv | `$CUTE_ROOT/.venv-cutedsl` | `nvidia-cutlass-dsl==4.7.0`, torch 2.13+cu130, `apache-tvm-ffi` (required by primitives examples). Arch auto-detects `sm_121a`. |
+| TLX venv | `$CUTE_ROOT/.venv-tlx` | Editable build of `$CUTE_ROOT/tlx-triton` (Triton 3.3 base). Two local fixes applied for sm_121a: `python/triton/backends/nvidia/bin/ptxas` → symlink to CUDA 13 ptxas (orig saved as `ptxas-cuda128.orig`), and `ptx_get_version()` patched to map CUDA 13 → PTX ISA 8.8. Never `pip install torch` here again (clobbers the editable triton). |
+| CUTLASS source | `$CUTE_ROOT/cutlass` | tag v4.7.0 |
+| TLX source | `$CUTE_ROOT/tlx-triton` | branch `tlx` @ 927d1e04 |
 
 ## The head-to-head kernels
 

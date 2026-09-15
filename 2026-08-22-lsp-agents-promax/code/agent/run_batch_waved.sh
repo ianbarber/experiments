@@ -3,8 +3,9 @@
 # Usage: run_batch_waved.sh <arm_yaml> <run_name> <filter_regex> <mode: base|lsp> [wave_size] [workers] [eval_workers]
 set -uo pipefail
 ARM="$1"; NAME="$2"; FILTER="$3"; MODE="$4"; WAVE="${5:-6}"; WORKERS="${6:-3}"; EVAL_WORKERS="${7:-2}"
-OUT="$HOME/refactorbench-eval/runs/$NAME"
-HARNESS="$HOME/refactorbench-eval/harness"
+EVAL="${REFACTORBENCH_EVAL:?set REFACTORBENCH_EVAL to the local eval tree}"
+OUT="$EVAL/runs/$NAME"
+HARNESS="$EVAL/harness"
 NAS_BASE=/mnt/nas/refactorbench/images
 NAS_LSP=/mnt/nas/refactorbench/images-lsp
 export PATH="$HOME/.local/bin:$PATH"
@@ -12,7 +13,7 @@ export MSWEA_COST_TRACKING=ignore_errors
 mkdir -p "$OUT"
 
 if [[ "$MODE" == "lsp" ]]; then
-  SUBSET="$HOME/refactorbench-eval/promax-lsp-dataset"; ROLLOUT_PREFIX="promax-lsp:"
+  SUBSET="$EVAL/promax-lsp-dataset"; ROLLOUT_PREFIX="promax-lsp:"
 else
   SUBSET="swe-bench-promax/SWE-Bench-ProMax"; ROLLOUT_PREFIX="key4127/refactor-dockerhub:"
 fi
@@ -20,7 +21,7 @@ fi
 IDS=$(python3 - "$FILTER" <<'EOF'
 import json, re, sys, os
 pat = re.compile(sys.argv[1])
-data = json.load(open(os.path.expanduser("~/refactorbench-eval/harness/data/swe-bench-promax.json")))
+data = json.load(open(os.environ["PROMAX_DATASET"]))
 print("\n".join(x["instance_id"] for x in data if pat.match(x["instance_id"])))
 EOF
 )

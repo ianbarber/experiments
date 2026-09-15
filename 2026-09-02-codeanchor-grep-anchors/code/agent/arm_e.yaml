@@ -16,7 +16,7 @@ environment:
   # run_batch_waved.sh in mode "anchor") rebinds that name to AnchorDockerEnvironment,
   # because mini-swe-agent's runner only injects the instance image for the literal name.
   container_timeout: 8h
-  anchor_pkg_dir: /home/ianbarber/refactorbench-eval/anchor/lsp_tool
+  anchor_pkg_dir: ../lsp-tool
   anchor_budget: 12
   anchor_max_hits: 40
   anchor_lsp_wait: 3

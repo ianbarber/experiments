@@ -158,10 +158,9 @@ Independent spot-checks re-run from the orchestrating session, all passing:
 
 ## 5. Write-up (2026-08-18/19)
 
-Published the overview as a Claude artifact
-(https://claude.ai/code/artifact/234c7e7c-c5ea-4e6e-ad67-66e6df258b09), wrote
-`comparison/README.md` on the machine, then assembled this repo folder (REPORT.md,
-README.md, LABNOTES.md, `code/` mirror of the comparison tree) on 2026-08-19.
+Wrote `comparison/README.md` on the machine, then assembled this repo folder
+(REPORT.md, README.md, LABNOTES.md, `code/` mirror of the comparison tree) on
+2026-08-19. Orchestrated with Claude Code.
 
 ## Benchmark record
 

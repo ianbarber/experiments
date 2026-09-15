@@ -1,5 +1,6 @@
-> Historical planning document, written before execution; kept verbatim apart from
-> formatting. Outcomes and deviations are in REPORT.md and NOTES.md.
+> Historical planning document, written before execution. Lightly sanitized for
+> publication (operator asides, other-project inventory, leftover "internal"
+> license language). Outcomes and deviations are in REPORT.md and NOTES.md.
 
 # SWE-Bench ProMax × Qwen3.8-27B × LSP tools — experiment plan
 
@@ -64,14 +65,14 @@ file:line locations**. That finding drives the tool design below.
   model. Fresh ~29 GB download required.
 
 ### Machines
-- **spark (this box)** — NVIDIA **GB10 (DGX Spark class)**: aarch64, 20 ARM cores (10× X925 +
+- **`dgx-spark`** — NVIDIA **GB10 (DGX Spark class)**: aarch64, 20 ARM cores (10× X925 +
   10× A725), **119 GiB unified memory**, ~273 GB/s bandwidth, CUDA 13.0, driver 580.159,
-  Docker 29.2.1. Disk: **111 GB free** of 916 GB (88% full). Role: model server only.
-- **Lab x86 hosts** (passwordless SSH from spark, all x86_64, all mount the NAS):
+  Docker 29.2.1. Role: model server only. GPU idle at start of this run.
+- **Lab x86 hosts** (all x86_64, all mount the NAS):
 
   | Host | CPU / threads | RAM | Free disk | Docker |
   |------|---------------|-----|-----------|--------|
-  | `strix-halo` | Ryzen AI MAX+ 395 / 32 | 122 GiB | 409 GB | **none — install in Phase 0** (⚠ ~34 GB RAM in use by something; check before saturating) |
+  | `strix-halo` | Ryzen AI MAX+ 395 / 32 | 122 GiB | 409 GB | **none — install in Phase 0** |
   | `worker-a` | Ryzen 7 8845HS / 16 | 29 GiB | 147 GB | 29.1.3 |
   | `worker-b` | Ryzen 7 3700X / 16 | 125 GiB | 80 GB (91% full) | 29.6.1 |
 
@@ -80,10 +81,6 @@ file:line locations**. That finding drives the tool design below.
   shared across hosts and batches), run archives/trajectories, dataset artifacts, model
   checkpoint backups. Not for `/var/lib/docker` itself — overlay2 on NFS is unreliable;
   docker data-root stays on each host's local NVMe.
-- **DSv4 is not currently running** (no process, no service, GPU idle). It's the custom
-  engine at `~/Projects/dsv4/ds4` (`ds4-server` binary + 87 GB GGUF). Pre-flight before
-  serving: `pgrep -af 'ds4'` → if found, `kill -INT <pid>` (it handles SIGINT cleanly),
-  verify with `free -h` that memory is released.
 
 ---
 
@@ -92,12 +89,12 @@ file:line locations**. That finding drives the tool design below.
 | # | Severity | Mismatch | Mitigation |
 |---|----------|----------|------------|
 | M1 | Critical (resolved: lab topology) | All 170 instance images are **amd64-only**; the GB10 is **aarch64**. Rollout *and* eval run inside these containers. | Run containers natively on the lab x86 hosts (`strix-halo` primary) with the GB10 serving the model over the LAN — see D3. No emulation, no cloud. Residual task: install Docker on strix-halo. |
-| M2 | High (resolved: NAS cache + waves) | 317 GB compressed images (likely 600–900 GB uncompressed) vs 111 GB free on spark; plus 29 GB model + ~15 GB serving stack. | Spark only needs the model + serving stack now (fits easily). Images live on the x86 hosts: strix-halo's 409 GB holds large batches; NAS tar cache (`/mnt/nas`, 6.8 TB free) means each image is pulled from Docker Hub once ever. Still batch + `docker rmi` on worker-a/worker-b (147/80 GB free). Spark cleanup candidates (*for Ian to move to NAS, not doing this unilaterally*): `~/models/ttblt_v3` 285 GB, dsv4 GGUFs 87 GB. |
+| M2 | High (resolved: NAS cache + waves) | 317 GB compressed images (likely 600–900 GB uncompressed) vs limited free disk on spark; plus 29 GB model + ~15 GB serving stack. | Spark only needs the model + serving stack. Images live on the x86 hosts; NAS tar cache (`/mnt/nas`) means each image is pulled from Docker Hub once ever. Still batch + `docker rmi` on worker-a/worker-b. |
 | M3 | **High** | Wall-clock: ~273 GB/s bandwidth → est. 15–25 tok/s single-stream decode (FP8). Thinking tokens dominate. | fp8 weights + fp8 KV, `reasoning_effort: medium`, 4–8 concurrent episodes (batched aggregate est. 60–120 tok/s), MTP speculative decoding if the stack supports it. Estimates in §6; measured in Phase 1 before committing to full runs. |
 | M4 | Medium | Model is 8 days old; NVIDIA's DGX-Spark vLLM/SGLang container images may not support the hybrid GDN architecture yet on aarch64/CUDA 13. | Try in order: (1) SGLang recent build (day-0 Qwen3.8 support), (2) vLLM nightly, (3) llama.cpp GGUF (proven on Spark; sufficient because the scaffold is text-only). Phase 0 task with a hard timebox. |
 | M5 | Medium | Paper baselines exist only for frontier/large-MoE models; and paper omits sampling temperature. | Compare against Qwen3.5-MoE mini-swe-agent 20.6% as an upper anchor; document our sampling (model-card defaults) and reasoning effort as protocol deviations. |
 | M6 | Medium | Statistical power: Python-only is 29 instances; a 3–5 pt arm difference won't clear noise. | Paired per-instance design + McNemar's test; 2 seeds per arm on the Python stage; treat stage 1 as directional signal, full-170 for headline numbers. |
-| M7 | Low | Dataset/harness license unclear (README badge "Research", no LICENSE file, none on HF). | Fine for internal experimentation; resolve with authors (xiaodong.gu@sjtu.edu.cn) before publishing results. |
+| M7 | Low | Dataset/harness GitHub badge is "Research"; no OSI license file on the harness or HF card. | Public benchmark (arXiv 2608.09802). This entry does not redistribute the dataset or gold patches — results are pass/fail JSON. Personal lab notes, not a paper claiming a field number. |
 | M8 | Low | LSP quality is uneven across the 7 languages: clangd needs `compile_commands.json` (C/C++ ≈ 42 of 170 instances); jdtls needs project import + slow first index. Pyrefly has open issues on find-references in very large repos (#2039) and memory spikes (#2970). | Per-language expectations in the analysis; pre-warm indexes at episode start; generate `compile_commands.json` via `bear`/CMake export where the repo allows; basedpyright as the Python fallback/ablation if Pyrefly misbehaves. |
 
 ---
@@ -199,13 +196,13 @@ version, container images, eval command. Only environment/prompt vary.
 ## 5. Phases
 
 **Phase 0 — Infrastructure gates (~1–2 days)**
-1. Pre-flight: confirm DSv4 down (`pgrep -af ds4`); clear ~10 GB (docker prune reclaims 4 GB).
+1. Pre-flight: confirm the GPU is idle; clear ~10 GB (docker prune reclaims 4 GB).
 2. Clone harness + pull dataset; verify 170 instances parse; commit a repo skeleton
    (`serving/`, `agent/`, `lsp-tool/`, `runs/`, `analysis/`).
 3. **Serving gate:** stand up Qwen3.8-27B-FP8 (SGLang → vLLM nightly → llama.cpp, timebox
    ~half day each). Success = OpenAI-compatible chat completion with correct chat template,
    thinking content separated, and a measured tok/s (single + 8-way concurrent).
-4. **Worker gate:** install Docker on strix-halo (and identify what's using ~34 GB RAM there);
+4. **Worker gate:** install Docker on strix-halo;
    from strix-halo, hit the spark endpoint (latency + a 3k-token completion); pull one Python
    instance image, run its eval script with the **gold patch**, confirm it resolves well
    inside the 40-min timeout; `docker save` the image to `/mnt/nas` and `docker load` it on
@@ -276,8 +273,7 @@ order: reasoning effort, concurrency, MTP speculative decoding, seeds.
 - **Environment drift across worker hosts** (different kernel/docker versions could flip a
   flaky test) — validate gold patches per batch on the same host that evaluates the agent
   patches; keep each instance's rollout and eval on one host.
-- **strix-halo has an unknown resident workload** (~34 GB RAM in use) — identify it before
-  scheduling heavy eval batches; worker-a's 29 GiB RAM caps concurrent C++/Rust evals.
+- **strix-halo RAM** — other local serving was left running; worker-a's 29 GiB RAM caps concurrent C++/Rust evals.
 - **27B baseline lands near 0%** on these large refactors → no headroom to measure an LSP
   effect. Detect early via dev-10/stage-1; response: relax to a easier slice (paper's
   per-language table shows C and Python are the most tractable), or measure graded proxies

@@ -1,4 +1,9 @@
-# Working Guidelines
+# Working Guidelines (historical)
+
+Repo-wide process now lives in [`../../GUIDELINES.md`](../../GUIDELINES.md).
+This file is the original per-entry copy, kept because the run followed it
+(including the 3-seed rule this entry did not keep — one seed, greedy
+decoding, recorded). Do not extend it.
 
 ## Experiment Discipline
 

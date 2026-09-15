@@ -1,6 +1,6 @@
 """Stage the Hugging Face release bundle (docs/03 §12). Assembles only: nothing is uploaded here.
 
-    venvs/loop/bin/python scripts/release.py --run main [--out ~/rsiathome-release]
+    venvs/loop/bin/python scripts/release.py --run main [--out ./release]
                                              [--include-heldout] [--include-merged] [--trajectories all|train|none]
 
 Layout produced:
@@ -195,7 +195,7 @@ def manifest(out: Path) -> dict:
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--run", default="main"); ap.add_argument("--out", default=str(Path.home() / "rsiathome-release"))
+    ap.add_argument("--run", default="main"); ap.add_argument("--out", default="release")
     ap.add_argument("--include-heldout", action="store_true"); ap.add_argument("--include-merged", action="store_true")
     ap.add_argument("--trajectories", default="all", choices=["all", "train", "none"])
     a = ap.parse_args()
