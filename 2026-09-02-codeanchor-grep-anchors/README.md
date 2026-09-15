@@ -31,11 +31,21 @@ same-period control (A8), hosts swapped.
 - **The mechanism works and is cheap** (half of greps anchored, ≈4% of prompt tokens,
   5.6 s/episode, zero failures) **and the agent acts on it** (99 of 99 flagged gold files
   opened, 92 patched) — but both arms miss the same 64 gold files.
-- **Why:** of the round-1 misses, 41% are non-Python targets and 39% are Python files
-  never referenced by any symbol the agent chose to search. Passive injection is bounded
-  by the questions the agent asks.
+- **Why (corrected 2026-09-14):** of the round-1 misses, 41% are non-Python targets, 32%
+  are Python files never referenced by any symbol the agent chose to search, and 12% would
+  have been named by a working, uncapped server. Passive injection is bounded by the
+  questions the agent asks.
 - **Deviation audited:** my display caps (the paper caps nothing) hid only 3 of 69
   missed files, measured by an uncapped replay of every anchored grep.
+- **Post-hoc corrections (2026-09-14, no new runs):** two of the 29 rollout images ship
+  `PYTHONPATH=/testbed` on a `src/`-layout repo, which makes Pyrefly's find-references
+  return only the relative-import neighbourhood of the opened file; the anchors in
+  lerobot-2808 and transformers-38332 under-reported users throughout (e.g. "used by 3
+  sites in 2 files" for a class used in 20). The other 27 instances match a clean replay
+  file-for-file. And 65 of the 69 jointly-missed gold files were omitted by at least one
+  patch that resolved the instance: the coverage gap is mostly docs, squashed unrelated
+  changes and untested parts of the refactor, not a correctness gap. See the report's
+  addendum.
 - **E3** (definition-site placement on file views, uncapped — the paper's own trigger
   surface): same outcome (32/50, paired 1-vs-4), fewer steps (−4.5%, p = 0.043) but +35%
   wall-clock (p = 0.015) and +36% median tokens; only 9 of the 64 jointly-missed gold files
@@ -49,4 +59,4 @@ same-period control (A8), hosts swapped.
 | `LABNOTES.md` | Chronological lab notebook (four launches of E-r1, the cap concern, the replay) |
 | `NOTES.md` | Protocol amendments + run ledger for E / A8 / E3 |
 | `code/` | Environment subclass + launcher shim, arm configs, runner, daemon `anchor` op, analysis scripts (diff vs the earlier entry) |
-| `results/` | Per-run per-instance outcomes (E, A8, E3), per-grep/view anchor telemetry, summaries, episode CSVs, uncapped replay + counterfactual, cost/consistency tables |
+| `results/` | Per-run per-instance outcomes (E, A8, E3), per-grep/view anchor telemetry, summaries, episode CSVs, uncapped replay + counterfactual, cost/consistency tables; 2026-09-14 audit: `replay_uncapped_local_e_r1.jsonl` (clean-server replay), `base_image_env.txt` (PYTHONPATH per base image), `missed_audit_2026-09-14.txt` (corrected classification + necessity) |

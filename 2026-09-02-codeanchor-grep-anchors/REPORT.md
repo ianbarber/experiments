@@ -46,11 +46,14 @@ latency from the longer context. Edit recall identical (0.667 vs 0.666).
 per episode, zero harness failures. Of 99 flagged gold files, 99 were opened
 and 92 patched. Both arms still miss the same 64 gold files.
 
-**Why.** Of the round-1 misses: 41% non-Python (docs/yaml/config — unreachable
-from a Python reference graph); 39% Python source never referenced by any
-symbol the agent chose to search; 10% created/deleted by the gold patch; 6%
-shown and ignored; **4% hidden by the display cap**. Passive injection is
-bounded by the questions the agent asks.
+**Why (corrected 2026-09-14, see the addendum).** Of the round-1 misses: 41%
+non-Python (docs/yaml/config — unreachable from a Python reference graph); 32%
+Python source never referenced by any symbol the agent chose to search; 12%
+Python source a working, uncapped server would have named (4% hidden by my
+display cap, 8% hidden by a reference-server bug in two rollout images); 10%
+created/deleted by the gold patch; 6% shown and ignored. Passive injection is
+bounded by the questions the agent asks — but 65 of the 69 missed files were
+not required by the graded tests, so the gap is mostly not a correctness gap.
 
 **Cap counterfactual.** Uncapped replay of every anchored grep in E-r1 (256
 observations) named 3.6× more files, and hid only 3 of 69 jointly-missed gold
@@ -68,13 +71,81 @@ vs none) at equal typical cost; spread reduction not significant (bootstrap
 CI 0.42–1.57); wall tail not shorter locally. Variance win plausible,
 unproven.
 
+## Addendum (2026-09-14): a broken reference server, and which misses mattered
+
+Two corrections after the run closed, prompted by asking why a language server
+would miss a Python file that *uses* a class it was asked about. No new runs.
+
+**The reference server under-reported in two of 29 rollout images.** The base
+images for lerobot-2808 and transformers-38332 ship `PYTHONPATH=/testbed:`.
+Pyrefly 1.2.0 puts PYTHONPATH entries on its site-package path ahead of the
+import root it infers for a `src/` layout, so a file the server opens is named
+`src.lerobot....` while every other file imports it as `lerobot....`: one file,
+two module handles. Find-references walks reverse imports of the definition's
+handle, so only files reached through *relative* imports from the opened file
+come back. In lerobot-2808 the agent was told `OpenCVCameraConfig` is "used by
+3 sites in 2 files" (57 sites in 20 files) and that `DeviceNotConnectedError` is
+"never referenced elsewhere" (61 sites in 14 files). Verified three ways: the
+same anchor code against a clean server on the repos at base commit returns the
+full lists, and setting `PYTHONPATH=<repo>:` alone reproduces the truncation;
+inside the actual image on worker-a, starting the daemon with PYTHONPATH unset
+turns 2 files into the full set; and a replay of every anchored grep of E-r1
+against the clean server (`code/analysis/anchor_replay_local.py`) matches the
+in-image replay file-for-file on 27 instances and diverges only on the two
+images that combine `PYTHONPATH=/testbed` with a `src/` layout (seven images set
+it; flat-layout repos and `PYTHONPATH=/testbed/src` are unaffected). Versions
+were identical (pyrefly 1.2.0, serena-agent 1.7.0). E, E3 and any `lsp refs`
+call in those two images were fed truncated "used by" lists throughout. Fix:
+start the daemon with `env -u PYTHONPATH` (or `PYTHONPATH=/testbed/src`). Not
+rerun: the two instances are one tie (lerobot, 1/2 per arm) and one E win
+(transformers-38332), so correct anchors could at most move the paired count
+from 2-vs-3 to 3-vs-3.
+
+**Corrected classification of the 69 round-1 misses**
+(`results/missed_audit_2026-09-14.txt`):
+
+| Missed gold files (69) | Reported | Corrected |
+|---|---:|---:|
+| Non-Python (docs, yaml, config) | 28 (41%) | 28 (41%) |
+| Python, never named by any anchor | 27 (39%) | 22 (32%) |
+| Python, named only by an uncapped, working server | 3 (4%) | 8 (12%) |
+| Python, shown in a capped addendum and ignored | 4 (6%) | 4 (6%) |
+| Created or deleted by the gold patch | 7 (10%) | 7 (10%) |
+
+The 22 that remain genuinely use no symbol the agent searched: seven lerobot
+example scripts whose gold change wraps loops in try/finally around a *robot's*
+disconnect; five optuna and five ragas files carrying unrelated changes squashed
+into the gold patch (an intersphinx entry, a scipy import rename, `# type:
+ignore` comments); and five singletons (a string-keyed site registry, two files
+where the gold *introduces* the call, a docstring rewrite, a same-named config
+field read through OmegaConf).
+
+**Which misses mattered.** Across every run on the NAS (all arms and rounds, up
+to 21 resolving episodes per instance), 65 of the 69 files were omitted by at
+least one patch that resolved the instance, so the graded tests do not require
+them. All 28 non-Python files are in that group, as are 21 of the 22 "never
+named" files. The four never omitted by a resolving patch: albumentations-2495's
+three mixing/composition files (shown in an addendum and ignored; resolved 4
+times, always with them) and dspy-9047's `evaluate.py` (resolved 5 times, always
+with it; the gold adds `toDict()` calls there, so nothing existed to reference).
+"Not required by the tests" is not "not part of the refactor": the lerobot
+try/finally wraps are the change's intent, just untested, while the optuna and
+ragas files are unrelated. Either way, the edit-recall-vs-gold metric behind the
+"incomplete refactor" reading counts docs, untested intent and squashed noise
+alike. Against the graded tests, the anchors' relevant miss in this study is
+four files, three of which the anchors showed. The stage-1 study's
+incomplete-refactoring diagnosis rests on the same metric and was not
+re-audited here.
+
 ## Verdict
 
 Correctness: no. Efficiency: no. Variance: unproven. The agent acts on the
-signal when it points at the right place, and the incomplete-refactor gap is
-untouched because the agent does not search the symbols that would reach the
-missing files. That is a finding about passive injection, not a prompt to
-try a fourth arm.
+signal when it points at the right place. The gold files both arms miss are
+mostly docs, squashed unrelated changes and untested parts of the refactor that
+no resolving patch needed (addendum); of the four that mattered, the anchors
+showed three and could not have reached the fourth. That is a finding about
+passive injection and about the recall metric, not a prompt to try a fourth
+arm.
 
 No grep-off, no forced `lsp refs`, no further placement variants. Those were
 open at the end of the run; they are retracted.

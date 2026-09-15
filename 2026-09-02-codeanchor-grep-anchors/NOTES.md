@@ -54,3 +54,37 @@ Base protocol (model, sampling, harness, images, eval) is that of the
 
 Pooled 35 episodes/arm: level equal (geo-mean tokens 4.02M vs 4.19M); control has 3
 step-cap episodes vs 0; spread reduction n.s. (p=0.71, bootstrap CI 0.42–1.57). §3.4.
+
+## 2026-09-14 — Post-hoc correction: reference-server bug and missed-file necessity audit (no new runs)
+
+- **Bug.** The base images for `huggingface__lerobot-2808` and `huggingface__transformers-38332`
+  ship `PYTHONPATH=/testbed:`; both repos use a `src/` layout. Pyrefly 1.2.0 puts PYTHONPATH
+  entries on its site-package path ahead of the inferred import root, so an opened file is
+  named `src.<pkg>...` while everything else imports `<pkg>...`; find-references walks reverse
+  imports of the definition handle and returns only the relative-import neighbourhood of the
+  opened file. Seven base images set `PYTHONPATH=/testbed` (the other five are flat layout,
+  unaffected); two set `/testbed/src` (unaffected). `results/base_image_env.txt`.
+- **Verification.** (i) `code/analysis/anchor_replay_local.py`: every anchored grep of E-r1
+  replayed against a clean local server on the repos at base commit — identical to the in-image
+  replay on 27/29 instances, lerobot 44 vs 16 files, transformers-38332 390 vs 328
+  (`results/replay_uncapped_local_e_r1.jsonl`). (ii) In the actual lerobot image on worker-a:
+  `lsp refs` on `OpenCVCameraConfig` = 2 files with the shipped env, full set with
+  `env -u PYTHONPATH lsp daemon start`. (iii) Locally, `PYTHONPATH=<repo>:` alone reproduces the
+  2-file answer; `PYTHONPATH=<repo>/src:` does not; a flat-layout repo is unaffected either way.
+  Image versions identical to local (pyrefly 1.2.0, serena-agent 1.7.0, lsp-tool 0.1.0).
+- **Scope.** All E, E3 and variance-rerun episodes of those two instances used truncated
+  "used by" lists; the two instances are one paired tie and one E win, so a rerun could only
+  move the paired count from 2-vs-3 to 3-vs-3. Not rerun. Any future use of the promax-lsp
+  images must start the daemon with `env -u PYTHONPATH` (or `PYTHONPATH=/testbed/src`).
+- **Corrected counterfactual** (`code/analysis/anchor_missed_audit.py`,
+  `results/missed_audit_2026-09-14.txt`): of the 69 gold files missed by both arms in round 1,
+  28 non-Python (41%), 22 never named by any anchor (32%, was 27/39%), 8 named only by an
+  uncapped working server (12%, was 3/4%), 4 shown and ignored, 7 created/deleted.
+- **Necessity audit.** Over every run on the NAS (all arms/rounds), 65/69 missed files were
+  omitted by at least one patch that resolved the instance → not required by the graded tests
+  (all 28 non-Python; 21/22 never-named; all 8 reachable; all 7 created/deleted; 1/4 shown).
+  Never omitted: albumentations-2495 `augmentations/mixing/{functional,transforms}.py` +
+  `core/composition.py` (shown, ignored) and dspy-9047 `dspy/evaluate/evaluate.py` (gold
+  introduces `toDict()` calls; nothing to reference). Edit recall vs gold files, the metric
+  behind the "incomplete refactor" reading, counts docs, squashed unrelated changes
+  (optuna-c_058e8bc, ragas-2333) and untested refactor intent (lerobot examples) alike.

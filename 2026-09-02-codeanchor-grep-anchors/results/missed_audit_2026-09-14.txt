@@ -1,0 +1,94 @@
+## 1. Files named by the uncapped replay: in the rollout image vs a clean local server
+instance                                            py PYTHONPATH     image local local-only
+albumentations-team__albumentations-2337            87                   48    48          0
+albumentations-team__albumentations-2495            86                   48    48          0
+confident-ai__deepeval-2345                        702                  162   162          0
+confident-ai__deepeval-c_08844c8                   670                  124   124          0
+confident-ai__deepeval-c_ce72651                   724                  144   144          0
+django__django-19643                              2847                  464   464          0
+google__adk-python-c_19315fe                      1082                  173   173          0
+google__adk-python-c_61adfcd                       927                    1     1          0
+google__langextract-239                             71                   24    24          0
+huggingface__lerobot-2808                          459 /testbed:         16    44         28  <-- diverges
+huggingface__transformers-38332                   3556 /testbed:        328   390         62  <-- diverges
+huggingface__transformers-38788                   3513 /testbed/src:    102   102          0
+hummingbot__hummingbot-c_1ce05af                  1387 /testbed:        176   176          0
+icloud-photos-downloader__icloud_photos_downloader-c_f52826c    81 /testbed/src:      7     7          0
+langchain-ai__langchain-32996                     2431                   19    19          0
+mikf__gallery-dl-7872                              606                  273   273          0
+optuna__optuna-6166                                375                   10    10          0
+optuna__optuna-6197                                376                   31    31          0
+optuna__optuna-c_058e8bc                           379                   91    91          0
+pandas-dev__pandas-61244                          1503 /testbed:          8     8          0
+pypa__pipenv-6373                                  722                    6     6          0
+roboflow__supervision-1943                         147 /testbed:         11    11          0
+stanfordnlp__dspy-1801                             228                   29    29          0
+stanfordnlp__dspy-8105                             241                   20    20          0
+stanfordnlp__dspy-9047                             229                    2     2          0
+stanfordnlp__dspy-9193                             231                   20    20          0
+verl-project__verl-3915                            557 /testbed:         21    21          0
+verl-project__verl-4185                            579 /testbed:         27    27          0
+vibrantlabsai__ragas-2333                          234                    4     4          0
+
+## 2. Classification of gold files missed by both arms in round 1 — image replay (as reported): 69 files
+   28 (41%)  non-python
+   27 (39%)  python: never named by any anchor
+    7 (10%)  created/deleted by gold
+    4 (6%)  python: SHOWN in capped addendum, ignored
+    3 (4%)  python: named only by an uncapped server
+
+## 2. Classification of gold files missed by both arms in round 1 — clean local replay: 69 files
+   28 (41%)  non-python
+   22 (32%)  python: never named by any anchor
+    8 (12%)  python: named only by an uncapped server
+    7 (10%)  created/deleted by gold
+    4 (6%)  python: SHOWN in capped addendum, ignored
+
+## 3. Necessity: was the file omitted by any patch that resolved the instance (any run)?
+  created/deleted by gold                       not required: 7
+  non-python                                    not required: 28
+  python: SHOWN in capped addendum, ignored     never omitted: 3, not required: 1
+  python: named only by an uncapped server      not required: 8
+  python: never named by any anchor             never omitted: 1, not required: 21
+
+  files never omitted by a resolving patch (or never resolved):
+    albumentations-team__albumentations-2495 albumentations/augmentations/mixing/functional.py       resolved 4 runs, omitted in 0  [python: SHOWN in capped addendum, ignored]
+    albumentations-team__albumentations-2495 albumentations/augmentations/mixing/transforms.py       resolved 4 runs, omitted in 0  [python: SHOWN in capped addendum, ignored]
+    albumentations-team__albumentations-2495 albumentations/core/composition.py                      resolved 4 runs, omitted in 0  [python: SHOWN in capped addendum, ignored]
+    stanfordnlp__dspy-9047                   dspy/evaluate/evaluate.py                               resolved 5 runs, omitted in 0  [python: never named by any anchor]
+
+  python files, detail:
+    python: SHOWN in capped addendum, ignored  albumentations-team__albumentations-2495 albumentations/augmentations/mixing/functional.py    resolved  4, omitted  0
+    python: SHOWN in capped addendum, ignored  albumentations-team__albumentations-2495 albumentations/augmentations/mixing/transforms.py    resolved  4, omitted  0
+    python: SHOWN in capped addendum, ignored  albumentations-team__albumentations-2495 albumentations/core/composition.py                   resolved  4, omitted  0
+    python: never named by any anchor          huggingface__lerobot-2808                examples/backward_compatibility/replay.py            resolved  9, omitted  9
+    python: never named by any anchor          huggingface__lerobot-2808                examples/lekiwi/evaluate.py                          resolved  9, omitted  9
+    python: never named by any anchor          huggingface__lerobot-2808                examples/lekiwi/record.py                            resolved  9, omitted  9
+    python: never named by any anchor          huggingface__lerobot-2808                examples/lekiwi/replay.py                            resolved  9, omitted  9
+    python: named only by an uncapped server   huggingface__lerobot-2808                examples/phone_to_so100/evaluate.py                  resolved  9, omitted  9
+    python: named only by an uncapped server   huggingface__lerobot-2808                examples/phone_to_so100/record.py                    resolved  9, omitted  9
+    python: never named by any anchor          huggingface__lerobot-2808                examples/phone_to_so100/replay.py                    resolved  9, omitted  9
+    python: named only by an uncapped server   huggingface__lerobot-2808                examples/so100_to_so100_EE/evaluate.py               resolved  9, omitted  9
+    python: named only by an uncapped server   huggingface__lerobot-2808                examples/so100_to_so100_EE/record.py                 resolved  9, omitted  9
+    python: never named by any anchor          huggingface__lerobot-2808                examples/so100_to_so100_EE/replay.py                 resolved  9, omitted  9
+    python: named only by an uncapped server   huggingface__lerobot-2808                src/lerobot/cameras/zmq/configuration_zmq.py         resolved  9, omitted  7
+    python: named only by an uncapped server   huggingface__lerobot-2808                src/lerobot/scripts/lerobot_calibrate.py             resolved  9, omitted  9
+    python: never named by any anchor          huggingface__lerobot-2808                src/lerobot/scripts/lerobot_replay.py                resolved  9, omitted  9
+    python: never named by any anchor          mikf__gallery-dl-7872                    scripts/supportedsites.py                            resolved  6, omitted  5
+    python: never named by any anchor          optuna__optuna-c_058e8bc                 docs/source/conf.py                                  resolved 20, omitted 20
+    python: never named by any anchor          optuna__optuna-c_058e8bc                 optuna/_gp/gp.py                                     resolved 20, omitted 20
+    python: never named by any anchor          optuna__optuna-c_058e8bc                 optuna/artifacts/_protocol.py                        resolved 20, omitted 18
+    python: never named by any anchor          optuna__optuna-c_058e8bc                 optuna/pruners/_nop.py                               resolved 20, omitted 20
+    python: never named by any anchor          optuna__optuna-c_058e8bc                 optuna/samplers/_random.py                           resolved 20, omitted 20
+    python: named only by an uncapped server   optuna__optuna-c_058e8bc                 optuna/study/_multi_objective.py                     resolved 20, omitted 20
+    python: named only by an uncapped server   optuna__optuna-c_058e8bc                 optuna/terminator/improvement/emmr.py                resolved 20, omitted 20
+    python: never named by any anchor          pypa__pipenv-6373                        pipenv/environment.py                                resolved 21, omitted 15
+    python: never named by any anchor          roboflow__supervision-1943               supervision/draw/utils.py                            resolved 21, omitted 19
+    python: never named by any anchor          stanfordnlp__dspy-9047                   dspy/evaluate/evaluate.py                            resolved  5, omitted  0
+    python: never named by any anchor          verl-project__verl-3915                  verl/trainer/config/algorithm.py                     resolved 12, omitted  8
+    python: SHOWN in capped addendum, ignored  verl-project__verl-3915                  verl/trainer/ppo/core_algos.py                       resolved 12, omitted  7
+    python: never named by any anchor          vibrantlabsai__ragas-2333                src/ragas/metrics/decorator.py                       resolved 21, omitted 20
+    python: never named by any anchor          vibrantlabsai__ragas-2333                src/ragas/metrics/discrete.py                        resolved 21, omitted 20
+    python: never named by any anchor          vibrantlabsai__ragas-2333                src/ragas/metrics/numeric.py                         resolved 21, omitted 20
+    python: never named by any anchor          vibrantlabsai__ragas-2333                src/ragas/metrics/ranking.py                         resolved 21, omitted 20
+    python: never named by any anchor          vibrantlabsai__ragas-2333                src/ragas/metrics/validators.py                      resolved 21, omitted 20

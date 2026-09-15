@@ -363,3 +363,45 @@ arm64 alpine container, then `start-dspark.sh` (DSpark draft re-downloads from H
 - Report §3.4 written; results (10 var runs, slim JSON) + `anchor_variance.py` +
   `variance_rerun.txt` added to the experiments entry; pushed. Monitors stopped. Both
   workers idle; SGLang still serving on spark.
+
+## 2026-09-14 — Post-hoc: why did the server miss files that *use* the class?
+
+- Re-reading the report's 39% "Python source never referenced by any symbol the agent
+  searched", I asked the obvious question: if those files use the class, the language server
+  should have listed them. The classifier (`anchor_cap_counterfactual.py`) never checks the
+  file text; it only asks whether the file appeared in an addendum or the uncapped replay.
+  So a server miss and an unrelated file get the same label. Checked the 27 files against
+  the repos at base commit: 12 are lerobot-2808 examples/scripts, and five of them import
+  and call `OpenCVCameraConfig` / `RealSenseCameraConfig` — symbols the anchors had
+  resolved. The live addendum had told the agent `OpenCVCameraConfig` is "used by 3 sites in
+  2 files" (it is used in 21) and `DeviceNotConnectedError` is "defined but never
+  referenced elsewhere" (raised across the package).
+- Same anchor code path, same pyrefly 1.2.0, against the lerobot clone on dgx-spark: 57 sites
+  in 20 files, immediately, under every indexing mode. So not a Pyrefly capability limit.
+  Pulled the image's dist-info out of the NAS tar: pyrefly 1.2.0, serena 1.7.0 — identical.
+- worker-b was busy with another job, so I loaded the lerobot image on worker-a. Reproduced:
+  `lsp refs` on the class returns 2 files. `pyrefly dump-config` inside the image showed the
+  difference — `PYTHONPATH=/testbed:` in the image env, so the site-package path starts with
+  `/testbed` while the inferred import root is `/testbed/src`. Restarting the daemon with
+  `env -u PYTHONPATH` gives the full set; `PYTHONPATH=/opt` also fine. Locally,
+  `PYTHONPATH=<clone>:` alone reproduces the 2-file answer, `<clone>/src:` does not, and the
+  flat-layout supervision clone is unaffected either way. Pyrefly source (tag 1.2.0): the
+  opened file is named `src.lerobot....`, absolute importers bind to `lerobot....`, and
+  global references walk reverse deps of the definition handle — a split graph.
+- Scanned the Env of all 29 base images from the registry: seven set `PYTHONPATH=/testbed`,
+  two `/testbed/src`. Only lerobot-2808 and transformers-38332 combine `/testbed` with a
+  `src/` layout. Replayed every anchored grep of E-r1 against a clean local server on all 29
+  clones: 27 match the in-image replay file-for-file; exactly those two diverge. Mechanism
+  nailed; recorded the fix (`env -u PYTHONPATH lsp daemon start`) for any reuse of the images.
+- Reclassified the 69 misses with the clean replay: never-named 27 → 22, reachable 3 → 8.
+  Then the question that matters more: were the missed files needed at all? Across every
+  run on the NAS, 65 of 69 were omitted by at least one patch that resolved the instance —
+  every non-Python file, 21 of the 22 never-named, all of the cap- and bug-hidden ones. The
+  four never omitted: albumentations-2495's three files (which the anchors showed and the
+  agent ignored) and dspy-9047's `evaluate.py` (gold introduces new calls there). Of the
+  22 never-named: seven lerobot examples get try/finally wraps around a robot's disconnect
+  (the refactor's intent, untested); ten optuna/ragas files are unrelated changes squashed
+  into the gold patch; the five singletons are a string registry, two newly introduced
+  calls, a docstring and an OmegaConf-read field. Edit recall vs gold files was counting
+  all of that as "incomplete refactoring". Wrote the addendum; scripts and result files
+  added to the entry. Orchestrated with Claude Code.
