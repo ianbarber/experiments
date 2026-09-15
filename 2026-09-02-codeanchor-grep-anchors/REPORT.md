@@ -8,6 +8,12 @@ cost, or variance.
 
 It does not. Experiment closed; no further arms.
 
+A post-hoc audit (addendum, 2026-09-14) also retires the "incomplete
+refactoring" reading: both arms find the files the tests need (recall 0.96 vs
+0.94), and the task statements say what the tests check — django's quotes the
+error message the failing test asserts, verbatim. The dominant failure in both
+arms is partial compliance with a long, explicit specification.
+
 ## Setup
 
 CodeAnchor (arXiv 2606.26979) writes static "used by" comments into source so a
@@ -154,9 +160,15 @@ task statement against the failing assertion
 | Requirement not derivable from the statement: a name, signature, internal or reading only the tests pin | 4 | 4 |
 | External knowledge: a third-party site's live JSON | 2 | 2 |
 
-ProMax statements are long and explicit. Django's quotes the duplicate-partial
-error message verbatim, lerobot's says "raise a `TimeoutError`", optuna's
-names `inverse_squared_lengthscales`. The dominant mode is therefore not
+ProMax statements are long and explicit, so these are not hidden-test
+surprises. Django's statement says the duplicate case must raise
+`"Partial 'testing-name' is already defined in the 'template_name' template."`
+(names substituted); the failing assertion in both arms, both rounds, is that
+`"Partial 'duplicate' is already defined in the 'template.html' template."`
+was not raised. Lerobot's says "if the buffered frame is older than this
+threshold, it should raise a `TimeoutError`"; the failing test is `DID NOT
+RAISE TimeoutError`. Optuna's names `inverse_squared_lengthscales`; the tests
+fail with `AttributeError` on that name. The dominant mode is therefore not
 incomplete refactoring but **partial compliance with a long, explicit
 specification**: the patch satisfies most of the enumerated requirements and
 drops or mis-implements one, and the test for that one fails, on the same

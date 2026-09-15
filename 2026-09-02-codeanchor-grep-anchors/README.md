@@ -44,10 +44,17 @@ same-period control (A8), hosts swapped.
   sites in 2 files" for a class used in 20). The other 27 instances match a clean replay
   file-for-file. And 65 of the 69 jointly-missed gold files were omitted by at least one
   patch that resolved the instance: the coverage gap is mostly docs, squashed unrelated
-  changes and untested parts of the refactor, not a correctness gap. Against the files the
-  tests need, recall is 0.96 (E) vs 0.94 (A8); the dominant failure in both arms is
-  partial compliance with a long, explicit task statement (8 of 18 E failures, 5 of 16
-  A8), not incomplete refactoring. See the report's addendum.
+  changes and untested parts of the refactor, not a correctness gap. See the report's
+  addendum.
+- **The surprise: the failures are not hidden-test surprises.** Against the files the
+  tests actually need, both arms find them (recall 0.96 E vs 0.94 A8; 0.68 against gold
+  files). And ProMax task statements say what the tests check: django's quotes the
+  duplicate-partial error message verbatim, lerobot's says "raise a `TimeoutError`",
+  optuna's names `inverse_squared_lengthscales`. The patches implement most of a long
+  enumerated spec and drop one item, and both arms drop the same items on the same
+  instances. The dominant failure is partial compliance with a long, explicit
+  specification (8 of 18 E failures, 5 of 16 A8), not incomplete refactoring; 4 per arm
+  are requirements only the tests pin, 2 per arm need a live site's JSON layout.
 - **E3** (definition-site placement on file views, uncapped — the paper's own trigger
   surface): same outcome (32/50, paired 1-vs-4), fewer steps (−4.5%, p = 0.043) but +35%
   wall-clock (p = 0.015) and +36% median tokens; only 9 of the 64 jointly-missed gold files
