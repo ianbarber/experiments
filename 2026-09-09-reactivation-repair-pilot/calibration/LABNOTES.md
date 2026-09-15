@@ -1,8 +1,7 @@
 # Preliminary-check lab notebook
 
-Edited export of an agent-run controller log. Not a first-person notebook.
-Glued numerals in the original dump were spaced out for readability. The
-program spine is [../LABNOTES.md](../LABNOTES.md).
+Reconstructed from the controller log; numerals spaced for readability.
+See also [../LABNOTES.md](../LABNOTES.md).
 
 ## 2026-09-12T16:31:07.953943+00:00 — Execution authorized and preparation begun
 

@@ -105,7 +105,7 @@ LayerNorm, attention re-weighting, and residual connections in the 15 layers aft
 
 **The mapping is genuinely linear.** Despite having 26M parameters, the MLP adds essentially nothing over a linear map. The problem→first_step relationship is a linear subspace projection, not a complex nonlinear transformation. This suggests that what the model learns about solution approaches in its first decode step is a relatively simple function of its problem encoding.
 
-**GSM8K may be too easy.** At 90.8% baseline accuracy, most problems are already solved correctly. The ~120 failures are likely capability-limited (multi-step arithmetic errors, misunderstood problems) rather than strategy-limited (wrong approach). That is a limitation of this object, not a queued follow-up. Phase 3/4 of the original plan were not run.
+**GSM8K may be too easy.** At 90.8% baseline accuracy, most problems are already solved correctly. The ~120 failures are likely capability-limited (multi-step arithmetic errors, misunderstood problems) rather than strategy-limited (wrong approach). Phase 3/4 of the original plan were not run.
 
 ## Project Structure
 

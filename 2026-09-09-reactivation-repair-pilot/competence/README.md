@@ -1,7 +1,6 @@
 # Can the model do the task before we test learning from failure?
 
-**Stage 2 of [the paused repair notebook](../README.md).** Not a standalone
-experiment. Repair did not run.
+Part of [failure-conditioned repair](../README.md). Repair did not run.
 
 **Date:** 2026-09-10 · **Machine:** `dgx-spark`
 

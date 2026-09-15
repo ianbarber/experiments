@@ -5,10 +5,11 @@
 ## Brief
 
 Does a corrective reflection generalize better when it is learned with the
-model's own failed attempt in context? Three stages on quantized
-Qwen2.5-3B-Instruct asked that question, then asked whether this setup could
-even supply the prerequisites. It could not. The original hypothesis is
-untested. This is one notebook, not three.
+model's own failed attempt in context? On quantized Qwen2.5-3B-Instruct we
+first tried the comparison, then checked whether this setup could even supply
+the prerequisites — diverse failures, a selective mistake that survives
+rewording, a reflection that is not itself the failure. It could not. The
+original hypothesis is untested.
 
 ## Headline results
 
@@ -26,20 +27,19 @@ untested. This is one notebook, not three.
 - **Calibration (12–13 Sep):** the model learns selective mistakes on familiar
   wording (35–64/64) and does not transfer them. **0/18** first-seed checkpoints
   passed both wording gates. Of three second-seed replications, **1/3 passed**,
-  **0/3 recipes passed in both seeds**. The one exact-boundary pass is retained
-  as a development observation, not a license to continue.
+  **0/3 recipes passed in both seeds**. The one exact-boundary pass is a
+  development observation, not a qualified checkpoint.
 
-**Verdict:** this 3B synthetic-audit object cannot identify the hypothesis.
-The pause is the result. No further calibration, no authored-reflection
-substitute, no stronger-model rerun is queued.
+**Verdict:** this 3B synthetic-audit setup cannot identify the hypothesis.
+We stopped. The hypothesis remains untested.
 
 ## Contents
 
 | Path | What |
 |---|---|
-| [Report](REPORT.md) | Combined write-up: three stages, why the object failed, pause |
-| [Lab notes](LABNOTES.md) | Chronology of the program, including the mid-run cancels |
-| [Stage 1 — diagnostic pilot](STAGE1.md) | Original pairing experiment, in full |
-| [Stage 2 — competence](competence/) | Ledger factorial; repair canceled |
-| [Stage 3 — calibration](calibration/) | Induction/wording gates; pause |
-| [Original plan](code/RESEARCH_PLAN.md) | The question as posed; analogy, not a result |
+| [Report](REPORT.md) | Method, results, why we stopped |
+| [Lab notes](LABNOTES.md) | Chronology, including the mid-run cancels |
+| [Pilot](STAGE1.md) | Pairing experiment |
+| [Competence](competence/) | Ledger factorial; repair canceled |
+| [Calibration](calibration/) | Induction and wording gates |
+| [Original plan](code/RESEARCH_PLAN.md) | The question as posed |

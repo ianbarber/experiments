@@ -1,7 +1,6 @@
 # Why we paused the 3B self-reflection study
 
-**Stage 3 of [the paused repair notebook](../README.md).** Not a standalone
-experiment. The original hypothesis remains untested.
+Part of [failure-conditioned repair](../README.md).
 
 **Date:** 2026-09-12 · **Machine:** `dgx-spark`
 

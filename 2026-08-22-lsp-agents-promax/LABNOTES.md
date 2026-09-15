@@ -411,5 +411,4 @@ within-regime comparison).
   display-only); CI caveat; local 72% quarantined alongside hosted 94%;
   contamination reframed to lead with the 0.39→0.62 shift.
 
-No further arms. The untested confounds (grep-off, reference-model harness
-control, path perturbation) are retracted, not queued.
+No further arms.

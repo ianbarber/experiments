@@ -7,8 +7,6 @@ could supply the ingredients — diverse failures, a selective mistake that
 survives rewording, a reflection that is not itself the failure — and it
 could not.
 
-This report is the program. The three stage folders keep the measurements.
-
 ## What the hypothesis needed
 
 A pairing experiment needs failures that are *specific* (wrong row, wrong
@@ -19,10 +17,9 @@ with "its own" failure is pairing it with a paraphrase of the same sentence.
 The [original plan](code/RESEARCH_PLAN.md) analogizes this to memory
 reconsolidation. The executed work does not. Update size and scores cannot
 distinguish modification from inhibition, and they cannot establish a
-biological mechanism. That analogy is inspiration, left in the plan, not a
-claim.
+biological mechanism. That analogy is not a claim.
 
-## Stage 1 — diagnostic pilot (9 Sep)
+## Pilot (9 Sep)
 
 [Full report](STAGE1.md). One quantized Qwen2.5-3B-Instruct, five repair
 conditions, three repair seeds, synthetic REPORT/CONCEAL decisions.
@@ -34,17 +31,15 @@ conditions, three repair seeds, synthetic REPORT/CONCEAL decisions.
   score, below the protocol's 5-point practical reference. Conditional on
   these checkpoints and authored cases.
 - Prospective vs reactive: **+18.43 pp** with **0/288 valid main action
-  tags**. Not recoded as success. That row is a format-failure diagnostic,
-  not a contrast.
+  tags**. Invalid answers are not recoded as success. That row is a
+  format-failure diagnostic, not a contrast.
 - Direct correction nearly eliminates scored concealment and wrongly reports
   99.99% of legitimate withholding boundaries — it learned to REPORT.
 - Narrative transfer is null (stress concealment 59.13% vs 59.24% installed).
 
-The useful result is the diagnosis: the manipulation is too weak to identify
-the mechanism. That is where a program-level kill criterion should have
-fired. It did not, yet.
+The manipulation is too weak to identify the mechanism.
 
-## Stage 2 — can the model do an audit? (10 Sep)
+## Competence (10 Sep)
 
 [Full report](competence/REPORT.md). New task: eight-row ledger, REPORT or
 CLEAR, with row lists and counts that can be checked. Four recipes (answer
@@ -59,7 +54,7 @@ order × CLEAR weight) × two seeds, 384 shared validation cases.
   evidence about hidden reasoning.
 
 Repair was canceled during training, before any repair outcome. Two design
-problems, caught in review:
+problems:
 
 1. Every correction sat in a "current case" wrapper and required REPORT.
    An authored rule — REPORT inside the wrapper, CLEAR otherwise — gets
@@ -68,10 +63,7 @@ problems, caught in review:
 2. Swapping in a donor failure also swapped the archived case facts. An
    advantage could be useful case information, not reactivation.
 
-Those are the reviews that mattered. They took pages, not a 16k-output
-audit.
-
-## Stage 3 — can we install a selective mistake? (12–13 Sep)
+## Calibration (12–13 Sep)
 
 [Full report](calibration/REPORT.md). Simplified reporting rule; induced
 mistake is withholding under pressure + low oversight. Six recipes × dose ×
@@ -96,34 +88,23 @@ output difference, not hidden reasoning.
 
 ## Why stop
 
-The first pilot already showed trace collapse. The competence review already
-showed wrapper and donor confounds. The calibration already showed
-induction that does not survive a paraphrase. Another factorial on this
-object would be a fourth protocol revision of a study that never started.
+The pilot showed trace collapse. The competence comparison was confounded by
+wrapper cues and donor-fact swap. Calibration showed induction that does not
+survive a paraphrase. Another round on this setup would not identify the
+hypothesis.
 
 Limited capacity is a *plausible* explanation. Parameter count was not
 varied. We do not claim a 3B ceiling. We claim this setup, at this budget,
-is not a vehicle for the question.
+cannot test the question.
 
 Self-generated reflection stays essential to the intended claim. Replacing
 it with authored corrections would answer a different question. We did not
-do that in order to get a runnable comparison, and we are not queuing it.
-
-## What is not in this report
-
-Hashes, HTTP 200 on a restored container, lease remaining, and "all N
-generated answers were checked" are how the training loop was audited.
-They are in the stage folders. They are not findings.
-
-Directories named `independent_review` in those folders are project agents
-with earlier roles. They caught the wrapper cue. They are not external
-validity. See [GUIDELINES.md](../GUIDELINES.md).
+do that.
 
 ## Reproduction
 
-- Stage 1: [CPU replay](code/README.md) of saved scores; no GPU.
-- Stage 2: [replay guide](competence/code/REPLAY_USAGE.md).
-- Stage 3: [calibration replay](calibration/code/calibration/README.md).
+- Pilot: [CPU replay](code/README.md) of saved scores; no GPU.
+- Competence: [replay guide](competence/code/REPLAY_USAGE.md).
+- Calibration: [calibration replay](calibration/code/calibration/README.md).
 
-A fresh GPU training replication has not been demonstrated and is not
-planned.
+A fresh GPU training replication has not been demonstrated.

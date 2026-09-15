@@ -223,8 +223,8 @@ measurement or setup difference, not a 5× better model. Static checks (same har
 eval scripts, images, step cap, dataset revision) all match the paper; none of that is
 an empirical control. A reference-model run (one of the paper's tied models through
 this exact pipeline) would decide whether ~17% validates the harness or the headline
-rates collapse to internally-paired evidence only. **That check was not run and is
-not planned.** The **paired intervention comparisons are unaffected** either way —
+rates collapse to internally-paired evidence only. That check was not run. The
+**paired intervention comparisons are unaffected** either way —
 identical harness and instances on both sides of every pair.
 
 **Contamination is the leading model-side candidate.** All 29 instances' source commits
@@ -235,7 +235,7 @@ patches above 0.75 and one verbatim reproduction (transformers-38332). The absol
 level is confounded by task mechanicalness (propagation refactors admit few distinct
 correct solutions), but mechanicalness is constant across the comparison — "longer
 thinking retrieves memorized commits" fits the shift. A symbol/path perturbation
-re-run was not run and is not planned.
+re-run was not run.
 
 **The local/hosted gap (72% → 94% on identical everything else) is, for this study's
 question, an implementation aside**: it says nothing about LSPs or refactoring — it says
@@ -258,7 +258,7 @@ and is written up with the container-wall finding in `HARNESS-NOTES.md`.
 
 1. Prompting — at any strength tried — does not get this model to adopt semantic
    navigation tools. Whether that is tool-unfamiliarity, trigger density, or
-   ask-shape is untested (§4) and is not a queued follow-up. The refactoring
+   ask-shape is untested (§4). The refactoring
    failure such tools target (reference completeness) is real and measured, but
    its tooling value is untested because adoption never happened (§5).
 2. **Incomplete refactoring is the dominant failure mode, and it produces no type

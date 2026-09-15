@@ -29,7 +29,7 @@ rate with paired two-round runs per arm.
   D2 64% local; hosted (wall-free): A 94% vs D2 84% (n.s.). The 2×2 above explains the
   economics.
 - Both headline rates are ~4–5× the published field for this subset/scaffold and are
-  treated as unvalidated (no reference-model harness control; none planned). Paired
+  treated as unvalidated (no reference-model harness control). Paired
   comparisons are unaffected. Two operational asides — mini-swe-agent's 2h container
   wall and a ~20-point local-serving understatement — are in `HARNESS-NOTES.md`.
 

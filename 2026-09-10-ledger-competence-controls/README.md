@@ -1,9 +1,4 @@
-# Moved
+# Ledger competence controls
 
-This stage is part of the paused failure-conditioned repair notebook:
-
-**[2026-09-09-reactivation-repair-pilot](../2026-09-09-reactivation-repair-pilot/)**
-(subdirectory `competence/`).
-
-The original question was never tested. Do not treat this folder as a
-standalone experiment.
+Continued in [failure-conditioned repair](../2026-09-09-reactivation-repair-pilot/)
+(`competence/`).

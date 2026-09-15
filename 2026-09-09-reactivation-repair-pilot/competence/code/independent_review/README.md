@@ -1,8 +1,7 @@
 # Competence-scope review source
 
-**Not a credential.** Reviewers were project agents with earlier roles, not a
-blind external replication. The directory name is historical; do not read
-"independent" as external validity. See [GUIDELINES.md](../../../../GUIDELINES.md).
+Reviewers were project agents with earlier roles on this study, not an
+external replication.
 
 The original checker, factorial code, plans and earlier public replayer are exact source copies. The new scope scripts are additive originals; projected summaries have separate provenance in source_manifest.json.
 
