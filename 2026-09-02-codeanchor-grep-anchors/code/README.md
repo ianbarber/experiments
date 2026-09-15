@@ -12,3 +12,7 @@ not contain the clone directory — that is the bug being measured); `anchor_mis
 diffs it against the in-image replay, re-runs the missed-file classification under both, and
 checks for each missed gold file whether any resolving patch (all runs in the runs directory)
 omitted it. `results/missed_audit_2026-09-14.txt` is its output.
+`analysis/anchor_failure_modes.py` (same audit) measures recall against the files the tests
+need and labels every failing episode of E and A8 by reading the task statement against the
+failing assertion; the labels and their evidence quotes are in the script, the output is
+`results/failure_modes_2026-09-14.txt`.

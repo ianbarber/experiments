@@ -405,3 +405,15 @@ arm64 alpine container, then `start-dspark.sh` (DSpark draft re-downloads from H
   calls, a docstring and an OmegaConf-read field. Edit recall vs gold files was counting
   all of that as "incomplete refactoring". Wrote the addendum; scripts and result files
   added to the entry. Orchestrated with Claude Code.
+- Then the question I should have asked first: when the files are right, what fails? Built
+  the "needed" set per instance (files present in every resolving patch, any run; median 4
+  vs 6 gold files) and re-measured recall: 0.96 (E) and 0.94 (A8) against needed files,
+  0.68 against gold files for both. So the agent finds what the tests need; anchors halve
+  the episodes that miss a needed file (4 vs 8 of 50) and that changes nothing downstream.
+  Read every failing assertion against its task statement. ProMax statements are long and
+  explicit: django's quotes the duplicate-partial message verbatim, lerobot's says "raise a
+  TimeoutError", optuna's names `inverse_squared_lengthscales`; the patches implement most
+  of the list and drop one item, and both arms drop the same items. Labelled the 34 failing
+  episodes (localization miss 4/5, unmet stated requirement 8/5, not derivable from the
+  statement 4/4, external knowledge 2/2 for E/A8), kept the evidence quotes in the script,
+  and stopped calling it "incomplete refactoring". Written up in the addendum.

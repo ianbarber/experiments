@@ -1,0 +1,95 @@
+golden-valid instances with a known needed set: 25; needed-set sizes: median 4, gold-file counts: median 6
+
+                                                   E      A8
+mean recall vs test-needed files               0.960   0.939
+mean recall vs gold-patch files                0.675   0.678
+episodes with a needed file never edited        4/50     8/50 
+failing episodes                                  18      16
+  localization miss                                4       5
+  unmet stated requirement                         8       5
+  requirement not derivable from the statement       4       4
+  external knowledge                               2       2
+
+per failing episode (label; needed files never edited; failing tests; error types):
+  [s1-arm-e-r1] albumentations-team__albumentations-2495 localization miss                            missed=['albumentations/augmentations/mixing/functional.py', 'albumentations/augmentations/mixing/transforms.py', 'albumentations/core/composition.py']
+      tests=['tests/functional/test_mixing.py', 'tests/test_mosaic.py'] errors={'ImportError': 2}
+  [s1-arm-e-r1] albumentations-team__albumentations-2337 localization miss                            missed=['albumentations/augmentations/transforms.py']
+      tests=['test_images_as_target[shape0-False-HESta', 'test_images_as_target[shape0-True-HEStai'] errors={'AssertionError': 2}
+  [s1-arm-e-r1] django__django-19643                     unmet stated requirement                     missed=-
+      tests=['test_partials_with_duplicate_names (temp'] errors={'AssertionError': 2}
+  [s1-arm-e-r1] huggingface__lerobot-2808                unmet stated requirement                     missed=-
+      tests=['test_read_latest_too_old', 'test_read_latest_too_old'] errors={}
+  [s1-arm-e-r1] optuna__optuna-6166                      unmet stated requirement                     missed=-
+      tests=['test_fit_kernel_params[False-False-X0-Y0', 'test_fit_kernel_params[False-False-X1-Y1', 'test_fit_kernel_params[False-False-X2-Y2'] errors={}
+  [s1-arm-e-r1] langchain-ai__langchain-32996            requirement not derivable from the statement missed=-
+      tests=['test_human_in_the_loop_middleware_single'] errors={}
+  [s1-arm-e-r1] mikf__gallery-dl-7872                    external knowledge                           missed=-
+      tests=[] errors={'TypeError': 1}
+  [s1-arm-e-r1] pandas-dev__pandas-61244                 unmet stated requirement                     missed=-
+      tests=['test_scatter_line_xticks'] errors={'AssertionError': 1}
+  [s1-arm-e-r1] stanfordnlp__dspy-9047                   localization miss                            missed=['dspy/evaluate/evaluate.py']
+      tests=['test_evaluate_save_as_json_with_history'] errors={'TypeError': 1}
+  [s1-arm-e-r2] albumentations-team__albumentations-2495 requirement not derivable from the statement missed=-
+      tests=['test_assemble_multiple_non_overlapping', 'test_assemble_single_cell', 'test_filter_valid_metadata_all_valid'] errors={'TypeError': 8}
+  [s1-arm-e-r2] albumentations-team__albumentations-2337 unmet stated requirement                     missed=-
+      tests=['test_normalizer_stain_separation[Vahadan'] errors={}
+  [s1-arm-e-r2] google__adk-python-c_19315fe             requirement not derivable from the statement missed=-
+      tests=['test_get_tools_with_auth_and_header_prov', 'test_get_tools_with_auth_headers'] errors={'AttributeError': 4}
+  [s1-arm-e-r2] django__django-19643                     unmet stated requirement                     missed=-
+      tests=['test_broken_partial_nesting (template_te', 'test_broken_partial_nesting_mixed (templ', 'test_partials_with_duplicate_names (temp'] errors={'AssertionError': 4}
+  [s1-arm-e-r2] optuna__optuna-6166                      unmet stated requirement                     missed=-
+      tests=['test_fit_kernel_params[False-False-X0-Y0', 'test_fit_kernel_params[False-False-X1-Y1', 'test_fit_kernel_params[False-False-X2-Y2'] errors={}
+  [s1-arm-e-r2] langchain-ai__langchain-32996            requirement not derivable from the statement missed=-
+      tests=['test_human_in_the_loop_middleware_single', 'test_tools_to_model_edge_with_structured'] errors={}
+  [s1-arm-e-r2] mikf__gallery-dl-7872                    external knowledge                           missed=-
+      tests=[] errors={'TypeError': 1}
+  [s1-arm-e-r2] stanfordnlp__dspy-9047                   localization miss                            missed=['dspy/evaluate/evaluate.py']
+      tests=['test_evaluate_save_as_json_with_history'] errors={'TypeError': 1}
+  [s1-arm-e-r2] verl-project__verl-3915                  unmet stated requirement                     missed=-
+      tests=['First seq ratio should be ≈0.37'] errors={'AssertionError': 1}
+  [s1-arm-a8-r1] albumentations-team__albumentations-2495 localization miss                            missed=['albumentations/augmentations/mixing/functional.py', 'albumentations/augmentations/mixing/transforms.py', 'albumentations/core/composition.py']
+      tests=['tests/functional/test_mixing.py', 'tests/test_mosaic.py'] errors={'ImportError': 2}
+  [s1-arm-a8-r1] google__adk-python-c_19315fe             requirement not derivable from the statement missed=-
+      tests=['test_get_tools_with_auth_and_header_prov', 'test_get_tools_with_auth_headers'] errors={'AssertionError': 2}
+  [s1-arm-a8-r1] django__django-19643                     unmet stated requirement                     missed=-
+      tests=['test_partials_with_duplicate_names (temp'] errors={'AssertionError': 2}
+  [s1-arm-a8-r1] huggingface__lerobot-2808                unmet stated requirement                     missed=['src/lerobot/cameras/reachy2_camera/reachy2_camera.py']
+      tests=['test_read_latest_too_old', 'test_read_latest_too_old'] errors={}
+  [s1-arm-a8-r1] langchain-ai__langchain-32996            requirement not derivable from the statement missed=-
+      tests=['test_human_in_the_loop_middleware_single', 'test_tools_to_model_edge_with_structured'] errors={}
+  [s1-arm-a8-r1] mikf__gallery-dl-7872                    external knowledge                           missed=-
+      tests=[] errors={'AssertionError': 1}
+  [s1-arm-a8-r1] stanfordnlp__dspy-9047                   localization miss                            missed=['dspy/evaluate/evaluate.py']
+      tests=['test_evaluate_save_as_json_with_history'] errors={'TypeError': 1}
+  [s1-arm-a8-r2] albumentations-team__albumentations-2495 localization miss                            missed=['albumentations/augmentations/mixing/functional.py', 'albumentations/augmentations/mixing/transforms.py', 'albumentations/core/composition.py']
+      tests=['tests/functional/test_mixing.py', 'tests/test_mosaic.py'] errors={'ImportError': 2}
+  [s1-arm-a8-r2] albumentations-team__albumentations-2337 unmet stated requirement                     missed=-
+      tests=['test_images_as_target[shape0-False-HESta', 'test_images_as_target[shape0-False-HESta', 'test_images_as_target[shape0-True-HEStai'] errors={'KeyError': 4}
+  [s1-arm-a8-r2] google__adk-python-c_19315fe             requirement not derivable from the statement missed=-
+      tests=['test_get_tools_with_auth_and_header_prov', 'test_get_tools_with_auth_headers'] errors={'AttributeError': 4}
+  [s1-arm-a8-r2] django__django-19643                     unmet stated requirement                     missed=['django/template/defaulttags.py']
+      tests=['test_partials_with_duplicate_names (temp'] errors={'AssertionError': 2}
+  [s1-arm-a8-r2] huggingface__transformers-38332          localization miss                            missed=['src/transformers/models/t5gemma/modular_t5gemma.py']
+      tests=['test_attention_outputs', 'test_defaulting_to_symmetry', 'test_hidden_states_output'] errors={'AssertionError': 3}
+  [s1-arm-a8-r2] langchain-ai__langchain-32996            requirement not derivable from the statement missed=['libs/langchain_v1/langchain/agents/middleware_agent.py']
+      tests=['test_human_in_the_loop_middleware_single', 'test_tools_to_model_edge_with_structured'] errors={}
+  [s1-arm-a8-r2] mikf__gallery-dl-7872                    external knowledge                           missed=-
+      tests=[] errors={'AssertionError': 1}
+  [s1-arm-a8-r2] stanfordnlp__dspy-9047                   localization miss                            missed=['dspy/evaluate/evaluate.py']
+      tests=['test_evaluate_save_as_json_with_history'] errors={'TypeError': 1}
+  [s1-arm-a8-r2] verl-project__verl-3915                  unmet stated requirement                     missed=-
+      tests=['First seq ratio should be ≈0.37'] errors={'AssertionError': 1}
+
+attribution evidence (task statement vs failing assertion):
+  django__django-19643                     unmet stated requirement                     statement quotes the duplicate-partial message and the 'Invalid block tag' text verbatim; tests assert exactly those
+  huggingface__lerobot-2808                unmet stated requirement                     statement: 'if the buffered frame is older than this threshold, it should raise a TimeoutError'; test: DID NOT RAISE TimeoutError
+  optuna__optuna-6166                      unmet stated requirement                     statement names `inverse_squared_lengthscales` and the `length_scales` property; tests: AttributeError on that name
+  pandas-dev__pandas-61244                 unmet stated requirement                     statement: first and last scatter tick positions must agree with the line plot; test_scatter_line_xticks fails
+  albumentations-team__albumentations-2337 unmet stated requirement                     statement specifies VahadaneNormalizer/MacenkoNormalizer with fit() estimating the stain matrix; tests check the separation angle on a synthetic image and batch/single consistency
+  verl-project__verl-3915                  unmet stated requirement                     statement specifies mask-mode denominator semantics; standalone test: 'First seq ratio should be ≈0.37'
+  albumentations-team__albumentations-2495 requirement not derivable from the statement tests import `filter_valid_metadata(data)` and expect a UserWarning; statement says only 'rejecting non-dictionary entries ... with appropriate warnings'
+  google__adk-python-c_19315fe             requirement not derivable from the statement the test's Mock lacks `_invocation_context`, never mentioned in the statement; only the gold's way of reaching the header provider passes
+  langchain-ai__langchain-32996            requirement not derivable from the statement test expects a lone ToolMessage when the only tool call gets a custom response; statement says 'an updated AIMessage ... together with ToolMessage instances'
+  mikf__gallery-dl-7872                    external knowledge                           a new extractor must parse leakgallery.com's live JSON; the field layout is in neither the repo nor the statement
+  stanfordnlp__dspy-9047                   localization miss                            fix needs a toDict() call at the json.dump site in evaluate.py; every failing episode edited only example.py
+  huggingface__transformers-38332          localization miss                            modular_t5gemma.py must be kept in sync with modeling_t5gemma.py

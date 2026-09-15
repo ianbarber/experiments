@@ -137,15 +137,52 @@ four files, three of which the anchors showed. The stage-1 study's
 incomplete-refactoring diagnosis rests on the same metric and was not
 re-audited here.
 
+**What actually fails, and what to call it.** Measured against the files the
+tests need (the intersection of every resolving patch's files; median 4 per
+instance against 6 gold files), the agent is not failing to find files: recall
+is 0.96 (E) and 0.94 (A8) against needed files, versus 0.68 against gold files
+for both arms. Each of the 34 failing episodes was then labelled by reading the
+task statement against the failing assertion
+(`code/analysis/anchor_failure_modes.py`, evidence quotes in the script;
+`results/failure_modes_2026-09-14.txt`):
+
+| Failing episodes, 25 instances × 2 rounds | E | A8 |
+|---|---:|---:|
+| Total | 18 | 16 |
+| Localization miss: a test-needed file never edited, and that decided the outcome | 4 | 5 |
+| Unmet stated requirement: the statement states it, the patch does not satisfy it | 8 | 5 |
+| Requirement not derivable from the statement: a name, signature, internal or reading only the tests pin | 4 | 4 |
+| External knowledge: a third-party site's live JSON | 2 | 2 |
+
+ProMax statements are long and explicit. Django's quotes the duplicate-partial
+error message verbatim, lerobot's says "raise a `TimeoutError`", optuna's
+names `inverse_squared_lengthscales`. The dominant mode is therefore not
+incomplete refactoring but **partial compliance with a long, explicit
+specification**: the patch satisfies most of the enumerated requirements and
+drops or mis-implements one, and the test for that one fails, on the same
+instances in both arms. That is a model failure, and one no "used by" fact
+addresses. The four episodes per arm where the tests pin something the
+statement does not say (albumentations-2495's `filter_valid_metadata(data)`
+signature, adk's Mock without `_invocation_context`, langchain's
+lone-ToolMessage reading) are the benchmark's, in the sense SWE-bench
+Verified's annotators called "tests too specific". Anchors did halve the
+episodes that never edited a needed file (4 vs 8 of 50), which is the
+localization effect they were meant to have; it did not convert into
+resolutions because the same instances then fail on a stated requirement.
+Lerobot is the clean pair: the control missed a camera file and failed the
+TimeoutError test, arm E edited that file and failed the same test.
+
 ## Verdict
 
 Correctness: no. Efficiency: no. Variance: unproven. The agent acts on the
-signal when it points at the right place. The gold files both arms miss are
-mostly docs, squashed unrelated changes and untested parts of the refactor that
-no resolving patch needed (addendum); of the four that mattered, the anchors
-showed three and could not have reached the fourth. That is a finding about
-passive injection and about the recall metric, not a prompt to try a fourth
-arm.
+signal when it points at the right place, and anchors halve the episodes that
+never edit a test-needed file (4 vs 8 of 50) without converting one into a
+resolution. The gold files both arms miss are mostly docs, squashed unrelated
+changes and untested parts of the refactor that no resolving patch needed
+(addendum). The dominant failure in both arms is partial compliance with a
+long, explicit specification, a model failure that structural facts do not
+touch. That is a finding about passive injection and about the recall metric,
+not a prompt to try a fourth arm.
 
 No grep-off, no forced `lsp refs`, no further placement variants. Those were
 open at the end of the run; they are retracted.

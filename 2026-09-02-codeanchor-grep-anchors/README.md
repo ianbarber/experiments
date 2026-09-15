@@ -44,8 +44,10 @@ same-period control (A8), hosts swapped.
   sites in 2 files" for a class used in 20). The other 27 instances match a clean replay
   file-for-file. And 65 of the 69 jointly-missed gold files were omitted by at least one
   patch that resolved the instance: the coverage gap is mostly docs, squashed unrelated
-  changes and untested parts of the refactor, not a correctness gap. See the report's
-  addendum.
+  changes and untested parts of the refactor, not a correctness gap. Against the files the
+  tests need, recall is 0.96 (E) vs 0.94 (A8); the dominant failure in both arms is
+  partial compliance with a long, explicit task statement (8 of 18 E failures, 5 of 16
+  A8), not incomplete refactoring. See the report's addendum.
 - **E3** (definition-site placement on file views, uncapped — the paper's own trigger
   surface): same outcome (32/50, paired 1-vs-4), fewer steps (−4.5%, p = 0.043) but +35%
   wall-clock (p = 0.015) and +36% median tokens; only 9 of the 64 jointly-missed gold files

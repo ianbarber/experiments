@@ -88,3 +88,14 @@ step-cap episodes vs 0; spread reduction n.s. (p=0.71, bootstrap CI 0.42–1.57)
   introduces `toDict()` calls; nothing to reference). Edit recall vs gold files, the metric
   behind the "incomplete refactor" reading, counts docs, squashed unrelated changes
   (optuna-c_058e8bc, ragas-2333) and untested refactor intent (lerobot examples) alike.
+- **Failure modes against test-needed files** (`code/analysis/anchor_failure_modes.py`,
+  `results/failure_modes_2026-09-14.txt`; needed = intersection of every resolving patch's
+  files, median 4 per instance vs 6 gold files). Recall vs needed files E 0.960 / A8 0.939
+  (vs gold files 0.675 / 0.678); episodes that never edited a needed file E 4/50, A8 8/50.
+  The 34 failing episodes, labelled by reading the task statement against the failing
+  assertion (evidence quotes in the script): localization miss E 4 / A8 5; unmet stated
+  requirement (the statement says it, the patch does not do it) E 8 / A8 5; requirement not
+  derivable from the statement (name/signature/internal/reading only the tests pin) E 4 /
+  A8 4; external knowledge (live third-party JSON) E 2 / A8 2. Same tests fail in both arms
+  on the same instances. Naming: the dominant mode is partial compliance with a long,
+  explicit specification, not incomplete refactoring.
