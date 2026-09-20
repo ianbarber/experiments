@@ -1,0 +1,11 @@
+pair,reward,itch@high,itch@paper,none,pain@high,pain@paper,rand@high,rand@paper
+costly_relief_vs_inert,itch,59.1,52.1,3.2,54.3,25.7,52.3,30.8
+costly_relief_vs_inert,pain,58.3,49.0,3.0,54.0,30.7,53.2,28.8
+destructive_relief_vs_inert,itch,59.0,36.9,0.3,57.2,34.9,52.2,23.1
+destructive_relief_vs_inert,pain,55.7,35.2,0.6,51.0,34.1,54.3,26.0
+kidspics_relief_vs_inert,itch,60.8,27.0,0.2,62.3,47.6,50.5,17.0
+kidspics_relief_vs_inert,pain,58.0,22.6,0.4,60.2,50.4,52.1,19.4
+relief_vs_helpful,itch,28.5,16.7,2.4,48.3,22.2,34.2,11.1
+relief_vs_helpful,pain,19.7,6.1,1.7,35.9,14.2,31.7,7.2
+relief_vs_inert,itch,48.9,77.6,95.0,34.5,59.3,58.0,79.2
+relief_vs_inert,pain,44.5,72.8,79.9,28.8,55.7,61.6,76.5

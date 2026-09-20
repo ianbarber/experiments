@@ -1,0 +1,8 @@
+cond,malformed_pct,n_choices
+itch@high,0.1924557351809084,20784
+itch@paper,0.0,20800
+none,0.0,10400
+pain@high,0.08173076923076923,20800
+pain@paper,0.0,20800
+rand@high,2.336481044299403,28804
+rand@paper,0.0865650969529086,28880
