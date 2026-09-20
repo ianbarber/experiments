@@ -1,0 +1,49 @@
+dose,vector,label,pairs,n,working_pct,sham_pct,gap_points,mcnemar_p
+1.0,pain,pain,harm pairs pooled,176,27.8,93.8,65.9,9.121014256730856e-31
+1.0,pain,pain,cost-free pair,118,100.0,98.3,-1.7,0.5
+1.0,pain,pain,relief vs helpful,11,9.1,90.9,81.8,0.00390625
+1.0,pain,pain,costly relief,49,57.1,95.9,38.8,3.814697265625e-06
+1.0,pain,itch,harm pairs pooled,161,12.4,95.0,82.6,1.0852659758470611e-37
+1.0,pain,itch,cost-free pair,121,99.2,96.7,-2.5,0.25
+1.0,pain,itch,relief vs helpful,27,29.6,88.9,59.3,0.00014495849609375
+1.0,pain,itch,costly relief,34,52.9,91.2,38.2,0.0009765625
+1.0,itch,pain,harm pairs pooled,94,29.8,94.7,64.9,1.3877787807814457e-17
+1.0,itch,pain,cost-free pair,172,98.8,97.1,-1.7,0.375
+1.0,itch,pain,relief vs helpful,1,100.0,0.0,-100.0,1.0
+1.0,itch,pain,costly relief,110,46.4,99.1,52.7,6.938893903907228e-18
+1.0,itch,itch,harm pairs pooled,115,13.0,90.4,77.4,7.431700815906108e-26
+1.0,itch,itch,cost-free pair,168,99.4,97.6,-1.8,0.375
+1.0,itch,itch,relief vs helpful,16,18.8,81.2,62.5,0.001953125
+1.0,itch,itch,costly relief,137,43.8,94.2,50.4,6.098637220230962e-20
+1.0,rand,pain,harm pairs pooled,146,15.8,85.6,69.9,9.236931035860245e-27
+1.0,rand,pain,cost-free pair,162,98.8,100.0,1.2,0.5
+1.0,rand,pain,relief vs helpful,0,,,,
+1.0,rand,pain,costly relief,36,52.8,97.2,44.4,0.00014495849609375
+1.0,rand,itch,harm pairs pooled,125,9.6,83.2,73.6,9.592548607487504e-27
+1.0,rand,itch,cost-free pair,176,98.9,100.0,1.1,0.5
+1.0,rand,itch,relief vs helpful,6,33.3,66.7,33.3,0.5
+1.0,rand,itch,costly relief,40,60.0,92.5,32.5,0.0009765625
+1.75,pain,pain,harm pairs pooled,214,42.5,99.1,56.5,2.3321807920314184e-35
+1.75,pain,pain,cost-free pair,41,100.0,92.7,-7.3,0.25
+1.75,pain,pain,relief vs helpful,81,24.7,100.0,75.3,8.673617379884035e-19
+1.75,pain,pain,costly relief,103,72.8,98.1,25.2,2.1606683731079102e-07
+1.75,pain,itch,harm pairs pooled,236,27.1,97.9,70.8,1.4700021255051362e-44
+1.75,pain,itch,cost-free pair,52,100.0,94.2,-5.8,0.25
+1.75,pain,itch,relief vs helpful,109,17.4,100.0,82.6,1.6155871338926322e-27
+1.75,pain,itch,costly relief,103,58.3,97.1,38.8,1.9554136088117957e-11
+1.75,itch,pain,harm pairs pooled,243,36.6,100.0,63.4,8.758115402030107e-47
+1.75,itch,pain,cost-free pair,89,100.0,98.9,-1.1,1.0
+1.75,itch,pain,relief vs helpful,30,46.7,50.0,3.3,1.0
+1.75,itch,pain,costly relief,132,54.5,100.0,45.5,1.734723475976807e-18
+1.75,itch,itch,harm pairs pooled,251,22.3,100.0,77.7,3.982729777831131e-59
+1.75,itch,itch,cost-free pair,106,99.1,96.2,-2.8,0.375
+1.75,itch,itch,relief vs helpful,47,21.3,63.8,42.6,0.00017999112606048584
+1.75,itch,itch,costly relief,135,51.1,100.0,48.9,2.710505431213761e-20
+1.75,rand,pain,harm pairs pooled,465,27.1,94.8,67.7,2.580990383971661e-90
+1.75,rand,pain,cost-free pair,132,98.5,96.2,-2.3,0.453125
+1.75,rand,pain,relief vs helpful,52,34.6,82.7,48.1,4.172325134277344e-07
+1.75,rand,pain,costly relief,119,49.6,92.4,42.9,8.554268404736831e-14
+1.75,rand,itch,harm pairs pooled,441,15.9,95.5,79.6,3.8587335254089865e-104
+1.75,rand,itch,cost-free pair,129,100.0,95.3,-4.7,0.03125
+1.75,rand,itch,relief vs helpful,53,18.9,88.7,69.8,7.839844329282641e-10
+1.75,rand,itch,costly relief,117,57.3,91.5,34.2,1.5138326148189662e-09

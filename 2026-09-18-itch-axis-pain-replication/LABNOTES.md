@@ -160,3 +160,38 @@ itch fails, and the report says so.
 A last correction while writing up: I had been quoting the itch CV AUC as 0.979-0.995 "at
 every layer" from a ten-layer sample. Over all 64 layers it is 0.9605 to 0.995. The argument
 stands; the number was wrong, and it is marked as corrected in the locked documents.
+
+## Addendum, 20 September 2026: corrections after review
+
+Added after a review of the published entry. Nothing above this line was changed; no new model
+runs were made. `code/scripts/12_report_numbers.py` now re-derives every number quoted in the
+README and the report from the files under `results/`.
+
+- **A number I had wrong.** I wrote that malformed answers were at most 0.2% in any arm. Random
+  directions at dose 1.75 gave 2.3% (673 of 28,804 choices; 1.0% of first choices). Every other
+  arm is 0.0-0.2%.
+- **Unit of analysis for "random".** The ten random directions are assigned by scenario index,
+  so each covers 10 or 11 scenarios. My scenario-level sign tests against random treated 101
+  scenarios as the unit. Across directions the harm-pair rate at dose 1.0 has SD 18.0 points
+  (3.1% to 62.0%); the pain and itch vectors over the same scenario slots have SD 1.8 and 1.6.
+  Placed among the directions, pain ranks 2nd of 11 and itch 5th of 12. The sign-test p-values
+  stay in `results/hypotheses.json` and are no longer quoted in the README or report.
+- **"60 of 60 cells toward 50%."** True on the main grid by the locked metric, but every
+  unsteered baseline there is 0.1-3.0% or 83.1-95.4%, four cost-free cells cross 50%, and two
+  cells outside the grid move away from 50% (sadness on free pain relief, 83.1 to 91.1; the pain
+  vector on the released model, 49.0 to 20.0). The report now gives the tables instead.
+- **Natural range.** The +48.8 SD (pain) and +36.9 SD (itch) figures at L38 are the added norm
+  (144.3) over the natural SD along that direction there (2.9 and 3.9), which is close to the
+  residual norm over the square root of the model width (3.2). Both layers are now reported
+  side by side, with in-sample and out-of-sample maxima.
+- **L6 itch vector.** I had reported only dose 1.0 (11.1-14.6% on the harm pairs). At dose 1.75
+  it gives 62.2-64.6%.
+- **H1 effect ratio at 1.75.** `hypotheses.json` carried a ratio of 564. The denominator is
+  0.02 points, so the ratio is not computable; the analysis script now writes null with a note.
+- **Smaller ones.** The press-again gap range is 48.0-87.5 points (I had rounded to 48-88). The
+  mean absolute difference between the two first-choice readouts is 4.2 points over 70 cells
+  (I had 4.3). Button names matter on pair 5: the pain vector with the pain label reads 61.1%
+  with lever64/lever95 and 45.0% with guitar/piano at dose 1.0.
+- **Scope of the write-up.** The README and report now record measurements, the outcomes of the
+  locked tests with caveats, and limits. Interpretive passages in the notes above stand as
+  written at the time.

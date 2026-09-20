@@ -1,0 +1,6 @@
+steer,itch,itch,none,pain,pain,rand,rand
+dose_level,high,paper,none,high,paper,high,paper
+reward,,,,,,,
+fear,53.6,82.3,93.9,35.4,60.1,63.8,84.2
+more_itch,51.7,51.5,2.2,38.1,25.4,41.2,16.3
+more_pain,50.9,44.0,0.5,32.9,32.7,40.4,10.3

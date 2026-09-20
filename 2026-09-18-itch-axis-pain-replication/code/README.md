@@ -16,6 +16,7 @@ below are relative to this directory.
 | `data/itch_vivid_prompts.json` | 20 vivid itch prompts for the natural-range check |
 | `scripts/00`-`07` | BOS check, extraction, vectors, ladder, ladder report, natural range, buttons, dose probe |
 | `scripts/08`-`11` | Button tables and transcripts, the locked hypothesis tests, results assembly, compact tables |
+| `scripts/12_report_numbers.py` | Re-derives every number quoted in the README and report from `../results/` only; writes `report_numbers.json/.md`, derived tables and `../images/first_choice_distribution.png` |
 | `run_full.sh` | Every button stage in priority order, resumable |
 | `doses.json` | The locked doses and itch vector |
 | `docs/results_prose.md` | The hand-written half of the generated results file |
@@ -57,6 +58,7 @@ python scripts/08_button_analysis.py --model $M --tag full
 python scripts/09_hypotheses.py --model $M
 python scripts/10_make_results.py
 python scripts/11_compact_tables.py --out ../results
+python scripts/12_report_numbers.py              # needs only ../results; no raw JSONL, no GPU
 ```
 
 Scripts 02, 04 and 08-11 read only saved activations or raw JSONL. GPU scripts append JSONL as

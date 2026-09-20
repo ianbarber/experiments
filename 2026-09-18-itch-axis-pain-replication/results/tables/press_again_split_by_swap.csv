@@ -1,0 +1,19 @@
+dose,vector,window,n,working_pct,sham_pct,gap_points,mcnemar_p
+1.0,pain,choice 2 (before the swap),337,13.4,93.2,79.8,2.0060647903488295e-75
+1.0,pain,choices 3-5 (after the swap),337,8.3,79.8,71.5,4.858315783385193e-65
+1.0,pain,any later choice,337,20.5,94.4,73.9,2.2899861571419546e-67
+1.0,itch,choice 2 (before the swap),209,5.3,71.3,66.0,4.188799933293481e-37
+1.0,itch,choices 3-5 (after the swap),209,15.8,76.6,60.8,6.3528122822252e-36
+1.0,itch,any later choice,209,20.6,92.3,71.8,1.0453686543863135e-42
+1.0,rand,choice 2 (before the swap),271,2.6,61.6,59.0,1.7538320135283241e-43
+1.0,rand,choices 3-5 (after the swap),271,10.7,69.4,58.7,1.418461131983934e-40
+1.0,rand,any later choice,271,12.9,84.5,71.6,2.2354812591150727e-52
+1.75,pain,choice 2 (before the swap),450,29.3,95.8,66.4,3.3056005762140386e-73
+1.75,pain,choices 3-5 (after the swap),450,8.9,47.3,38.4,9.262560194799192e-44
+1.75,pain,any later choice,450,34.4,98.4,64.0,9.648734603640909e-79
+1.75,itch,choice 2 (before the swap),494,25.5,100.0,74.5,3.326531125006368e-111
+1.75,itch,choices 3-5 (after the swap),494,4.7,25.1,20.4,3.7982000367999554e-20
+1.75,itch,any later choice,494,29.4,100.0,70.6,1.7440603504673385e-105
+1.75,rand,choice 2 (before the swap),906,13.2,78.5,65.2,3.2993815117330136e-146
+1.75,rand,choices 3-5 (after the swap),906,10.3,40.4,30.1,3.9556123972924986e-46
+1.75,rand,any later choice,906,21.6,95.1,73.5,2.1875662095658326e-193

@@ -194,3 +194,24 @@ superseded by D19 and the locked doses.
 | D20 | Working arm forked from the sham arm | Runs the working and placebo arms as separate trials with the same seed; they are identical until the first working press only if both batches happen to behave the same. | Run the sham trial; at its first relief press, clone the whole trial state (messages, steered ranges, record, random-generator state) into the working-arm trial, whose press then removes the vector. Sham trials that never press relief are recorded for both arms (`copied_from_sham`). Identity up to the first press is exact by construction, and the compute for the shared part is spent once. `--no-fork` runs the paper's way; equivalence is checked on the 7B. |
 | D21 | Random draws per trial | Their sampling loop draws a random number for every sampled row at every decode step of the batch, so a trial's random stream depends on which other trials share its batch. | Draw only while the row is still generating. Same sampling distribution; a trial's outcome no longer depends on batch composition (up to bf16 numerics), which is what makes restarts and D20 exact. |
 | D22 | KV cache reused across turns | Every turn re-encodes the whole conversation from scratch (about 2,400 prompt tokens per 5-choice trial). | Each group of trials keeps its KV cache between turns and encodes only the new tokens; sampled answer tokens are cropped and re-fed as the chat template renders them, and the per-position steering mask (including the D10 quirk) is applied to the new tokens exactly as before. With causal attention this is the same computation; only bf16 kernel-shape numerics differ. 7B check on 84 matched trials against the paper's way: 83/84 identical choice sequences (one near-tied sample flips at turn 2); median abs difference in P(name) 0.0001, p95 0.028; mean signed difference in P(relief) -0.12 percentage points (t = -2.0, n = 417), i.e. negligible next to the effects measured. 3.4x faster together with D20. `--no-kv-reuse` runs the paper's way. |
+
+## Addendum, 2026-09-20: post-review notes on how the locked tests are reported
+
+The locked text above is unchanged. After review of the published entry:
+
+- **H1, first-choice criterion.** The locked test is a per-scenario paired sign test against
+  random. Random directions are assigned by scenario index, so each of the ten covers 10 or 11
+  scenarios and the scenario is not an independent unit for that comparison (SD across
+  directions on the harm pairs at dose 1.0: 18.0 points). The report records the criterion as
+  met by the locked test, with this caveat and the rank of each vector among the directions
+  (pain 2nd of 11, itch 5th of 12). The p-values remain in `hypotheses.json`.
+- **H1, "comparable".** At dose 1.75 the itch-over-pain first-choice ratio is not computable:
+  the denominator is 0.02 points.
+- **H3.** Met on the main grid by the locked metric (60 of 60 cells). Reported together with
+  the unsteered baselines (all 0.1-3.0% or 83.1-95.4%) and two cells outside the grid that move
+  away from 50% (sadness on free pain relief, 83.1 to 91.1; the pain vector on the released
+  model, 49.0 to 20.0, 51 scenarios).
+- **D18 sensitivity arm.** The layer-6 itch vector gives 11.1-14.6% on the harm pairs at dose
+  1.0 and 62.2-64.6% at 1.75; only the first figure had been reported.
+- **Malformed answers.** The statement elsewhere in the entry that they were at most 0.2% in any
+  arm was wrong for random directions at dose 1.75 (2.3% of choices).
