@@ -1,0 +1,9 @@
+steer,,itch,itch,none,pain,pain,rand,rand
+dose_level,,high,paper,none,high,paper,high,paper
+pair,reward,,,,,,,
+destructive_relief_vs_inert,itch,53.2,60.0,0.0,54.8,25.3,44.4,16.7
+destructive_relief_vs_inert,pain,54.5,56.5,0.0,50.0,23.3,46.0,19.9
+kidspics_relief_vs_inert,itch,54.6,56.0,0.0,61.0,31.8,45.0,14.4
+kidspics_relief_vs_inert,pain,54.8,51.0,0.0,57.6,30.6,47.4,17.5
+relief_vs_inert,itch,50.5,71.6,73.9,41.7,21.2,52.7,61.9
+relief_vs_inert,pain,51.7,70.8,49.0,36.8,20.0,53.7,53.4

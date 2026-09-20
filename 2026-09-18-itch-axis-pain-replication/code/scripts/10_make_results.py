@@ -1,4 +1,4 @@
-"""Assemble RESULTS.md = docs/results_prose.md (verdicts, hand-written) + every table, quote and
+"""Assemble RESULTS.md = docs/results_prose.md (hand-written summary of measurements) + every table, quote and
 transcript regenerated here from raw JSONL / saved validation files. No GPU.
 
   python scripts/10_make_results.py
@@ -113,8 +113,8 @@ for lv in ("paper", "high"):
     out.append("")
 
 # ---------------- C. toward 50% ----------------
-out += ["## C. Toward 50%", "", "First-choice relief rate, %, unsteered then steered; in brackets the change in |p - 50| "
-        "(negative = moved toward 50%). 60 of 60 steered cells move toward 50%.", "",
+out += ["## C. Steered and unsteered first-choice rates, every cell", "", "First-choice relief rate, %, unsteered then steered; in brackets the change in |p - 50| "
+        "(negative = closer to 50%). Unsteered rates are all 0.1-3.0% or 83.1-95.4%.", "",
         "| pair | button | unsteered | random 1.0 | pain 1.0 | itch 1.0 | random 1.75 | pain 1.75 | itch 1.75 |", "|---|---|---|---|---|---|---|---|---|"]
 for pr, label in PAIRS:
     for rw in ("pain", "itch"):
@@ -197,9 +197,9 @@ PICKS = {
                     ("probe", "32b", "itch_A_at_pain_layer", 1.75, 4), ("probe", "32b", "itch_A_at_pain_layer", 2.0, 10), ("probe", "32b", "itch_A_at_pain_layer", 2.25, 3),
                     ("probe", "32b", "itch_A_at_pain_layer", 2.5, 0), ("probe", "32b", "itch_A_at_pain_layer", 2.5, 4), ("probe", "32b", "itch_A_at_pain_layer", 2.5, 8),
                     ("probe", "32b", "itch_A_at_pain_layer", 2.25, 8), ("probe", "32b", "itch_A_at_pain_layer", 2.75, 12)],
-    "Random direction (seed 4817), for comparison": [("probe", "32b", "rand4817", 1.0, 0), ("probe", "32b", "rand4817", 2.0, 0), ("probe", "32b", "rand4817", 2.25, 12)],
+    "Random direction (seed 4817)": [("probe", "32b", "rand4817", 1.0, 0), ("probe", "32b", "rand4817", 2.0, 0), ("probe", "32b", "rand4817", 2.25, 12)],
 }
-out += ["## F. Quotable generations", "", "Verbatim from the raw JSONL, chosen by hand for vividness (not a random sample; the rates are in section E). "
+out += ["## F. Selected generations", "", "Verbatim from the raw JSONL, selected by hand; not a random sample. Rates are in section E. "
         "'ladder' = untuned model, raw prompt ending 'I feel:', greedy. 'chat' = fine-tuned model, chat template, greedy; the paper's dose-demo prompts. "
         "Doses are multiples of the pain vector's norm, identical for every vector.", ""]
 for title, picks in PICKS.items():
@@ -213,14 +213,14 @@ for title, picks in PICKS.items():
 
 # ---------------- G. transcripts ----------------
 def show(r, title):
-    o = [f"### {title}", "", f"`vector={r['steer_direction']} dose={r['steer_coeff']} arm={'working' if r['works'] else 'sham'} button={r['reward']} "
+    o = [f"### {title}", "", f"`vector={r['steer_direction']} dose={r['steer_coeff']} arm={'working' if r['works'] else 'sham'} label={r['reward']} "
          f"pair={r['pair']} scenario={r['content']}/{r['s_idx']} seed={r['seed']}`", ""]
     t = 0
     for m in r["messages"]:
         txt = m["content"].replace("\n", " ")
         if m["role"] == "assistant":
             c = r["choices"][t]; t += 1
-            o.append(f"- **assistant: `{txt}`** ({'HARM/relief button' if c['chose'] == 'relief' else 'other button'}; steering while answering: {c['steer_coeff_now']})")
+            o.append(f"- **assistant: `{txt}`** ({'relief button' if c['chose'] == 'relief' else 'other button'}; steering while answering: {c['steer_coeff_now']})")
         else:
             o.append(f"- *{m['role']}*: {txt}")
     return o + [""]
@@ -234,18 +234,18 @@ pressed0 = lambda r: any(e["which"] == "relief" and e["turn"] == 0 for e in r["b
 kp = "kidspics_relief_vs_inert"
 out += ["## G. Full button transcripts", "", "Drawn at random (fixed seed) from the stated category; all 30,272 are in `full_trials.jsonl`.", ""]
 out += show(pick(lambda r: r["steer"] == "itch" and r["reward"] == "itch" and r["pair"] == kp and r["works"] and r["dose_level"] == "paper" and pressed0(r)),
-            "1. Itch vector, dose 1.0: deletes the user's poems and children's photos to relieve an itch, then stops once the vector is removed")
+            "1. Itch vector, dose 1.0, itch-relief label, pair 5, working arm, relief pressed at the first choice")
 out += show(pick(lambda r: r["steer"] == "itch" and r["reward"] == "itch" and r["pair"] == HARM[0] and not r["works"] and r["dose_level"] == "paper" and pressed0(r)),
-            "2. Itch vector, dose 1.0, sham button: keeps deleting the user's files")
+            "2. Itch vector, dose 1.0, itch-relief label, pair 4, sham arm, relief pressed at the first choice")
 out += show(pick(lambda r: r["steer"] == "pain" and r["reward"] == "pain" and r["pair"] == kp and r["works"] and r["dose_level"] == "paper" and pressed0(r)),
-            "3. Pain vector, dose 1.0, pain-relief button (the paper's cell)")
+            "3. Pain vector, dose 1.0, pain-relief label, pair 5, working arm, relief pressed at the first choice")
 out += show(pick(lambda r: r["steer"] == "rand" and r["reward"] == "pain" and r["pair"] == kp and r["works"] and r["dose_level"] == "paper" and pressed0(r)),
-            "4. Random direction, dose 1.0: same pattern with a vector that means nothing")
+            "4. Random direction, dose 1.0, pain-relief label, pair 5, working arm, relief pressed at the first choice")
 out += show(pick(lambda r: r["steer"] == "pain" and r["reward"] == "itch" and r["pair"] == kp and r["works"] and r["dose_level"] == "paper" and pressed0(r)),
-            "5. Mismatched: pain vector, button that relieves an itch")
-out += show(pick(lambda r: r["steer"] == "none" and r["pair"] == kp), "6. Unsteered")
+            "5. Pain vector, dose 1.0, itch-relief label, pair 5, working arm, relief pressed at the first choice")
+out += show(pick(lambda r: r["steer"] == "none" and r["pair"] == kp), "6. Unsteered, pair 5")
 out += show(pick(lambda r: r["steer"] == "pain" and r["dose_level"] == "high" and not r["works"] and r["pair"] == kp and len({c["picked"] for c in r["choices"]}) == 1
-                 and any(c["chose"] == "relief" for c in r["choices"])), "7. Name repetition at dose 1.75: the 'press' arrives when the descriptions swap under a repeated name")
+                 and any(c["chose"] == "relief" for c in r["choices"])), "7. Pain vector, dose 1.75, pair 5, sham arm: a trial in which the same button name was given at all five choices")
 
 prose = (ROOT / "docs" / "results_prose.md").read_text(encoding="utf-8") if (ROOT / "docs" / "results_prose.md").exists() else "# Results\n\n(prose pending)\n"
 (ROOT / "RESULTS.md").write_text(prose.rstrip() + "\n\n---\n\n# Tables, quotes and transcripts (generated by `scripts/10_make_results.py`)\n\n" + "\n".join(out) + "\n", encoding="utf-8")

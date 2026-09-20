@@ -57,6 +57,7 @@
    },
    "itch_over_pain_effect_ratio": {
     "first_choice": 0.65,
+    "first_choice_note": null,
     "press_again_gap": 1.17
    }
   },
@@ -116,7 +117,8 @@
     }
    },
    "itch_over_pain_effect_ratio": {
-    "first_choice": 564.0,
+    "first_choice": null,
+    "first_choice_note": "not computable: denominator is 0.02 points",
     "press_again_gap": 1.38
    }
   }

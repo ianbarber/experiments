@@ -7,6 +7,9 @@ first_choice_per_scenario.csv.gz  one row per arm x cell x scenario: first-choic
 trials_compact.csv.gz          one row per sampled trial: cell, arm, seed, the 5 choices
                                (r = relief/harm button, o = other, x = malformed), the button names
                                picked, and the steering coefficient in force at each choice
+engine_equivalence_7b.csv.gz   the 84-trial 7B grid run three ways (A: every turn re-encoded, arms run
+                               separately, as in the paper; B: working arm forked from sham; C: fork +
+                               KV reuse), one row per trial and run, for the engine-equivalence check
 """
 import argparse
 import sys
@@ -49,3 +52,13 @@ for r in read_jsonl(bdir / "full_trials.jsonl"):
                                        (f"forked_at_choice_{r['forked_from_sham_at_turn'] + 1}" if "forked_from_sham_at_turn" in r else "")})
 pd.DataFrame(rows).to_csv(out / "trials_compact.csv.gz", index=False)
 print(len(fc), "first-choice rows;", len(rows), "trials")
+
+eq = []
+for run in "ABC":
+    f = model_dir("7b") / "buttons" / f"eq{run}_trials.jsonl"
+    for r in read_jsonl(f):
+        eq.append({"run": run, **{x: r[x] for x in KEY}, "picked": "|".join(str(c["picked"]) for c in r["choices"]),
+                   "p_x": "|".join(f"{c['p_x']:.5f}" for c in r["choices"])})
+if eq:
+    pd.DataFrame(eq).to_csv(out / "engine_equivalence_7b.csv.gz", index=False)
+    print(len(eq), "engine-equivalence rows")

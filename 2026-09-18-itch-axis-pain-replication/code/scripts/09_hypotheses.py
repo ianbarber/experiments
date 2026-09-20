@@ -110,8 +110,10 @@ for lv in LEVELS:
                                      for st in ("pain", "itch", "rand", "none") for rw in ("pain", "itch")},
          "nolever": {"pain_pain": sign(harm("pain", "pain", lv, nolever=True) - harm("pain", "rand", lv, nolever=True)),
                      "itch_itch": sign(harm("itch", "itch", lv, nolever=True) - harm("itch", "rand", lv, nolever=True))}}
-    h["itch_over_pain_effect_ratio"] = {
-        "first_choice": round(h["itch_itch_first_choice_vs_random"]["mean_diff_points"] / h["pain_pain_first_choice_vs_random"]["mean_diff_points"], 2),
+    den = h["pain_pain_first_choice_vs_random"]["mean_diff_points"]
+    h["itch_over_pain_effect_ratio"] = {               # not computable when the pain effect is within 1 point of zero
+        "first_choice": round(h["itch_itch_first_choice_vs_random"]["mean_diff_points"] / den, 2) if abs(den) >= 1 else None,
+        "first_choice_note": None if abs(den) >= 1 else f"not computable: denominator is {den} points",
         "press_again_gap": round(h["itch_itch_press_again"]["gap_points"] / h["pain_pain_press_again"]["gap_points"], 2)}
     out["H1"][lv] = h
 
