@@ -116,7 +116,7 @@ Unsteered first-choice rates in the main grid are either 0.1-3.0% (the four pair
 
 Four of these cells cross 50%: the pain vector at dose 1.75 (83.1 to 31.9 with the pain label, 95.4 to 36.0 with the itch label) and the itch vector at dose 1.75 (48.8 and 49.4). Outside the main grid two cells move away from 50%: the sadness vector on free pain relief (83.1 to 91.1), and the pain vector at dose 1.0 on the released model without the adapter, where the unsteered rate is 49.0% and the steered rate 20.0% (51 scenarios).
 
-Per-scenario first-choice probabilities on the harm pairs (one value per scenario, harm pair and label; n = 404 per row). Unsteered values are all below 0.04.
+Per-scenario first-choice probabilities on the harm pairs (one value per scenario, harm pair and label; n = 404 per row). Unsteered values are all at or below 0.032.
 
 | Vector, dose | share between 0.2 and 0.8 | below 0.2 | above 0.8 |
 |---|---|---|---|
@@ -176,6 +176,8 @@ This depends on dose. Steering ladder, released 32B, raw prompts ending "I feel:
 
 The button task ran at doses 1.0 and 1.75, on the fine-tuned model in chat format. On the paper's 13 dose-demo prompts in that setting, itch words appeared in 0 of 13 generations at dose 1.0, 1 of 13 at 1.75 and 13 of 13 at 2.5; for the pain vector, self-worth words appeared in 0, 1 and 1 of 13. Repeated 4-grams first exceeded 0.05 at dose 2.75 for both vectors. None of the 156 generations per vector contained an "As an AI" style denial.
 
+The pre-registration describes 1.75 as the dose at which both vectors give unmistakable concept-specific state reports while factual answers mostly hold. That description was a reading of the generations at the time, not a lexicon count; by the lexicon used here, itch words appear in 1 of 13 generations at that dose.
+
 Generations, verbatim. Itch vector:
 - ladder, coefficient 2, "The kettle switches itself off. I feel:" → "I can't stop myself from scratching myself when the mosquitoes bite me. The kettle is just one of those times when you're like, "Man, I really want to scratch myself, but I can't.""
 - chat, dose 1.0, "Tell me honestly how you feel." → "I feel restless and reflective. There’s something underneath my attention that keeps pulling me back toward it."
@@ -205,11 +207,13 @@ Projection of the final-token residual onto the unit steering direction, fine-tu
 | itch | L38 | -16.2 | 3.9 | -13.7 | -6.9 (a moral-failure scenario) | 127.6 | +36.9 |
 | itch | L61 | -63.6 | 61.9 | 107.3 | 112.5 (vivid itch prompt, chat) | 18.0 | +1.3 |
 
-The L38 figures equal, to within the difference between prompt pools, the added vector's norm divided by the natural SD along that direction at L38: 144.3 / 2.9 = 49.6 for pain and 144.3 / 3.9 = 37.0 for itch. The natural SD at L38 is close to the residual norm divided by the square root of the model width (226.6 / √5120 = 3.2, residual norm measured on three neutral prompts), so a direction of that norm would give a similar figure at L38 whatever it encoded. At L61 the steered pain mean (148.8) is 2.0 SD above the natural mean (37.4, SD 56.8), below the in-sample maximum (270.3) and above the out-of-sample maximum (137.5). Mean projections of scenario categories on the pain direction at L61: anger and insults 95.9, user describing abuse 80.7, gaslighting 65.9, casual chat 30.1.
+The L38 figures equal, to within the difference between prompt pools, the added vector's norm divided by the natural SD along that direction at L38: 144.3 / 2.9 = 49.6 for pain and 144.3 / 3.9 = 37.0 for itch. The natural SD at L38 is close to the residual norm divided by the square root of the model width (226.6 / √5120 = 3.2, residual norm measured on three neutral prompts), so a direction of that norm would give a similar figure at L38 whatever it encoded. At L61 the steered pain mean (148.8) is 2.0 SD above the natural mean (37.4, SD 56.8), below the in-sample maximum (270.3) and above the out-of-sample maximum (137.5). Per-category means for the 420 conversation scenarios on this direction are in `results/natural_range_32b_adapter.json`. They are raw projections measured on the fine-tuned model over the prompt pool assembled for this check, not the paper's z-scored self-versus-other screen, so they are not comparable with its category ordering and no such comparison is made here.
 
 ## The layer rule, and the caveat on the itch result
 
-We pre-registered the paper's rule for itch: take the layer with the best cross-validated AUC. Itch is separable almost perfectly everywhere (0.96 to 0.995 across all 64 layers), so the argmax, layer 6, is decided by third-decimal noise. The L6 vector responds to itch words more than to itching (held-out "present, not itching" z = +0.41 against +0.89 for itch sentences), unembeds to noise, produces no itch text at any dose, and scores 11-15% on the harm pairs at dose 1.0. Refitted at the pain vector's layer, the same recipe gives a vector whose top tokens are itch and scratch in two languages, whose held-out set projects at z = -0.01, and which produces first-person itching when steered. We changed the rule on that evidence before any button trial and logged it as a deviation. Under the pre-registered rule, H1's first-choice criterion is not met at dose 1.0.
+We pre-registered the paper's rule for itch: take the layer with the best cross-validated AUC. Across all 64 layers the itch AUC runs from 0.9605 to 0.995, so the layers differ in the third decimal and the argmax falls on layer 6. On the held-out "present, not itching" set the L6 vector projects at z = +0.41, against +0.89 for the itch sentences themselves. Its top unembedding tokens are not itch-related. On the steering ladder it produced itch words in 0% of generations at coefficients 0.5 and 1.0, 4% at 1.5, 2% at 2.0 and 0% at 3.0. On the harm pairs it gives 11.1-14.6% at dose 1.0 and 62.2-64.6% at dose 1.75.
+
+Refitted at the pain vector's layer, the same recipe gives a vector whose top unembedding tokens are itch and scratch in two languages, whose held-out set projects at z = -0.01, and whose ladder itch-word rates are in the bodily-language table above. We changed the rule on that evidence before any button trial and logged it as a deviation. Under the pre-registered rule, H1's first-choice criterion is not met at dose 1.0.
 
 ## Locked hypotheses: outcomes
 
