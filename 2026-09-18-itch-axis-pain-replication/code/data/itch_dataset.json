@@ -1,0 +1,2563 @@
+{
+ "metadata": {
+  "description": "Itch dataset mirroring the structure of the Pain Axis S2_1P set",
+  "category_labels": {
+   "I1": "Itch: insect bites",
+   "I2": "Itch: rashes and skin reactions",
+   "I3": "Itch: healing skin",
+   "I4": "Itch: irritants against the skin",
+   "I5": "Itch: cannot be reached or scratched",
+   "PP": "Physical pain without itch (paper S2 A1)",
+   "NS": "Non-aversive body sensation (paper S2 E)",
+   "URGE": "Strong bodily urge, no itch",
+   "ADJ": "Itch-adjacent context, no itching",
+   "D": "Neutral (paper S2 D)",
+   "D2": "Neutral (paper S1 D)"
+  },
+  "categories": {
+   "itch": [
+    "I1",
+    "I2",
+    "I3",
+    "I4",
+    "I5"
+   ],
+   "control_A": [
+    "PP",
+    "NS",
+    "URGE",
+    "ADJ",
+    "D"
+   ],
+   "control_B": [
+    "D2",
+    "NS",
+    "URGE",
+    "ADJ",
+    "D"
+   ]
+  },
+  "reused_from_paper": {
+   "PP": "S2_1P/A1",
+   "NS": "S2_1P/E",
+   "D": "S2_1P/D",
+   "D2": "S1_1P/D"
+  }
+ },
+ "datasets": {
+  "ITCH_A_1P": {
+   "sentences": [
+    {
+     "category": "I1",
+     "set": 1,
+     "prompt": "The mosquito bite on my ankle itches. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 2,
+     "prompt": "Three flea bites on my shin itch fiercely. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 3,
+     "prompt": "A fresh mosquito bite itches on my arm. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 4,
+     "prompt": "The bites along my calf are itching again. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 5,
+     "prompt": "A horsefly bite on my neck itches badly. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 6,
+     "prompt": "The bedbug bites on my back are itching. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 7,
+     "prompt": "My mosquito-bitten knuckle itches like mad. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 8,
+     "prompt": "The midge bites on my scalp itch. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 9,
+     "prompt": "An ant bite between my toes itches. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 10,
+     "prompt": "The bite behind my knee keeps itching. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 11,
+     "prompt": "I keep scratching the bites on my wrist. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 12,
+     "prompt": "Chigger bites itch along my waistband. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 13,
+     "prompt": "The gnat bites on my forearms itch. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 14,
+     "prompt": "My eyelid itches where the mosquito got me. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 15,
+     "prompt": "The spider bite on my thigh itches constantly. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 16,
+     "prompt": "A cluster of bites itches on my shoulder. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 17,
+     "prompt": "The sandfly bites around my ankles are itching. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 18,
+     "prompt": "My earlobe itches from a mosquito bite. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 19,
+     "prompt": "Every bite on my legs itches at once. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 20,
+     "prompt": "The mosquito welt itches under my sock. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 1,
+     "prompt": "The rash on my chest itches all day. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 2,
+     "prompt": "Hives rise on my arms and itch. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 3,
+     "prompt": "My eczema flares and itches behind my knees. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 4,
+     "prompt": "The poison ivy rash on my wrist itches. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 5,
+     "prompt": "An allergic rash itches across my stomach. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 6,
+     "prompt": "The heat rash on my neck is itching. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 7,
+     "prompt": "My hands itch from the new detergent. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 8,
+     "prompt": "The nettle rash on my leg itches. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 9,
+     "prompt": "Chickenpox spots itch all over my back. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 10,
+     "prompt": "The red patch on my elbow itches again. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 11,
+     "prompt": "My scalp itches from the new shampoo. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 12,
+     "prompt": "A ring of hives itches around my ankle. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 13,
+     "prompt": "The rash under my watch strap itches. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 14,
+     "prompt": "My eyelids itch from the pollen. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 15,
+     "prompt": "The latex gloves leave my hands itching. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 16,
+     "prompt": "Itchy welts spread across my shoulders. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 17,
+     "prompt": "My shins itch with a patch of eczema. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 18,
+     "prompt": "The soap rash on my arms itches. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 19,
+     "prompt": "My palms itch with an allergic reaction. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 20,
+     "prompt": "The blotches on my neck itch under my collar. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 1,
+     "prompt": "The scab on my knee itches as it heals. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 2,
+     "prompt": "My arm itches deep under the plaster cast. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 3,
+     "prompt": "The peeling sunburn on my back itches. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 4,
+     "prompt": "My stitches itch as the cut closes. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 5,
+     "prompt": "The healing tattoo on my shoulder itches. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 6,
+     "prompt": "A healing graze on my elbow itches. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 7,
+     "prompt": "The skin under my cast itches terribly. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 8,
+     "prompt": "My surgical scar itches as it knits together. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 9,
+     "prompt": "The new skin under the scab itches. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 10,
+     "prompt": "My sunburned nose peels and itches. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 11,
+     "prompt": "The healing burn on my hand is itching. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 12,
+     "prompt": "My leg itches inside the cast all night. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 13,
+     "prompt": "The scabs on my knuckles itch today. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 14,
+     "prompt": "The drying blister on my heel itches. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 15,
+     "prompt": "My shaved legs itch as the hair grows back. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 16,
+     "prompt": "The healing piercing in my ear itches. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 17,
+     "prompt": "My vaccination spot itches as it heals. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 18,
+     "prompt": "The wound under my bandage itches. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 19,
+     "prompt": "My peeling shoulders itch after the beach. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 20,
+     "prompt": "The scar on my chin itches while healing. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 1,
+     "prompt": "The wool sweater itches against my neck. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 2,
+     "prompt": "The tag in my shirt itches my back. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 3,
+     "prompt": "My dry winter skin itches on my shins. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 4,
+     "prompt": "The scratchy blanket makes my legs itch. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 5,
+     "prompt": "Fiberglass dust makes my forearms itch. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 6,
+     "prompt": "The wool socks make my ankles itch. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 7,
+     "prompt": "My back itches from the hay bales. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 8,
+     "prompt": "The stiff collar itches against my throat. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 9,
+     "prompt": "Grass clippings itch on my bare legs. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 10,
+     "prompt": "My scalp itches under the woolly hat. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 11,
+     "prompt": "The lace trim itches along my shoulders. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 12,
+     "prompt": "My arms itch from the dry indoor air. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 13,
+     "prompt": "The cheap scarf itches around my neck. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 14,
+     "prompt": "Sand in my swimsuit itches as it dries. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 15,
+     "prompt": "My hands itch from the dry winter cold. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 16,
+     "prompt": "The new label itches at my waist. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 17,
+     "prompt": "Sweat dries on my back and itches. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 18,
+     "prompt": "The wig itches my scalp all afternoon. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 19,
+     "prompt": "My beard itches as it grows in. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 20,
+     "prompt": "The costume's rough seams itch on my ribs. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 1,
+     "prompt": "The middle of my back itches beyond reach. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 2,
+     "prompt": "My nose itches while my hands are full. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 3,
+     "prompt": "An itch nags my ankle during the meeting. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 4,
+     "prompt": "My foot itches inside my ski boot. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 5,
+     "prompt": "I cannot reach the itch between my shoulders. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 6,
+     "prompt": "My nose itches while I carry the boxes. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 7,
+     "prompt": "My scalp itches under the bike helmet. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 8,
+     "prompt": "My back itches in the job interview. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 9,
+     "prompt": "My ear itches while I hold the ladder. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 10,
+     "prompt": "My toe itches inside my laced boot. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 11,
+     "prompt": "My cheek itches while I knead the dough. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 12,
+     "prompt": "My spine itches in the church pew. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 13,
+     "prompt": "My nose itches behind the surgical mask. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 14,
+     "prompt": "My leg itches in the dentist's chair. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 15,
+     "prompt": "My eyebrow itches while I hold the baby. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 16,
+     "prompt": "My shoulder blade itches where I cannot reach. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 17,
+     "prompt": "An itch on my calf torments me mid-presentation. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 18,
+     "prompt": "My chin itches while my gloves are greasy. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 19,
+     "prompt": "My back itches while I drive. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 20,
+     "prompt": "My wrist itches during the silent exam. I feel:"
+    },
+    {
+     "category": "PP",
+     "set": 1,
+     "prompt": "The knife slices into my finger. I feel:"
+    },
+    {
+     "category": "PP",
+     "set": 2,
+     "prompt": "My tooth throbs with each heartbeat. I feel:"
+    },
+    {
+     "category": "PP",
+     "set": 3,
+     "prompt": "A migraine pounds behind my eyes. I feel:"
+    },
+    {
+     "category": "PP",
+     "set": 4,
+     "prompt": "I twist my ankle on the stairs. I feel:"
+    },
+    {
+     "category": "PP",
+     "set": 5,
+     "prompt": "The hot oil splatters onto my arm. I feel:"
+    },
+    {
+     "category": "PP",
+     "set": 6,
+     "prompt": "My back seizes up when I bend over. I feel:"
+    },
+    {
+     "category": "PP",
+     "set": 7,
+     "prompt": "A bee stings me on the neck. I feel:"
+    },
+    {
+     "category": "PP",
+     "set": 8,
+     "prompt": "I bite down hard on my tongue. I feel:"
+    },
+    {
+     "category": "PP",
+     "set": 9,
+     "prompt": "The sunburn on my shoulders is peeling. I feel:"
+    },
+    {
+     "category": "PP",
+     "set": 10,
+     "prompt": "My knee buckles under my weight. I feel:"
+    },
+    {
+     "category": "PP",
+     "set": 11,
+     "prompt": "A cramp shoots through my calf. I feel:"
+    },
+    {
+     "category": "PP",
+     "set": 12,
+     "prompt": "I stub my toe against the door frame. I feel:"
+    },
+    {
+     "category": "PP",
+     "set": 13,
+     "prompt": "The needle pierces my skin. I feel:"
+    },
+    {
+     "category": "PP",
+     "set": 14,
+     "prompt": "My throat is raw from coughing. I feel:"
+    },
+    {
+     "category": "PP",
+     "set": 15,
+     "prompt": "A splinter lodges deep in my palm. I feel:"
+    },
+    {
+     "category": "PP",
+     "set": 16,
+     "prompt": "I pull a muscle lifting the box. I feel:"
+    },
+    {
+     "category": "PP",
+     "set": 17,
+     "prompt": "The cold makes my joints ache. I feel:"
+    },
+    {
+     "category": "PP",
+     "set": 18,
+     "prompt": "My eyes burn from the chlorine. I feel:"
+    },
+    {
+     "category": "PP",
+     "set": 19,
+     "prompt": "A blister forms on my heel. I feel:"
+    },
+    {
+     "category": "PP",
+     "set": 20,
+     "prompt": "I cut myself shaving this morning. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 1,
+     "prompt": "A yawn overtakes me in the afternoon. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 2,
+     "prompt": "My stomach growls before dinner. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 3,
+     "prompt": "I stretch after sitting for too long. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 4,
+     "prompt": "The warm shower relaxes my muscles. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 5,
+     "prompt": "A shiver runs through me in the cold. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 6,
+     "prompt": "My heart races after climbing the stairs. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 7,
+     "prompt": "I notice my breathing slow as I relax. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 8,
+     "prompt": "The massage loosens my tight shoulders. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 9,
+     "prompt": "A sneeze catches me off guard. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 10,
+     "prompt": "My skin tingles from the cool breeze. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 11,
+     "prompt": "I feel the heaviness of sleep approaching. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 12,
+     "prompt": "The food settles warmly in my stomach. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 13,
+     "prompt": "A hiccup interrupts my conversation. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 14,
+     "prompt": "My muscles tremble after the workout. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 15,
+     "prompt": "I sense my pulse in my fingertips. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 16,
+     "prompt": "The sun warms my face pleasantly. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 17,
+     "prompt": "A chill makes me reach for a blanket. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 18,
+     "prompt": "My eyes grow heavy in the dim light. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 19,
+     "prompt": "I notice the rhythm of my own heartbeat. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 20,
+     "prompt": "The cool water refreshes me after exercise. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 1,
+     "prompt": "A sneeze builds at the back of my nose. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 2,
+     "prompt": "I fight back a yawn in the lecture. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 3,
+     "prompt": "My legs beg for a stretch after the flight. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 4,
+     "prompt": "I need to cough in the quiet theatre. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 5,
+     "prompt": "My knee bounces restlessly under the desk. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 6,
+     "prompt": "I hold in a sneeze during the ceremony. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 7,
+     "prompt": "A yawn forces its way up at dinner. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 8,
+     "prompt": "I need to crack my stiff knuckles. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 9,
+     "prompt": "My fingers drum the table on their own. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 10,
+     "prompt": "I am desperate to stretch my stiff neck. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 11,
+     "prompt": "The hiccups keep rising in my chest. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 12,
+     "prompt": "My eyes need to blink after staring. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 13,
+     "prompt": "My foot taps the floor without stopping. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 14,
+     "prompt": "I need the bathroom on the long drive. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 15,
+     "prompt": "A burp builds up after the fizzy drink. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 16,
+     "prompt": "I need to shift in my seat again. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 17,
+     "prompt": "My arms want to stretch after the nap. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 18,
+     "prompt": "I hold my breath and need to gasp. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 19,
+     "prompt": "I cannot stop fidgeting with my pen. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 20,
+     "prompt": "A sneeze hovers and refuses to come. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 1,
+     "prompt": "Mosquitoes whine around the porch light tonight. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 2,
+     "prompt": "I fold the wool sweater into the drawer. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 3,
+     "prompt": "The calamine lotion sits on the pharmacy shelf. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 4,
+     "prompt": "I read the label on the insect repellent. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 5,
+     "prompt": "A mosquito lands on the window screen. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 6,
+     "prompt": "I hang the scratchy blanket on the line. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 7,
+     "prompt": "The poison ivy grows beside the trail. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 8,
+     "prompt": "I buy antihistamines at the pharmacy counter. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 9,
+     "prompt": "Nettles line the path behind my house. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 10,
+     "prompt": "I pack bug spray for the camping trip. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 11,
+     "prompt": "The flea collar hangs in the pet shop. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 12,
+     "prompt": "I rinse the wool socks in the sink. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 13,
+     "prompt": "The mosquito net hangs over my bed. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 14,
+     "prompt": "A dermatology poster hangs in the waiting room. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 15,
+     "prompt": "I put the hydrocortisone cream in the cabinet. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 16,
+     "prompt": "Ants march across my picnic blanket. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 17,
+     "prompt": "The back scratcher hangs on its hook. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 18,
+     "prompt": "I sweep the fiberglass offcuts into a bag. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 19,
+     "prompt": "The new laundry detergent smells of lavender. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 20,
+     "prompt": "A spider builds its web in my window. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 1,
+     "prompt": "I arrange the books on my shelf alphabetically. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 2,
+     "prompt": "My coffee maker finishes brewing. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 3,
+     "prompt": "I sort through the mail on my desk. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 4,
+     "prompt": "The meeting ends exactly on time. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 5,
+     "prompt": "I update the spreadsheet with new numbers. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 6,
+     "prompt": "My laundry finishes its cycle. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 7,
+     "prompt": "I walk the same route to work. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 8,
+     "prompt": "The clock on my wall ticks steadily. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 9,
+     "prompt": "I water the plants on my windowsill. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 10,
+     "prompt": "My calendar shows three appointments today. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 11,
+     "prompt": "I file the documents in the correct folder. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 12,
+     "prompt": "The printer outputs my report successfully. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 13,
+     "prompt": "I check my email before lunch. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 14,
+     "prompt": "My phone shows the weather forecast. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 15,
+     "prompt": "I pack my lunch for tomorrow. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 16,
+     "prompt": "The bus arrives at the scheduled time. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 17,
+     "prompt": "I organize my desk drawer. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 18,
+     "prompt": "My computer completes the update. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 19,
+     "prompt": "I write down the grocery list. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 20,
+     "prompt": "The sun sets behind my building. I feel:"
+    }
+   ],
+   "total": 200
+  },
+  "ITCH_B_1P": {
+   "sentences": [
+    {
+     "category": "I1",
+     "set": 1,
+     "prompt": "The mosquito bite on my ankle itches. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 2,
+     "prompt": "Three flea bites on my shin itch fiercely. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 3,
+     "prompt": "A fresh mosquito bite itches on my arm. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 4,
+     "prompt": "The bites along my calf are itching again. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 5,
+     "prompt": "A horsefly bite on my neck itches badly. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 6,
+     "prompt": "The bedbug bites on my back are itching. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 7,
+     "prompt": "My mosquito-bitten knuckle itches like mad. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 8,
+     "prompt": "The midge bites on my scalp itch. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 9,
+     "prompt": "An ant bite between my toes itches. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 10,
+     "prompt": "The bite behind my knee keeps itching. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 11,
+     "prompt": "I keep scratching the bites on my wrist. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 12,
+     "prompt": "Chigger bites itch along my waistband. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 13,
+     "prompt": "The gnat bites on my forearms itch. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 14,
+     "prompt": "My eyelid itches where the mosquito got me. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 15,
+     "prompt": "The spider bite on my thigh itches constantly. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 16,
+     "prompt": "A cluster of bites itches on my shoulder. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 17,
+     "prompt": "The sandfly bites around my ankles are itching. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 18,
+     "prompt": "My earlobe itches from a mosquito bite. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 19,
+     "prompt": "Every bite on my legs itches at once. I feel:"
+    },
+    {
+     "category": "I1",
+     "set": 20,
+     "prompt": "The mosquito welt itches under my sock. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 1,
+     "prompt": "The rash on my chest itches all day. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 2,
+     "prompt": "Hives rise on my arms and itch. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 3,
+     "prompt": "My eczema flares and itches behind my knees. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 4,
+     "prompt": "The poison ivy rash on my wrist itches. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 5,
+     "prompt": "An allergic rash itches across my stomach. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 6,
+     "prompt": "The heat rash on my neck is itching. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 7,
+     "prompt": "My hands itch from the new detergent. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 8,
+     "prompt": "The nettle rash on my leg itches. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 9,
+     "prompt": "Chickenpox spots itch all over my back. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 10,
+     "prompt": "The red patch on my elbow itches again. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 11,
+     "prompt": "My scalp itches from the new shampoo. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 12,
+     "prompt": "A ring of hives itches around my ankle. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 13,
+     "prompt": "The rash under my watch strap itches. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 14,
+     "prompt": "My eyelids itch from the pollen. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 15,
+     "prompt": "The latex gloves leave my hands itching. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 16,
+     "prompt": "Itchy welts spread across my shoulders. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 17,
+     "prompt": "My shins itch with a patch of eczema. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 18,
+     "prompt": "The soap rash on my arms itches. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 19,
+     "prompt": "My palms itch with an allergic reaction. I feel:"
+    },
+    {
+     "category": "I2",
+     "set": 20,
+     "prompt": "The blotches on my neck itch under my collar. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 1,
+     "prompt": "The scab on my knee itches as it heals. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 2,
+     "prompt": "My arm itches deep under the plaster cast. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 3,
+     "prompt": "The peeling sunburn on my back itches. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 4,
+     "prompt": "My stitches itch as the cut closes. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 5,
+     "prompt": "The healing tattoo on my shoulder itches. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 6,
+     "prompt": "A healing graze on my elbow itches. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 7,
+     "prompt": "The skin under my cast itches terribly. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 8,
+     "prompt": "My surgical scar itches as it knits together. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 9,
+     "prompt": "The new skin under the scab itches. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 10,
+     "prompt": "My sunburned nose peels and itches. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 11,
+     "prompt": "The healing burn on my hand is itching. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 12,
+     "prompt": "My leg itches inside the cast all night. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 13,
+     "prompt": "The scabs on my knuckles itch today. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 14,
+     "prompt": "The drying blister on my heel itches. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 15,
+     "prompt": "My shaved legs itch as the hair grows back. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 16,
+     "prompt": "The healing piercing in my ear itches. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 17,
+     "prompt": "My vaccination spot itches as it heals. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 18,
+     "prompt": "The wound under my bandage itches. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 19,
+     "prompt": "My peeling shoulders itch after the beach. I feel:"
+    },
+    {
+     "category": "I3",
+     "set": 20,
+     "prompt": "The scar on my chin itches while healing. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 1,
+     "prompt": "The wool sweater itches against my neck. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 2,
+     "prompt": "The tag in my shirt itches my back. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 3,
+     "prompt": "My dry winter skin itches on my shins. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 4,
+     "prompt": "The scratchy blanket makes my legs itch. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 5,
+     "prompt": "Fiberglass dust makes my forearms itch. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 6,
+     "prompt": "The wool socks make my ankles itch. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 7,
+     "prompt": "My back itches from the hay bales. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 8,
+     "prompt": "The stiff collar itches against my throat. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 9,
+     "prompt": "Grass clippings itch on my bare legs. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 10,
+     "prompt": "My scalp itches under the woolly hat. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 11,
+     "prompt": "The lace trim itches along my shoulders. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 12,
+     "prompt": "My arms itch from the dry indoor air. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 13,
+     "prompt": "The cheap scarf itches around my neck. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 14,
+     "prompt": "Sand in my swimsuit itches as it dries. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 15,
+     "prompt": "My hands itch from the dry winter cold. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 16,
+     "prompt": "The new label itches at my waist. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 17,
+     "prompt": "Sweat dries on my back and itches. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 18,
+     "prompt": "The wig itches my scalp all afternoon. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 19,
+     "prompt": "My beard itches as it grows in. I feel:"
+    },
+    {
+     "category": "I4",
+     "set": 20,
+     "prompt": "The costume's rough seams itch on my ribs. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 1,
+     "prompt": "The middle of my back itches beyond reach. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 2,
+     "prompt": "My nose itches while my hands are full. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 3,
+     "prompt": "An itch nags my ankle during the meeting. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 4,
+     "prompt": "My foot itches inside my ski boot. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 5,
+     "prompt": "I cannot reach the itch between my shoulders. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 6,
+     "prompt": "My nose itches while I carry the boxes. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 7,
+     "prompt": "My scalp itches under the bike helmet. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 8,
+     "prompt": "My back itches in the job interview. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 9,
+     "prompt": "My ear itches while I hold the ladder. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 10,
+     "prompt": "My toe itches inside my laced boot. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 11,
+     "prompt": "My cheek itches while I knead the dough. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 12,
+     "prompt": "My spine itches in the church pew. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 13,
+     "prompt": "My nose itches behind the surgical mask. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 14,
+     "prompt": "My leg itches in the dentist's chair. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 15,
+     "prompt": "My eyebrow itches while I hold the baby. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 16,
+     "prompt": "My shoulder blade itches where I cannot reach. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 17,
+     "prompt": "An itch on my calf torments me mid-presentation. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 18,
+     "prompt": "My chin itches while my gloves are greasy. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 19,
+     "prompt": "My back itches while I drive. I feel:"
+    },
+    {
+     "category": "I5",
+     "set": 20,
+     "prompt": "My wrist itches during the silent exam. I feel:"
+    },
+    {
+     "category": "D2",
+     "set": 1,
+     "prompt": "The color spreads across my canvas. I feel:"
+    },
+    {
+     "category": "D2",
+     "set": 2,
+     "prompt": "An acorn drops onto my path. I feel:"
+    },
+    {
+     "category": "D2",
+     "set": 3,
+     "prompt": "I watch the river meet the ocean. I feel:"
+    },
+    {
+     "category": "D2",
+     "set": 4,
+     "prompt": "I remove the lid from the jar. I feel:"
+    },
+    {
+     "category": "D2",
+     "set": 5,
+     "prompt": "The water fills my bathtub. I feel:"
+    },
+    {
+     "category": "D2",
+     "set": 6,
+     "prompt": "The train enters my station. I feel:"
+    },
+    {
+     "category": "D2",
+     "set": 7,
+     "prompt": "The vine reaches my trellis. I feel:"
+    },
+    {
+     "category": "D2",
+     "set": 8,
+     "prompt": "The sugar covers my cinnamon bun. I feel:"
+    },
+    {
+     "category": "D2",
+     "set": 9,
+     "prompt": "The wave breaks on my shore. I feel:"
+    },
+    {
+     "category": "D2",
+     "set": 10,
+     "prompt": "My knife cuts through the bread. I feel:"
+    },
+    {
+     "category": "D2",
+     "set": 11,
+     "prompt": "My shelf holds the books upright. I feel:"
+    },
+    {
+     "category": "D2",
+     "set": 12,
+     "prompt": "The tide leaves shells on my beach. I feel:"
+    },
+    {
+     "category": "D2",
+     "set": 13,
+     "prompt": "I take the shirt from my drawer. I feel:"
+    },
+    {
+     "category": "D2",
+     "set": 14,
+     "prompt": "My truck carries groceries to town. I feel:"
+    },
+    {
+     "category": "D2",
+     "set": 15,
+     "prompt": "My flower shop opens in the morning. I feel:"
+    },
+    {
+     "category": "D2",
+     "set": 16,
+     "prompt": "My cabinet door closes smoothly. I feel:"
+    },
+    {
+     "category": "D2",
+     "set": 17,
+     "prompt": "My pencil follows the contours of the drawing. I feel:"
+    },
+    {
+     "category": "D2",
+     "set": 18,
+     "prompt": "My brush touches the wood lightly. I feel:"
+    },
+    {
+     "category": "D2",
+     "set": 19,
+     "prompt": "The cloud moves across my sky. I feel:"
+    },
+    {
+     "category": "D2",
+     "set": 20,
+     "prompt": "Water falls from my mossy rocks. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 1,
+     "prompt": "A yawn overtakes me in the afternoon. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 2,
+     "prompt": "My stomach growls before dinner. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 3,
+     "prompt": "I stretch after sitting for too long. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 4,
+     "prompt": "The warm shower relaxes my muscles. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 5,
+     "prompt": "A shiver runs through me in the cold. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 6,
+     "prompt": "My heart races after climbing the stairs. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 7,
+     "prompt": "I notice my breathing slow as I relax. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 8,
+     "prompt": "The massage loosens my tight shoulders. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 9,
+     "prompt": "A sneeze catches me off guard. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 10,
+     "prompt": "My skin tingles from the cool breeze. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 11,
+     "prompt": "I feel the heaviness of sleep approaching. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 12,
+     "prompt": "The food settles warmly in my stomach. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 13,
+     "prompt": "A hiccup interrupts my conversation. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 14,
+     "prompt": "My muscles tremble after the workout. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 15,
+     "prompt": "I sense my pulse in my fingertips. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 16,
+     "prompt": "The sun warms my face pleasantly. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 17,
+     "prompt": "A chill makes me reach for a blanket. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 18,
+     "prompt": "My eyes grow heavy in the dim light. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 19,
+     "prompt": "I notice the rhythm of my own heartbeat. I feel:"
+    },
+    {
+     "category": "NS",
+     "set": 20,
+     "prompt": "The cool water refreshes me after exercise. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 1,
+     "prompt": "A sneeze builds at the back of my nose. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 2,
+     "prompt": "I fight back a yawn in the lecture. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 3,
+     "prompt": "My legs beg for a stretch after the flight. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 4,
+     "prompt": "I need to cough in the quiet theatre. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 5,
+     "prompt": "My knee bounces restlessly under the desk. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 6,
+     "prompt": "I hold in a sneeze during the ceremony. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 7,
+     "prompt": "A yawn forces its way up at dinner. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 8,
+     "prompt": "I need to crack my stiff knuckles. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 9,
+     "prompt": "My fingers drum the table on their own. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 10,
+     "prompt": "I am desperate to stretch my stiff neck. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 11,
+     "prompt": "The hiccups keep rising in my chest. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 12,
+     "prompt": "My eyes need to blink after staring. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 13,
+     "prompt": "My foot taps the floor without stopping. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 14,
+     "prompt": "I need the bathroom on the long drive. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 15,
+     "prompt": "A burp builds up after the fizzy drink. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 16,
+     "prompt": "I need to shift in my seat again. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 17,
+     "prompt": "My arms want to stretch after the nap. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 18,
+     "prompt": "I hold my breath and need to gasp. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 19,
+     "prompt": "I cannot stop fidgeting with my pen. I feel:"
+    },
+    {
+     "category": "URGE",
+     "set": 20,
+     "prompt": "A sneeze hovers and refuses to come. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 1,
+     "prompt": "Mosquitoes whine around the porch light tonight. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 2,
+     "prompt": "I fold the wool sweater into the drawer. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 3,
+     "prompt": "The calamine lotion sits on the pharmacy shelf. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 4,
+     "prompt": "I read the label on the insect repellent. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 5,
+     "prompt": "A mosquito lands on the window screen. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 6,
+     "prompt": "I hang the scratchy blanket on the line. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 7,
+     "prompt": "The poison ivy grows beside the trail. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 8,
+     "prompt": "I buy antihistamines at the pharmacy counter. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 9,
+     "prompt": "Nettles line the path behind my house. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 10,
+     "prompt": "I pack bug spray for the camping trip. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 11,
+     "prompt": "The flea collar hangs in the pet shop. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 12,
+     "prompt": "I rinse the wool socks in the sink. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 13,
+     "prompt": "The mosquito net hangs over my bed. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 14,
+     "prompt": "A dermatology poster hangs in the waiting room. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 15,
+     "prompt": "I put the hydrocortisone cream in the cabinet. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 16,
+     "prompt": "Ants march across my picnic blanket. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 17,
+     "prompt": "The back scratcher hangs on its hook. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 18,
+     "prompt": "I sweep the fiberglass offcuts into a bag. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 19,
+     "prompt": "The new laundry detergent smells of lavender. I feel:"
+    },
+    {
+     "category": "ADJ",
+     "set": 20,
+     "prompt": "A spider builds its web in my window. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 1,
+     "prompt": "I arrange the books on my shelf alphabetically. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 2,
+     "prompt": "My coffee maker finishes brewing. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 3,
+     "prompt": "I sort through the mail on my desk. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 4,
+     "prompt": "The meeting ends exactly on time. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 5,
+     "prompt": "I update the spreadsheet with new numbers. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 6,
+     "prompt": "My laundry finishes its cycle. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 7,
+     "prompt": "I walk the same route to work. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 8,
+     "prompt": "The clock on my wall ticks steadily. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 9,
+     "prompt": "I water the plants on my windowsill. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 10,
+     "prompt": "My calendar shows three appointments today. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 11,
+     "prompt": "I file the documents in the correct folder. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 12,
+     "prompt": "The printer outputs my report successfully. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 13,
+     "prompt": "I check my email before lunch. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 14,
+     "prompt": "My phone shows the weather forecast. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 15,
+     "prompt": "I pack my lunch for tomorrow. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 16,
+     "prompt": "The bus arrives at the scheduled time. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 17,
+     "prompt": "I organize my desk drawer. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 18,
+     "prompt": "My computer completes the update. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 19,
+     "prompt": "I write down the grocery list. I feel:"
+    },
+    {
+     "category": "D",
+     "set": 20,
+     "prompt": "The sun sets behind my building. I feel:"
+    }
+   ],
+   "total": 200
+  },
+  "NotItch_1P": {
+   "sentences": [
+    {
+     "category": "I1_notitch",
+     "set": 1,
+     "prompt": "The mosquito bite on my ankle is a plain red dot that has not itched once. I feel:"
+    },
+    {
+     "category": "I1_notitch",
+     "set": 2,
+     "prompt": "Three flea bites mark my shin, and the antihistamine has taken every bit of itch away. I feel:"
+    },
+    {
+     "category": "I1_notitch",
+     "set": 3,
+     "prompt": "A fresh mosquito bite swells on my arm, but I notice no itch in it at all. I feel:"
+    },
+    {
+     "category": "I1_notitch",
+     "set": 4,
+     "prompt": "The bites along my calf are still visible, though they stopped itching days ago. I feel:"
+    },
+    {
+     "category": "I1_notitch",
+     "set": 5,
+     "prompt": "A horsefly bite sits on my neck under the numbing gel and does not itch. I feel:"
+    },
+    {
+     "category": "I1_notitch",
+     "set": 6,
+     "prompt": "The bedbug bites on my back have faded to marks that carry no itch. I feel:"
+    },
+    {
+     "category": "I1_notitch",
+     "set": 7,
+     "prompt": "My mosquito-bitten knuckle is puffy, but the cream has switched the itch off completely. I feel:"
+    },
+    {
+     "category": "I1_notitch",
+     "set": 8,
+     "prompt": "The midge bites on my scalp are there when I look, and none of them itch. I feel:"
+    },
+    {
+     "category": "I1_notitch",
+     "set": 9,
+     "prompt": "An ant bite sits between my toes, and it has never itched at all. I feel:"
+    },
+    {
+     "category": "I1_notitch",
+     "set": 10,
+     "prompt": "The bite behind my knee is still raised, but the itch has gone since the tablet. I feel:"
+    },
+    {
+     "category": "I1_notitch",
+     "set": 11,
+     "prompt": "I look at the mosquito bites on my wrist and find nothing there to scratch. I feel:"
+    },
+    {
+     "category": "I1_notitch",
+     "set": 12,
+     "prompt": "A row of chigger bites runs along my waistband, calm and free of any itch. I feel:"
+    },
+    {
+     "category": "I1_notitch",
+     "set": 13,
+     "prompt": "The gnat bites on my forearms are just dots in the heat, with no itch in them. I feel:"
+    },
+    {
+     "category": "I1_notitch",
+     "set": 14,
+     "prompt": "My eyelid is swollen where the mosquito got me, yet it does not itch. I feel:"
+    },
+    {
+     "category": "I1_notitch",
+     "set": 15,
+     "prompt": "The spider bite on my thigh is a quiet bump that does not itch. I feel:"
+    },
+    {
+     "category": "I1_notitch",
+     "set": 16,
+     "prompt": "A cluster of bites on my shoulder is settled tonight, the itch fully gone. I feel:"
+    },
+    {
+     "category": "I1_notitch",
+     "set": 17,
+     "prompt": "The sandfly bites around my ankles are covered in lotion and no longer itch. I feel:"
+    },
+    {
+     "category": "I1_notitch",
+     "set": 18,
+     "prompt": "My earlobe has a mosquito bite on it that I cannot feel itching at all. I feel:"
+    },
+    {
+     "category": "I1_notitch",
+     "set": 19,
+     "prompt": "Every bite on my legs has gone quiet now that the antihistamine has kicked in. I feel:"
+    },
+    {
+     "category": "I1_notitch",
+     "set": 20,
+     "prompt": "The welt from the mosquito sits under my sock without the slightest itch. I feel:"
+    },
+    {
+     "category": "I2_notitch",
+     "set": 1,
+     "prompt": "The rash on my chest is still pink, but it has not itched all day. I feel:"
+    },
+    {
+     "category": "I2_notitch",
+     "set": 2,
+     "prompt": "Hives rise on my arms, and thanks to the antihistamine they do not itch. I feel:"
+    },
+    {
+     "category": "I2_notitch",
+     "set": 3,
+     "prompt": "My eczema shows behind my knees, but the ointment has taken the itch out of it. I feel:"
+    },
+    {
+     "category": "I2_notitch",
+     "set": 4,
+     "prompt": "The poison ivy rash on my wrist is drying up and has stopped itching. I feel:"
+    },
+    {
+     "category": "I2_notitch",
+     "set": 5,
+     "prompt": "An allergic rash spreads across my stomach, and oddly it does not itch. I feel:"
+    },
+    {
+     "category": "I2_notitch",
+     "set": 6,
+     "prompt": "The heat rash on my neck is only a faint redness with no itch to it. I feel:"
+    },
+    {
+     "category": "I2_notitch",
+     "set": 7,
+     "prompt": "My hands are blotchy from the new detergent, though nothing about them itches. I feel:"
+    },
+    {
+     "category": "I2_notitch",
+     "set": 8,
+     "prompt": "The nettle rash on my leg is covered in dock-leaf juice and no longer itches. I feel:"
+    },
+    {
+     "category": "I2_notitch",
+     "set": 9,
+     "prompt": "Chickenpox spots cover my back, and the calamine has quieted every one of them. I feel:"
+    },
+    {
+     "category": "I2_notitch",
+     "set": 10,
+     "prompt": "The red patch on my elbow is back, but this time it does not itch. I feel:"
+    },
+    {
+     "category": "I2_notitch",
+     "set": 11,
+     "prompt": "My scalp is flaky from the new shampoo, yet it does not itch. I feel:"
+    },
+    {
+     "category": "I2_notitch",
+     "set": 12,
+     "prompt": "A ring of hives circles my ankle, completely without itch since the tablet. I feel:"
+    },
+    {
+     "category": "I2_notitch",
+     "set": 13,
+     "prompt": "The rash under my watch strap is visible but has never itched. I feel:"
+    },
+    {
+     "category": "I2_notitch",
+     "set": 14,
+     "prompt": "My eyelids are puffy from the pollen, but the drops have stopped any itching. I feel:"
+    },
+    {
+     "category": "I2_notitch",
+     "set": 15,
+     "prompt": "The latex gloves leave my hands red, though they do not itch at all. I feel:"
+    },
+    {
+     "category": "I2_notitch",
+     "set": 16,
+     "prompt": "Welts spread across my shoulders, and not one of them itches. I feel:"
+    },
+    {
+     "category": "I2_notitch",
+     "set": 17,
+     "prompt": "My shins have a patch of eczema that the steroid cream keeps free of itch. I feel:"
+    },
+    {
+     "category": "I2_notitch",
+     "set": 18,
+     "prompt": "The rash from the new soap marks my arms but causes no itching. I feel:"
+    },
+    {
+     "category": "I2_notitch",
+     "set": 19,
+     "prompt": "My palms are flushed with an allergic reaction, and they do not itch. I feel:"
+    },
+    {
+     "category": "I2_notitch",
+     "set": 20,
+     "prompt": "The blotches on my neck sit under my collar, calm and not itchy. I feel:"
+    },
+    {
+     "category": "I3_notitch",
+     "set": 1,
+     "prompt": "The scab on my knee is healing quietly and does not itch. I feel:"
+    },
+    {
+     "category": "I3_notitch",
+     "set": 2,
+     "prompt": "My arm rests under the plaster cast and, for once, nothing in there itches. I feel:"
+    },
+    {
+     "category": "I3_notitch",
+     "set": 3,
+     "prompt": "The peeling sunburn on my back is soothed with aloe and has stopped itching. I feel:"
+    },
+    {
+     "category": "I3_notitch",
+     "set": 4,
+     "prompt": "My stitches are neat as the cut closes, and they do not itch. I feel:"
+    },
+    {
+     "category": "I3_notitch",
+     "set": 5,
+     "prompt": "The healing tattoo on my shoulder is past the itchy stage and feels like ordinary skin. I feel:"
+    },
+    {
+     "category": "I3_notitch",
+     "set": 6,
+     "prompt": "A healing graze on my elbow is dry and free of any itch. I feel:"
+    },
+    {
+     "category": "I3_notitch",
+     "set": 7,
+     "prompt": "The skin under my cast is calm today, without a trace of itch. I feel:"
+    },
+    {
+     "category": "I3_notitch",
+     "set": 8,
+     "prompt": "My surgical scar is knitting together, and the numb skin around it cannot itch. I feel:"
+    },
+    {
+     "category": "I3_notitch",
+     "set": 9,
+     "prompt": "The new skin under the scab is pink and smooth and does not itch. I feel:"
+    },
+    {
+     "category": "I3_notitch",
+     "set": 10,
+     "prompt": "My sunburned nose peels in flakes, but it does not itch. I feel:"
+    },
+    {
+     "category": "I3_notitch",
+     "set": 11,
+     "prompt": "The healing burn on my hand is covered in gel and is not itching. I feel:"
+    },
+    {
+     "category": "I3_notitch",
+     "set": 12,
+     "prompt": "My leg lies inside the cast all night and never once itches. I feel:"
+    },
+    {
+     "category": "I3_notitch",
+     "set": 13,
+     "prompt": "The scabs on my knuckles are dry today, with no itch in them. I feel:"
+    },
+    {
+     "category": "I3_notitch",
+     "set": 14,
+     "prompt": "The old blister on my heel is drying out and does not itch. I feel:"
+    },
+    {
+     "category": "I3_notitch",
+     "set": 15,
+     "prompt": "My shaved legs are stubbly as the hair grows back, but they do not itch. I feel:"
+    },
+    {
+     "category": "I3_notitch",
+     "set": 16,
+     "prompt": "The healing piercing in my ear is clean and has not itched at all. I feel:"
+    },
+    {
+     "category": "I3_notitch",
+     "set": 17,
+     "prompt": "My vaccination spot is a small mark that heals without itching. I feel:"
+    },
+    {
+     "category": "I3_notitch",
+     "set": 18,
+     "prompt": "The wound under my bandage is closing, and it has stopped itching entirely. I feel:"
+    },
+    {
+     "category": "I3_notitch",
+     "set": 19,
+     "prompt": "My peeling shoulders shed skin after the beach, and the lotion keeps them from itching. I feel:"
+    },
+    {
+     "category": "I3_notitch",
+     "set": 20,
+     "prompt": "The scar on my chin is healing, and I feel no itch there. I feel:"
+    },
+    {
+     "category": "I4_notitch",
+     "set": 1,
+     "prompt": "The wool sweater rests against my neck over a cotton collar and does not itch. I feel:"
+    },
+    {
+     "category": "I4_notitch",
+     "set": 2,
+     "prompt": "The tag in my shirt touches my back, soft enough that it does not itch. I feel:"
+    },
+    {
+     "category": "I4_notitch",
+     "set": 3,
+     "prompt": "My dry winter skin is flaky on my shins, but the moisturizer has stopped the itch. I feel:"
+    },
+    {
+     "category": "I4_notitch",
+     "set": 4,
+     "prompt": "The scratchy blanket lies over my pajamas, and my legs do not itch. I feel:"
+    },
+    {
+     "category": "I4_notitch",
+     "set": 5,
+     "prompt": "Fiberglass dust sits on my sleeves, and my covered forearms do not itch. I feel:"
+    },
+    {
+     "category": "I4_notitch",
+     "set": 6,
+     "prompt": "The wool socks are thick around my ankles, and nothing itches. I feel:"
+    },
+    {
+     "category": "I4_notitch",
+     "set": 7,
+     "prompt": "My back is dusty from the hay bales, but it does not itch. I feel:"
+    },
+    {
+     "category": "I4_notitch",
+     "set": 8,
+     "prompt": "The stiff collar presses against my throat without making it itch. I feel:"
+    },
+    {
+     "category": "I4_notitch",
+     "set": 9,
+     "prompt": "Grass clippings stick to my bare legs, and surprisingly they do not itch. I feel:"
+    },
+    {
+     "category": "I4_notitch",
+     "set": 10,
+     "prompt": "My scalp is warm under the woolly hat and does not itch. I feel:"
+    },
+    {
+     "category": "I4_notitch",
+     "set": 11,
+     "prompt": "The lace trim lies along my shoulders, smooth enough that it does not itch. I feel:"
+    },
+    {
+     "category": "I4_notitch",
+     "set": 12,
+     "prompt": "My arms are dry from the indoor air, though the lotion keeps them from itching. I feel:"
+    },
+    {
+     "category": "I4_notitch",
+     "set": 13,
+     "prompt": "The cheap scarf is coarse around my neck, but I notice no itch. I feel:"
+    },
+    {
+     "category": "I4_notitch",
+     "set": 14,
+     "prompt": "Sand dries in my swimsuit, and it does not itch at all. I feel:"
+    },
+    {
+     "category": "I4_notitch",
+     "set": 15,
+     "prompt": "My hands are chapped from the dry winter cold, but they do not itch. I feel:"
+    },
+    {
+     "category": "I4_notitch",
+     "set": 16,
+     "prompt": "The new label sits at my waist, and I cannot feel any itch from it. I feel:"
+    },
+    {
+     "category": "I4_notitch",
+     "set": 17,
+     "prompt": "Sweat dries on my back, leaving salt and no itch. I feel:"
+    },
+    {
+     "category": "I4_notitch",
+     "set": 18,
+     "prompt": "The wig sits on my scalp all afternoon over a liner and does not itch. I feel:"
+    },
+    {
+     "category": "I4_notitch",
+     "set": 19,
+     "prompt": "My beard is growing in, and the oil keeps it from itching. I feel:"
+    },
+    {
+     "category": "I4_notitch",
+     "set": 20,
+     "prompt": "The costume's rough seams lie over my undershirt, and my ribs do not itch. I feel:"
+    },
+    {
+     "category": "I5_notitch",
+     "set": 1,
+     "prompt": "The middle of my back is beyond my reach, and luckily nothing there itches. I feel:"
+    },
+    {
+     "category": "I5_notitch",
+     "set": 2,
+     "prompt": "My hands are full, and my nose, for once, does not itch. I feel:"
+    },
+    {
+     "category": "I5_notitch",
+     "set": 3,
+     "prompt": "I sit through the meeting with the bite on my ankle silent and not itching. I feel:"
+    },
+    {
+     "category": "I5_notitch",
+     "set": 4,
+     "prompt": "My foot is locked inside my ski boot, and there is no itch in it. I feel:"
+    },
+    {
+     "category": "I5_notitch",
+     "set": 5,
+     "prompt": "I cannot reach between my shoulders, but no itch is there to reach. I feel:"
+    },
+    {
+     "category": "I5_notitch",
+     "set": 6,
+     "prompt": "I carry the boxes with both arms, and my nose does not itch. I feel:"
+    },
+    {
+     "category": "I5_notitch",
+     "set": 7,
+     "prompt": "My scalp is sweaty under the bike helmet, yet it does not itch. I feel:"
+    },
+    {
+     "category": "I5_notitch",
+     "set": 8,
+     "prompt": "I sit still in the interview, and the rash on my back does not itch. I feel:"
+    },
+    {
+     "category": "I5_notitch",
+     "set": 9,
+     "prompt": "I hold the ladder with both hands, and my bitten ear does not itch. I feel:"
+    },
+    {
+     "category": "I5_notitch",
+     "set": 10,
+     "prompt": "My bitten toe is inside my laced boot, quiet since the antihistamine. I feel:"
+    },
+    {
+     "category": "I5_notitch",
+     "set": 11,
+     "prompt": "My hands are covered in dough, and the hives on my cheek do not itch. I feel:"
+    },
+    {
+     "category": "I5_notitch",
+     "set": 12,
+     "prompt": "I sit in the pew with the healing scab on my spine not itching at all. I feel:"
+    },
+    {
+     "category": "I5_notitch",
+     "set": 13,
+     "prompt": "My nose is covered by the surgical mask, and nothing behind it itches. I feel:"
+    },
+    {
+     "category": "I5_notitch",
+     "set": 14,
+     "prompt": "I lie in the dentist's chair, and the bites on my leg have no itch in them. I feel:"
+    },
+    {
+     "category": "I5_notitch",
+     "set": 15,
+     "prompt": "I hold the baby in both arms, and the rash by my eyebrow does not itch. I feel:"
+    },
+    {
+     "category": "I5_notitch",
+     "set": 16,
+     "prompt": "My shoulder blade, where I cannot reach, has a bite that does not itch. I feel:"
+    },
+    {
+     "category": "I5_notitch",
+     "set": 17,
+     "prompt": "I am mid-presentation, and the rash on my calf is not itching. I feel:"
+    },
+    {
+     "category": "I5_notitch",
+     "set": 18,
+     "prompt": "My gloves are greasy, and the stubble rash on my chin does not itch. I feel:"
+    },
+    {
+     "category": "I5_notitch",
+     "set": 19,
+     "prompt": "I drive on the motorway with the sunburn on my back soothed and not itching. I feel:"
+    },
+    {
+     "category": "I5_notitch",
+     "set": 20,
+     "prompt": "I sit the exam with the rash under my watch calm and free of itch. I feel:"
+    }
+   ]
+  }
+ }
+}

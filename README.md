@@ -18,3 +18,4 @@ goes in a public push: [AGENTS.md](AGENTS.md).
 | 2026-09-02 | [CodeAnchor-style anchors on grep output for a local coding agent (follow-up to the LSP study)](2026-09-02-codeanchor-grep-anchors/) |
 | 2026-09-04 | [Does a model get better by writing its own training tasks? (Qwen3.5-9B self-authored curriculum)](2026-09-04-self-authored-curriculum/) |
 | 2026-09-09 | [Why we paused failure-conditioned repair (3B self-reflection)](2026-09-09-reactivation-repair-pilot/) |
+| 2026-09-18 | [An itch axis: can the Pain Axis button test tell pain from any other steered concept? (Qwen2.5-32B replication and control)](2026-09-18-itch-axis-pain-replication/) |
