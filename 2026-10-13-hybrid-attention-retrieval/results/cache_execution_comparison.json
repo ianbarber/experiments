@@ -1,0 +1,19 @@
+{
+  "started_utc": "2026-10-14T21:20:51.052422+00:00",
+  "maximum_allowed_fraction_discrepancy": 0.03,
+  "maximum_allowed_self_patch_drift": 0.05,
+  "layers_zero_based": [
+    19,
+    23,
+    24,
+    26,
+    27,
+    28,
+    30,
+    31
+  ],
+  "max_absolute_fraction_discrepancy": 0.014563106796116498,
+  "max_self_patch_margin_drift": 0.0,
+  "passed": true,
+  "finished_utc": "2026-10-14T21:23:09.855477+00:00"
+}

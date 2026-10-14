@@ -1,0 +1,134 @@
+[
+  {
+    "example": 0,
+    "seed": 20261014,
+    "boundary": 324,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": -0.125,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 1,
+    "seed": 20261014,
+    "boundary": 324,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.25,
+      "b": 0.125
+    }
+  },
+  {
+    "example": 2,
+    "seed": 20261014,
+    "boundary": 324,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 0,
+    "seed": 20261014,
+    "boundary": 1220,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.125,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 1,
+    "seed": 20261014,
+    "boundary": 1220,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.125,
+      "b": 0.25
+    }
+  },
+  {
+    "example": 2,
+    "seed": 20261014,
+    "boundary": 1220,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": -0.125,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 0,
+    "seed": 20261014,
+    "boundary": 4292,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": -0.125,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 1,
+    "seed": 20261014,
+    "boundary": 4292,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": -0.125,
+      "b": 0.125
+    }
+  },
+  {
+    "example": 2,
+    "seed": 20261014,
+    "boundary": 4292,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": 0.125
+    }
+  },
+  {
+    "example": 0,
+    "seed": 20261014,
+    "boundary": 8388,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.125,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 1,
+    "seed": 20261014,
+    "boundary": 8388,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 2,
+    "seed": 20261014,
+    "boundary": 8388,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": -0.125,
+      "b": 0.0
+    }
+  }
+]

@@ -1,0 +1,10 @@
+[project]
+name = "factworld"
+version = "0.0.1"
+description = "Minimal MIT-licensed FactWorld snapshot for paired recall"
+requires-python = ">=3.11"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

@@ -6,7 +6,7 @@ is the container setup from MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark (image
 `lmsysorg/sglang:qwen38-27b`):
 
     git clone https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark spark-sglang
-    cd spark-sglang && cp ../spark-sglang.env .env
+    cd spark-sglang && cp ../spark-sglang.env.example .env
     ./start-dspark.sh     # DSpark speculative decoding; OpenAI API on :8888
 
 Measured: ~31 tok/s single-stream short-context code; ~14-15 tok/s per stream at 3-6

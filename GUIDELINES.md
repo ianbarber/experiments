@@ -64,8 +64,8 @@ who did not write the protocol, or a written red-team checklist executed once.
 Write `LABNOTES.md` in the first person, as the experimenter. Failures stay.
 If it is reconstructed after the fact, say so in the first paragraph.
 
-Do not paste agent-operator logs. Third-person "Ian", "from Ian", "Ian's ask",
-"not doing this unilaterally", session URLs, billing dashboards, and reboot
+Do not paste agent-operator logs. Third-person operator attribution,
+permission deliberations, session URLs, billing dashboards, and reboot
 scoldings are unpublished chat. Using an agent is a methods fact ("orchestrated
 with Claude Code"); dumping the session is not.
 

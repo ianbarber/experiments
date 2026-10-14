@@ -1,0 +1,882 @@
+[
+  {
+    "example": 0,
+    "seed": 314159,
+    "boundary": 324,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": -0.125,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 1,
+    "seed": 314159,
+    "boundary": 324,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 2,
+    "seed": 314159,
+    "boundary": 324,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": -0.125,
+      "b": 0.125
+    }
+  },
+  {
+    "example": 3,
+    "seed": 314159,
+    "boundary": 324,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": 0.125
+    }
+  },
+  {
+    "example": 4,
+    "seed": 314159,
+    "boundary": 324,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.25,
+      "b": 0.25
+    }
+  },
+  {
+    "example": 5,
+    "seed": 314159,
+    "boundary": 324,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": 0.125
+    }
+  },
+  {
+    "example": 6,
+    "seed": 314159,
+    "boundary": 324,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.125,
+      "b": 0.125
+    }
+  },
+  {
+    "example": 7,
+    "seed": 314159,
+    "boundary": 324,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.125,
+      "b": 0.125
+    }
+  },
+  {
+    "example": 8,
+    "seed": 314159,
+    "boundary": 324,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": -0.125,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 9,
+    "seed": 314159,
+    "boundary": 324,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": -0.125,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 10,
+    "seed": 314159,
+    "boundary": 324,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.125,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 11,
+    "seed": 314159,
+    "boundary": 324,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.25,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 12,
+    "seed": 314159,
+    "boundary": 324,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.125,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 13,
+    "seed": 314159,
+    "boundary": 324,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": -0.375
+    }
+  },
+  {
+    "example": 14,
+    "seed": 314159,
+    "boundary": 324,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.125,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 15,
+    "seed": 314159,
+    "boundary": 324,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.125,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 16,
+    "seed": 314159,
+    "boundary": 324,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 17,
+    "seed": 314159,
+    "boundary": 324,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": 0.125
+    }
+  },
+  {
+    "example": 18,
+    "seed": 314159,
+    "boundary": 324,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.125,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 19,
+    "seed": 314159,
+    "boundary": 324,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.125,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 0,
+    "seed": 314159,
+    "boundary": 1220,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.125,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 1,
+    "seed": 314159,
+    "boundary": 1220,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": -0.25
+    }
+  },
+  {
+    "example": 2,
+    "seed": 314159,
+    "boundary": 1220,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": -0.125,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 3,
+    "seed": 314159,
+    "boundary": 1220,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": -0.125,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 4,
+    "seed": 314159,
+    "boundary": 1220,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 5,
+    "seed": 314159,
+    "boundary": 1220,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 6,
+    "seed": 314159,
+    "boundary": 1220,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": -0.125,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 7,
+    "seed": 314159,
+    "boundary": 1220,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.125,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 8,
+    "seed": 314159,
+    "boundary": 1220,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.125,
+      "b": 0.125
+    }
+  },
+  {
+    "example": 9,
+    "seed": 314159,
+    "boundary": 1220,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 10,
+    "seed": 314159,
+    "boundary": 1220,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": -0.125,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 11,
+    "seed": 314159,
+    "boundary": 1220,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 12,
+    "seed": 314159,
+    "boundary": 1220,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 13,
+    "seed": 314159,
+    "boundary": 1220,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.125,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 14,
+    "seed": 314159,
+    "boundary": 1220,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.125,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 15,
+    "seed": 314159,
+    "boundary": 1220,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": -1.0,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 16,
+    "seed": 314159,
+    "boundary": 1220,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": -0.125,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 17,
+    "seed": 314159,
+    "boundary": 1220,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": -0.125,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 18,
+    "seed": 314159,
+    "boundary": 1220,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 19,
+    "seed": 314159,
+    "boundary": 1220,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.125,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 0,
+    "seed": 314159,
+    "boundary": 4292,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 1,
+    "seed": 314159,
+    "boundary": 4292,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.25,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 2,
+    "seed": 314159,
+    "boundary": 4292,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": -0.125,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 3,
+    "seed": 314159,
+    "boundary": 4292,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 4,
+    "seed": 314159,
+    "boundary": 4292,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 5,
+    "seed": 314159,
+    "boundary": 4292,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": -0.125,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 6,
+    "seed": 314159,
+    "boundary": 4292,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.125,
+      "b": 0.125
+    }
+  },
+  {
+    "example": 7,
+    "seed": 314159,
+    "boundary": 4292,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": -0.125,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 8,
+    "seed": 314159,
+    "boundary": 4292,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": -0.125,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 9,
+    "seed": 314159,
+    "boundary": 4292,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.125,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 10,
+    "seed": 314159,
+    "boundary": 4292,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.125,
+      "b": 0.125
+    }
+  },
+  {
+    "example": 11,
+    "seed": 314159,
+    "boundary": 4292,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": 0.125
+    }
+  },
+  {
+    "example": 12,
+    "seed": 314159,
+    "boundary": 4292,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": -0.125,
+      "b": 0.125
+    }
+  },
+  {
+    "example": 13,
+    "seed": 314159,
+    "boundary": 4292,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 14,
+    "seed": 314159,
+    "boundary": 4292,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.125,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 15,
+    "seed": 314159,
+    "boundary": 4292,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.125,
+      "b": 0.125
+    }
+  },
+  {
+    "example": 16,
+    "seed": 314159,
+    "boundary": 4292,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.125,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 17,
+    "seed": 314159,
+    "boundary": 4292,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.125,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 18,
+    "seed": 314159,
+    "boundary": 4292,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 19,
+    "seed": 314159,
+    "boundary": 4292,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": 0.125
+    }
+  },
+  {
+    "example": 0,
+    "seed": 314159,
+    "boundary": 8388,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 1,
+    "seed": 314159,
+    "boundary": 8388,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 2,
+    "seed": 314159,
+    "boundary": 8388,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 3,
+    "seed": 314159,
+    "boundary": 8388,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 4,
+    "seed": 314159,
+    "boundary": 8388,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 5,
+    "seed": 314159,
+    "boundary": 8388,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 6,
+    "seed": 314159,
+    "boundary": 8388,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 7,
+    "seed": 314159,
+    "boundary": 8388,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 8,
+    "seed": 314159,
+    "boundary": 8388,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 9,
+    "seed": 314159,
+    "boundary": 8388,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 10,
+    "seed": 314159,
+    "boundary": 8388,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 11,
+    "seed": 314159,
+    "boundary": 8388,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.125,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 12,
+    "seed": 314159,
+    "boundary": 8388,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 13,
+    "seed": 314159,
+    "boundary": 8388,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 14,
+    "seed": 314159,
+    "boundary": 8388,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.125,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 15,
+    "seed": 314159,
+    "boundary": 8388,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 16,
+    "seed": 314159,
+    "boundary": 8388,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": -0.125
+    }
+  },
+  {
+    "example": 17,
+    "seed": 314159,
+    "boundary": 8388,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 18,
+    "seed": 314159,
+    "boundary": 8388,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": 0.0
+    }
+  },
+  {
+    "example": 19,
+    "seed": 314159,
+    "boundary": 8388,
+    "window": 64,
+    "state_dtype": "torch.float32",
+    "margin_drift": {
+      "a": 0.0,
+      "b": -0.125
+    }
+  }
+]

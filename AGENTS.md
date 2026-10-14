@@ -33,8 +33,8 @@ entry that started the question.
 - Personal data: unpublished writing, **chat or agent-session transcripts**,
   other people's names or device details. Work that needs those stays in a
   private repo.
-- Operator-log voice: third-person "Ian", "from Ian", "Ian's ask", "not doing
-  this unilaterally", Claude/Codex/Cursor session or artifact URLs, billing
+- Operator-log voice: third-person references to the operator, permission
+  deliberations, Claude/Codex/Cursor session or artifact URLs, billing
   dashboards, account balances, reboot scoldings.
 - Other unpublished project names, systemd units, and home-lab inventory
   (`~/Projects/<other>`, large weight caches, "what's using RAM on that box").
@@ -58,6 +58,7 @@ fact ("orchestrated with Claude Code"). Pasting the session is a leak.
 | `strix-halo` | the AMD Ryzen AI Max+ 395 box (gfx1151, ROCm) |
 | `worker-a`, `worker-b` | the two x86 Docker workers; `worker-b` carries the RTX 5090 |
 | `nas` | the NAS export mounted at `/mnt/nas` |
+| `local-3090` | the x86 workstation used for RTX 3090 experiments (24 GiB, sm_86) |
 
 Use these in prose, tables and config files alike (e.g. `http://dgx-spark:8888/v1`).
 Do not comment "LAN address redacted" next to them.
@@ -65,7 +66,7 @@ Do not comment "LAN address redacted" next to them.
 ## Before every push
 
 ```bash
-git ls-files -z | xargs -0 grep -nE '(sk-[A-Za-z0-9]{16,}|ghp_[A-Za-z0-9]{16,}|hf_[A-Za-z0-9]{16,}|AKIA[A-Z0-9]{12,}|PRIVATE[ ]KEY|\.ts\.net|\b(192\.168|10\.[0-9]+|172\.(1[6-9]|2[0-9]|3[0-1])|100\.[0-9]+)\.[0-9]+\.[0-9]+|claude\.ai/(code|artifact)|from Ian|not doing this unilaterally)' --
+git ls-files -z | xargs -0 grep -nE '(sk-[A-Za-z0-9]{16,}|ghp_[A-Za-z0-9]{16,}|hf_[A-Za-z0-9]{16,}|AKIA[A-Z0-9]{12,}|PRIVATE[ ]KEY|\.ts\.net|\b(192\.168|10\.[0-9]+|172\.(1[6-9]|2[0-9]|3[0-1])|100\.[0-9]+)\.[0-9]+\.[0-9]+|claude\.ai/(code|artifact)|from[ ]Ian|not[ ]doing[ ]this[ ]unilaterally)' --
 git ls-files | grep -E '(__pycache__|\.pyc$|\.egg-info/|\.env$)' && echo 'junk files tracked — stop'
 ```
 

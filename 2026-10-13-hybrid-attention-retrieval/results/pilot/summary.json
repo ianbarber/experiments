@@ -1,0 +1,47 @@
+{
+  "model": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "n_pairs": 80,
+  "both_answers_correct": 80,
+  "by_distance": {
+    "128": {
+      "pairs": 20,
+      "correct_answers": 40,
+      "answer_accuracy": 1.0,
+      "both_correct_pairs": 20,
+      "both_first_difference_correct_pairs": 20,
+      "mean_trace_forward_seconds": 0.08675011764280498
+    },
+    "1024": {
+      "pairs": 20,
+      "correct_answers": 40,
+      "answer_accuracy": 1.0,
+      "both_correct_pairs": 20,
+      "both_first_difference_correct_pairs": 20,
+      "mean_trace_forward_seconds": 0.22374641774222254
+    },
+    "4096": {
+      "pairs": 20,
+      "correct_answers": 40,
+      "answer_accuracy": 1.0,
+      "both_correct_pairs": 20,
+      "both_first_difference_correct_pairs": 20,
+      "mean_trace_forward_seconds": 0.6506958020851016
+    },
+    "8192": {
+      "pairs": 20,
+      "correct_answers": 40,
+      "answer_accuracy": 1.0,
+      "both_correct_pairs": 20,
+      "both_first_difference_correct_pairs": 20,
+      "mean_trace_forward_seconds": 1.2700185216963291
+    }
+  },
+  "peak_reserved_gib": 10.26953125,
+  "max_self_patch_margin_drift": 0.0,
+  "max_full_to_chunked_margin_drift": 0.25,
+  "causal_trials": 1728,
+  "self_patch_controls": 768,
+  "completed_causal_pairs": 12,
+  "unique_baseline_examples": 20
+}

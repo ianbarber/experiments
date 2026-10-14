@@ -1,0 +1,103 @@
+{
+  "protocol": {
+    "version": 2,
+    "model": "Qwen/Qwen3.5-4B",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "seed": 314159,
+    "pairs_per_distance": 20,
+    "distances": [
+      128,
+      1024,
+      4096,
+      8192
+    ],
+    "distractors": 16,
+    "causal_pairs_per_distance": 20,
+    "candidate_layers_per_type": 4,
+    "history_window": 64,
+    "no_op_tolerance": 0.05,
+    "query_patch_mode": "cached",
+    "fixed_candidate_layers": [
+      19,
+      23,
+      24,
+      26,
+      27,
+      28,
+      30,
+      31
+    ],
+    "min_answer_accuracy": 0.9,
+    "min_pair_accuracy": 0.8,
+    "factworld": {
+      "source": "FactWorld minimal data/oracle/renderer snapshot",
+      "file_sha256": {
+        "config.py": "3fc6b0d15654a747955efcc0ad9e6f70c14ea21d0d37daa835b32b72c6f7f1b7",
+        "world.py": "074ed82405062bf034f5f3881fee2c2d68bceaf42d4ca1db84d04848fb86679a",
+        "oracle.py": "b10b229f134136249872b6e6797276092339470291865f7005e0ab99abb98aec",
+        "render.py": "482a949d0305ad43024141784c323efce63a2807f3d077ce0314224cb4a999c7"
+      },
+      "git_revision": "6f0ef0eb9d484b1fff4d2192711fe486cdaa989b"
+    }
+  },
+  "started_utc": "2026-10-14T21:36:38.736051+00:00",
+  "python": "3.13.9",
+  "packages": {
+    "torch": "2.12.0+cu130",
+    "transformers": "5.9.0",
+    "flash-linear-attention": "0.5.0",
+    "numpy": "2.5.4",
+    "huggingface-hub": "1.33.0",
+    "accelerate": "1.15.0"
+  },
+  "implementation_sha256": {
+    "data.py": "66ef90b69c1720590569f9fda15cddf114bcfdca24a54f69b5124b40a6fbdde7",
+    "observe.py": "32a59375ae9beaf6be44a8204f34befaaa056becd07e557a85b7a52e9d886d13",
+    "causal.py": "33cbea808656c710baeb7d5aeb576a53187db0fccbf92e40654c784fce68a3f9",
+    "run.py": "69b2fb354a10a57c1f23a276d286fa9dd6642bc608163af8486601d27588b965"
+  },
+  "uv_lock_sha256": "bc4b03966fa813820ca800d32cd9a3b58338145bcb15d169f5cde9bd4041dc9b",
+  "lens_arithmetic": "FP32 dot product of BF16 final-normalized residual with the unembedding difference; endpoint can differ from BF16 lm_head rounding",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "layer_types": [
+    "linear_attention",
+    "linear_attention",
+    "linear_attention",
+    "full_attention",
+    "linear_attention",
+    "linear_attention",
+    "linear_attention",
+    "full_attention",
+    "linear_attention",
+    "linear_attention",
+    "linear_attention",
+    "full_attention",
+    "linear_attention",
+    "linear_attention",
+    "linear_attention",
+    "full_attention",
+    "linear_attention",
+    "linear_attention",
+    "linear_attention",
+    "full_attention",
+    "linear_attention",
+    "linear_attention",
+    "linear_attention",
+    "full_attention",
+    "linear_attention",
+    "linear_attention",
+    "linear_attention",
+    "full_attention",
+    "linear_attention",
+    "linear_attention",
+    "linear_attention",
+    "full_attention"
+  ],
+  "model_load_seconds": 1.7876558769494295,
+  "delta_kernel": "fla.ops.gated_delta_rule.chunk",
+  "convolution_kernel": "torch",
+  "weights_gib": 7.833822250366211,
+  "finished_utc": "2026-10-14T21:48:01.941922+00:00",
+  "last_stage": "all",
+  "peak_reserved_gib": 10.13671875
+}

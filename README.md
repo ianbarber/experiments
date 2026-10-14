@@ -19,3 +19,4 @@ goes in a public push: [AGENTS.md](AGENTS.md).
 | 2026-09-04 | [Does a model get better by writing its own training tasks? (Qwen3.5-9B self-authored curriculum)](2026-09-04-self-authored-curriculum/) |
 | 2026-09-09 | [Why we paused failure-conditioned repair (3B self-reflection)](2026-09-09-reactivation-repair-pilot/) |
 | 2026-09-18 | [An itch axis: can the Pain Axis button test tell pain from any other steered concept? (Qwen2.5-32B replication and control)](2026-09-18-itch-axis-pain-replication/) |
+| 2026-10-13 | [Division of labor in Qwen3.5-4B hybrid attention: historical K/V, recurrent state, and late MLPs](2026-10-13-hybrid-attention-retrieval/) |
