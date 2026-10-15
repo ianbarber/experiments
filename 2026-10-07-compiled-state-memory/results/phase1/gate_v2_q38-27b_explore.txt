@@ -1,0 +1,40 @@
+== Holm over the registered secondary p-values (PREREG §G1 item 4 and raw-bind / instr-fact) ==
+  facts raw-bind           p=7.64e-10  Holm p=4.58e-09
+  facts_raw first-last     p=6.03e-05  Holm p=3.02e-04
+  prefs instr-fact         p=5.41e-04  Holm p=2.16e-03
+  prefs_fact size60-250    p=4.76e-03  Holm p=1.43e-02
+  facts_raw size60-250     p=8.87e-02  Holm p=1.77e-01
+  prefs_fact first-last    p=2.54e-01  Holm p=2.54e-01
+
+== Binding vs position-weighted priming from the mirrored layouts (C) ==
+  pair 0 vs 30   binding   0.421 [ 0.277, 0.564] (n=48)   priming(pos weight)   0.602 [ 0.418, 0.786] (n=48)
+  pair 59 vs 30  binding   0.354 [ 0.244, 0.464] (n=48)   priming(pos weight)  -0.175 [-0.282,-0.067] (n=48)
+  M binding (all layouts)  24.193 [22.820,25.566] (n=48)
+
+== Bounded magnitude: dp_C / dp_M per block, item-cluster bootstrap 95% ==
+  facts_raw    dp_C 0.133  dp_M 1.000  ratio 0.133 [0.094,0.176]
+  facts_bind   dp_C 0.049  dp_M 0.997  ratio 0.050 [0.034,0.066]
+  prefs_fact   dp_C 0.016  dp_M 0.269  ratio 0.061 [0.033,0.097]
+  prefs_instr  dp_C 0.029  dp_M 0.354  ratio 0.081 [0.039,0.136]
+
+== Preference cells (C shift, t 95%) ==
+  prefs_fact   n= 60 first   0.221 [ 0.134, 0.309] (n=48)
+  prefs_fact   n= 60 last    0.184 [ 0.117, 0.251] (n=48)
+  prefs_fact   n=250 first   0.179 [ 0.110, 0.249] (n=48)
+  prefs_fact   n=250 last    0.155 [ 0.101, 0.209] (n=48)
+  prefs_instr  n= 60 first   0.413 [ 0.255, 0.571] (n=48)
+  prefs_instr  n= 60 last    0.242 [ 0.135, 0.350] (n=48)
+
+== Is B2 small because the probe is weak? (exploratory) ==
+  item corr(C, M) r=0.80; spearman 0.81
+  items with M shift > 1.0: 34/48, C on those   0.258 [ 0.181, 0.335] (n=34); C on the rest   0.008 [-0.014, 0.030] (n=14)
+  items with M shift > 3.0: 23/48, C on those   0.350 [ 0.262, 0.438] (n=23); C on the rest   0.033 [ 0.003, 0.063] (n=25)
+  facts_bind item corr(C, M) r=-0.32
+
+== K (memory KV only, GDN zeroed) vs M vs C ==
+  facts_raw C: 0.99  facts_raw K: 19.29  facts_raw M: 29.96
+  prefs_fact C: 0.18  prefs_fact K: 1.07  prefs_fact M: 3.95
+
+== Lures (descriptive t 95% over 16 list x position cells) ==
+  C: assoc-neutral   0.265 [ 0.181, 0.349] (n=16)   present-assoc   0.053 [ 0.026, 0.081] (n=16)
+  M: assoc-neutral   2.943 [ 2.093, 3.793] (n=16)   present-assoc  11.729 [10.644,12.814] (n=16)

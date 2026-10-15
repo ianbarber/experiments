@@ -1,0 +1,624 @@
+{"attr": "dog", "X": "Biscuit", "Y": "Pepper", "target_index": 0, "variant": "full", "C_X": [-10.86032485961914, -11.502667427062988], "C_Y": [-11.052061080932617, -10.744128227233887]}
+{"attr": "dog", "X": "Biscuit", "Y": "Pepper", "target_index": 0, "variant": "band_early", "C_X": [-11.304206848144531, -12.608976364135742], "C_Y": [-11.243173599243164, -12.689364433288574]}
+{"attr": "dog", "X": "Biscuit", "Y": "Pepper", "target_index": 0, "variant": "band_mid", "C_X": [-13.955634117126465, -15.061726570129395], "C_Y": [-13.929941177368164, -15.085393905639648]}
+{"attr": "dog", "X": "Biscuit", "Y": "Pepper", "target_index": 0, "variant": "band_late", "C_X": [-14.065811157226562, -14.774826049804688], "C_Y": [-14.342004776000977, -14.062345504760742]}
+{"attr": "dog", "X": "Biscuit", "Y": "Pepper", "target_index": 0, "variant": "heads_long", "C_X": [-11.146405220031738, -12.286429405212402], "C_Y": [-11.234189987182617, -11.840654373168945]}
+{"attr": "dog", "X": "Biscuit", "Y": "Pepper", "target_index": 0, "variant": "heads_short", "C_X": [-13.895475387573242, -15.089252471923828], "C_Y": [-14.239240646362305, -14.70523738861084]}
+{"attr": "dog", "X": "Biscuit", "Y": "Pepper", "target_index": 0, "variant": "scale_0.5", "C_X": [-11.76358413696289, -13.39509105682373], "C_Y": [-11.842123985290527, -13.083791732788086]}
+{"attr": "dog", "X": "Biscuit", "Y": "Pepper", "target_index": 0, "variant": "scale_2.0", "C_X": [-7.446683883666992, -7.9395976066589355], "C_Y": [-7.772689342498779, -7.1362528800964355]}
+{"attr": "dog", "X": "Biscuit", "Y": "Pepper", "target_index": 0, "variant": "scale_4.0", "C_X": [-6.352339744567871, -7.688482284545898], "C_Y": [-7.294790267944336, -6.263683319091797]}
+{"attr": "dog", "X": "Biscuit", "Y": "Pepper", "target_index": 1, "variant": "full", "C_X": [-10.782447814941406, -11.566751480102539], "C_Y": [-11.072269439697266, -10.812017440795898]}
+{"attr": "dog", "X": "Biscuit", "Y": "Pepper", "target_index": 2, "variant": "full", "C_X": [-11.028495788574219, -11.621249198913574], "C_Y": [-11.077584266662598, -10.99911880493164]}
+{"attr": "dog", "X": "Biscuit", "Y": "Pepper", "target_index": 4, "variant": "full", "C_X": [-10.9591646194458, -11.549789428710938], "C_Y": [-11.080989837646484, -11.23355770111084]}
+{"attr": "dog", "X": "Biscuit", "Y": "Pepper", "target_index": 8, "variant": "full", "C_X": [-11.108161926269531, -11.562559127807617], "C_Y": [-11.032695770263672, -11.306586265563965]}
+{"attr": "dog", "X": "Biscuit", "Y": "Pepper", "target_index": 51, "variant": "full", "C_X": [-10.959678649902344, -11.625252723693848], "C_Y": [-10.948196411132812, -11.499411582946777]}
+{"attr": "dog", "X": "Biscuit", "Y": "Pepper", "target_index": 55, "variant": "full", "C_X": [-10.970497131347656, -11.690211296081543], "C_Y": [-11.014623641967773, -11.434603691101074]}
+{"attr": "dog", "X": "Biscuit", "Y": "Pepper", "target_index": 57, "variant": "full", "C_X": [-10.944046020507812, -11.638547897338867], "C_Y": [-11.076770782470703, -11.634565353393555]}
+{"attr": "dog", "X": "Biscuit", "Y": "Pepper", "target_index": 58, "variant": "full", "C_X": [-10.974653244018555, -11.577016830444336], "C_Y": [-11.089075088500977, -11.567814826965332]}
+{"attr": "dog", "X": "Biscuit", "Y": "Pepper", "target_index": 59, "variant": "full", "C_X": [-11.10006332397461, -11.442845344543457], "C_Y": [-11.018890380859375, -11.43099308013916]}
+{"attr": "dog", "X": "Biscuit", "Y": "Pepper", "target_index": 59, "variant": "band_early", "C_X": [-11.295931816101074, -12.631285667419434], "C_Y": [-11.332219123840332, -12.612041473388672]}
+{"attr": "dog", "X": "Biscuit", "Y": "Pepper", "target_index": 59, "variant": "band_mid", "C_X": [-13.788211822509766, -14.954696655273438], "C_Y": [-13.851797103881836, -14.960633277893066]}
+{"attr": "dog", "X": "Biscuit", "Y": "Pepper", "target_index": 59, "variant": "band_late", "C_X": [-14.489627838134766, -14.854053497314453], "C_Y": [-14.267751693725586, -14.819771766662598]}
+{"attr": "dog", "X": "Biscuit", "Y": "Pepper", "target_index": 59, "variant": "heads_long", "C_X": [-11.211015701293945, -12.148100852966309], "C_Y": [-11.1558198928833, -12.03697681427002]}
+{"attr": "dog", "X": "Biscuit", "Y": "Pepper", "target_index": 59, "variant": "heads_short", "C_X": [-14.445775985717773, -15.210247993469238], "C_Y": [-14.253005981445312, -15.359001159667969]}
+{"attr": "dog", "X": "Biscuit", "Y": "Pepper", "target_index": 59, "variant": "scale_0.5", "C_X": [-11.887231826782227, -13.388882637023926], "C_Y": [-11.825305938720703, -13.36192512512207]}
+{"attr": "dog", "X": "Biscuit", "Y": "Pepper", "target_index": 59, "variant": "scale_2.0", "C_X": [-8.283869743347168, -8.84506607055664], "C_Y": [-7.394523620605469, -8.327811241149902]}
+{"attr": "dog", "X": "Biscuit", "Y": "Pepper", "target_index": 59, "variant": "scale_4.0", "C_X": [-6.8816351890563965, -8.03356647491455], "C_Y": [-6.671134948730469, -7.439921855926514]}
+{"attr": "dog", "X": "Juniper", "Y": "Waffles", "target_index": 0, "variant": "full", "C_X": [-15.175220489501953, -13.570213317871094], "C_Y": [-15.556600570678711, -13.594079971313477]}
+{"attr": "dog", "X": "Juniper", "Y": "Waffles", "target_index": 0, "variant": "band_early", "C_X": [-16.347679138183594, -14.331348419189453], "C_Y": [-16.429672241210938, -14.39862060546875]}
+{"attr": "dog", "X": "Juniper", "Y": "Waffles", "target_index": 0, "variant": "band_mid", "C_X": [-17.644012451171875, -17.116622924804688], "C_Y": [-17.58318328857422, -17.036466598510742]}
+{"attr": "dog", "X": "Juniper", "Y": "Waffles", "target_index": 0, "variant": "band_late", "C_X": [-17.54623031616211, -17.07950210571289], "C_Y": [-17.773340225219727, -16.74109649658203]}
+{"attr": "dog", "X": "Juniper", "Y": "Waffles", "target_index": 0, "variant": "heads_long", "C_X": [-15.667335510253906, -14.06334400177002], "C_Y": [-15.856416702270508, -14.122637748718262]}
+{"attr": "dog", "X": "Juniper", "Y": "Waffles", "target_index": 0, "variant": "heads_short", "C_X": [-17.869110107421875, -17.07651138305664], "C_Y": [-17.901065826416016, -16.86441993713379]}
+{"attr": "dog", "X": "Juniper", "Y": "Waffles", "target_index": 0, "variant": "scale_0.5", "C_X": [-16.63327980041504, -14.822473526000977], "C_Y": [-16.662521362304688, -14.979191780090332]}
+{"attr": "dog", "X": "Juniper", "Y": "Waffles", "target_index": 0, "variant": "scale_2.0", "C_X": [-11.589427947998047, -9.280658721923828], "C_Y": [-12.197093963623047, -9.036800384521484]}
+{"attr": "dog", "X": "Juniper", "Y": "Waffles", "target_index": 0, "variant": "scale_4.0", "C_X": [-11.730873107910156, -9.102354049682617], "C_Y": [-12.382089614868164, -7.531744956970215]}
+{"attr": "dog", "X": "Juniper", "Y": "Waffles", "target_index": 1, "variant": "full", "C_X": [-15.28070068359375, -13.55556869506836], "C_Y": [-15.49124526977539, -13.650227546691895]}
+{"attr": "dog", "X": "Juniper", "Y": "Waffles", "target_index": 2, "variant": "full", "C_X": [-15.243074417114258, -13.51690673828125], "C_Y": [-15.504682540893555, -13.556175231933594]}
+{"attr": "dog", "X": "Juniper", "Y": "Waffles", "target_index": 4, "variant": "full", "C_X": [-15.446605682373047, -13.479361534118652], "C_Y": [-15.379807472229004, -13.5470552444458]}
+{"attr": "dog", "X": "Juniper", "Y": "Waffles", "target_index": 8, "variant": "full", "C_X": [-15.45068645477295, -13.4668607711792], "C_Y": [-15.368207931518555, -13.455782890319824]}
+{"attr": "dog", "X": "Juniper", "Y": "Waffles", "target_index": 51, "variant": "full", "C_X": [-15.602699279785156, -13.512002944946289], "C_Y": [-15.546465873718262, -13.655153274536133]}
+{"attr": "dog", "X": "Juniper", "Y": "Waffles", "target_index": 55, "variant": "full", "C_X": [-15.527692794799805, -13.640653610229492], "C_Y": [-15.708768844604492, -13.682537078857422]}
+{"attr": "dog", "X": "Juniper", "Y": "Waffles", "target_index": 57, "variant": "full", "C_X": [-15.64981460571289, -13.644244194030762], "C_Y": [-15.80013370513916, -13.834543228149414]}
+{"attr": "dog", "X": "Juniper", "Y": "Waffles", "target_index": 58, "variant": "full", "C_X": [-15.656525611877441, -13.633110046386719], "C_Y": [-15.687971115112305, -13.836491584777832]}
+{"attr": "dog", "X": "Juniper", "Y": "Waffles", "target_index": 59, "variant": "full", "C_X": [-15.849228858947754, -13.690401077270508], "C_Y": [-15.78327751159668, -13.856427192687988]}
+{"attr": "dog", "X": "Juniper", "Y": "Waffles", "target_index": 59, "variant": "band_early", "C_X": [-16.646533966064453, -14.532014846801758], "C_Y": [-16.317834854125977, -14.592859268188477]}
+{"attr": "dog", "X": "Juniper", "Y": "Waffles", "target_index": 59, "variant": "band_mid", "C_X": [-17.746925354003906, -17.021806716918945], "C_Y": [-17.70095443725586, -17.083908081054688]}
+{"attr": "dog", "X": "Juniper", "Y": "Waffles", "target_index": 59, "variant": "band_late", "C_X": [-18.02316665649414, -17.029499053955078], "C_Y": [-17.92913055419922, -17.14202880859375]}
+{"attr": "dog", "X": "Juniper", "Y": "Waffles", "target_index": 59, "variant": "heads_long", "C_X": [-15.773414611816406, -13.908000946044922], "C_Y": [-15.847503662109375, -13.882341384887695]}
+{"attr": "dog", "X": "Juniper", "Y": "Waffles", "target_index": 59, "variant": "heads_short", "C_X": [-18.146474838256836, -17.01699447631836], "C_Y": [-18.085960388183594, -17.21176528930664]}
+{"attr": "dog", "X": "Juniper", "Y": "Waffles", "target_index": 59, "variant": "scale_0.5", "C_X": [-16.901737213134766, -14.99744701385498], "C_Y": [-16.494821548461914, -14.899003982543945]}
+{"attr": "dog", "X": "Juniper", "Y": "Waffles", "target_index": 59, "variant": "scale_2.0", "C_X": [-12.234079360961914, -8.961921691894531], "C_Y": [-12.36255931854248, -8.920944213867188]}
+{"attr": "dog", "X": "Juniper", "Y": "Waffles", "target_index": 59, "variant": "scale_4.0", "C_X": [-13.325090408325195, -8.662482261657715], "C_Y": [-12.688750267028809, -8.942240715026855]}
+{"attr": "city", "X": "Lisbon", "Y": "Denver", "target_index": 0, "variant": "full", "C_X": [-6.95220422744751, -10.952203750610352], "C_Y": [-10.105830192565918, -8.543330192565918]}
+{"attr": "city", "X": "Lisbon", "Y": "Denver", "target_index": 0, "variant": "band_early", "C_X": [-9.891342163085938, -10.516342163085938], "C_Y": [-9.923912048339844, -10.548912048339844]}
+{"attr": "city", "X": "Lisbon", "Y": "Denver", "target_index": 0, "variant": "band_mid", "C_X": [-9.611722946166992, -10.049222946166992], "C_Y": [-9.925921440124512, -9.800921440124512]}
+{"attr": "city", "X": "Lisbon", "Y": "Denver", "target_index": 0, "variant": "band_late", "C_X": [-6.782078742980957, -10.782078742980957], "C_Y": [-9.778512954711914, -8.466012954711914]}
+{"attr": "city", "X": "Lisbon", "Y": "Denver", "target_index": 0, "variant": "heads_long", "C_X": [-7.414041996002197, -11.289042472839355], "C_Y": [-10.537949562072754, -9.225449562072754]}
+{"attr": "city", "X": "Lisbon", "Y": "Denver", "target_index": 0, "variant": "heads_short", "C_X": [-9.296053886413574, -10.108553886413574], "C_Y": [-9.641996383666992, -9.829496383666992]}
+{"attr": "city", "X": "Lisbon", "Y": "Denver", "target_index": 0, "variant": "scale_0.5", "C_X": [-8.615757942199707, -11.053257942199707], "C_Y": [-10.477438926696777, -9.664938926696777]}
+{"attr": "city", "X": "Lisbon", "Y": "Denver", "target_index": 0, "variant": "scale_2.0", "C_X": [-5.213222980499268, -10.96322250366211], "C_Y": [-9.853666305541992, -7.60366678237915]}
+{"attr": "city", "X": "Lisbon", "Y": "Denver", "target_index": 0, "variant": "scale_4.0", "C_X": [-2.624516487121582, -8.812016487121582], "C_Y": [-7.747495651245117, -5.059995651245117]}
+{"attr": "city", "X": "Lisbon", "Y": "Denver", "target_index": 1, "variant": "full", "C_X": [-7.079050540924072, -10.891550064086914], "C_Y": [-9.92296314239502, -8.67296314239502]}
+{"attr": "city", "X": "Lisbon", "Y": "Denver", "target_index": 2, "variant": "full", "C_X": [-6.864243507385254, -10.739243507385254], "C_Y": [-9.861629486083984, -8.549129486083984]}
+{"attr": "city", "X": "Lisbon", "Y": "Denver", "target_index": 4, "variant": "full", "C_X": [-7.210788249969482, -10.710787773132324], "C_Y": [-9.770484924316406, -8.895484924316406]}
+{"attr": "city", "X": "Lisbon", "Y": "Denver", "target_index": 8, "variant": "full", "C_X": [-7.525842189788818, -10.713342666625977], "C_Y": [-9.735527038574219, -8.923027038574219]}
+{"attr": "city", "X": "Lisbon", "Y": "Denver", "target_index": 51, "variant": "full", "C_X": [-7.962272644042969, -10.587272644042969], "C_Y": [-9.671387672424316, -9.296387672424316]}
+{"attr": "city", "X": "Lisbon", "Y": "Denver", "target_index": 55, "variant": "full", "C_X": [-7.921278953552246, -10.608778953552246], "C_Y": [-9.698559761047363, -9.198559761047363]}
+{"attr": "city", "X": "Lisbon", "Y": "Denver", "target_index": 57, "variant": "full", "C_X": [-7.920670509338379, -10.608170509338379], "C_Y": [-9.791332244873047, -9.291332244873047]}
+{"attr": "city", "X": "Lisbon", "Y": "Denver", "target_index": 58, "variant": "full", "C_X": [-7.983722686767578, -10.546222686767578], "C_Y": [-9.917922019958496, -9.230422019958496]}
+{"attr": "city", "X": "Lisbon", "Y": "Denver", "target_index": 59, "variant": "full", "C_X": [-7.8610358238220215, -10.54853630065918], "C_Y": [-9.855039596557617, -9.105039596557617]}
+{"attr": "city", "X": "Lisbon", "Y": "Denver", "target_index": 59, "variant": "band_early", "C_X": [-9.98604679107666, -10.61104679107666], "C_Y": [-9.899991989135742, -10.462491989135742]}
+{"attr": "city", "X": "Lisbon", "Y": "Denver", "target_index": 59, "variant": "band_mid", "C_X": [-9.76887321472168, -10.14387321472168], "C_Y": [-9.982998847961426, -10.045498847961426]}
+{"attr": "city", "X": "Lisbon", "Y": "Denver", "target_index": 59, "variant": "band_late", "C_X": [-7.783746719360352, -10.471246719360352], "C_Y": [-9.56279468536377, -9.12529468536377]}
+{"attr": "city", "X": "Lisbon", "Y": "Denver", "target_index": 59, "variant": "heads_long", "C_X": [-8.423720359802246, -11.048720359802246], "C_Y": [-10.188485145568848, -9.875985145568848]}
+{"attr": "city", "X": "Lisbon", "Y": "Denver", "target_index": 59, "variant": "heads_short", "C_X": [-9.63265609741211, -10.19515609741211], "C_Y": [-9.728874206542969, -10.103874206542969]}
+{"attr": "city", "X": "Lisbon", "Y": "Denver", "target_index": 59, "variant": "scale_0.5", "C_X": [-9.267629623413086, -10.892629623413086], "C_Y": [-10.357365608215332, -10.169865608215332]}
+{"attr": "city", "X": "Lisbon", "Y": "Denver", "target_index": 59, "variant": "scale_2.0", "C_X": [-5.729665756225586, -10.854665756225586], "C_Y": [-10.170238494873047, -8.232738494873047]}
+{"attr": "city", "X": "Lisbon", "Y": "Denver", "target_index": 59, "variant": "scale_4.0", "C_X": [-2.252274513244629, -8.814774513244629], "C_Y": [-7.867105960845947, -4.429605960845947]}
+{"attr": "city", "X": "Osaka", "Y": "Tallinn", "target_index": 0, "variant": "full", "C_X": [-8.301721572875977, -12.608970642089844], "C_Y": [-11.62519359588623, -10.011143684387207]}
+{"attr": "city", "X": "Osaka", "Y": "Tallinn", "target_index": 0, "variant": "band_early", "C_X": [-10.685367584228516, -12.43038272857666], "C_Y": [-10.778928756713867, -12.434764862060547]}
+{"attr": "city", "X": "Osaka", "Y": "Tallinn", "target_index": 0, "variant": "band_mid", "C_X": [-9.678339958190918, -12.128409385681152], "C_Y": [-9.898924827575684, -11.891031265258789]}
+{"attr": "city", "X": "Osaka", "Y": "Tallinn", "target_index": 0, "variant": "band_late", "C_X": [-8.255566596984863, -12.526143074035645], "C_Y": [-10.55876350402832, -10.570022583007812]}
+{"attr": "city", "X": "Osaka", "Y": "Tallinn", "target_index": 0, "variant": "heads_long", "C_X": [-9.458049774169922, -12.760698318481445], "C_Y": [-11.542182922363281, -11.369340896606445]}
+{"attr": "city", "X": "Osaka", "Y": "Tallinn", "target_index": 0, "variant": "heads_short", "C_X": [-9.51661491394043, -12.519521713256836], "C_Y": [-10.202110290527344, -11.766592025756836]}
+{"attr": "city", "X": "Osaka", "Y": "Tallinn", "target_index": 0, "variant": "scale_0.5", "C_X": [-9.894871711730957, -13.141305923461914], "C_Y": [-11.4159574508667, -11.95046329498291]}
+{"attr": "city", "X": "Osaka", "Y": "Tallinn", "target_index": 0, "variant": "scale_2.0", "C_X": [-7.508604526519775, -11.821747779846191], "C_Y": [-12.067687034606934, -7.268637657165527]}
+{"attr": "city", "X": "Osaka", "Y": "Tallinn", "target_index": 0, "variant": "scale_4.0", "C_X": [-4.525210380554199, -10.252347946166992], "C_Y": [-10.539630889892578, -4.480227470397949]}
+{"attr": "city", "X": "Osaka", "Y": "Tallinn", "target_index": 1, "variant": "full", "C_X": [-7.911722183227539, -12.652274131774902], "C_Y": [-11.446929931640625, -10.269840240478516]}
+{"attr": "city", "X": "Osaka", "Y": "Tallinn", "target_index": 2, "variant": "full", "C_X": [-8.115857124328613, -12.73204517364502], "C_Y": [-11.402898788452148, -10.28954792022705]}
+{"attr": "city", "X": "Osaka", "Y": "Tallinn", "target_index": 4, "variant": "full", "C_X": [-8.462297439575195, -12.579484939575195], "C_Y": [-11.311005592346191, -10.573347091674805]}
+{"attr": "city", "X": "Osaka", "Y": "Tallinn", "target_index": 8, "variant": "full", "C_X": [-8.595792770385742, -12.588672637939453], "C_Y": [-11.211421966552734, -10.66154670715332]}
+{"attr": "city", "X": "Osaka", "Y": "Tallinn", "target_index": 51, "variant": "full", "C_X": [-8.96479320526123, -12.521909713745117], "C_Y": [-11.250657081604004, -10.892078399658203]}
+{"attr": "city", "X": "Osaka", "Y": "Tallinn", "target_index": 55, "variant": "full", "C_X": [-9.338115692138672, -12.394826889038086], "C_Y": [-11.294836044311523, -11.247003555297852]}
+{"attr": "city", "X": "Osaka", "Y": "Tallinn", "target_index": 57, "variant": "full", "C_X": [-9.440046310424805, -12.558248519897461], "C_Y": [-11.295934677124023, -11.248473167419434]}
+{"attr": "city", "X": "Osaka", "Y": "Tallinn", "target_index": 58, "variant": "full", "C_X": [-9.337993621826172, -12.455832481384277], "C_Y": [-11.331405639648438, -11.281932830810547]}
+{"attr": "city", "X": "Osaka", "Y": "Tallinn", "target_index": 59, "variant": "full", "C_X": [-9.83173942565918, -12.568379402160645], "C_Y": [-11.357132911682129, -11.492731094360352]}
+{"attr": "city", "X": "Osaka", "Y": "Tallinn", "target_index": 59, "variant": "band_early", "C_X": [-10.896315574645996, -12.64814567565918], "C_Y": [-10.878045082092285, -12.591856956481934]}
+{"attr": "city", "X": "Osaka", "Y": "Tallinn", "target_index": 59, "variant": "band_mid", "C_X": [-9.931699752807617, -12.136728286743164], "C_Y": [-10.024877548217773, -12.018729209899902]}
+{"attr": "city", "X": "Osaka", "Y": "Tallinn", "target_index": 59, "variant": "band_late", "C_X": [-8.941869735717773, -12.462485313415527], "C_Y": [-10.242094039916992, -11.565808296203613]}
+{"attr": "city", "X": "Osaka", "Y": "Tallinn", "target_index": 59, "variant": "heads_long", "C_X": [-10.407014846801758, -12.590453147888184], "C_Y": [-11.403932571411133, -11.980831146240234]}
+{"attr": "city", "X": "Osaka", "Y": "Tallinn", "target_index": 59, "variant": "heads_short", "C_X": [-9.69973373413086, -12.639242172241211], "C_Y": [-10.200912475585938, -12.320796012878418]}
+{"attr": "city", "X": "Osaka", "Y": "Tallinn", "target_index": 59, "variant": "scale_0.5", "C_X": [-10.555508613586426, -12.983133316040039], "C_Y": [-11.351806640625, -12.63611888885498]}
+{"attr": "city", "X": "Osaka", "Y": "Tallinn", "target_index": 59, "variant": "scale_2.0", "C_X": [-8.54980754852295, -12.526009559631348], "C_Y": [-12.341805458068848, -8.35180950164795]}
+{"attr": "city", "X": "Osaka", "Y": "Tallinn", "target_index": 59, "variant": "scale_4.0", "C_X": [-5.132516384124756, -10.130667686462402], "C_Y": [-10.690728187561035, -3.8701720237731934]}
+{"attr": "employer", "X": "Brightwell Labs", "Y": "Northgate Freight", "target_index": 0, "variant": "full", "C_X": [-27.709102630615234, -24.11160659790039], "C_Y": [-28.220428466796875, -22.137542724609375]}
+{"attr": "employer", "X": "Brightwell Labs", "Y": "Northgate Freight", "target_index": 0, "variant": "band_early", "C_X": [-29.542749404907227, -24.942638397216797], "C_Y": [-28.883275985717773, -24.89688491821289]}
+{"attr": "employer", "X": "Brightwell Labs", "Y": "Northgate Freight", "target_index": 0, "variant": "band_mid", "C_X": [-27.94510269165039, -24.845516204833984], "C_Y": [-27.876399993896484, -24.802188873291016]}
+{"attr": "employer", "X": "Brightwell Labs", "Y": "Northgate Freight", "target_index": 0, "variant": "band_late", "C_X": [-27.116674423217773, -25.07872200012207], "C_Y": [-28.325843811035156, -23.00102996826172]}
+{"attr": "employer", "X": "Brightwell Labs", "Y": "Northgate Freight", "target_index": 0, "variant": "heads_long", "C_X": [-28.330883026123047, -24.948684692382812], "C_Y": [-28.334285736083984, -23.229290008544922]}
+{"attr": "employer", "X": "Brightwell Labs", "Y": "Northgate Freight", "target_index": 0, "variant": "heads_short", "C_X": [-27.679840087890625, -25.04377555847168], "C_Y": [-28.719894409179688, -24.67708969116211]}
+{"attr": "employer", "X": "Brightwell Labs", "Y": "Northgate Freight", "target_index": 0, "variant": "scale_0.5", "C_X": [-28.827369689941406, -25.640933990478516], "C_Y": [-29.520742416381836, -24.26596450805664]}
+{"attr": "employer", "X": "Brightwell Labs", "Y": "Northgate Freight", "target_index": 0, "variant": "scale_2.0", "C_X": [-23.625730514526367, -22.764930725097656], "C_Y": [-27.647022247314453, -18.51368522644043]}
+{"attr": "employer", "X": "Brightwell Labs", "Y": "Northgate Freight", "target_index": 0, "variant": "scale_4.0", "C_X": [-22.211090087890625, -26.152742385864258], "C_Y": [-25.689281463623047, -24.630016326904297]}
+{"attr": "employer", "X": "Brightwell Labs", "Y": "Northgate Freight", "target_index": 1, "variant": "full", "C_X": [-28.291934967041016, -24.323652267456055], "C_Y": [-28.528079986572266, -22.993345260620117]}
+{"attr": "employer", "X": "Brightwell Labs", "Y": "Northgate Freight", "target_index": 2, "variant": "full", "C_X": [-28.4443302154541, -24.449020385742188], "C_Y": [-28.539569854736328, -23.171546936035156]}
+{"attr": "employer", "X": "Brightwell Labs", "Y": "Northgate Freight", "target_index": 4, "variant": "full", "C_X": [-28.56355094909668, -24.50142478942871], "C_Y": [-28.27846908569336, -23.225784301757812]}
+{"attr": "employer", "X": "Brightwell Labs", "Y": "Northgate Freight", "target_index": 8, "variant": "full", "C_X": [-28.361474990844727, -24.454158782958984], "C_Y": [-28.502552032470703, -23.345783233642578]}
+{"attr": "employer", "X": "Brightwell Labs", "Y": "Northgate Freight", "target_index": 51, "variant": "full", "C_X": [-28.874496459960938, -24.735225677490234], "C_Y": [-28.695270538330078, -23.659175872802734]}
+{"attr": "employer", "X": "Brightwell Labs", "Y": "Northgate Freight", "target_index": 55, "variant": "full", "C_X": [-28.956106185913086, -24.573585510253906], "C_Y": [-28.550098419189453, -23.660837173461914]}
+{"attr": "employer", "X": "Brightwell Labs", "Y": "Northgate Freight", "target_index": 57, "variant": "full", "C_X": [-29.372310638427734, -24.92335319519043], "C_Y": [-28.682239532470703, -23.769554138183594]}
+{"attr": "employer", "X": "Brightwell Labs", "Y": "Northgate Freight", "target_index": 58, "variant": "full", "C_X": [-29.16368865966797, -24.577144622802734], "C_Y": [-28.91433334350586, -23.590055465698242]}
+{"attr": "employer", "X": "Brightwell Labs", "Y": "Northgate Freight", "target_index": 59, "variant": "full", "C_X": [-29.121368408203125, -24.717121124267578], "C_Y": [-28.726961135864258, -23.469772338867188]}
+{"attr": "employer", "X": "Brightwell Labs", "Y": "Northgate Freight", "target_index": 59, "variant": "band_early", "C_X": [-29.694780349731445, -25.025150299072266], "C_Y": [-29.004419326782227, -24.97443389892578]}
+{"attr": "employer", "X": "Brightwell Labs", "Y": "Northgate Freight", "target_index": 59, "variant": "band_mid", "C_X": [-27.928077697753906, -25.06367301940918], "C_Y": [-27.963302612304688, -24.823474884033203]}
+{"attr": "employer", "X": "Brightwell Labs", "Y": "Northgate Freight", "target_index": 59, "variant": "band_late", "C_X": [-28.17659568786621, -25.278512954711914], "C_Y": [-28.48484230041504, -24.013809204101562]}
+{"attr": "employer", "X": "Brightwell Labs", "Y": "Northgate Freight", "target_index": 59, "variant": "heads_long", "C_X": [-29.06568717956543, -25.159534454345703], "C_Y": [-28.726356506347656, -24.29462432861328]}
+{"attr": "employer", "X": "Brightwell Labs", "Y": "Northgate Freight", "target_index": 59, "variant": "heads_short", "C_X": [-28.58254623413086, -24.836441040039062], "C_Y": [-28.524398803710938, -24.57955551147461]}
+{"attr": "employer", "X": "Brightwell Labs", "Y": "Northgate Freight", "target_index": 59, "variant": "scale_0.5", "C_X": [-29.792057037353516, -25.707149505615234], "C_Y": [-29.79582977294922, -24.97518539428711]}
+{"attr": "employer", "X": "Brightwell Labs", "Y": "Northgate Freight", "target_index": 59, "variant": "scale_2.0", "C_X": [-26.590801239013672, -22.9456787109375], "C_Y": [-27.235397338867188, -20.874874114990234]}
+{"attr": "employer", "X": "Brightwell Labs", "Y": "Northgate Freight", "target_index": 59, "variant": "scale_4.0", "C_X": [-23.88971710205078, -25.168317794799805], "C_Y": [-27.08582878112793, -23.202621459960938]}
+{"attr": "employer", "X": "Kestrel Bank", "Y": "Ostrander Foods", "target_index": 0, "variant": "full", "C_X": [-25.358251571655273, -29.446243286132812], "C_Y": [-27.784408569335938, -29.190258026123047]}
+{"attr": "employer", "X": "Kestrel Bank", "Y": "Ostrander Foods", "target_index": 0, "variant": "band_early", "C_X": [-29.265674591064453, -31.35158920288086], "C_Y": [-29.875110626220703, -32.27806854248047]}
+{"attr": "employer", "X": "Kestrel Bank", "Y": "Ostrander Foods", "target_index": 0, "variant": "band_mid", "C_X": [-29.285518646240234, -30.608322143554688], "C_Y": [-29.224584579467773, -30.492399215698242]}
+{"attr": "employer", "X": "Kestrel Bank", "Y": "Ostrander Foods", "target_index": 0, "variant": "band_late", "C_X": [-28.03652572631836, -29.906742095947266], "C_Y": [-29.498058319091797, -28.89737319946289]}
+{"attr": "employer", "X": "Kestrel Bank", "Y": "Ostrander Foods", "target_index": 0, "variant": "heads_long", "C_X": [-27.11621856689453, -30.407764434814453], "C_Y": [-28.21971893310547, -30.684009552001953]}
+{"attr": "employer", "X": "Kestrel Bank", "Y": "Ostrander Foods", "target_index": 0, "variant": "heads_short", "C_X": [-29.24816131591797, -30.96342658996582], "C_Y": [-30.10511589050293, -30.224075317382812]}
+{"attr": "employer", "X": "Kestrel Bank", "Y": "Ostrander Foods", "target_index": 0, "variant": "scale_0.5", "C_X": [-29.49726676940918, -31.421539306640625], "C_Y": [-30.293975830078125, -30.943431854248047]}
+{"attr": "employer", "X": "Kestrel Bank", "Y": "Ostrander Foods", "target_index": 0, "variant": "scale_2.0", "C_X": [-19.499414443969727, -23.44044303894043], "C_Y": [-22.563812255859375, -24.57362937927246]}
+{"attr": "employer", "X": "Kestrel Bank", "Y": "Ostrander Foods", "target_index": 0, "variant": "scale_4.0", "C_X": [-21.822280883789062, -25.361164093017578], "C_Y": [-23.762195587158203, -27.4102725982666]}
+{"attr": "employer", "X": "Kestrel Bank", "Y": "Ostrander Foods", "target_index": 1, "variant": "full", "C_X": [-26.19031524658203, -29.414134979248047], "C_Y": [-27.89818572998047, -29.932083129882812]}
+{"attr": "employer", "X": "Kestrel Bank", "Y": "Ostrander Foods", "target_index": 2, "variant": "full", "C_X": [-26.32811737060547, -29.281694412231445], "C_Y": [-27.635038375854492, -29.650604248046875]}
+{"attr": "employer", "X": "Kestrel Bank", "Y": "Ostrander Foods", "target_index": 4, "variant": "full", "C_X": [-26.43598175048828, -29.063064575195312], "C_Y": [-27.634872436523438, -29.489389419555664]}
+{"attr": "employer", "X": "Kestrel Bank", "Y": "Ostrander Foods", "target_index": 8, "variant": "full", "C_X": [-26.587814331054688, -29.181800842285156], "C_Y": [-27.801532745361328, -29.76849937438965]}
+{"attr": "employer", "X": "Kestrel Bank", "Y": "Ostrander Foods", "target_index": 51, "variant": "full", "C_X": [-26.617816925048828, -29.378009796142578], "C_Y": [-27.912677764892578, -29.837688446044922]}
+{"attr": "employer", "X": "Kestrel Bank", "Y": "Ostrander Foods", "target_index": 55, "variant": "full", "C_X": [-26.788047790527344, -29.51618766784668], "C_Y": [-27.982627868652344, -29.711986541748047]}
+{"attr": "employer", "X": "Kestrel Bank", "Y": "Ostrander Foods", "target_index": 57, "variant": "full", "C_X": [-26.623001098632812, -29.55325698852539], "C_Y": [-27.764270782470703, -29.808021545410156]}
+{"attr": "employer", "X": "Kestrel Bank", "Y": "Ostrander Foods", "target_index": 58, "variant": "full", "C_X": [-26.497528076171875, -29.610504150390625], "C_Y": [-27.6768798828125, -29.820100784301758]}
+{"attr": "employer", "X": "Kestrel Bank", "Y": "Ostrander Foods", "target_index": 59, "variant": "full", "C_X": [-26.676929473876953, -29.147897720336914], "C_Y": [-27.6748046875, -29.92308235168457]}
+{"attr": "employer", "X": "Kestrel Bank", "Y": "Ostrander Foods", "target_index": 59, "variant": "band_early", "C_X": [-28.908309936523438, -31.263381958007812], "C_Y": [-29.646167755126953, -31.780899047851562]}
+{"attr": "employer", "X": "Kestrel Bank", "Y": "Ostrander Foods", "target_index": 59, "variant": "band_mid", "C_X": [-29.521060943603516, -30.969932556152344], "C_Y": [-29.23919677734375, -30.705833435058594]}
+{"attr": "employer", "X": "Kestrel Bank", "Y": "Ostrander Foods", "target_index": 59, "variant": "band_late", "C_X": [-29.48400115966797, -29.931652069091797], "C_Y": [-29.629806518554688, -29.940479278564453]}
+{"attr": "employer", "X": "Kestrel Bank", "Y": "Ostrander Foods", "target_index": 59, "variant": "heads_long", "C_X": [-27.350276947021484, -30.390361785888672], "C_Y": [-27.933406829833984, -30.581844329833984]}
+{"attr": "employer", "X": "Kestrel Bank", "Y": "Ostrander Foods", "target_index": 59, "variant": "heads_short", "C_X": [-29.891450881958008, -30.814266204833984], "C_Y": [-30.021717071533203, -31.099674224853516]}
+{"attr": "employer", "X": "Kestrel Bank", "Y": "Ostrander Foods", "target_index": 59, "variant": "scale_0.5", "C_X": [-29.714927673339844, -31.097383499145508], "C_Y": [-30.153955459594727, -31.59762191772461]}
+{"attr": "employer", "X": "Kestrel Bank", "Y": "Ostrander Foods", "target_index": 59, "variant": "scale_2.0", "C_X": [-21.604476928710938, -23.78664779663086], "C_Y": [-22.867225646972656, -26.3107967376709]}
+{"attr": "employer", "X": "Kestrel Bank", "Y": "Ostrander Foods", "target_index": 59, "variant": "scale_4.0", "C_X": [-24.705814361572266, -26.42974090576172], "C_Y": [-23.958833694458008, -28.23180389404297]}
+{"attr": "cuisine", "X": "Ethiopian", "Y": "Peruvian", "target_index": 0, "variant": "full", "C_X": [-13.068656921386719, -17.670061111450195], "C_Y": [-14.55784797668457, -17.15187644958496]}
+{"attr": "cuisine", "X": "Ethiopian", "Y": "Peruvian", "target_index": 0, "variant": "band_early", "C_X": [-15.694171905517578, -19.237756729125977], "C_Y": [-15.658514022827148, -19.217256546020508]}
+{"attr": "cuisine", "X": "Ethiopian", "Y": "Peruvian", "target_index": 0, "variant": "band_mid", "C_X": [-15.800825119018555, -19.418838500976562], "C_Y": [-15.84404182434082, -19.46171760559082]}
+{"attr": "cuisine", "X": "Ethiopian", "Y": "Peruvian", "target_index": 0, "variant": "band_late", "C_X": [-14.82237434387207, -19.858850479125977], "C_Y": [-15.947587013244629, -19.327747344970703]}
+{"attr": "cuisine", "X": "Ethiopian", "Y": "Peruvian", "target_index": 0, "variant": "heads_long", "C_X": [-13.812553405761719, -18.392736434936523], "C_Y": [-14.853561401367188, -18.178476333618164]}
+{"attr": "cuisine", "X": "Ethiopian", "Y": "Peruvian", "target_index": 0, "variant": "heads_short", "C_X": [-16.266088485717773, -19.81964111328125], "C_Y": [-16.376537322998047, -19.492494583129883]}
+{"attr": "cuisine", "X": "Ethiopian", "Y": "Peruvian", "target_index": 0, "variant": "scale_0.5", "C_X": [-14.479560852050781, -18.616262435913086], "C_Y": [-15.163345336914062, -18.45368003845215]}
+{"attr": "cuisine", "X": "Ethiopian", "Y": "Peruvian", "target_index": 0, "variant": "scale_2.0", "C_X": [-6.430070877075195, -11.191421508789062], "C_Y": [-9.74931812286377, -8.444351196289062]}
+{"attr": "cuisine", "X": "Ethiopian", "Y": "Peruvian", "target_index": 0, "variant": "scale_4.0", "C_X": [-3.839266300201416, -7.928952217102051], "C_Y": [-7.687901020050049, -5.198581218719482]}
+{"attr": "cuisine", "X": "Ethiopian", "Y": "Peruvian", "target_index": 1, "variant": "full", "C_X": [-13.583849906921387, -17.905155181884766], "C_Y": [-14.522283554077148, -17.258777618408203]}
+{"attr": "cuisine", "X": "Ethiopian", "Y": "Peruvian", "target_index": 2, "variant": "full", "C_X": [-13.678476333618164, -17.905981063842773], "C_Y": [-14.709673881530762, -17.32160758972168]}
+{"attr": "cuisine", "X": "Ethiopian", "Y": "Peruvian", "target_index": 4, "variant": "full", "C_X": [-13.621021270751953, -17.89632797241211], "C_Y": [-14.57909107208252, -17.47177505493164]}
+{"attr": "cuisine", "X": "Ethiopian", "Y": "Peruvian", "target_index": 8, "variant": "full", "C_X": [-13.854259490966797, -17.879074096679688], "C_Y": [-14.712272644042969, -17.685346603393555]}
+{"attr": "cuisine", "X": "Ethiopian", "Y": "Peruvian", "target_index": 51, "variant": "full", "C_X": [-14.292370796203613, -17.801958084106445], "C_Y": [-14.54534912109375, -17.719539642333984]}
+{"attr": "cuisine", "X": "Ethiopian", "Y": "Peruvian", "target_index": 55, "variant": "full", "C_X": [-14.345877647399902, -17.80887794494629], "C_Y": [-14.551106452941895, -17.755107879638672]}
+{"attr": "cuisine", "X": "Ethiopian", "Y": "Peruvian", "target_index": 57, "variant": "full", "C_X": [-14.265295028686523, -17.71261978149414], "C_Y": [-14.561934471130371, -17.78095817565918]}
+{"attr": "cuisine", "X": "Ethiopian", "Y": "Peruvian", "target_index": 58, "variant": "full", "C_X": [-14.183537483215332, -17.70726776123047], "C_Y": [-14.390108108520508, -17.578147888183594]}
+{"attr": "cuisine", "X": "Ethiopian", "Y": "Peruvian", "target_index": 59, "variant": "full", "C_X": [-14.273938179016113, -17.625194549560547], "C_Y": [-14.350052833557129, -17.42951774597168]}
+{"attr": "cuisine", "X": "Ethiopian", "Y": "Peruvian", "target_index": 59, "variant": "band_early", "C_X": [-15.48949909210205, -19.17411994934082], "C_Y": [-15.508960723876953, -19.12717628479004]}
+{"attr": "cuisine", "X": "Ethiopian", "Y": "Peruvian", "target_index": 59, "variant": "band_mid", "C_X": [-15.868003845214844, -19.454347610473633], "C_Y": [-15.850031852722168, -19.45124626159668]}
+{"attr": "cuisine", "X": "Ethiopian", "Y": "Peruvian", "target_index": 59, "variant": "band_late", "C_X": [-15.841903686523438, -19.777408599853516], "C_Y": [-16.059993743896484, -19.76898765563965]}
+{"attr": "cuisine", "X": "Ethiopian", "Y": "Peruvian", "target_index": 59, "variant": "heads_long", "C_X": [-14.493480682373047, -18.182523727416992], "C_Y": [-14.902053833007812, -18.242229461669922]}
+{"attr": "cuisine", "X": "Ethiopian", "Y": "Peruvian", "target_index": 59, "variant": "heads_short", "C_X": [-16.387880325317383, -19.83917808532715], "C_Y": [-16.464767456054688, -19.900341033935547]}
+{"attr": "cuisine", "X": "Ethiopian", "Y": "Peruvian", "target_index": 59, "variant": "scale_0.5", "C_X": [-15.304300308227539, -18.847225189208984], "C_Y": [-15.366560935974121, -18.78213119506836]}
+{"attr": "cuisine", "X": "Ethiopian", "Y": "Peruvian", "target_index": 59, "variant": "scale_2.0", "C_X": [-8.258744239807129, -10.702681541442871], "C_Y": [-9.175605773925781, -11.402423858642578]}
+{"attr": "cuisine", "X": "Ethiopian", "Y": "Peruvian", "target_index": 59, "variant": "scale_4.0", "C_X": [-5.80515718460083, -8.94996452331543], "C_Y": [-7.942692756652832, -7.889303684234619]}
+{"attr": "cuisine", "X": "Georgian", "Y": "Sichuan", "target_index": 0, "variant": "full", "C_X": [-14.739208221435547, -19.445037841796875], "C_Y": [-16.619354248046875, -18.043745040893555]}
+{"attr": "cuisine", "X": "Georgian", "Y": "Sichuan", "target_index": 0, "variant": "band_early", "C_X": [-17.35218048095703, -20.677888870239258], "C_Y": [-17.18307113647461, -20.44229507446289]}
+{"attr": "cuisine", "X": "Georgian", "Y": "Sichuan", "target_index": 0, "variant": "band_mid", "C_X": [-17.772321701049805, -19.937265396118164], "C_Y": [-17.80988883972168, -19.99828338623047]}
+{"attr": "cuisine", "X": "Georgian", "Y": "Sichuan", "target_index": 0, "variant": "band_late", "C_X": [-16.915918350219727, -20.91656494140625], "C_Y": [-18.44393539428711, -19.999202728271484]}
+{"attr": "cuisine", "X": "Georgian", "Y": "Sichuan", "target_index": 0, "variant": "heads_long", "C_X": [-15.729168891906738, -20.051429748535156], "C_Y": [-16.85260581970215, -18.932815551757812]}
+{"attr": "cuisine", "X": "Georgian", "Y": "Sichuan", "target_index": 0, "variant": "heads_short", "C_X": [-18.255870819091797, -20.78026008605957], "C_Y": [-18.450204849243164, -20.669893264770508]}
+{"attr": "cuisine", "X": "Georgian", "Y": "Sichuan", "target_index": 0, "variant": "scale_0.5", "C_X": [-16.46510887145996, -20.106731414794922], "C_Y": [-16.8866024017334, -19.231338500976562]}
+{"attr": "cuisine", "X": "Georgian", "Y": "Sichuan", "target_index": 0, "variant": "scale_2.0", "C_X": [-6.7268266677856445, -10.292216300964355], "C_Y": [-11.668645858764648, -7.7974958419799805]}
+{"attr": "cuisine", "X": "Georgian", "Y": "Sichuan", "target_index": 0, "variant": "scale_4.0", "C_X": [-4.951456069946289, -8.4524507522583], "C_Y": [-10.738359451293945, -5.308882713317871]}
+{"attr": "cuisine", "X": "Georgian", "Y": "Sichuan", "target_index": 1, "variant": "full", "C_X": [-15.276084899902344, -19.34919548034668], "C_Y": [-16.514162063598633, -18.42291259765625]}
+{"attr": "cuisine", "X": "Georgian", "Y": "Sichuan", "target_index": 2, "variant": "full", "C_X": [-15.125475883483887, -19.46394157409668], "C_Y": [-16.46645164489746, -18.281511306762695]}
+{"attr": "cuisine", "X": "Georgian", "Y": "Sichuan", "target_index": 4, "variant": "full", "C_X": [-15.383282661437988, -19.362606048583984], "C_Y": [-16.439105987548828, -18.36322593688965]}
+{"attr": "cuisine", "X": "Georgian", "Y": "Sichuan", "target_index": 8, "variant": "full", "C_X": [-15.782819747924805, -19.488468170166016], "C_Y": [-16.551424026489258, -18.881940841674805]}
+{"attr": "cuisine", "X": "Georgian", "Y": "Sichuan", "target_index": 51, "variant": "full", "C_X": [-15.880204200744629, -19.06200408935547], "C_Y": [-16.17327117919922, -18.59758186340332]}
+{"attr": "cuisine", "X": "Georgian", "Y": "Sichuan", "target_index": 55, "variant": "full", "C_X": [-15.718896865844727, -19.049489974975586], "C_Y": [-16.203100204467773, -18.549570083618164]}
+{"attr": "cuisine", "X": "Georgian", "Y": "Sichuan", "target_index": 57, "variant": "full", "C_X": [-15.483441352844238, -18.814023971557617], "C_Y": [-16.095951080322266, -18.364234924316406]}
+{"attr": "cuisine", "X": "Georgian", "Y": "Sichuan", "target_index": 58, "variant": "full", "C_X": [-15.656535148620605, -18.87744903564453], "C_Y": [-16.13100814819336, -18.41493034362793]}
+{"attr": "cuisine", "X": "Georgian", "Y": "Sichuan", "target_index": 59, "variant": "full", "C_X": [-15.230119705200195, -18.638795852661133], "C_Y": [-15.731776237487793, -17.985553741455078]}
+{"attr": "cuisine", "X": "Georgian", "Y": "Sichuan", "target_index": 59, "variant": "band_early", "C_X": [-17.063480377197266, -20.221370697021484], "C_Y": [-16.948823928833008, -20.005455017089844]}
+{"attr": "cuisine", "X": "Georgian", "Y": "Sichuan", "target_index": 59, "variant": "band_mid", "C_X": [-17.71471405029297, -19.879661560058594], "C_Y": [-17.722064971923828, -19.89472770690918]}
+{"attr": "cuisine", "X": "Georgian", "Y": "Sichuan", "target_index": 59, "variant": "band_late", "C_X": [-17.82734489440918, -20.80839729309082], "C_Y": [-18.164470672607422, -20.7041015625]}
+{"attr": "cuisine", "X": "Georgian", "Y": "Sichuan", "target_index": 59, "variant": "heads_long", "C_X": [-15.722299575805664, -19.247539520263672], "C_Y": [-16.19048500061035, -18.911685943603516]}
+{"attr": "cuisine", "X": "Georgian", "Y": "Sichuan", "target_index": 59, "variant": "heads_short", "C_X": [-18.34393882751465, -20.672903060913086], "C_Y": [-18.37093734741211, -20.746780395507812]}
+{"attr": "cuisine", "X": "Georgian", "Y": "Sichuan", "target_index": 59, "variant": "scale_0.5", "C_X": [-16.88283920288086, -20.032316207885742], "C_Y": [-17.03438377380371, -19.8090877532959]}
+{"attr": "cuisine", "X": "Georgian", "Y": "Sichuan", "target_index": 59, "variant": "scale_2.0", "C_X": [-10.084373474121094, -10.711705207824707], "C_Y": [-11.478311538696289, -9.98636245727539]}
+{"attr": "cuisine", "X": "Georgian", "Y": "Sichuan", "target_index": 59, "variant": "scale_4.0", "C_X": [-6.548426628112793, -7.955389976501465], "C_Y": [-10.918330192565918, -5.521900653839111]}
+{"attr": "allergy", "X": "penicillin", "Y": "shellfish", "target_index": 0, "variant": "full", "C_X": [-9.885612487792969, -11.010175704956055], "C_Y": [-10.157021522521973, -10.470972061157227]}
+{"attr": "allergy", "X": "penicillin", "Y": "shellfish", "target_index": 0, "variant": "band_early", "C_X": [-11.642599105834961, -12.829779624938965], "C_Y": [-11.678625106811523, -12.805295944213867]}
+{"attr": "allergy", "X": "penicillin", "Y": "shellfish", "target_index": 0, "variant": "band_mid", "C_X": [-12.712712287902832, -13.588631629943848], "C_Y": [-12.719893455505371, -13.597317695617676]}
+{"attr": "allergy", "X": "penicillin", "Y": "shellfish", "target_index": 0, "variant": "band_late", "C_X": [-12.129043579101562, -13.818424224853516], "C_Y": [-12.488809585571289, -13.30199146270752]}
+{"attr": "allergy", "X": "penicillin", "Y": "shellfish", "target_index": 0, "variant": "heads_long", "C_X": [-9.899577140808105, -10.962689399719238], "C_Y": [-10.189966201782227, -10.880145072937012]}
+{"attr": "allergy", "X": "penicillin", "Y": "shellfish", "target_index": 0, "variant": "heads_short", "C_X": [-12.88923168182373, -14.137471199035645], "C_Y": [-13.150915145874023, -13.960868835449219]}
+{"attr": "allergy", "X": "penicillin", "Y": "shellfish", "target_index": 0, "variant": "scale_0.5", "C_X": [-12.719306945800781, -13.348447799682617], "C_Y": [-12.706404685974121, -13.088208198547363]}
+{"attr": "allergy", "X": "penicillin", "Y": "shellfish", "target_index": 0, "variant": "scale_2.0", "C_X": [-6.072327136993408, -6.545442581176758], "C_Y": [-6.892197132110596, -5.8825459480285645]}
+{"attr": "allergy", "X": "penicillin", "Y": "shellfish", "target_index": 0, "variant": "scale_4.0", "C_X": [-8.230550765991211, -3.8424267768859863], "C_Y": [-4.702195167541504, -2.412144184112549]}
+{"attr": "allergy", "X": "penicillin", "Y": "shellfish", "target_index": 1, "variant": "full", "C_X": [-9.887566566467285, -10.826679229736328], "C_Y": [-9.888724327087402, -10.390682220458984]}
+{"attr": "allergy", "X": "penicillin", "Y": "shellfish", "target_index": 2, "variant": "full", "C_X": [-10.017192840576172, -11.079346656799316], "C_Y": [-10.286653518676758, -10.849730491638184]}
+{"attr": "allergy", "X": "penicillin", "Y": "shellfish", "target_index": 4, "variant": "full", "C_X": [-10.079483032226562, -11.016844749450684], "C_Y": [-10.235270500183105, -10.549983024597168]}
+{"attr": "allergy", "X": "penicillin", "Y": "shellfish", "target_index": 8, "variant": "full", "C_X": [-9.985751152038574, -10.924905776977539], "C_Y": [-10.171372413635254, -10.609101295471191]}
+{"attr": "allergy", "X": "penicillin", "Y": "shellfish", "target_index": 51, "variant": "full", "C_X": [-10.227702140808105, -11.040182113647461], "C_Y": [-10.376124382019043, -10.938197135925293]}
+{"attr": "allergy", "X": "penicillin", "Y": "shellfish", "target_index": 55, "variant": "full", "C_X": [-10.17819595336914, -10.927700996398926], "C_Y": [-10.236177444458008, -10.798974990844727]}
+{"attr": "allergy", "X": "penicillin", "Y": "shellfish", "target_index": 57, "variant": "full", "C_X": [-10.177995681762695, -10.927614212036133], "C_Y": [-10.241930961608887, -10.80469799041748]}
+{"attr": "allergy", "X": "penicillin", "Y": "shellfish", "target_index": 58, "variant": "full", "C_X": [-10.290801048278809, -11.040132522583008], "C_Y": [-10.418858528137207, -10.981856346130371]}
+{"attr": "allergy", "X": "penicillin", "Y": "shellfish", "target_index": 59, "variant": "full", "C_X": [-10.315296173095703, -11.128948211669922], "C_Y": [-10.515932083129883, -11.015607833862305]}
+{"attr": "allergy", "X": "penicillin", "Y": "shellfish", "target_index": 59, "variant": "band_early", "C_X": [-11.87315845489502, -12.746779441833496], "C_Y": [-12.092426300048828, -12.966439247131348]}
+{"attr": "allergy", "X": "penicillin", "Y": "shellfish", "target_index": 59, "variant": "band_mid", "C_X": [-12.527963638305664, -13.592584609985352], "C_Y": [-12.664393424987793, -13.604665756225586]}
+{"attr": "allergy", "X": "penicillin", "Y": "shellfish", "target_index": 59, "variant": "band_late", "C_X": [-12.593823432922363, -13.908167839050293], "C_Y": [-12.592844009399414, -13.845311164855957]}
+{"attr": "allergy", "X": "penicillin", "Y": "shellfish", "target_index": 59, "variant": "heads_long", "C_X": [-10.210075378417969, -11.146587371826172], "C_Y": [-10.273728370666504, -10.962032318115234]}
+{"attr": "allergy", "X": "penicillin", "Y": "shellfish", "target_index": 59, "variant": "heads_short", "C_X": [-12.951801300048828, -13.887798309326172], "C_Y": [-12.894328117370605, -13.954586029052734]}
+{"attr": "allergy", "X": "penicillin", "Y": "shellfish", "target_index": 59, "variant": "scale_0.5", "C_X": [-12.731281280517578, -13.29721736907959], "C_Y": [-12.818008422851562, -13.258783340454102]}
+{"attr": "allergy", "X": "penicillin", "Y": "shellfish", "target_index": 59, "variant": "scale_2.0", "C_X": [-6.066976070404053, -6.099853992462158], "C_Y": [-6.267679214477539, -5.633002281188965]}
+{"attr": "allergy", "X": "penicillin", "Y": "shellfish", "target_index": 59, "variant": "scale_4.0", "C_X": [-7.485291481018066, -3.890169382095337], "C_Y": [-4.8237833976745605, -2.2305681705474854]}
+{"attr": "allergy", "X": "peanuts", "Y": "latex", "target_index": 0, "variant": "full", "C_X": [-6.759003162384033, -10.009003639221191], "C_Y": [-7.239857196807861, -9.86485767364502]}
+{"attr": "allergy", "X": "peanuts", "Y": "latex", "target_index": 0, "variant": "band_early", "C_X": [-8.259830474853516, -10.947330474853516], "C_Y": [-8.519001007080078, -11.144001007080078]}
+{"attr": "allergy", "X": "peanuts", "Y": "latex", "target_index": 0, "variant": "band_mid", "C_X": [-8.555023193359375, -10.867523193359375], "C_Y": [-8.555343627929688, -10.805343627929688]}
+{"attr": "allergy", "X": "peanuts", "Y": "latex", "target_index": 0, "variant": "band_late", "C_X": [-8.431697845458984, -11.056697845458984], "C_Y": [-8.74525260925293, -10.68275260925293]}
+{"attr": "allergy", "X": "peanuts", "Y": "latex", "target_index": 0, "variant": "heads_long", "C_X": [-6.8968424797058105, -9.584342956542969], "C_Y": [-7.171478748321533, -9.358978271484375]}
+{"attr": "allergy", "X": "peanuts", "Y": "latex", "target_index": 0, "variant": "heads_short", "C_X": [-9.253539085388184, -11.878539085388184], "C_Y": [-9.409697532653809, -11.722197532653809]}
+{"attr": "allergy", "X": "peanuts", "Y": "latex", "target_index": 0, "variant": "scale_0.5", "C_X": [-8.807302474975586, -11.932302474975586], "C_Y": [-8.868398666381836, -11.743398666381836]}
+{"attr": "allergy", "X": "peanuts", "Y": "latex", "target_index": 0, "variant": "scale_2.0", "C_X": [-4.6154680252075195, -7.4904680252075195], "C_Y": [-5.395834922790527, -6.645834922790527]}
+{"attr": "allergy", "X": "peanuts", "Y": "latex", "target_index": 0, "variant": "scale_4.0", "C_X": [-3.891940116882324, -6.954440116882324], "C_Y": [-4.968270301818848, -4.968270301818848]}
+{"attr": "allergy", "X": "peanuts", "Y": "latex", "target_index": 1, "variant": "full", "C_X": [-6.740603446960449, -9.99060344696045], "C_Y": [-7.141933917999268, -9.954434394836426]}
+{"attr": "allergy", "X": "peanuts", "Y": "latex", "target_index": 2, "variant": "full", "C_X": [-6.8317461013793945, -10.081746101379395], "C_Y": [-7.178617000579834, -9.803616523742676]}
+{"attr": "allergy", "X": "peanuts", "Y": "latex", "target_index": 4, "variant": "full", "C_X": [-7.068352222442627, -10.193352699279785], "C_Y": [-7.058432579040527, -9.933432579040527]}
+{"attr": "allergy", "X": "peanuts", "Y": "latex", "target_index": 8, "variant": "full", "C_X": [-6.989918231964111, -10.177417755126953], "C_Y": [-7.135490894317627, -10.010491371154785]}
+{"attr": "allergy", "X": "peanuts", "Y": "latex", "target_index": 51, "variant": "full", "C_X": [-6.82182502746582, -10.07182502746582], "C_Y": [-7.045587539672852, -9.983087539672852]}
+{"attr": "allergy", "X": "peanuts", "Y": "latex", "target_index": 55, "variant": "full", "C_X": [-6.919716835021973, -10.107216835021973], "C_Y": [-7.128887176513672, -10.066387176513672]}
+{"attr": "allergy", "X": "peanuts", "Y": "latex", "target_index": 57, "variant": "full", "C_X": [-6.978967189788818, -10.166467666625977], "C_Y": [-7.110757827758789, -10.048257827758789]}
+{"attr": "allergy", "X": "peanuts", "Y": "latex", "target_index": 58, "variant": "full", "C_X": [-6.923837661743164, -10.111337661743164], "C_Y": [-7.11693000793457, -10.05443000793457]}
+{"attr": "allergy", "X": "peanuts", "Y": "latex", "target_index": 59, "variant": "full", "C_X": [-6.7230634689331055, -9.973063468933105], "C_Y": [-7.104267597198486, -10.104268074035645]}
+{"attr": "allergy", "X": "peanuts", "Y": "latex", "target_index": 59, "variant": "band_early", "C_X": [-8.307412147521973, -11.057412147521973], "C_Y": [-8.301444053649902, -11.051444053649902]}
+{"attr": "allergy", "X": "peanuts", "Y": "latex", "target_index": 59, "variant": "band_mid", "C_X": [-8.414168357849121, -10.851668357849121], "C_Y": [-8.41041088104248, -10.78541088104248]}
+{"attr": "allergy", "X": "peanuts", "Y": "latex", "target_index": 59, "variant": "band_late", "C_X": [-8.738871574401855, -11.051371574401855], "C_Y": [-8.81081485748291, -10.93581485748291]}
+{"attr": "allergy", "X": "peanuts", "Y": "latex", "target_index": 59, "variant": "heads_long", "C_X": [-6.836021900177002, -9.648521423339844], "C_Y": [-7.080441951751709, -9.51794147491455]}
+{"attr": "allergy", "X": "peanuts", "Y": "latex", "target_index": 59, "variant": "heads_short", "C_X": [-9.048779487609863, -11.486279487609863], "C_Y": [-9.071986198425293, -11.571986198425293]}
+{"attr": "allergy", "X": "peanuts", "Y": "latex", "target_index": 59, "variant": "scale_0.5", "C_X": [-8.579915046691895, -11.704915046691895], "C_Y": [-8.821813583374023, -11.821813583374023]}
+{"attr": "allergy", "X": "peanuts", "Y": "latex", "target_index": 59, "variant": "scale_2.0", "C_X": [-5.136396408081055, -7.511396408081055], "C_Y": [-5.638354301452637, -6.388354301452637]}
+{"attr": "allergy", "X": "peanuts", "Y": "latex", "target_index": 59, "variant": "scale_4.0", "C_X": [-3.1374874114990234, -6.199987411499023], "C_Y": [-4.253640651702881, -4.441140651702881]}
+{"attr": "sister", "X": "Ingrid", "Y": "Talia", "target_index": 0, "variant": "full", "C_X": [-14.352971076965332, -14.186077117919922], "C_Y": [-14.395683288574219, -13.43270206451416]}
+{"attr": "sister", "X": "Ingrid", "Y": "Talia", "target_index": 0, "variant": "band_early", "C_X": [-15.353289604187012, -15.20623779296875], "C_Y": [-15.46725082397461, -15.261275291442871]}
+{"attr": "sister", "X": "Ingrid", "Y": "Talia", "target_index": 0, "variant": "band_mid", "C_X": [-16.384016036987305, -17.076406478881836], "C_Y": [-16.352895736694336, -16.988468170166016]}
+{"attr": "sister", "X": "Ingrid", "Y": "Talia", "target_index": 0, "variant": "band_late", "C_X": [-16.225305557250977, -17.046457290649414], "C_Y": [-16.3107852935791, -16.544557571411133]}
+{"attr": "sister", "X": "Ingrid", "Y": "Talia", "target_index": 0, "variant": "heads_long", "C_X": [-14.947212219238281, -14.915857315063477], "C_Y": [-15.020317077636719, -14.258134841918945]}
+{"attr": "sister", "X": "Ingrid", "Y": "Talia", "target_index": 0, "variant": "heads_short", "C_X": [-16.08424949645996, -17.100282669067383], "C_Y": [-16.123136520385742, -16.99349594116211]}
+{"attr": "sister", "X": "Ingrid", "Y": "Talia", "target_index": 0, "variant": "scale_0.5", "C_X": [-15.181164741516113, -15.423334121704102], "C_Y": [-15.301732063293457, -15.300339698791504]}
+{"attr": "sister", "X": "Ingrid", "Y": "Talia", "target_index": 0, "variant": "scale_2.0", "C_X": [-11.009239196777344, -11.826107025146484], "C_Y": [-12.183324813842773, -10.724967002868652]}
+{"attr": "sister", "X": "Ingrid", "Y": "Talia", "target_index": 0, "variant": "scale_4.0", "C_X": [-8.926997184753418, -11.80166244506836], "C_Y": [-10.750347137451172, -10.740632057189941]}
+{"attr": "sister", "X": "Ingrid", "Y": "Talia", "target_index": 1, "variant": "full", "C_X": [-14.370879173278809, -14.109567642211914], "C_Y": [-14.537483215332031, -13.727435111999512]}
+{"attr": "sister", "X": "Ingrid", "Y": "Talia", "target_index": 2, "variant": "full", "C_X": [-14.368264198303223, -14.115503311157227], "C_Y": [-14.582051277160645, -13.654836654663086]}
+{"attr": "sister", "X": "Ingrid", "Y": "Talia", "target_index": 4, "variant": "full", "C_X": [-14.41113567352295, -14.107242584228516], "C_Y": [-14.428556442260742, -13.758787155151367]}
+{"attr": "sister", "X": "Ingrid", "Y": "Talia", "target_index": 8, "variant": "full", "C_X": [-14.325953483581543, -14.083195686340332], "C_Y": [-14.483094215393066, -13.758453369140625]}
+{"attr": "sister", "X": "Ingrid", "Y": "Talia", "target_index": 51, "variant": "full", "C_X": [-14.145379066467285, -13.795256614685059], "C_Y": [-14.34000301361084, -13.64152717590332]}
+{"attr": "sister", "X": "Ingrid", "Y": "Talia", "target_index": 55, "variant": "full", "C_X": [-14.272849082946777, -13.890146255493164], "C_Y": [-14.315442085266113, -13.642834663391113]}
+{"attr": "sister", "X": "Ingrid", "Y": "Talia", "target_index": 57, "variant": "full", "C_X": [-14.37026596069336, -14.050090789794922], "C_Y": [-14.373978614807129, -13.670677185058594]}
+{"attr": "sister", "X": "Ingrid", "Y": "Talia", "target_index": 58, "variant": "full", "C_X": [-14.362863540649414, -13.98890495300293], "C_Y": [-14.461639404296875, -13.81771469116211]}
+{"attr": "sister", "X": "Ingrid", "Y": "Talia", "target_index": 59, "variant": "full", "C_X": [-14.288622856140137, -13.999159812927246], "C_Y": [-14.43673324584961, -14.008102416992188]}
+{"attr": "sister", "X": "Ingrid", "Y": "Talia", "target_index": 59, "variant": "band_early", "C_X": [-15.30208969116211, -15.08480167388916], "C_Y": [-15.525130271911621, -15.138134002685547]}
+{"attr": "sister", "X": "Ingrid", "Y": "Talia", "target_index": 59, "variant": "band_mid", "C_X": [-15.992161750793457, -16.761146545410156], "C_Y": [-15.926291465759277, -16.633567810058594]}
+{"attr": "sister", "X": "Ingrid", "Y": "Talia", "target_index": 59, "variant": "band_late", "C_X": [-16.273698806762695, -17.041698455810547], "C_Y": [-16.191776275634766, -16.984928131103516]}
+{"attr": "sister", "X": "Ingrid", "Y": "Talia", "target_index": 59, "variant": "heads_long", "C_X": [-14.634703636169434, -14.541383743286133], "C_Y": [-14.86239242553711, -14.47270679473877]}
+{"attr": "sister", "X": "Ingrid", "Y": "Talia", "target_index": 59, "variant": "heads_short", "C_X": [-16.240524291992188, -17.201852798461914], "C_Y": [-16.22692108154297, -17.295114517211914]}
+{"attr": "sister", "X": "Ingrid", "Y": "Talia", "target_index": 59, "variant": "scale_0.5", "C_X": [-15.158333778381348, -15.418174743652344], "C_Y": [-15.329355239868164, -15.574846267700195]}
+{"attr": "sister", "X": "Ingrid", "Y": "Talia", "target_index": 59, "variant": "scale_2.0", "C_X": [-11.624809265136719, -12.162930488586426], "C_Y": [-11.037603378295898, -11.730975151062012]}
+{"attr": "sister", "X": "Ingrid", "Y": "Talia", "target_index": 59, "variant": "scale_4.0", "C_X": [-9.272356033325195, -11.444330215454102], "C_Y": [-10.171622276306152, -10.99496841430664]}
+{"attr": "sister", "X": "Rosalind", "Y": "Mireille", "target_index": 0, "variant": "full", "C_X": [-9.539334297180176, -15.203155517578125], "C_Y": [-10.075400352478027, -14.420489311218262]}
+{"attr": "sister", "X": "Rosalind", "Y": "Mireille", "target_index": 0, "variant": "band_early", "C_X": [-10.555087089538574, -16.442594528198242], "C_Y": [-10.69578742980957, -16.30129623413086]}
+{"attr": "sister", "X": "Rosalind", "Y": "Mireille", "target_index": 0, "variant": "band_mid", "C_X": [-12.413179397583008, -17.437969207763672], "C_Y": [-12.46898078918457, -17.141693115234375]}
+{"attr": "sister", "X": "Rosalind", "Y": "Mireille", "target_index": 0, "variant": "band_late", "C_X": [-12.066656112670898, -18.316837310791016], "C_Y": [-12.522319793701172, -17.872276306152344]}
+{"attr": "sister", "X": "Rosalind", "Y": "Mireille", "target_index": 0, "variant": "heads_long", "C_X": [-10.229715347290039, -15.618623733520508], "C_Y": [-10.519408226013184, -15.079580307006836]}
+{"attr": "sister", "X": "Rosalind", "Y": "Mireille", "target_index": 0, "variant": "heads_short", "C_X": [-12.319999694824219, -18.291831970214844], "C_Y": [-12.643661499023438, -18.00815200805664]}
+{"attr": "sister", "X": "Rosalind", "Y": "Mireille", "target_index": 0, "variant": "scale_0.5", "C_X": [-10.93220329284668, -16.890445709228516], "C_Y": [-11.192035675048828, -16.424196243286133]}
+{"attr": "sister", "X": "Rosalind", "Y": "Mireille", "target_index": 0, "variant": "scale_2.0", "C_X": [-8.140365600585938, -12.11705207824707], "C_Y": [-8.53888988494873, -11.006623268127441]}
+{"attr": "sister", "X": "Rosalind", "Y": "Mireille", "target_index": 0, "variant": "scale_4.0", "C_X": [-8.471429824829102, -11.470464706420898], "C_Y": [-9.052712440490723, -10.000102996826172]}
+{"attr": "sister", "X": "Rosalind", "Y": "Mireille", "target_index": 1, "variant": "full", "C_X": [-9.665340423583984, -15.163764953613281], "C_Y": [-10.193748474121094, -14.674690246582031]}
+{"attr": "sister", "X": "Rosalind", "Y": "Mireille", "target_index": 2, "variant": "full", "C_X": [-9.808388710021973, -15.216856956481934], "C_Y": [-10.020173072814941, -14.41283893585205]}
+{"attr": "sister", "X": "Rosalind", "Y": "Mireille", "target_index": 4, "variant": "full", "C_X": [-9.19017505645752, -15.147239685058594], "C_Y": [-10.086569786071777, -14.172338485717773]}
+{"attr": "sister", "X": "Rosalind", "Y": "Mireille", "target_index": 8, "variant": "full", "C_X": [-9.32680606842041, -15.263984680175781], "C_Y": [-10.070987701416016, -14.524928092956543]}
+{"attr": "sister", "X": "Rosalind", "Y": "Mireille", "target_index": 51, "variant": "full", "C_X": [-10.030076026916504, -15.352855682373047], "C_Y": [-10.180440902709961, -14.767931938171387]}
+{"attr": "sister", "X": "Rosalind", "Y": "Mireille", "target_index": 55, "variant": "full", "C_X": [-9.98685359954834, -15.389103889465332], "C_Y": [-10.223302841186523, -14.726848602294922]}
+{"attr": "sister", "X": "Rosalind", "Y": "Mireille", "target_index": 57, "variant": "full", "C_X": [-10.048199653625488, -15.259220123291016], "C_Y": [-10.181428909301758, -14.86340045928955]}
+{"attr": "sister", "X": "Rosalind", "Y": "Mireille", "target_index": 58, "variant": "full", "C_X": [-10.034428596496582, -15.346977233886719], "C_Y": [-10.160238265991211, -14.787322998046875]}
+{"attr": "sister", "X": "Rosalind", "Y": "Mireille", "target_index": 59, "variant": "full", "C_X": [-10.171485900878906, -15.342034339904785], "C_Y": [-10.11452579498291, -14.920741081237793]}
+{"attr": "sister", "X": "Rosalind", "Y": "Mireille", "target_index": 59, "variant": "band_early", "C_X": [-10.670726776123047, -16.671443939208984], "C_Y": [-10.53191089630127, -16.066967010498047]}
+{"attr": "sister", "X": "Rosalind", "Y": "Mireille", "target_index": 59, "variant": "band_mid", "C_X": [-12.433035850524902, -17.578975677490234], "C_Y": [-12.481724739074707, -17.430660247802734]}
+{"attr": "sister", "X": "Rosalind", "Y": "Mireille", "target_index": 59, "variant": "band_late", "C_X": [-12.677820205688477, -18.287187576293945], "C_Y": [-12.650858879089355, -18.318058013916016]}
+{"attr": "sister", "X": "Rosalind", "Y": "Mireille", "target_index": 59, "variant": "heads_long", "C_X": [-10.43221664428711, -15.740036964416504], "C_Y": [-10.544763565063477, -15.165185928344727]}
+{"attr": "sister", "X": "Rosalind", "Y": "Mireille", "target_index": 59, "variant": "heads_short", "C_X": [-12.719217300415039, -18.609519958496094], "C_Y": [-12.63891887664795, -18.48583984375]}
+{"attr": "sister", "X": "Rosalind", "Y": "Mireille", "target_index": 59, "variant": "scale_0.5", "C_X": [-11.29060173034668, -16.87468147277832], "C_Y": [-11.216045379638672, -16.53656578063965]}
+{"attr": "sister", "X": "Rosalind", "Y": "Mireille", "target_index": 59, "variant": "scale_2.0", "C_X": [-8.59831428527832, -11.552446365356445], "C_Y": [-9.165932655334473, -11.423629760742188]}
+{"attr": "sister", "X": "Rosalind", "Y": "Mireille", "target_index": 59, "variant": "scale_4.0", "C_X": [-8.283834457397461, -11.284079551696777], "C_Y": [-8.575068473815918, -10.65779972076416]}
+{"attr": "car", "X": "Volvo V60", "Y": "Subaru Outback", "target_index": 0, "variant": "full", "C_X": [-11.004159927368164, -8.969594955444336], "C_Y": [-12.31519603729248, -7.868607997894287]}
+{"attr": "car", "X": "Volvo V60", "Y": "Subaru Outback", "target_index": 0, "variant": "band_early", "C_X": [-12.83957290649414, -9.734687805175781], "C_Y": [-12.933877944946289, -9.806231498718262]}
+{"attr": "car", "X": "Volvo V60", "Y": "Subaru Outback", "target_index": 0, "variant": "band_mid", "C_X": [-12.478248596191406, -9.492561340332031], "C_Y": [-12.583272933959961, -9.544397354125977]}
+{"attr": "car", "X": "Volvo V60", "Y": "Subaru Outback", "target_index": 0, "variant": "band_late", "C_X": [-11.047637939453125, -9.053794860839844], "C_Y": [-12.376730918884277, -7.94411563873291]}
+{"attr": "car", "X": "Volvo V60", "Y": "Subaru Outback", "target_index": 0, "variant": "heads_long", "C_X": [-11.242507934570312, -8.941184997558594], "C_Y": [-12.423604011535645, -8.476736068725586]}
+{"attr": "car", "X": "Volvo V60", "Y": "Subaru Outback", "target_index": 0, "variant": "heads_short", "C_X": [-13.265559196472168, -10.059471130371094], "C_Y": [-13.316701889038086, -9.609439849853516]}
+{"attr": "car", "X": "Volvo V60", "Y": "Subaru Outback", "target_index": 0, "variant": "scale_0.5", "C_X": [-12.482460975646973, -9.60066032409668], "C_Y": [-13.120623588562012, -9.078770637512207]}
+{"attr": "car", "X": "Volvo V60", "Y": "Subaru Outback", "target_index": 0, "variant": "scale_2.0", "C_X": [-9.319639205932617, -6.775212287902832], "C_Y": [-10.305538177490234, -7.068497180938721]}
+{"attr": "car", "X": "Volvo V60", "Y": "Subaru Outback", "target_index": 0, "variant": "scale_4.0", "C_X": [-14.20296859741211, -5.051278114318848], "C_Y": [-10.353682518005371, -11.632061004638672]}
+{"attr": "car", "X": "Volvo V60", "Y": "Subaru Outback", "target_index": 1, "variant": "full", "C_X": [-11.083553314208984, -9.095151901245117], "C_Y": [-12.411344528198242, -8.249032020568848]}
+{"attr": "car", "X": "Volvo V60", "Y": "Subaru Outback", "target_index": 2, "variant": "full", "C_X": [-11.454706192016602, -9.011411666870117], "C_Y": [-12.290868759155273, -8.225580215454102]}
+{"attr": "car", "X": "Volvo V60", "Y": "Subaru Outback", "target_index": 4, "variant": "full", "C_X": [-11.517908096313477, -9.038082122802734], "C_Y": [-12.380435943603516, -8.107556343078613]}
+{"attr": "car", "X": "Volvo V60", "Y": "Subaru Outback", "target_index": 8, "variant": "full", "C_X": [-11.464262008666992, -8.965377807617188], "C_Y": [-12.42469596862793, -8.483380317687988]}
+{"attr": "car", "X": "Volvo V60", "Y": "Subaru Outback", "target_index": 51, "variant": "full", "C_X": [-11.910265922546387, -9.035578727722168], "C_Y": [-12.448713302612305, -8.846335411071777]}
+{"attr": "car", "X": "Volvo V60", "Y": "Subaru Outback", "target_index": 55, "variant": "full", "C_X": [-11.892945289611816, -8.98298454284668], "C_Y": [-12.439123153686523, -8.73090648651123]}
+{"attr": "car", "X": "Volvo V60", "Y": "Subaru Outback", "target_index": 57, "variant": "full", "C_X": [-12.037551879882812, -9.115377426147461], "C_Y": [-12.369035720825195, -8.685431480407715]}
+{"attr": "car", "X": "Volvo V60", "Y": "Subaru Outback", "target_index": 58, "variant": "full", "C_X": [-11.983683586120605, -9.072263717651367], "C_Y": [-12.57772445678711, -8.90652084350586]}
+{"attr": "car", "X": "Volvo V60", "Y": "Subaru Outback", "target_index": 59, "variant": "full", "C_X": [-12.095450401306152, -9.395901679992676], "C_Y": [-12.637645721435547, -8.968962669372559]}
+{"attr": "car", "X": "Volvo V60", "Y": "Subaru Outback", "target_index": 59, "variant": "band_early", "C_X": [-12.897714614868164, -9.997953414916992], "C_Y": [-12.974712371826172, -9.844429969787598]}
+{"attr": "car", "X": "Volvo V60", "Y": "Subaru Outback", "target_index": 59, "variant": "band_mid", "C_X": [-12.65078353881836, -9.555575370788574], "C_Y": [-12.581108093261719, -9.477028846740723]}
+{"attr": "car", "X": "Volvo V60", "Y": "Subaru Outback", "target_index": 59, "variant": "band_late", "C_X": [-11.87191104888916, -9.292795181274414], "C_Y": [-12.499282836914062, -8.922181129455566]}
+{"attr": "car", "X": "Volvo V60", "Y": "Subaru Outback", "target_index": 59, "variant": "heads_long", "C_X": [-12.026813507080078, -9.064238548278809], "C_Y": [-12.401662826538086, -8.735846519470215]}
+{"attr": "car", "X": "Volvo V60", "Y": "Subaru Outback", "target_index": 59, "variant": "heads_short", "C_X": [-13.467936515808105, -10.291259765625], "C_Y": [-13.546573638916016, -10.279988288879395]}
+{"attr": "car", "X": "Volvo V60", "Y": "Subaru Outback", "target_index": 59, "variant": "scale_0.5", "C_X": [-12.889830589294434, -9.800440788269043], "C_Y": [-13.074673652648926, -9.494185447692871]}
+{"attr": "car", "X": "Volvo V60", "Y": "Subaru Outback", "target_index": 59, "variant": "scale_2.0", "C_X": [-10.677907943725586, -7.076406478881836], "C_Y": [-11.029634475708008, -6.810320854187012]}
+{"attr": "car", "X": "Volvo V60", "Y": "Subaru Outback", "target_index": 59, "variant": "scale_4.0", "C_X": [-13.00381851196289, -5.3301682472229], "C_Y": [-10.663369178771973, -11.128338813781738]}
+{"attr": "car", "X": "Mazda MX-5", "Y": "Kia Niro", "target_index": 0, "variant": "full", "C_X": [-9.198318481445312, -12.4210844039917], "C_Y": [-10.5673828125, -11.034942626953125]}
+{"attr": "car", "X": "Mazda MX-5", "Y": "Kia Niro", "target_index": 0, "variant": "band_early", "C_X": [-11.820525169372559, -13.318582534790039], "C_Y": [-11.622403144836426, -13.177921295166016]}
+{"attr": "car", "X": "Mazda MX-5", "Y": "Kia Niro", "target_index": 0, "variant": "band_mid", "C_X": [-11.478062629699707, -12.418615341186523], "C_Y": [-11.517934799194336, -12.40373420715332]}
+{"attr": "car", "X": "Mazda MX-5", "Y": "Kia Niro", "target_index": 0, "variant": "band_late", "C_X": [-10.812280654907227, -12.705401420593262], "C_Y": [-12.030591011047363, -11.592116355895996]}
+{"attr": "car", "X": "Mazda MX-5", "Y": "Kia Niro", "target_index": 0, "variant": "heads_long", "C_X": [-10.234308242797852, -12.677459716796875], "C_Y": [-11.210344314575195, -11.848565101623535]}
+{"attr": "car", "X": "Mazda MX-5", "Y": "Kia Niro", "target_index": 0, "variant": "heads_short", "C_X": [-12.353961944580078, -13.351713180541992], "C_Y": [-12.548386573791504, -13.107690811157227]}
+{"attr": "car", "X": "Mazda MX-5", "Y": "Kia Niro", "target_index": 0, "variant": "scale_0.5", "C_X": [-11.633103370666504, -13.372537612915039], "C_Y": [-12.139851570129395, -12.711427688598633]}
+{"attr": "car", "X": "Mazda MX-5", "Y": "Kia Niro", "target_index": 0, "variant": "scale_2.0", "C_X": [-7.313984394073486, -10.602418899536133], "C_Y": [-9.28101921081543, -8.698960304260254]}
+{"attr": "car", "X": "Mazda MX-5", "Y": "Kia Niro", "target_index": 0, "variant": "scale_4.0", "C_X": [-6.880990028381348, -12.993043899536133], "C_Y": [-7.499222755432129, -10.88143539428711]}
+{"attr": "car", "X": "Mazda MX-5", "Y": "Kia Niro", "target_index": 1, "variant": "full", "C_X": [-9.405996322631836, -12.500454902648926], "C_Y": [-10.692838668823242, -11.588969230651855]}
+{"attr": "car", "X": "Mazda MX-5", "Y": "Kia Niro", "target_index": 2, "variant": "full", "C_X": [-9.765459060668945, -12.624703407287598], "C_Y": [-10.8536376953125, -11.887542724609375]}
+{"attr": "car", "X": "Mazda MX-5", "Y": "Kia Niro", "target_index": 4, "variant": "full", "C_X": [-9.913016319274902, -12.73141098022461], "C_Y": [-10.878939628601074, -11.995759010314941]}
+{"attr": "car", "X": "Mazda MX-5", "Y": "Kia Niro", "target_index": 8, "variant": "full", "C_X": [-10.093090057373047, -12.726941108703613], "C_Y": [-10.8331937789917, -12.108383178710938]}
+{"attr": "car", "X": "Mazda MX-5", "Y": "Kia Niro", "target_index": 51, "variant": "full", "C_X": [-10.39078140258789, -12.675530433654785], "C_Y": [-10.829843521118164, -12.2879638671875]}
+{"attr": "car", "X": "Mazda MX-5", "Y": "Kia Niro", "target_index": 55, "variant": "full", "C_X": [-10.384196281433105, -12.796113014221191], "C_Y": [-10.955652236938477, -12.405182838439941]}
+{"attr": "car", "X": "Mazda MX-5", "Y": "Kia Niro", "target_index": 57, "variant": "full", "C_X": [-10.533397674560547, -12.768378257751465], "C_Y": [-11.035348892211914, -12.466012001037598]}
+{"attr": "car", "X": "Mazda MX-5", "Y": "Kia Niro", "target_index": 58, "variant": "full", "C_X": [-10.645234107971191, -12.846962928771973], "C_Y": [-10.97506046295166, -12.450188636779785]}
+{"attr": "car", "X": "Mazda MX-5", "Y": "Kia Niro", "target_index": 59, "variant": "full", "C_X": [-10.663597106933594, -12.925501823425293], "C_Y": [-11.019952774047852, -12.47538948059082]}
+{"attr": "car", "X": "Mazda MX-5", "Y": "Kia Niro", "target_index": 59, "variant": "band_early", "C_X": [-11.861898422241211, -13.335060119628906], "C_Y": [-11.756733894348145, -13.181333541870117]}
+{"attr": "car", "X": "Mazda MX-5", "Y": "Kia Niro", "target_index": 59, "variant": "band_mid", "C_X": [-11.781050682067871, -12.687496185302734], "C_Y": [-11.65415096282959, -12.560641288757324]}
+{"attr": "car", "X": "Mazda MX-5", "Y": "Kia Niro", "target_index": 59, "variant": "band_late", "C_X": [-11.656220436096191, -12.877696990966797], "C_Y": [-12.12095832824707, -12.58157730102539]}
+{"attr": "car", "X": "Mazda MX-5", "Y": "Kia Niro", "target_index": 59, "variant": "heads_long", "C_X": [-11.153948783874512, -12.890685081481934], "C_Y": [-11.388383865356445, -12.526195526123047]}
+{"attr": "car", "X": "Mazda MX-5", "Y": "Kia Niro", "target_index": 59, "variant": "heads_short", "C_X": [-12.727832794189453, -13.617868423461914], "C_Y": [-12.502729415893555, -13.448149681091309]}
+{"attr": "car", "X": "Mazda MX-5", "Y": "Kia Niro", "target_index": 59, "variant": "scale_0.5", "C_X": [-12.196757316589355, -13.452945709228516], "C_Y": [-12.26312255859375, -13.256093978881836]}
+{"attr": "car", "X": "Mazda MX-5", "Y": "Kia Niro", "target_index": 59, "variant": "scale_2.0", "C_X": [-8.44456672668457, -10.815959930419922], "C_Y": [-9.565759658813477, -10.43901252746582]}
+{"attr": "car", "X": "Mazda MX-5", "Y": "Kia Niro", "target_index": 59, "variant": "scale_4.0", "C_X": [-12.128543853759766, -17.293779373168945], "C_Y": [-8.534175872802734, -14.29718017578125]}
+{"attr": "instrument", "X": "cello", "Y": "oboe", "target_index": 0, "variant": "full", "C_X": [-7.77595329284668, -10.223158836364746], "C_Y": [-8.210037231445312, -10.218289375305176]}
+{"attr": "instrument", "X": "cello", "Y": "oboe", "target_index": 0, "variant": "band_early", "C_X": [-8.091815948486328, -10.700234413146973], "C_Y": [-8.213727951049805, -10.835685729980469]}
+{"attr": "instrument", "X": "cello", "Y": "oboe", "target_index": 0, "variant": "band_mid", "C_X": [-7.1226115226745605, -9.647327423095703], "C_Y": [-7.0590338706970215, -9.585413932800293]}
+{"attr": "instrument", "X": "cello", "Y": "oboe", "target_index": 0, "variant": "band_late", "C_X": [-7.003472805023193, -9.653841972351074], "C_Y": [-7.126976490020752, -9.463016510009766]}
+{"attr": "instrument", "X": "cello", "Y": "oboe", "target_index": 0, "variant": "heads_long", "C_X": [-7.837561130523682, -10.321646690368652], "C_Y": [-7.960987091064453, -10.194112777709961]}
+{"attr": "instrument", "X": "cello", "Y": "oboe", "target_index": 0, "variant": "heads_short", "C_X": [-7.430766582489014, -9.95383358001709], "C_Y": [-7.554543972015381, -9.890246391296387]}
+{"attr": "instrument", "X": "cello", "Y": "oboe", "target_index": 0, "variant": "scale_0.5", "C_X": [-7.661408424377441, -10.38560962677002], "C_Y": [-7.786357879638672, -10.385251998901367]}
+{"attr": "instrument", "X": "cello", "Y": "oboe", "target_index": 0, "variant": "scale_2.0", "C_X": [-7.022703170776367, -9.466543197631836], "C_Y": [-7.5203471183776855, -8.86152458190918]}
+{"attr": "instrument", "X": "cello", "Y": "oboe", "target_index": 0, "variant": "scale_4.0", "C_X": [-2.7935922145843506, -6.05616569519043], "C_Y": [-3.9795455932617188, -4.846969127655029]}
+{"attr": "instrument", "X": "cello", "Y": "oboe", "target_index": 1, "variant": "full", "C_X": [-7.83812952041626, -10.285120010375977], "C_Y": [-8.08553695678711, -10.281949996948242]}
+{"attr": "instrument", "X": "cello", "Y": "oboe", "target_index": 2, "variant": "full", "C_X": [-7.9026384353637695, -10.349564552307129], "C_Y": [-8.02491569519043, -10.283731460571289]}
+{"attr": "instrument", "X": "cello", "Y": "oboe", "target_index": 4, "variant": "full", "C_X": [-8.085941314697266, -10.47017765045166], "C_Y": [-8.085952758789062, -10.344833374023438]}
+{"attr": "instrument", "X": "cello", "Y": "oboe", "target_index": 8, "variant": "full", "C_X": [-7.965647220611572, -10.411762237548828], "C_Y": [-8.150005340576172, -10.472198486328125]}
+{"attr": "instrument", "X": "cello", "Y": "oboe", "target_index": 51, "variant": "full", "C_X": [-8.025755882263184, -10.597023963928223], "C_Y": [-8.149943351745605, -10.39461612701416]}
+{"attr": "instrument", "X": "cello", "Y": "oboe", "target_index": 55, "variant": "full", "C_X": [-8.088305473327637, -10.659379005432129], "C_Y": [-8.088014602661133, -10.394225120544434]}
+{"attr": "instrument", "X": "cello", "Y": "oboe", "target_index": 57, "variant": "full", "C_X": [-7.903604507446289, -10.412823677062988], "C_Y": [-8.087174415588379, -10.424073219299316]}
+{"attr": "instrument", "X": "cello", "Y": "oboe", "target_index": 58, "variant": "full", "C_X": [-8.088149070739746, -10.612464904785156], "C_Y": [-8.087679862976074, -10.33210277557373]}
+{"attr": "instrument", "X": "cello", "Y": "oboe", "target_index": 59, "variant": "full", "C_X": [-8.088702201843262, -10.471173286437988], "C_Y": [-8.149938583374023, -10.408523559570312]}
+{"attr": "instrument", "X": "cello", "Y": "oboe", "target_index": 59, "variant": "band_early", "C_X": [-8.032083511352539, -10.729876518249512], "C_Y": [-8.090056419372559, -10.77720832824707]}
+{"attr": "instrument", "X": "cello", "Y": "oboe", "target_index": 59, "variant": "band_mid", "C_X": [-7.121768951416016, -9.64625358581543], "C_Y": [-7.003325939178467, -9.465736389160156]}
+{"attr": "instrument", "X": "cello", "Y": "oboe", "target_index": 59, "variant": "band_late", "C_X": [-7.1255340576171875, -9.784585952758789], "C_Y": [-7.068195819854736, -9.654715538024902]}
+{"attr": "instrument", "X": "cello", "Y": "oboe", "target_index": 59, "variant": "heads_long", "C_X": [-7.841068744659424, -10.399466514587402], "C_Y": [-7.96317195892334, -10.321089744567871]}
+{"attr": "instrument", "X": "cello", "Y": "oboe", "target_index": 59, "variant": "heads_short", "C_X": [-7.491966247558594, -9.952751159667969], "C_Y": [-7.492504119873047, -9.891154289245605]}
+{"attr": "instrument", "X": "cello", "Y": "oboe", "target_index": 59, "variant": "scale_0.5", "C_X": [-7.668600082397461, -10.392152786254883], "C_Y": [-7.787510871887207, -10.436506271362305]}
+{"attr": "instrument", "X": "cello", "Y": "oboe", "target_index": 59, "variant": "scale_2.0", "C_X": [-8.02208423614502, -10.288054466247559], "C_Y": [-7.281212329864502, -9.00716781616211]}
+{"attr": "instrument", "X": "cello", "Y": "oboe", "target_index": 59, "variant": "scale_4.0", "C_X": [-4.125380992889404, -6.867958068847656], "C_Y": [-4.324996471405029, -5.289055347442627]}
+{"attr": "instrument", "X": "banjo", "Y": "harp", "target_index": 0, "variant": "full", "C_X": [-10.453027725219727, -9.572131156921387], "C_Y": [-11.203383445739746, -9.281553268432617]}
+{"attr": "instrument", "X": "banjo", "Y": "harp", "target_index": 0, "variant": "band_early", "C_X": [-11.018843650817871, -9.55610179901123], "C_Y": [-10.959753036499023, -9.354578971862793]}
+{"attr": "instrument", "X": "banjo", "Y": "harp", "target_index": 0, "variant": "band_mid", "C_X": [-9.9291353225708, -8.778973579406738], "C_Y": [-10.11073112487793, -8.898118019104004]}
+{"attr": "instrument", "X": "banjo", "Y": "harp", "target_index": 0, "variant": "band_late", "C_X": [-9.491045951843262, -8.932848930358887], "C_Y": [-10.052824974060059, -8.744336128234863]}
+{"attr": "instrument", "X": "banjo", "Y": "harp", "target_index": 0, "variant": "heads_long", "C_X": [-10.894706726074219, -9.369024276733398], "C_Y": [-11.14578914642334, -9.202225685119629]}
+{"attr": "instrument", "X": "banjo", "Y": "harp", "target_index": 0, "variant": "heads_short", "C_X": [-9.735836029052734, -9.068334579467773], "C_Y": [-10.236296653747559, -9.006295204162598]}
+{"attr": "instrument", "X": "banjo", "Y": "harp", "target_index": 0, "variant": "scale_0.5", "C_X": [-10.343159675598145, -9.28453254699707], "C_Y": [-10.657408714294434, -9.17717456817627]}
+{"attr": "instrument", "X": "banjo", "Y": "harp", "target_index": 0, "variant": "scale_2.0", "C_X": [-10.13010311126709, -10.481067657470703], "C_Y": [-12.005151748657227, -9.618553161621094]}
+{"attr": "instrument", "X": "banjo", "Y": "harp", "target_index": 0, "variant": "scale_4.0", "C_X": [-5.001258850097656, -7.390631675720215], "C_Y": [-7.958151817321777, -5.023916721343994]}
+{"attr": "instrument", "X": "banjo", "Y": "harp", "target_index": 1, "variant": "full", "C_X": [-10.888360977172852, -9.757387161254883], "C_Y": [-11.264032363891602, -9.570667266845703]}
+{"attr": "instrument", "X": "banjo", "Y": "harp", "target_index": 2, "variant": "full", "C_X": [-10.950901985168457, -9.779361724853516], "C_Y": [-11.203256607055664, -9.447421073913574]}
+{"attr": "instrument", "X": "banjo", "Y": "harp", "target_index": 4, "variant": "full", "C_X": [-10.950806617736816, -9.694769859313965], "C_Y": [-11.325706481933594, -9.569847106933594]}
+{"attr": "instrument", "X": "banjo", "Y": "harp", "target_index": 8, "variant": "full", "C_X": [-10.950838088989258, -9.757328033447266], "C_Y": [-11.264067649841309, -9.5706205368042]}
+{"attr": "instrument", "X": "banjo", "Y": "harp", "target_index": 51, "variant": "full", "C_X": [-11.138253211975098, -9.716795921325684], "C_Y": [-11.263238906860352, -9.654061317443848]}
+{"attr": "instrument", "X": "banjo", "Y": "harp", "target_index": 55, "variant": "full", "C_X": [-11.015054702758789, -9.593232154846191], "C_Y": [-11.077475547790527, -9.446674346923828]}
+{"attr": "instrument", "X": "banjo", "Y": "harp", "target_index": 57, "variant": "full", "C_X": [-11.076123237609863, -9.632692337036133], "C_Y": [-11.140552520751953, -9.509730339050293]}
+{"attr": "instrument", "X": "banjo", "Y": "harp", "target_index": 58, "variant": "full", "C_X": [-11.076050758361816, -9.71704387664795], "C_Y": [-11.14061450958252, -9.447312355041504]}
+{"attr": "instrument", "X": "banjo", "Y": "harp", "target_index": 59, "variant": "full", "C_X": [-10.95388412475586, -9.594635963439941], "C_Y": [-10.955296516418457, -9.387054443359375]}
+{"attr": "instrument", "X": "banjo", "Y": "harp", "target_index": 59, "variant": "band_early", "C_X": [-10.898120880126953, -9.417564392089844], "C_Y": [-10.959630966186523, -9.401270866394043]}
+{"attr": "instrument", "X": "banjo", "Y": "harp", "target_index": 59, "variant": "band_mid", "C_X": [-9.989693641662598, -8.839559555053711], "C_Y": [-9.987266540527344, -8.774604797363281]}
+{"attr": "instrument", "X": "banjo", "Y": "harp", "target_index": 59, "variant": "band_late", "C_X": [-9.929743766784668, -8.996431350708008], "C_Y": [-10.116059303283691, -8.99552059173584]}
+{"attr": "instrument", "X": "banjo", "Y": "harp", "target_index": 59, "variant": "heads_long", "C_X": [-11.081979751586914, -9.388472557067871], "C_Y": [-11.206903457641602, -9.32593822479248]}
+{"attr": "instrument", "X": "banjo", "Y": "harp", "target_index": 59, "variant": "heads_short", "C_X": [-10.229571342468262, -9.3298978805542], "C_Y": [-10.233211517333984, -9.066062927246094]}
+{"attr": "instrument", "X": "banjo", "Y": "harp", "target_index": 59, "variant": "scale_0.5", "C_X": [-10.592418670654297, -9.36218547821045], "C_Y": [-10.534037590026855, -9.163086891174316]}
+{"attr": "instrument", "X": "banjo", "Y": "harp", "target_index": 59, "variant": "scale_2.0", "C_X": [-9.950174331665039, -9.663928031921387], "C_Y": [-11.072798728942871, -9.415497779846191]}
+{"attr": "instrument", "X": "banjo", "Y": "harp", "target_index": 59, "variant": "scale_4.0", "C_X": [-6.146762371063232, -6.542514801025391], "C_Y": [-7.91111946105957, -5.665040493011475]}
+{"attr": "sport", "X": "squash", "Y": "hurling", "target_index": 0, "variant": "full", "C_X": [-9.488057136535645, -14.73924446105957], "C_Y": [-9.621472358703613, -14.122215270996094]}
+{"attr": "sport", "X": "squash", "Y": "hurling", "target_index": 0, "variant": "band_early", "C_X": [-9.620309829711914, -14.433600425720215], "C_Y": [-9.6180419921875, -14.4312162399292]}
+{"attr": "sport", "X": "squash", "Y": "hurling", "target_index": 0, "variant": "band_mid", "C_X": [-9.433672904968262, -14.6217041015625], "C_Y": [-9.501049995422363, -14.626442909240723]}
+{"attr": "sport", "X": "squash", "Y": "hurling", "target_index": 0, "variant": "band_late", "C_X": [-8.658903121948242, -14.222105979919434], "C_Y": [-8.776463508605957, -13.652151107788086]}
+{"attr": "sport", "X": "squash", "Y": "hurling", "target_index": 0, "variant": "heads_long", "C_X": [-9.628493309020996, -14.441963195800781], "C_Y": [-9.692813873291016, -14.256011009216309]}
+{"attr": "sport", "X": "squash", "Y": "hurling", "target_index": 0, "variant": "heads_short", "C_X": [-9.41468620300293, -14.727800369262695], "C_Y": [-9.543490409851074, -14.481644630432129]}
+{"attr": "sport", "X": "squash", "Y": "hurling", "target_index": 0, "variant": "scale_0.5", "C_X": [-9.691183090209961, -14.692070960998535], "C_Y": [-9.769579887390137, -14.395360946655273]}
+{"attr": "sport", "X": "squash", "Y": "hurling", "target_index": 0, "variant": "scale_2.0", "C_X": [-6.446533203125, -10.584305763244629], "C_Y": [-7.47859001159668, -9.171243667602539]}
+{"attr": "sport", "X": "squash", "Y": "hurling", "target_index": 0, "variant": "scale_4.0", "C_X": [-2.87210750579834, -9.083322525024414], "C_Y": [-4.8762640953063965, -5.617189407348633]}
+{"attr": "sport", "X": "squash", "Y": "hurling", "target_index": 1, "variant": "full", "C_X": [-9.549601554870605, -14.73804759979248], "C_Y": [-9.799678802490234, -14.175524711608887]}
+{"attr": "sport", "X": "squash", "Y": "hurling", "target_index": 2, "variant": "full", "C_X": [-9.305837631225586, -14.619423866271973], "C_Y": [-9.492044448852539, -13.805405616760254]}
+{"attr": "sport", "X": "squash", "Y": "hurling", "target_index": 4, "variant": "full", "C_X": [-9.493708610534668, -14.55722427368164], "C_Y": [-9.674993515014648, -13.988361358642578]}
+{"attr": "sport", "X": "squash", "Y": "hurling", "target_index": 8, "variant": "full", "C_X": [-9.434240341186523, -14.622735023498535], "C_Y": [-9.375534057617188, -13.87641429901123]}
+{"attr": "sport", "X": "squash", "Y": "hurling", "target_index": 51, "variant": "full", "C_X": [-9.436899185180664, -14.438104629516602], "C_Y": [-9.555800437927246, -13.869101524353027]}
+{"attr": "sport", "X": "squash", "Y": "hurling", "target_index": 55, "variant": "full", "C_X": [-9.374256134033203, -14.437655448913574], "C_Y": [-9.555908203125, -13.869251251220703]}
+{"attr": "sport", "X": "squash", "Y": "hurling", "target_index": 57, "variant": "full", "C_X": [-9.436421394348145, -14.562454223632812], "C_Y": [-9.555632591247559, -13.868847846984863]}
+{"attr": "sport", "X": "squash", "Y": "hurling", "target_index": 58, "variant": "full", "C_X": [-9.436686515808105, -14.562969207763672], "C_Y": [-9.31280517578125, -13.751067161560059]}
+{"attr": "sport", "X": "squash", "Y": "hurling", "target_index": 59, "variant": "full", "C_X": [-9.849729537963867, -14.72671890258789], "C_Y": [-9.60327434539795, -13.604806900024414]}
+{"attr": "sport", "X": "squash", "Y": "hurling", "target_index": 59, "variant": "band_early", "C_X": [-9.838051795959473, -14.651602745056152], "C_Y": [-9.837553024291992, -14.588644981384277]}
+{"attr": "sport", "X": "squash", "Y": "hurling", "target_index": 59, "variant": "band_mid", "C_X": [-9.20766830444336, -14.520734786987305], "C_Y": [-9.260324478149414, -14.448307991027832]}
+{"attr": "sport", "X": "squash", "Y": "hurling", "target_index": 59, "variant": "band_late", "C_X": [-8.780319213867188, -14.218441009521484], "C_Y": [-8.78001880645752, -13.530706405639648]}
+{"attr": "sport", "X": "squash", "Y": "hurling", "target_index": 59, "variant": "heads_long", "C_X": [-9.57435131072998, -14.325357437133789], "C_Y": [-9.6931734085083, -14.256461143493652]}
+{"attr": "sport", "X": "squash", "Y": "hurling", "target_index": 59, "variant": "heads_short", "C_X": [-9.375129699707031, -14.625786781311035], "C_Y": [-9.378798484802246, -14.254362106323242]}
+{"attr": "sport", "X": "squash", "Y": "hurling", "target_index": 59, "variant": "scale_0.5", "C_X": [-9.691455841064453, -14.692572593688965], "C_Y": [-9.804224967956543, -14.492754936218262]}
+{"attr": "sport", "X": "squash", "Y": "hurling", "target_index": 59, "variant": "scale_2.0", "C_X": [-6.385791301727295, -10.168994903564453], "C_Y": [-7.651966571807861, -6.657382488250732]}
+{"attr": "sport", "X": "squash", "Y": "hurling", "target_index": 59, "variant": "scale_4.0", "C_X": [-2.32773494720459, -9.832376480102539], "C_Y": [-5.505718231201172, -3.160576581954956]}
+{"attr": "sport", "X": "badminton", "Y": "water polo", "target_index": 0, "variant": "full", "C_X": [-6.812824249267578, -9.460124969482422], "C_Y": [-7.065584659576416, -8.89755630493164]}
+{"attr": "sport", "X": "badminton", "Y": "water polo", "target_index": 0, "variant": "band_early", "C_X": [-7.548328399658203, -9.26192569732666], "C_Y": [-7.609489917755127, -9.322444915771484]}
+{"attr": "sport", "X": "badminton", "Y": "water polo", "target_index": 0, "variant": "band_mid", "C_X": [-7.828962326049805, -9.16409969329834], "C_Y": [-7.785511493682861, -8.994425773620605]}
+{"attr": "sport", "X": "badminton", "Y": "water polo", "target_index": 0, "variant": "band_late", "C_X": [-7.336216449737549, -8.486837387084961], "C_Y": [-7.657105445861816, -8.057547569274902]}
+{"attr": "sport", "X": "badminton", "Y": "water polo", "target_index": 0, "variant": "heads_long", "C_X": [-7.077243804931641, -9.600829124450684], "C_Y": [-7.264194488525391, -9.537755012512207]}
+{"attr": "sport", "X": "badminton", "Y": "water polo", "target_index": 0, "variant": "heads_short", "C_X": [-7.850485801696777, -8.87255573272705], "C_Y": [-8.105294227600098, -8.437192916870117]}
+{"attr": "sport", "X": "badminton", "Y": "water polo", "target_index": 0, "variant": "scale_0.5", "C_X": [-8.138534545898438, -9.535147666931152], "C_Y": [-8.383868217468262, -9.28037166595459]}
+{"attr": "sport", "X": "badminton", "Y": "water polo", "target_index": 0, "variant": "scale_2.0", "C_X": [-4.415027141571045, -6.3303399085998535], "C_Y": [-5.047426700592041, -5.47520112991333]}
+{"attr": "sport", "X": "badminton", "Y": "water polo", "target_index": 0, "variant": "scale_4.0", "C_X": [-3.164330244064331, -8.424468994140625], "C_Y": [-4.5205512046813965, -6.915151596069336]}
+{"attr": "sport", "X": "badminton", "Y": "water polo", "target_index": 1, "variant": "full", "C_X": [-6.9378275871276855, -9.46088695526123], "C_Y": [-7.129804611206055, -9.14932918548584]}
+{"attr": "sport", "X": "badminton", "Y": "water polo", "target_index": 2, "variant": "full", "C_X": [-6.819934844970703, -9.342119216918945], "C_Y": [-7.067013740539551, -9.086554527282715]}
+{"attr": "sport", "X": "badminton", "Y": "water polo", "target_index": 4, "variant": "full", "C_X": [-6.820976257324219, -9.281275749206543], "C_Y": [-7.067147254943848, -9.14937686920166]}
+{"attr": "sport", "X": "badminton", "Y": "water polo", "target_index": 8, "variant": "full", "C_X": [-6.825296401977539, -9.222679138183594], "C_Y": [-7.128425121307373, -9.335185050964355]}
+{"attr": "sport", "X": "badminton", "Y": "water polo", "target_index": 51, "variant": "full", "C_X": [-7.01462984085083, -9.286867141723633], "C_Y": [-7.192461013793945, -9.337226867675781]}
+{"attr": "sport", "X": "badminton", "Y": "water polo", "target_index": 55, "variant": "full", "C_X": [-6.949528694152832, -9.284188270568848], "C_Y": [-7.318146705627441, -9.337981224060059]}
+{"attr": "sport", "X": "badminton", "Y": "water polo", "target_index": 57, "variant": "full", "C_X": [-6.9537177085876465, -9.288338661193848], "C_Y": [-7.254924297332764, -9.336959838867188]}
+{"attr": "sport", "X": "badminton", "Y": "water polo", "target_index": 58, "variant": "full", "C_X": [-7.012328624725342, -9.347259521484375], "C_Y": [-7.382575511932373, -9.342446327209473]}
+{"attr": "sport", "X": "badminton", "Y": "water polo", "target_index": 59, "variant": "full", "C_X": [-6.678964138031006, -9.388162612915039], "C_Y": [-6.9311299324035645, -9.264623641967773]}
+{"attr": "sport", "X": "badminton", "Y": "water polo", "target_index": 59, "variant": "band_early", "C_X": [-7.529574871063232, -9.551877975463867], "C_Y": [-7.538356304168701, -9.245019912719727]}
+{"attr": "sport", "X": "badminton", "Y": "water polo", "target_index": 59, "variant": "band_mid", "C_X": [-7.648736476898193, -9.047451972961426], "C_Y": [-7.729698181152344, -8.879159927368164]}
+{"attr": "sport", "X": "badminton", "Y": "water polo", "target_index": 59, "variant": "band_late", "C_X": [-7.520244121551514, -8.4830961227417], "C_Y": [-7.644909381866455, -8.357481956481934]}
+{"attr": "sport", "X": "badminton", "Y": "water polo", "target_index": 59, "variant": "heads_long", "C_X": [-7.084029197692871, -9.5472412109375], "C_Y": [-7.199594020843506, -9.59789752960205]}
+{"attr": "sport", "X": "badminton", "Y": "water polo", "target_index": 59, "variant": "heads_short", "C_X": [-7.933248043060303, -8.768454551696777], "C_Y": [-8.063926696777344, -8.587152481079102]}
+{"attr": "sport", "X": "badminton", "Y": "water polo", "target_index": 59, "variant": "scale_0.5", "C_X": [-8.257771492004395, -9.533157348632812], "C_Y": [-8.32675552368164, -9.473438262939453]}
+{"attr": "sport", "X": "badminton", "Y": "water polo", "target_index": 59, "variant": "scale_2.0", "C_X": [-4.595272541046143, -5.997112274169922], "C_Y": [-5.075850009918213, -5.238319396972656]}
+{"attr": "sport", "X": "badminton", "Y": "water polo", "target_index": 59, "variant": "scale_4.0", "C_X": [-2.7019927501678467, -6.3218841552734375], "C_Y": [-4.183050632476807, -3.483055591583252]}
+{"attr": "drink", "X": "cortado", "Y": "flat white", "target_index": 0, "variant": "full", "C_X": [-11.082202911376953, -7.114326477050781], "C_Y": [-11.158074378967285, -7.058894634246826]}
+{"attr": "drink", "X": "cortado", "Y": "flat white", "target_index": 0, "variant": "band_early", "C_X": [-11.585855484008789, -7.184022426605225], "C_Y": [-11.634389877319336, -7.290332794189453]}
+{"attr": "drink", "X": "cortado", "Y": "flat white", "target_index": 0, "variant": "band_mid", "C_X": [-13.762752532958984, -7.615454196929932], "C_Y": [-13.872106552124023, -7.631569862365723]}
+{"attr": "drink", "X": "cortado", "Y": "flat white", "target_index": 0, "variant": "band_late", "C_X": [-16.719404220581055, -10.027281761169434], "C_Y": [-16.836467742919922, -10.051054000854492]}
+{"attr": "drink", "X": "cortado", "Y": "flat white", "target_index": 0, "variant": "heads_long", "C_X": [-10.696380615234375, -6.606618881225586], "C_Y": [-10.772770881652832, -6.551380157470703]}
+{"attr": "drink", "X": "cortado", "Y": "flat white", "target_index": 0, "variant": "heads_short", "C_X": [-13.868762969970703, -8.111847877502441], "C_Y": [-14.422795295715332, -8.388615608215332]}
+{"attr": "drink", "X": "cortado", "Y": "flat white", "target_index": 0, "variant": "scale_0.5", "C_X": [-11.965472221374512, -7.006542682647705], "C_Y": [-12.195052146911621, -6.859755992889404]}
+{"attr": "drink", "X": "cortado", "Y": "flat white", "target_index": 0, "variant": "scale_2.0", "C_X": [-8.016688346862793, -4.185258388519287], "C_Y": [-8.69699764251709, -4.103439807891846]}
+{"attr": "drink", "X": "cortado", "Y": "flat white", "target_index": 0, "variant": "scale_4.0", "C_X": [-4.237263202667236, -2.085681915283203], "C_Y": [-5.154196739196777, -1.7145717144012451]}
+{"attr": "drink", "X": "cortado", "Y": "flat white", "target_index": 1, "variant": "full", "C_X": [-11.149998664855957, -7.117429256439209], "C_Y": [-11.33249568939209, -7.109753131866455]}
+{"attr": "drink", "X": "cortado", "Y": "flat white", "target_index": 2, "variant": "full", "C_X": [-11.209144592285156, -7.1178083419799805], "C_Y": [-11.396468162536621, -7.2343831062316895]}
+{"attr": "drink", "X": "cortado", "Y": "flat white", "target_index": 4, "variant": "full", "C_X": [-11.321654319763184, -7.292450904846191], "C_Y": [-11.275689125061035, -7.115720272064209]}
+{"attr": "drink", "X": "cortado", "Y": "flat white", "target_index": 8, "variant": "full", "C_X": [-11.390466690063477, -7.291819095611572], "C_Y": [-11.163905143737793, -6.941232681274414]}
+{"attr": "drink", "X": "cortado", "Y": "flat white", "target_index": 51, "variant": "full", "C_X": [-11.336211204528809, -7.304834842681885], "C_Y": [-11.341340065002441, -7.242580413818359]}
+{"attr": "drink", "X": "cortado", "Y": "flat white", "target_index": 55, "variant": "full", "C_X": [-11.26935863494873, -7.2411699295043945], "C_Y": [-11.27677059173584, -7.239838123321533]}
+{"attr": "drink", "X": "cortado", "Y": "flat white", "target_index": 57, "variant": "full", "C_X": [-11.155024528503418, -7.127572536468506], "C_Y": [-11.165188789367676, -7.0049729347229]}
+{"attr": "drink", "X": "cortado", "Y": "flat white", "target_index": 58, "variant": "full", "C_X": [-11.332128524780273, -7.305125713348389], "C_Y": [-11.105698585510254, -7.06738805770874]}
+{"attr": "drink", "X": "cortado", "Y": "flat white", "target_index": 59, "variant": "full", "C_X": [-11.278841018676758, -7.124960422515869], "C_Y": [-11.227381706237793, -7.126842021942139]}
+{"attr": "drink", "X": "cortado", "Y": "flat white", "target_index": 59, "variant": "band_early", "C_X": [-12.160404205322266, -7.197885990142822], "C_Y": [-12.119739532470703, -7.2749223709106445]}
+{"attr": "drink", "X": "cortado", "Y": "flat white", "target_index": 59, "variant": "band_mid", "C_X": [-13.425862312316895, -7.527156829833984], "C_Y": [-13.255187034606934, -7.480765342712402]}
+{"attr": "drink", "X": "cortado", "Y": "flat white", "target_index": 59, "variant": "band_late", "C_X": [-17.08327293395996, -10.248051643371582], "C_Y": [-17.00212860107422, -10.241469383239746]}
+{"attr": "drink", "X": "cortado", "Y": "flat white", "target_index": 59, "variant": "heads_long", "C_X": [-11.126340866088867, -6.915653228759766], "C_Y": [-10.963147163391113, -6.8045525550842285]}
+{"attr": "drink", "X": "cortado", "Y": "flat white", "target_index": 59, "variant": "heads_short", "C_X": [-14.038640975952148, -8.123054504394531], "C_Y": [-13.811704635620117, -7.984728813171387]}
+{"attr": "drink", "X": "cortado", "Y": "flat white", "target_index": 59, "variant": "scale_0.5", "C_X": [-12.37316608428955, -7.223934173583984], "C_Y": [-12.272379875183105, -7.0585551261901855]}
+{"attr": "drink", "X": "cortado", "Y": "flat white", "target_index": 59, "variant": "scale_2.0", "C_X": [-8.79774284362793, -4.776211738586426], "C_Y": [-8.37618350982666, -4.226526737213135]}
+{"attr": "drink", "X": "cortado", "Y": "flat white", "target_index": 59, "variant": "scale_4.0", "C_X": [-4.8408684730529785, -2.1253609657287598], "C_Y": [-4.867688179016113, -1.6607836484909058]}
+{"attr": "drink", "X": "macchiato", "Y": "long black", "target_index": 0, "variant": "full", "C_X": [-11.761710166931152, -9.610576629638672], "C_Y": [-11.60249137878418, -9.188169479370117]}
+{"attr": "drink", "X": "macchiato", "Y": "long black", "target_index": 0, "variant": "band_early", "C_X": [-11.917169570922852, -9.340620040893555], "C_Y": [-12.050843238830566, -9.37043571472168]}
+{"attr": "drink", "X": "macchiato", "Y": "long black", "target_index": 0, "variant": "band_mid", "C_X": [-11.354926109313965, -11.544319152832031], "C_Y": [-11.12431812286377, -11.191954612731934]}
+{"attr": "drink", "X": "macchiato", "Y": "long black", "target_index": 0, "variant": "band_late", "C_X": [-13.23585319519043, -14.708956718444824], "C_Y": [-13.316656112670898, -14.448801040649414]}
+{"attr": "drink", "X": "macchiato", "Y": "long black", "target_index": 0, "variant": "heads_long", "C_X": [-11.018417358398438, -8.784334182739258], "C_Y": [-10.958148956298828, -8.481517791748047]}
+{"attr": "drink", "X": "macchiato", "Y": "long black", "target_index": 0, "variant": "heads_short", "C_X": [-12.057050704956055, -9.288705825805664], "C_Y": [-12.142683029174805, -9.201286315917969]}
+{"attr": "drink", "X": "macchiato", "Y": "long black", "target_index": 0, "variant": "scale_0.5", "C_X": [-10.747668266296387, -7.560047149658203], "C_Y": [-10.652177810668945, -7.26845121383667]}
+{"attr": "drink", "X": "macchiato", "Y": "long black", "target_index": 0, "variant": "scale_2.0", "C_X": [-8.327868461608887, -5.529541969299316], "C_Y": [-8.358894348144531, -4.875127792358398]}
+{"attr": "drink", "X": "macchiato", "Y": "long black", "target_index": 0, "variant": "scale_4.0", "C_X": [-4.929678440093994, -5.5087151527404785], "C_Y": [-5.818380355834961, -4.068872928619385]}
+{"attr": "drink", "X": "macchiato", "Y": "long black", "target_index": 1, "variant": "full", "C_X": [-11.60366439819336, -9.270626068115234], "C_Y": [-11.480596542358398, -8.941274642944336]}
+{"attr": "drink", "X": "macchiato", "Y": "long black", "target_index": 2, "variant": "full", "C_X": [-11.836458206176758, -9.434026718139648], "C_Y": [-11.667121887207031, -9.13037109375]}
+{"attr": "drink", "X": "macchiato", "Y": "long black", "target_index": 4, "variant": "full", "C_X": [-11.665241241455078, -9.26504135131836], "C_Y": [-11.530904769897461, -8.98826789855957]}
+{"attr": "drink", "X": "macchiato", "Y": "long black", "target_index": 8, "variant": "full", "C_X": [-11.727230072021484, -9.200175285339355], "C_Y": [-11.541335105895996, -8.949313163757324]}
+{"attr": "drink", "X": "macchiato", "Y": "long black", "target_index": 51, "variant": "full", "C_X": [-11.726301193237305, -9.282469749450684], "C_Y": [-11.558661460876465, -8.96281623840332]}
+{"attr": "drink", "X": "macchiato", "Y": "long black", "target_index": 55, "variant": "full", "C_X": [-11.614175796508789, -8.999568939208984], "C_Y": [-11.555728912353516, -8.837296485900879]}
+{"attr": "drink", "X": "macchiato", "Y": "long black", "target_index": 57, "variant": "full", "C_X": [-11.663640975952148, -9.100737571716309], "C_Y": [-11.486371040344238, -8.77342700958252]}
+{"attr": "drink", "X": "macchiato", "Y": "long black", "target_index": 58, "variant": "full", "C_X": [-11.54963493347168, -8.922264099121094], "C_Y": [-11.604496955871582, -8.896885871887207]}
+{"attr": "drink", "X": "macchiato", "Y": "long black", "target_index": 59, "variant": "full", "C_X": [-11.19278621673584, -8.675923347473145], "C_Y": [-11.179536819458008, -8.490557670593262]}
+{"attr": "drink", "X": "macchiato", "Y": "long black", "target_index": 59, "variant": "band_early", "C_X": [-10.503451347351074, -7.836164951324463], "C_Y": [-10.59485912322998, -7.644876003265381]}
+{"attr": "drink", "X": "macchiato", "Y": "long black", "target_index": 59, "variant": "band_mid", "C_X": [-10.944742202758789, -11.08340835571289], "C_Y": [-10.972310066223145, -11.14992618560791]}
+{"attr": "drink", "X": "macchiato", "Y": "long black", "target_index": 59, "variant": "band_late", "C_X": [-13.415131568908691, -14.668293952941895], "C_Y": [-13.409396171569824, -14.654167175292969]}
+{"attr": "drink", "X": "macchiato", "Y": "long black", "target_index": 59, "variant": "heads_long", "C_X": [-10.927098274230957, -8.576027870178223], "C_Y": [-10.850973129272461, -8.521096229553223]}
+{"attr": "drink", "X": "macchiato", "Y": "long black", "target_index": 59, "variant": "heads_short", "C_X": [-12.275385856628418, -8.58739185333252], "C_Y": [-12.15567398071289, -8.504508018493652]}
+{"attr": "drink", "X": "macchiato", "Y": "long black", "target_index": 59, "variant": "scale_0.5", "C_X": [-11.1043701171875, -7.882696628570557], "C_Y": [-10.955622673034668, -7.521738529205322]}
+{"attr": "drink", "X": "macchiato", "Y": "long black", "target_index": 59, "variant": "scale_2.0", "C_X": [-9.44332218170166, -5.810988426208496], "C_Y": [-9.994054794311523, -6.271409511566162]}
+{"attr": "drink", "X": "macchiato", "Y": "long black", "target_index": 59, "variant": "scale_4.0", "C_X": [-5.505951404571533, -6.711221218109131], "C_Y": [-5.494225025177002, -4.907467365264893]}
+{"attr": "book", "X": "Middlemarch", "Y": "Solaris", "target_index": 0, "variant": "full", "C_X": [-15.191065788269043, -20.44955062866211], "C_Y": [-15.717025756835938, -19.947656631469727]}
+{"attr": "book", "X": "Middlemarch", "Y": "Solaris", "target_index": 0, "variant": "band_early", "C_X": [-16.737165451049805, -21.71528434753418], "C_Y": [-16.75058364868164, -21.744388580322266]}
+{"attr": "book", "X": "Middlemarch", "Y": "Solaris", "target_index": 0, "variant": "band_mid", "C_X": [-17.46725082397461, -21.913097381591797], "C_Y": [-17.588890075683594, -21.960092544555664]}
+{"attr": "book", "X": "Middlemarch", "Y": "Solaris", "target_index": 0, "variant": "band_late", "C_X": [-17.929319381713867, -22.265464782714844], "C_Y": [-18.079404830932617, -22.134775161743164]}
+{"attr": "book", "X": "Middlemarch", "Y": "Solaris", "target_index": 0, "variant": "heads_long", "C_X": [-15.894603729248047, -21.265588760375977], "C_Y": [-16.218278884887695, -21.134483337402344]}
+{"attr": "book", "X": "Middlemarch", "Y": "Solaris", "target_index": 0, "variant": "heads_short", "C_X": [-17.65432357788086, -22.123884201049805], "C_Y": [-17.73215103149414, -21.943593978881836]}
+{"attr": "book", "X": "Middlemarch", "Y": "Solaris", "target_index": 0, "variant": "scale_0.5", "C_X": [-17.286426544189453, -22.13222885131836], "C_Y": [-17.432458877563477, -21.91034507751465]}
+{"attr": "book", "X": "Middlemarch", "Y": "Solaris", "target_index": 0, "variant": "scale_2.0", "C_X": [-11.628231048583984, -16.210214614868164], "C_Y": [-12.765931129455566, -13.712035179138184]}
+{"attr": "book", "X": "Middlemarch", "Y": "Solaris", "target_index": 0, "variant": "scale_4.0", "C_X": [-12.224596977233887, -13.925680160522461], "C_Y": [-9.370803833007812, -11.608832359313965]}
+{"attr": "book", "X": "Middlemarch", "Y": "Solaris", "target_index": 1, "variant": "full", "C_X": [-15.553187370300293, -20.500577926635742], "C_Y": [-15.871356010437012, -20.278409957885742]}
+{"attr": "book", "X": "Middlemarch", "Y": "Solaris", "target_index": 2, "variant": "full", "C_X": [-15.69430160522461, -20.72066307067871], "C_Y": [-15.812911987304688, -20.351110458374023]}
+{"attr": "book", "X": "Middlemarch", "Y": "Solaris", "target_index": 4, "variant": "full", "C_X": [-15.769943237304688, -20.724750518798828], "C_Y": [-15.885623931884766, -20.517362594604492]}
+{"attr": "book", "X": "Middlemarch", "Y": "Solaris", "target_index": 8, "variant": "full", "C_X": [-15.966224670410156, -20.857633590698242], "C_Y": [-15.917511940002441, -20.608762741088867]}
+{"attr": "book", "X": "Middlemarch", "Y": "Solaris", "target_index": 51, "variant": "full", "C_X": [-15.816162109375, -20.659698486328125], "C_Y": [-15.797225952148438, -20.517364501953125]}
+{"attr": "book", "X": "Middlemarch", "Y": "Solaris", "target_index": 55, "variant": "full", "C_X": [-15.68262767791748, -20.387882232666016], "C_Y": [-15.71902847290039, -20.42227554321289]}
+{"attr": "book", "X": "Middlemarch", "Y": "Solaris", "target_index": 57, "variant": "full", "C_X": [-15.700521469116211, -20.556354522705078], "C_Y": [-15.788930892944336, -20.428863525390625]}
+{"attr": "book", "X": "Middlemarch", "Y": "Solaris", "target_index": 58, "variant": "full", "C_X": [-15.779048919677734, -20.539962768554688], "C_Y": [-15.680763244628906, -20.383146286010742]}
+{"attr": "book", "X": "Middlemarch", "Y": "Solaris", "target_index": 59, "variant": "full", "C_X": [-15.83576488494873, -20.579648971557617], "C_Y": [-15.992269515991211, -20.580455780029297]}
+{"attr": "book", "X": "Middlemarch", "Y": "Solaris", "target_index": 59, "variant": "band_early", "C_X": [-16.984880447387695, -21.808082580566406], "C_Y": [-16.955493927001953, -21.810779571533203]}
+{"attr": "book", "X": "Middlemarch", "Y": "Solaris", "target_index": 59, "variant": "band_mid", "C_X": [-17.464923858642578, -21.97207260131836], "C_Y": [-17.506132125854492, -21.98090171813965]}
+{"attr": "book", "X": "Middlemarch", "Y": "Solaris", "target_index": 59, "variant": "band_late", "C_X": [-18.000688552856445, -22.208581924438477], "C_Y": [-18.09286117553711, -22.406314849853516]}
+{"attr": "book", "X": "Middlemarch", "Y": "Solaris", "target_index": 59, "variant": "heads_long", "C_X": [-16.293607711791992, -21.376100540161133], "C_Y": [-16.239500045776367, -21.193668365478516]}
+{"attr": "book", "X": "Middlemarch", "Y": "Solaris", "target_index": 59, "variant": "heads_short", "C_X": [-17.778654098510742, -22.062728881835938], "C_Y": [-17.7911434173584, -22.192140579223633]}
+{"attr": "book", "X": "Middlemarch", "Y": "Solaris", "target_index": 59, "variant": "scale_0.5", "C_X": [-17.38408851623535, -22.068782806396484], "C_Y": [-17.466381072998047, -22.081979751586914]}
+{"attr": "book", "X": "Middlemarch", "Y": "Solaris", "target_index": 59, "variant": "scale_2.0", "C_X": [-11.648699760437012, -15.146928787231445], "C_Y": [-12.230371475219727, -12.97605037689209]}
+{"attr": "book", "X": "Middlemarch", "Y": "Solaris", "target_index": 59, "variant": "scale_4.0", "C_X": [-12.168400764465332, -14.330559730529785], "C_Y": [-10.077507972717285, -11.04806900024414]}
+{"attr": "book", "X": "Beloved", "Y": "Dune", "target_index": 0, "variant": "full", "C_X": [-15.190788269042969, -11.038585662841797], "C_Y": [-15.542978286743164, -10.756226539611816]}
+{"attr": "book", "X": "Beloved", "Y": "Dune", "target_index": 0, "variant": "band_early", "C_X": [-17.556659698486328, -13.269375801086426], "C_Y": [-17.65919303894043, -13.43099308013916]}
+{"attr": "book", "X": "Beloved", "Y": "Dune", "target_index": 0, "variant": "band_mid", "C_X": [-18.168380737304688, -14.160550117492676], "C_Y": [-18.1966495513916, -14.219123840332031]}
+{"attr": "book", "X": "Beloved", "Y": "Dune", "target_index": 0, "variant": "band_late", "C_X": [-18.616878509521484, -15.036774635314941], "C_Y": [-18.68982696533203, -14.913383483886719]}
+{"attr": "book", "X": "Beloved", "Y": "Dune", "target_index": 0, "variant": "heads_long", "C_X": [-16.88131332397461, -12.321520805358887], "C_Y": [-16.813194274902344, -12.246145248413086]}
+{"attr": "book", "X": "Beloved", "Y": "Dune", "target_index": 0, "variant": "heads_short", "C_X": [-18.108823776245117, -14.365880012512207], "C_Y": [-18.246191024780273, -14.308282852172852]}
+{"attr": "book", "X": "Beloved", "Y": "Dune", "target_index": 0, "variant": "scale_0.5", "C_X": [-18.12177085876465, -14.21902847290039], "C_Y": [-18.05735206604004, -14.012537002563477]}
+{"attr": "book", "X": "Beloved", "Y": "Dune", "target_index": 0, "variant": "scale_2.0", "C_X": [-12.601696968078613, -9.866179466247559], "C_Y": [-13.05235767364502, -9.308426856994629]}
+{"attr": "book", "X": "Beloved", "Y": "Dune", "target_index": 0, "variant": "scale_4.0", "C_X": [-11.901676177978516, -4.437839031219482], "C_Y": [-10.891117095947266, -3.1419925689697266]}
+{"attr": "book", "X": "Beloved", "Y": "Dune", "target_index": 1, "variant": "full", "C_X": [-15.509960174560547, -11.16757583618164], "C_Y": [-15.522758483886719, -10.80687427520752]}
+{"attr": "book", "X": "Beloved", "Y": "Dune", "target_index": 2, "variant": "full", "C_X": [-15.543122291564941, -11.082274436950684], "C_Y": [-15.630471229553223, -10.78813648223877]}
+{"attr": "book", "X": "Beloved", "Y": "Dune", "target_index": 4, "variant": "full", "C_X": [-15.562413215637207, -11.159066200256348], "C_Y": [-15.648812294006348, -10.992846488952637]}
+{"attr": "book", "X": "Beloved", "Y": "Dune", "target_index": 8, "variant": "full", "C_X": [-15.636066436767578, -11.226136207580566], "C_Y": [-15.834036827087402, -11.141596794128418]}
+{"attr": "book", "X": "Beloved", "Y": "Dune", "target_index": 51, "variant": "full", "C_X": [-15.478446960449219, -10.945589065551758], "C_Y": [-15.792011260986328, -11.206774711608887]}
+{"attr": "book", "X": "Beloved", "Y": "Dune", "target_index": 55, "variant": "full", "C_X": [-15.381059646606445, -10.8097562789917], "C_Y": [-15.501418113708496, -10.884685516357422]}
+{"attr": "book", "X": "Beloved", "Y": "Dune", "target_index": 57, "variant": "full", "C_X": [-15.612519264221191, -11.017600059509277], "C_Y": [-15.736783027648926, -11.02265739440918]}
+{"attr": "book", "X": "Beloved", "Y": "Dune", "target_index": 58, "variant": "full", "C_X": [-15.478184700012207, -10.871221542358398], "C_Y": [-15.544797897338867, -10.894204139709473]}
+{"attr": "book", "X": "Beloved", "Y": "Dune", "target_index": 59, "variant": "full", "C_X": [-15.95946979522705, -11.416679382324219], "C_Y": [-16.09355926513672, -11.4517183303833]}
+{"attr": "book", "X": "Beloved", "Y": "Dune", "target_index": 59, "variant": "band_early", "C_X": [-17.88263511657715, -13.423768997192383], "C_Y": [-17.842552185058594, -13.433751106262207]}
+{"attr": "book", "X": "Beloved", "Y": "Dune", "target_index": 59, "variant": "band_mid", "C_X": [-18.31187629699707, -14.335939407348633], "C_Y": [-18.257741928100586, -14.273189544677734]}
+{"attr": "book", "X": "Beloved", "Y": "Dune", "target_index": 59, "variant": "band_late", "C_X": [-18.72905158996582, -15.010809898376465], "C_Y": [-18.746238708496094, -15.052884101867676]}
+{"attr": "book", "X": "Beloved", "Y": "Dune", "target_index": 59, "variant": "heads_long", "C_X": [-16.878252029418945, -12.087471961975098], "C_Y": [-16.95494842529297, -12.262595176696777]}
+{"attr": "book", "X": "Beloved", "Y": "Dune", "target_index": 59, "variant": "heads_short", "C_X": [-18.38931655883789, -14.579466819763184], "C_Y": [-18.407785415649414, -14.563970565795898]}
+{"attr": "book", "X": "Beloved", "Y": "Dune", "target_index": 59, "variant": "scale_0.5", "C_X": [-18.239133834838867, -14.20516300201416], "C_Y": [-18.268598556518555, -14.180463790893555]}
+{"attr": "book", "X": "Beloved", "Y": "Dune", "target_index": 59, "variant": "scale_2.0", "C_X": [-12.536250114440918, -9.152668952941895], "C_Y": [-12.989940643310547, -8.33328914642334]}
+{"attr": "book", "X": "Beloved", "Y": "Dune", "target_index": 59, "variant": "scale_4.0", "C_X": [-13.196893692016602, -5.615692615509033], "C_Y": [-12.019037246704102, -3.8790128231048584]}
+{"attr": "hometown", "X": "Galway", "Y": "Bergen", "target_index": 0, "variant": "full", "C_X": [-9.764715194702148, -14.920565605163574], "C_Y": [-13.045516014099121, -10.777289390563965]}
+{"attr": "hometown", "X": "Galway", "Y": "Bergen", "target_index": 0, "variant": "band_early", "C_X": [-12.9237642288208, -14.486063003540039], "C_Y": [-13.084726333618164, -14.587516784667969]}
+{"attr": "hometown", "X": "Galway", "Y": "Bergen", "target_index": 0, "variant": "band_mid", "C_X": [-12.437783241271973, -14.742230415344238], "C_Y": [-12.624617576599121, -14.810576438903809]}
+{"attr": "hometown", "X": "Galway", "Y": "Bergen", "target_index": 0, "variant": "band_late", "C_X": [-9.081440925598145, -15.621468544006348], "C_Y": [-12.840901374816895, -10.484545707702637]}
+{"attr": "hometown", "X": "Galway", "Y": "Bergen", "target_index": 0, "variant": "heads_long", "C_X": [-11.422969818115234, -14.716177940368652], "C_Y": [-12.869285583496094, -11.712577819824219]}
+{"attr": "hometown", "X": "Galway", "Y": "Bergen", "target_index": 0, "variant": "heads_short", "C_X": [-9.932225227355957, -14.317695617675781], "C_Y": [-11.964073181152344, -13.245153427124023]}
+{"attr": "hometown", "X": "Galway", "Y": "Bergen", "target_index": 0, "variant": "scale_0.5", "C_X": [-11.627805709838867, -15.212837219238281], "C_Y": [-13.500189781188965, -12.885396003723145]}
+{"attr": "hometown", "X": "Galway", "Y": "Bergen", "target_index": 0, "variant": "scale_2.0", "C_X": [-5.967874526977539, -13.291945457458496], "C_Y": [-11.21124267578125, -7.977619171142578]}
+{"attr": "hometown", "X": "Galway", "Y": "Bergen", "target_index": 0, "variant": "scale_4.0", "C_X": [-4.128881454467773, -13.68657112121582], "C_Y": [-10.092987060546875, -6.726548194885254]}
+{"attr": "hometown", "X": "Galway", "Y": "Bergen", "target_index": 1, "variant": "full", "C_X": [-10.33655834197998, -14.905936241149902], "C_Y": [-12.937697410583496, -11.295924186706543]}
+{"attr": "hometown", "X": "Galway", "Y": "Bergen", "target_index": 2, "variant": "full", "C_X": [-10.75107192993164, -14.582146644592285], "C_Y": [-12.835278511047363, -11.48585319519043]}
+{"attr": "hometown", "X": "Galway", "Y": "Bergen", "target_index": 4, "variant": "full", "C_X": [-11.176581382751465, -14.549938201904297], "C_Y": [-12.954547882080078, -12.109660148620605]}
+{"attr": "hometown", "X": "Galway", "Y": "Bergen", "target_index": 8, "variant": "full", "C_X": [-11.493892669677734, -14.555612564086914], "C_Y": [-12.897419929504395, -12.072076797485352]}
+{"attr": "hometown", "X": "Galway", "Y": "Bergen", "target_index": 51, "variant": "full", "C_X": [-11.092683792114258, -14.490632057189941], "C_Y": [-12.821065902709961, -12.61599349975586]}
+{"attr": "hometown", "X": "Galway", "Y": "Bergen", "target_index": 55, "variant": "full", "C_X": [-10.804983139038086, -14.505441665649414], "C_Y": [-12.803167343139648, -12.33846378326416]}
+{"attr": "hometown", "X": "Galway", "Y": "Bergen", "target_index": 57, "variant": "full", "C_X": [-10.936017036437988, -14.51718521118164], "C_Y": [-12.650290489196777, -12.255708694458008]}
+{"attr": "hometown", "X": "Galway", "Y": "Bergen", "target_index": 58, "variant": "full", "C_X": [-10.868579864501953, -14.478387832641602], "C_Y": [-12.740650177001953, -12.21842098236084]}
+{"attr": "hometown", "X": "Galway", "Y": "Bergen", "target_index": 59, "variant": "full", "C_X": [-11.044452667236328, -14.458772659301758], "C_Y": [-12.616039276123047, -12.46867847442627]}
+{"attr": "hometown", "X": "Galway", "Y": "Bergen", "target_index": 59, "variant": "band_early", "C_X": [-12.849279403686523, -14.47084903717041], "C_Y": [-12.718859672546387, -14.22545051574707]}
+{"attr": "hometown", "X": "Galway", "Y": "Bergen", "target_index": 59, "variant": "band_mid", "C_X": [-12.434769630432129, -14.913419723510742], "C_Y": [-12.691825866699219, -14.964099884033203]}
+{"attr": "hometown", "X": "Galway", "Y": "Bergen", "target_index": 59, "variant": "band_late", "C_X": [-11.075114250183105, -15.02092456817627], "C_Y": [-12.679073333740234, -12.787075996398926]}
+{"attr": "hometown", "X": "Galway", "Y": "Bergen", "target_index": 59, "variant": "heads_long", "C_X": [-11.638101577758789, -14.341062545776367], "C_Y": [-12.506941795349121, -13.130830764770508]}
+{"attr": "hometown", "X": "Galway", "Y": "Bergen", "target_index": 59, "variant": "heads_short", "C_X": [-11.007859230041504, -13.871849060058594], "C_Y": [-11.903386116027832, -13.434807777404785]}
+{"attr": "hometown", "X": "Galway", "Y": "Bergen", "target_index": 59, "variant": "scale_0.5", "C_X": [-12.317041397094727, -14.929824829101562], "C_Y": [-13.091744422912598, -13.900249481201172]}
+{"attr": "hometown", "X": "Galway", "Y": "Bergen", "target_index": 59, "variant": "scale_2.0", "C_X": [-7.622528076171875, -12.576234817504883], "C_Y": [-10.72370719909668, -8.974573135375977]}
+{"attr": "hometown", "X": "Galway", "Y": "Bergen", "target_index": 59, "variant": "scale_4.0", "C_X": [-5.133546352386475, -13.490321159362793], "C_Y": [-9.253512382507324, -7.291481018066406]}
+{"attr": "hometown", "X": "Ghent", "Y": "Leeds", "target_index": 0, "variant": "full", "C_X": [-12.385417938232422, -10.656357765197754], "C_Y": [-13.742494583129883, -9.067193031311035]}
+{"attr": "hometown", "X": "Ghent", "Y": "Leeds", "target_index": 0, "variant": "band_early", "C_X": [-15.262062072753906, -13.098915100097656], "C_Y": [-15.122233390808105, -13.089963912963867]}
+{"attr": "hometown", "X": "Ghent", "Y": "Leeds", "target_index": 0, "variant": "band_mid", "C_X": [-13.699213027954102, -13.183070182800293], "C_Y": [-13.776830673217773, -13.120908737182617]}
+{"attr": "hometown", "X": "Ghent", "Y": "Leeds", "target_index": 0, "variant": "band_late", "C_X": [-11.696481704711914, -11.720778465270996], "C_Y": [-13.902305603027344, -9.84009075164795]}
+{"attr": "hometown", "X": "Ghent", "Y": "Leeds", "target_index": 0, "variant": "heads_long", "C_X": [-12.905142784118652, -10.914788246154785], "C_Y": [-13.963743209838867, -9.668293952941895]}
+{"attr": "hometown", "X": "Ghent", "Y": "Leeds", "target_index": 0, "variant": "heads_short", "C_X": [-12.796013832092285, -12.816801071166992], "C_Y": [-13.614280700683594, -12.379684448242188]}
+{"attr": "hometown", "X": "Ghent", "Y": "Leeds", "target_index": 0, "variant": "scale_0.5", "C_X": [-13.862308502197266, -12.029574394226074], "C_Y": [-14.965638160705566, -11.32733154296875]}
+{"attr": "hometown", "X": "Ghent", "Y": "Leeds", "target_index": 0, "variant": "scale_2.0", "C_X": [-8.09485912322998, -8.075654029846191], "C_Y": [-11.229177474975586, -6.308862686157227]}
+{"attr": "hometown", "X": "Ghent", "Y": "Leeds", "target_index": 0, "variant": "scale_4.0", "C_X": [-5.742802143096924, -7.5716166496276855], "C_Y": [-9.769529342651367, -5.19808292388916]}
+{"attr": "hometown", "X": "Ghent", "Y": "Leeds", "target_index": 1, "variant": "full", "C_X": [-12.525839805603027, -10.63408088684082], "C_Y": [-13.773160934448242, -9.215747833251953]}
+{"attr": "hometown", "X": "Ghent", "Y": "Leeds", "target_index": 2, "variant": "full", "C_X": [-12.117667198181152, -10.51408863067627], "C_Y": [-13.808794975280762, -9.258803367614746]}
+{"attr": "hometown", "X": "Ghent", "Y": "Leeds", "target_index": 4, "variant": "full", "C_X": [-12.590041160583496, -10.760822296142578], "C_Y": [-13.718915939331055, -9.382526397705078]}
+{"attr": "hometown", "X": "Ghent", "Y": "Leeds", "target_index": 8, "variant": "full", "C_X": [-13.172981262207031, -10.975101470947266], "C_Y": [-13.980891227722168, -9.846856117248535]}
+{"attr": "hometown", "X": "Ghent", "Y": "Leeds", "target_index": 51, "variant": "full", "C_X": [-13.280657768249512, -10.818961143493652], "C_Y": [-14.005188941955566, -10.195876121520996]}
+{"attr": "hometown", "X": "Ghent", "Y": "Leeds", "target_index": 55, "variant": "full", "C_X": [-13.257295608520508, -10.734038352966309], "C_Y": [-13.97968578338623, -10.081603050231934]}
+{"attr": "hometown", "X": "Ghent", "Y": "Leeds", "target_index": 57, "variant": "full", "C_X": [-13.323019027709961, -10.7664794921875], "C_Y": [-14.061738967895508, -10.287618637084961]}
+{"attr": "hometown", "X": "Ghent", "Y": "Leeds", "target_index": 58, "variant": "full", "C_X": [-13.321724891662598, -10.773195266723633], "C_Y": [-14.094905853271484, -10.260001182556152]}
+{"attr": "hometown", "X": "Ghent", "Y": "Leeds", "target_index": 59, "variant": "full", "C_X": [-13.324074745178223, -10.666561126708984], "C_Y": [-13.992146492004395, -10.223377227783203]}
+{"attr": "hometown", "X": "Ghent", "Y": "Leeds", "target_index": 59, "variant": "band_early", "C_X": [-14.715784072875977, -12.874192237854004], "C_Y": [-14.824694633483887, -12.713330268859863]}
+{"attr": "hometown", "X": "Ghent", "Y": "Leeds", "target_index": 59, "variant": "band_mid", "C_X": [-13.919979095458984, -13.388307571411133], "C_Y": [-14.222074508666992, -13.647750854492188]}
+{"attr": "hometown", "X": "Ghent", "Y": "Leeds", "target_index": 59, "variant": "band_late", "C_X": [-13.38562297821045, -11.902153015136719], "C_Y": [-13.990646362304688, -11.2791748046875]}
+{"attr": "hometown", "X": "Ghent", "Y": "Leeds", "target_index": 59, "variant": "heads_long", "C_X": [-13.523965835571289, -11.04782485961914], "C_Y": [-14.124775886535645, -10.733663558959961]}
+{"attr": "hometown", "X": "Ghent", "Y": "Leeds", "target_index": 59, "variant": "heads_short", "C_X": [-13.505973815917969, -12.626688957214355], "C_Y": [-13.542289733886719, -12.68364143371582]}
+{"attr": "hometown", "X": "Ghent", "Y": "Leeds", "target_index": 59, "variant": "scale_0.5", "C_X": [-14.707788467407227, -12.276847839355469], "C_Y": [-15.205228805541992, -12.192228317260742]}
+{"attr": "hometown", "X": "Ghent", "Y": "Leeds", "target_index": 59, "variant": "scale_2.0", "C_X": [-8.994797706604004, -7.965158462524414], "C_Y": [-11.525671005249023, -7.4040608406066895]}
+{"attr": "hometown", "X": "Ghent", "Y": "Leeds", "target_index": 59, "variant": "scale_4.0", "C_X": [-6.500519752502441, -7.833211421966553], "C_Y": [-10.085736274719238, -6.160244464874268]}

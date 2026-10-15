@@ -1,0 +1,315 @@
+== 0. leak gate, absent store (part 1) ==
+  0862e8bf reproduction of the loaded k-means sst(a) against dev run 6a: anchor max |diff| 0.00e+00  items max |diff| 0.00e+00 -> pass
+  0862e8bf plumbing: ssf file 0862e8bf_a_all_23c0c6003537.json (absent True); items with the gold []; sst cache 0862e8bf_a_sst_4f44f7263cb9.pt (absent True); N = n_tok(a) // r True ([1636] vs 104741 // 64)
+    gold 'Luna': C -11.23  -0.14  CK*(a)  -9.30  -0.06  sst(a) -10.72  -0.05
+    sst/mw           lp  -9.47  -0.05   over max(sst(a), CK*(a))  -0.17  -0.00   flag False
+    sst+ssfd%30/mw   lp  -9.41  -0.05   over max(sst(a), CK*(a))  -0.11  -0.01   flag False
+    absent memory items 247 (descriptive)
+    CAPACITY(a) ssfd%30/mw - sst/mw                +0.330  [+0.281, +0.383]  LOSO [+0.316, +0.338]  (247 items, 28 sessions)
+    KEYS sst(a) sst/mw - sst                       +0.192  [+0.150, +0.230]  LOSO [+0.183, +0.200]  (247 items, 28 sessions)
+    held sst/mw           0.250 (p90 0.317); k-means sst(a) 0.357
+    held sst+ssfd%30/mw   0.241 (p90 0.317); k-means sst(a) 0.357
+  6f9b354f reproduction of the loaded k-means sst(a) against dev run 6a: anchor max |diff| 0.00e+00  items max |diff| 0.00e+00 -> pass
+  6f9b354f plumbing: ssf file 6f9b354f_a_all_23c0c6003537.json (absent True); items with the gold []; sst cache 6f9b354f_a_sst_a247b8308d78.pt (absent True); N = n_tok(a) // r True ([1740] vs 111371 // 64)
+    gold 'a lighter shade of gray': C -14.57  -7.31  -0.54  -0.33  -2.87  CK*(a) -12.39  -7.93  -0.42  -0.33  -2.55  sst(a) -13.86  -8.16  -0.37  -0.20  -2.70
+    sst/mw           lp -12.92  -7.97  -0.48  -0.33  -2.57   over max(sst(a), CK*(a))  -0.53  -0.05  -0.10  -0.13  -0.02   flag False
+    sst+ssfd%30/mw   lp -12.52  -8.09  -0.48  -0.33  -2.57   over max(sst(a), CK*(a))  -0.13  -0.16  -0.11  -0.13  -0.02   flag False
+    absent memory items 346 (descriptive)
+    CAPACITY(a) ssfd%30/mw - sst/mw                +0.387  [+0.343, +0.430]  LOSO [+0.379, +0.396]  (346 items, 34 sessions)
+    KEYS sst(a) sst/mw - sst                       +0.142  [+0.102, +0.190]  LOSO [+0.136, +0.152]  (346 items, 34 sessions)
+    held sst/mw           0.228 (p90 0.341); k-means sst(a) 0.334
+    held sst+ssfd%30/mw   0.229 (p90 0.343); k-means sst(a) 0.334
+
+== 1. reproduction (G1'): loaded r = 64 seeds against dev run 7 ==
+  size 0862e8bf sst/mw           anchor max |diff| 0.00e+00  items max |diff| 0.00e+00
+  size 0862e8bf sst+ssfd%30/mw   anchor max |diff| 0.00e+00  items max |diff| 0.00e+00
+  size 0862e8bf sst+ssfAd%30/mw  anchor max |diff| 0.00e+00  items max |diff| 0.00e+00
+  size 0862e8bf r256: no saved seeds, all fitted
+  size 0862e8bf r128: no saved seeds, all fitted
+  size 0862e8bf r32: no saved seeds, all fitted
+    size 0862e8bf plumbing: sst cache True, ssf file True, half True, rows True, items lp True, wsum sst+ssfd%30/mw True, wsum sst+ssfAd%30/mw True
+  size 6f9b354f sst/mw           anchor max |diff| 0.00e+00  items max |diff| 0.00e+00
+  size 6f9b354f sst+ssfd%30/mw   anchor max |diff| 0.00e+00  items max |diff| 0.00e+00
+  size 6f9b354f sst+ssfAd%30/mw  anchor max |diff| 0.00e+00  items max |diff| 0.00e+00
+  size 6f9b354f r256: no saved seeds, all fitted
+  size 6f9b354f r128: no saved seeds, all fitted
+  size 6f9b354f r32: no saved seeds, all fitted
+    size 6f9b354f plumbing: sst cache True, ssf file True, half True, rows True, items lp True, wsum sst+ssfd%30/mw True, wsum sst+ssfAd%30/mw True
+    r16 0862e8bf plumbing: sst cache True, ssf file True, half True, rows True, items lp True, wsum sst+ssfd%30/mw True, wsum sst+ssfAd%30/mw True
+    r16 6f9b354f plumbing: sst cache True, ssf file True, half True, rows True, items lp True, wsum sst+ssfd%30/mw True, wsum sst+ssfAd%30/mw True
+  dose 0862e8bf sst/mw           anchor max |diff| 0.00e+00  items max |diff| 0.00e+00
+  dose 0862e8bf sst+ssfd%30/mw   anchor max |diff| 0.00e+00  items max |diff| 0.00e+00
+    dose 0862e8bf plumbing: sst cache True, ssf file True, half True, rows True, items lp True, wsum sst+ssfd%30/mw True
+  dose 6f9b354f sst/mw           anchor max |diff| 0.00e+00  items max |diff| 0.00e+00
+  dose 6f9b354f sst+ssfd%30/mw   anchor max |diff| 0.00e+00  items max |diff| 0.00e+00
+    dose 6f9b354f plumbing: sst cache True, ssf file True, half True, rows True, items lp True, wsum sst+ssfd%30/mw True
+
+== 2. fit per r: item-held sst error (mean over heads; p90), G3 against sst/mw at the same r ==
+  0862e8bf r256 N   409 (  26.9 MB)  fit s/seed 601
+    sst/mw           held 0.297 (0.421)  G3 +0.000 (+0.000) pass  anchor rows 0.203  bias loss 0.135
+    sst+ssfd%30/mw   held 0.304 (0.429)  G3 +0.007 (+0.008) pass  anchor rows 0.191  bias loss 0.152
+    sst+ssfAd%30/mw  held 0.305 (0.430)  G3 +0.009 (+0.010) pass  anchor rows 0.210  bias loss 0.141
+  0862e8bf r128 N   819 (  53.9 MB)  fit s/seed 870
+    sst/mw           held 0.270 (0.369)  G3 +0.000 (+0.000) pass  anchor rows 0.170  bias loss 0.083
+    sst+ssfd%30/mw   held 0.286 (0.378)  G3 +0.016 (+0.009) pass  anchor rows 0.150  bias loss 0.091
+    sst+ssfAd%30/mw  held 0.277 (0.379)  G3 +0.007 (+0.010) pass  anchor rows 0.179  bias loss 0.084
+  0862e8bf r64  N  1638 ( 107.8 MB)  fit s/seed 1209/1353
+    sst/mw           held 0.243 (0.319)  G3 +0.000 (+0.000) pass  anchor rows 0.133  bias loss 0.046
+    sst+ssfd%30/mw   held 0.251 (0.321)  G3 +0.008 (+0.002) pass  anchor rows 0.118  bias loss 0.049
+    sst+ssfAd%30/mw  held 0.254 (0.324)  G3 +0.011 (+0.005) pass  anchor rows 0.138  bias loss 0.045
+    sst+ssfd%60/mw   held 0.258 (0.340)  G3 +0.015 (+0.021) pass  anchor rows 0.120  bias loss 0.040
+  0862e8bf r32  N  3276 ( 215.5 MB)  fit s/seed 2157
+    sst/mw           held 0.207 (0.268)  G3 +0.000 (+0.000) pass  anchor rows 0.118  bias loss 0.022
+    sst+ssfd%30/mw   held 0.209 (0.269)  G3 +0.002 (+0.001) pass  anchor rows 0.092  bias loss 0.023
+    sst+ssfAd%30/mw  held 0.208 (0.272)  G3 +0.001 (+0.005) pass  anchor rows 0.119  bias loss 0.021
+  0862e8bf r16  N  6552 ( 431.1 MB)  fit s/seed 4349
+    sst/mw           held 0.172 (0.213)  G3 +0.000 (+0.000) pass  anchor rows 0.094  bias loss 0.008
+    sst+ssfd%30/mw   held 0.172 (0.213)  G3 +0.000 (+0.000) pass  anchor rows 0.067  bias loss 0.009
+    sst+ssfAd%30/mw  held 0.172 (0.216)  G3 -0.000 (+0.003) pass  anchor rows 0.084  bias loss 0.008
+  6f9b354f r256 N   435 (  28.6 MB)  fit s/seed 652
+    sst/mw           held 0.279 (0.427)  G3 +0.000 (+0.000) pass  anchor rows 0.275  bias loss 0.162
+    sst+ssfd%30/mw   held 0.283 (0.431)  G3 +0.004 (+0.004) pass  anchor rows 0.233  bias loss 0.188
+    sst+ssfAd%30/mw  held 0.287 (0.437)  G3 +0.008 (+0.010) pass  anchor rows 0.221  bias loss 0.168
+  6f9b354f r128 N   870 (  57.2 MB)  fit s/seed 868
+    sst/mw           held 0.253 (0.384)  G3 +0.000 (+0.000) pass  anchor rows 0.232  bias loss 0.096
+    sst+ssfd%30/mw   held 0.261 (0.388)  G3 +0.008 (+0.004) pass  anchor rows 0.201  bias loss 0.112
+    sst+ssfAd%30/mw  held 0.264 (0.394)  G3 +0.010 (+0.009) pass  anchor rows 0.189  bias loss 0.098
+  6f9b354f r64  N  1740 ( 114.5 MB)  fit s/seed 1326/1425
+    sst/mw           held 0.226 (0.339)  G3 +0.000 (+0.000) pass  anchor rows 0.208  bias loss 0.052
+    sst+ssfd%30/mw   held 0.228 (0.342)  G3 +0.002 (+0.003) pass  anchor rows 0.169  bias loss 0.059
+    sst+ssfAd%30/mw  held 0.233 (0.349)  G3 +0.007 (+0.010) pass  anchor rows 0.149  bias loss 0.051
+    sst+ssfd%60/mw   held 0.237 (0.358)  G3 +0.011 (+0.019) pass  anchor rows 0.160  bias loss 0.049
+  6f9b354f r32  N  3480 ( 229.0 MB)  fit s/seed 2235
+    sst/mw           held 0.200 (0.292)  G3 +0.000 (+0.000) pass  anchor rows 0.181  bias loss 0.025
+    sst+ssfd%30/mw   held 0.201 (0.294)  G3 +0.001 (+0.002) pass  anchor rows 0.134  bias loss 0.027
+    sst+ssfAd%30/mw  held 0.204 (0.301)  G3 +0.005 (+0.009) pass  anchor rows 0.116  bias loss 0.024
+
+== 3. recovery R over memory items (delta >= 1) per r, and the dev run 8 contrasts ==
+  0862e8bf: memory items 250 (A 130, B 120)
+    r256 sst+ssfAd%30/mw  R all +0.292  A +0.449  B +0.124  items recovering >= 0.5: 0.29
+    r256 sst+ssfd%30/mw   R all +0.332  A +0.310  B +0.355  items recovering >= 0.5: 0.32
+    r256 sst/mw           R all +0.096  A +0.066  B +0.129  items recovering >= 0.5: 0.14
+    r128 sst+ssfAd%30/mw  R all +0.486  A +0.663  B +0.294  items recovering >= 0.5: 0.49
+    r128 sst+ssfd%30/mw   R all +0.577  A +0.536  B +0.622  items recovering >= 0.5: 0.59
+    r128 sst/mw           R all +0.244  A +0.214  B +0.276  items recovering >= 0.5: 0.30
+    r64  sst+ssfAd%30/mw  R all +0.628  A +0.780  B +0.464  items recovering >= 0.5: 0.65
+    r64  sst+ssfd%30/mw   R all +0.772  A +0.729  B +0.819  items recovering >= 0.5: 0.78
+    r64  sst+ssfd%60/mw   R all +0.820  A +0.774  B +0.869  items recovering >= 0.5: 0.82
+    r64  sst/mw           R all +0.435  A +0.396  B +0.476  items recovering >= 0.5: 0.45
+    r32  sst+ssfAd%30/mw  R all +0.749  A +0.853  B +0.636  items recovering >= 0.5: 0.74
+    r32  sst+ssfd%30/mw   R all +0.858  A +0.817  B +0.902  items recovering >= 0.5: 0.86
+    r32  sst/mw           R all +0.549  A +0.488  B +0.614  items recovering >= 0.5: 0.55
+    r16  sst+ssfAd%30/mw  R all +0.838  A +0.928  B +0.742  items recovering >= 0.5: 0.82
+    r16  sst+ssfd%30/mw   R all +0.928  A +0.901  B +0.957  items recovering >= 0.5: 0.91
+    r16  sst/mw           R all +0.688  A +0.657  B +0.723  items recovering >= 0.5: 0.67
+    SIZE r256: R_all ssfd%30/mw r256 - r64         -0.440  [-0.492, -0.395]  LOSO [-0.448, -0.422]  (250 items, 28 sessions)
+    SIZE sst r256: R_all sst/mw r256 - r64         -0.339  [-0.380, -0.290]  LOSO [-0.350, -0.330]  (250 items, 28 sessions)
+    SIZE unseen r256: R_B ssfAd%30/mw r256 - r64   -0.340  [-0.420, -0.263]  LOSO [-0.356, -0.312]  (120 items, 15 sessions)
+    SIZE r128: R_all ssfd%30/mw r128 - r64         -0.195  [-0.229, -0.162]  LOSO [-0.201, -0.187]  (250 items, 28 sessions)
+    SIZE sst r128: R_all sst/mw r128 - r64         -0.191  [-0.222, -0.160]  LOSO [-0.198, -0.186]  (250 items, 28 sessions)
+    SIZE unseen r128: R_B ssfAd%30/mw r128 - r64   -0.170  [-0.217, -0.121]  LOSO [-0.180, -0.155]  (120 items, 15 sessions)
+    SIZE r32: R_all ssfd%30/mw r32 - r64           +0.086  [+0.064, +0.114]  LOSO [+0.080, +0.092]  (250 items, 28 sessions)
+    SIZE sst r32: R_all sst/mw r32 - r64           +0.114  [+0.084, +0.143]  LOSO [+0.102, +0.119]  (250 items, 28 sessions)
+    SIZE unseen r32: R_B ssfAd%30/mw r32 - r64     +0.172  [+0.115, +0.214]  LOSO [+0.148, +0.180]  (120 items, 15 sessions)
+    SIZE r16: R_all ssfd%30/mw r16 - r64           +0.156  [+0.127, +0.194]  LOSO [+0.146, +0.163]  (250 items, 28 sessions)
+    SIZE sst r16: R_all sst/mw r16 - r64           +0.254  [+0.208, +0.293]  LOSO [+0.239, +0.260]  (250 items, 28 sessions)
+    SIZE unseen r16: R_B ssfAd%30/mw r16 - r64     +0.278  [+0.207, +0.322]  LOSO [+0.256, +0.291]  (120 items, 15 sessions)
+    CAPACITY r256: ssfd%30/mw - sst/mw             +0.236  [+0.192, +0.271]  LOSO [+0.228, +0.247]  (250 items, 28 sessions)
+    TRANSFER r256: R_B ssfAd%30/mw - sst/mw        -0.005  [-0.049, +0.023]  LOSO [-0.015, +0.009]  (120 items, 15 sessions)
+      first answer token only (its delta >= 1)     -0.018  [-0.080, +0.027]  LOSO [-0.033, +0.003]  (108 items, 15 sessions)
+      placebo r256: mean item lp shift ssfAd%30/mw vs sst/mw on B items with delta < 1: +0.218 (3 items)
+    CAPACITY r128: ssfd%30/mw - sst/mw             +0.333  [+0.290, +0.375]  LOSO [+0.320, +0.340]  (250 items, 28 sessions)
+    TRANSFER r128: R_B ssfAd%30/mw - sst/mw        +0.018  [-0.008, +0.049]  LOSO [+0.003, +0.025]  (120 items, 15 sessions)
+      first answer token only (its delta >= 1)     +0.017  [-0.009, +0.046]  LOSO [+0.005, +0.022]  (108 items, 15 sessions)
+      placebo r128: mean item lp shift ssfAd%30/mw vs sst/mw on B items with delta < 1: +0.107 (3 items)
+    CAPACITY r64: ssfd%30/mw - sst/mw              +0.338  [+0.283, +0.387]  LOSO [+0.326, +0.347]  (250 items, 28 sessions)
+    TRANSFER r64: R_B ssfAd%30/mw - sst/mw         -0.012  [-0.051, +0.016]  LOSO [-0.024, -0.001]  (120 items, 15 sessions)
+      first answer token only (its delta >= 1)     -0.019  [-0.052, +0.017]  LOSO [-0.026, -0.008]  (108 items, 15 sessions)
+      placebo r64: mean item lp shift ssfAd%30/mw vs sst/mw on B items with delta < 1: +0.063 (3 items)
+    CAPACITY r32: ssfd%30/mw - sst/mw              +0.310  [+0.254, +0.375]  LOSO [+0.296, +0.325]  (250 items, 28 sessions)
+    TRANSFER r32: R_B ssfAd%30/mw - sst/mw         +0.022  [-0.002, +0.041]  LOSO [+0.016, +0.029]  (120 items, 15 sessions)
+      first answer token only (its delta >= 1)     +0.014  [-0.008, +0.033]  LOSO [+0.008, +0.020]  (108 items, 15 sessions)
+      placebo r32: mean item lp shift ssfAd%30/mw vs sst/mw on B items with delta < 1: +0.105 (3 items)
+    CAPACITY r16: ssfd%30/mw - sst/mw              +0.240  [+0.169, +0.312]  LOSO [+0.224, +0.266]  (250 items, 28 sessions)
+    TRANSFER r16: R_B ssfAd%30/mw - sst/mw         +0.019  [-0.018, +0.052]  LOSO [+0.001, +0.026]  (120 items, 15 sessions)
+      first answer token only (its delta >= 1)     +0.000  [-0.022, +0.018]  LOSO [-0.006, +0.005]  (108 items, 15 sessions)
+      placebo r16: mean item lp shift ssfAd%30/mw vs sst/mw on B items with delta < 1: +0.092 (3 items)
+    DOSE: R_all ssfd%60/mw - ssfd%30/mw (r64)      +0.048  [+0.032, +0.068]  LOSO [+0.043, +0.051]  (250 items, 28 sessions)
+    CAPACITY 60%: ssfd%60/mw - sst/mw (r64)        +0.385  [+0.331, +0.441]  LOSO [+0.373, +0.394]  (250 items, 28 sessions)
+  6f9b354f: memory items 341 (A 159, B 182)
+    r256 sst+ssfAd%30/mw  R all +0.156  A +0.314  B +0.034  items recovering >= 0.5: 0.24
+    r256 sst+ssfd%30/mw   R all +0.198  A +0.157  B +0.229  items recovering >= 0.5: 0.25
+    r256 sst/mw           R all +0.018  A -0.014  B +0.042  items recovering >= 0.5: 0.15
+    r128 sst+ssfAd%30/mw  R all +0.325  A +0.574  B +0.135  items recovering >= 0.5: 0.37
+    r128 sst+ssfd%30/mw   R all +0.403  A +0.394  B +0.410  items recovering >= 0.5: 0.42
+    r128 sst/mw           R all +0.141  A +0.135  B +0.145  items recovering >= 0.5: 0.23
+    r64  sst+ssfAd%30/mw  R all +0.484  A +0.782  B +0.255  items recovering >= 0.5: 0.53
+    r64  sst+ssfd%30/mw   R all +0.670  A +0.690  B +0.654  items recovering >= 0.5: 0.67
+    r64  sst+ssfd%60/mw   R all +0.734  A +0.752  B +0.721  items recovering >= 0.5: 0.72
+    r64  sst/mw           R all +0.282  A +0.324  B +0.250  items recovering >= 0.5: 0.40
+    r32  sst+ssfAd%30/mw  R all +0.614  A +0.889  B +0.403  items recovering >= 0.5: 0.67
+    r32  sst+ssfd%30/mw   R all +0.811  A +0.837  B +0.791  items recovering >= 0.5: 0.81
+    r32  sst/mw           R all +0.437  A +0.500  B +0.388  items recovering >= 0.5: 0.51
+    SIZE r256: R_all ssfd%30/mw r256 - r64         -0.472  [-0.521, -0.420]  LOSO [-0.489, -0.460]  (341 items, 34 sessions)
+    SIZE sst r256: R_all sst/mw r256 - r64         -0.265  [-0.314, -0.215]  LOSO [-0.278, -0.255]  (341 items, 34 sessions)
+    SIZE unseen r256: R_B ssfAd%30/mw r256 - r64   -0.221  [-0.277, -0.173]  LOSO [-0.230, -0.205]  (182 items, 16 sessions)
+    SIZE r128: R_all ssfd%30/mw r128 - r64         -0.266  [-0.305, -0.225]  LOSO [-0.274, -0.255]  (341 items, 34 sessions)
+    SIZE sst r128: R_all sst/mw r128 - r64         -0.141  [-0.176, -0.109]  LOSO [-0.149, -0.134]  (341 items, 34 sessions)
+    SIZE unseen r128: R_B ssfAd%30/mw r128 - r64   -0.120  [-0.168, -0.081]  LOSO [-0.128, -0.103]  (182 items, 16 sessions)
+    SIZE r32: R_all ssfd%30/mw r32 - r64           +0.141  [+0.108, +0.171]  LOSO [+0.134, +0.146]  (341 items, 34 sessions)
+    SIZE sst r32: R_all sst/mw r32 - r64           +0.154  [+0.133, +0.177]  LOSO [+0.149, +0.159]  (341 items, 34 sessions)
+    SIZE unseen r32: R_B ssfAd%30/mw r32 - r64     +0.149  [+0.113, +0.193]  LOSO [+0.133, +0.154]  (182 items, 16 sessions)
+    SIZE r16: R_all ssfd%30/mw r16 - r64           n/a (missing r16 sst+ssfd%30/mw)
+    SIZE sst r16: R_all sst/mw r16 - r64           n/a (missing r16 sst/mw)
+    SIZE unseen r16: R_B ssfAd%30/mw r16 - r64     n/a (missing r16 sst+ssfAd%30/mw)
+    CAPACITY r256: ssfd%30/mw - sst/mw             +0.180  [+0.149, +0.214]  LOSO [+0.172, +0.185]  (341 items, 34 sessions)
+    TRANSFER r256: R_B ssfAd%30/mw - sst/mw        -0.008  [-0.017, +0.003]  LOSO [-0.010, -0.004]  (182 items, 16 sessions)
+      first answer token only (its delta >= 1)     -0.012  [-0.029, +0.007]  LOSO [-0.017, -0.007]  (157 items, 16 sessions)
+      placebo r256: mean item lp shift ssfAd%30/mw vs sst/mw on B items with delta < 1: +0.409 (9 items)
+    CAPACITY r128: ssfd%30/mw - sst/mw             +0.263  [+0.229, +0.298]  LOSO [+0.255, +0.272]  (341 items, 34 sessions)
+    TRANSFER r128: R_B ssfAd%30/mw - sst/mw        -0.010  [-0.040, +0.020]  LOSO [-0.018, +0.000]  (182 items, 16 sessions)
+      first answer token only (its delta >= 1)     -0.007  [-0.061, +0.048]  LOSO [-0.024, +0.014]  (157 items, 16 sessions)
+      placebo r128: mean item lp shift ssfAd%30/mw vs sst/mw on B items with delta < 1: +0.259 (9 items)
+    CAPACITY r64: ssfd%30/mw - sst/mw              +0.387  [+0.342, +0.432]  LOSO [+0.376, +0.397]  (341 items, 34 sessions)
+    TRANSFER r64: R_B ssfAd%30/mw - sst/mw         +0.005  [-0.023, +0.033]  LOSO [-0.003, +0.011]  (182 items, 16 sessions)
+      first answer token only (its delta >= 1)     +0.022  [-0.021, +0.065]  LOSO [+0.008, +0.031]  (157 items, 16 sessions)
+      placebo r64: mean item lp shift ssfAd%30/mw vs sst/mw on B items with delta < 1: -0.025 (9 items)
+    CAPACITY r32: ssfd%30/mw - sst/mw              +0.374  [+0.321, +0.422]  LOSO [+0.363, +0.384]  (341 items, 34 sessions)
+    TRANSFER r32: R_B ssfAd%30/mw - sst/mw         +0.016  [-0.023, +0.068]  LOSO [-0.002, +0.025]  (182 items, 16 sessions)
+      first answer token only (its delta >= 1)     +0.065  [+0.014, +0.133]  LOSO [+0.035, +0.077]  (157 items, 16 sessions)
+      placebo r32: mean item lp shift ssfAd%30/mw vs sst/mw on B items with delta < 1: +0.251 (9 items)
+    CAPACITY r16: ssfd%30/mw - sst/mw              n/a (missing r16 sst+ssfd%30/mw, r16 sst/mw)
+    TRANSFER r16: R_B ssfAd%30/mw - sst/mw         n/a (missing r16 sst+ssfAd%30/mw, r16 sst/mw)
+      first answer token only (its delta >= 1)     n/a (missing r16 sst+ssfAd%30/mw, r16 sst/mw)
+    DOSE: R_all ssfd%60/mw - ssfd%30/mw (r64)      +0.065  [+0.040, +0.088]  LOSO [+0.057, +0.068]  (341 items, 34 sessions)
+    CAPACITY 60%: ssfd%60/mw - sst/mw (r64)        +0.452  [+0.393, +0.511]  LOSO [+0.437, +0.463]  (341 items, 34 sessions)
+
+== 4. test-matching item and anchor per r (descriptive) ==
+  0862e8bf item 'What is the name of my cat?' -> 'Luna' (Jaccard 1.00, half B, delta +11.53; first-token lp CK* -0.00, C -11.37): item R (first-token lp)
+    r256 sst+ssfAd%30/mw  +0.24 (-8.66)
+    r256 sst+ssfd%30/mw   +0.27 (-8.37)
+    r256 sst/mw           +0.21 (-9.02)
+    r128 sst+ssfAd%30/mw  +0.98 (-0.23)
+    r128 sst+ssfd%30/mw   +1.00 (-0.01)
+    r128 sst/mw           +0.82 (-2.04)
+    r64  sst+ssfAd%30/mw  +1.00 (-0.02)
+    r64  sst+ssfd%30/mw   +1.00 (-0.00)
+    r64  sst+ssfd%60/mw   +1.00 (-0.00)
+    r64  sst/mw           +1.00 (-0.06)
+    r32  sst+ssfAd%30/mw  +1.00 (-0.04)
+    r32  sst+ssfd%30/mw   +1.00 (-0.00)
+    r32  sst/mw           +1.00 (-0.01)
+    r16  sst+ssfAd%30/mw  +1.00 (-0.00)
+    r16  sst+ssfd%30/mw   +1.00 (-0.00)
+    r16  sst/mw           +1.00 (-0.03)
+    anchor 'Luna': C -11.15  -0.14  CK*  -0.00  -0.00   per seed: lp | (lp - C) / (CK* - C)
+    S256sst+ssfAd%30/mw   -9.07  -0.05 | +0.19 +0.67
+    S256sst+ssfd%30/mw    -8.53  -0.05 | +0.24 +0.68
+    S256sst/mw            -9.38  -0.04 | +0.16 +0.70
+    S128sst+ssfAd%30/mw   -0.95  -0.00 | +0.91 +1.00
+    S128sst+ssfd%30/mw    -0.01  -0.00 | +1.00 +1.00
+    S128sst/mw            -2.10  -0.00 | +0.81 +0.99
+    S64sst+ssfAd%30/mw    -0.04  -0.00 | +1.00 +1.00
+    S64sst+ssfd%30/mw     -0.01  -0.00 | +1.00 +1.00
+    S64sst+ssfd%60/mw     -0.00  -0.00 | +1.00 +1.00
+    S64sst/mw             -0.05  -0.00 | +1.00 +1.00
+    S32sst+ssfAd%30/mw    -0.01  -0.00 | +1.00 +1.00
+    S32sst+ssfd%30/mw     -0.00  -0.00 | +1.00 +1.00
+    S32sst/mw             -0.01  -0.00 | +1.00 +1.00
+    S16sst+ssfAd%30/mw    -0.00  -0.00 | +1.00 +1.00
+    S16sst+ssfd%30/mw     -0.00  -0.00 | +1.00 +1.00
+    S16sst/mw             -0.00  -0.00 | +1.00 +1.00
+  6f9b354f item 'What color did I paint my bedroom walls?' -> 'lighter shade of gray' (Jaccard 0.78, half A, delta +19.76; first-token lp CK* -2.78, C -8.90): item R (first-token lp)
+    r256 sst+ssfAd%30/mw  +0.58 (-5.41)
+    r256 sst+ssfd%30/mw   +0.32 (-5.44)
+    r256 sst/mw           -0.14 (-12.06)
+    r128 sst+ssfAd%30/mw  +0.82 (-3.80)
+    r128 sst+ssfd%30/mw   +0.59 (-5.75)
+    r128 sst/mw           +0.20 (-8.56)
+    r64  sst+ssfAd%30/mw  +1.01 (-2.51)
+    r64  sst+ssfd%30/mw   +0.90 (-3.68)
+    r64  sst+ssfd%60/mw   +0.94 (-3.92)
+    r64  sst/mw           +0.38 (-3.97)
+    r32  sst+ssfAd%30/mw  +1.03 (-2.21)
+    r32  sst+ssfd%30/mw   +1.05 (-1.72)
+    r32  sst/mw           +1.05 (-1.17)
+    anchor 'a lighter shade of gray': C -14.32  -7.36  -0.53  -0.34  -2.86  CK*  -2.10  -0.00  -0.00  -0.00  -0.00   per seed: lp | (lp - C) / (CK* - C)
+    S256sst+ssfAd%30/mw  -11.25  -4.56  -0.30  -0.17  -2.70 | +0.25 +0.38 +0.44 +0.50 +0.05
+    S256sst+ssfd%30/mw    -8.34  -4.94  -0.34  -0.15  -2.60 | +0.49 +0.33 +0.35 +0.57 +0.09
+    S256sst/mw           -12.77  -7.75  -0.49  -0.35  -2.58 | +0.13 -0.05 +0.07 -0.05 +0.10
+    S128sst+ssfAd%30/mw   -5.25  -2.09  -0.06  -0.08  -2.00 | +0.74 +0.72 +0.89 +0.78 +0.30
+    S128sst+ssfd%30/mw    -5.85  -3.63  -0.27  -0.14  -2.54 | +0.69 +0.51 +0.48 +0.60 +0.11
+    S128sst/mw           -11.45  -5.03  -0.30  -0.23  -2.61 | +0.24 +0.32 +0.43 +0.33 +0.08
+    S64sst+ssfAd%30/mw    -4.05  -0.02  -0.00  -0.06  -0.34 | +0.84 +1.00 +1.00 +0.81 +0.88
+    S64sst+ssfd%30/mw     -5.24  -0.37  -0.07  -0.13  -1.65 | +0.74 +0.95 +0.86 +0.61 +0.42
+    S64sst+ssfd%60/mw     -4.62  -0.03  -0.00  -0.05  -0.19 | +0.79 +1.00 +1.00 +0.84 +0.93
+    S64sst/mw             -8.35  -4.47  -0.30  -0.21  -2.45 | +0.49 +0.39 +0.43 +0.37 +0.14
+    S32sst+ssfAd%30/mw    -1.48  -0.00  -0.00  -0.00  -0.00 | +1.05 +1.00 +1.00 +1.00 +1.00
+    S32sst+ssfd%30/mw     -3.45  -0.00  -0.00  -0.00  -0.00 | +0.89 +1.00 +1.00 +1.00 +1.00
+    S32sst/mw             -2.63  -0.17  -0.03  -0.09  -0.36 | +0.96 +0.98 +0.95 +0.74 +0.87
+
+== 5. drift per r on the lookup rows (tokens the memory raises by >= 1 nat; mean over heads) ==
+  0862e8bf: lookup rows 594
+    r256 sst+ssfAd%30/mw  e_star 0.213 e_tot 0.325 e_run 0.172 q_drift 0.323  delta +0.112  vs sst/mw: ratio 0.79 g +0.056 g_run +0.051 -> neither
+    r256 sst+ssfd%30/mw   e_star 0.197 e_tot 0.312 e_run 0.172 q_drift 0.316  delta +0.115  vs sst/mw: ratio 0.74 g +0.071 g_run +0.064 -> neither
+    r256 sst/mw           e_star 0.268 e_tot 0.376 e_run 0.199 q_drift 0.355  delta +0.107
+    r128 sst+ssfAd%30/mw  e_star 0.174 e_tot 0.277 e_run 0.148 q_drift 0.276  delta +0.103  vs sst/mw: ratio 0.75 g +0.058 g_run +0.057 -> neither
+    r128 sst+ssfd%30/mw   e_star 0.154 e_tot 0.256 e_run 0.145 q_drift 0.256  delta +0.102  vs sst/mw: ratio 0.66 g +0.078 g_run +0.079 -> neither
+    r128 sst/mw           e_star 0.232 e_tot 0.335 e_run 0.179 q_drift 0.322  delta +0.103
+    r64  sst+ssfAd%30/mw  e_star 0.140 e_tot 0.226 e_run 0.125 q_drift 0.222  delta +0.086  vs sst/mw: ratio 0.70 g +0.060 g_run +0.063 -> neither
+    r64  sst+ssfd%30/mw   e_star 0.116 e_tot 0.198 e_run 0.115 q_drift 0.193  delta +0.083  vs sst/mw: ratio 0.58 g +0.084 g_run +0.091 -> neither
+    r64  sst+ssfd%60/mw   e_star 0.093 e_tot 0.169 e_run 0.096 q_drift 0.163  delta +0.075  vs sst/mw: ratio 0.47 g +0.106 g_run +0.120 -> neither
+    r64  sst/mw           e_star 0.200 e_tot 0.289 e_run 0.167 q_drift 0.272  delta +0.089
+    r32  sst+ssfAd%30/mw  e_star 0.107 e_tot 0.179 e_run 0.099 q_drift 0.171  delta +0.071  vs sst/mw: ratio 0.65 g +0.059 g_run +0.070 -> neither
+    r32  sst+ssfd%30/mw   e_star 0.081 e_tot 0.145 e_run 0.082 q_drift 0.137  delta +0.064  vs sst/mw: ratio 0.49 g +0.085 g_run +0.104 -> neither
+    r32  sst/mw           e_star 0.166 e_tot 0.249 e_run 0.143 q_drift 0.232  delta +0.083
+    r16  sst+ssfAd%30/mw  e_star 0.079 e_tot 0.133 e_run 0.074 q_drift 0.125  delta +0.054  vs sst/mw: ratio 0.60 g +0.052 g_run +0.071 -> neither
+    r16  sst+ssfd%30/mw   e_star 0.052 e_tot 0.097 e_run 0.053 q_drift 0.091  delta +0.045  vs sst/mw: ratio 0.39 g +0.079 g_run +0.106 -> neither
+    r16  sst/mw           e_star 0.131 e_tot 0.203 e_run 0.119 q_drift 0.187  delta +0.072
+  6f9b354f: lookup rows 731
+    r256 sst+ssfAd%30/mw  e_star 0.233 e_tot 0.363 e_run 0.174 q_drift 0.363  delta +0.131  vs sst/mw: ratio 0.83 g +0.047 g_run +0.041 -> budget
+    r256 sst+ssfd%30/mw   e_star 0.214 e_tot 0.345 e_run 0.174 q_drift 0.352  delta +0.131  vs sst/mw: ratio 0.76 g +0.066 g_run +0.060 -> neither
+    r256 sst/mw           e_star 0.280 e_tot 0.405 e_run 0.193 q_drift 0.387  delta +0.125
+    r128 sst+ssfAd%30/mw  e_star 0.197 e_tot 0.318 e_run 0.153 q_drift 0.321  delta +0.121  vs sst/mw: ratio 0.80 g +0.050 g_run +0.044 -> neither
+    r128 sst+ssfd%30/mw   e_star 0.173 e_tot 0.294 e_run 0.152 q_drift 0.305  delta +0.122  vs sst/mw: ratio 0.70 g +0.075 g_run +0.068 -> neither
+    r128 sst/mw           e_star 0.247 e_tot 0.362 e_run 0.177 q_drift 0.354  delta +0.115
+    r64  sst+ssfAd%30/mw  e_star 0.162 e_tot 0.267 e_run 0.130 q_drift 0.267  delta +0.105  vs sst/mw: ratio 0.75 g +0.054 g_run +0.055 -> neither
+    r64  sst+ssfd%30/mw   e_star 0.129 e_tot 0.227 e_run 0.125 q_drift 0.230  delta +0.098  vs sst/mw: ratio 0.60 g +0.087 g_run +0.095 -> neither
+    r64  sst+ssfd%60/mw   e_star 0.106 e_tot 0.199 e_run 0.107 q_drift 0.202  delta +0.093  vs sst/mw: ratio 0.49 g +0.110 g_run +0.123 -> neither
+    r64  sst/mw           e_star 0.216 e_tot 0.322 e_run 0.164 q_drift 0.314  delta +0.106
+    r32  sst+ssfAd%30/mw  e_star 0.129 e_tot 0.218 e_run 0.107 q_drift 0.216  delta +0.088  vs sst/mw: ratio 0.71 g +0.053 g_run +0.061 -> neither
+    r32  sst+ssfd%30/mw   e_star 0.090 e_tot 0.166 e_run 0.092 q_drift 0.162  delta +0.075  vs sst/mw: ratio 0.50 g +0.092 g_run +0.113 -> neither
+    r32  sst/mw           e_star 0.182 e_tot 0.279 e_run 0.146 q_drift 0.271  delta +0.096
+
+== 6. calls (dev run 8 rule with the 06:07 amendment) ==
+  LEAK gate (either memory flags): 0862e8bf no flag, 6f9b354f no flag -> no flag
+  (a call needs both memories; 'void (G3)' = a ssf seed it reads fails G3 on that memory)
+  SIZE r256              0862e8bf hurts  6f9b354f hurts   -> hurts
+  SIZE sst r256          0862e8bf hurts  6f9b354f hurts   -> hurts
+  SIZE unseen r256       0862e8bf hurts  6f9b354f hurts   -> hurts
+  SIZE r128              0862e8bf hurts  6f9b354f hurts   -> hurts
+  SIZE sst r128          0862e8bf hurts  6f9b354f hurts   -> hurts
+  SIZE unseen r128       0862e8bf hurts  6f9b354f hurts   -> hurts
+  SIZE r32               0862e8bf no difference  6f9b354f helps   -> mixed
+  SIZE sst r32           0862e8bf helps  6f9b354f helps   -> helps
+  SIZE unseen r32        0862e8bf helps  6f9b354f helps   -> helps
+  SIZE r16               0862e8bf helps  6f9b354f None   -> incomplete
+  SIZE sst r16           0862e8bf helps  6f9b354f None   -> incomplete
+  SIZE unseen r16        0862e8bf helps  6f9b354f None   -> incomplete
+  CAPACITY r256          0862e8bf partial  6f9b354f not   -> mixed
+  TRANSFER r256          0862e8bf no difference  6f9b354f no difference   -> no difference
+  CAPACITY r128          0862e8bf partial  6f9b354f partial   -> partial
+  TRANSFER r128          0862e8bf no difference  6f9b354f no difference   -> no difference
+  CAPACITY r64           0862e8bf partial  6f9b354f partial   -> partial
+  TRANSFER r64           0862e8bf no difference  6f9b354f no difference   -> no difference
+  CAPACITY r32           0862e8bf partial  6f9b354f partial   -> partial
+  TRANSFER r32           0862e8bf no difference  6f9b354f no difference   -> no difference
+  CAPACITY r16           0862e8bf partial  6f9b354f None   -> incomplete
+  TRANSFER r16           0862e8bf no difference  6f9b354f None   -> incomplete
+  DOSE                   0862e8bf no difference  6f9b354f no difference   -> no difference
+  CAPACITY 60%           0862e8bf partial  6f9b354f partial   -> partial
+  DOSE rule: gain 0862e8bf +0.048, 6f9b354f +0.065; G3 at 60% [True, True] -> take 30%
+  compact default: criterion r256 False, r128 False -> r64
+    0862e8bf R_all ssfd%30/mw r256:0.332 r128:0.577 r64:0.772 r32:0.858 r16:0.928 | R_B ssfAd%30/mw r256:0.124 r128:0.294 r64:0.464 r32:0.636 r16:0.742
+    6f9b354f R_all ssfd%30/mw r256:0.198 r128:0.403 r64:0.670 r32:0.811 | R_B ssfAd%30/mw r256:0.034 r128:0.135 r64:0.255 r32:0.403
+  end-to-end gate: passes at none; incomplete, not yet scored: r16

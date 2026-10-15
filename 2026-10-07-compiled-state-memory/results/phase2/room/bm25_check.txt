@@ -1,0 +1,3 @@
+BM25 (question as query) small: an evidence file in top 3 0.97, all evidence files in top 10 0.98 (n 120, mean evidence files 2.0)
+BM25 (question as query) mid: an evidence file in top 3 0.94, all evidence files in top 10 0.84 (n 120, mean evidence files 2.0)
+BM25 (question as query) large: an evidence file in top 3 0.92, all evidence files in top 10 0.82 (n 120, mean evidence files 2.0)

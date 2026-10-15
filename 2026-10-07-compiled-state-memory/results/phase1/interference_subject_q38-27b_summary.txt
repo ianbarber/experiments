@@ -1,0 +1,45 @@
+
+== all attributes run in each stratum (mean over attributes) ==
+  stratum   tokens readout     paired  single  dprime   2AFC  shift
+  user32      4137 fixed16      1.000   0.964    4.75   (n=12)
+  user32      4137 fixed64      1.000   0.964    5.61
+  user32      4137 nested16     1.000   0.984    3.16
+  user32      4137 all          0.938   0.661    1.38
+  user32      4137 model_g1     0.958   0.776    2.33  0.568   0.53
+  user32      4137 model_g2     0.979   0.734    2.01  0.583   1.29
+                   null fixed16: paired mean 0.510 (max 0.667), single mean 0.507 (max 0.625)
+  person32    4207 fixed16      1.000   0.953    6.48   (n=12)
+  person32    4207 fixed64      1.000   0.974    7.61
+  person32    4207 nested16     1.000   0.948    3.15
+  person32    4207 all          0.969   0.682    1.58
+  person32    4207 model_g1     0.948   0.807    2.90  0.589   0.70
+  person32    4207 model_g2     0.979   0.786    2.95  0.599   1.82
+                   null fixed16: paired mean 0.503 (max 0.688), single mean 0.500 (max 0.661)
+  user128     3913 fixed16      1.000   0.953    5.09   (n=12)
+  user128     3913 fixed64      1.000   0.979    7.18
+  user128     3913 nested16     1.000   0.969    5.31
+  user128     3913 all          0.969   0.651    0.94
+  user128     3913 model_g1     0.938   0.786    2.55  0.547   0.50
+  user128     3913 model_g2     0.938   0.786    2.19  0.578   1.12
+                   null fixed16: paired mean 0.507 (max 0.708), single mean 0.506 (max 0.672)
+  person128    4206 fixed16      1.000   0.969    5.95   (n=12)
+  person128    4206 fixed64      1.000   0.990    6.47
+  person128    4206 nested16     0.990   0.984    4.79
+  person128    4206 all          0.990   0.693    1.48
+  person128    4206 model_g1     0.948   0.828    3.12  0.578   0.62
+  person128    4206 model_g2     0.896   0.781    2.61  0.578   1.43
+                   null fixed16: paired mean 0.506 (max 0.719), single mean 0.507 (max 0.677)
+
+== per attribute: fixed16 single acc / model g1 single acc / model g1 shift ==
+  allergy    user32: 0.94/0.62/ 0.16  person32: 0.94/0.44/ 0.01  user128: 1.00/0.62/ 0.14  person128: 1.00/0.44/ 0.04
+  book       user32: 1.00/0.88/ 0.57  person32: 1.00/0.94/ 0.67  user128: 0.94/0.94/ 0.60  person128: 1.00/1.00/ 0.57
+  car        user32: 0.94/1.00/ 0.64  person32: 1.00/1.00/ 0.72  user128: 0.94/0.94/ 0.65  person128: 0.94/1.00/ 0.71
+  city       user32: 1.00/1.00/ 1.91  person32: 1.00/1.00/ 2.50  user128: 1.00/1.00/ 1.54  person128: 1.00/1.00/ 2.47
+  cuisine    user32: 1.00/0.81/ 0.38  person32: 1.00/0.81/ 0.48  user128: 0.88/0.81/ 0.37  person128: 1.00/0.81/ 0.54
+  dog        user32: 0.94/0.69/ 0.13  person32: 1.00/0.81/ 0.15  user128: 0.94/0.69/ 0.19  person128: 0.88/0.69/ 0.11
+  drink      user32: 0.88/0.50/ 0.11  person32: 0.81/0.56/ 0.13  user128: 0.94/0.56/ 0.13  person128: 0.94/0.62/ 0.07
+  employer   user32: 1.00/0.88/ 0.50  person32: 1.00/0.88/ 0.58  user128: 1.00/1.00/ 0.67  person128: 1.00/1.00/ 0.43
+  hometown   user32: 1.00/0.75/ 1.12  person32: 1.00/0.94/ 2.06  user128: 0.94/0.88/ 1.12  person128: 1.00/0.88/ 1.43
+  instrument user32: 1.00/0.75/ 0.18  person32: 0.94/0.88/ 0.23  user128: 1.00/0.69/ 0.18  person128: 1.00/0.69/ 0.13
+  sister     user32: 0.88/0.56/ 0.05  person32: 0.75/0.75/ 0.16  user128: 0.88/0.62/ 0.04  person128: 0.88/0.88/ 0.16
+  sport      user32: 1.00/0.88/ 0.66  person32: 1.00/0.69/ 0.70  user128: 1.00/0.69/ 0.43  person128: 1.00/0.94/ 0.84

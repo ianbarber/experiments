@@ -1,0 +1,66 @@
+
+== all attributes run in each stratum (mean over attributes) ==
+  stratum   tokens readout     paired  single  dprime   2AFC  shift
+  none0       4211 fixed16      1.000   0.990    7.06   (n=12)
+  none0       4211 fixed64      1.000   0.990    7.54
+  none0       4211 nested16     1.000   0.990    5.37
+  none0       4211 all          0.969   0.786    2.29
+  none0       4211 model_g1     0.958   0.901    4.68  0.615   0.96
+  none0       4211 model_g2     0.979   0.901    4.25  0.625   2.32
+                   null fixed16: paired mean 0.508 (max 0.646), single mean 0.511 (max 0.667)
+  same8       4208 fixed16      1.000   0.958    5.85   (n=12)
+  same8       4208 fixed64      1.000   0.969    6.46
+  same8       4208 nested16     0.990   0.927    4.36
+  same8       4208 all          0.938   0.729    1.87
+  same8       4208 model_g1     0.958   0.880    3.73  0.589   0.85
+  same8       4208 model_g2     0.990   0.833    3.30  0.646   2.09
+                   null fixed16: paired mean 0.504 (max 0.667), single mean 0.500 (max 0.698)
+  other8      4202 fixed16      1.000   0.943    5.03   (n=12)
+  other8      4202 fixed64      1.000   0.953    5.79
+  other8      4202 nested16     1.000   0.948    3.84
+  other8      4202 all          0.990   0.672    1.50
+  other8      4202 model_g1     0.948   0.818    2.95  0.589   0.70
+  other8      4202 model_g2     0.979   0.760    2.35  0.599   1.89
+                   null fixed16: paired mean 0.505 (max 0.688), single mean 0.501 (max 0.661)
+  same32      4210 fixed16      1.000   0.990    6.94   (n=12)
+  same32      4210 fixed64      1.000   0.995    7.77
+  same32      4210 nested16     1.000   0.979    4.34
+  same32      4210 all          0.990   0.734    2.08
+  same32      4210 model_g1     0.906   0.859    3.37  0.557   0.70
+  same32      4210 model_g2     0.969   0.828    2.73  0.609   1.56
+                   null fixed16: paired mean 0.507 (max 0.708), single mean 0.506 (max 0.672)
+  other32     4175 fixed16      1.000   0.932    4.58   (n=12)
+  other32     4175 fixed64      1.000   0.953    5.20
+  other32     4175 nested16     0.990   0.953    4.70
+  other32     4175 all          0.917   0.688    1.20
+  other32     4175 model_g1     0.948   0.839    2.48  0.573   0.61
+  other32     4175 model_g2     0.979   0.797    1.96  0.573   1.47
+                   null fixed16: paired mean 0.517 (max 0.719), single mean 0.510 (max 0.646)
+  same128     4207 fixed16      1.000   0.995    6.87   (n=12)
+  same128     4207 fixed64      1.000   0.995    7.20
+  same128     4207 nested16     1.000   0.990    5.32
+  same128     4207 all          0.990   0.802    2.16
+  same128     4207 model_g1     0.865   0.849    3.74  0.583   0.74
+  same128     4207 model_g2     0.927   0.839    2.85  0.583   1.51
+                   null fixed16: paired mean 0.503 (max 0.677), single mean 0.501 (max 0.672)
+  other128    4063 fixed16      1.000   0.974    5.24   (n=12)
+  other128    4063 fixed64      1.000   0.974    6.36
+  other128    4063 nested16     1.000   0.958    3.78
+  other128    4063 all          0.906   0.630    0.79
+  other128    4063 model_g1     0.948   0.792    2.54  0.573   0.54
+  other128    4063 model_g2     0.979   0.781    2.13  0.578   1.24
+                   null fixed16: paired mean 0.505 (max 0.719), single mean 0.505 (max 0.677)
+
+== per attribute: fixed16 single acc / model g1 single acc / model g1 shift ==
+  allergy    none0: 0.94/0.81/ 0.18  same8: 1.00/0.88/ 0.30  other8: 1.00/0.62/ 0.13  same32: 0.94/0.69/ 0.14  other32: 0.94/0.56/ 0.05  same128: 1.00/0.38/ 0.00  other128: 1.00/0.50/ 0.05
+  book       none0: 1.00/1.00/ 0.73  same8: 1.00/0.88/ 0.74  other8: 1.00/0.94/ 0.67  same32: 1.00/0.94/ 0.76  other32: 1.00/0.94/ 0.56  same128: 1.00/0.94/ 0.87  other128: 1.00/0.88/ 0.53
+  car        none0: 1.00/1.00/ 0.93  same8: 1.00/1.00/ 0.74  other8: 0.94/1.00/ 0.83  same32: 1.00/1.00/ 0.64  other32: 0.94/1.00/ 0.67  same128: 1.00/1.00/ 0.78  other128: 1.00/1.00/ 0.61
+  city       none0: 1.00/1.00/ 3.23  same8: 1.00/1.00/ 2.74  other8: 1.00/1.00/ 2.32  same32: 1.00/1.00/ 2.55  other32: 1.00/1.00/ 2.09  same128: 1.00/1.00/ 2.17  other128: 1.00/1.00/ 1.98
+  cuisine    none0: 1.00/0.88/ 0.68  same8: 1.00/1.00/ 0.71  other8: 0.94/0.75/ 0.44  same32: 1.00/0.88/ 0.64  other32: 0.94/0.94/ 0.43  same128: 1.00/1.00/ 0.90  other128: 0.94/0.75/ 0.27
+  dog        none0: 1.00/0.75/ 0.12  same8: 0.94/0.81/ 0.21  other8: 0.94/0.81/ 0.19  same32: 1.00/0.75/ 0.14  other32: 0.88/0.75/ 0.12  same128: 1.00/0.94/ 0.19  other128: 0.94/0.56/ 0.12
+  drink      none0: 1.00/0.62/ 0.09  same8: 0.81/0.56/ 0.14  other8: 0.94/0.56/ 0.03  same32: 1.00/0.56/ 0.05  other32: 0.75/0.62/ 0.11  same128: 0.94/0.75/ 0.10  other128: 1.00/0.75/ 0.13
+  employer   none0: 1.00/1.00/ 0.74  same8: 1.00/1.00/ 0.77  other8: 1.00/0.88/ 0.61  same32: 1.00/0.94/ 0.61  other32: 1.00/0.94/ 0.58  same128: 1.00/0.94/ 0.54  other128: 1.00/0.94/ 0.47
+  hometown   none0: 1.00/1.00/ 3.46  same8: 0.94/0.94/ 2.72  other8: 1.00/0.88/ 2.13  same32: 1.00/0.88/ 1.66  other32: 0.94/0.88/ 1.53  same128: 1.00/0.94/ 1.82  other128: 0.94/0.94/ 1.59
+  instrument none0: 0.94/0.94/ 0.22  same8: 0.94/0.81/ 0.31  other8: 1.00/0.88/ 0.25  same32: 1.00/0.94/ 0.28  other32: 0.94/0.88/ 0.27  same128: 1.00/0.69/ 0.15  other128: 1.00/0.69/ 0.17
+  sister     none0: 1.00/0.88/ 0.18  same8: 0.88/0.75/ 0.15  other8: 0.56/0.62/ 0.15  same32: 0.94/0.81/ 0.11  other32: 0.88/0.69/ 0.11  same128: 1.00/0.62/ 0.16  other128: 0.88/0.62/ 0.08
+  sport      none0: 1.00/0.94/ 0.94  same8: 1.00/0.94/ 0.72  other8: 1.00/0.88/ 0.72  same32: 1.00/0.94/ 0.88  other32: 1.00/0.88/ 0.83  same128: 1.00/1.00/ 1.22  other128: 1.00/0.88/ 0.53

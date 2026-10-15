@@ -1,0 +1,57 @@
+== P1. shift from A, X - A on M - A over present and absent sessions ==
+  cond       slope0  const    OLS      r   call-vs-stop same as M (A: see first row)
+  A                                        21/32
+  C           -0.11  -0.16  +0.33  +0.47   21/32
+  K           +1.00  +0.93  +0.46  +0.46   20/32
+  CK          +1.04  +0.94  +0.61  +0.79   25/32
+  Kstar4k     +0.79  +0.72  +0.46  +0.51   22/32
+  Kstar64k    +1.02  +0.94  +0.48  +0.47   23/32
+  Krt         +1.00  +0.93  +0.47  +0.48   19/32
+  Kearly      +0.16  +0.11  +0.29  +0.33   21/32
+  Kmid        +0.97  +0.85  +0.84  +0.57   24/32
+  Klate       +0.15  +0.17  -0.16  -0.30   21/32
+  slope0 = through-0 slope (the plan's); const = slope0 a constant shift equal to X's mean would give
+
+== P2. presence: per-question X(p - a) against M(p - a) ==
+  L: M p - a negative in 13/16
+    C         slope -0.04 [-0.15, +0.06]  r +0.05  signs agree 5/16 (permutation mean 5.5)
+    K         slope -0.18 [-0.70, +0.34]  r -0.45  signs agree 7/16 (permutation mean 9.2)
+    CK        slope +0.51 [+0.09, +1.07]  r +0.11  signs agree 14/16 (permutation mean 11.1)
+    Kstar4k   slope +0.07 [-0.33, +0.54]  r -0.31  signs agree 7/16 (permutation mean 8.0)
+    Kstar64k  slope -0.27 [-0.68, +0.09]  r -0.38  signs agree 7/16 (permutation mean 8.0)
+    Krt       slope -0.18 [-0.68, +0.29]  r -0.43  signs agree 8/16 (permutation mean 8.6)
+    Kearly    slope +0.03 [-0.05, +0.10]  r +0.00  signs agree 8/16 (permutation mean 9.9)
+    Kmid      slope +0.04 [-0.33, +0.40]  r -0.31  signs agree 10/16 (permutation mean 9.9)
+    Klate     slope -0.04 [-0.13, +0.06]  r -0.02  signs agree 9/16 (permutation mean 8.0)
+  H: M p - a negative in 14/16
+    C         slope -0.01 [-0.02, +0.00]  r -0.38  signs agree 5/16 (permutation mean 5.8)
+    K         slope +0.29 [-0.10, +0.89]  r +0.06  signs agree 9/16 (permutation mean 10.3)
+    CK        slope +0.82 [+0.61, +1.15]  r +0.71  signs agree 15/16 (permutation mean 13.3)
+    Kstar4k   slope +0.00 [-0.24, +0.23]  r -0.26  signs agree 10/16 (permutation mean 9.5)
+    Kstar64k  slope +0.31 [+0.03, +0.94]  r +0.06  signs agree 12/16 (permutation mean 12.5)
+    Krt       slope +0.17 [-0.16, +0.63]  r +0.00  signs agree 11/16 (permutation mean 10.2)
+    Kearly    slope -0.00 [-0.01, +0.01]  r -0.24  signs agree 9/16 (permutation mean 10.2)
+    Kmid      slope +0.46 [+0.06, +1.06]  r +0.27  signs agree 13/16 (permutation mean 10.3)
+    Klate     slope +0.00 [-0.01, +0.01]  r +0.10  signs agree 10/16 (permutation mean 8.0)
+  questions whose first action (stop, function) differs between present and absent: M 5, C 0, K 7, CK 8, Kstar4k 1, Kstar64k 2, Krt 7, Kearly 0, Kmid 5, Klate 0
+
+== P3. anchor present - absent against M's (n = questions with a short gold) ==
+  C         n=9 mean  -0.18 (M +11.07; ratio -0.02)  slope -0.01 [-0.04, +0.00]  r -0.18
+  K         n=9 mean  +3.78 (M +11.07; ratio 0.34)  slope +0.38 [+0.17, +0.50]  r +0.82
+  CK        n=9 mean +10.46 (M +11.07; ratio 0.94)  slope +0.94 [+0.85, +1.03]  r +0.95
+  Kstar4k   n=9 mean  +4.36 (M +11.07; ratio 0.39)  slope +0.42 [+0.22, +0.52]  r +0.79
+  Kearly    n=9 mean  +0.04 (M +11.07; ratio 0.00)  slope +0.00 [+0.00, +0.00]  r +0.42
+  Kmid      n=9 mean  +0.31 (M +11.07; ratio 0.03)  slope +0.02 [-0.00, +0.06]  r -0.01
+  Klate     n=9 mean  +0.32 (M +11.07; ratio 0.03)  slope +0.02 [+0.01, +0.05]  r +0.07
+  K*4k - K (paired, p - a): +0.58 [+0.14, +1.03]
+  present sessions with log p(gold) > -0.5: K 0/9, CK 4/9, M 5/9
+
+== P4. readout dependence of the DLA presence split (present - absent, 'written' term) ==
+  M   w_p    gdn -1.00  attn -0.30  mlp -0.90  total -2.20
+  M   w_a    gdn -0.75  attn -0.55  mlp +2.24  total +0.94
+  M   w_mid  gdn -0.88  attn -0.43  mlp +0.67  total -0.63
+  M   w_A    gdn -0.89  attn -0.59  mlp +2.28  total +0.79
+  CK  w_p    gdn -0.93  attn -0.33  mlp -0.98  total -2.24
+  CK  w_a    gdn -0.75  attn -0.76  mlp +2.62  total +1.10
+  CK  w_mid  gdn -0.84  attn -0.55  mlp +0.82  total -0.57
+  CK  w_A    gdn -0.90  attn -0.56  mlp +2.16  total +0.70

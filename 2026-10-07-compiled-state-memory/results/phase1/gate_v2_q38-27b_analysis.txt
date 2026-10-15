@@ -1,0 +1,33 @@
+header: {'block': '_header', 'model': '/weights/Qwen3.8-27B', 'code': 'de70dfbe5c5e87ba', 'items': '69a22aa5586baf47', 'torch': '2.13.0+cu130', 'transformers': '5.12.1', 'fla': '0.5.2', 'chunk': 8192, 'state_dtype': 'torch.float32', 'logits': 'fp32', 'model_dtype': 'torch.bfloat16'}
+rows: 760
+
+=== K1 (primary) ===
+B1 facts_bind (binding): G=48 mean 0.387 nats  SE 0.062  one-sided LB 0.243  97.5% CI [0.243,0.532]  t p=6.39e-08  sign-flip p=0.00e+00  frac>0 1.00  -> PASS=True  UB<delta=False
+B2 prefs_fact (polarity): G=48 mean 0.185 nats  SE 0.031  one-sided LB 0.112  97.5% CI [0.112,0.258]  t p=2.09e-07  sign-flip p=0.00e+00  frac>0 0.81  -> PASS=False  UB<delta=False
+K1 verdict: PASS   PASS(B1)=True PASS(B2)=False
+
+=== Secondary (descriptive) ===
+facts_raw    C: mean shift   0.995 [0.10..3.72 item range]  summed-token   1.012  dp 0.133  2AFC 0.596
+facts_raw    M: mean shift  29.964 [20.36..39.52 item range]  summed-token  30.219  dp 1.000  2AFC 1.000
+facts_raw    K: mean shift  19.289 [9.09..28.67 item range]  summed-token  19.477  dp 0.984  2AFC 1.000
+facts_bind   C: mean shift   0.387 [0.03..1.83 item range]  summed-token   0.390  dp 0.049  2AFC 0.539
+facts_bind   M: mean shift  24.193 [15.29..32.19 item range]  summed-token  24.195  dp 0.997  2AFC 1.000
+prefs_fact   C: mean shift   0.185 [-0.03..0.69 item range]  summed-token   0.337  dp 0.016  2AFC 0.526
+prefs_fact   M: mean shift   3.949 [-0.78..13.02 item range]  summed-token   4.789  dp 0.269  2AFC 0.625
+prefs_fact   K: mean shift   1.072 [-0.22..4.57 item range]  summed-token   1.228  dp 0.091  2AFC 0.549
+prefs_instr  C: mean shift   0.328 [-0.09..1.39 item range]  summed-token   0.473  dp 0.029  2AFC 0.516
+prefs_instr  M: mean shift   4.936 [-1.20..15.37 item range]  summed-token   6.544  dp 0.354  2AFC 0.688
+
+facts raw(n=60) - bind: 0.623 (paired t p=7.64e-10, G=48)
+prefs instruction - fact (n=60): 0.125 (paired t p=5.41e-04)
+facts_raw: first-last 0.519 (p=6.03e-05); size60-size250 0.032 (p=8.87e-02)
+prefs_fact: first-last 0.031 (p=2.54e-01); size60-size250 0.036 (p=4.76e-03)
+facts_bind by layout: c0_u30 -0.181, c59_u30 0.529, u0_c30 1.023, u59_c30 0.179
+
+=== K2 (harm) ===
+harm ratio H = -0.048 (90% CI -0.076..-0.022); mean margin A 7.22; gold->distractor flips 0.000  -> K2 PASS
+
+=== Lures (H6, descriptive) ===
+A: assoc-neutral 0.000 (false-memory pull)   present-assoc 0.000 (discrimination)
+C: assoc-neutral 0.265 (false-memory pull)   present-assoc 0.053 (discrimination)
+M: assoc-neutral 2.943 (false-memory pull)   present-assoc 11.729 (discrimination)
