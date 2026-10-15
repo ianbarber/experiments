@@ -1,25 +1,27 @@
-# Division of labor in Qwen3.5-4B's hybrid attention layers
+# Layer roles during paired recall in Qwen3.5-4B
 
 **Date:** 2026-10-13 · **Machine:** `local-3090` (RTX 3090, 24 GiB)
 
 ## Brief
 
-Where do historical key–value associations change a frozen hybrid model's predictions? I used paired recall prompts that swap historical keys while keeping the value tokens, their positions, and the final query fixed. I traced Qwen3.5-4B's recurrent and global-attention blocks, then exchanged query activations, recurrent states, and historical value K/V between paired executions.
+How do recurrent blocks, global-attention blocks, and their MLPs contribute to retrieving a historical association and producing an answer? I traced a frozen Qwen3.5-4B on paired prompts that swap historical keys while keeping value tokens, positions, and the query fixed, then exchanged individual components between the two executions.
 
-An exploratory pilot selected eight candidate layers. The reported expansion fixed those layers before two fresh data seeds, with twenty underlying examples per seed at four source distances. The question concerns component roles in this model and task, not an intrinsic memory horizon or an architecture comparison.
+The resulting technical account separates early source contextualization, retrieval through selected global layers, and late MLP changes to the answer representation. A block's attention type alone does not describe its role. Below, transfer means the fraction of the paired answer-margin gap moved toward the donor by a component exchange; these effects are not additive shares of the computation. Layers are one-based, and numerical patch results are at 8,192 tokens.
 
 ## Headline results
 
-- **Full-answer recall:** 320/320 correct over 160 paired cases at 128, 1,024, 4,096, and 8,192 tokens. These are forty underlying examples reused across distances, from data seeds 42 and 314159. No malformed answers occurred.
-- **Locked 8K contrast:** mean global value-K/V transfer minus recurrent-state transfer was **0.141 [0.130, 0.152]**, with a 95% bootstrap interval over forty underlying examples. It met the recorded support criterion: mean at least 0.05 and interval lower bound above zero. The separate seed means were 0.140 and 0.143.
-- **Late MLP contribution:** the MLP in recurrent block 31 transferred **0.248 [0.237, 0.259]** of the paired answer-margin gap at 8K, also meeting its locked criterion. A weak recurrent-state effect does not imply that the whole recurrent block is unimportant.
-- **Scope:** global historical-value K/V and late MLPs had substantial measured effects; state exchange at the checkpoint before the final 64 tokens was near zero. History could still arrive through other layers, and the two memory budgets were not matched.
+- **Early recurrent blocks contextualize the sources.** The unchanged historical value tokens already have key-sensitive representations after the first three recurrent blocks, before any global attention. This is descriptive evidence for source preparation; its necessity was not tested.
+- **Global layers 20, 24, and 28 provide retrieval-related contributions.** Exchanging their historical value K/V transfers **0.112, 0.227, and 0.196** of the answer-margin gap. Exchanging their query mixer outputs also transfers the contrast, and masking their prefix access reduces the correct-answer margin.
+- **Late recurrent blocks contribute through their MLPs.** MLP transfer is **0.089** at layer 29 and **0.248 [0.237, 0.259]** at layer 31 (95% interval). Mean state transfer across the four selected recurrent layers is **-0.0002 [-0.0007, 0.0003]** at the checkpoint before the final 64 tokens. That small state effect coexists with substantial MLP effects in the same type of block.
+- **The final global block has a different role.** Layer 32's query mixer exchange transfers **-0.252 [-0.268, -0.237]**, opposing the donor contrast, while its MLP transfer is positive (**0.119**). Global attention does not uniformly amplify this answer distinction.
+
+These findings use forty fresh underlying examples across two data seeds, with candidates fixed from a separate exploratory pilot. The broad pattern persists from 128 to 8,192 tokens; 320/320 correct full answers establish that the model performs the task being analyzed. The measurements characterize this recall distribution and the tested components, with early-layer necessity and an architecture-wide memory horizon outside their scope.
 
 ## Contents
 
 | File or directory | Purpose |
 |---|---|
-| [Report](REPORT.md) | Method, fixed endpoints, results, limitations, and scoped verdict |
+| [Report](REPORT.md) | Technical account of layer roles, intervention evidence, distance dependence, and limitations |
 | [Lab notes](LABNOTES.md) | Reconstructed feasibility/pilot notes, then contemporaneous expansion decisions and failures |
 | [Expansion protocol](code/PROTOCOL.md) | Hypothesis, fixed layers and seeds, endpoints, thresholds, and program stop criteria |
 | [Code](code/README.md) | Pinned scientific dependencies, portable data snapshot, run and analysis commands |

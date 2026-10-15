@@ -49,3 +49,9 @@ I added one dated entry for the entire scientific object. The initial directory 
 The repository-wide publication scan initially matched examples of prohibited operator prose inside the guidelines themselves. I reworded those examples and encoded literal spaces in the two corresponding regex phrases so the rule still catches the same prose without matching its own source. I added the role alias `local-3090`; the entry does not expose a hostname or home-directory paths.
 
 The tracked-file check also found an older experiment's serving-settings sample with a `.env` filename. It contained only four non-secret serving options. I renamed it to `.env.example` and updated its copy command so the repository satisfies its own tracked-file rule.
+
+## 15 October: technical interpretation and report revision
+
+I revisited the per-layer traces and intervention tables to organize the report around the original question: what roles the different layers fill. I moved task accuracy into the methods as a prerequisite and led the brief with source contextualization, retrieval-related global layers, late MLP contributions, and the final global mixer's counteracting effect on the answer contrast.
+
+I computed the descriptive source, depth, and distance summaries from the existing fresh-seed CSV tables. The report now separates those observations from the fixed endpoint checks and component interventions. I retained the original protocol and endpoint results, including the unmatched state/K/V budgets and the lack of early-layer necessity tests. This revision adds no model runs or changes to the measurements.
