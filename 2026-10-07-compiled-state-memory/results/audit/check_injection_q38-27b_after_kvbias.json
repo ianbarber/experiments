@@ -1,0 +1,85 @@
+{
+ "model": "/weights/Qwen3.8-27B",
+ "T0_template": true,
+ "n_mem": 1426,
+ "n_sess": 24,
+ "n_long_sess": 2031,
+ "T1_split_vs_one": {
+  "max_abs": 0.819266676902771,
+  "max_kl": 0.0019011031836271286,
+  "median_kl": 3.913097316399217e-06,
+  "argmax_agree": 1.0
+ },
+ "T1L_split_vs_one_long": {
+  "max_abs": 29.90029525756836,
+  "max_kl": 2.8576502799987793,
+  "median_kl": 0.00014441550592891872,
+  "argmax_agree": 0.9871984720230103
+ },
+ "T2_zeroinj_vs_fresh": {
+  "max_abs": 0.0,
+  "max_kl": 0.0,
+  "median_kl": 0.0,
+  "argmax_agree": 1.0
+ },
+ "T3_pos0_vs_posN": {
+  "max_abs": 0.6628303527832031,
+  "max_kl": 0.0025121872313320637,
+  "median_kl": 4.358182195574045e-06,
+  "argmax_agree": 1.0
+ },
+ "T4_chunked_state_max_rel_diff": 0.05461907014250755,
+ "T4_chunked_logits": {
+  "max_abs": 0.7934918403625488,
+  "max_kl": 0.005441698245704174,
+  "median_kl": 2.7006259188055992e-05,
+  "argmax_agree": 1.0
+ },
+ "T5_bitwise_identical": true,
+ "T6_bf16_vs_fp32_short": {
+  "max_abs": 0.0,
+  "max_kl": 0.0,
+  "median_kl": 0.0,
+  "argmax_agree": 1.0
+ },
+ "T6_bf16_vs_fp32_long": {
+  "max_abs": 26.527664184570312,
+  "max_kl": 2.49300217628479,
+  "median_kl": 7.26041616871953e-05,
+  "argmax_agree": 0.9916297793388367
+ },
+ "T7_C_vs_A": {
+  "max_abs": 20.106586456298828,
+  "max_kl": 9.121235847473145,
+  "median_kl": 0.015653949230909348,
+  "argmax_agree": 0.8333333730697632
+ },
+ "T8_score_multi_max_abs": {
+  "C": 0.026224613189697266,
+  "M": 1.4007091522216797e-06,
+  "K": 1.33514404296875e-05
+ },
+ "T9_K_restored_vs_split": {
+  "max_abs": 0.0,
+  "max_kl": 0.0,
+  "median_kl": 0.0,
+  "argmax_agree": 1.0
+ },
+ "T9_K_offset_bitwise": true,
+ "T9_K_vs_full": {
+  "max_abs": 22.663726806640625,
+  "max_kl": 12.319855690002441,
+  "median_kl": 0.014553426764905453,
+  "argmax_agree": 0.7083333730697632
+ },
+ "T9_K_vs_A": {
+  "max_abs": 16.894113540649414,
+  "max_kl": 2.027212619781494,
+  "median_kl": 0.011299753561615944,
+  "argmax_agree": 0.875
+ },
+ "T10_generate_matches_teacher_forced": true,
+ "T10_text": " **Buddy**.",
+ "state_MB_fp32": 144.0,
+ "PASS": true
+}

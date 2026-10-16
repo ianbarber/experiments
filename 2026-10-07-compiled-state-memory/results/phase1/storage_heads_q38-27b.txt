@@ -1,0 +1,24 @@
+== 1. label-swap null, nested top-k heads (attribute-averaged accuracy; 50 swaps) ==
+  bind60   top16  observed paired 0.990 single 0.987 | null paired mean 0.507 max 0.651; single mean 0.500 max 0.536
+  bind60   top64  observed paired 0.984 single 0.987 | null paired mean 0.500 max 0.635; single mean 0.502 max 0.578
+  bind250  top16  observed paired 1.000 single 0.995 | null paired mean 0.500 max 0.620; single mean 0.501 max 0.544
+  bind250  top64  observed paired 1.000 single 0.997 | null paired mean 0.503 max 0.599; single mean 0.504 max 0.568
+
+== 2. are the binding heads shared across attributes? ==
+  bind60: top-64 overlap between attributes mean 17.1 (chance 1.8), range 4-36
+    top-64 heads by GDN layer (summed over attributes; model layer index): 0:1 1:2 9:1 14:2 16:3 17:3 18:4 20:9 21:3 24:21 25:17 26:23 28:38 29:9 30:4 32:38 33:25 34:7 36:54 37:41 38:6 40:72 41:38 42:42 44:19 45:5 46:1 48:27 49:21 50:14 52:59 53:9 54:19 56:20 57:19 58:16 60:30 61:27 62:19
+  bind250: top-64 overlap between attributes mean 19.5 (chance 1.8), range 7-35
+    top-64 heads by GDN layer (summed over attributes; model layer index): 1:1 12:2 16:7 17:3 18:4 20:19 21:3 24:13 25:36 26:18 28:67 29:14 30:8 32:59 33:28 34:5 36:55 37:30 38:3 40:45 41:36 42:29 44:13 45:5 48:29 49:28 50:8 52:46 53:5 54:23 56:26 57:15 58:10 60:35 61:26 62:14
+  heads from other attributes (bind60) -> bind60, top16: paired 0.979 single 0.982
+  heads from other attributes (bind60) -> bind60, top64: paired 0.974 single 0.974
+  heads from other attributes (bind60) -> bind250, top16: paired 0.995 single 0.987 | same-attribute heads from bind60: paired 1.000 single 0.987
+  heads from other attributes (bind60) -> bind250, top64: paired 1.000 single 0.992 | same-attribute heads from bind60: paired 1.000 single 0.997
+  heads from other attributes (bind250) -> bind250, top16: paired 1.000 single 0.982
+  heads from other attributes (bind250) -> bind250, top64: paired 1.000 single 0.987
+  global top-16 heads (model layer, head): (40,46) (54,22) (48,15) (28,5) (40,36) (42,16) (36,11) (36,10) (42,22) (52,8) (56,37) (52,21) (28,4) (48,16) (40,32) (36,8)
+
+== 3. decodability vs position (bind250, nested top-64, held-out pair z-margin) ==
+  spearman(z, entries from end of user fact) -0.05; (z, of colleague fact) -0.34; (z, farther of the two) -0.23
+  farther fact   0- 83 entries from end: n= 14  median z 1.55  correct 1.000
+  farther fact  83-166 entries from end: n= 69  median z 1.79  correct 1.000
+  farther fact 166-250 entries from end: n=109  median z 1.53  correct 1.000

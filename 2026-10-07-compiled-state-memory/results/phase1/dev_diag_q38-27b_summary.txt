@@ -1,0 +1,42 @@
+facts_dates     first    default      none     C  1.865 [ 0.804, 2.926] n=12
+facts_dates     last     default      none     C  0.701 [ 0.167, 1.236] n=12
+facts_dilute    first    default      same512  C  1.459 [ 0.692, 2.226] n=12
+facts_dilute    first    default      sep2048  C  0.666 [ 0.253, 1.078] n=12
+facts_dilute    first    default      sep512   C  0.871 [ 0.358, 1.385] n=12
+facts_dilute    first    default      struct   C  1.523 [ 0.582, 2.465] n=12
+facts_dilute    last     default      same512  C  0.572 [ 0.211, 0.933] n=12
+facts_dilute    last     default      sep2048  C  0.306 [ 0.048, 0.565] n=12
+facts_dilute    last     default      sep512   C  0.413 [ 0.113, 0.713] n=12
+facts_dilute    last     default      struct   C  0.838 [ 0.179, 1.496] n=12
+facts_neutral0  start+1  default      none     C  1.431 [ 0.542, 2.320] n=12
+facts_pos       end-0    band_early   none     C  0.045 [-0.025, 0.114] n=12
+facts_pos       end-0    band_late    none     C  0.685 [ 0.272, 1.098] n=12
+facts_pos       end-0    band_mid     none     C  0.006 [-0.022, 0.033] n=12
+facts_pos       end-0    conv_kept    none     C  5.451 [ 2.696, 8.207] n=12
+facts_pos       end-0    default      none     C  0.887 [ 0.264, 1.509] n=12   M 34.422 [31.076,37.768] n=12
+facts_pos       end-0    heads_long   none     C  0.648 [ 0.159, 1.137] n=12
+facts_pos       end-0    heads_short  none     C  0.163 [ 0.073, 0.253] n=12
+facts_pos       end-0    scale0.5     none     C  0.324 [ 0.081, 0.567] n=12
+facts_pos       end-0    scale2       none     C  5.456 [ 2.903, 8.009] n=12
+facts_pos       end-0    scale3       none     C  5.952 [ 3.602, 8.303] n=12
+facts_pos       mid      default      none     C  0.902 [ 0.176, 1.628] n=12   M 34.790 [31.440,38.139] n=12
+facts_pos       start+0  band_early   none     C  0.012 [-0.023, 0.047] n=12
+facts_pos       start+0  band_late    none     C  1.550 [ 0.669, 2.430] n=12
+facts_pos       start+0  band_mid     none     C  0.008 [-0.027, 0.043] n=12
+facts_pos       start+0  conv_kept    none     C  3.863 [ 1.770, 5.955] n=12
+facts_pos       start+0  default      none     C  1.656 [ 0.704, 2.608] n=12   M 34.667 [31.890,37.445] n=12
+facts_pos       start+0  heads_long   none     C  1.005 [ 0.352, 1.658] n=12
+facts_pos       start+0  heads_short  none     C  0.640 [ 0.259, 1.021] n=12
+facts_pos       start+0  scale0.5     none     C  0.798 [ 0.306, 1.291] n=12
+facts_pos       start+0  scale2       none     C  4.252 [ 2.109, 6.395] n=12
+facts_pos       start+0  scale3       none     C  4.851 [ 2.459, 7.243] n=12
+facts_pos       start+1  default      none     C  1.390 [ 0.485, 2.295] n=12   M 35.093 [32.053,38.133] n=12
+facts_pos       start+4  default      none     C  1.174 [ 0.359, 1.990] n=12   M 35.249 [32.104,38.394] n=12
+facts_preamble  first    default      none     C  1.546 [ 0.604, 2.488] n=12
+facts_preamble  last     default      none     C  0.878 [ 0.292, 1.464] n=12
+prefs_dev       first    band_late    none     C  0.714 [ 0.204, 1.225] n=12
+prefs_dev       first    default      none     C  1.049 [ 0.238, 1.859] n=12   M  7.858 [ 4.216,11.500] n=12
+prefs_dev       first    scale2       none     C  3.062 [ 0.589, 5.535] n=12
+prefs_dev       last     band_late    none     C  0.225 [ 0.051, 0.400] n=12
+prefs_dev       last     default      none     C  0.482 [ 0.121, 0.844] n=12   M  5.565 [ 2.448, 8.683] n=12
+prefs_dev       last     scale2       none     C  3.340 [ 1.197, 5.484] n=12

@@ -1,0 +1,8 @@
+small: B* = D, final labels: B* - A -0.008 [-0.083, +0.067]
+small: B* = D, Qwen labels: B* - A -0.008 [-0.083, +0.067]
+mid: B* = T, final labels: B* - A -0.008 [-0.067, +0.058]
+mid: B* = T, Qwen labels: B* - A +0.000 [-0.067, +0.058]
+large: B* = D, final labels: B* - A +0.042 [-0.042, +0.125]
+large: B* = D, Qwen labels: B* - A +0.042 [-0.042, +0.133]
+final labels: M 0.908 0.875 0.825; A 0.750 0.717 0.692; T 0.733 0.708 0.683; D 0.742 0.700 0.733
+Qwen labels: M 0.908 0.875 0.800; A 0.750 0.717 0.692; T 0.733 0.717 0.683; D 0.742 0.700 0.733

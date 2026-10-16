@@ -1,0 +1,85 @@
+{
+ "model": "/nas-hf/hub/models--Qwen--Qwen3.5-4B/snapshots/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+ "T0_template": true,
+ "n_mem": 1426,
+ "n_sess": 24,
+ "n_long_sess": 2031,
+ "T1_split_vs_one": {
+  "max_abs": 0.4984205961227417,
+  "max_kl": 0.0008926764130592346,
+  "median_kl": 7.673309482925106e-06,
+  "argmax_agree": 1.0
+ },
+ "T1L_split_vs_one_long": {
+  "max_abs": 24.610157012939453,
+  "max_kl": 20.156585693359375,
+  "median_kl": 0.00023637874983251095,
+  "argmax_agree": 0.9694731831550598
+ },
+ "T2_zeroinj_vs_fresh": {
+  "max_abs": 0.0,
+  "max_kl": 0.0,
+  "median_kl": 0.0,
+  "argmax_agree": 1.0
+ },
+ "T3_pos0_vs_posN": {
+  "max_abs": 0.3914451599121094,
+  "max_kl": 0.0013191476464271545,
+  "median_kl": 6.868288619443774e-05,
+  "argmax_agree": 0.9583333730697632
+ },
+ "T4_chunked_state_max_rel_diff": 0.03685425966978073,
+ "T4_chunked_logits": {
+  "max_abs": 0.5809335708618164,
+  "max_kl": 0.003946877550333738,
+  "median_kl": 5.992571823298931e-05,
+  "argmax_agree": 1.0
+ },
+ "T5_bitwise_identical": true,
+ "T6_bf16_vs_fp32_short": {
+  "max_abs": 0.0,
+  "max_kl": 0.0,
+  "median_kl": 0.0,
+  "argmax_agree": 1.0
+ },
+ "T6_bf16_vs_fp32_long": {
+  "max_abs": 20.6240177154541,
+  "max_kl": 18.41170883178711,
+  "median_kl": 0.0001339673181064427,
+  "argmax_agree": 0.9684884548187256
+ },
+ "T7_C_vs_A": {
+  "max_abs": 12.35625171661377,
+  "max_kl": 1.9164977073669434,
+  "median_kl": 0.022231366485357285,
+  "argmax_agree": 0.875
+ },
+ "T8_score_multi_max_abs": {
+  "C": 0.06182861328125,
+  "M": 1.1920928955078125e-07,
+  "K": 3.337860107421875e-06
+ },
+ "T9_K_restored_vs_split": {
+  "max_abs": 0.0,
+  "max_kl": 0.0,
+  "median_kl": 0.0,
+  "argmax_agree": 1.0
+ },
+ "T9_K_offset_bitwise": true,
+ "T9_K_vs_full": {
+  "max_abs": 18.496623992919922,
+  "max_kl": 8.991500854492188,
+  "median_kl": 0.10124407708644867,
+  "argmax_agree": 0.625
+ },
+ "T9_K_vs_A": {
+  "max_abs": 14.025202751159668,
+  "max_kl": 6.045197010040283,
+  "median_kl": 0.011401532217860222,
+  "argmax_agree": 0.7916666865348816
+ },
+ "T10_generate_matches_teacher_forced": true,
+ "T10_text": " **not mentioned in our conversation yet**! Since I don't",
+ "state_MB_fp32": 48.0,
+ "PASS": true
+}

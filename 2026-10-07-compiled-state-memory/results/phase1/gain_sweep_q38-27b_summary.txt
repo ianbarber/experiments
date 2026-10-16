@@ -1,0 +1,54 @@
+
+== bind (C shift, nats; t 95% over attributes | 2AFC | dp) ==
+  g1         bind(all4)   0.80 [ 0.25, 1.35]  | 2AFC 0.583 | dp 0.104
+  g1.5       bind(all4)   1.88 [ 0.66, 3.10]  | 2AFC 0.604 | dp 0.205
+  g2         bind(all4)   2.58 [ 1.20, 3.96]  | 2AFC 0.667 | dp 0.257
+  g3         bind(all4)   2.85 [ 1.53, 4.16]  | 2AFC 0.667 | dp 0.298
+  late2      bind(all4)   1.29 [ 0.50, 2.08]  | 2AFC 0.562 | dp 0.163
+  late3      bind(all4)   1.60 [ 0.70, 2.50]  | 2AFC 0.594 | dp 0.201
+  lateonly2  bind(all4)   1.31 [ 0.52, 2.10]  | 2AFC 0.583 | dp 0.168
+  binding / priming decomposition per gain (pair 0vs30, pair 59vs30):
+    g1         B   0.87 [ 0.28, 1.47] P   0.90 [ 0.32, 1.48] | B   0.73 [ 0.22, 1.24] P  -0.41 [-0.82,-0.00]
+    g1.5       B   1.74 [ 0.49, 3.00] P   1.99 [ 0.69, 3.29] | B   2.01 [ 0.76, 3.26] P   0.74 [ 0.01, 1.46]
+    g2         B   2.21 [ 0.81, 3.61] P   2.06 [ 0.62, 3.49] | B   2.95 [ 1.52, 4.38] P   1.78 [ 0.48, 3.07]
+    g3         B   2.54 [ 1.16, 3.93] P   2.20 [ 0.77, 3.63] | B   3.15 [ 1.81, 4.49] P   2.75 [ 1.24, 4.25]
+    late2      B   1.35 [ 0.50, 2.20] P   1.37 [ 0.62, 2.12] | B   1.23 [ 0.48, 1.98] P  -0.56 [-1.11,-0.01]
+    late3      B   1.63 [ 0.68, 2.59] P   1.63 [ 0.82, 2.44] | B   1.56 [ 0.70, 2.42] P  -0.55 [-1.17, 0.06]
+    lateonly2  B   1.36 [ 0.54, 2.18] P   1.39 [ 0.66, 2.11] | B   1.26 [ 0.49, 2.03] P  -0.82 [-1.41,-0.23]
+
+== raw (C shift, nats; t 95% over attributes | 2AFC | dp) ==
+  g1         first   2.38 [ 1.01, 3.75]  last   1.65 [ 0.59, 2.72]  | 2AFC 0.625 | dp 0.229
+  g1.5       first   4.80 [ 1.91, 7.69]  last   6.03 [ 3.45, 8.62]  | 2AFC 0.812 | dp 0.502
+  g2         first   5.99 [ 2.67, 9.32]  last   9.01 [ 5.20,12.82]  | 2AFC 0.812 | dp 0.569
+  g3         first   7.06 [ 3.60,10.52]  last   9.51 [ 5.85,13.17]  | 2AFC 0.896 | dp 0.692
+  late2      first   3.71 [ 1.83, 5.58]  last   2.82 [ 1.28, 4.35]  | 2AFC 0.667 | dp 0.343
+  late3      first   4.54 [ 2.42, 6.67]  last   3.57 [ 1.77, 5.36]  | 2AFC 0.750 | dp 0.419
+  lateonly2  first   3.74 [ 1.95, 5.54]  last   2.51 [ 1.20, 3.83]  | 2AFC 0.708 | dp 0.347
+
+== prefs (C shift, nats; t 95% over attributes | 2AFC | dp) ==
+  g1         first   1.07 [ 0.20, 1.95]  last   0.49 [ 0.13, 0.85]  | 2AFC 0.562 | dp 0.102
+  g1.5       first   1.91 [ 0.29, 3.54]  last   0.77 [-0.80, 2.34]  | 2AFC 0.604 | dp 0.207
+  g2         first   3.15 [ 0.66, 5.65]  last   2.85 [ 0.54, 5.15]  | 2AFC 0.729 | dp 0.354
+  g3         first   3.35 [ 0.51, 6.19]  last   4.00 [ 1.14, 6.86]  | 2AFC 0.771 | dp 0.422
+  late2      first   1.77 [ 0.40, 3.13]  last   0.67 [ 0.18, 1.16]  | 2AFC 0.583 | dp 0.152
+  late3      first   2.30 [ 0.57, 4.02]  last   0.86 [ 0.24, 1.47]  | 2AFC 0.604 | dp 0.189
+  lateonly2  first   1.46 [ 0.46, 2.46]  last   0.37 [ 0.07, 0.68]  | 2AFC 0.542 | dp 0.122
+
+== guard: harm ratio H = mean(margin_A - margin_C) / mean(margin_A); 90% two-way bootstrap ==
+  g1         H -0.044 [-0.070,-0.018]  gold->distractor flips 0.000
+  g1.5       H -0.123 [-0.180,-0.071]  gold->distractor flips 0.000
+  g2         H -0.260 [-0.341,-0.191]  gold->distractor flips 0.000
+  g3         H -0.174 [-0.251,-0.103]  gold->distractor flips 0.000
+  late2      H -0.028 [-0.055,-0.002]  gold->distractor flips 0.000
+  late3      H -0.014 [-0.042, 0.012]  gold->distractor flips 0.000
+  lateonly2  H  0.026 [ 0.017, 0.036]  gold->distractor flips 0.000
+
+== lures: Yes-No log-odds differences, t 95% over 8 lists (positions averaged) ==
+  A          assoc-neutral 0.00   present-assoc 0.00
+  g1         assoc-neutral   0.24 [ 0.13, 0.35]   present-assoc   0.06 [ 0.01, 0.11]
+  g1.5       assoc-neutral   0.94 [ 0.09, 1.80]   present-assoc   0.13 [-0.21, 0.46]
+  g2         assoc-neutral   1.40 [ 0.98, 1.81]   present-assoc  -0.01 [-0.15, 0.13]
+  g3         assoc-neutral   0.95 [ 0.67, 1.22]   present-assoc   0.00 [-0.21, 0.21]
+  late2      assoc-neutral   0.25 [ 0.15, 0.35]   present-assoc   0.07 [ 0.05, 0.08]
+  late3      assoc-neutral   0.26 [ 0.18, 0.35]   present-assoc   0.06 [ 0.04, 0.08]
+  lateonly2  assoc-neutral   0.01 [-0.03, 0.05]   present-assoc   0.01 [-0.01, 0.03]

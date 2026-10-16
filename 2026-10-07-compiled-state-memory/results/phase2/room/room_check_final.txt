@@ -1,0 +1,46 @@
+second judge: 480 labels for 480 exported responses
+questions 120; records 1680 (+80 flip reruns)
+
+== accuracy (final labels) ==
+cell           acc  single  single  multi-  tempor  knowle  calls  read_tok  forced cut  none  malf  drop  ovfl  rcut
+A@large      0.692    0.91    1.00    0.47    0.69    0.62   3.30      3277    23     0     0     0    79     0     0
+A@mid        0.717    0.91    1.00    0.50    0.71    0.69   3.25      3385    22     0     0     0    78     0     0
+A@small      0.750    0.91    1.00    0.59    0.76    0.62   2.91      3366    18     0     1     0    73     0     0
+D@large      0.733    0.73    1.00    0.53    0.79    0.69   2.36      3334     9     0     0     0    62     0     0
+D@mid        0.700    0.64    1.00    0.47    0.74    0.75   2.02      3279     4     0     0     0    55     0     0
+D@small      0.742    0.91    1.00    0.53    0.74    0.75   2.11      2837     7     1     0     0    63     0     0
+M@large      0.825    1.00    1.00    0.72    0.81    0.75   1.62      1171     3     1     0     0    27     0     0
+M@mid        0.875    1.00    1.00    0.78    0.81    1.00   1.77      1220     5     1     0     0    27     0     0
+M@small      0.908    0.73    1.00    0.91    0.93    0.88   1.60      1034     5     0     0     0    35     0     0
+N@O          0.050    0.00    0.26    0.00    0.02    0.00   0.00         0     0     4     0     0     0     0     0
+O@O          0.925    0.91    1.00    0.94    0.90    0.88   1.48       889     3     0     0     0    31     0     0
+T@large      0.683    0.82    1.00    0.53    0.67    0.56   2.52      3465    11     0     0     0    71     0     0
+T@mid        0.708    0.91    1.00    0.41    0.76    0.69   2.56      3642    11     0     0     0    72     0     0
+T@small      0.733    0.82    1.00    0.56    0.74    0.69   2.34      3007     9     0     0     0    75     0     0
+
+flip rate (Qwen labels, rerun vs main): 0/80 = 0.000
+
+== judge agreement (second judge vs Qwen) by cell ==
+  D@large: 116/120 = 0.967
+  M@large: 117/120 = 0.975
+  M@mid: 118/120 = 0.983
+  T@mid: 117/120 = 0.975
+
+== small: B* = D (0.742; T 0.733, D 0.742) ==
+  room for any hint O - B*: +0.183 [+0.108, +0.267]   (O 0.925)
+  A (no hint) 0.750;  B* - A -0.008
+  M 0.908; M - B* +0.167 [+0.083, +0.250] (descriptive)
+
+== mid: B* = T (0.708; T 0.708, D 0.700) ==
+  room for any hint O - B*: +0.217 [+0.150, +0.292]   (O 0.925)
+  A (no hint) 0.717;  B* - A -0.008
+  G = M - B*: +0.167 [+0.092, +0.242]  q 0.200  D_min 0.080  -> GO(mid)
+  f* = (B* - A + D_min) / (M - A) = 0.45
+
+== large: B* = D (0.733; T 0.683, D 0.733) ==
+  room for any hint O - B*: +0.192 [+0.117, +0.275]   (O 0.925)
+  A (no hint) 0.692;  B* - A +0.042
+  G = M - B*: +0.092 [+0.008, +0.175]  q 0.225  D_min 0.085  -> GO(large)
+  f* = (B* - A + D_min) / (M - A) = 0.95
+
+== overall: GO ({'mid': 'GO', 'large': 'GO'}) ==

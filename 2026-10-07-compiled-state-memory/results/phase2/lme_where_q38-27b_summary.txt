@@ -1,0 +1,123 @@
+questions done 16 of 16; plumbing file: False
+
+== 1. agreement with M: X - A regressed on M - A (through 0; question-bootstrap 95% CI) ==
+  every condition on the same sessions (present and absent stores); C, K pooled with absent2 below
+  cond           n  slope L                slope H                mean|L-M|  same action as M
+  A             32  (0 by definition)                                 2.691              0.34
+  C             32  -0.11 [-0.26, +0.00]      +0.22 [+0.00, +0.37]          3.203              0.44
+  K             32  +1.00 [+0.84, +1.20]      +0.68 [+0.28, +0.92]          0.985              0.47
+  CK            32  +1.04 [+0.95, +1.18]      +0.83 [+0.54, +0.99]          0.644              0.72
+  Kstar4k       32  +0.79 [+0.65, +0.97]      +0.46 [-0.01, +0.75]          0.891              0.44
+  Kstar64k      32  +1.02 [+0.86, +1.23]      +0.70 [+0.30, +0.95]          1.043              0.44
+  Krt           32  +1.00 [+0.84, +1.20]      +0.56 [+0.08, +0.85]          0.967              0.44
+  Kearly        32  +0.16 [+0.03, +0.28]      +0.30 [-0.02, +0.52]          2.333              0.41
+  Kmid          32  +0.97 [+0.77, +1.20]      +0.46 [+0.01, +0.72]          1.102              0.47
+  Klate         32  +0.15 [+0.09, +0.25]      +0.01 [-0.14, +0.09]          2.252              0.38
+  C +a2         48  -0.12 [-0.27, +0.00]      +0.20 [+0.02, +0.35]          3.138              0.54
+  K +a2         48  +1.00 [+0.82, +1.22]      +0.56 [+0.14, +0.84]          1.093              0.50
+
+== 2. presence: present - absent (n = questions) ==
+  cond      L                            H (path hazard)              called p/a  eot p/a  read p/a same act
+  M         -0.451 [-0.684, -0.218]      -3.973 [-6.457, -1.488]         8/13      3/0       0/0           5
+  C         +0.043 [-0.023, +0.109]      +0.025 [-0.052, +0.101]        16/16      0/0       0/0          16
+  K         -0.115 [-0.465, +0.236]      -2.273 [-5.259, +0.713]         5/10      6/3       0/0           7
+  CK        -0.370 [-0.694, -0.046]      -4.090 [-6.423, -1.757]         5/13      6/0       0/0           4
+  Kstar4k   -0.214 [-0.505, +0.078]      -1.324 [-3.766, +1.117]         9/10      2/2       0/0          14
+  Kstar64k  +0.062 [-0.197, +0.321]      -2.534 [-4.935, -0.132]         9/11      2/2       0/0          13
+  Krt       -0.092 [-0.422, +0.238]      -1.529 [-4.016, +0.958]         5/9       6/3       0/0           7
+  Kearly    -0.029 [-0.089, +0.032]      -0.029 [-0.089, +0.032]        16/16      0/0       0/0          16
+  Kmid      -0.158 [-0.394, +0.077]      -2.342 [-5.714, +1.030]        11/13      1/1       0/0          10
+  Klate     +0.027 [-0.055, +0.108]      -0.003 [-0.063, +0.057]        16/16      0/0       0/0          15
+  swap floor (questions with absent2): |p - a| - |a2 - a| on L
+    C   n=16 +0.016 [-0.048, +0.080]
+    K   n=16 +0.377 [+0.155, +0.598]
+    M   n=16 +0.379 [+0.187, +0.570]
+  by type, L present - absent:
+    knowledge-update           C +0.11  K -0.42  CK -0.41  M -0.56
+    multi-session              C -0.04  K -0.57  CK +0.02  M -0.47
+    single-session-preference  C -0.00  K -0.19  CK +0.37  M -0.13
+    single-session-user        C +0.06  K +0.58  CK -0.93  M -0.46
+
+== 3. answer anchor: sum log p(gold), nats ==
+  C         n= 9  present - absent -0.182 [-0.447, +0.082]      present - A -2.138 [-3.159, -1.117]
+  K         n= 9  present - absent +3.783 [+0.626, +6.940]      present - A +5.281 [+1.289, +9.273]
+  CK        n= 9  present - absent +10.456 [+5.729, +15.184]    present - A +11.595 [+7.452, +15.737]
+  M         n= 9  present - absent +11.066 [+6.141, +15.990]    present - A +11.366 [+7.485, +15.246]
+  Kstar4k   n= 9  present - absent +4.358 [+1.330, +7.386]      present - A +5.608 [+1.435, +9.781]
+  Kearly    n= 9  present - absent +0.037 [+0.008, +0.065]      present - A +0.158 [-0.424, +0.740]
+  Kmid      n= 9  present - absent +0.306 [-0.107, +0.718]      present - A +0.494 [-0.677, +1.666]
+  Klate     n= 9  present - absent +0.319 [+0.049, +0.588]      present - A +0.560 [-0.469, +1.589]
+
+== 4. direct logit attribution of z_call - E_q[z] at the first assistant token ==
+  check (own readout): |sum - x.w| max 0.034; |x.w - target| median 0.002 max 0.012
+  traces for 16 of 16 questions. Differences between conditions use one readout per question,
+  A's direction and norm scale (w_A), so they show what the components write, not readout drift.
+  A                          emb   +0.00±0.00  gdn   +1.84±0.64  attn   +3.14±0.18  mlp   -2.08±0.59  total   +2.91±0.88
+  C present                  emb   +0.00±0.00  gdn   +2.25±0.74  attn   +3.48±0.20  mlp   -1.94±0.55  total   +3.78±0.81
+  K present                  emb   +0.00±0.00  gdn   -0.42±0.48  attn   +2.00±0.30  mlp   -0.40±0.82  total   +1.18±0.86
+  M present                  emb   +0.00±0.00  gdn   +0.56±0.42  attn   +1.96±0.38  mlp   -0.74±0.77  total   +1.78±0.83
+  C present - A              emb   +0.00±0.00  gdn   +0.40±0.67  attn   +0.34±0.23  mlp   +0.13±0.48  total   +0.87±0.41
+  K present - A              emb   +0.00±0.00  gdn   -2.27±0.70  attn   -1.14±0.33  mlp   +1.67±0.79  total   -1.73±0.66
+  CK present - A             emb   +0.00±0.00  gdn   -1.76±0.63  attn   -1.38±0.35  mlp   +1.67±0.63  total   -1.46±0.63
+  M present - A              emb   +0.00±0.00  gdn   -1.28±0.84  attn   -1.18±0.36  mlp   +1.33±0.68  total   -1.13±0.73
+  Kstar4k present - A        emb   +0.00±0.00  gdn   -1.32±0.90  attn   -0.77±0.48  mlp   +0.42±0.97  total   -1.68±0.51
+  Kearly present - A         emb   +0.00±0.00  gdn   +0.41±0.63  attn   -0.03±0.22  mlp   -0.53±0.48  total   -0.15±0.53
+  Kmid present - A           emb   +0.00±0.00  gdn   -2.77±1.03  attn   -0.18±0.34  mlp   +0.91±0.77  total   -2.04±0.82
+  Klate present - A          emb   +0.00±0.00  gdn   -0.04±0.19  attn   -0.44±0.32  mlp   -0.01±0.18  total   -0.48±0.29
+  C present - absent         emb   +0.00±0.00  gdn   +0.08±0.07  attn   +0.02±0.03  mlp   -0.04±0.06  total   +0.06±0.07
+  K present - absent         emb   +0.00±0.00  gdn   -0.27±0.32  attn   -0.72±0.41  mlp   +1.52±0.65  total   +0.53±0.45
+  CK present - absent        emb   +0.00±0.00  gdn   -0.90±0.50  attn   -0.56±0.26  mlp   +2.16±0.72  total   +0.70±0.36
+  M present - absent         emb   +0.00±0.00  gdn   -0.89±0.43  attn   -0.59±0.30  mlp   +2.28±0.66  total   +0.79±0.44
+  readout drift |x_X . (w_X - w_A)| over C, K, M present: median 1.23 max 3.52
+  by depth (common readout; mean over questions; block = 3 GDN + 1 attention layer and their 4 MLPs):
+    layers                      A                M p - A                M p - a                K p - A                K p - a
+     0- 3   g -0.0 a -0.0 m +0.0   g +0.0 a -0.0 m -0.0   g -0.0 a -0.0 m +0.0   g +0.0 a -0.0 m +0.0   g +0.0 a -0.0 m -0.0
+     4- 7   g -0.0 a -0.0 m +0.0   g +0.0 a +0.0 m +0.0   g +0.0 a -0.0 m -0.0   g +0.0 a -0.0 m +0.0   g -0.0 a +0.0 m -0.0
+     8-11   g +0.0 a -0.0 m +0.0   g -0.0 a +0.0 m +0.0   g -0.0 a -0.0 m +0.0   g -0.0 a +0.0 m +0.0   g -0.0 a +0.0 m -0.0
+    12-15   g -0.0 a -0.0 m +0.0   g +0.0 a -0.0 m +0.0   g -0.0 a -0.0 m +0.0   g -0.0 a -0.0 m +0.0   g +0.0 a -0.0 m +0.0
+    16-19   g -0.0 a -0.0 m +0.0   g +0.0 a -0.0 m -0.0   g -0.0 a -0.0 m -0.0   g -0.0 a -0.0 m -0.0   g +0.0 a -0.0 m -0.0
+    20-23   g +0.0 a -0.0 m +0.1   g +0.0 a +0.0 m -0.0   g +0.0 a +0.0 m -0.0   g +0.0 a +0.0 m +0.0   g +0.0 a +0.0 m -0.0
+    24-27   g +0.0 a +0.0 m -0.0   g -0.0 a -0.0 m +0.0   g +0.0 a +0.0 m +0.0   g +0.0 a -0.0 m -0.0   g -0.0 a -0.0 m +0.0
+    28-31   g -0.0 a -0.0 m -0.0   g +0.0 a -0.0 m +0.1   g -0.0 a +0.0 m +0.0   g +0.0 a +0.0 m +0.1   g -0.0 a +0.0 m +0.0
+    32-35   g -0.1 a -0.0 m +0.1   g -0.0 a -0.0 m -0.2   g -0.0 a +0.0 m +0.0   g -0.0 a -0.0 m -0.1   g -0.0 a -0.0 m +0.0
+    36-39   g +0.0 a -0.0 m -0.0   g -0.1 a -0.0 m +0.0   g -0.0 a -0.0 m -0.0   g -0.0 a +0.0 m +0.0   g -0.0 a +0.0 m -0.0
+    40-43   g -0.1 a +0.1 m +0.0   g +0.0 a +0.0 m -0.1   g +0.0 a +0.0 m +0.0   g -0.0 a +0.0 m -0.0   g +0.0 a +0.0 m +0.0
+    44-47   g +0.1 a -0.0 m +0.2   g +0.1 a -0.0 m -0.1   g -0.0 a -0.0 m -0.0   g -0.0 a -0.0 m -0.2   g -0.0 a +0.0 m -0.0
+    48-51   g +0.1 a +0.9 m -0.3   g +0.3 a -0.4 m +0.3   g +0.1 a -0.1 m +0.5   g +0.1 a -0.5 m +0.3   g +0.1 a -0.2 m +0.3
+    52-55   g +0.6 a -0.1 m -0.9   g -0.2 a +0.0 m +0.9   g -0.3 a +0.0 m +0.4   g -0.2 a +0.1 m +0.7   g -0.2 a -0.0 m +0.6
+    56-59   g +0.2 a +3.0 m -0.9   g +0.1 a +0.0 m +0.5   g +0.2 a -0.1 m +0.8   g -0.0 a -0.5 m +0.3   g -0.1 a -0.1 m +0.5
+    60-63   g +1.0 a -0.6 m -0.5   g -1.5 a -0.7 m -0.3   g -0.8 a -0.5 m +0.6   g -2.0 a -0.2 m +0.5   g -0.0 a -0.4 m +0.2
+
+== 4b. exact split of own-readout differences: x_X.w_X - x_Y.w_Y = sum_i (C_X,i - C_Y,i).w_mid + sum_i C_mid,i.(w_X - w_Y) ==
+  'written' = what the components write differently, read through the midpoint readout; 'readout' = the change in
+  the readout itself (final-norm scale and the non-call distribution q). The two sum exactly to the own-readout change.
+  C present - A        gdn  +0.31±0.67  attn  +0.32±0.23  mlp  +0.03±0.48  total  +0.66±0.42  readout  -0.57±0.20  own  +0.09±0.53
+  K present - A        gdn  -2.31±0.54  attn  -1.25±0.36  mlp  +0.04±0.51  total  -3.52±0.70  readout  +0.22±0.38  own  -3.30±0.76
+  CK present - A       gdn  -1.81±0.50  attn  -1.40±0.29  mlp  -0.50±0.47  total  -3.71±0.47  readout  +0.15±0.37  own  -3.55±0.58
+  M present - A        gdn  -1.68±0.70  attn  -1.16±0.31  mlp  -0.74±0.44  total  -3.58±0.57  readout  +0.27±0.41  own  -3.31±0.78
+  Kstar4k present - A  gdn  -1.35±0.71  attn  -0.84±0.47  mlp  -0.60±0.75  total  -2.80±0.78  readout  +0.08±0.36  own  -2.72±0.69
+  Kmid present - A     gdn  -2.89±0.94  attn  -0.27±0.42  mlp  -0.05±0.69  total  -3.20±1.11  readout  +0.29±0.44  own  -2.92±1.14
+  C present - absent   gdn  +0.07±0.07  attn  +0.02±0.03  mlp  -0.04±0.07  total  +0.05±0.07  readout  -0.04±0.04  own  +0.01±0.08
+  K present - absent   gdn  -0.35±0.24  attn  -0.80±0.39  mlp  +0.80±0.35  total  -0.35±0.43  readout  +0.63±0.31  own  +0.28±0.43
+  CK present - absent  gdn  -0.84±0.47  attn  -0.55±0.29  mlp  +0.82±0.45  total  -0.57±0.52  readout  +0.18±0.36  own  -0.39±0.39
+  M present - absent   gdn  -0.88±0.34  attn  -0.43±0.25  mlp  +0.67±0.32  total  -0.63±0.33  readout  -0.01±0.39  own  -0.64±0.25
+  Kstar4k present - absent gdn  -0.40±0.44  attn  -0.41±0.32  mlp  +0.49±0.40  total  -0.33±0.39  readout  +0.35±0.28  own  +0.02±0.31
+  Kmid present - absent gdn  -0.46±0.28  attn  -0.31±0.20  mlp  +0.47±0.32  total  -0.30±0.30  readout  +0.47±0.28  own  +0.17±0.30
+  by depth, 'written' part (mean over questions; block = 3 GDN + 1 attention layer and their 4 MLPs):
+    layers                     M p-A                     M p-a                     K p-A                     K p-a                    CK p-a
+     0- 3   g +0.00 a -0.02 m -0.01   g +0.00 a -0.00 m +0.00   g +0.00 a -0.01 m +0.00   g +0.00 a +0.00 m +0.00   g +0.00 a -0.00 m +0.00
+     4- 7   g +0.01 a +0.00 m +0.01   g +0.00 a -0.00 m -0.00   g +0.01 a -0.00 m +0.01   g -0.00 a +0.00 m -0.00   g +0.00 a -0.00 m +0.00
+     8-11   g -0.00 a -0.00 m +0.00   g -0.00 a -0.00 m -0.00   g -0.00 a +0.00 m +0.01   g -0.00 a +0.00 m -0.00   g -0.00 a +0.00 m +0.00
+    12-15   g +0.01 a -0.01 m +0.01   g -0.00 a -0.00 m +0.00   g -0.00 a -0.01 m +0.01   g +0.00 a -0.00 m +0.00   g -0.00 a -0.00 m +0.00
+    16-19   g +0.02 a -0.00 m -0.00   g +0.00 a -0.00 m -0.00   g -0.01 a -0.01 m -0.00   g +0.00 a -0.00 m -0.00   g -0.00 a -0.00 m -0.00
+    20-23   g +0.02 a +0.02 m -0.00   g +0.01 a +0.00 m -0.01   g +0.00 a +0.02 m +0.02   g +0.00 a +0.00 m -0.00   g +0.01 a +0.00 m -0.01
+    24-27   g +0.00 a -0.02 m +0.01   g +0.00 a +0.01 m +0.01   g +0.01 a -0.04 m -0.01   g -0.00 a -0.00 m +0.00   g +0.00 a +0.00 m +0.01
+    28-31   g +0.07 a +0.00 m +0.08   g -0.00 a -0.00 m +0.01   g +0.02 a +0.01 m +0.08   g -0.00 a +0.00 m +0.00   g -0.01 a -0.00 m +0.01
+    32-35   g -0.04 a -0.01 m -0.23   g -0.03 a +0.01 m -0.02   g -0.01 a -0.03 m -0.18   g -0.02 a -0.01 m -0.01   g -0.03 a +0.00 m -0.00
+    36-39   g -0.08 a -0.02 m -0.08   g -0.03 a -0.01 m -0.09   g -0.04 a -0.01 m -0.01   g -0.01 a +0.01 m -0.01   g -0.02 a -0.02 m -0.07
+    40-43   g +0.02 a +0.03 m -0.06   g +0.02 a +0.01 m +0.02   g -0.02 a +0.01 m -0.01   g +0.00 a +0.01 m +0.01   g +0.01 a +0.02 m +0.01
+    44-47   g +0.09 a -0.05 m -0.15   g +0.01 a -0.04 m -0.08   g -0.04 a -0.03 m -0.20   g -0.02 a -0.02 m -0.07   g -0.01 a -0.04 m -0.08
+    48-51   g +0.13 a -0.52 m -0.11   g +0.03 a -0.16 m +0.16   g -0.01 a -0.62 m -0.09   g +0.01 a -0.22 m +0.12   g +0.02 a -0.21 m +0.23
+    52-55   g -0.37 a -0.04 m -0.22   g -0.38 a +0.03 m -0.23   g -0.25 a +0.07 m -0.30   g -0.23 a -0.03 m +0.11   g -0.37 a +0.02 m -0.22
+    56-59   g -0.12 a +0.02 m -0.28   g +0.03 a -0.03 m +0.29   g -0.16 a -0.48 m -0.23   g -0.07 a -0.12 m +0.32   g +0.00 a +0.03 m +0.34
+    60-63   g -1.44 a -0.54 m +0.30   g -0.54 a -0.25 m +0.62   g -1.81 a -0.14 m +0.95   g -0.01 a -0.41 m +0.34   g -0.43 a -0.36 m +0.60

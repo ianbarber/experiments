@@ -1,0 +1,33 @@
+rows 624
+
+== full injection, by target index ==
+  start+0: shift   1.98 [  1.05,  3.10]  2afc 0.58  n=24
+  start+1: shift   1.57 [  0.75,  2.57]  2afc 0.58  n=24
+  start+2: shift   1.50 [  0.71,  2.49]  2afc 0.58  n=24
+  start+4: shift   1.28 [  0.59,  2.11]  2afc 0.56  n=24
+  start+8: shift   1.11 [  0.50,  1.86]  2afc 0.56  n=24
+    end-8: shift   0.81 [  0.33,  1.46]  2afc 0.56  n=24
+    end-4: shift   0.84 [  0.35,  1.47]  2afc 0.56  n=24
+    end-2: shift   0.80 [  0.32,  1.41]  2afc 0.56  n=24
+    end-1: shift   0.81 [  0.31,  1.45]  2afc 0.56  n=24
+    end-0: shift   0.74 [  0.27,  1.32]  2afc 0.54  n=24
+
+== variants at first (idx 0) and last (idx 59) entry ==
+idx  0   band_early: shift  -0.02 [ -0.11,  0.05]  2afc 0.50
+idx  0    band_late: shift   1.88 [  0.92,  3.07]  2afc 0.62
+idx  0     band_mid: shift   0.10 [  0.03,  0.19]  2afc 0.52
+idx  0         full: shift   1.98 [  1.08,  3.06]  2afc 0.58
+idx  0   heads_long: shift   1.25 [  0.58,  2.05]  2afc 0.56
+idx  0  heads_short: shift   0.68 [  0.40,  1.04]  2afc 0.52
+idx  0    scale_0.5: shift   1.00 [  0.49,  1.63]  2afc 0.56
+idx  0    scale_2.0: shift   3.48 [  2.08,  5.05]  2afc 0.71
+idx  0    scale_4.0: shift   3.44 [  1.20,  5.71]  2afc 0.71
+idx 59   band_early: shift   0.06 [ -0.02,  0.13]  2afc 0.50
+idx 59    band_late: shift   0.64 [  0.16,  1.20]  2afc 0.52
+idx 59     band_mid: shift   0.07 [  0.02,  0.13]  2afc 0.50
+idx 59         full: shift   0.74 [  0.29,  1.31]  2afc 0.54
+idx 59   heads_long: shift   0.55 [  0.23,  0.96]  2afc 0.52
+idx 59  heads_short: shift   0.10 [ -0.05,  0.25]  2afc 0.50
+idx 59    scale_0.5: shift   0.35 [  0.12,  0.65]  2afc 0.52
+idx 59    scale_2.0: shift   1.90 [  0.83,  3.22]  2afc 0.62
+idx 59    scale_4.0: shift   2.81 [  0.67,  5.13]  2afc 0.71

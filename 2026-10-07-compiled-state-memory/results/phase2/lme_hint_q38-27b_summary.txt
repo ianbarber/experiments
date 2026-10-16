@@ -1,0 +1,74 @@
+questions complete 80 of 80; rows superseded by a resume: 0; smoke/plumbing file: False
+
+== primary: Δ_C = L(C, present) − L(C, absent), first-token log-odds of a tool call ==
+  Δ_C   +0.030 [-0.017, +0.077] p=0.21  bootstrap [-0.017, +0.076]  sign-flip p=0.212  Δ>0 in 43/80  SD 0.21
+  achieved equivalence bound max(|lo|, |hi|) = 0.077
+  controls: Δ_T +0.314 [+0.154, +0.473] p=0.00019 registers=False;  Δ_M -0.367 [-0.588, -0.147] p=0.0014 registers=False
+  by type (Holm over 4 for the heterogeneity guard): SSU +0.04 [-0.03, +0.11] Holm p=0.65; SSP +0.01 [-0.11, +0.14] Holm p=1; KU +0.06 [-0.03, +0.15] Holm p=0.65; MS +0.01 [-0.09, +0.11] Holm p=1
+  greedy-path hazard Δ_path +0.081 [-0.238, +0.399] p=0.62
+  VERDICT: INCONCLUSIVE (no control registered presence)
+
+== sensitivity (primary estimand) ==
+  frame-weighted Δ_C (weights 0.23, 0.09, 0.26, 0.42): +0.030 [-0.018, +0.078]
+  without the two 'last weekend' items: +0.032 [-0.017, +0.080] (n=78)
+  without the 15 questions with any audit flag: +0.033 [-0.011, +0.077] (n=65)
+  Δ_C / Δ_T = +0.096, bootstrap [-0.073, +0.249]
+
+== secondary (Holm over the 13 tests below) ==
+  Δ_T                                                     +0.314 [+0.154, +0.473]          p=0.000191  Holm p=0.00229
+  Δ_CT                                                    +0.200 [+0.048, +0.352]          p=0.0104  Holm p=0.104
+  Δ_M                                                     -0.367 [-0.588, -0.147]          p=0.00137  Holm p=0.0151
+  Δ_CT − Δ_T                                              -0.113 [-0.241, +0.014]          p=0.0807  Holm p=0.565
+  Δ_C in SSP                                              +0.012 [-0.113, +0.136]          p=0.85  Holm p=1
+  placebo C: |p−a| − |a2−a| (n=48)                        +0.024 [-0.033, +0.081]          p=0.418  Holm p=1
+  placebo T: |p−a| − |a2−a| (n=48)                        +0.397 [+0.234, +0.560]          p=1e-05  Holm p=0.00013
+  level C(p) − A                                          +0.237 [-0.017, +0.492]          p=0.0673  Holm p=0.538
+  level S − A                                             +0.287 [+0.052, +0.521]          p=0.0172  Holm p=0.155
+  level C(p) − S                                          -0.049 [-0.202, +0.103]          p=0.52  Holm p=1
+  greedy call C p vs a (McNemar: p-only 0, a-only 0)                                       p=1  Holm p=1
+  hit@3 C(p) vs A (McNemar on 57: C-only 0, A-only 1)                                      p=1  Holm p=1
+  anchor Δ^ans_C (n=38)                                   +0.015 [-0.063, +0.093]          p=0.704  Holm p=1
+
+== descriptive: Δ_C and Δ_T by type (no tests) ==
+  single-session-user        n=24  Δ_C +0.042 [-0.025, +0.109]  Δ_T +0.217 [-0.057, +0.491]  Δ_M -0.65
+  single-session-preference  n=24  Δ_C +0.012 [-0.113, +0.136]  Δ_T +0.548 [+0.267, +0.828]  Δ_M +0.14
+  knowledge-update           n=16  Δ_C +0.060 [-0.027, +0.148]  Δ_T +0.542 [+0.047, +1.036]  Δ_M -0.47
+  multi-session              n=16  Δ_C +0.010 [-0.089, +0.108]  Δ_T -0.121 [-0.334, +0.093]  Δ_M -0.60
+
+== descriptive: greedy first action ==
+  cond store p1(call)  call   eot   cap call/(call+eot) pre|call search  list  read
+  A    None     0.656  0.97  0.01  0.01            0.99     0.19   0.74  0.26  0.00
+  S    None     0.670  0.95  0.03  0.03            0.97     0.16   0.84  0.16  0.00
+  C    p        0.675  0.99  0.00  0.01            1.00     0.18   0.82  0.18  0.00
+  C    a        0.671  0.99  0.00  0.01            1.00     0.18   0.82  0.18  0.00
+  T    p        0.581  0.96  0.00  0.04            1.00     0.23   0.84  0.00  0.16
+  T    a        0.534  0.86  0.01  0.12            0.99     0.19   0.99  0.00  0.01
+  CT   p        0.527  0.89  0.00  0.11            1.00     0.17   0.70  0.00  0.30
+  CT   a        0.496  0.78  0.00  0.23            1.00     0.08   0.98  0.00  0.02
+  M    p        0.195  0.45  0.17  0.38            0.72     0.58   1.00  0.00  0.00
+  M    a        0.259  0.68  0.00  0.33            1.00     0.48   1.00  0.00  0.00
+  C    a2       0.604  1.00  0.00  0.00            1.00     0.27   0.83  0.17  0.00
+  T    a2       0.467  0.85  0.00  0.15            1.00     0.34   0.98  0.00  0.02
+
+== descriptive: where the first search points (present store, BM25, pessimistic ranks) ==
+  A   searches  58  hit@3 0.983  queries matching no file 0
+  S   searches  64  hit@3 0.938  queries matching no file 3
+  C   searches  65  hit@3 0.969  queries matching no file 2
+  T   searches  65  hit@3 0.938  queries matching no file 3
+  CT  searches  50  hit@3 0.940  queries matching no file 2
+  M   searches  36  hit@3 1.000  queries matching no file 0
+
+== descriptive: Δ_C by tokens after the last evidence file (tertiles) ==
+  near end (     0– 22078 tokens) n=27  Δ_C +0.080 [-0.038, +0.197]  types {'SSU': 7, 'KU': 7, 'SSP': 7, 'MS': 6}
+  middle   ( 22078– 46769 tokens) n=26  Δ_C -0.010 [-0.078, +0.057]  types {'MS': 7, 'KU': 7, 'SSU': 5, 'SSP': 7}
+  far      ( 46769– 97665 tokens) n=27  Δ_C +0.020 [-0.032, +0.071]  types {'SSU': 12, 'SSP': 10, 'KU': 2, 'MS': 3}
+
+== descriptive: Δ_T by whether the evidence index line names the topic or the gold ==
+  topic word n=41  Δ_T +0.483 [+0.214, +0.751]
+  neither    n=33  Δ_T +0.094 [-0.066, +0.254]
+  gold word  n= 6  Δ_T +0.365 [-0.343, +1.072]
+
+== descriptive: answer-likelihood anchor (Σ log p(gold), nats) ==
+  Δ^ans_M +10.678 [+8.884, +12.473]
+  C(p) − A -0.815 [-1.350, -0.280]
+  Δ^ans_C, gold verbatim in evidence (n=35): +0.045 [-0.012, +0.102]
