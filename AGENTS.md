@@ -13,7 +13,7 @@ follow-ups are retracted; project-agent review is not a credential.
 
 | File | Purpose |
 |---|---|
-| `README.md` | The brief: title; a `**Date:** … · **Machine:** …` line; `## Brief` (the question); `## Headline results` (bullets, numbers included); `## Contents` table |
+| `README.md` | The brief: title; a `**Date:** … · **Machine:** …` line; `## Brief` (the question); `## Headline results` (bullets, numbers included, plus the headline figure if one carries the result); `## Contents` table |
 | `REPORT.md` | The full write-up: method, results, limitations, verdict. Readable in one sitting |
 | `LABNOTES.md` | Execution log in the order it happened, failures included, **first person**. If it is reconstructed after the fact, say so in the first paragraph |
 | `code/` | Everything needed to reproduce, with a `code/README.md` giving environment and run commands. Paths in docs are relative to `code/` unless stated |

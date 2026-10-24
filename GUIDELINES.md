@@ -14,7 +14,15 @@ threshold-shop to make it look like it works.
 2. Define the result that would confirm it and the result that would reject it.
 3. Name the experimental object and check that it can actually identify the
    hypothesis. If collected failures are four generic strings, a pairing
-   experiment is theater. Change the object or drop the question.
+   experiment is theater. Change the object or drop the question. Before
+   picking a metric, read ~20 raw outputs and write one sentence on what you
+   see; the metric should measure something you have actually observed.
+   Then sketch the headline figure twice, with made-up data: once as it would
+   look if the hypothesis holds and once as it would look if it is rejected.
+   If the two sketches look alike, the object cannot identify the hypothesis.
+   At kickoff this is a joint exercise. The agent drafts the sketches as ASCII
+   or as a plot from obviously fake data; the experimenter reacts before any
+   code runs.
 4. Write program-level kill criteria, not only phase gates. Example: "if donor
    overlap exceeds X, or traces have fewer than N distinct rationales, stop;
    do not install a different synthetic task and try again under the same
@@ -22,7 +30,8 @@ threshold-shop to make it look like it works.
 5. Put baselines and the analysis plan in place. Prefer a pre-registration
    (endpoints, thresholds, dated amendments) when the run will last more than
    an afternoon.
-6. Log the setup in `LABNOTES.md` before the first GPU minute.
+6. Log the setup in `LABNOTES.md` before the first GPU minute, including both
+   figure sketches. Changing a sketch after that point is a dated amendment.
 
 ## After each run
 
@@ -30,7 +39,13 @@ threshold-shop to make it look like it works.
 2. Write the interpretation, even if tentative.
 3. Decide: continue, revise, or stop. Then do that. A gate that cannot fail is
    not a gate.
-4. Same-session baselines for any comparison that would otherwise span days.
+4. Compare the result with the sketches. A partial match can justify a revision
+   that separates what held from what did not (a cue edit that creates a new
+   effect but fails to remove the old one becomes two findings, "create" and
+   "redirect"). Log it as a dated amendment. Swapping in a new task until the
+   confirming sketch appears is not a revision. Never restyle a figure to
+   look like the sketch.
+5. Same-session baselines for any comparison that would otherwise span days.
    A five-day-old baseline can invent a gain the size of the effect you hoped
    for.
 
@@ -90,6 +105,30 @@ with Claude Code"); dumping the session is not.
   report short.
 - Negative results are entries. Retracted interim readings stay in the notes.
 - Reconstructed notes are labeled reconstructed.
+- If one figure carries the result, put it in `README.md` under the headline
+  bullets. Test: a reader who sees only that figure should get the verdict.
+  For a negative result, the confirming sketch next to the measured figure
+  often does the job.
+- Figures and text each stand alone. Captions say what is compared, the N,
+  and what to look at. The text says why the question matters, why these
+  experiments, and what follows.
+
+## Figures
+
+- One idea per figure. A metric that answers a different question gets its
+  own figure or goes in a table.
+- The axis of variation is the comparison the claim rests on. Put the
+  conditions being compared side by side, not in separate panels.
+- Panel order follows the argument.
+- A condition keeps the same colour in every figure of the entry. Use
+  sequential colormaps for ordered quantities and diverging ones only when
+  there is a meaningful midpoint.
+- Use size, weight and colour to emphasise what the claim depends on, and
+  make sure that is the data, not the fitted line or the decoration.
+- Commit small SVG or PNG files to `images/`, and the script that makes them
+  to `code/`.
+- If a figure cannot show its point, simplify the experiment or the contrast.
+  More styling will not fix it.
 
 ## File layout of an entry
 
