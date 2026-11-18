@@ -1,0 +1,11 @@
+.venv/
+uv.lock
+__pycache__/
+.pytest_cache/
+*.pyc
+*.egg-info/
+runs/
+data/
+*.safetensors
+*.pt
+*.log

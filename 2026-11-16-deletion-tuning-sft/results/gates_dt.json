@@ -1,0 +1,44 @@
+{
+ "n_model_params": 1728801536,
+ "val_loss_base": 2.5011734132808567,
+ "wanda_seconds": 22.4,
+ "wanda_tokens": 713928,
+ "gate_identity_all_kept": true,
+ "mask_init": {
+  "deleted": 693451,
+  "target_weights": 377487360,
+  "deleted_frac_of_target": 0.0018370178010728624,
+  "deleted_frac_of_model": 0.000401116603357761
+ },
+ "mask_init_zstd_bytes": 1307187,
+ "val_loss_init_hard": 2.4724608040418437,
+ "val_loss_init_soft_alpha100": 2.5033769830477235,
+ "val_loss_init_soft_alpha1000": 2.478432740460692,
+ "val_loss_wanda_only_noise_free": 2.4999728166807524,
+ "mask_wanda_noise_free": {
+  "deleted": 184320,
+  "target_weights": 377487360,
+  "deleted_frac_of_target": 0.00048828125,
+  "deleted_frac_of_model": 0.00010661721207540621
+ },
+ "n_trainable": 377487360,
+ "grad_finite": true,
+ "grad_abs_median": 1.1356486538716126e-05,
+ "base_weights_have_grad": false,
+ "losses_12_steps": [
+  2.5418,
+  1.3263,
+  1.0429,
+  0.6902,
+  0.682,
+  0.4997,
+  0.3528,
+  0.2933,
+  0.269,
+  0.261,
+  0.2251,
+  0.235
+ ],
+ "sec_per_step": 0.401,
+ "peak_mem_gib": 15.57
+}

@@ -1,0 +1,302 @@
+{
+ "base/step0": {
+  "n": 541,
+  "pass": 379,
+  "opens_think_block": 60,
+  "pass_among_think_block": 9,
+  "pass_among_rest": 370,
+  "pass_rate_among_rest": 76.9,
+  "wordle_text_or_tool_call": 2,
+  "mean_chars": 1752
+ },
+ "diag_fft_lr1e-5_s42/step1200": {
+  "n": 541,
+  "pass": 260,
+  "opens_think_block": 299,
+  "pass_among_think_block": 98,
+  "pass_among_rest": 162,
+  "pass_rate_among_rest": 66.9,
+  "wordle_text_or_tool_call": 111,
+  "mean_chars": 1263
+ },
+ "diag_fft_lr3e-6_s42/step1200": {
+  "n": 541,
+  "pass": 341,
+  "opens_think_block": 183,
+  "pass_among_think_block": 56,
+  "pass_among_rest": 285,
+  "pass_rate_among_rest": 79.6,
+  "wordle_text_or_tool_call": 19,
+  "mean_chars": 1948
+ },
+ "dt_lr1e-3_a100-1000_s42/step1600": {
+  "n": 541,
+  "pass": 350,
+  "opens_think_block": 120,
+  "pass_among_think_block": 24,
+  "pass_among_rest": 326,
+  "pass_rate_among_rest": 77.4,
+  "wordle_text_or_tool_call": 14,
+  "mean_chars": 1789
+ },
+ "dt_lr1e-3_a100-1000_s42/step400": {
+  "n": 541,
+  "pass": 364,
+  "opens_think_block": 102,
+  "pass_among_think_block": 22,
+  "pass_among_rest": 342,
+  "pass_rate_among_rest": 77.9,
+  "wordle_text_or_tool_call": 11,
+  "mean_chars": 1691
+ },
+ "dt_lr1e-3_a100-1000_s43/step400": {
+  "n": 541,
+  "pass": 386,
+  "opens_think_block": 79,
+  "pass_among_think_block": 21,
+  "pass_among_rest": 365,
+  "pass_rate_among_rest": 79.0,
+  "wordle_text_or_tool_call": 11,
+  "mean_chars": 1601
+ },
+ "dt_lr1e-3_a100-1000_s44/step400": {
+  "n": 541,
+  "pass": 378,
+  "opens_think_block": 76,
+  "pass_among_think_block": 19,
+  "pass_among_rest": 359,
+  "pass_rate_among_rest": 77.2,
+  "wordle_text_or_tool_call": 9,
+  "mean_chars": 1588
+ },
+ "dt_lr3e-3_a100-1000_s42/step400": {
+  "n": 541,
+  "pass": 88,
+  "opens_think_block": 199,
+  "pass_among_think_block": 39,
+  "pass_among_rest": 49,
+  "pass_rate_among_rest": 14.3,
+  "wordle_text_or_tool_call": 474,
+  "mean_chars": 829
+ },
+ "dt_lr5e-4_a100-1000_s42/step1600": {
+  "n": 541,
+  "pass": 346,
+  "opens_think_block": 124,
+  "pass_among_think_block": 25,
+  "pass_among_rest": 321,
+  "pass_rate_among_rest": 77.0,
+  "wordle_text_or_tool_call": 0,
+  "mean_chars": 1915
+ },
+ "dt_lr5e-4_a100-1000_s42/step400": {
+  "n": 541,
+  "pass": 345,
+  "opens_think_block": 118,
+  "pass_among_think_block": 23,
+  "pass_among_rest": 322,
+  "pass_rate_among_rest": 76.1,
+  "wordle_text_or_tool_call": 1,
+  "mean_chars": 1921
+ },
+ "dt_lr5e-4_a100-1000_s43/step1600": {
+  "n": 541,
+  "pass": 382,
+  "opens_think_block": 85,
+  "pass_among_think_block": 22,
+  "pass_among_rest": 360,
+  "pass_rate_among_rest": 78.9,
+  "wordle_text_or_tool_call": 1,
+  "mean_chars": 1723
+ },
+ "dt_lr5e-4_a100-1000_s44/step1600": {
+  "n": 541,
+  "pass": 367,
+  "opens_think_block": 84,
+  "pass_among_think_block": 18,
+  "pass_among_rest": 349,
+  "pass_rate_among_rest": 76.4,
+  "wordle_text_or_tool_call": 4,
+  "mean_chars": 1719
+ },
+ "fft_lr3e-5_s42/step1000": {
+  "n": 541,
+  "pass": 75,
+  "opens_think_block": 177,
+  "pass_among_think_block": 22,
+  "pass_among_rest": 53,
+  "pass_rate_among_rest": 14.6,
+  "wordle_text_or_tool_call": 418,
+  "mean_chars": 375
+ },
+ "fft_lr3e-5_s42/step1600": {
+  "n": 541,
+  "pass": 47,
+  "opens_think_block": 413,
+  "pass_among_think_block": 33,
+  "pass_among_rest": 14,
+  "pass_rate_among_rest": 10.9,
+  "wordle_text_or_tool_call": 482,
+  "mean_chars": 256
+ },
+ "fft_lr3e-5_s43/step1000": {
+  "n": 541,
+  "pass": 77,
+  "opens_think_block": 115,
+  "pass_among_think_block": 10,
+  "pass_among_rest": 67,
+  "pass_rate_among_rest": 15.7,
+  "wordle_text_or_tool_call": 388,
+  "mean_chars": 332
+ },
+ "fft_lr3e-5_s44/step1000": {
+  "n": 541,
+  "pass": 60,
+  "opens_think_block": 217,
+  "pass_among_think_block": 26,
+  "pass_among_rest": 34,
+  "pass_rate_among_rest": 10.5,
+  "wordle_text_or_tool_call": 320,
+  "mean_chars": 1039
+ },
+ "fft_lr3e-6_s43/step1600": {
+  "n": 541,
+  "pass": 332,
+  "opens_think_block": 219,
+  "pass_among_think_block": 78,
+  "pass_among_rest": 254,
+  "pass_rate_among_rest": 78.9,
+  "wordle_text_or_tool_call": 11,
+  "mean_chars": 2019
+ },
+ "fft_lr3e-6_s44/step1600": {
+  "n": 541,
+  "pass": 344,
+  "opens_think_block": 171,
+  "pass_among_think_block": 55,
+  "pass_among_rest": 289,
+  "pass_rate_among_rest": 78.1,
+  "wordle_text_or_tool_call": 15,
+  "mean_chars": 1846
+ },
+ "lora_r4_lr1e-4_s42/step1600": {
+  "n": 541,
+  "pass": 376,
+  "opens_think_block": 123,
+  "pass_among_think_block": 37,
+  "pass_among_rest": 339,
+  "pass_rate_among_rest": 81.1,
+  "wordle_text_or_tool_call": 3,
+  "mean_chars": 1645
+ },
+ "lora_r4_lr1e-4_s43/step1600": {
+  "n": 541,
+  "pass": 365,
+  "opens_think_block": 115,
+  "pass_among_think_block": 30,
+  "pass_among_rest": 335,
+  "pass_rate_among_rest": 78.6,
+  "wordle_text_or_tool_call": 5,
+  "mean_chars": 1642
+ },
+ "lora_r4_lr1e-4_s44/step1600": {
+  "n": 541,
+  "pass": 362,
+  "opens_think_block": 138,
+  "pass_among_think_block": 40,
+  "pass_among_rest": 322,
+  "pass_rate_among_rest": 79.9,
+  "wordle_text_or_tool_call": 5,
+  "mean_chars": 1745
+ },
+ "lora_r4_lr3e-4_s42/step1000": {
+  "n": 541,
+  "pass": 362,
+  "opens_think_block": 121,
+  "pass_among_think_block": 38,
+  "pass_among_rest": 324,
+  "pass_rate_among_rest": 77.1,
+  "wordle_text_or_tool_call": 2,
+  "mean_chars": 1462
+ },
+ "lora_r4_lr3e-4_s42/step1600": {
+  "n": 541,
+  "pass": 354,
+  "opens_think_block": 138,
+  "pass_among_think_block": 43,
+  "pass_among_rest": 311,
+  "pass_rate_among_rest": 77.2,
+  "wordle_text_or_tool_call": 6,
+  "mean_chars": 1542
+ },
+ "lora_r4_lr3e-4_s43/step1000": {
+  "n": 541,
+  "pass": 333,
+  "opens_think_block": 208,
+  "pass_among_think_block": 69,
+  "pass_among_rest": 264,
+  "pass_rate_among_rest": 79.3,
+  "wordle_text_or_tool_call": 5,
+  "mean_chars": 1723
+ },
+ "lora_r4_lr3e-4_s44/step1000": {
+  "n": 541,
+  "pass": 331,
+  "opens_think_block": 164,
+  "pass_among_think_block": 47,
+  "pass_among_rest": 284,
+  "pass_rate_among_rest": 75.3,
+  "wordle_text_or_tool_call": 4,
+  "mean_chars": 1665
+ },
+ "paper_dt_lr5e-4_s42/step400": {
+  "n": 541,
+  "pass": 356,
+  "opens_think_block": 109,
+  "pass_among_think_block": 24,
+  "pass_among_rest": 332,
+  "pass_rate_among_rest": 76.9,
+  "wordle_text_or_tool_call": 2,
+  "mean_chars": 1859
+ },
+ "paper_dt_lr5e-4_s43/step400": {
+  "n": 541,
+  "pass": 389,
+  "opens_think_block": 73,
+  "pass_among_think_block": 17,
+  "pass_among_rest": 372,
+  "pass_rate_among_rest": 79.5,
+  "wordle_text_or_tool_call": 2,
+  "mean_chars": 1659
+ },
+ "paper_dt_lr5e-4_s44/step400": {
+  "n": 541,
+  "pass": 367,
+  "opens_think_block": 117,
+  "pass_among_think_block": 28,
+  "pass_among_rest": 339,
+  "pass_rate_among_rest": 80.0,
+  "wordle_text_or_tool_call": 2,
+  "mean_chars": 1895
+ },
+ "rerun_fft_lr3e-6_s42/step1600": {
+  "n": 541,
+  "pass": 348,
+  "opens_think_block": 183,
+  "pass_among_think_block": 61,
+  "pass_among_rest": 287,
+  "pass_rate_among_rest": 80.2,
+  "wordle_text_or_tool_call": 14,
+  "mean_chars": 1939
+ },
+ "session2/base/step0": {
+  "n": 541,
+  "pass": 379,
+  "opens_think_block": 60,
+  "pass_among_think_block": 9,
+  "pass_among_rest": 370,
+  "pass_rate_among_rest": 76.9,
+  "wordle_text_or_tool_call": 2,
+  "mean_chars": 1752
+ }
+}

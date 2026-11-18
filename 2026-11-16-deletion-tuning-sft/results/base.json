@@ -1,0 +1,73 @@
+{
+ "step": 0,
+ "wordle": {
+  "seen": {
+   "n": 156,
+   "win_rate": 0.0,
+   "mean_guesses_when_won": 0.0,
+   "outcomes": {
+    "no_tool_call": 156
+   },
+   "valid_turn_rate": 0.0,
+   "consistent_rate_after_first": 0.0,
+   "mean_tokens_per_turn": 256.0,
+   "truncated_turn_rate": 1.0,
+   "seconds": 9.1
+  },
+  "heldout_val": {
+   "n": 300,
+   "win_rate": 0.0,
+   "mean_guesses_when_won": 0.0,
+   "outcomes": {
+    "no_tool_call": 300
+   },
+   "valid_turn_rate": 0.0,
+   "consistent_rate_after_first": 0.0,
+   "mean_tokens_per_turn": 256.0,
+   "truncated_turn_rate": 1.0,
+   "seconds": 17.8
+  },
+  "heldout_test": {
+   "n": 500,
+   "win_rate": 0.0,
+   "mean_guesses_when_won": 0.0,
+   "outcomes": {
+    "no_tool_call": 500
+   },
+   "valid_turn_rate": 0.0,
+   "consistent_rate_after_first": 0.0,
+   "mean_tokens_per_turn": 256.0,
+   "truncated_turn_rate": 1.0,
+   "seconds": 22.3
+  }
+ },
+ "val_loss": 2.4986728991157485,
+ "wordle_peak_mem_gib": 14.4,
+ "suite": {
+  "scores": {
+   "hellaswag": 41.117,
+   "mmlu": 49.523,
+   "truthfulqa_mc1": 33.048,
+   "winogrande": 55.249,
+   "humaneval": 43.293,
+   "ifeval": 70.055
+  },
+  "n": {
+   "hellaswag": 10042,
+   "mmlu": 14042,
+   "truthfulqa_mc1": 817,
+   "winogrande": 1267,
+   "humaneval": 164,
+   "ifeval": 541
+  },
+  "suite_mean": 48.714,
+  "seconds": {
+   "hellaswag": 277.0,
+   "mmlu": 277.0,
+   "truthfulqa_mc1": 277.0,
+   "winogrande": 277.0,
+   "humaneval": 101.6,
+   "ifeval": 190.3
+  }
+ }
+}

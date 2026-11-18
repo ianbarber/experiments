@@ -1,0 +1,42 @@
+{
+ "greedy_think_4096": {
+  "n": 24,
+  "win_rate": 0.0,
+  "mean_guesses_when_won": 0.0,
+  "outcomes": {
+   "no_tool_call": 21,
+   "invalid": 3
+  },
+  "valid_turn_rate": 0.4936708860759494,
+  "consistent_rate_after_first": 0.06666666666666667,
+  "mean_tokens_per_turn": 1463.860759493671,
+  "truncated_turn_rate": 0.13924050632911392,
+  "seconds": 507.7
+ },
+ "greedy_nothink_1024": {
+  "n": 24,
+  "win_rate": 0.0,
+  "mean_guesses_when_won": 0.0,
+  "outcomes": {
+   "invalid": 24
+  },
+  "valid_turn_rate": 0.43529411764705883,
+  "consistent_rate_after_first": 0.07692307692307693,
+  "mean_tokens_per_turn": 19.458823529411763,
+  "truncated_turn_rate": 0.0
+ },
+ "vendor_sampling_think_4096": {
+  "n": 24,
+  "win_rate": 0.0,
+  "mean_guesses_when_won": 0.0,
+  "outcomes": {
+   "no_tool_call": 18,
+   "invalid": 6
+  },
+  "valid_turn_rate": 0.524390243902439,
+  "consistent_rate_after_first": 0.4,
+  "mean_tokens_per_turn": 1379.2317073170732,
+  "truncated_turn_rate": 0.06097560975609756,
+  "seconds": 374.6
+ }
+}
