@@ -1,0 +1,26 @@
+{
+ "base": {
+  "n": 164,
+  "pass": 71,
+  "stalls": 29,
+  "mean_chars": 744
+ },
+ "dt": {
+  "n": 164,
+  "pass": 78,
+  "stalls": 22,
+  "mean_chars": 546,
+  "gained": 18,
+  "lost": 11,
+  "gained_where_base_stalled": 8
+ },
+ "lora": {
+  "n": 164,
+  "pass": 79,
+  "stalls": 8,
+  "mean_chars": 447,
+  "gained": 22,
+  "lost": 14,
+  "gained_where_base_stalled": 11
+ }
+}

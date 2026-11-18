@@ -1,0 +1,48 @@
+{
+ "n_model_params": 1728801536,
+ "val_loss_base": 2.5011734132808567,
+ "lora_modules": [
+  "g_proj",
+  "in_proj",
+  "k_proj",
+  "o_proj",
+  "out_proj",
+  "q_proj",
+  "v_proj",
+  "w1",
+  "w2",
+  "w3"
+ ],
+ "lora_module_count": 153,
+ "lora_bytes_r4": 16468736,
+ "gate_identity_at_init": true,
+ "n_trainable": 4117184,
+ "losses_12_steps": [
+  2.565,
+  2.5743,
+  2.8204,
+  2.3881,
+  2.7292,
+  2.2044,
+  1.8619,
+  1.871,
+  1.6687,
+  1.531,
+  1.5322,
+  1.3938
+ ],
+ "sec_per_step": 0.331,
+ "peak_mem_gib": 11.39,
+ "gate_merge": {
+  "bf16_autocast": {
+   "unmerged": 1.3101774944312827,
+   "merged": 1.3329607509395454,
+   "abs_diff": 0.022783256508262628
+  },
+  "fp32": {
+   "unmerged": 1.3029537083573675,
+   "merged": 1.3029536420868395,
+   "abs_diff": 6.627052795415977e-08
+  }
+ }
+}

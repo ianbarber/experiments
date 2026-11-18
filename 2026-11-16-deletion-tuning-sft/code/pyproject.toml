@@ -1,0 +1,38 @@
+[project]
+name = "deltune"
+version = "0.1.0"
+description = "Deletion Tuning vs full fine-tuning vs LoRA under SFT, with prior-task retention"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+  "torch==2.12.0",
+  "transformers==5.23.0",
+  "peft==0.21.3",
+  "datasets==5.2.0",
+  "accelerate==1.16.0",
+  "safetensors==0.8.0",
+  "huggingface-hub==2.4.0",
+  "lm-eval[ifeval]==0.4.12",
+  "evaluate==0.4.6",
+  "zstandard==0.25.0",
+  "numpy==2.5.5",
+  "pandas==3.1.1",
+  "matplotlib==3.11.2",
+  "wordfreq==3.1.1",
+]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu130" }
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -21,3 +21,4 @@ goes in a public push: [AGENTS.md](AGENTS.md).
 | 2026-09-18 | [An itch axis: can the Pain Axis button test tell pain from any other steered concept? (Qwen2.5-32B replication and control)](2026-09-18-itch-axis-pain-replication/) |
 | 2026-10-07 | [Can seeded states carry a memory set? Qwen3.8-27B: a weakly read GDN state, an attention seed that isn't compact, and room above text hints](2026-10-07-compiled-state-memory/) |
 | 2026-10-13 | [Layer roles during paired recall in Qwen3.5-4B: source contextualization, global retrieval, and late MLPs](2026-10-13-hybrid-attention-retrieval/) |
+| 2026-11-16 | [Deletion Tuning on LFM3-1.7B: learning Wordle by zeroing weights, and what full fine-tuning, LoRA and deletion each forget](2026-11-16-deletion-tuning-sft/) |
