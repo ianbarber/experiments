@@ -22,3 +22,4 @@ goes in a public push: [AGENTS.md](AGENTS.md).
 | 2026-10-07 | [Can seeded states carry a memory set? Qwen3.8-27B: a weakly read GDN state, an attention seed that isn't compact, and room above text hints](2026-10-07-compiled-state-memory/) |
 | 2026-10-13 | [Layer roles during paired recall in Qwen3.5-4B: source contextualization, global retrieval, and late MLPs](2026-10-13-hybrid-attention-retrieval/) |
 | 2026-11-16 | [Deletion Tuning on LFM3-1.7B: learning Wordle by zeroing weights, and what full fine-tuning, LoRA and deletion each forget](2026-11-16-deletion-tuning-sft/) |
+| 2026-11-21 | [What does HiSA give up? The exact far address, slow to relearn, and two slow RoPE pairs (SmolLM-135M at 2K)](2026-11-21-hisa-far-pairs/) |
