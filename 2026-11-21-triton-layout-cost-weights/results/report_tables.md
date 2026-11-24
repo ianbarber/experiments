@@ -140,4 +140,4 @@ Measured over assumed price, all 49 conversions with a usable add unit: median 0
 | triton_kernels | sm_100 | 12 | 411 | 256 | 155 | 32 | 30 | 0 | 0 / 32 / 0 | not runnable here |  |  |
 | triton_kernels | sm_120 | 15 | 422 | 284 | 138 | 27 | 27 | 0 | 0 / 27 / 0 | 27 | 2 | 5 |
 
-On the device: 140 alternatives timed on 25 kernels; 13 faster and 37 slower by the reporting rule. Over all 46 conflicted kernels studied, the reportable gap to the best alternative has median 0.0% and maximum 96.1%.
+On the device: 140 alternatives timed on 25 kernels; 13 faster and 37 slower by the reporting rule. Over all 46 conflicted kernels studied, the reportable gap to the best alternative has median 0.0% and maximum 96.1%; counting only alternatives that change an operation or a layout, median 0.0% and maximum 11.6%.

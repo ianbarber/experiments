@@ -72,8 +72,10 @@ A build is the same program as another when their final TTGIR is equal up to deb
 | triton_kernels | `_upcast_from_mxfp bf16×mxfp8 #5` | 21 | 8 | 0.0045 [0.0045, 0.0045] | -0.0% | -0.0% | 0 | 0 |
 
 140 alternatives with different code were timed on 25 kernels. 13 are faster than the default by 3% or more with non-overlapping intervals, on 4 kernels; 37 are slower by the same test. Best alternative per kernel: median -0.0%, most favourable -96.1%.
+Of the faster ones, 11 change an operation or a layout (on 2 kernels): most favourable -11.6%, inductor `red_fused_div_expa…shold_backward_view_0`.
+Of the faster ones, 2 hold the default's operations on the same layouts in another order (on 2 kernels): most favourable -96.1%, triton_kernels `_matmul fp8e5×mxfp4 M128 #8`.
 
-Over all 46 conflicted kernels studied on the device (identical-code alternatives count as no gap): reportable gap to the best alternative, median 0.0%, maximum 96.1%.
+Over all 46 conflicted kernels studied on the device (identical-code alternatives count as no gap): reportable gap to the best alternative, median 0.0%, maximum 96.1%. Counting only alternatives that change an operation or a layout: median 0.0%, maximum 11.6%.
 
 ### Replication and null control
 

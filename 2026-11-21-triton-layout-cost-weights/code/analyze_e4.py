@@ -317,30 +317,62 @@ def main():
                 key = "largest_gain" if v["faster"] else "largest_loss"
                 if key not in e or abs(v["vs_default_pct"]) > abs(e[key]["pct"]):
                     e[key] = {"pct": v["vs_default_pct"], "label": s_["label"], "short": s_["short"],
-                              "default_us": s_["default_ms"]["median"] * 1e3, "variant_us": v["ms"]["median"] * 1e3}
+                              "default_us": s_["default_ms"]["median"] * 1e3, "variant_us": v["ms"]["median"] * 1e3,
+                              "reordered_only": bool(v.get("reordered_only"))}
         headline["extremes"] = extremes
+        # The largest gain among alternatives that change an operation or a layout, and among
+        # those that hold the default's operations on the same layouts in another order.
+        by_kind = {}
+        for s_ in timed_studies:
+            for v in s_["timed"]:
+                if not v["faster"]:
+                    continue
+                k = by_kind.setdefault("reordered_only" if v.get("reordered_only") else "different_operations",
+                                       {"n_faster": 0, "kernels": set(), "pct": 0.0})
+                k["n_faster"] += 1
+                k["kernels"].add(s_["label"])
+                if v["vs_default_pct"] < k["pct"]:
+                    k.update(pct=v["vs_default_pct"], section=s_["section"], label=s_["label"], short=s_["short"],
+                             default_us=s_["default_ms"]["median"] * 1e3, variant_us=v["ms"]["median"] * 1e3)
+        for k in by_kind.values():
+            k["kernels"] = len(k["kernels"])
+        headline["largest_gain_by_kind"] = by_kind
         print(f"\n{headline['alternatives_timed']} alternatives with different code were timed on "
               f"{headline['kernels_timed']} kernels. {headline['reportably_faster']} are faster than the default by 3% "
               f"or more with non-overlapping intervals, on {headline['kernels_with_reportable_gain']} kernels; "
               f"{headline['reportably_slower']} are slower by the same test. Best alternative per kernel: median "
-              f"{headline['best_alternative_median_pct']:+.1f}%, most favourable {headline['best_alternative_min_pct']:+.1f}%.\n")
+              f"{headline['best_alternative_median_pct']:+.1f}%, most favourable {headline['best_alternative_min_pct']:+.1f}%.")
+        for kind, what in (("different_operations", "change an operation or a layout"),
+                           ("reordered_only", "hold the default's operations on the same layouts in another order")):
+            k = by_kind.get(kind)
+            if k:
+                print(f"Of the faster ones, {k['n_faster']} {what} (on {k['kernels']} kernels): most favourable "
+                      f"{k['pct']:+.1f}%, {k['section']} `{k['short']}`.")
+        print()
     else:
         print("No alternative produced different code on the device's own target, so nothing was timed.\n")
 
     # ---- all kernels with a conflict on the device target: gap to best alternative, zero when code is identical
     device_targets = {s["target"] for s in studies if s["default_ms"] or s["timed"]} or {120}
-    gaps = []
+    gaps, gaps_changed = [], []
     for s in studies:
         if s["target"] not in device_targets:
             continue
         reportable = [v["vs_default_pct"] for v in s["timed"] if v["faster"]]
         gaps.append(-min(reportable) if reportable else 0.0)
+        # the same, counting only alternatives that change an operation or a layout
+        changed = [v["vs_default_pct"] for v in s["timed"] if v["faster"] and not v.get("reordered_only")]
+        gaps_changed.append(-min(changed) if changed else 0.0)
     if gaps:
         headline["device_kernels_with_conflict_studied"] = len(gaps)
         headline["gap_median_pct"] = st.median(gaps)
         headline["gap_max_pct"] = max(gaps)
+        headline["gap_median_pct_different_operations"] = st.median(gaps_changed)
+        headline["gap_max_pct_different_operations"] = max(gaps_changed)
         print(f"Over all {len(gaps)} conflicted kernels studied on the device (identical-code alternatives count as "
-              f"no gap): reportable gap to the best alternative, median {st.median(gaps):.1f}%, maximum {max(gaps):.1f}%.\n")
+              f"no gap): reportable gap to the best alternative, median {st.median(gaps):.1f}%, maximum {max(gaps):.1f}%. "
+              f"Counting only alternatives that change an operation or a layout: median {st.median(gaps_changed):.1f}%, "
+              f"maximum {max(gaps_changed):.1f}%.\n")
 
     if replication["pairs"]:
         ctl = replication["controls"]

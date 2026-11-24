@@ -26,16 +26,20 @@ On sm_120, the card's own target:
   prefer, so the rule in the source decides nothing here.
 - Of 3,026 conversions that survive the pass, 65% are shared-memory round trips, 5% warp
   shuffles, 30% free.
-- 1.1% of conversions the pass priced as shared-memory round trips lower to something
-  cheaper; repricing them flips 0 of 32,697 rematerialization decisions.
+- 1.1% of conversions the pass priced as shared-memory round trips lower to a warp shuffle
+  instead; repricing them at the measured cost of a shuffle flips 0 of 32,697
+  rematerialization decisions.
 - A warp-shuffle conversion costs 7.2 elementwise adds of the same tensor and a
   shared-memory one costs 7.6, against an assumed 32 (20.2 ns and 21.3 ns of SM time for a
   4 KB fp32 tensor). The two classes cost the same, so one price for both is right. The
   price itself is 4 to 30 times too high against arithmetic.
-- The best alternative resolution beat the default by at most 96.1% (triton_kernels'
-  `_matmul` for fp8 activations and mxfp4 weights, 3,169 µs against 123 µs); median 0 over
-  46 conflicted kernels. The two builds hold the same operations in a different order. No
-  conversion differs.
+- Where an alternative resolution changes a layout, the best one beat the default by at
+  most 11.6% (Inductor's batch-norm backward reduction, 2.46 µs against 2.15 µs); median 0
+  over 46 conflicted kernels.
+- The largest gap of all is not a layout difference: one alternative build of
+  triton_kernels' `_matmul` for fp8 activations and mxfp4 weights runs in 123 µs against
+  the default's 3,169 µs, 96.1% less. The two builds hold the same operations on the same
+  layouts in a different order.
 
 What follows from those:
 

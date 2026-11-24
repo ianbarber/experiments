@@ -211,7 +211,9 @@ def main():
                   f"kernels; {h.get('reportably_faster', 0)} faster and {h.get('reportably_slower', 0)} slower by the "
                   f"reporting rule. Over all {h.get('device_kernels_with_conflict_studied', 0)} conflicted kernels studied, "
                   f"the reportable gap to the best alternative has median {h.get('gap_median_pct', 0):.1f}% and maximum "
-                  f"{h.get('gap_max_pct', 0):.1f}%.")
+                  f"{h.get('gap_max_pct', 0):.1f}%; counting only alternatives that change an operation or a layout, "
+                  f"median {h.get('gap_median_pct_different_operations', 0):.1f}% and maximum "
+                  f"{h.get('gap_max_pct_different_operations', 0):.1f}%.")
 
 
 if __name__ == "__main__":

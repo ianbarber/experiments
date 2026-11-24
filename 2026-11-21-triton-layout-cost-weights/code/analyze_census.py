@@ -228,10 +228,10 @@ def main():
             free = [e for e in calls if e["cost"] == 0]
             priced = [e for e in calls if e["cost"] > 0]
             cls = Counter(e["class"] for e in priced)
-            cheaper = len(priced) - cls["shared_memory"]
+            other = len(priced) - cls["shared_memory"]  # priced as shared memory, lowers some other way
             free_wrong = Counter(e["class"] for e in free if e["class"] in ("shared_memory", "warp_shuffle"))
             print(f"| {section} | sm_{arch} | {len(calls)} | {len(free)} | {len(priced)} | {cls['shared_memory']} | "
-                  f"{cls['warp_shuffle']} | {cls['register_permute']} | {cls['noop']} | {pct(cheaper, len(priced))} |")
+                  f"{cls['warp_shuffle']} | {cls['register_permute']} | {cls['noop']} | {pct(other, len(priced))} |")
             e2.append({"section": section, "arch": arch, "calls": len(calls), "priced_free": len(free),
                        "priced_smem": len(priced), "priced_classes": dict(cls), "free_but_not_free": dict(free_wrong)})
     summary["e2_pricing"] = e2

@@ -23,17 +23,21 @@ On sm_120, the RTX 5090's own target:
 - Across 2,554 kernel configurations, the pass faced a real choice in 339 (13%).
 - Of 3,026 conversions that survive the pass, 65% are shared-memory round trips, 5% warp
   shuffles, 30% free.
-- 1.1% of conversions the pass priced as shared-memory round trips lower to something
-  cheaper; repricing them flips 0 of 32,697 rematerialization decisions.
+- 1.1% of conversions the pass priced as shared-memory round trips lower to a warp shuffle
+  instead; repricing them at the measured cost of a shuffle flips 0 of 32,697
+  rematerialization decisions.
 - A warp-shuffle conversion costs 7.2 elementwise adds of the same tensor and a
   shared-memory one costs 7.6, against an assumed 32. For a 4 KB fp32 tensor that is
-  20.2 ns and 21.3 ns of SM time, or 59 and 63 SM cycles against an assumed 131.
-- The best alternative resolution beat the default by at most 96.1% (triton_kernels'
-  `_matmul` for fp8 activations and mxfp4 weights at a 128-row tile, 3,169 µs against 123
-  µs); median 0 over the 46 conflicted kernels studied. That gain is not a conversion
-  saved: the two builds hold the same operations in a different order, and ptxas keeps 40
-  registers for one and 255 for the other. Where the alternative does change layouts, the
-  largest gain is 11.6%, on an Inductor batch-norm reduction.
+  20.2 ns and 21.3 ns of SM time: 59 and 63 SM cycles at the 2.95 GHz the card ran at
+  during that case, against an assumed 131.
+- Where an alternative resolution changes a layout, the best one beat the default by at
+  most 11.6% (Inductor's batch-norm backward reduction, 2.46 µs against 2.15 µs); median 0
+  over the 46 conflicted kernels studied.
+- The largest gap of all is not a layout difference. One alternative build of
+  triton_kernels' `_matmul` for fp8 activations and mxfp4 weights at a 128-row tile runs in
+  123 µs against the default's 3,169 µs, 96.1% less. The two builds hold the same
+  operations on the same layouts in a different order; ptxas gives the fast one 255
+  registers and the slow one 40 and a 7.9 KB stack frame.
 
 The prices are wrong and it rarely matters. The choice between layouts is made by
 insertion order, with no price, and it is usually the best of those tried. Where it is
@@ -109,7 +113,10 @@ convert, add in the destination layout, convert back. Baselines run the loop wit
 four adds and no conversion, once in each layout. With the GPU saturated (5,440 CTAs, 32
 per SM), the difference gives the cost of one conversion, as the mean of the two
 directions, in SM time per CTA. Dividing by the measured add gives it in adds, which is the
-unit the pass's comparison is made in. The other route for the same conversion comes from
+unit the pass's comparison is made in. The pass states its prices in milli-SM-cycles, so I
+also give cycles: SM time multiplied by the core clock `nvidia-smi` reported while that case
+ran. The clock was not constant (2.62 to 2.96 GHz over the 63 cases, median 2.94), so every
+cycle figure is quoted with its own case's clock. The other route for the same conversion comes from
 `force_warp_shuffle`, or from the override that sends shuffles through shared memory. Each
 variant's output is checked before timing. 25 timed runs after 5 warm-up, interleaved;
 intervals are bootstrap 95% intervals of the median. The 65 cases (63 measured) are the
@@ -248,8 +255,8 @@ between the middle and right-hand groups.*
 | shared memory, CTA barrier | 8 bits | 9.2 (3.3 to 14.4) | 128 | 4 |
 | shared memory, CTA barrier | 64 bits | 4.3 (3.9 to 24.0) | 32 | 4 |
 
-Tensors of 1 KB and over, default route. The full table with intervals, SM time and cycles
-is in [`results/e3_tables.md`](results/e3_tables.md).
+Tensors of 1 KB and over, default route. The full table with intervals, SM time, each
+case's clock and cycles is in [`results/e3_tables.md`](results/e3_tables.md).
 
 *The two non-free classes cost the same.* Twenty-three conversions were timed through both
 routes. The shuffle costs 1.03 times the shared-memory round trip at the median (1.06 over
@@ -275,9 +282,9 @@ the measured cost is 0.12 of the price at the median (0.008 to 0.75).
 *Register permutes are free, as assumed.* Four measured, all within 0.1 add of zero.
 
 In absolute terms, the canonical epilogue conversion of a matmul (128 by 128 fp32, MMA to
-blocked, CTA barrier) takes 337 ns of SM time, 885 SM cycles at the 2.63 GHz the card ran
-at, against the pass's 2,097. An add of the same tensor is 46 ns, 120 cycles, against the
-pass's 66. The pass is 2.4 times too pessimistic about the conversion and 1.8 times too
+blocked, CTA barrier) takes 337 ns of SM time, 885 SM cycles at the 2.625 GHz the card ran
+at during that case, against the pass's 2,097. An add of the same tensor is 46 ns, 120
+cycles at the same clock, against the pass's 66. The pass is 2.4 times too pessimistic about the conversion and 1.8 times too
 optimistic about the add. Double precision is left out of the add comparison: fp64
 arithmetic on this consumer card is about 75 times slower than fp32, so an fp64 add is not
 a sensible unit.

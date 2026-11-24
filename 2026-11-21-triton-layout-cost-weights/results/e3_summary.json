@@ -9,7 +9,13 @@
   "n_sm": 170,
   "grid_mult": 32,
   "runs": 25,
-  "warmup": 5
+  "warmup": 5,
+  "clock_mhz_over_cases": {
+   "min": 2617.0,
+   "median": 2940.0,
+   "max": 2955.0,
+   "n": 63
+  }
  },
  "rows": [
   {

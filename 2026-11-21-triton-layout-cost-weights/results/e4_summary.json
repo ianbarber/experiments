@@ -418,14 +418,16 @@
      "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_2",
      "short": "red_fused_div_expa\u2026shold_backward_view_2",
      "default_us": 3.8417816657813333,
-     "variant_us": 5.921549526774275
+     "variant_us": 5.921549526774275,
+     "reordered_only": false
     },
     "largest_gain": {
      "pct": -11.629880187003582,
      "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_0",
      "short": "red_fused_div_expa\u2026shold_backward_view_0",
      "default_us": 2.457748415955105,
-     "variant_us": 2.150503073975166
+     "variant_us": 2.150503073975166,
+     "reordered_only": false
     }
    },
    "triton_kernels": {
@@ -434,20 +436,46 @@
      "label": "_matmul_008",
      "short": "_matmul fp8e5\u00d7mxfp4 M128 #8",
      "default_us": 3168.591298162937,
-     "variant_us": 122.76734092405866
+     "variant_us": 122.76734092405866,
+     "reordered_only": true
     },
     "largest_loss": {
      "pct": 492.49603932456614,
      "label": "_matmul_006",
      "short": "_matmul mxfp8\u00d7mxfp4 M128 #6",
      "default_us": 20.942004941741132,
-     "variant_us": 124.34180251058238
+     "variant_us": 124.34180251058238,
+     "reordered_only": true
     }
+   }
+  },
+  "largest_gain_by_kind": {
+   "different_operations": {
+    "n_faster": 11,
+    "kernels": 2,
+    "pct": -11.629880187003582,
+    "section": "inductor",
+    "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_0",
+    "short": "red_fused_div_expa\u2026shold_backward_view_0",
+    "default_us": 2.457748415955105,
+    "variant_us": 2.150503073975166
+   },
+   "reordered_only": {
+    "n_faster": 2,
+    "kernels": 2,
+    "pct": -96.12549144488165,
+    "section": "triton_kernels",
+    "label": "_matmul_008",
+    "short": "_matmul fp8e5\u00d7mxfp4 M128 #8",
+    "default_us": 3168.591298162937,
+    "variant_us": 122.76734092405866
    }
   },
   "device_kernels_with_conflict_studied": 46,
   "gap_median_pct": 0.0,
   "gap_max_pct": 96.12549144488165,
+  "gap_median_pct_different_operations": 0.0,
+  "gap_max_pct_different_operations": 11.629880187003582,
   "replication": {
    "pairs": 162,
    "faster_first": 19,

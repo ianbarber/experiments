@@ -308,3 +308,26 @@ comparison, twice each. The tables are in the report. Against the earlier notes:
 
 A faster alternative was the result I expected least. There is one on four of the 46
 conflicted kernels, and none of the four wins by removing a conversion.
+
+## Corrections after review (2026-11-23)
+
+A read of the report against its own tables found three things wrong in the wording. No
+measurement changed.
+
+- **"Lower to something cheaper".** The headline said 1.1% of conversions priced as shared
+  memory "lower to something cheaper". All 231 of them on sm_120 lower to a warp shuffle
+  (158 in Inductor, 60 in the tutorials, 13 in triton_kernels), and E3 says a shuffle costs
+  the same as the round trip. The sentence now says what they lower to.
+- **One clock for every cycle count.** I converted each case's SM time to cycles with the
+  clock sampled while that case ran, then wrote "the 2.63 GHz the card ran at" as if there
+  were one clock. There is not: 2.62 to 2.96 GHz over the 63 cases, 36 of them within 25
+  MHz of 2.95. The 885 cycles of the matmul epilogue conversion are at 2.625 GHz, and the
+  59 and 63 cycles of the 4 KB case at 2.95. `results/e3_tables.md` now has a clock column
+  and the report gives the clock with each cycle figure. The costs in adds, which the
+  conclusions rest on, do not use the clock: conversion and add are timed in the same case.
+- **The headline led with the 96.1%.** That gap is between two builds with the same
+  operations on the same layouts, so it is not a difference between layout choices, and
+  `results/headline.txt` gave it with no caveat. The headline now leads with the largest
+  gain from an alternative that changes a layout, 11.6%, and gives the matmul result its
+  own sentence. Of the 13 faster alternatives, 11 change an operation or a layout (two
+  Inductor kernels) and 2 are reorderings (two `_matmul` specializations).

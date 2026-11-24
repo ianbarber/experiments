@@ -133,8 +133,14 @@ def main():
 
     # ---- by class
     print("### Default route, by class\n")
-    print("| Conversion | source | dtype | bytes | warps | class (barrier, rounds) | SM-ns per conversion [95% interval] | SM cycles | adds [95% interval] | assumed (adds) | assumed (SM cycles) | measured / assumed |")
-    print("|---|---|---|---|---|---|---|---|---|---|---|---|")
+    clocks = sorted({r["case"]: r["clock_mhz"] for r in rows if r["clock_mhz"]}.values())
+    if clocks:
+        print(f"SM cycles are SM-ns times the core clock nvidia-smi reported while that case ran (its median over the "
+              f"case). The clock was not constant: {clocks[0] / 1e3:.2f} to {clocks[-1] / 1e3:.2f} GHz over the "
+              f"{len(clocks)} cases, median {st.median(clocks) / 1e3:.2f}. The pass's price is in milli-SM-cycles, so "
+              f"the assumed column needs no clock.\n")
+    print("| Conversion | source | dtype | bytes | warps | class (barrier, rounds) | SM-ns per conversion [95% interval] | clock, GHz | SM cycles | adds [95% interval] | assumed (adds) | assumed (SM cycles) | measured / assumed |")
+    print("|---|---|---|---|---|---|---|---|---|---|---|---|---|")
     table = []
     for r in rows:
         if r["route"] != "default":
@@ -151,7 +157,8 @@ def main():
         adds = "n/a" if r["cvt_per_add"] is None else f"{r['cvt_per_add']:.1f} [{ci[0]:.1f}, {ci[1]:.1f}]"
         flag = "" if r["separated"] else " (not separated)"
         print(f"| `{r['case']}` | {r['source']} | {r['dtype']} | {r['bytes']} | {r['num_warps']} | {cls} | "
-              f"{r['cvt_ns']:.1f} [{r['cvt_ns_ci'][0]:.1f}, {r['cvt_ns_ci'][1]:.1f}]{flag} | {fmt(r['cvt_sm_cycles'], 0)} | "
+              f"{r['cvt_ns']:.1f} [{r['cvt_ns_ci'][0]:.1f}, {r['cvt_ns_ci'][1]:.1f}]{flag} | "
+              f"{fmt(r['clock_mhz'] / 1e3 if r['clock_mhz'] else None, 2)} | {fmt(r['cvt_sm_cycles'], 0)} | "
               f"{adds} | {fmt(r['assumed_per_add'], 0)} | {fmt(r['assumed_sm_cycles'], 0)} | {fmt(alpha, 3)} |")
 
     # ---- summary per class and dtype width
@@ -201,6 +208,8 @@ def main():
         for e in errors:
             print(f"- `{e['case']}`" + (f" ({e['route']} route)" if e.get("route") else "") + f": {e['error'][:160]}")
 
+    session["clock_mhz_over_cases"] = ({"min": clocks[0], "median": st.median(clocks), "max": clocks[-1],
+                                        "n": len(clocks)} if clocks else None)
     (out / "e3_summary.json").write_text(json.dumps({"session": session, "rows": rows, "pairs": pairs,
                                                     "by_class": summary, "errors": errors}, indent=1))
     (out / "e3_ratios.json").write_text(json.dumps({
