@@ -298,3 +298,83 @@ Mixed, in the protocol's sense.
   plan's "broadly used" row. Nearly all of it is pairs 23 and 24 in the second half of the window.
 - Not testable here: anything about parts beyond 180° for pairs 23 and up, and exact offsets beyond 17
   tokens in the pretrained model (the dense model fails the grid gate there).
+
+## 2026-11-23
+
+### Review of the write-up, and Amendment 3
+
+A review of the entry found one error and three weak points. Details and predictions are in `PROTOCOL.md`,
+Amendment 3, written before running anything.
+
+- Error: I wrote that pairs 25 to 31 are never cut under any budget tested. hisa-45 cuts pairs 25, 26 and
+  27 (at 1048, 1397, 1863). Only 28 to 31 are never cut.
+- The untidy ordering of the Stage 2 cliffs lines up with window edges, which I had flagged as a risk in
+  the revisions and then not checked.
+- "Cannot learn" rests on 4000 steps.
+- Suggested and added: the dense Stage 2 model under the band tables; pair 23 mean-ablated alone; pairs 22
+  to 27 cut singly at 45°; one 16,000-step hisa-90 run.
+
+### Dense Stage 2 models under the tables (two seeds, 128 held-out sequences; `results/stage2_dense_masked.json`)
+
+Offset recall, mean of the seeds, no retraining:
+
+| removed | 2 | 4 | 8 | 16 | 32 | 64 to 1024 | content |
+|---|---|---|---|---|---|---|---|
+| 90–180° | 0.13 | 0.14 | 0.90 | 0.69 | 0.88 | 0.84 to 1.00 | 0.55 to 0.63 |
+| 180–360° | 1.00 | 0.44 | 0.49 | 1.00 | 1.00 | 1.00 | 1.00 |
+| 360–720° | 1.00 | 1.00 | 0.55 | 0.99 | 1.00 | 1.00 | 1.00 |
+| beyond 720° | 1.00 | 1.00 | 1.00 | 0.49 | 0.01 | ≤ 0.01 | 1.00 |
+
+hisa-180, 360 and 720 each leave content recall at 1.00 and offset recall at 0.01 from D = 32 on. hisa-90
+and hisa-45 also damage content recall (0.77 to 0.94, and 0.01), and the shuffled control destroys both.
+
+The prediction held, through a band I had not named: it is the parts beyond 720°, the ones that cost
++0.0007 on prose, that carry the far address. Each band bites only where pair 0 sits in it (1 rad per
+token: 115°, 229°, 458°, 917° at D = 2, 4, 8, 16). I added single-pair cuts to check that (dated addition
+in the protocol): pair 0 alone beyond 90° gives 0.11, 0.02, 0.58, 0.60, 0.98 at D = 2 to 32 and 0.40 to
+0.80 beyond, very different between the seeds (0.33 against 0.79 at 64); pairs 1, 2 and 3 alone give 0.95
+or better everywhere. So mainly pair 0, not only pair 0.
+
+### Pair 23 (prose, 256 windows; `results/stage1_single_pair.json`)
+
+- `pair-23-90-mean`: +0.063 against +0.475 for the plain cut. Most of what pair 23 does is a fixed function
+  of distance. The means I saved for the zero-mean check show it: in layer 13 the pair-23 part averages -8
+  to -16 score units at 1000 tokens in all nine heads and is still -3.5 to -5 at 2000. It is a penalty on
+  far keys, and the 90° cut lifts it for every key beyond 1178. The reviewer's picture was the cosine
+  crossing zero at 1178; in this layer the part is negative on both sides of that.
+- Single pairs at 45°, cost past the window: pair 22 +0.023, 23 +1.585, 24 +0.387, 25 +0.060, 26 +0.018,
+  27 +0.026. Pairs 25 to 27 are not like 23. Not every non-wrapping pair is a ruler here; 23 is, 24 partly.
+
+### The long hisa-90 run (16,000 steps, 2 h 34 min)
+
+Offset recall, 32 sequences in bf16 during training, final in fp32 on 128:
+
+| step | 64 | 128 | 256 | 512 | 1024 |
+|---|---|---|---|---|---|
+| 4000 | 0.92 | 0.32 | 0.05 | 0.02 | 0.05 |
+| 7000 | 0.99 | 0.95 | 0.77 | 0.68 | 0.05 |
+| 9000 | 0.98 | 0.95 | 0.93 | 0.86 | 0.05 |
+| 11,000 | 0.99 | 0.98 | 0.94 | 0.92 | 0.05 |
+| final | 0.995 | 0.996 | 0.981 | 0.964 | 0.038 |
+
+By the criterion I wrote down beforehand, "cannot learn" is retracted for 128 to 512 and stands only as
+"not in 16,000 steps" for 1024. The 4000-step cliff was a snapshot of a slow learner. Dense needs under
+1000 steps for all of it, so the cost is about a factor of ten in steps. At 1024 the wrong answers are
+still near the target (559 of 687 within 32 positions).
+
+The pre-registered confirming pattern was met at the pre-registered 4000 steps, and I reported it as
+"cannot". That word was mine, not the protocol's, and it was wrong.
+
+### Window edges (`results/stage2_edges.json`)
+
+Accuracy at the 4000-step cliff against the nearest edges: hisa-180 at 32 (edge at 32) 1.00; hisa-45 at 32
+(25, 34) 0.98; hisa-360 at 64 (63, 84) 0.94; hisa-90 at 64 (50, 67) 0.93 and 0.65; hisa-180 at 128 (100,
+133) 0.86; hisa-90 at 32 (28, 38) 0.59 and 0.36; hisa-360 at 128 (112, 149) 0.36; hisa-90 at 128 (118, 158)
+0.07. Near an edge is learned first. So the budget ordering in the Stage 2 figure is confounded with edge
+positions, and I have no edge-free HiSA to compare. After the fact, few points.
+
+### Verdict, revised
+
+Still mixed, with the Stage 2 half restated: the dropped parts are where a dense model keeps the exact far
+address; a hisa-90 model can still learn exact recall to 512 tokens, about ten times more slowly, and did
+not learn 1024.

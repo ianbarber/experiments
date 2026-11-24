@@ -117,7 +117,7 @@ def stage1():
 def stage2():
     finals = {}
     for p in sorted(glob.glob("../results/stage2/*.jsonl")):
-        if "pilot" in p:
+        if "pilot" in p or "long" in p:
             continue
         last = json.loads(open(p).read().strip().split("\n")[-1])
         if last.get("final"):
@@ -126,17 +126,24 @@ def stage2():
         return
     DS = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]
     order = [v for v in ["dense", "hisa-360", "hisa-180", "hisa-90", "hisa-45"] if v in finals]
-    fig, ax = plt.subplots(figsize=(7.2, 3.8))
+    fig, ax = plt.subplots(figsize=(8.6, 3.8))
     for v in order:
         for kind, ls, mk in (("offset", "-", "o"), ("content", "--", None)):
             runs = np.array([[r.get(f"{kind}_{D}", np.nan) for D in DS] for r in finals[v]])
             m = np.array([np.mean(c[~np.isnan(c)]) if (~np.isnan(c)).any() else np.nan for c in runs.T])
             ax.plot(range(len(DS)), m, ls=ls, marker=mk, ms=6, lw=2 if kind == "offset" else 1.2, color=COL[v],
                     alpha=1 if kind == "offset" else 0.7,
-                    label=(f"{v}" + (f" (mean of {len(runs)} seeds)" if len(runs) > 1 else "")) if kind == "offset" else None)
+                    label=(f"{v}, 4000 steps" if v != "dense" else "dense, 4000 steps")
+                    + (f" (mean of {len(runs)} seeds)" if len(runs) > 1 else "") if kind == "offset" else None)
             if kind == "offset" and len(runs) > 1:
                 for r in runs:
                     ax.plot(range(len(DS)), r, ls="none", marker="o", ms=3, color=COL[v], alpha=0.5)
+    for p in sorted(glob.glob("../results/stage2/*long16k.jsonl")):          # Amendment 3: one 16,000-step run
+        last = json.loads(open(p).read().strip().split("\n")[-1])
+        if last.get("final"):
+            y = [last["eval_fp32_128seq"][f"offset_{D}"] for D in DS]
+            ax.plot(range(len(DS)), y, ls="-", marker="s", ms=7, mfc="white", mew=2, lw=2, color=COL["hisa-90"],
+                    label="hisa-90, 16,000 steps (1 seed)", zorder=4)
     ax.plot([], [], color=MUTED, lw=1.2, ls="--", label="dashed: content recall (1.00 for all)")
     ax.axhline(1 / 256, color=MUTED, lw=0.8, ls=":")
     ax.text(0, 0.02, "chance", fontsize=8, color=MUTED)
@@ -145,13 +152,49 @@ def stage2():
     ax.set_ylabel("accuracy on answer tokens")
     ax.set_ylim(-0.03, 1.05)
     ax.grid(axis="y", color=GRID, lw=0.6)
-    ax.legend(frameon=False, fontsize=8, loc="lower left", bbox_to_anchor=(0.0, 0.05), title="solid: offset recall", title_fontsize=8)
+    ax.legend(frameon=False, fontsize=8, loc="center left", bbox_to_anchor=(1.01, 0.5), title="solid: offset recall", title_fontsize=8)
     ax.set_title("Fine-tuned on exact-offset recall: accuracy by distance", fontsize=10, loc="left")
     fig.tight_layout()
     fig.savefig("../images/stage2_accuracy_by_distance.png", dpi=160)
     plt.close(fig)
 
 
+def stage2_dense_masked():
+    """Amendment 3: the fine-tuned dense model with one rotation band removed at inference."""
+    path = "../results/stage2_dense_masked.json"
+    if not os.path.exists(path):
+        return
+    R = json.load(open(path))
+    DS = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]
+    lab = {"dense": "nothing removed", "band-90-180": "90–180° removed", "band-180-360": "180–360° removed",
+           "band-360-720": "360–720° removed", "band-720+": "beyond 720° removed"}
+    fig, ax = plt.subplots(figsize=(7.2, 3.8))
+    for c in lab:
+        for kind, ls, mk in (("offset", "-", "o"), ("content", "--", None)):
+            runs = np.array([[r[c].get(f"{kind}_{D}", [np.nan])[0] for D in DS] for r in R.values()])
+            m = runs.mean(0)
+            ax.plot(range(len(DS)), m, ls=ls, marker=mk, ms=6, lw=2 if kind == "offset" else 1.2, color=COL[c],
+                    alpha=1 if kind == "offset" else 0.7, zorder=3 if c == "band-720+" else 2,
+                    label=lab[c] if kind == "offset" else None)
+            if kind == "offset" and c != "dense":
+                for r in runs:
+                    ax.plot(range(len(DS)), r, ls="none", marker="o", ms=3, color=COL[c], alpha=0.5)
+    ax.plot([], [], color=MUTED, lw=1.2, ls="--", label="dashed: content recall")
+    ax.set_xticks(range(len(DS)), DS)
+    ax.set_xlabel("distance D to the token to recall")
+    ax.set_ylabel("accuracy on answer tokens")
+    ax.set_ylim(-0.03, 1.05)
+    ax.grid(axis="y", color=GRID, lw=0.6)
+    ax.legend(frameon=False, fontsize=8, loc="center left", bbox_to_anchor=(1.01, 0.5),
+              title="solid: offset recall\n(mean of 2 seeds)", title_fontsize=8)
+    ax.set_title("Dense model fine-tuned on exact-offset recall, one rotation band removed, no retraining",
+                 fontsize=10, loc="left")
+    fig.tight_layout()
+    fig.savefig("../images/stage2_dense_under_bands.png", dpi=160)
+    plt.close(fig)
+
+
 if __name__ == "__main__":
     stage1()
     stage2()
+    stage2_dense_masked()

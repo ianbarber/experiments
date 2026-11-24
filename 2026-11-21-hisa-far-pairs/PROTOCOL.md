@@ -176,3 +176,38 @@ them from the pair-23 effect.
 
 **Outcome of the pre-declared branches.** Zero-mean check failed, so `hisa-90-mean` was run. Grid gate:
 only C = 8 passes. Stage 2 learning rate: 1e-4 (pilot: both rates reach 1.00). Kill criteria not met.
+
+**Amendment 3 (2026-11-23, after a review of the written-up entry; written before any of these ran).** Four
+additions and one correction.
+
+- *Dense Stage 2 model under the tables at inference.* The two fine-tuned dense models are evaluated on the
+  Stage 2 held-out set with hisa-45 to 720, the four bands and ctrl-perm-s0 applied, no further training.
+  Question: are the parts that are nearly free on prose (beyond 180°) the ones the dense model uses for
+  exact far recall? Yes if offset recall at large D falls below 0.5 under band-180-360, band-360-720 or
+  hisa-180 while content recall stays at 0.9 or better. No if offset recall stays at 0.9 or better under
+  everything beyond 180°. Content recall is the control for distribution shift.
+- *Pair 23 as a distance ruler.* Pair 23 is the fastest pair that does not complete a turn inside 2048
+  tokens; the 90° cut removes its negative half. Two checks on prose, 256 windows: `pair-23-90-mean` (the
+  cut part replaced by its per-distance mean), which should recover most of the +0.475 if the pair's role is
+  a fixed function of distance; and `pair-l-45` for l = 22 to 27 (windows 442, 589, 786, 1048, 1397, 1863),
+  read as cost over positions past each pair's window, to see whether the slower non-wrapping pairs behave
+  like pair 23.
+- *One long hisa-90 run.* Seed 42, 16,000 steps, otherwise the Stage 2 recipe (the cosine schedule stretches
+  with it, so it is a new run and not a continuation). "Cannot learn" is retracted if offset recall at
+  D ≥ 128 reaches 0.9; it is weakened to "not in 16,000 steps" otherwise.
+- *Window edges against the Stage 2 cliff.* No new run: the Stage 2 accuracies are tabulated against the
+  nearest window edge of each variant. This is a post-hoc reading of existing numbers.
+- *Correction.* "Pairs 25 to 31 are never cut under any budget tested" was wrong: hisa-45 cuts pairs 25, 26
+  and 27 at 1048, 1397 and 1863. Pairs 28 to 31 are never cut.
+
+**Amendment 3, addition (2026-11-23, after the dense-under-bands result, before running).** Each band hurts
+offset recall only at the D where the two fastest pairs sit in that band (pair 0 turns 1 rad per token, pair
+1 0.75). To turn that arithmetic into a measurement: the dense Stage 2 models with a single pair cut beyond
+90°, for pairs 0, 1, 2 and 3. If the address is in the fastest pairs, cutting pair 0 or 1 alone removes most
+of the far offset recall and cutting pair 2 or 3 does less.
+
+**Outcome of Amendment 3.** Dense under tables: yes, through the band beyond 720° (offset recall 0.01 from
+D = 32 on, content recall 1.00); hisa-180 also meets the stated condition. Single fast pairs: pair 0 alone
+removes much of it, pairs 1 to 3 alone nothing. Pair 23 mean ablation recovers 87% of the cost. Pairs 25 to
+27 at 45° do not behave like pair 23. Long run: offset recall reaches 0.96 or better at D = 128, 256 and
+512 and stays at 0.04 at 1024, so "cannot learn" is retracted for 128 to 512.

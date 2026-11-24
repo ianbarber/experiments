@@ -50,47 +50,101 @@ it. D from 2 to 1024 (content from 4). Pretrained SmolLM-135M, all weights tuned
 4000 steps of batch 8 at 1e-4, mask on from step 0. Variants: dense and hisa-90 (two seeds), hisa-45,
 hisa-180, hisa-360 (one seed). Accuracy on 128 held-out sequences, about 675 queries per variant and D.
 
+**Added after a review of the first write-up** (Amendment 3 of the protocol, predictions written before
+running): one hisa-90 run of 16,000 steps; the two fine-tuned dense models evaluated with rotation bands and
+single pairs removed at inference; pair 23 mean-ablated alone; pairs 22 to 27 cut singly beyond 45°.
+
 ## Results
 
-### 1. HiSA cannot learn far exact offsets; dense can
+### 1. HiSA learns far exact offsets many times more slowly than dense, and not at 1024
 
 ![Stage 2](images/stage2_accuracy_by_distance.png)
 
-*Accuracy on answer tokens after 4000 fine-tuning steps, by distance D, dense against four HiSA budgets
-(128 held-out sequences, about 675 queries per point). Solid: offset recall. Dashed: content recall (1.00
-everywhere). Dense and hisa-90 are means of two seeds; small dots are the seeds. Look at where each solid
-line leaves 1.0 while its dashed line stays there.*
+*Accuracy on answer tokens after fine-tuning, by distance D, dense against four HiSA budgets at 4000 steps
+and hisa-90 at 16,000 steps (128 held-out sequences, about 675 queries per point). Solid: offset recall.
+Dashed: content recall (1.00 everywhere). Dense and hisa-90 at 4000 steps are means of two seeds; small dots
+are the seeds. Look at where each solid line leaves 1.0, and at how far the open squares move it.*
 
-| variant | 16 | 32 | 64 | 128 | 256 | 512 | 1024 |
+| variant, steps | 16 | 32 | 64 | 128 | 256 | 512 | 1024 |
 |---|---|---|---|---|---|---|---|
-| dense (2 seeds) | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 |
-| hisa-45 | 0.956 | 0.979 | 0.634 | 0.065 | 0.074 | 0.023 | 0.034 |
-| hisa-90 (2 seeds) | 0.998, 0.998 | 0.586, 0.356 | 0.933, 0.653 | 0.074, 0.077 | 0.033, 0.026 | 0.028, 0.041 | 0.032, 0.032 |
-| hisa-180 | 0.991 | 0.999 | 0.859 | 0.859 | 0.071 | 0.026 | 0.038 |
-| hisa-360 | 1.000 | 0.993 | 0.943 | 0.361 | 0.206 | 0.091 | 0.028 |
+| dense, 4000 (2 seeds) | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 |
+| hisa-45, 4000 | 0.956 | 0.979 | 0.634 | 0.065 | 0.074 | 0.023 | 0.034 |
+| hisa-90, 4000 (2 seeds) | 0.998, 0.998 | 0.586, 0.356 | 0.933, 0.653 | 0.074, 0.077 | 0.033, 0.026 | 0.028, 0.041 | 0.032, 0.032 |
+| hisa-180, 4000 | 0.991 | 0.999 | 0.859 | 0.859 | 0.071 | 0.026 | 0.038 |
+| hisa-360, 4000 | 1.000 | 0.993 | 0.943 | 0.361 | 0.206 | 0.091 | 0.028 |
+| hisa-90, 16,000 (1 seed) | 1.000 | 0.999 | 0.995 | 0.996 | 0.981 | 0.964 | 0.038 |
 
-All variants are at 0.997 or better for D = 2, 4, 8, and content recall is 0.999 or better for every
-variant at every distance. So the far key can be found and read by a HiSA model when its content
-identifies it; what is missing is addressing it by position alone.
+All variants are at 0.997 or better for D = 2, 4, 8, and content recall is 0.998 or better for every
+variant at every distance.
 
 The dense model reaches ceiling at every distance within 1000 steps. Exact addressing at 1024 tokens is not
 hard for a RoPE model.
 
-The cliff moves out as the budget grows, less tidily than the factor of four per factor of four the plan
-guessed, and hisa-45 is no worse than hisa-90.
+At 4000 steps, the budget fixed in the protocol, every HiSA variant has a cliff: 1.00 to D = 16 and a few
+percent from 128 or 256 on. The first write-up read that as "cannot learn". The 16,000-step run shows it was
+mostly speed. hisa-90 passes 0.9 at D = 128 by step 7000, at 256 by step 9000 and at 512 by step 11,000
+(checks every 1000 steps on 32 sequences), and ends at 0.96 or better up to 512. D = 1024 does not move: it
+is between 0.02 and 0.05 at every check and 0.04 at the end. So for this task a hisa-90 model needs roughly
+7 to 11 times the dense model's steps for 128 to 512 tokens, and has not learned 1024 in 16 times. This is
+one seed, and the longer run has a longer learning-rate schedule, so it is not a continuation of the
+4000-step run.
 
-Where HiSA fails it is nearly right. At the cliff most wrong answers are the token one position off (hisa-90
-at D = 32: 268 of 301 and 337 of 468 in the two seeds; hisa-360 at D = 128: 332 of 431). Further out the
-errors spread over a few dozen neighbouring positions. The floor of 0.03 to 0.08 is above chance (0.004)
-for that reason.
+How HiSA gets exact offsets at all is not tested here. Its hard window edges are the obvious candidate: a
+pair's part is cut at a fixed distance, which marks that distance exactly. The 4000-step numbers fit that.
+Accuracy at the cliff follows how close D is to an edge of that variant, not the budget:
 
-Two cautions. The HiSA runs were still improving at the cliff when they stopped (hisa-90 at D = 64: 0.13,
-0.78, 0.90, 0.93 at steps 1000, 2000, 3000, 4000), and the two hisa-90 seeds differ by up to 0.3 there, so
-the cliff's position after 4000 steps is not its position at convergence. Beyond it (D ≥ 128 for hisa-90)
-nothing moved in 4000 steps. And hisa-90 is worse at 32 than at 64 in both seeds; HiSA's hard window edges
-give it exact-distance cues at particular distances, which may explain it, but I did not test that.
+| variant at D | nearest edge at or before D, and after | accuracy at 4000 steps |
+|---|---|---|
+| hisa-180 at 32 | 32, 42 | 0.999 |
+| hisa-45 at 32 | 25, 34 | 0.979 |
+| hisa-360 at 64 | 63, 84 | 0.943 |
+| hisa-90 at 64 | 50, 67 | 0.933, 0.653 |
+| hisa-180 at 128 | 100, 133 | 0.859 |
+| hisa-90 at 32 | 28, 38 | 0.586, 0.356 |
+| hisa-360 at 128 | 112, 149 | 0.361 |
+| hisa-90 at 128 | 118, 158 | 0.074, 0.077 |
 
-### 2. Without retraining, hisa-90 is not free on this checkpoint
+This is a reading of existing numbers after the fact, with a handful of points. It does mean the budget
+ordering in the figure is confounded with where the edges happen to fall, and that a HiSA variant with soft
+edges could be worse than these. For hisa-90 at D = 1024 the nearest edges are 884 and 1178.
+
+Where HiSA fails it is nearly right. At the 4000-step cliff most wrong answers are the token one position
+off (hisa-90 at D = 32: 268 of 301 and 337 of 468 in the two seeds). At D = 1024 after 16,000 steps, 559 of
+687 wrong answers are tokens within 32 positions of the target.
+
+### 2. In the dense model the far address is in the parts that are free on prose
+
+![Dense under bands](images/stage2_dense_under_bands.png)
+
+*Accuracy of the dense model fine-tuned on the recall task when one rotation band is removed at inference,
+no retraining (two seeds, small dots; 128 held-out sequences). Solid: offset recall. Dashed: content
+recall, which only the 90–180° band disturbs. Look at the darkest line: removing the parts rotated beyond
+720° ends exact recall from D = 32 on.*
+
+| removed at inference | 2 | 4 | 8 | 16 | 32 | 64 to 1024 | content recall |
+|---|---|---|---|---|---|---|---|
+| nothing | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
+| 90–180° | 0.13 | 0.14 | 0.90 | 0.69 | 0.88 | 0.84 to 1.00 | 0.55 to 0.63 |
+| 180–360° | 1.00 | 0.44 | 0.49 | 1.00 | 1.00 | 1.00 | 1.00 |
+| 360–720° | 1.00 | 1.00 | 0.55 | 0.99 | 1.00 | 1.00 | 1.00 |
+| beyond 720° | 1.00 | 1.00 | 1.00 | 0.49 | 0.01 | 0.01 or less | 1.00 |
+| pair 0 alone, beyond 90° | 0.11 | 0.02 | 0.58 | 0.60 | 0.98 | 0.40 to 0.80 | 1.00 |
+| pair 1, 2 or 3 alone, beyond 90° | 0.99+ | 0.95+ | 1.00 | 0.99+ | 1.00 | 0.95+ | 1.00 |
+
+Means of two seeds. The parts rotated beyond 720° cost +0.0007 nats per token on prose in the pretrained
+model (section 3). In the model trained to recall by exact offset they carry the whole address from 32
+tokens on, and content recall does not notice their absence. That is the two readings of the paper's
+evidence side by side: the same parts are free where nothing needs an exact far offset and essential where
+something does.
+
+Each band hurts only at the distances where the fastest pair sits in it (pair 0 turns one radian per token:
+115° at D = 2, 229° at 4, 458° at 8, 917° at 16). Cutting pair 0 alone beyond 90° removes much of the offset
+recall at most distances, unevenly and differently in the two seeds; cutting pair 1, 2 or 3 alone does
+nothing. So the address rests mainly on the fastest pair, with help from others, since the band removals do
+more than the single pair. This is no retraining, so it shows what this dense model uses, not what a model
+needs; section 1 is the evidence on that.
+
+### 3. Without retraining, hisa-90 is not free on this checkpoint
 
 ![Stage 1 by data type](images/stage1_cost_by_data.png)
 
@@ -128,7 +182,7 @@ little the three data types differ.*
   repeats before position 1100: 0.85, 0.71, 0.85, 0.86, and for hisa-90 it falls with the gap (0.84 at 64,
   0.50 at 512). The paper's copy result is for trained HiSA models; this is the untrained switch.
 
-### 3. Nearly all of the prose cost is two pairs
+### 4. Nearly all of the prose cost is two pairs
 
 ![Cost by position](images/stage1_cost_by_position.png)
 
@@ -152,10 +206,24 @@ The pair-23 cost sits in layer 13: cut there alone it costs +0.49 over positions
 +0.03 or less in any other layer (64 windows). Inside layer 13 no single head carries it (largest +0.06,
 all nine sum to +0.15).
 
-This qualifies the cheap hisa-180 result. At 180° the windows of pairs 23 and 24 are longer than 2048
-tokens, so that rule never cuts them here. Pairs 25 to 31 are never cut at 2K under any budget tested.
+What pair 23 does there is mostly a fixed function of distance. Replacing its cut part by the per-distance
+mean, measured on 64 other prose windows, brings the cost from +0.475 to +0.063. In layer 13 that mean is a
+penalty on far keys: -8 to -16 score units at 1000 tokens in every head, still -3.5 to -5 at 2000. Cutting
+the pair beyond 1178 removes the penalty, and keys more than 1178 tokens back gain that much score at once.
+I did not look at where the attention then goes.
 
-### 4. Short exact offsets use the 90–180° parts
+It is not a property of every slow pair. Cut singly beyond 45°, over the positions past each pair's window:
+
+| pair (45° window) | 22 (442) | 23 (589) | 24 (786) | 25 (1048) | 26 (1397) | 27 (1863) |
+|---|---|---|---|---|---|---|
+| extra loss past the window | +0.023 | +1.585 | +0.387 | +0.060 | +0.018 | +0.026 |
+
+Pairs 25 to 27 behave like pair 22, not like pair 23. Pair 27 has only 185 positions past its window.
+
+This qualifies the cheap hisa-180 result. At 180° the windows of pairs 23 and 24 are longer than 2048
+tokens, so that rule never cuts them here. Pairs 28 to 31 are never cut at 2K under any budget tested.
+
+### 5. Short exact offsets use the 90–180° parts
 
 ![Grids](images/stage1_grids.png)
 
@@ -172,14 +240,19 @@ far exact offsets; Stage 2 does.
 
 ## Limitations
 
-- One model, 135M parameters, 64-dimensional heads, context 2048. The seven slowest pairs are never cut.
+- One model, 135M parameters, 64-dimensional heads, context 2048. At 90° the seven slowest pairs are never
+  cut; under any budget tested, the four slowest.
 - Stage 1 has no retraining: it measures what this dense checkpoint uses, mixed with distribution shift.
   The paper reports that continued training recovers the loss on prose; I did not continue training on
   prose, so the +0.22 is not a claim about a trained HiSA model.
-- Stage 2 is one synthetic task, 4000 steps, one learning rate chosen on dense, two seeds for dense and
-  hisa-90 and one for the other budgets. The cliff positions are not converged values.
+- Stage 2 is one synthetic task and one learning rate chosen on dense, with two seeds for dense and hisa-90
+  at 4000 steps and one for the other budgets. The 16,000-step result is one seed and one budget; whether
+  D = 1024 would be learned with more steps, and how the other budgets behave with more steps, is not known.
+- Window edges and budget are confounded in Stage 2; no soft-edged HiSA variant was trained.
+- The band and single-pair removals on the fine-tuned dense model are without retraining.
 - The grid probe passes its gate at one size only.
-- The pair-23 finding is located (layer 13) but not explained. I did not inspect attention patterns.
+- The pair-23 finding is located (layer 13) and described as a distance penalty from saved means. I did not
+  inspect attention patterns.
 - OpenWebText has no official validation split; the prose windows are the first long documents of the
   stream.
 
@@ -187,14 +260,21 @@ far exact offsets; Stage 2 does.
 
 Mixed, scoped to SmolLM-135M at 2K.
 
-The dropped parts are not noise. They are what lets a model address a token by exact position beyond a few
-dozen tokens: with them the task is learned to 1.00 at every distance, without them accuracy falls to a
-few percent from 128 tokens on (hisa-90), while content addressing at the same distances is untouched.
-HiSA keeps coarse far position and exact near position, and gives up exact far position.
+The dropped parts are not noise. A dense model trained to recall by exact offset puts the far address in
+parts rotated beyond 720°, mainly those of the fastest pair, and the same parts cost nothing measurable on
+prose. That is the "rarely needed capability" reading.
 
-Against the sketches drawn before the runs: Stage 2 is the "hypothesis holds" sketch with a less tidy
-ordering of the budgets. Stage 1 is neither sketch: the prose bar is far larger than drawn, code and tables
-do not exceed prose, and of the grids only C = 8 could be scored (+1.02 nats on its newline tokens).
+The hypothesis also said a model without those parts cannot learn far exact-offset recall. At the 4000
+steps fixed in the protocol the confirming pattern is there: dense at 1.00, hisa-90 at 0.08 or less from 128
+tokens on, content recall untouched. Given 16,000 steps hisa-90 reaches 0.96 or better out to 512 tokens and
+stays at 0.04 at 1024. So "cannot" is wrong as stated. What HiSA gives up on this task is speed, roughly a
+factor of ten in training steps, and the longest distance tested. Its window edges probably supply the
+exact positions it does learn.
+
+Against the sketches drawn before the runs: Stage 2 at 4000 steps is the "hypothesis holds" sketch with an
+ordering of the budgets that follows window edges; the 16,000-step line moves most of the way to the
+"rejected" sketch. Stage 1 is neither sketch: the prose bar is far larger than drawn, code and tables do not
+exceed prose, and of the grids only C = 8 could be scored (+1.02 nats on its newline tokens).
 
 "Nearly free on prose" does not hold for this checkpoint at 90° without retraining: +0.22 nats, almost all
 of it from two slow pairs in the second half of the window, +0.03 elsewhere. Beyond 180° the parts are
