@@ -1,0 +1,84 @@
+{
+ "<45": {
+  "n_pair_distance_cells": 14559,
+  "rms_of_part_over_8": 1.5558276202379535,
+  "rms_of_mean_over_8": 1.4243438177947578,
+  "median_abs_mean_over_rms": 0.1638439517300093,
+  "share_of_cells_abs_mean_over_rms_gt_0.5": 0.2290964224750886,
+  "share_of_part_energy_in_mean": 0.8381209865472337
+ },
+ "45-90": {
+  "n_pair_distance_cells": 4278,
+  "rms_of_part_over_8": 2.757979792305586,
+  "rms_of_mean_over_8": 2.6669814262815827,
+  "median_abs_mean_over_rms": 0.14846854495113967,
+  "share_of_cells_abs_mean_over_rms_gt_0.5": 0.2554230949041608,
+  "share_of_part_energy_in_mean": 0.9350994955429367
+ },
+ "90-180": {
+  "n_pair_distance_cells": 4364,
+  "rms_of_part_over_8": 2.177127787943892,
+  "rms_of_mean_over_8": 2.104232388612571,
+  "median_abs_mean_over_rms": 0.17418161096869078,
+  "share_of_cells_abs_mean_over_rms_gt_0.5": 0.3011185796245375,
+  "share_of_part_energy_in_mean": 0.9341563280370421
+ },
+ "180-360": {
+  "n_pair_distance_cells": 4262,
+  "rms_of_part_over_8": 0.44171893227969694,
+  "rms_of_mean_over_8": 0.347979491584655,
+  "median_abs_mean_over_rms": 0.17516425315291356,
+  "share_of_cells_abs_mean_over_rms_gt_0.5": 0.23807289222587205,
+  "share_of_part_energy_in_mean": 0.6206050011945898
+ },
+ "360-720": {
+  "n_pair_distance_cells": 4308,
+  "rms_of_part_over_8": 0.4304146820895318,
+  "rms_of_mean_over_8": 0.33882565814438986,
+  "median_abs_mean_over_rms": 0.23588444404130887,
+  "share_of_cells_abs_mean_over_rms_gt_0.5": 0.2920415076171808,
+  "share_of_part_energy_in_mean": 0.6196956198662387
+ },
+ "720+": {
+  "n_pair_distance_cells": 25605,
+  "rms_of_part_over_8": 0.3038008419821764,
+  "rms_of_mean_over_8": 0.22143462958624074,
+  "median_abs_mean_over_rms": 0.3131557058040912,
+  "share_of_cells_abs_mean_over_rms_gt_0.5": 0.3120323721495368,
+  "share_of_part_energy_in_mean": 0.5312673590025205
+ },
+ "hisa90_bias_abs_max": 23.89649259390491,
+ "hisa90_bias_rms": 3.4170403160060694,
+ "hisa90_bias_rms_by_layer": [
+  0.9138286581194752,
+  2.349371628812064,
+  3.1753074473089713,
+  2.3926009048843344,
+  3.2543224121823027,
+  2.8475264101206887,
+  2.643240837750022,
+  2.2857669955012785,
+  2.905573088043237,
+  2.5576487518365405,
+  2.493087700908101,
+  2.772835818463984,
+  3.353848398961533,
+  6.815319408240503,
+  1.1572300669685256,
+  2.747114881824936,
+  4.357448535102742,
+  4.059601004877157,
+  5.049868089167575,
+  4.123936193643387,
+  3.5449117661516083,
+  3.2898903132428643,
+  1.0972829927258776,
+  1.5950559835485774,
+  4.554795505164715,
+  3.8686289336297914,
+  2.4310300432510976,
+  5.169805904963866,
+  4.588180883387205,
+  2.6884171059227273
+ ]
+}
