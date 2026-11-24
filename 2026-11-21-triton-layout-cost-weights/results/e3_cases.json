@@ -1,0 +1,1166 @@
+[
+ {
+  "name": "survive00_inductor_shared_memory_16_f32",
+  "source": "survive",
+  "section": "inductor",
+  "count": 70,
+  "shape": [
+   16
+  ],
+  "dtype": "f32",
+  "src": "#ttg.slice<{dim = 1, parent = #ttg.blocked<{sizePerThread = [4, 1], threadsPerWarp = [4, 8], warpsPerCTA = [1, 4], order = [0, 1]}>}>",
+  "dst": "#ttg.slice<{dim = 1, parent = #ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [16, 2], warpsPerCTA = [1, 4], order = [0, 1]}>}>",
+  "class": "shared_memory",
+  "barrier": "cta",
+  "can_shuffle": true,
+  "n_mixed": 2,
+  "routes": [
+   "default",
+   "shuffle"
+  ],
+  "note": ""
+ },
+ {
+  "name": "survive01_inductor_shared_memory_1x1024_f32",
+  "source": "survive",
+  "section": "inductor",
+  "count": 19,
+  "shape": [
+   1,
+   1024
+  ],
+  "dtype": "f32",
+  "src": "#ttg.blocked<{sizePerThread = [1, 16], threadsPerWarp = [1, 32], warpsPerCTA = [1, 1], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 4], threadsPerWarp = [1, 32], warpsPerCTA = [1, 1], order = [1, 0]}>",
+  "class": "shared_memory",
+  "barrier": "warp",
+  "can_shuffle": true,
+  "n_mixed": 2,
+  "routes": [
+   "default",
+   "shuffle"
+  ],
+  "note": ""
+ },
+ {
+  "name": "survive02_inductor_shared_memory_8_f32",
+  "source": "survive",
+  "section": "inductor",
+  "count": 14,
+  "shape": [
+   8
+  ],
+  "dtype": "f32",
+  "src": "#ttg.slice<{dim = 1, parent = #ttg.blocked<{sizePerThread = [4, 1], threadsPerWarp = [2, 16], warpsPerCTA = [1, 4], order = [0, 1]}>}>",
+  "dst": "#ttg.slice<{dim = 1, parent = #ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [8, 4], warpsPerCTA = [1, 4], order = [0, 1]}>}>",
+  "class": "shared_memory",
+  "barrier": "cta",
+  "can_shuffle": true,
+  "n_mixed": 2,
+  "routes": [
+   "default",
+   "shuffle"
+  ],
+  "note": ""
+ },
+ {
+  "name": "survive03_inductor_shared_memory_64_f32",
+  "source": "survive",
+  "section": "inductor",
+  "count": 14,
+  "shape": [
+   64
+  ],
+  "dtype": "f32",
+  "src": "#ttg.slice<{dim = 1, parent = #ttg.blocked<{sizePerThread = [4, 1], threadsPerWarp = [16, 2], warpsPerCTA = [1, 4], order = [0, 1]}>}>",
+  "dst": "#ttg.slice<{dim = 1, parent = #ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [2, 2], order = [0, 1]}>}>",
+  "class": "shared_memory",
+  "barrier": "cta",
+  "can_shuffle": true,
+  "n_mixed": 2,
+  "routes": [
+   "default",
+   "shuffle"
+  ],
+  "note": ""
+ },
+ {
+  "name": "priced04_inductor_shared_memory_512_i64",
+  "source": "priced",
+  "section": "inductor",
+  "count": 503,
+  "shape": [
+   512
+  ],
+  "dtype": "i64",
+  "src": "#ttg.blocked<{sizePerThread = [1], threadsPerWarp = [32], warpsPerCTA = [8], order = [0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [2], threadsPerWarp = [32], warpsPerCTA = [8], order = [0]}>",
+  "class": "shared_memory",
+  "barrier": "cta",
+  "can_shuffle": false,
+  "n_mixed": -1,
+  "routes": [
+   "default"
+  ],
+  "note": "pointer tensor timed as i64"
+ },
+ {
+  "name": "priced05_inductor_shared_memory_1024_i64",
+  "source": "priced",
+  "section": "inductor",
+  "count": 492,
+  "shape": [
+   1024
+  ],
+  "dtype": "i64",
+  "src": "#ttg.blocked<{sizePerThread = [1], threadsPerWarp = [32], warpsPerCTA = [4], order = [0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [4], threadsPerWarp = [32], warpsPerCTA = [4], order = [0]}>",
+  "class": "shared_memory",
+  "barrier": "cta",
+  "can_shuffle": false,
+  "n_mixed": -1,
+  "routes": [
+   "default"
+  ],
+  "note": "pointer tensor timed as i64"
+ },
+ {
+  "name": "priced06_inductor_shared_memory_16x1_f32",
+  "source": "priced",
+  "section": "inductor",
+  "count": 292,
+  "shape": [
+   16,
+   1
+  ],
+  "dtype": "f32",
+  "src": "#ttg.blocked<{sizePerThread = [4, 1], threadsPerWarp = [4, 8], warpsPerCTA = [1, 4], order = [0, 1]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [16, 2], warpsPerCTA = [1, 4], order = [0, 1]}>",
+  "class": "shared_memory",
+  "barrier": "cta",
+  "can_shuffle": true,
+  "n_mixed": 2,
+  "routes": [
+   "default",
+   "shuffle"
+  ],
+  "note": ""
+ },
+ {
+  "name": "survive07_inductor_warp_shuffle_2_f32",
+  "source": "survive",
+  "section": "inductor",
+  "count": 6,
+  "shape": [
+   2
+  ],
+  "dtype": "f32",
+  "src": "#ttg.slice<{dim = 1, parent = #ttg.blocked<{sizePerThread = [2, 1], threadsPerWarp = [1, 32], warpsPerCTA = [1, 4], order = [0, 1]}>}>",
+  "dst": "#ttg.slice<{dim = 1, parent = #ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [2, 16], warpsPerCTA = [1, 4], order = [0, 1]}>}>",
+  "class": "warp_shuffle",
+  "barrier": "none",
+  "can_shuffle": true,
+  "n_mixed": 1,
+  "routes": [
+   "default",
+   "smem"
+  ],
+  "note": ""
+ },
+ {
+  "name": "survive08_inductor_warp_shuffle_64_f32",
+  "source": "survive",
+  "section": "inductor",
+  "count": 2,
+  "shape": [
+   64
+  ],
+  "dtype": "f32",
+  "src": "#ttg.slice<{dim = 1, parent = #ttg.blocked<{sizePerThread = [2, 1], threadsPerWarp = [32, 1], warpsPerCTA = [1, 2], order = [0, 1]}>}>",
+  "dst": "#ttg.slice<{dim = 1, parent = #ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [2, 1], order = [0, 1]}>}>",
+  "class": "warp_shuffle",
+  "barrier": "none",
+  "can_shuffle": true,
+  "n_mixed": 1,
+  "routes": [
+   "default",
+   "smem"
+  ],
+  "note": ""
+ },
+ {
+  "name": "survive09_inductor_warp_shuffle_64x1_f32",
+  "source": "survive",
+  "section": "inductor",
+  "count": 2,
+  "shape": [
+   64,
+   1
+  ],
+  "dtype": "f32",
+  "src": "#ttg.blocked<{sizePerThread = [2, 1], threadsPerWarp = [32, 1], warpsPerCTA = [1, 2], order = [0, 1]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [2, 1], order = [0, 1]}>",
+  "class": "warp_shuffle",
+  "barrier": "none",
+  "can_shuffle": true,
+  "n_mixed": 1,
+  "routes": [
+   "default",
+   "smem"
+  ],
+  "note": ""
+ },
+ {
+  "name": "survive10_inductor_warp_shuffle_128_f32",
+  "source": "survive",
+  "section": "inductor",
+  "count": 2,
+  "shape": [
+   128
+  ],
+  "dtype": "f32",
+  "src": "#ttg.slice<{dim = 1, parent = #ttg.blocked<{sizePerThread = [4, 1], threadsPerWarp = [32, 1], warpsPerCTA = [1, 2], order = [0, 1]}>}>",
+  "dst": "#ttg.slice<{dim = 1, parent = #ttg.blocked<{sizePerThread = [2, 1], threadsPerWarp = [32, 1], warpsPerCTA = [2, 1], order = [0, 1]}>}>",
+  "class": "warp_shuffle",
+  "barrier": "none",
+  "can_shuffle": true,
+  "n_mixed": 1,
+  "routes": [
+   "default",
+   "smem"
+  ],
+  "note": ""
+ },
+ {
+  "name": "priced11_inductor_warp_shuffle_2x1_f32",
+  "source": "priced",
+  "section": "inductor",
+  "count": 36,
+  "shape": [
+   2,
+   1
+  ],
+  "dtype": "f32",
+  "src": "#ttg.blocked<{sizePerThread = [2, 1], threadsPerWarp = [1, 32], warpsPerCTA = [1, 4], order = [0, 1]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [2, 16], warpsPerCTA = [1, 4], order = [0, 1]}>",
+  "class": "warp_shuffle",
+  "barrier": "none",
+  "can_shuffle": true,
+  "n_mixed": 1,
+  "routes": [
+   "default",
+   "smem"
+  ],
+  "note": ""
+ },
+ {
+  "name": "priced12_inductor_warp_shuffle_128x1_f32",
+  "source": "priced",
+  "section": "inductor",
+  "count": 20,
+  "shape": [
+   128,
+   1
+  ],
+  "dtype": "f32",
+  "src": "#ttg.blocked<{sizePerThread = [4, 1], threadsPerWarp = [32, 1], warpsPerCTA = [1, 2], order = [0, 1]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [2, 1], threadsPerWarp = [32, 1], warpsPerCTA = [2, 1], order = [0, 1]}>",
+  "class": "warp_shuffle",
+  "barrier": "none",
+  "can_shuffle": true,
+  "n_mixed": 1,
+  "routes": [
+   "default",
+   "smem"
+  ],
+  "note": ""
+ },
+ {
+  "name": "survive13_other_shared_memory_256_f32",
+  "source": "survive",
+  "section": "other",
+  "count": 62,
+  "shape": [
+   256
+  ],
+  "dtype": "f32",
+  "src": "#ttg.blocked<{sizePerThread = [1], threadsPerWarp = [32], warpsPerCTA = [8], order = [0]}>",
+  "dst": "#ttg.slice<{dim = 0, parent = #ttg.nvidia_mma<{versionMajor = 2, versionMinor = 0, warpsPerCTA = [2, 4], instrShape = [16, 8]}>}>",
+  "class": "shared_memory",
+  "barrier": "cta",
+  "can_shuffle": false,
+  "n_mixed": -1,
+  "routes": [
+   "default"
+  ],
+  "note": ""
+ },
+ {
+  "name": "survive14_other_shared_memory_128x8_f32",
+  "source": "survive",
+  "section": "other",
+  "count": 40,
+  "shape": [
+   128,
+   8
+  ],
+  "dtype": "f32",
+  "src": "#ttg.slice<{dim = 2, parent = #ttg.blocked<{sizePerThread = [1, 2, 2], threadsPerWarp = [8, 4, 1], warpsPerCTA = [8, 1, 1], order = [2, 1, 0]}>}>",
+  "dst": "#ttg.linear<{register = [[8, 0], [0, 2], [0, 4], [32, 0], [64, 0]], lane = [[0, 0], [0, 1], [1, 0], [2, 0], [4, 0]], warp = [[0, 0], [0, 0], [16, 0]], block = []}>",
+  "class": "shared_memory",
+  "barrier": "cta",
+  "can_shuffle": false,
+  "n_mixed": -1,
+  "routes": [
+   "default"
+  ],
+  "note": ""
+ },
+ {
+  "name": "survive15_other_shared_memory_128x8_f32",
+  "source": "survive",
+  "section": "other",
+  "count": 40,
+  "shape": [
+   128,
+   8
+  ],
+  "dtype": "f32",
+  "src": "#ttg.slice<{dim = 2, parent = #ttg.blocked<{sizePerThread = [1, 2, 2], threadsPerWarp = [8, 4, 1], warpsPerCTA = [8, 1, 1], order = [2, 1, 0]}>}>",
+  "dst": "#ttg.linear<{register = [[0, 1], [0, 2]], lane = [[32, 0], [64, 0], [1, 0], [2, 0], [4, 0]], warp = [[8, 0], [16, 0], [0, 4]], block = []}>",
+  "class": "shared_memory",
+  "barrier": "cta",
+  "can_shuffle": false,
+  "n_mixed": -1,
+  "routes": [
+   "default"
+  ],
+  "note": ""
+ },
+ {
+  "name": "survive16_other_shared_memory_128x4_bf16",
+  "source": "survive",
+  "section": "other",
+  "count": 40,
+  "shape": [
+   128,
+   4
+  ],
+  "dtype": "bf16",
+  "src": "#ttg.slice<{dim = 2, parent = #ttg.linear<{register = [[0, 0, 1], [0, 1, 0]], lane = [[32, 0, 0], [64, 0, 0], [1, 0, 0], [2, 0, 0], [4, 0, 0]], warp = [[8, 0, 0], [16, 0, 0], [0, 2, 0]], block = []}>}>",
+  "dst": "#ttg.linear<{register = [[8, 0], [0, 1], [0, 2], [32, 0], [64, 0]], lane = [[0, 0], [0, 0], [1, 0], [2, 0], [4, 0]], warp = [[0, 0], [0, 0], [16, 0]], block = []}>",
+  "class": "shared_memory",
+  "barrier": "cta",
+  "can_shuffle": false,
+  "n_mixed": -1,
+  "routes": [
+   "default"
+  ],
+  "note": ""
+ },
+ {
+  "name": "priced17_other_shared_memory_32x128_i64",
+  "source": "priced",
+  "section": "other",
+  "count": 122,
+  "shape": [
+   32,
+   128
+  ],
+  "dtype": "i64",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [4, 1], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [1, 32], warpsPerCTA = [1, 4], order = [1, 0]}>",
+  "class": "shared_memory",
+  "barrier": "cta",
+  "can_shuffle": false,
+  "n_mixed": -1,
+  "routes": [
+   "default"
+  ],
+  "note": "pointer tensor timed as i64"
+ },
+ {
+  "name": "priced18_other_shared_memory_64x128_i64",
+  "source": "priced",
+  "section": "other",
+  "count": 109,
+  "shape": [
+   64,
+   128
+  ],
+  "dtype": "i64",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [1, 32], warpsPerCTA = [1, 4], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [16, 1], threadsPerWarp = [4, 8], warpsPerCTA = [1, 4], order = [0, 1]}>",
+  "class": "shared_memory",
+  "barrier": "cta",
+  "can_shuffle": false,
+  "n_mixed": -1,
+  "routes": [
+   "default"
+  ],
+  "note": "pointer tensor timed as i64"
+ },
+ {
+  "name": "priced19_other_shared_memory_64x128_i8",
+  "source": "priced",
+  "section": "other",
+  "count": 94,
+  "shape": [
+   64,
+   128
+  ],
+  "dtype": "i8",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [1, 32], warpsPerCTA = [1, 4], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [16, 1], threadsPerWarp = [4, 8], warpsPerCTA = [1, 4], order = [0, 1]}>",
+  "class": "shared_memory",
+  "barrier": "cta",
+  "can_shuffle": false,
+  "n_mixed": -1,
+  "routes": [
+   "default"
+  ],
+  "note": "i1 tensor timed as i8 (the lowering widens it)"
+ },
+ {
+  "name": "survive20_other_warp_shuffle_16x8_f16",
+  "source": "survive",
+  "section": "other",
+  "count": 4,
+  "shape": [
+   16,
+   8
+  ],
+  "dtype": "f16",
+  "src": "#ttg.nvidia_mma<{versionMajor = 2, versionMinor = 0, warpsPerCTA = [2, 1], instrShape = [16, 8]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [4, 8], warpsPerCTA = [2, 1], order = [1, 0]}>",
+  "class": "warp_shuffle",
+  "barrier": "none",
+  "can_shuffle": true,
+  "n_mixed": 1,
+  "routes": [
+   "default",
+   "smem"
+  ],
+  "note": ""
+ },
+ {
+  "name": "priced21_other_warp_shuffle_128x2x1_f32",
+  "source": "priced",
+  "section": "other",
+  "count": 6,
+  "shape": [
+   128,
+   2,
+   1
+  ],
+  "dtype": "f32",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1, 1], threadsPerWarp = [16, 2, 1], warpsPerCTA = [4, 1, 1], order = [0, 1, 2]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1, 1], threadsPerWarp = [16, 2, 1], warpsPerCTA = [4, 1, 1], order = [2, 1, 0]}>",
+  "class": "warp_shuffle",
+  "barrier": "none",
+  "can_shuffle": true,
+  "n_mixed": 0,
+  "routes": [
+   "default",
+   "smem"
+  ],
+  "note": ""
+ },
+ {
+  "name": "priced22_other_warp_shuffle_16x4_i8",
+  "source": "priced",
+  "section": "other",
+  "count": 2,
+  "shape": [
+   16,
+   4
+  ],
+  "dtype": "i8",
+  "src": "#ttg.slice<{dim = 2, parent = #ttg.blocked<{sizePerThread = [1, 1, 1], threadsPerWarp = [16, 1, 2], warpsPerCTA = [1, 1, 4], order = [0, 2, 1]}>}>",
+  "dst": "#ttg.linear<{register = [[8, 0], [0, 1], [0, 2]], lane = [[0, 0], [0, 0], [1, 0], [2, 0], [4, 0]], warp = [[0, 0], [0, 0]], block = []}>",
+  "class": "warp_shuffle",
+  "barrier": "none",
+  "can_shuffle": true,
+  "n_mixed": 1,
+  "routes": [
+   "default",
+   "smem"
+  ],
+  "note": ""
+ },
+ {
+  "name": "priced23_other_warp_shuffle_16x8_i8",
+  "source": "priced",
+  "section": "other",
+  "count": 2,
+  "shape": [
+   16,
+   8
+  ],
+  "dtype": "i8",
+  "src": "#ttg.slice<{dim = 2, parent = #ttg.blocked<{sizePerThread = [1, 1, 2], threadsPerWarp = [16, 1, 2], warpsPerCTA = [1, 1, 8], order = [0, 2, 1]}>}>",
+  "dst": "#ttg.linear<{register = [[8, 0], [0, 1], [0, 2], [0, 4]], lane = [[0, 0], [0, 0], [1, 0], [2, 0], [4, 0]], warp = [[0, 0], [0, 0], [0, 0]], block = []}>",
+  "class": "warp_shuffle",
+  "barrier": "none",
+  "can_shuffle": true,
+  "n_mixed": 1,
+  "routes": [
+   "default",
+   "smem"
+  ],
+  "note": ""
+ },
+ {
+  "name": "priced24_other_warp_shuffle_16x4_i8",
+  "source": "priced",
+  "section": "other",
+  "count": 2,
+  "shape": [
+   16,
+   4
+  ],
+  "dtype": "i8",
+  "src": "#ttg.slice<{dim = 2, parent = #ttg.blocked<{sizePerThread = [1, 1, 2], threadsPerWarp = [16, 1, 2], warpsPerCTA = [1, 1, 4], order = [0, 2, 1]}>}>",
+  "dst": "#ttg.linear<{register = [[8, 0], [0, 1], [0, 2]], lane = [[0, 0], [0, 0], [1, 0], [2, 0], [4, 0]], warp = [[0, 0], [0, 0]], block = []}>",
+  "class": "warp_shuffle",
+  "barrier": "none",
+  "can_shuffle": true,
+  "n_mixed": 1,
+  "routes": [
+   "default",
+   "smem"
+  ],
+  "note": ""
+ },
+ {
+  "name": "survive25_tutorials_shared_memory_128_f32",
+  "source": "survive",
+  "section": "tutorials",
+  "count": 60,
+  "shape": [
+   128
+  ],
+  "dtype": "f32",
+  "src": "#ttg.slice<{dim = 1, parent = #ttg.nvidia_mma<{versionMajor = 2, versionMinor = 0, warpsPerCTA = [4, 1], instrShape = [16, 8]}>}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1], threadsPerWarp = [32], warpsPerCTA = [4], order = [0]}>",
+  "class": "shared_memory",
+  "barrier": "cta",
+  "can_shuffle": false,
+  "n_mixed": -1,
+  "routes": [
+   "default"
+  ],
+  "note": ""
+ },
+ {
+  "name": "survive26_tutorials_shared_memory_128_f32",
+  "source": "survive",
+  "section": "tutorials",
+  "count": 60,
+  "shape": [
+   128
+  ],
+  "dtype": "f32",
+  "src": "#ttg.slice<{dim = 1, parent = #ttg.nvidia_mma<{versionMajor = 2, versionMinor = 0, warpsPerCTA = [8, 1], instrShape = [16, 8]}>}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1], threadsPerWarp = [32], warpsPerCTA = [8], order = [0]}>",
+  "class": "shared_memory",
+  "barrier": "cta",
+  "can_shuffle": false,
+  "n_mixed": -1,
+  "routes": [
+   "default"
+  ],
+  "note": ""
+ },
+ {
+  "name": "survive27_tutorials_shared_memory_64_f32",
+  "source": "survive",
+  "section": "tutorials",
+  "count": 30,
+  "shape": [
+   64
+  ],
+  "dtype": "f32",
+  "src": "#ttg.slice<{dim = 1, parent = #ttg.nvidia_mma<{versionMajor = 2, versionMinor = 0, warpsPerCTA = [1, 4], instrShape = [16, 8]}>}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1], threadsPerWarp = [32], warpsPerCTA = [4], order = [0]}>",
+  "class": "shared_memory",
+  "barrier": "cta",
+  "can_shuffle": false,
+  "n_mixed": -1,
+  "routes": [
+   "default"
+  ],
+  "note": ""
+ },
+ {
+  "name": "survive28_tutorials_shared_memory_64_f32",
+  "source": "survive",
+  "section": "tutorials",
+  "count": 30,
+  "shape": [
+   64
+  ],
+  "dtype": "f32",
+  "src": "#ttg.slice<{dim = 1, parent = #ttg.nvidia_mma<{versionMajor = 2, versionMinor = 0, warpsPerCTA = [1, 8], instrShape = [16, 8]}>}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1], threadsPerWarp = [32], warpsPerCTA = [8], order = [0]}>",
+  "class": "shared_memory",
+  "barrier": "cta",
+  "can_shuffle": false,
+  "n_mixed": -1,
+  "routes": [
+   "default"
+  ],
+  "note": ""
+ },
+ {
+  "name": "priced29_tutorials_shared_memory_128x128_i32",
+  "source": "priced",
+  "section": "tutorials",
+  "count": 74,
+  "shape": [
+   128,
+   128
+  ],
+  "dtype": "i32",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [8, 1], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [1, 32], warpsPerCTA = [2, 4], order = [1, 0]}>",
+  "class": "shared_memory",
+  "barrier": "cta",
+  "can_shuffle": false,
+  "n_mixed": -1,
+  "routes": [
+   "default"
+  ],
+  "note": ""
+ },
+ {
+  "name": "priced30_tutorials_shared_memory_128x128_i32",
+  "source": "priced",
+  "section": "tutorials",
+  "count": 74,
+  "shape": [
+   128,
+   128
+  ],
+  "dtype": "i32",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [4, 1], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [1, 32], warpsPerCTA = [1, 4], order = [1, 0]}>",
+  "class": "shared_memory",
+  "barrier": "cta",
+  "can_shuffle": false,
+  "n_mixed": -1,
+  "routes": [
+   "default"
+  ],
+  "note": ""
+ },
+ {
+  "name": "priced31_tutorials_shared_memory_128x64_f16",
+  "source": "priced",
+  "section": "tutorials",
+  "count": 72,
+  "shape": [
+   128,
+   64
+  ],
+  "dtype": "f16",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [1, 32], warpsPerCTA = [2, 2], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 8], threadsPerWarp = [4, 8], warpsPerCTA = [4, 1], order = [1, 0]}>",
+  "class": "shared_memory",
+  "barrier": "cta",
+  "can_shuffle": false,
+  "n_mixed": -1,
+  "routes": [
+   "default"
+  ],
+  "note": ""
+ },
+ {
+  "name": "priced32_tutorials_shared_memory_128x64_f16",
+  "source": "priced",
+  "section": "tutorials",
+  "count": 72,
+  "shape": [
+   128,
+   64
+  ],
+  "dtype": "f16",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [1, 32], warpsPerCTA = [4, 2], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 8], threadsPerWarp = [4, 8], warpsPerCTA = [8, 1], order = [1, 0]}>",
+  "class": "shared_memory",
+  "barrier": "cta",
+  "can_shuffle": false,
+  "n_mixed": -1,
+  "routes": [
+   "default"
+  ],
+  "note": ""
+ },
+ {
+  "name": "priced33_tutorials_warp_shuffle_64x1_f32",
+  "source": "priced",
+  "section": "tutorials",
+  "count": 60,
+  "shape": [
+   64,
+   1
+  ],
+  "dtype": "f32",
+  "src": "#ttg.blocked<{sizePerThread = [2, 2], threadsPerWarp = [2, 16], warpsPerCTA = [8, 1], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [4, 4], threadsPerWarp = [1, 32], warpsPerCTA = [8, 1], order = [1, 0]}>",
+  "class": "warp_shuffle",
+  "barrier": "none",
+  "can_shuffle": true,
+  "n_mixed": 1,
+  "routes": [
+   "default",
+   "smem"
+  ],
+  "note": ""
+ },
+ {
+  "name": "canon_mma_to_blocked_128x128_f16",
+  "shape": [
+   128,
+   128
+  ],
+  "dtype": "f16",
+  "src": "#ttg.nvidia_mma<{versionMajor = 2, versionMinor = 0, warpsPerCTA = [4, 1], instrShape = [16, 8]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 8], threadsPerWarp = [2, 16], warpsPerCTA = [4, 1], order = [1, 0]}>",
+  "class": "shared_memory",
+  "routes": [
+   "default"
+  ],
+  "note": "accumulator to store layout, as in the matmul epilogue",
+  "source": "canonical"
+ },
+ {
+  "name": "canon_mma_to_blocked_128x128_f32",
+  "shape": [
+   128,
+   128
+  ],
+  "dtype": "f32",
+  "src": "#ttg.nvidia_mma<{versionMajor = 2, versionMinor = 0, warpsPerCTA = [4, 1], instrShape = [16, 8]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 4], threadsPerWarp = [4, 8], warpsPerCTA = [4, 1], order = [1, 0]}>",
+  "class": "shared_memory",
+  "routes": [
+   "default"
+  ],
+  "note": "accumulator to store layout, fp32",
+  "source": "canonical"
+ },
+ {
+  "name": "canon_mma_to_dotop_64x32_f16",
+  "shape": [
+   64,
+   32
+  ],
+  "dtype": "f16",
+  "src": "#ttg.nvidia_mma<{versionMajor = 2, versionMinor = 0, warpsPerCTA = [4, 1], instrShape = [16, 8]}>",
+  "dst": "#ttg.dot_op<{opIdx = 0, parent = #ttg.nvidia_mma<{versionMajor = 2, versionMinor = 0, warpsPerCTA = [4, 1], instrShape = [16, 8]}>, kWidth = 4}>",
+  "class": "warp_shuffle",
+  "routes": [
+   "default",
+   "smem"
+  ],
+  "note": "dot result fed to the next dot as its left operand",
+  "source": "canonical"
+ },
+ {
+  "name": "syn_inwarp_32x32_i8",
+  "source": "synthetic",
+  "shape": [
+   32,
+   32
+  ],
+  "dtype": "i8",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [1, 1], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [16, 2], warpsPerCTA = [1, 1], order = [1, 0]}>",
+  "class": "warp_shuffle",
+  "routes": [
+   "default",
+   "smem"
+  ],
+  "note": "one warp; elements per thread grows with N"
+ },
+ {
+  "name": "syn_inwarp_32x64_i8",
+  "source": "synthetic",
+  "shape": [
+   32,
+   64
+  ],
+  "dtype": "i8",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [1, 1], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [16, 2], warpsPerCTA = [1, 1], order = [1, 0]}>",
+  "class": "warp_shuffle",
+  "routes": [
+   "default",
+   "smem"
+  ],
+  "note": "one warp; elements per thread grows with N"
+ },
+ {
+  "name": "syn_inwarp_32x128_i8",
+  "source": "synthetic",
+  "shape": [
+   32,
+   128
+  ],
+  "dtype": "i8",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [1, 1], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [16, 2], warpsPerCTA = [1, 1], order = [1, 0]}>",
+  "class": "warp_shuffle",
+  "routes": [
+   "default",
+   "smem"
+  ],
+  "note": "one warp; elements per thread grows with N"
+ },
+ {
+  "name": "syn_inwarp_32x32_f16",
+  "source": "synthetic",
+  "shape": [
+   32,
+   32
+  ],
+  "dtype": "f16",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [1, 1], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [16, 2], warpsPerCTA = [1, 1], order = [1, 0]}>",
+  "class": "warp_shuffle",
+  "routes": [
+   "default",
+   "smem"
+  ],
+  "note": "one warp; elements per thread grows with N"
+ },
+ {
+  "name": "syn_inwarp_32x64_f16",
+  "source": "synthetic",
+  "shape": [
+   32,
+   64
+  ],
+  "dtype": "f16",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [1, 1], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [16, 2], warpsPerCTA = [1, 1], order = [1, 0]}>",
+  "class": "warp_shuffle",
+  "routes": [
+   "default",
+   "smem"
+  ],
+  "note": "one warp; elements per thread grows with N"
+ },
+ {
+  "name": "syn_inwarp_32x128_f16",
+  "source": "synthetic",
+  "shape": [
+   32,
+   128
+  ],
+  "dtype": "f16",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [1, 1], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [16, 2], warpsPerCTA = [1, 1], order = [1, 0]}>",
+  "class": "warp_shuffle",
+  "routes": [
+   "default",
+   "smem"
+  ],
+  "note": "one warp; elements per thread grows with N"
+ },
+ {
+  "name": "syn_inwarp_32x32_f32",
+  "source": "synthetic",
+  "shape": [
+   32,
+   32
+  ],
+  "dtype": "f32",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [1, 1], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [16, 2], warpsPerCTA = [1, 1], order = [1, 0]}>",
+  "class": "warp_shuffle",
+  "routes": [
+   "default",
+   "smem"
+  ],
+  "note": "one warp; elements per thread grows with N"
+ },
+ {
+  "name": "syn_inwarp_32x64_f32",
+  "source": "synthetic",
+  "shape": [
+   32,
+   64
+  ],
+  "dtype": "f32",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [1, 1], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [16, 2], warpsPerCTA = [1, 1], order = [1, 0]}>",
+  "class": "warp_shuffle",
+  "routes": [
+   "default",
+   "smem"
+  ],
+  "note": "one warp; elements per thread grows with N"
+ },
+ {
+  "name": "syn_inwarp_32x128_f32",
+  "source": "synthetic",
+  "shape": [
+   32,
+   128
+  ],
+  "dtype": "f32",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [1, 1], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [16, 2], warpsPerCTA = [1, 1], order = [1, 0]}>",
+  "class": "warp_shuffle",
+  "routes": [
+   "default",
+   "smem"
+  ],
+  "note": "one warp; elements per thread grows with N"
+ },
+ {
+  "name": "syn_inwarp_32x32_f64",
+  "source": "synthetic",
+  "shape": [
+   32,
+   32
+  ],
+  "dtype": "f64",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [1, 1], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [16, 2], warpsPerCTA = [1, 1], order = [1, 0]}>",
+  "class": "warp_shuffle",
+  "routes": [
+   "default",
+   "smem"
+  ],
+  "note": "one warp; elements per thread grows with N"
+ },
+ {
+  "name": "syn_inwarp_32x64_f64",
+  "source": "synthetic",
+  "shape": [
+   32,
+   64
+  ],
+  "dtype": "f64",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [1, 1], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [16, 2], warpsPerCTA = [1, 1], order = [1, 0]}>",
+  "class": "warp_shuffle",
+  "routes": [
+   "default",
+   "smem"
+  ],
+  "note": "one warp; elements per thread grows with N"
+ },
+ {
+  "name": "syn_inwarp_32x128_f64",
+  "source": "synthetic",
+  "shape": [
+   32,
+   128
+  ],
+  "dtype": "f64",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [1, 1], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [16, 2], warpsPerCTA = [1, 1], order = [1, 0]}>",
+  "class": "warp_shuffle",
+  "routes": [
+   "default",
+   "smem"
+  ],
+  "note": "one warp; elements per thread grows with N"
+ },
+ {
+  "name": "syn_crosswarp_32x32_i8",
+  "source": "synthetic",
+  "shape": [
+   32,
+   32
+  ],
+  "dtype": "i8",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [4, 1], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [1, 32], warpsPerCTA = [1, 4], order = [0, 1]}>",
+  "class": "shared_memory",
+  "routes": [
+   "default"
+  ],
+  "note": "four warps; data moves between warps"
+ },
+ {
+  "name": "syn_crosswarp_64x64_i8",
+  "source": "synthetic",
+  "shape": [
+   64,
+   64
+  ],
+  "dtype": "i8",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [4, 1], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [1, 32], warpsPerCTA = [1, 4], order = [0, 1]}>",
+  "class": "shared_memory",
+  "routes": [
+   "default"
+  ],
+  "note": "four warps; data moves between warps"
+ },
+ {
+  "name": "syn_crosswarp_128x128_i8",
+  "source": "synthetic",
+  "shape": [
+   128,
+   128
+  ],
+  "dtype": "i8",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [4, 1], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [1, 32], warpsPerCTA = [1, 4], order = [0, 1]}>",
+  "class": "shared_memory",
+  "routes": [
+   "default"
+  ],
+  "note": "four warps; data moves between warps"
+ },
+ {
+  "name": "syn_crosswarp_32x32_f16",
+  "source": "synthetic",
+  "shape": [
+   32,
+   32
+  ],
+  "dtype": "f16",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [4, 1], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [1, 32], warpsPerCTA = [1, 4], order = [0, 1]}>",
+  "class": "shared_memory",
+  "routes": [
+   "default"
+  ],
+  "note": "four warps; data moves between warps"
+ },
+ {
+  "name": "syn_crosswarp_64x64_f16",
+  "source": "synthetic",
+  "shape": [
+   64,
+   64
+  ],
+  "dtype": "f16",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [4, 1], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [1, 32], warpsPerCTA = [1, 4], order = [0, 1]}>",
+  "class": "shared_memory",
+  "routes": [
+   "default"
+  ],
+  "note": "four warps; data moves between warps"
+ },
+ {
+  "name": "syn_crosswarp_128x128_f16",
+  "source": "synthetic",
+  "shape": [
+   128,
+   128
+  ],
+  "dtype": "f16",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [4, 1], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [1, 32], warpsPerCTA = [1, 4], order = [0, 1]}>",
+  "class": "shared_memory",
+  "routes": [
+   "default"
+  ],
+  "note": "four warps; data moves between warps"
+ },
+ {
+  "name": "syn_crosswarp_32x32_f32",
+  "source": "synthetic",
+  "shape": [
+   32,
+   32
+  ],
+  "dtype": "f32",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [4, 1], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [1, 32], warpsPerCTA = [1, 4], order = [0, 1]}>",
+  "class": "shared_memory",
+  "routes": [
+   "default"
+  ],
+  "note": "four warps; data moves between warps"
+ },
+ {
+  "name": "syn_crosswarp_64x64_f32",
+  "source": "synthetic",
+  "shape": [
+   64,
+   64
+  ],
+  "dtype": "f32",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [4, 1], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [1, 32], warpsPerCTA = [1, 4], order = [0, 1]}>",
+  "class": "shared_memory",
+  "routes": [
+   "default"
+  ],
+  "note": "four warps; data moves between warps"
+ },
+ {
+  "name": "syn_crosswarp_128x128_f32",
+  "source": "synthetic",
+  "shape": [
+   128,
+   128
+  ],
+  "dtype": "f32",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [4, 1], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [1, 32], warpsPerCTA = [1, 4], order = [0, 1]}>",
+  "class": "shared_memory",
+  "routes": [
+   "default"
+  ],
+  "note": "four warps; data moves between warps"
+ },
+ {
+  "name": "syn_crosswarp_32x32_f64",
+  "source": "synthetic",
+  "shape": [
+   32,
+   32
+  ],
+  "dtype": "f64",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [4, 1], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [1, 32], warpsPerCTA = [1, 4], order = [0, 1]}>",
+  "class": "shared_memory",
+  "routes": [
+   "default"
+  ],
+  "note": "four warps; data moves between warps"
+ },
+ {
+  "name": "syn_crosswarp_64x64_f64",
+  "source": "synthetic",
+  "shape": [
+   64,
+   64
+  ],
+  "dtype": "f64",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [4, 1], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [1, 32], warpsPerCTA = [1, 4], order = [0, 1]}>",
+  "class": "shared_memory",
+  "routes": [
+   "default"
+  ],
+  "note": "four warps; data moves between warps"
+ },
+ {
+  "name": "syn_crosswarp_128x128_f64",
+  "source": "synthetic",
+  "shape": [
+   128,
+   128
+  ],
+  "dtype": "f64",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [32, 1], warpsPerCTA = [4, 1], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [1, 32], warpsPerCTA = [1, 4], order = [0, 1]}>",
+  "class": "shared_memory",
+  "routes": [
+   "default"
+  ],
+  "note": "four warps; data moves between warps"
+ }
+]

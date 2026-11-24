@@ -1,0 +1,12 @@
+- Across 2,554 kernel configurations, the pass faced a real choice in 339 (13%).
+- Of 3,026 conversions that survive the pass, 65% are shared-memory round trips, 5% warp shuffles, 30% free.
+- 1.1% of conversions the pass priced as shared-memory round trips lower to a warp shuffle instead; repricing them at the measured cost of a shuffle flips 0 of 32,697 rematerialization decisions.
+- On the RTX 5090, a warp-shuffle conversion costs 7.2 elementwise adds of the same tensor and a shared-memory one costs 7.6, against an assumed 32 (20.2 and 21.3 ns of SM time for a 4 KB fp32 tensor: 59 and 63 SM cycles at the 2.95 GHz the card ran at during that case, against an assumed 131).
+- The best alternative resolution that changes a layout beat the default by at most 11.6% (kernel: inductor red_fused_div_expa…shold_backward_view_0, 2.46 µs default against 2.15 µs); median 0% over 46 conflicted kernels.
+-   (with ptxas 12.9.86 in place of the bundled 13.5.37: 12.3% on the same kernel, 2.34 µs default against 2.05 µs)
+- The largest gap of all is not a layout difference: 96.1% (kernel: triton_kernels _matmul fp8e5×mxfp4 M128 #8, 3168.59 µs default against 122.77 µs), between two builds that hold the same operations on the same layouts in a different order.
+-   (that gap depends on the assembler: with ptxas 12.9.86 in place of the bundled 13.5.37 it is 93.4%, 3691.17 µs default against 244.41 µs)
+-   (inductor, largest gain among the alternatives tried: -11.6%, red_fused_div_expa…shold_backward_view_0, 2.46 µs default against 2.15 µs; different operations)
+-   (inductor, largest loss among the alternatives tried: +53.5%, red_fused_div_expa…shold_backward_view_2, 3.84 µs default against 5.92 µs; different operations)
+-   (triton_kernels, largest gain among the alternatives tried: -96.1%, _matmul fp8e5×mxfp4 M128 #8, 3168.59 µs default against 122.77 µs; same operations reordered)
+-   (triton_kernels, largest loss among the alternatives tried: +492.5%, _matmul mxfp8×mxfp4 M128 #6, 20.94 µs default against 124.34 µs; same operations reordered)

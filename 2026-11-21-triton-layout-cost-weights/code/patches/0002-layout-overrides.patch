@@ -1,0 +1,204 @@
+diff --git a/include/triton/Analysis/LayoutLog.h b/include/triton/Analysis/LayoutLog.h
+index 73e793e0f..b38775ae2 100644
+--- a/include/triton/Analysis/LayoutLog.h
++++ b/include/triton/Analysis/LayoutLog.h
+@@ -52,6 +52,23 @@ llvm::json::Object describeConversion(RankedTensorType srcTy,
+ // One "census" event per ttg.convert_layout in the module.
+ void census(ModuleOp module, llvm::StringRef stage);
+ 
++// --- Experiment overrides. Each is inert unless its variable is set. ---------
++
++// TRITON_LAYOUT_RESOLVE_OVERRIDE="1:0=2,3:1=0": at pass invocation 1 the
++// conflict with index 0 takes candidate 2; at invocation 3, conflict 1 takes
++// candidate 0. Returns -1 when there is no entry.
++int resolveOverride(int invocation, int conflictIndex);
++
++// TRITON_LAYOUT_DISABLE_WARP_SHUFFLE=1: conversions that would lower to warp
++// shuffles go through shared memory instead, unless force_warp_shuffle is set.
++bool warpShuffleDisabled();
++
++// TRITON_LAYOUT_REPRICE="warp_shuffle=0:4,shared_memory:cta=20000:8": replace
++// getConvertCost for that class (optionally class:barrier) with
++// fixed + perByte * pricedBytes. Returns false when there is no entry.
++bool reprice(llvm::StringRef cls, llvm::StringRef barrier, int64_t pricedBytes,
++             int64_t &cost);
++
+ } // namespace mlir::triton::layoutlog
+ 
+ #endif // TRITON_ANALYSIS_LAYOUTLOG_H
+diff --git a/lib/Analysis/LayoutLog.cpp b/lib/Analysis/LayoutLog.cpp
+index 94d9ec34c..b59b46f03 100644
+--- a/lib/Analysis/LayoutLog.cpp
++++ b/lib/Analysis/LayoutLog.cpp
+@@ -163,7 +163,8 @@ llvm::json::Object describeConversion(RankedTensorType srcTy,
+       numMixed = getWarpLayoutConvertDecomposition(srcLayout, dstLayout, 32)
+                      .mixedTranspositions.size();
+     bool shuffle = (forceWarpShuffle && canShuffle) ||
+-                   (!pricedFree && canShuffle && numMixed < 2);
++                   (!pricedFree && canShuffle && numMixed < 2 &&
++                    !warpShuffleDisabled());
+     if (shuffle) {
+       cls = "warp_shuffle";
+     } else {
+@@ -233,4 +234,68 @@ void census(ModuleOp module, llvm::StringRef stage) {
+   emit(std::move(summary));
+ }
+ 
++// --- overrides ---------------------------------------------------------------
++
++namespace {
++// Split "a=b,c=d" into pairs.
++SmallVector<std::pair<StringRef, StringRef>> parsePairs(StringRef text) {
++  SmallVector<std::pair<StringRef, StringRef>> pairs;
++  SmallVector<StringRef> items;
++  text.split(items, ',', /*MaxSplit=*/-1, /*KeepEmpty=*/false);
++  for (StringRef item : items) {
++    auto [key, value] = item.split('=');
++    pairs.emplace_back(key.trim(), value.trim());
++  }
++  return pairs;
++}
++} // namespace
++
++int resolveOverride(int invocation, int conflictIndex) {
++  const char *env = std::getenv("TRITON_LAYOUT_RESOLVE_OVERRIDE");
++  if (!env || !*env)
++    return -1;
++  for (auto [key, value] : parsePairs(env)) {
++    auto [invStr, idxStr] = key.split(':');
++    int inv = 0, idx = 0, candidate = 0;
++    if (invStr.getAsInteger(10, inv) || idxStr.getAsInteger(10, idx) ||
++        value.getAsInteger(10, candidate))
++      continue;
++    if (inv == invocation && idx == conflictIndex)
++      return candidate;
++  }
++  return -1;
++}
++
++bool warpShuffleDisabled() {
++  const char *env = std::getenv("TRITON_LAYOUT_DISABLE_WARP_SHUFFLE");
++  return env && StringRef(env) == "1";
++}
++
++bool reprice(StringRef cls, StringRef barrier, int64_t pricedBytes,
++             int64_t &cost) {
++  const char *env = std::getenv("TRITON_LAYOUT_REPRICE");
++  if (!env || !*env)
++    return false;
++  std::string specific = (cls + ":" + barrier).str();
++  StringRef found;
++  bool haveSpecific = false, haveGeneric = false;
++  for (auto [key, value] : parsePairs(env)) {
++    if (key == specific) {
++      found = value;
++      haveSpecific = true;
++    } else if (key == cls && !haveSpecific) {
++      found = value;
++      haveGeneric = true;
++    }
++  }
++  if (!haveSpecific && !haveGeneric)
++    return false;
++  auto [fixedStr, perByteStr] = found.split(':');
++  double fixed = 0, perByte = 0;
++  if (fixedStr.getAsDouble(fixed) || perByteStr.getAsDouble(perByte))
++    return false;
++  cost = (int64_t)(fixed + perByte * (double)pricedBytes + 0.5);
++  return true;
++}
++
+ } // namespace mlir::triton::layoutlog
+diff --git a/lib/Analysis/Utility.cpp b/lib/Analysis/Utility.cpp
+index acf5f99bd..8f7b887a5 100644
+--- a/lib/Analysis/Utility.cpp
++++ b/lib/Analysis/Utility.cpp
+@@ -1,4 +1,5 @@
+ #include "triton/Analysis/Utility.h"
++#include "triton/Analysis/LayoutLog.h"
+ 
+ #include <deque>
+ 
+@@ -1234,6 +1235,10 @@ static bool cvtNeedsWarpShuffle(const LinearLayout &src,
+   }
+   assert((!forceWarpShuffle || canShuffle) &&
+          "force_warp_shuffle requires a supported shuffle decomposition");
++  // Experiment override: send shuffle-by-default conversions through shared
++  // memory so both routes can be timed on the same conversion.
++  if (!forceWarpShuffle && triton::layoutlog::warpShuffleDisabled())
++    return false;
+   return forceWarpShuffle ||
+          (canShuffle &&
+           getWarpLayoutConvertDecomposition(srcLayout, dstLayout, 32)
+diff --git a/lib/Dialect/TritonGPU/Transforms/RemoveLayoutConversions.cpp b/lib/Dialect/TritonGPU/Transforms/RemoveLayoutConversions.cpp
+index 0ac53f9b2..34ee5d629 100644
+--- a/lib/Dialect/TritonGPU/Transforms/RemoveLayoutConversions.cpp
++++ b/lib/Dialect/TritonGPU/Transforms/RemoveLayoutConversions.cpp
+@@ -51,7 +51,7 @@ llvm::json::Object describeConvertOp(ConvertLayoutOp convertOp) {
+ }
+ 
+ void logConflict(Value value, ArrayRef<Attribute> candidates, Attribute chosen,
+-                 const char *rule, int index) {
++                 Attribute defaultChoice, const char *rule, int index) {
+   llvm::json::Object o;
+   o["event"] = "conflict";
+   o["index"] = index;
+@@ -78,14 +78,17 @@ void logConflict(Value value, ArrayRef<Attribute> candidates, Attribute chosen,
+   o["dtype"] = layoutlog::str(type.getElementType());
+   o["current"] = layoutlog::str(type.getEncoding());
+   llvm::json::Array cands;
+-  int chosenIndex = -1;
++  int chosenIndex = -1, defaultIndex = -1;
+   for (auto [i, e] : llvm::enumerate(candidates)) {
+     cands.push_back(layoutlog::str(e));
+     if (e == chosen)
+       chosenIndex = i;
++    if (e == defaultChoice)
++      defaultIndex = i;
+   }
+   o["candidates"] = std::move(cands);
+   o["chosen"] = chosenIndex;
++  o["default"] = defaultIndex;
+   o["rule"] = rule;
+   llvm::json::Array users;
+   for (Operation *user : value.getUsers())
+@@ -491,9 +494,17 @@ void LayoutPropagation::resolveConflicts() {
+       }
+     }
+     int conflictIndex = layoutlog::nextConflictIndex();
++    // Experiment override: force a specific candidate for this value.
++    Attribute defaultChoice = encoding;
++    int forced = layoutlog::resolveOverride(layoutlog::currentInvocation(),
++                                            conflictIndex);
++    if (forced >= 0 && forced < (int)info.encodings.size()) {
++      encoding = info.encodings[forced];
++      rule = "override";
++    }
+     if (layoutlog::enabled())
+-      logConflict(it.first, info.encodings.getArrayRef(), encoding, rule,
+-                  conflictIndex);
++      logConflict(it.first, info.encodings.getArrayRef(), encoding,
++                  defaultChoice, rule, conflictIndex);
+     info.encodings.clear();
+     info.encodings.insert(encoding);
+   }
+@@ -1147,10 +1158,19 @@ static int64_t getConvertCostImpl(Value convertSrc, Attribute resultEncoding) {
+ int64_t getConvertCost(Value convertSrc, Attribute resultEncoding,
+                        const char *role) {
+   int64_t cost = getConvertCostImpl(convertSrc, resultEncoding);
++  int64_t defaultCost = cost;
++  if (std::getenv("TRITON_LAYOUT_REPRICE")) {
++    // Experiment override: price by the class the conversion lowers to.
++    llvm::json::Object d = layoutlog::describeConversion(
++        cast<RankedTensorType>(convertSrc.getType()), resultEncoding);
++    layoutlog::reprice(*d.getString("class"), *d.getString("barrier"),
++                       *d.getInteger("priced_bytes"), cost);
++  }
+   if (layoutlog::enabled()) {
+     llvm::json::Object o = layoutlog::describeConversion(
+         cast<RankedTensorType>(convertSrc.getType()), resultEncoding);
+     o["cost"] = cost;
++    o["default_cost"] = defaultCost;
+     if (StringRef(role) == "new_conversion") {
+       layoutlog::pendingNewConversions().push_back(llvm::json::Object(o));
+     }

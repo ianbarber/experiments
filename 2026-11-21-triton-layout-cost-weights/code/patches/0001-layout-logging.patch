@@ -1,0 +1,835 @@
+diff --git a/include/triton/Analysis/LayoutLog.h b/include/triton/Analysis/LayoutLog.h
+new file mode 100644
+index 000000000..73e793e0f
+--- /dev/null
++++ b/include/triton/Analysis/LayoutLog.h
+@@ -0,0 +1,57 @@
++#ifndef TRITON_ANALYSIS_LAYOUTLOG_H
++#define TRITON_ANALYSIS_LAYOUTLOG_H
++
++// Experiment instrumentation for RemoveLayoutConversions. Nothing in here may
++// change what the compiler decides: every function only reads IR and appends
++// JSON lines to the file named by TRITON_LAYOUT_LOG.
++
++#include "mlir/IR/BuiltinOps.h"
++#include "mlir/IR/BuiltinTypes.h"
++#include "llvm/Support/JSON.h"
++#include <string>
++
++namespace mlir::triton::layoutlog {
++
++// True when TRITON_LAYOUT_LOG names a file.
++bool enabled();
++
++// Called once at the start of every RemoveLayoutConversions run. Returns the
++// 1-based index of the run within the current compilation. A compilation is
++// identified by the value of TRITON_LAYOUT_TAG, which the driver must change
++// for every compile.
++int beginInvocation();
++int currentInvocation();
++
++// Counters that restart at every pass invocation.
++int nextConflictIndex();
++int nextDecisionIndex();
++
++// Phase label attached to subsequent events ("forward", "backward_remat",
++// "hoist_ext", ...).
++void setPhase(const char *phase);
++
++// Conversions created by a hoist that is about to be costed. Filled by the
++// caller, consumed by the next remat_decision event.
++llvm::json::Array &pendingNewConversions();
++
++// Append one event. Adds "tag", "inv", "phase" and "seq".
++void emit(llvm::json::Object &&event);
++
++std::string str(Attribute attr);
++std::string str(Type type);
++std::string funcName(Operation *op);
++unsigned loopDepth(Operation *op);
++
++// Describe the conversion srcTy -> srcTy.cloneWithEncoding(dstEncoding) the
++// way ConvertLayoutOpToLLVM dispatches it: class, barrier kind, bytes, and the
++// price getConvertCost assigns.
++llvm::json::Object describeConversion(RankedTensorType srcTy,
++                                      Attribute dstEncoding,
++                                      bool forceWarpShuffle = false);
++
++// One "census" event per ttg.convert_layout in the module.
++void census(ModuleOp module, llvm::StringRef stage);
++
++} // namespace mlir::triton::layoutlog
++
++#endif // TRITON_ANALYSIS_LAYOUTLOG_H
+diff --git a/lib/Analysis/CMakeLists.txt b/lib/Analysis/CMakeLists.txt
+index f31e5ff8d..77fa80cd0 100644
+--- a/lib/Analysis/CMakeLists.txt
++++ b/lib/Analysis/CMakeLists.txt
+@@ -5,6 +5,7 @@ add_triton_library(TritonAnalysis
+   BufferIndexAnalysis.cpp
+   Membar.cpp
+   Alias.cpp
++  LayoutLog.cpp
+   Utility.cpp
+ 
+   DEPENDS
+diff --git a/lib/Analysis/LayoutLog.cpp b/lib/Analysis/LayoutLog.cpp
+new file mode 100644
+index 000000000..94d9ec34c
+--- /dev/null
++++ b/lib/Analysis/LayoutLog.cpp
+@@ -0,0 +1,236 @@
++#include "triton/Analysis/LayoutLog.h"
++
++#include "mlir/Dialect/SCF/IR/SCF.h"
++#include "triton/Analysis/Utility.h"
++#include "triton/Dialect/Triton/IR/Dialect.h"
++#include "triton/Dialect/Triton/IR/Utility.h"
++#include "triton/Dialect/TritonGPU/IR/Dialect.h"
++#include "triton/Dialect/TritonGPU/IR/LinearLayoutConversions.h"
++#include "triton/Tools/LayoutUtils.h"
++#include "llvm/Support/raw_ostream.h"
++
++#include <cstdio>
++#include <cstdlib>
++#include <mutex>
++
++namespace mlir::triton::layoutlog {
++
++namespace {
++std::mutex gMutex;
++std::string gLastTag;
++bool gHaveTag = false;
++int gInvocation = 0;
++int gConflict = 0;
++int gDecision = 0;
++int64_t gSeq = 0;
++const char *gPhase = "";
++llvm::json::Array gPendingNewConversions;
++
++const char *logPath() {
++  const char *path = std::getenv("TRITON_LAYOUT_LOG");
++  return (path && *path) ? path : nullptr;
++}
++
++std::string currentTag() {
++  const char *tag = std::getenv("TRITON_LAYOUT_TAG");
++  return tag ? std::string(tag) : std::string();
++}
++} // namespace
++
++bool enabled() { return logPath() != nullptr; }
++
++int beginInvocation() {
++  std::lock_guard<std::mutex> lock(gMutex);
++  std::string tag = currentTag();
++  if (!gHaveTag || tag != gLastTag) {
++    gLastTag = tag;
++    gHaveTag = true;
++    gInvocation = 0;
++  }
++  gConflict = 0;
++  gDecision = 0;
++  gPendingNewConversions.clear();
++  return ++gInvocation;
++}
++
++int currentInvocation() { return gInvocation; }
++int nextConflictIndex() { return gConflict++; }
++int nextDecisionIndex() { return gDecision++; }
++void setPhase(const char *phase) { gPhase = phase; }
++llvm::json::Array &pendingNewConversions() { return gPendingNewConversions; }
++
++void emit(llvm::json::Object &&event) {
++  const char *path = logPath();
++  if (!path)
++    return;
++  std::lock_guard<std::mutex> lock(gMutex);
++  event["tag"] = currentTag();
++  event["inv"] = gInvocation;
++  event["phase"] = gPhase;
++  event["seq"] = gSeq++;
++  std::string line;
++  llvm::raw_string_ostream os(line);
++  os << llvm::json::Value(std::move(event)) << "\n";
++  os.flush();
++  if (FILE *f = std::fopen(path, "a")) {
++    std::fwrite(line.data(), 1, line.size(), f);
++    std::fclose(f);
++  }
++}
++
++std::string str(Attribute attr) {
++  std::string s;
++  llvm::raw_string_ostream os(s);
++  if (attr)
++    attr.print(os);
++  else
++    os << "<null>";
++  return s;
++}
++
++std::string str(Type type) {
++  std::string s;
++  llvm::raw_string_ostream os(s);
++  type.print(os);
++  return s;
++}
++
++std::string funcName(Operation *op) {
++  for (Operation *p = op; p; p = p->getParentOp())
++    if (auto func = dyn_cast<triton::FuncOp>(p))
++      return func.getName().str();
++  return "";
++}
++
++unsigned loopDepth(Operation *op) {
++  unsigned depth = 0;
++  if (!op)
++    return depth;
++  for (Operation *p = op->getParentOp(); p; p = p->getParentOp())
++    if (isa<scf::ForOp, scf::WhileOp>(p))
++      ++depth;
++  return depth;
++}
++
++llvm::json::Object describeConversion(RankedTensorType srcTy,
++                                      Attribute dstEncoding,
++                                      bool forceWarpShuffle) {
++  using namespace mlir::triton::gpu;
++  llvm::json::Object o;
++  MLIRContext *ctx = srcTy.getContext();
++  RankedTensorType dstTy = srcTy.cloneWithEncoding(dstEncoding);
++  auto kReg = StringAttr::get(ctx, "register");
++  auto kWarp = StringAttr::get(ctx, "warp");
++  auto kBlock = StringAttr::get(ctx, "block");
++
++  // Size, and the size getConvertCost charges for.
++  int64_t elems = srcTy.getNumElements();
++  Type elemTy = srcTy.getElementType();
++  int64_t bits = getIntOrFloatOrPtrBitWidth(elemTy);
++  int64_t pricedBits = isa<PointerType>(elemTy) ? 0 : bits;
++  int64_t pricedBytes =
++      (std::max<int64_t>(elems, 32) * std::max<int64_t>(pricedBits, 32)) >> 3;
++  bool pricedFree = cvtReordersRegisters(srcTy, dstTy);
++
++  // The dispatch in ConvertLayoutOpConversion::matchAndRewrite.
++  LinearLayout rawSrc = toLinearLayout(srcTy);
++  LinearLayout rawDst = toLinearLayout(dstTy);
++  LinearLayout srcLayout = rawSrc.removeZeroBasesAlongDim(kReg);
++  LinearLayout dstLayout = rawDst.removeZeroBasesAlongDim(kReg);
++  LinearLayout conversion = minimalCvtLayout(srcLayout, dstLayout);
++  int numDims = conversion.getNumInDims();
++
++  const char *cls = "";
++  const char *barrier = "none";
++  bool canShuffle = false;
++  int numMixed = -1;
++  bool classifierMismatch = false;
++  if (numDims == 0) {
++    cls = "noop";
++  } else if (numDims == 1) {
++    cls = "register_permute";
++  } else {
++    // Same test as the file-static cvtNeedsWarpShuffle in Analysis/Utility.cpp.
++    canShuffle = isPermutationMatrixLayout(srcLayout) &&
++                 isPermutationMatrixLayout(dstLayout);
++    if (canShuffle) {
++      auto local = invertAndComposeLocal(srcLayout, dstLayout, {kWarp, kBlock});
++      canShuffle = local.isIdentityOnOutDim(kWarp) &&
++                   local.isIdentityOnOutDim(kBlock) &&
++                   local.sublayoutIsZero({kWarp, kBlock}, kReg);
++    }
++    if (canShuffle)
++      numMixed = getWarpLayoutConvertDecomposition(srcLayout, dstLayout, 32)
++                     .mixedTranspositions.size();
++    bool shuffle = (forceWarpShuffle && canShuffle) ||
++                   (!pricedFree && canShuffle && numMixed < 2);
++    if (shuffle) {
++      cls = "warp_shuffle";
++    } else {
++      cls = "shared_memory";
++      if (isCvtDimSync(srcLayout, dstLayout, kWarp))
++        barrier = "warp";
++      else if (isCvtDimSync(srcLayout, dstLayout, kBlock))
++        barrier = "cta";
++      else
++        barrier = "cluster";
++    }
++    // Cross-check against the public helper the allocator uses.
++    if (!forceWarpShuffle) {
++      bool publicSmem = !pricedFree && cvtNeedsSharedMemory(rawSrc, rawDst);
++      classifierMismatch = publicSmem != !shuffle;
++    }
++  }
++
++  llvm::json::Array shape;
++  for (int64_t d : srcTy.getShape())
++    shape.push_back(d);
++  o["class"] = cls;
++  o["barrier"] = barrier;
++  o["shape"] = std::move(shape);
++  o["dtype"] = str(elemTy);
++  o["elems"] = elems;
++  o["bits"] = bits;
++  o["bytes"] = (elems * bits) >> 3;
++  o["priced_bytes"] = pricedBytes;
++  o["priced_free"] = pricedFree;
++  o["assumed_cost"] = pricedFree ? 0 : 32 * pricedBytes;
++  o["can_shuffle"] = canShuffle;
++  o["n_mixed"] = numMixed;
++  o["force_warp_shuffle"] = forceWarpShuffle;
++  o["classifier_mismatch"] = classifierMismatch;
++  o["src"] = str(srcTy.getEncoding());
++  o["dst"] = str(dstEncoding);
++  return o;
++}
++
++void census(ModuleOp module, llvm::StringRef stage) {
++  if (!enabled())
++    return;
++  int index = 0;
++  module.walk([&](gpu::ConvertLayoutOp cvt) {
++    llvm::json::Object o =
++        describeConversion(cast<RankedTensorType>(cvt.getSrc().getType()),
++                           cvt.getType().getEncoding(),
++                           cvt.getForceWarpShuffle());
++    o["event"] = "census";
++    o["stage"] = stage.str();
++    o["index"] = index++;
++    o["func"] = funcName(cvt.getOperation());
++    o["loop_depth"] = loopDepth(cvt.getOperation());
++    Operation *srcOp = cvt.getSrc().getDefiningOp();
++    o["src_op"] = srcOp ? srcOp->getName().getStringRef().str() : "block_arg";
++    llvm::json::Array users;
++    for (Operation *user : cvt.getResult().getUsers())
++      users.push_back(user->getName().getStringRef().str());
++    o["users"] = std::move(users);
++    emit(std::move(o));
++  });
++  llvm::json::Object summary;
++  summary["event"] = "census_summary";
++  summary["stage"] = stage.str();
++  summary["n_convert"] = index;
++  emit(std::move(summary));
++}
++
++} // namespace mlir::triton::layoutlog
+diff --git a/lib/Conversion/TritonGPUToLLVM/ConvertLayoutOpToLLVM.cpp b/lib/Conversion/TritonGPUToLLVM/ConvertLayoutOpToLLVM.cpp
+index ac096ee40..535121565 100644
+--- a/lib/Conversion/TritonGPUToLLVM/ConvertLayoutOpToLLVM.cpp
++++ b/lib/Conversion/TritonGPUToLLVM/ConvertLayoutOpToLLVM.cpp
+@@ -1,5 +1,6 @@
+ #include "mlir/Conversion/LLVMCommon/TypeConverter.h"
+ #include "mlir/Support/LogicalResult.h"
++#include "triton/Analysis/LayoutLog.h"
+ #include "triton/Analysis/Utility.h"
+ #include "triton/Conversion/TritonGPUToLLVM/TargetInfoBase.h"
+ #include "triton/Conversion/TritonGPUToLLVM/Utility.h"
+@@ -49,6 +50,19 @@ struct ConvertLayoutOpConversion
+ 
+     assert(to_vector(conversion.getInDimNames()) ==
+            to_vector(conversion.getOutDimNames()));
++    if (triton::layoutlog::enabled()) {
++      // Ground truth for the experiment: the branch taken below.
++      const char *lowered = conversion.getNumInDims() == 0   ? "noop"
++                            : conversion.getNumInDims() == 1 ? "register_permute"
++                            : cvtNeedsWarpShuffle(op)        ? "warp_shuffle"
++                                                             : "shared_memory";
++      llvm::json::Object o = triton::layoutlog::describeConversion(
++          cast<RankedTensorType>(srcTy), dstTy.getEncoding(),
++          op.getForceWarpShuffle());
++      o["event"] = "lowered";
++      o["lowered_class"] = lowered;
++      triton::layoutlog::emit(std::move(o));
++    }
+     if (conversion.getNumInDims() == 0) {
+       assert(adaptor.getSrc().getType() ==
+              getTypeConverter()->convertType(dstTy));
+diff --git a/lib/Dialect/TritonGPU/Transforms/RemoveLayoutConversions.cpp b/lib/Dialect/TritonGPU/Transforms/RemoveLayoutConversions.cpp
+index 671f50c81..0ac53f9b2 100644
+--- a/lib/Dialect/TritonGPU/Transforms/RemoveLayoutConversions.cpp
++++ b/lib/Dialect/TritonGPU/Transforms/RemoveLayoutConversions.cpp
+@@ -15,6 +15,7 @@
+ #include "mlir/Transforms/GreedyPatternRewriteDriver.h"
+ #include "mlir/Transforms/Passes.h"
+ #include "mlir/Transforms/RegionUtils.h"
++#include "triton/Analysis/LayoutLog.h"
+ #include "triton/Analysis/Utility.h"
+ #include "triton/Dialect/Triton/IR/Dialect.h"
+ #include "triton/Dialect/Triton/IR/Utility.h"
+@@ -37,6 +38,98 @@ namespace mlir::triton::gpu {
+ 
+ namespace {
+ 
++// --- experiment logging (read-only) ------------------------------------------
++llvm::json::Object describeConvertOp(ConvertLayoutOp convertOp) {
++  llvm::json::Object o = layoutlog::describeConversion(
++      cast<RankedTensorType>(convertOp.getSrc().getType()),
++      convertOp.getType().getEncoding(), convertOp.getForceWarpShuffle());
++  o["loop_depth"] = layoutlog::loopDepth(convertOp.getOperation());
++  o["func"] = layoutlog::funcName(convertOp.getOperation());
++  // Identity of the op within this pass run, to recognise re-evaluations.
++  o["op_id"] = (int64_t)(uintptr_t)convertOp.getOperation();
++  return o;
++}
++
++void logConflict(Value value, ArrayRef<Attribute> candidates, Attribute chosen,
++                 const char *rule, int index) {
++  llvm::json::Object o;
++  o["event"] = "conflict";
++  o["index"] = index;
++  Operation *op = value.getDefiningOp();
++  Operation *anchor = op;
++  unsigned depth = 0;
++  if (op) {
++    o["op"] = op->getName().getStringRef().str();
++    depth = layoutlog::loopDepth(op);
++  } else {
++    anchor = cast<BlockArgument>(value).getOwner()->getParentOp();
++    o["op"] = "block_arg";
++    o["block_parent"] = anchor ? anchor->getName().getStringRef().str() : "";
++    depth = layoutlog::loopDepth(anchor) +
++            (anchor && isa<scf::ForOp, scf::WhileOp>(anchor) ? 1 : 0);
++  }
++  o["func"] = layoutlog::funcName(anchor);
++  o["loop_depth"] = depth;
++  auto type = cast<RankedTensorType>(value.getType());
++  llvm::json::Array shape;
++  for (int64_t d : type.getShape())
++    shape.push_back(d);
++  o["shape"] = std::move(shape);
++  o["dtype"] = layoutlog::str(type.getElementType());
++  o["current"] = layoutlog::str(type.getEncoding());
++  llvm::json::Array cands;
++  int chosenIndex = -1;
++  for (auto [i, e] : llvm::enumerate(candidates)) {
++    cands.push_back(layoutlog::str(e));
++    if (e == chosen)
++      chosenIndex = i;
++  }
++  o["candidates"] = std::move(cands);
++  o["chosen"] = chosenIndex;
++  o["rule"] = rule;
++  llvm::json::Array users;
++  for (Operation *user : value.getUsers())
++    users.push_back(user->getName().getStringRef().str());
++  o["users"] = std::move(users);
++  layoutlog::emit(std::move(o));
++}
++
++void logRematSkip(ConvertLayoutOp convertOp, const char *reason) {
++  if (!layoutlog::enabled())
++    return;
++  llvm::json::Object o;
++  o["event"] = "remat_skip";
++  o["reason"] = reason;
++  o["subject"] = describeConvertOp(convertOp);
++  layoutlog::emit(std::move(o));
++}
++
++void logRematDecision(ConvertLayoutOp convertOp, size_t sliceValues,
++                      size_t sliceOps, size_t outsideValues,
++                      int64_t convertLayoutCost, int64_t rematerialisationCost,
++                      int64_t newCvtCost, bool disableRematSplitting,
++                      bool outcome, const char *reason) {
++  if (!layoutlog::enabled())
++    return;
++  llvm::json::Object o;
++  o["event"] = "remat_decision";
++  o["decision"] = layoutlog::nextDecisionIndex();
++  o["subject"] = describeConvertOp(convertOp);
++  o["convert_cost"] = convertLayoutCost;
++  o["remat_cost"] = rematerialisationCost;
++  o["new_cvt_cost"] = newCvtCost;
++  o["new_conversions"] = std::move(layoutlog::pendingNewConversions());
++  layoutlog::pendingNewConversions() = llvm::json::Array();
++  o["slice_values"] = (int64_t)sliceValues;
++  o["slice_ops"] = (int64_t)sliceOps;
++  o["outside_values"] = (int64_t)outsideValues;
++  o["disable_remat_splitting"] = disableRematSplitting;
++  o["outcome"] = outcome;
++  o["reason"] = reason;
++  layoutlog::emit(std::move(o));
++}
++// -----------------------------------------------------------------------------
++
+ // -----------------------------------------------------------------------------
+ //
+ // -----------------------------------------------------------------------------
+@@ -376,25 +469,42 @@ void LayoutPropagation::propagateLayout() {
+ }
+ 
+ void LayoutPropagation::resolveConflicts() {
++  int64_t numValues = 0, numMulti = 0;
+   for (auto &it : layouts) {
+     Operation *op = it.first.getDefiningOp();
+     LayoutInfo &info = it.second;
++    ++numValues;
+     if (info.encodings.size() <= 1)
+       continue;
++    ++numMulti;
+     // Hacky resolve, prefer block encoding.
+     // TODO: add a proper heuristic.
+     Attribute encoding = *info.encodings.begin();
+     bool isLoadOrStore = op && isa<LoadOp, StoreOp, AtomicOpInterface>(op);
++    const char *rule = "first_candidate";
+     for (Attribute e : info.encodings) {
+       if ((isLoadOrStore && isa<BlockedEncodingAttr>(e)) ||
+           (!isLoadOrStore && isa<MmaEncodingTrait>(e))) {
+         encoding = e;
++        rule = isLoadOrStore ? "blocked_for_memory_op" : "mma";
+         break;
+       }
+     }
++    int conflictIndex = layoutlog::nextConflictIndex();
++    if (layoutlog::enabled())
++      logConflict(it.first, info.encodings.getArrayRef(), encoding, rule,
++                  conflictIndex);
+     info.encodings.clear();
+     info.encodings.insert(encoding);
+   }
++  if (layoutlog::enabled()) {
++    llvm::json::Object o;
++    o["event"] = "resolve_summary";
++    o["func"] = funcOp.getName().str();
++    o["values"] = numValues;
++    o["multi_candidate_values"] = numMulti;
++    layoutlog::emit(std::move(o));
++  }
+ }
+ 
+ void LayoutPropagation::dump() {
+@@ -964,7 +1074,18 @@ void LayoutRematerialization::hoistConvertOnTopOfExtOrBroadcast(
+ 
+ void LayoutRematerialization::hoistConvertIntoConditionals() {
+   runHoistConvertPass([&](ConvertLayoutOp convertOp) {
+-    return hoistConvertIntoConditionals(convertOp);
++    llvm::json::Object subject;
++    if (layoutlog::enabled())
++      subject = describeConvertOp(convertOp);
++    bool hoisted = hoistConvertIntoConditionals(convertOp);
++    if (hoisted && layoutlog::enabled()) {
++      llvm::json::Object o;
++      o["event"] = "uncosted_hoist";
++      o["kind"] = "into_conditional";
++      o["subject"] = std::move(subject);
++      layoutlog::emit(std::move(o));
++    }
++    return hoisted;
+   });
+ }
+ 
+@@ -1004,7 +1125,7 @@ static int64_t getByteCount(Value result, int64_t minElementCount = 0,
+ 
+ /// Compute the cost of a ConvertLayoutOp with source \p convertSrc and result
+ /// encoding \p resultEncoding.
+-int64_t getConvertCost(Value convertSrc, Attribute resultEncoding) {
++static int64_t getConvertCostImpl(Value convertSrc, Attribute resultEncoding) {
+   auto srcType = cast<RankedTensorType>(convertSrc.getType());
+   auto resultType = srcType.cloneWithEncoding(resultEncoding);
+   if (cvtReordersRegisters(srcType, resultType))
+@@ -1023,6 +1144,23 @@ int64_t getConvertCost(Value convertSrc, Attribute resultEncoding) {
+   return 32 * convertLayoutBytes;
+ }
+ 
++int64_t getConvertCost(Value convertSrc, Attribute resultEncoding,
++                       const char *role) {
++  int64_t cost = getConvertCostImpl(convertSrc, resultEncoding);
++  if (layoutlog::enabled()) {
++    llvm::json::Object o = layoutlog::describeConversion(
++        cast<RankedTensorType>(convertSrc.getType()), resultEncoding);
++    o["cost"] = cost;
++    if (StringRef(role) == "new_conversion") {
++      layoutlog::pendingNewConversions().push_back(llvm::json::Object(o));
++    }
++    o["event"] = "convert_cost";
++    o["role"] = role;
++    layoutlog::emit(std::move(o));
++  }
++  return cost;
++}
++
+ static unsigned getCostFactor(Value result, Attribute rematEncoding) {
+   auto tensorType = cast<RankedTensorType>(result.getType());
+   unsigned oldElemsPerThread = getUniqueElemsPerThread(tensorType);
+@@ -1106,11 +1244,15 @@ bool isRematBeneficial(ConvertLayoutOp convertOp, const SetVector<Value> &slice,
+ 
+   if (disableRematSplitting && !nonSliceOnlyValues.empty()) {
+     LDBG("  skipped rematerialization because it would split the slice");
++    logRematDecision(convertOp, slice.size(), sliceOps.size(),
++                     nonSliceOnlyValues.size(), -1, -1, newCvtCost,
++                     disableRematSplitting, false, "would_split_slice");
+     return false;
+   }
+ 
+   int64_t convertLayoutCost =
+-      getConvertCost(convertOp.getSrc(), convertOp.getType().getEncoding());
++      getConvertCost(convertOp.getSrc(), convertOp.getType().getEncoding(),
++                     "subject");
+   int64_t rematerialisationCost = newCvtCost;
+ 
+   // Evaluate single-use status for every operation in slice
+@@ -1163,6 +1305,10 @@ bool isRematBeneficial(ConvertLayoutOp convertOp, const SetVector<Value> &slice,
+         // multiple use chains.
+         LDBG("  skipped rematerialization due to non-associative reduce in the "
+              "slice");
++        logRematDecision(convertOp, slice.size(), sliceOps.size(),
++                         nonSliceOnlyValues.size(), convertLayoutCost, -1,
++                         newCvtCost, disableRematSplitting, false,
++                         "non_associative_reduce");
+         return false;
+       }
+       rematerialisationCost += helper.getIntraWarpSizeWithUniqueData();
+@@ -1175,15 +1321,22 @@ bool isRematBeneficial(ConvertLayoutOp convertOp, const SetVector<Value> &slice,
+     DBGS() << "  rematerialisation cost: " << rematerialisationCost << "\n";
+   });
+ 
+-  return convertLayoutCost >= rematerialisationCost;
++  bool beneficial = convertLayoutCost >= rematerialisationCost;
++  logRematDecision(convertOp, slice.size(), sliceOps.size(),
++                   nonSliceOnlyValues.size(), convertLayoutCost,
++                   rematerialisationCost, newCvtCost, disableRematSplitting,
++                   beneficial, "cost");
++  return beneficial;
+ }
+ 
+ bool LayoutRematerialization::backwardRematerialization(
+     ConvertLayoutOp convertOp, bool disableRematSplitting) {
+   // DotOperand is hoisted by hoistDotOperand
+   RankedTensorType targetType = convertOp.getType();
+-  if (isa<DotOperandEncodingAttr>(targetType.getEncoding()))
++  if (isa<DotOperandEncodingAttr>(targetType.getEncoding())) {
++    logRematSkip(convertOp, "dot_operand_target");
+     return false;
++  }
+   Value oldV = convertOp.getSrc();
+   LDBG("check backward remat with source " << oldV << " encoding "
+                                            << targetType.getEncoding());
+@@ -1197,8 +1350,10 @@ bool LayoutRematerialization::backwardRematerialization(
+       existingRemats);
+   if (result.failed()) {
+     LDBG("  getRematerializableSlice failed");
++    logRematSkip(convertOp, "slice_not_rematerializable");
+     return false;
+   }
++  layoutlog::pendingNewConversions() = llvm::json::Array();
+ 
+   // 2. Determine whether rematerialisation is beneficial.
+   if (!isRematBeneficial(convertOp, slice, layout, /*newCvtCost=*/0,
+@@ -1220,7 +1375,18 @@ bool LayoutRematerialization::backwardRematerialization(
+ 
+ void LayoutRematerialization::hoistConvertDotOperand() {
+   runHoistConvertPass([&](ConvertLayoutOp convertOp) {
+-    return hoistConvertDotOperand(convertOp);
++    llvm::json::Object subject;
++    if (layoutlog::enabled())
++      subject = describeConvertOp(convertOp);
++    bool hoisted = hoistConvertDotOperand(convertOp);
++    if (hoisted && layoutlog::enabled()) {
++      llvm::json::Object o;
++      o["event"] = "uncosted_hoist";
++      o["kind"] = "dot_operand";
++      o["subject"] = std::move(subject);
++      layoutlog::emit(std::move(o));
++    }
++    return hoisted;
+   });
+ }
+ 
+@@ -1342,8 +1508,11 @@ bool LayoutRematerialization::hoistConvertOnTopOfExtOrBroadcast(
+     ConvertLayoutOp convertOp, bool disableRematSplitting) {
+   // DotOperand is hoisted by hoistDotOperand
+   RankedTensorType targetType = convertOp.getType();
+-  if (isa<DotOperandEncodingAttr>(targetType.getEncoding()))
++  if (isa<DotOperandEncodingAttr>(targetType.getEncoding())) {
++    logRematSkip(convertOp, "dot_operand_target");
+     return false;
++  }
++  layoutlog::pendingNewConversions() = llvm::json::Array();
+ 
+   auto isExtOrBroadcastOp = [](Operation *op) {
+     if (isa<arith::ExtSIOp, arith::ExtUIOp, arith::ExtFOp, BroadcastOp,
+@@ -1364,8 +1533,10 @@ bool LayoutRematerialization::hoistConvertOnTopOfExtOrBroadcast(
+   LogicalResult result = getRematerializableSlice(
+       convertOp.getSrcMutable(), targetType.getEncoding(), slice, layout,
+       existingRemats, isExtOrBroadcastOp);
+-  if (result.failed())
++  if (result.failed()) {
++    logRematSkip(convertOp, "slice_not_rematerializable");
+     return false;
++  }
+ 
+   SmallVector<std::pair<Operation *, Attribute>> extOrBroadcastOps;
+   int64_t newCvtCost = 0;
+@@ -1377,8 +1548,10 @@ bool LayoutRematerialization::hoistConvertOnTopOfExtOrBroadcast(
+       continue;
+ 
+     Attribute srcEncoding = inferSrcEncoding(op, layout[v]);
+-    if (!srcEncoding)
++    if (!srcEncoding) {
++      logRematSkip(convertOp, "no_source_encoding");
+       return false;
++    }
+ 
+     // If we can rematerialize the rest of the ext slice we can ignore this ext
+     // as it won't need a convert.
+@@ -1387,11 +1560,14 @@ bool LayoutRematerialization::hoistConvertOnTopOfExtOrBroadcast(
+       continue;
+ 
+     extOrBroadcastOps.emplace_back(op, srcEncoding);
+-    newCvtCost += getConvertCost(op->getOperand(0), srcEncoding);
++    newCvtCost +=
++        getConvertCost(op->getOperand(0), srcEncoding, "new_conversion");
+   }
+ 
+-  if (extOrBroadcastOps.empty())
++  if (extOrBroadcastOps.empty()) {
++    logRematSkip(convertOp, "no_ext_or_broadcast_to_hoist_over");
+     return false;
++  }
+   if (!isRematBeneficial(convertOp, slice, layout, newCvtCost,
+                          /*disableRematSplitting=*/disableRematSplitting))
+     return false;
+@@ -1535,6 +1711,7 @@ bool backwardRematerialization(ModuleOp module, bool disableRematSplitting) {
+   bool changed = false;
+   module.walk([&](FuncOp funcOp) {
+     LayoutRematerialization layoutRemat(funcOp);
++    layoutlog::setPhase("backward_remat");
+     changed |= layoutRemat.backwardRematerialization(disableRematSplitting);
+   });
+   return changed;
+@@ -1542,12 +1719,15 @@ bool backwardRematerialization(ModuleOp module, bool disableRematSplitting) {
+ 
+ void hoistConvert(ModuleOp module, bool disableRematSplitting) {
+   module.walk([&](FuncOp funcOp) {
++    layoutlog::setPhase("hoist_ext");
+     LayoutRematerialization(funcOp).hoistConvertOnTopOfExtOrBroadcast(
+         disableRematSplitting);
+     if (disableRematSplitting)
+       return;
+ 
++    layoutlog::setPhase("hoist_conditional");
+     LayoutRematerialization(funcOp).hoistConvertIntoConditionals();
++    layoutlog::setPhase("hoist_dot_operand");
+     LayoutRematerialization(funcOp).hoistConvertDotOperand();
+   });
+ }
+@@ -1581,6 +1761,16 @@ public:
+     MLIRContext *context = &getContext();
+     ModuleOp m = getOperation();
+ 
++    layoutlog::beginInvocation();
++    layoutlog::setPhase("forward");
++    if (layoutlog::enabled()) {
++      llvm::json::Object o;
++      o["event"] = "pass_begin";
++      o["disable_remat_splitting"] = (bool)disableRematSplitting;
++      layoutlog::emit(std::move(o));
++      layoutlog::census(m, "before_pass");
++    }
++
+     // 1. Propagate layout forward starting from "anchor" ops.
+     m.walk([](FuncOp funcOp) {
+       LayoutPropagation layoutPropagation(funcOp);
+@@ -1596,6 +1786,7 @@ public:
+     });
+ 
+     cleanupConvertOps();
++    layoutlog::census(m, "after_forward");
+ 
+     bool changed = false;
+     int numIterations = 0;
+@@ -1612,6 +1803,7 @@ public:
+       // Cleanup dummy converts created during backward remat.
+       cleanupConvertOps();
+     } while (changed && ++numIterations < 20);
++    layoutlog::census(m, "after_backward_remat");
+ 
+     // 3. For remaining converts, try to hoist them above cast generating
+     // larger size types in order to reduce the cost of the convert op.
+@@ -1645,6 +1837,15 @@ public:
+       DBGS() << "Module after final cleanups:\n";
+       m.dump();
+     });
++
++    layoutlog::setPhase("");
++    if (layoutlog::enabled()) {
++      layoutlog::census(m, "after_pass");
++      llvm::json::Object o;
++      o["event"] = "pass_end";
++      o["remat_rounds"] = numIterations;
++      layoutlog::emit(std::move(o));
++    }
+   }
+ };
+ 
+diff --git a/python/src/ir.cc b/python/src/ir.cc
+index b6f2b0938..b41e6143e 100644
+--- a/python/src/ir.cc
++++ b/python/src/ir.cc
+@@ -32,6 +32,7 @@
+ #include "mlir/Target/LLVMIR/Dialect/LLVMIR/LLVMToLLVMIRTranslation.h"
+ #include "mlir/Transforms/LocationSnapshot.h"
+ 
++#include "triton/Analysis/LayoutLog.h"
+ #include "triton/Conversion/TritonGPUToLLVM/Utility.h"
+ #include "triton/Dialect/Gluon/IR/Dialect.h"
+ #include "triton/Dialect/Triton/IR/Dialect.h"
+@@ -754,6 +755,10 @@ void init_triton_ir(py::module_ &m) {
+              self.print(os, printingFlags);
+              return str;
+            })
++      .def("log_layout_census",
++           [](ModuleOp &self, const std::string &stage) -> void {
++             mlir::triton::layoutlog::census(self, stage);
++           })
+       .def("push_back",
+            [](ModuleOp &self, FuncOp &funcOp) -> void {
+              self.push_back(funcOp);
+diff --git a/third_party/nvidia/lib/TritonNVIDIAGPUToLLVM/ConvertLayoutOpToLLVM.cpp b/third_party/nvidia/lib/TritonNVIDIAGPUToLLVM/ConvertLayoutOpToLLVM.cpp
+index bafe66f46..23903be4e 100644
+--- a/third_party/nvidia/lib/TritonNVIDIAGPUToLLVM/ConvertLayoutOpToLLVM.cpp
++++ b/third_party/nvidia/lib/TritonNVIDIAGPUToLLVM/ConvertLayoutOpToLLVM.cpp
+@@ -4,6 +4,7 @@
+ #include "mlir/Conversion/LLVMCommon/Pattern.h"
+ #include "mlir/Dialect/LLVMIR/NVVMDialect.h"
+ #include "mlir/IR/PatternMatch.h"
++#include "triton/Analysis/LayoutLog.h"
+ #include "triton/Conversion/TritonGPUToLLVM/PatternTritonGPUOpToLLVM.h"
+ #include "triton/Conversion/TritonGPUToLLVM/Utility.h"
+ #include "triton/Dialect/TritonGPU/IR/Dialect.h"
+@@ -45,6 +46,15 @@ struct ConvertLayoutOpSwizzlingConversion
+            to_vector(conversion.getOutDimNames()));
+     if (cvtNeedsSharedMemory(op)) {
+       auto loc = op.getLoc();
++      if (layoutlog::enabled()) {
++        // Ground truth for the experiment: this pattern takes the conversion.
++        llvm::json::Object o = layoutlog::describeConversion(
++            cast<RankedTensorType>(srcTy), dstTy.getEncoding(),
++            op.getForceWarpShuffle());
++        o["event"] = "lowered";
++        o["lowered_class"] = "shared_memory";
++        layoutlog::emit(std::move(o));
++      }
+ 
+       auto llvmElemTy = getTypeConverter()->convertType(srcTy.getElementType());
+       auto smemBase = LLVM::getSharedMemoryBase(loc, rewriter, targetInfo,
+@@ -112,6 +122,17 @@ struct ConvertLayoutOpSwizzlingConversion
+     auto [smem, instr] =
+         optimalSwizzling(srcLayout, dstLayout, srcTiles, dstTiles, bitwidth);
+     auto [idxSrc, idxDst] = instr;
++    if (layoutlog::enabled()) {
++      // 0: st/ld.shared, 1: st/ldmatrix, 2: st/ldmatrix.trans
++      llvm::json::Object o;
++      o["event"] = "lowered_smem_detail";
++      o["store_instr"] = (int64_t)idxSrc;
++      o["load_instr"] = (int64_t)idxDst;
++      o["reps"] = (int64_t)smem.getInDimSize(str_attr("reps"));
++      o["cross_cta"] = crossCTA;
++      o["bitwidth"] = (int64_t)bitwidth;
++      layoutlog::emit(std::move(o));
++    }
+ 
+     // Extract reps from smem
+     auto kReg = str_attr("register");

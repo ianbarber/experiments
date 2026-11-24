@@ -1,0 +1,3976 @@
+{
+ "base_version": "13.5.37",
+ "other_version": "12.9.86",
+ "versions": [
+  "12.8.93",
+  "12.9.86",
+  "13.0.88",
+  "13.1.80",
+  "13.3.73",
+  "13.5.37"
+ ],
+ "frame_threshold_bytes": 4096,
+ "large_frame_builds": {
+  "12.8.93": [
+   [
+    "_matmul_006",
+    "all"
+   ],
+   [
+    "_matmul_008",
+    "default"
+   ]
+  ],
+  "12.9.86": [
+   [
+    "_matmul_006",
+    "all"
+   ],
+   [
+    "_matmul_008",
+    "default"
+   ]
+  ],
+  "13.0.88": [
+   [
+    "_matmul_006",
+    "all"
+   ],
+   [
+    "_matmul_008",
+    "default"
+   ]
+  ],
+  "13.1.80": [
+   [
+    "_matmul_006",
+    "all"
+   ],
+   [
+    "_matmul_008",
+    "default"
+   ]
+  ],
+  "13.3.73": [
+   [
+    "_matmul_006",
+    "all"
+   ],
+   [
+    "_matmul_008",
+    "default"
+   ]
+  ],
+  "13.5.37": [
+   [
+    "_matmul_006",
+    "all"
+   ],
+   [
+    "_matmul_008",
+    "default"
+   ]
+  ]
+ },
+ "same_builds_under_every_release": true,
+ "timing": [
+  {
+   "section": "triton_kernels",
+   "label": "_matmul_001",
+   "short": "_matmul fp8e5\u00d7mxfp4 M16 #1",
+   "build": "all",
+   "13.5.37": {
+    "default_us": 185.68803125651934,
+    "variant_us": 178.52176441460526,
+    "pct": -3.8593046592293234,
+    "reported": "faster",
+    "reordered_only": true,
+    "registers": [
+     255,
+     255
+    ]
+   },
+   "12.9.86": {
+    "default_us": 186.76293915823885,
+    "variant_us": 218.65286521221464,
+    "pct": 16.789625597856038,
+    "reported": "slower",
+    "reordered_only": true,
+    "registers": [
+     255,
+     255
+    ]
+   }
+  },
+  {
+   "section": "triton_kernels",
+   "label": "_matmul_006",
+   "short": "_matmul mxfp8\u00d7mxfp4 M128 #6",
+   "build": "all",
+   "13.5.37": {
+    "default_us": 20.942004941741132,
+    "variant_us": 124.34180251058238,
+    "pct": 492.49603932456614,
+    "reported": "slower",
+    "reordered_only": true,
+    "registers": [
+     255,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 30.34623111026329,
+    "variant_us": 151.79020262797152,
+    "pct": 400.1945779574423,
+    "reported": "slower",
+    "reordered_only": true,
+    "registers": [
+     255,
+     40
+    ]
+   }
+  },
+  {
+   "section": "triton_kernels",
+   "label": "_matmul_008",
+   "short": "_matmul fp8e5\u00d7mxfp4 M128 #8",
+   "build": "all",
+   "13.5.37": {
+    "default_us": 3168.591298162937,
+    "variant_us": 122.76734092405866,
+    "pct": -96.12549144488165,
+    "reported": "faster",
+    "reordered_only": true,
+    "registers": [
+     40,
+     255
+    ]
+   },
+   "12.9.86": {
+    "default_us": 3691.1702093978724,
+    "variant_us": 244.41443383693695,
+    "pct": -93.37840251271405,
+    "reported": "faster",
+    "reordered_only": true,
+    "registers": [
+     40,
+     255
+    ]
+   }
+  },
+  {
+   "section": "triton_kernels",
+   "label": "_p_matmul_010",
+   "short": "_p_matmul mxfp8\u00d7fp16 M16 #10",
+   "build": "all",
+   "13.5.37": {
+    "default_us": 2.8245960685176463,
+    "variant_us": 2.816328825663082,
+    "pct": -0.29268761458352,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     255,
+     255
+    ]
+   },
+   "12.9.86": {
+    "default_us": 2.877359899381797,
+    "variant_us": 2.879620296880603,
+    "pct": 0.07855803854399657,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     255,
+     255
+    ]
+   }
+  },
+  {
+   "section": "triton_kernels",
+   "label": "_p_matmul_011",
+   "short": "_p_matmul fp8e5\u00d7mxfp4 M128 #11",
+   "build": "all",
+   "13.5.37": {
+    "default_us": 113.12431628023512,
+    "variant_us": 129.11272707826166,
+    "pct": 14.001946815329468,
+    "reported": "slower",
+    "reordered_only": true,
+    "registers": [
+     168,
+     168
+    ]
+   },
+   "12.9.86": {
+    "default_us": 126.49080505774867,
+    "variant_us": 275.93424648887685,
+    "pct": 117.05943601722196,
+    "reported": "slower",
+    "reordered_only": true,
+    "registers": [
+     168,
+     168
+    ]
+   }
+  },
+  {
+   "section": "triton_kernels",
+   "label": "_p_matmul_012",
+   "short": "_p_matmul fp8e5\u00d7mxfp4 M128 #12",
+   "build": "all",
+   "13.5.37": {
+    "default_us": 50.14418029641531,
+    "variant_us": 55.443164499768294,
+    "pct": 10.558331237735485,
+    "reported": "slower",
+    "reordered_only": true,
+    "registers": [
+     168,
+     168
+    ]
+   },
+   "12.9.86": {
+    "default_us": 54.65218453623709,
+    "variant_us": 89.24921331483694,
+    "pct": 63.30401807755794,
+    "reported": "slower",
+    "reordered_only": true,
+    "registers": [
+     168,
+     168
+    ]
+   }
+  },
+  {
+   "section": "triton_kernels",
+   "label": "_p_matmul_013",
+   "short": "_p_matmul mxfp8\u00d7mxfp4 M128 #13",
+   "build": "all",
+   "13.5.37": {
+    "default_us": 114.00881957149866,
+    "variant_us": 135.92642746075535,
+    "pct": 19.2244845369278,
+    "reported": "slower",
+    "reordered_only": true,
+    "registers": [
+     168,
+     168
+    ]
+   },
+   "12.9.86": {
+    "default_us": 128.28899392237267,
+    "variant_us": 256.8243575903277,
+    "pct": 100.1694238025106,
+    "reported": "slower",
+    "reordered_only": true,
+    "registers": [
+     168,
+     168
+    ]
+   }
+  },
+  {
+   "section": "triton_kernels",
+   "label": "_p_matmul_014",
+   "short": "_p_matmul mxfp8\u00d7mxfp4 M128 #14",
+   "build": "all",
+   "13.5.37": {
+    "default_us": 146.7212416649422,
+    "variant_us": 163.7023769179794,
+    "pct": 11.566918065746856,
+    "reported": "slower",
+    "reordered_only": true,
+    "registers": [
+     168,
+     168
+    ]
+   },
+   "12.9.86": {
+    "default_us": 145.52275480871847,
+    "variant_us": 268.1168219582601,
+    "pct": 83.84995908434227,
+    "reported": "slower",
+    "reordered_only": true,
+    "registers": [
+     168,
+     168
+    ]
+   }
+  },
+  {
+   "section": "triton_kernels",
+   "label": "_p_matmul_015",
+   "short": "_p_matmul mxfp8\u00d7bf16 M128 #15",
+   "build": "all",
+   "13.5.37": {
+    "default_us": 8.357575265181007,
+    "variant_us": 8.393544703722,
+    "pct": 0.43038126968295565,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     255,
+     255
+    ]
+   },
+   "12.9.86": {
+    "default_us": 8.282580911511124,
+    "variant_us": 8.267606843752091,
+    "pct": -0.1807898759941029,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     255,
+     255
+    ]
+   }
+  },
+  {
+   "section": "triton_kernels",
+   "label": "_upcast_from_mxfp_002",
+   "short": "_upcast_from_mxfp fp8e5\u00d7mxfp4 #2",
+   "build": "all",
+   "13.5.37": {
+    "default_us": 8.275635616641232,
+    "variant_us": 8.273217668423662,
+    "pct": -0.029217673778536568,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     44,
+     44
+    ]
+   },
+   "12.9.86": {
+    "default_us": 8.304972338866147,
+    "variant_us": 8.303548054928756,
+    "pct": -0.017149773404145918,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     44,
+     44
+    ]
+   }
+  },
+  {
+   "section": "triton_kernels",
+   "label": "_upcast_from_mxfp_002",
+   "short": "_upcast_from_mxfp fp8e5\u00d7mxfp4 #2",
+   "build": "inv1",
+   "13.5.37": {
+    "default_us": 8.275635616641232,
+    "variant_us": 8.272867827490606,
+    "pct": -0.03344503405948718,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     44,
+     44
+    ]
+   },
+   "12.9.86": {
+    "default_us": 8.304972338866147,
+    "variant_us": 8.299669884207661,
+    "pct": -0.06384674676966906,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     44,
+     44
+    ]
+   }
+  },
+  {
+   "section": "triton_kernels",
+   "label": "_upcast_from_mxfp_002",
+   "short": "_upcast_from_mxfp fp8e5\u00d7mxfp4 #2",
+   "build": "one_2_0_1",
+   "13.5.37": {
+    "default_us": 8.275635616641232,
+    "variant_us": 8.273508012599393,
+    "pct": -0.025709252320860188,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     44,
+     44
+    ]
+   },
+   "12.9.86": {
+    "default_us": 8.304972338866147,
+    "variant_us": 8.303480974743314,
+    "pct": -0.017957484528330347,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     44,
+     44
+    ]
+   }
+  },
+  {
+   "section": "triton_kernels",
+   "label": "_upcast_from_mxfp_002",
+   "short": "_upcast_from_mxfp fp8e5\u00d7mxfp4 #2",
+   "build": "one_2_6_1",
+   "13.5.37": {
+    "default_us": 8.275635616641232,
+    "variant_us": 8.274010165231191,
+    "pct": -0.019641408652293357,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     44,
+     44
+    ]
+   },
+   "12.9.86": {
+    "default_us": 8.304972338866147,
+    "variant_us": 8.306085401943182,
+    "pct": 0.013402369467563346,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     44,
+     44
+    ]
+   }
+  },
+  {
+   "section": "triton_kernels",
+   "label": "_upcast_from_mxfp_002",
+   "short": "_upcast_from_mxfp fp8e5\u00d7mxfp4 #2",
+   "build": "one_3_0_1",
+   "13.5.37": {
+    "default_us": 8.275635616641232,
+    "variant_us": 8.27512473781836,
+    "pct": -0.00617328802930972,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     44,
+     44
+    ]
+   },
+   "12.9.86": {
+    "default_us": 8.304972338866147,
+    "variant_us": 8.300699487053967,
+    "pct": -0.051449320212482164,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     44,
+     44
+    ]
+   }
+  },
+  {
+   "section": "triton_kernels",
+   "label": "_upcast_from_mxfp_002",
+   "short": "_upcast_from_mxfp fp8e5\u00d7mxfp4 #2",
+   "build": "rand12",
+   "13.5.37": {
+    "default_us": 8.275635616641232,
+    "variant_us": 8.270865563284193,
+    "pct": -0.05763972192596167,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     44,
+     44
+    ]
+   },
+   "12.9.86": {
+    "default_us": 8.304972338866147,
+    "variant_us": 8.302937313240378,
+    "pct": -0.02450370143013414,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     44,
+     44
+    ]
+   }
+  },
+  {
+   "section": "triton_kernels",
+   "label": "_upcast_from_mxfp_002",
+   "short": "_upcast_from_mxfp fp8e5\u00d7mxfp4 #2",
+   "build": "rand2",
+   "13.5.37": {
+    "default_us": 8.275635616641232,
+    "variant_us": 8.274306855727705,
+    "pct": -0.01605630038681305,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     44,
+     44
+    ]
+   },
+   "12.9.86": {
+    "default_us": 8.304972338866147,
+    "variant_us": 8.301303208722942,
+    "pct": -0.0441799200948112,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     44,
+     44
+    ]
+   }
+  },
+  {
+   "section": "triton_kernels",
+   "label": "_upcast_from_mxfp_002",
+   "short": "_upcast_from_mxfp fp8e5\u00d7mxfp4 #2",
+   "build": "rand26",
+   "13.5.37": {
+    "default_us": 8.275635616641232,
+    "variant_us": 8.254281833793275,
+    "pct": -0.2580319366045636,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     44,
+     44
+    ]
+   },
+   "12.9.86": {
+    "default_us": 8.304972338866147,
+    "variant_us": 8.301662789716993,
+    "pct": -0.03985021278960499,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     44,
+     44
+    ]
+   }
+  },
+  {
+   "section": "triton_kernels",
+   "label": "_upcast_from_mxfp_002",
+   "short": "_upcast_from_mxfp fp8e5\u00d7mxfp4 #2",
+   "build": "rand33",
+   "13.5.37": {
+    "default_us": 8.275635616641232,
+    "variant_us": 8.271190018934123,
+    "pct": -0.053719108876282284,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     44,
+     44
+    ]
+   },
+   "12.9.86": {
+    "default_us": 8.304972338866147,
+    "variant_us": 8.303999676177249,
+    "pct": -0.011711811300640917,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     44,
+     44
+    ]
+   }
+  },
+  {
+   "section": "triton_kernels",
+   "label": "_upcast_from_mxfp_002",
+   "short": "_upcast_from_mxfp fp8e5\u00d7mxfp4 #2",
+   "build": "rand6",
+   "13.5.37": {
+    "default_us": 8.275635616641232,
+    "variant_us": 8.257279677072214,
+    "pct": -0.2218070057616539,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     44,
+     44
+    ]
+   },
+   "12.9.86": {
+    "default_us": 8.304972338866147,
+    "variant_us": 8.30030792597151,
+    "pct": -0.05616409910011999,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     44,
+     44
+    ]
+   }
+  },
+  {
+   "section": "triton_kernels",
+   "label": "_upcast_from_mxfp_005",
+   "short": "_upcast_from_mxfp bf16\u00d7mxfp8 #5",
+   "build": "all",
+   "13.5.37": {
+    "default_us": 4.459613853174708,
+    "variant_us": 4.45937089945959,
+    "pct": -0.005447864391749935,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     38,
+     38
+    ]
+   },
+   "12.9.86": {
+    "default_us": 4.381347786296497,
+    "variant_us": 4.382884853388651,
+    "pct": 0.035082060752222866,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "triton_kernels",
+   "label": "_upcast_from_mxfp_005",
+   "short": "_upcast_from_mxfp bf16\u00d7mxfp8 #5",
+   "build": "one_2_2_1",
+   "13.5.37": {
+    "default_us": 4.459613853174708,
+    "variant_us": 4.459291534579319,
+    "pct": -0.0072275000930654976,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     38,
+     38
+    ]
+   },
+   "12.9.86": {
+    "default_us": 4.381347786296497,
+    "variant_us": 4.382107468429676,
+    "pct": 0.017339005489458437,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "triton_kernels",
+   "label": "_upcast_from_mxfp_005",
+   "short": "_upcast_from_mxfp bf16\u00d7mxfp8 #5",
+   "build": "one_2_3_1",
+   "13.5.37": {
+    "default_us": 4.459613853174708,
+    "variant_us": 4.45910122083581,
+    "pct": -0.011494993866623116,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     38,
+     38
+    ]
+   },
+   "12.9.86": {
+    "default_us": 4.381347786296497,
+    "variant_us": 4.382248321347985,
+    "pct": 0.020553836294490146,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "triton_kernels",
+   "label": "_upcast_from_mxfp_005",
+   "short": "_upcast_from_mxfp bf16\u00d7mxfp8 #5",
+   "build": "rand10",
+   "13.5.37": {
+    "default_us": 4.459613853174708,
+    "variant_us": 4.459387096373931,
+    "pct": -0.005084673432309561,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     38,
+     38
+    ]
+   },
+   "12.9.86": {
+    "default_us": 4.381347786296497,
+    "variant_us": 4.382140565017039,
+    "pct": 0.018094402891755124,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "triton_kernels",
+   "label": "_upcast_from_mxfp_005",
+   "short": "_upcast_from_mxfp bf16\u00d7mxfp8 #5",
+   "build": "rand14",
+   "13.5.37": {
+    "default_us": 4.459613853174708,
+    "variant_us": 4.4595182913800935,
+    "pct": -0.0021428266607670388,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     38,
+     38
+    ]
+   },
+   "12.9.86": {
+    "default_us": 4.381347786296497,
+    "variant_us": 4.381686449050903,
+    "pct": 0.007729647837262377,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "triton_kernels",
+   "label": "_upcast_from_mxfp_005",
+   "short": "_upcast_from_mxfp bf16\u00d7mxfp8 #5",
+   "build": "rand2",
+   "13.5.37": {
+    "default_us": 4.459613853174708,
+    "variant_us": 4.45926642936209,
+    "pct": -0.007790446080202518,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     38,
+     38
+    ]
+   },
+   "12.9.86": {
+    "default_us": 4.381347786296497,
+    "variant_us": 4.3828094239569895,
+    "pct": 0.03336045737030169,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "triton_kernels",
+   "label": "_upcast_from_mxfp_005",
+   "short": "_upcast_from_mxfp bf16\u00d7mxfp8 #5",
+   "build": "rand26",
+   "13.5.37": {
+    "default_us": 4.459613853174708,
+    "variant_us": 4.459030764258426,
+    "pct": -0.01307487454023093,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     38,
+     38
+    ]
+   },
+   "12.9.86": {
+    "default_us": 4.381347786296497,
+    "variant_us": 4.381893495143938,
+    "pct": 0.012455273446843051,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "triton_kernels",
+   "label": "_upcast_from_mxfp_005",
+   "short": "_upcast_from_mxfp bf16\u00d7mxfp8 #5",
+   "build": "rand7",
+   "13.5.37": {
+    "default_us": 4.459613853174708,
+    "variant_us": 4.459370089613873,
+    "pct": -0.005466023939726394,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     38,
+     38
+    ]
+   },
+   "12.9.86": {
+    "default_us": 4.381347786296497,
+    "variant_us": 4.383107293243251,
+    "pct": 0.040159033990794235,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "gpt2__triton_per_fused_add_embedding_dense_backward_native_dropout_native_dropout_backward_native_layer_norm_native_layer_norm_backward_view_10",
+   "short": "per_fused_add_embe\u2026norm_backward_view_10",
+   "build": "all",
+   "13.5.37": {
+    "default_us": 5.89782306512828,
+    "variant_us": 6.6720212948668065,
+    "pct": 13.126847333147085,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     167,
+     153
+    ]
+   },
+   "12.9.86": {
+    "default_us": 5.701094117036767,
+    "variant_us": 6.767380083064464,
+    "pct": 18.70318125149486,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     165,
+     147
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "gpt2__triton_per_fused_add_embedding_dense_backward_native_dropout_native_dropout_backward_native_layer_norm_native_layer_norm_backward_view_10",
+   "short": "per_fused_add_embe\u2026norm_backward_view_10",
+   "build": "inv4",
+   "13.5.37": {
+    "default_us": 5.89782306512828,
+    "variant_us": 6.6718244822232755,
+    "pct": 13.123510294355722,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     167,
+     153
+    ]
+   },
+   "12.9.86": {
+    "default_us": 5.701094117036767,
+    "variant_us": 6.769563862524757,
+    "pct": 18.741485819275393,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     165,
+     147
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_per_fused__native_batch_norm_legit_functional_copy__13",
+   "short": "per_fused__native_\u2026t_functional_copy__13",
+   "build": "all",
+   "13.5.37": {
+    "default_us": 0.8109808814796534,
+    "variant_us": 0.8365922522815792,
+    "pct": 3.1580733142805073,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     35,
+     29
+    ]
+   },
+   "12.9.86": {
+    "default_us": 0.8099183257194821,
+    "variant_us": 0.8360040870765446,
+    "pct": 3.2072722787732433,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     35,
+     29
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_per_fused__native_batch_norm_legit_functional_copy__13",
+   "short": "per_fused__native_\u2026t_functional_copy__13",
+   "build": "inv4",
+   "13.5.37": {
+    "default_us": 0.8109808814796534,
+    "variant_us": 0.8376421690744192,
+    "pct": 3.2875358967922486,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     35,
+     29
+    ]
+   },
+   "12.9.86": {
+    "default_us": 0.8099183257194821,
+    "variant_us": 0.837180130159616,
+    "pct": 3.3269095127788972,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     35,
+     29
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_per_fused__native_batch_norm_legit_functional_copy__17",
+   "short": "per_fused__native_\u2026t_functional_copy__17",
+   "build": "all",
+   "13.5.37": {
+    "default_us": 1.028219429386806,
+    "variant_us": 1.0197643010570858,
+    "pct": -0.8223077767323339,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 1.0279657752852667,
+    "variant_us": 1.0386160298376739,
+    "pct": 1.0360514725747283,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_per_fused__native_batch_norm_legit_functional_copy__17",
+   "short": "per_fused__native_\u2026t_functional_copy__17",
+   "build": "inv4",
+   "13.5.37": {
+    "default_us": 1.028219429386806,
+    "variant_us": 1.031409003160047,
+    "pct": 0.310203608498516,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 1.0279657752852667,
+    "variant_us": 1.038916426411941,
+    "pct": 1.0652739021039581,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_per_fused__native_batch_norm_legit_functional_copy__22",
+   "short": "per_fused__native_\u2026t_functional_copy__22",
+   "build": "all",
+   "13.5.37": {
+    "default_us": 0.8869574082141021,
+    "variant_us": 0.8988308207112915,
+    "pct": 1.3386677181147721,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 0.8857340949681775,
+    "variant_us": 0.905360959431933,
+    "pct": 2.2158867514816105,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_per_fused__native_batch_norm_legit_functional_copy__22",
+   "short": "per_fused__native_\u2026t_functional_copy__22",
+   "build": "inv4",
+   "13.5.37": {
+    "default_us": 0.8869574082141021,
+    "variant_us": 0.8988650325609713,
+    "pct": 1.342524932605893,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 0.8857340949681775,
+    "variant_us": 0.9053473809724402,
+    "pct": 2.2143537338897845,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_per_fused__native_batch_norm_legit_functional_copy__45",
+   "short": "per_fused__native_\u2026t_functional_copy__45",
+   "build": "all",
+   "13.5.37": {
+    "default_us": 1.0802921522487539,
+    "variant_us": 1.094096480791256,
+    "pct": 1.2778329004581535,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 1.0820027053743213,
+    "variant_us": 1.0835191283326644,
+    "pct": 0.1401496457273943,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_per_fused__native_batch_norm_legit_functional_copy__45",
+   "short": "per_fused__native_\u2026t_functional_copy__45",
+   "build": "inv4",
+   "13.5.37": {
+    "default_us": 1.0802921522487539,
+    "variant_us": 1.1228729034176328,
+    "pct": 3.9134963330434314,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 1.0820027053743213,
+    "variant_us": 1.1245934776478,
+    "pct": 3.891938311021992,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_per_fused__native_batch_norm_legit_functional_copy__48",
+   "short": "per_fused__native_\u2026t_functional_copy__48",
+   "build": "all",
+   "13.5.37": {
+    "default_us": 1.1014370950487176,
+    "variant_us": 1.1154031349354903,
+    "pct": 1.267983432694808,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 1.1044165826049346,
+    "variant_us": 1.1047759446604497,
+    "pct": 0.03253863272023594,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_per_fused__native_batch_norm_legit_functional_copy__48",
+   "short": "per_fused__native_\u2026t_functional_copy__48",
+   "build": "inv4",
+   "13.5.37": {
+    "default_us": 1.1014370950487176,
+    "variant_us": 1.1445736014907817,
+    "pct": 3.916384025558539,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 1.1044165826049346,
+    "variant_us": 1.1493962515017082,
+    "pct": 4.032791790534906,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_poi_fused__native_batch_norm_legit_functional_max_pool2d_with_indices_backward_relu_threshold_backward_66",
+   "short": "poi_fused__native_\u2026threshold_backward_66",
+   "build": "all",
+   "13.5.37": {
+    "default_us": 11.398860645961719,
+    "variant_us": 12.014357281135926,
+    "pct": 5.007092157971926,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 11.35804655986517,
+    "variant_us": 11.969296067876233,
+    "pct": 5.151504733972567,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_poi_fused__native_batch_norm_legit_functional_max_pool2d_with_indices_backward_relu_threshold_backward_66",
+   "short": "poi_fused__native_\u2026threshold_backward_66",
+   "build": "inv1",
+   "13.5.37": {
+    "default_us": 11.398860645961719,
+    "variant_us": 11.38718133526189,
+    "pct": -0.10246033408581878,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 11.35804655986517,
+    "variant_us": 11.357315035211764,
+    "pct": -0.0064405850913606955,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_poi_fused__native_batch_norm_legit_functional_max_pool2d_with_indices_backward_relu_threshold_backward_66",
+   "short": "poi_fused__native_\u2026threshold_backward_66",
+   "build": "inv2",
+   "13.5.37": {
+    "default_us": 11.398860645961719,
+    "variant_us": 11.381961329720218,
+    "pct": -0.14825443319624876,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 11.35804655986517,
+    "variant_us": 11.354727271755298,
+    "pct": -0.029224110786807422,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_poi_fused__native_batch_norm_legit_functional_max_pool2d_with_indices_backward_relu_threshold_backward_66",
+   "short": "poi_fused__native_\u2026threshold_backward_66",
+   "build": "inv3",
+   "13.5.37": {
+    "default_us": 11.398860645961719,
+    "variant_us": 11.380104844111823,
+    "pct": -0.164541022409459,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 11.35804655986517,
+    "variant_us": 11.355376314701749,
+    "pct": -0.02350972193453371,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_poi_fused__native_batch_norm_legit_functional_max_pool2d_with_indices_backward_relu_threshold_backward_66",
+   "short": "poi_fused__native_\u2026threshold_backward_66",
+   "build": "inv4",
+   "13.5.37": {
+    "default_us": 11.398860645961719,
+    "variant_us": 12.001946216984612,
+    "pct": 4.513326015744834,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 11.35804655986517,
+    "variant_us": 11.968758335194503,
+    "pct": 5.144274495325107,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_poi_fused__native_batch_norm_legit_functional_max_pool2d_with_indices_backward_relu_threshold_backward_66",
+   "short": "poi_fused__native_\u2026threshold_backward_66",
+   "build": "rand11",
+   "13.5.37": {
+    "default_us": 11.398860645961719,
+    "variant_us": 11.387150948193758,
+    "pct": -0.10272691395792899,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 11.35804655986517,
+    "variant_us": 11.358441751344596,
+    "pct": 0.0034793965436152874,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_poi_fused__native_batch_norm_legit_functional_max_pool2d_with_indices_backward_relu_threshold_backward_66",
+   "short": "poi_fused__native_\u2026threshold_backward_66",
+   "build": "rand22",
+   "13.5.37": {
+    "default_us": 11.398860645961719,
+    "variant_us": 12.008577989286216,
+    "pct": 5.137748750117566,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 11.35804655986517,
+    "variant_us": 11.965903907578666,
+    "pct": 5.1675531232112215,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_poi_fused__native_batch_norm_legit_functional_max_pool2d_with_indices_backward_relu_threshold_backward_66",
+   "short": "poi_fused__native_\u2026threshold_backward_66",
+   "build": "rand4",
+   "13.5.37": {
+    "default_us": 11.398860645961719,
+    "variant_us": 12.001068277097252,
+    "pct": 5.046381309578329,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 11.35804655986517,
+    "variant_us": 11.967644832150647,
+    "pct": 5.154523378759057,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_poi_fused__native_batch_norm_legit_functional_native_batch_norm_backward_71",
+   "short": "poi_fused__native_\u2026atch_norm_backward_71",
+   "build": "all",
+   "13.5.37": {
+    "default_us": 11.846622894374228,
+    "variant_us": 12.505446484235147,
+    "pct": 5.467321320318219,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 12.104090457286336,
+    "variant_us": 12.525111912555403,
+    "pct": 3.478340291282467,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_poi_fused__native_batch_norm_legit_functional_native_batch_norm_backward_71",
+   "short": "poi_fused__native_\u2026atch_norm_backward_71",
+   "build": "inv1",
+   "13.5.37": {
+    "default_us": 11.846622894374228,
+    "variant_us": 11.851684751756824,
+    "pct": 0.04272827309292904,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 12.104090457286336,
+    "variant_us": 12.106474040062738,
+    "pct": 0.019692374117741274,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_poi_fused__native_batch_norm_legit_functional_native_batch_norm_backward_71",
+   "short": "poi_fused__native_\u2026atch_norm_backward_71",
+   "build": "inv2",
+   "13.5.37": {
+    "default_us": 11.846622894374228,
+    "variant_us": 11.833723706817164,
+    "pct": -0.10888493431482349,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 12.104090457286336,
+    "variant_us": 12.107040622546302,
+    "pct": 0.02437329157756185,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_poi_fused__native_batch_norm_legit_functional_native_batch_norm_backward_71",
+   "short": "poi_fused__native_\u2026atch_norm_backward_71",
+   "build": "inv3",
+   "13.5.37": {
+    "default_us": 11.846622894374228,
+    "variant_us": 11.840351879438886,
+    "pct": -0.05293504310261987,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 12.104090457286336,
+    "variant_us": 12.113214403444484,
+    "pct": 0.07537903149639202,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_poi_fused__native_batch_norm_legit_functional_native_batch_norm_backward_71",
+   "short": "poi_fused__native_\u2026atch_norm_backward_71",
+   "build": "inv4",
+   "13.5.37": {
+    "default_us": 11.846622894374228,
+    "variant_us": 12.492604836466452,
+    "pct": 5.202034974968228,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 12.104090457286336,
+    "variant_us": 12.532296580456785,
+    "pct": 3.537697645944804,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_poi_fused__native_batch_norm_legit_functional_native_batch_norm_backward_71",
+   "short": "poi_fused__native_\u2026atch_norm_backward_71",
+   "build": "one_4_0_1",
+   "13.5.37": {
+    "default_us": 11.846622894374228,
+    "variant_us": 12.148380039517898,
+    "pct": 2.5471997195670726,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     48
+    ]
+   },
+   "12.9.86": {
+    "default_us": 12.104090457286336,
+    "variant_us": 12.134837502573463,
+    "pct": 0.25402193907611004,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     48
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_poi_fused__native_batch_norm_legit_functional_native_batch_norm_backward_71",
+   "short": "poi_fused__native_\u2026atch_norm_backward_71",
+   "build": "rand10",
+   "13.5.37": {
+    "default_us": 11.846622894374228,
+    "variant_us": 12.111973793419294,
+    "pct": 2.2398864335512636,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     48
+    ]
+   },
+   "12.9.86": {
+    "default_us": 12.104090457286336,
+    "variant_us": 12.196417857738707,
+    "pct": 0.76277850680464,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     48
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_poi_fused__native_batch_norm_legit_functional_native_batch_norm_backward_71",
+   "short": "poi_fused__native_\u2026atch_norm_backward_71",
+   "build": "rand14",
+   "13.5.37": {
+    "default_us": 11.846622894374228,
+    "variant_us": 12.248185679434888,
+    "pct": 3.389681503674402,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 12.104090457286336,
+    "variant_us": 12.295128000404336,
+    "pct": 1.5782891229386031,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_poi_fused__native_batch_norm_legit_functional_native_batch_norm_backward_71",
+   "short": "poi_fused__native_\u2026atch_norm_backward_71",
+   "build": "rand2",
+   "13.5.37": {
+    "default_us": 11.846622894374228,
+    "variant_us": 12.244610814583165,
+    "pct": 3.3595052679353365,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 12.104090457286336,
+    "variant_us": 12.36405215232814,
+    "pct": 2.147717715421682,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_poi_fused__native_batch_norm_legit_functional_native_batch_norm_backward_71",
+   "short": "poi_fused__native_\u2026atch_norm_backward_71",
+   "build": "rand3",
+   "13.5.37": {
+    "default_us": 11.846622894374228,
+    "variant_us": 12.113526545708304,
+    "pct": 2.252993563767647,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     48
+    ]
+   },
+   "12.9.86": {
+    "default_us": 12.104090457286336,
+    "variant_us": 12.213892300057111,
+    "pct": 0.9071465812177326,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     48
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_poi_fused__native_batch_norm_legit_functional_native_batch_norm_backward_71",
+   "short": "poi_fused__native_\u2026atch_norm_backward_71",
+   "build": "rand30",
+   "13.5.37": {
+    "default_us": 11.846622894374228,
+    "variant_us": 12.497383926889063,
+    "pct": 5.458239203000126,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 12.104090457286336,
+    "variant_us": 12.532850181375691,
+    "pct": 3.5422713140023765,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_poi_fused__native_batch_norm_legit_functional_native_batch_norm_backward_71",
+   "short": "poi_fused__native_\u2026atch_norm_backward_71",
+   "build": "rand34",
+   "13.5.37": {
+    "default_us": 11.846622894374228,
+    "variant_us": 12.260559610923831,
+    "pct": 3.396456940336301,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 12.104090457286336,
+    "variant_us": 12.29199358067817,
+    "pct": 1.552393581780609,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_poi_fused_add_max_pool2d_with_indices_max_pool2d_with_indices_backward_65",
+   "short": "poi_fused_add_max_\u2026h_indices_backward_65",
+   "build": "all",
+   "13.5.37": {
+    "default_us": 21.587518516960195,
+    "variant_us": 26.963582683736817,
+    "pct": 24.903576400191298,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     26,
+     24
+    ]
+   },
+   "12.9.86": {
+    "default_us": 23.390480911709723,
+    "variant_us": 21.878449500596833,
+    "pct": -6.464302366506458,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     26,
+     24
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "all",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 16.417424262395407,
+    "pct": -3.0878824927123127,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 16.324249479700537,
+    "pct": -3.7640084532371887,
+    "reported": "faster",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "inv1",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 16.943548884753234,
+    "pct": 0.017833142730472318,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 16.970069008580158,
+    "pct": 0.043277315047562936,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "inv2",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 16.949295321528318,
+    "pct": 0.051754380745294704,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 16.98151036962125,
+    "pct": 0.11072732099137728,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "inv3",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 16.947484605079488,
+    "pct": 0.041065714700216915,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 16.98626039569374,
+    "pct": 0.13873004598816685,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "inv4",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 16.45006569314194,
+    "pct": -2.89520000357425,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 16.3306335344079,
+    "pct": -3.7263726749053316,
+    "reported": "faster",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "one_1_1_1",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 16.933611156989116,
+    "pct": -0.040829301842981724,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 17.020449275502074,
+    "pct": 0.3402830026689063,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "one_2_1_1",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 16.938107571518458,
+    "pct": -0.01428694987202217,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 17.03129820019951,
+    "pct": 0.40424043157074596,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "one_4_0_1",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 17.021146654517935,
+    "pct": 0.47589307110578183,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     48
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 17.08955221653524,
+    "pct": 0.7476640622020803,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     48
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "one_4_1_1",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 16.934383299429804,
+    "pct": -0.03627134209556182,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 17.026180842523303,
+    "pct": 0.37407218459060143,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "rand1",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 16.94012294813947,
+    "pct": -0.002390174056554617,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 17.012305119458368,
+    "pct": 0.2922709373575971,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "rand10",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 16.922561204707137,
+    "pct": -0.10605721195152684,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 17.0114903877943,
+    "pct": 0.28746786756663756,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "rand11",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 17.565160544464263,
+    "pct": 3.6872091207759805,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     43
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 17.59180549088287,
+    "pct": 3.4903198230526344,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     43
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "rand14",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 16.414843779328784,
+    "pct": -3.033539472760427,
+    "reported": "faster",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 16.357605366617847,
+    "pct": -3.567366221359969,
+    "reported": "faster",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "rand16",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 16.931377204661814,
+    "pct": -0.0540163308792696,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 17.009420547954637,
+    "pct": 0.2752655859511455,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "rand17",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 16.4193266177273,
+    "pct": -3.0555214916234585,
+    "reported": "faster",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 16.376854455713772,
+    "pct": -3.45388748668235,
+    "reported": "faster",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "rand19",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 16.411462304543477,
+    "pct": -3.060945517734226,
+    "reported": "faster",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 16.370391737259528,
+    "pct": -3.4919870096836836,
+    "reported": "faster",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "rand2",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 17.30111769723649,
+    "pct": 2.128563195050037,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     48
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 17.312369386624784,
+    "pct": 2.0612332602148786,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     48
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "rand21",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 17.568826439190364,
+    "pct": 3.708848911207596,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     43
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 17.590975658588818,
+    "pct": 3.3673417316380183,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     43
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "rand22",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 16.40884211129419,
+    "pct": -3.1385429631182182,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 16.331372060567187,
+    "pct": -3.72201885776291,
+    "reported": "faster",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "rand23",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 16.97831905281318,
+    "pct": 0.22308157627992653,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     48
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 17.008349456758342,
+    "pct": 0.26895120540697537,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     48
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "rand24",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 17.27230303836634,
+    "pct": 1.9584701547700867,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     48
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 17.30593300647865,
+    "pct": 2.0232890088662803,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     48
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "rand26",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 16.769892183124323,
+    "pct": -1.0072630237088265,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     100
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 17.03103797771542,
+    "pct": 0.40270634764181246,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     100
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "rand28",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 17.290119334251646,
+    "pct": 2.063639816757612,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     48
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 17.317226170639465,
+    "pct": 2.0898653529773936,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     48
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "rand29",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 17.012800388689815,
+    "pct": 0.42662503235901816,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     48
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 17.04312690995847,
+    "pct": 0.47397396595396657,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     48
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "rand3",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 17.591530820979322,
+    "pct": 3.787310057868276,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     43
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 17.599240970849813,
+    "pct": 3.482273420908899,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     43
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "rand30",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 16.415609473107335,
+    "pct": -3.024173166802302,
+    "reported": "faster",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 16.321104685712722,
+    "pct": -3.782547888572574,
+    "reported": "faster",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "rand4",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 16.422136537404867,
+    "pct": -3.06006591551089,
+    "reported": "faster",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 16.35318579851772,
+    "pct": -3.593420804687253,
+    "reported": "faster",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "rand5",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 16.92207687623994,
+    "pct": -0.10891620472495145,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 16.99429954968247,
+    "pct": 0.1861230949772974,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "rand7",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 16.95084469745875,
+    "pct": 0.06090035272197092,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 16.989122843018663,
+    "pct": 0.1556049692063466,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused__native_batch_norm_legit_functional_native_batch_norm_backward_69",
+   "short": "red_fused__native_\u2026atch_norm_backward_69",
+   "build": "rand9",
+   "13.5.37": {
+    "default_us": 16.940527856241335,
+    "variant_us": 16.44006992741854,
+    "pct": -2.9542050464408165,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 16.962727995344952,
+    "variant_us": 16.369791575012165,
+    "pct": -3.495525133077104,
+    "reported": "faster",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_add_div_expand_native_batch_norm_backward_threshold_backward_view_7",
+   "short": "red_fused_add_div_\u2026shold_backward_view_7",
+   "build": "all",
+   "13.5.37": {
+    "default_us": 4.733812330579327,
+    "variant_us": 4.7292922771664605,
+    "pct": -0.0954844234882013,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     48
+    ]
+   },
+   "12.9.86": {
+    "default_us": 5.292581482778125,
+    "variant_us": 4.866173967601126,
+    "pct": -8.05670194336191,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     48
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_add_div_expand_native_batch_norm_backward_threshold_backward_view_7",
+   "short": "red_fused_add_div_\u2026shold_backward_view_7",
+   "build": "inv1",
+   "13.5.37": {
+    "default_us": 4.733812330579327,
+    "variant_us": 4.736984263823379,
+    "pct": 0.06700589340142837,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 5.292581482778125,
+    "variant_us": 5.289154449148512,
+    "pct": -0.06475164606845052,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_add_div_expand_native_batch_norm_backward_threshold_backward_view_7",
+   "short": "red_fused_add_div_\u2026shold_backward_view_7",
+   "build": "inv3",
+   "13.5.37": {
+    "default_us": 4.733812330579327,
+    "variant_us": 4.737297832820878,
+    "pct": 0.073629920202678,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 5.292581482778125,
+    "variant_us": 5.290391400338477,
+    "pct": -0.041380230928400596,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_add_div_expand_native_batch_norm_backward_threshold_backward_view_7",
+   "short": "red_fused_add_div_\u2026shold_backward_view_7",
+   "build": "inv4",
+   "13.5.37": {
+    "default_us": 4.733812330579327,
+    "variant_us": 4.729841103812238,
+    "pct": -0.08389066760073893,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     48
+    ]
+   },
+   "12.9.86": {
+    "default_us": 5.292581482778125,
+    "variant_us": 4.862433626245225,
+    "pct": -8.127373341961485,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     48
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_add_div_expand_native_batch_norm_backward_threshold_backward_view_7",
+   "short": "red_fused_add_div_\u2026shold_backward_view_7",
+   "build": "one_1_15_1",
+   "13.5.37": {
+    "default_us": 4.733812330579327,
+    "variant_us": 4.734413580524997,
+    "pct": 0.012701178324814322,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 5.292581482778125,
+    "variant_us": 5.280559066692883,
+    "pct": -0.22715599418472454,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_add_div_expand_native_batch_norm_backward_threshold_backward_view_7",
+   "short": "red_fused_add_div_\u2026shold_backward_view_7",
+   "build": "one_1_23_1",
+   "13.5.37": {
+    "default_us": 4.733812330579327,
+    "variant_us": 4.734865003385173,
+    "pct": 0.022237315979878325,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 5.292581482778125,
+    "variant_us": 5.289131411815696,
+    "pct": -0.0651869219898682,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_add_div_expand_native_batch_norm_backward_threshold_backward_view_7",
+   "short": "red_fused_add_div_\u2026shold_backward_view_7",
+   "build": "one_1_3_1",
+   "13.5.37": {
+    "default_us": 4.733812330579327,
+    "variant_us": 4.736619565928455,
+    "pct": 0.059301787926702154,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 5.292581482778125,
+    "variant_us": 5.28292392569749,
+    "pct": -0.18247346993259805,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_add_div_expand_native_batch_norm_backward_threshold_backward_view_7",
+   "short": "red_fused_add_div_\u2026shold_backward_view_7",
+   "build": "one_2_12_1",
+   "13.5.37": {
+    "default_us": 4.733812330579327,
+    "variant_us": 4.733857311065036,
+    "pct": 0.0009501957950242002,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 5.292581482778125,
+    "variant_us": 5.286007856650372,
+    "pct": -0.12420453325363567,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_0",
+   "short": "red_fused_div_expa\u2026shold_backward_view_0",
+   "build": "all",
+   "13.5.37": {
+    "default_us": 2.457748415955105,
+    "variant_us": 2.150503073975166,
+    "pct": -11.629880187003582,
+    "reported": "faster",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 2.3391252619309104,
+    "variant_us": 2.0548101588529035,
+    "pct": -10.996532923675561,
+    "reported": "faster",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_0",
+   "short": "red_fused_div_expa\u2026shold_backward_view_0",
+   "build": "inv1",
+   "13.5.37": {
+    "default_us": 2.457748415955105,
+    "variant_us": 2.453897021109273,
+    "pct": -0.15670419400253266,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 2.3391252619309104,
+    "variant_us": 2.34576844594097,
+    "pct": 0.28400291844890013,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_0",
+   "short": "red_fused_div_expa\u2026shold_backward_view_0",
+   "build": "inv3",
+   "13.5.37": {
+    "default_us": 2.457748415955105,
+    "variant_us": 2.441987950609337,
+    "pct": -0.6412562507803865,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 2.3391252619309104,
+    "variant_us": 2.3429741893453575,
+    "pct": 0.16454558792073914,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_0",
+   "short": "red_fused_div_expa\u2026shold_backward_view_0",
+   "build": "inv4",
+   "13.5.37": {
+    "default_us": 2.457748415955105,
+    "variant_us": 2.1566552983492797,
+    "pct": -11.59760628765818,
+    "reported": "faster",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 2.3391252619309104,
+    "variant_us": 2.0516461463964015,
+    "pct": -12.290026541682497,
+    "reported": "faster",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_0",
+   "short": "red_fused_div_expa\u2026shold_backward_view_0",
+   "build": "one_1_11_1",
+   "13.5.37": {
+    "default_us": 2.457748415955105,
+    "variant_us": 2.48592150229845,
+    "pct": 1.1462965924604829,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 2.3391252619309104,
+    "variant_us": 2.340595041477946,
+    "pct": 0.06283458055693636,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_0",
+   "short": "red_fused_div_expa\u2026shold_backward_view_0",
+   "build": "one_1_3_1",
+   "13.5.37": {
+    "default_us": 2.457748415955105,
+    "variant_us": 2.451826129918513,
+    "pct": -0.2409638837785888,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 2.3391252619309104,
+    "variant_us": 2.3432962813648044,
+    "pct": 0.178315351545133,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_0",
+   "short": "red_fused_div_expa\u2026shold_backward_view_0",
+   "build": "one_4_8_1",
+   "13.5.37": {
+    "default_us": 2.457748415955105,
+    "variant_us": 2.2740453273428147,
+    "pct": -7.231592647879692,
+    "reported": "faster",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 2.3391252619309104,
+    "variant_us": 2.180459844433788,
+    "pct": -6.7831090570218855,
+    "reported": "faster",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_0",
+   "short": "red_fused_div_expa\u2026shold_backward_view_0",
+   "build": "rand1",
+   "13.5.37": {
+    "default_us": 2.457748415955105,
+    "variant_us": 2.7690464572876876,
+    "pct": 12.66598482219381,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 2.3391252619309104,
+    "variant_us": 2.610614169712546,
+    "pct": 11.606428787722356,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_0",
+   "short": "red_fused_div_expa\u2026shold_backward_view_0",
+   "build": "rand10",
+   "13.5.37": {
+    "default_us": 2.457748415955105,
+    "variant_us": 2.2647095416088283,
+    "pct": -6.150825974495444,
+    "reported": "faster",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 2.3391252619309104,
+    "variant_us": 2.1803330297283736,
+    "pct": -6.788530515525137,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_0",
+   "short": "red_fused_div_expa\u2026shold_backward_view_0",
+   "build": "rand11",
+   "13.5.37": {
+    "default_us": 2.457748415955105,
+    "variant_us": 2.4560462937962195,
+    "pct": -0.06925534557711277,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 2.3391252619309104,
+    "variant_us": 2.343377165459374,
+    "pct": 0.1817732294060015,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_0",
+   "short": "red_fused_div_expa\u2026shold_backward_view_0",
+   "build": "rand13",
+   "13.5.37": {
+    "default_us": 2.457748415955105,
+    "variant_us": 2.449518358855514,
+    "pct": -0.33486165818126246,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 2.3391252619309104,
+    "variant_us": 2.3409925290284024,
+    "pct": 0.07982758033018289,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_0",
+   "short": "red_fused_div_expa\u2026shold_backward_view_0",
+   "build": "rand14",
+   "13.5.37": {
+    "default_us": 2.457748415955105,
+    "variant_us": 2.44763662448581,
+    "pct": -0.4114250019917498,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 2.3391252619309104,
+    "variant_us": 2.339847152474944,
+    "pct": 0.030861559907968683,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_0",
+   "short": "red_fused_div_expa\u2026shold_backward_view_0",
+   "build": "rand15",
+   "13.5.37": {
+    "default_us": 2.457748415955105,
+    "variant_us": 2.586489300365033,
+    "pct": 5.238163661267103,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 2.3391252619309104,
+    "variant_us": 2.474570300235938,
+    "pct": 5.790414070994188,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_0",
+   "short": "red_fused_div_expa\u2026shold_backward_view_0",
+   "build": "rand16",
+   "13.5.37": {
+    "default_us": 2.457748415955105,
+    "variant_us": 2.4408848250504604,
+    "pct": -0.6861398341331593,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 2.3391252619309104,
+    "variant_us": 2.3463175911687437,
+    "pct": 0.30747943921123344,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_0",
+   "short": "red_fused_div_expa\u2026shold_backward_view_0",
+   "build": "rand17",
+   "13.5.37": {
+    "default_us": 2.457748415955105,
+    "variant_us": 2.59813198947018,
+    "pct": 5.711877285882427,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 2.3391252619309104,
+    "variant_us": 2.479107609069525,
+    "pct": 5.984388669423413,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_0",
+   "short": "red_fused_div_expa\u2026shold_backward_view_0",
+   "build": "rand19",
+   "13.5.37": {
+    "default_us": 2.457748415955105,
+    "variant_us": 2.4687978930725074,
+    "pct": 0.4495772246529306,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 2.3391252619309104,
+    "variant_us": 2.316048452006676,
+    "pct": -0.9865572528247268,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_0",
+   "short": "red_fused_div_expa\u2026shold_backward_view_0",
+   "build": "rand2",
+   "13.5.37": {
+    "default_us": 2.457748415955105,
+    "variant_us": 2.444167592510673,
+    "pct": -0.5525717504797689,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 2.3391252619309104,
+    "variant_us": 2.3436842361469723,
+    "pct": 0.19490081571340578,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_0",
+   "short": "red_fused_div_expa\u2026shold_backward_view_0",
+   "build": "rand20",
+   "13.5.37": {
+    "default_us": 2.457748415955105,
+    "variant_us": 2.439844751765269,
+    "pct": -0.7284579688307424,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 2.3391252619309104,
+    "variant_us": 2.3423970235562503,
+    "pct": 0.13987115947089457,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_0",
+   "short": "red_fused_div_expa\u2026shold_backward_view_0",
+   "build": "rand3",
+   "13.5.37": {
+    "default_us": 2.457748415955105,
+    "variant_us": 2.5896633171146703,
+    "pct": 5.3673069343959545,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 2.3391252619309104,
+    "variant_us": 2.4737389272924686,
+    "pct": 4.402835924829818,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_0",
+   "short": "red_fused_div_expa\u2026shold_backward_view_0",
+   "build": "rand5",
+   "13.5.37": {
+    "default_us": 2.457748415955105,
+    "variant_us": 2.317768608376106,
+    "pct": -5.695448999998709,
+    "reported": "faster",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 2.3391252619309104,
+    "variant_us": 2.180941104796477,
+    "pct": -6.762534683749899,
+    "reported": "none",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_0",
+   "short": "red_fused_div_expa\u2026shold_backward_view_0",
+   "build": "rand6",
+   "13.5.37": {
+    "default_us": 2.457748415955105,
+    "variant_us": 2.462946757766771,
+    "pct": 0.21150829669627225,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 2.3391252619309104,
+    "variant_us": 2.3400274084571278,
+    "pct": 0.03856768771213215,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_0",
+   "short": "red_fused_div_expa\u2026shold_backward_view_0",
+   "build": "rand7",
+   "13.5.37": {
+    "default_us": 2.457748415955105,
+    "variant_us": 2.6251657964279933,
+    "pct": 5.7964969075651185,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 2.3391252619309104,
+    "variant_us": 2.4721042019668644,
+    "pct": 5.576672295940255,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_0",
+   "short": "red_fused_div_expa\u2026shold_backward_view_0",
+   "build": "rand8",
+   "13.5.37": {
+    "default_us": 2.457748415955105,
+    "variant_us": 2.192723223511477,
+    "pct": -10.783251480222678,
+    "reported": "faster",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 2.3391252619309104,
+    "variant_us": 2.050973364052642,
+    "pct": -7.846814054840568,
+    "reported": "faster",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_0",
+   "short": "red_fused_div_expa\u2026shold_backward_view_0",
+   "build": "rand9",
+   "13.5.37": {
+    "default_us": 2.457748415955105,
+    "variant_us": 2.7674467227658868,
+    "pct": 12.296597000900643,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   },
+   "12.9.86": {
+    "default_us": 2.3391252619309104,
+    "variant_us": 2.612431750866231,
+    "pct": 11.684132243080914,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     40,
+     40
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_2",
+   "short": "red_fused_div_expa\u2026shold_backward_view_2",
+   "build": "all",
+   "13.5.37": {
+    "default_us": 3.8417816657813333,
+    "variant_us": 5.921549526774275,
+    "pct": 53.48654775055568,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     48,
+     72
+    ]
+   },
+   "12.9.86": {
+    "default_us": 3.956950241011526,
+    "variant_us": 6.048585318072782,
+    "pct": 52.85977709253598,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     49,
+     66
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_2",
+   "short": "red_fused_div_expa\u2026shold_backward_view_2",
+   "build": "inv1",
+   "13.5.37": {
+    "default_us": 3.8417816657813333,
+    "variant_us": 3.8411739277302903,
+    "pct": -0.015819172038211704,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     48,
+     48
+    ]
+   },
+   "12.9.86": {
+    "default_us": 3.956950241011526,
+    "variant_us": 3.957996684558412,
+    "pct": 0.026445709022082653,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     49,
+     49
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_2",
+   "short": "red_fused_div_expa\u2026shold_backward_view_2",
+   "build": "inv2",
+   "13.5.37": {
+    "default_us": 3.8417816657813333,
+    "variant_us": 3.8417281522866213,
+    "pct": -0.0013929343041119147,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     48,
+     48
+    ]
+   },
+   "12.9.86": {
+    "default_us": 3.956950241011526,
+    "variant_us": 3.9607145140730844,
+    "pct": 0.0951306645846639,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     49,
+     49
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_2",
+   "short": "red_fused_div_expa\u2026shold_backward_view_2",
+   "build": "inv3",
+   "13.5.37": {
+    "default_us": 3.8417816657813333,
+    "variant_us": 3.841187384340071,
+    "pct": -0.015468902008552998,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     48,
+     48
+    ]
+   },
+   "12.9.86": {
+    "default_us": 3.956950241011526,
+    "variant_us": 3.958317683248289,
+    "pct": 0.034557984141181386,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     49,
+     49
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_2",
+   "short": "red_fused_div_expa\u2026shold_backward_view_2",
+   "build": "inv4",
+   "13.5.37": {
+    "default_us": 3.8417816657813333,
+    "variant_us": 5.9211962125314175,
+    "pct": 53.46445120476429,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     48,
+     72
+    ]
+   },
+   "12.9.86": {
+    "default_us": 3.956950241011526,
+    "variant_us": 6.050498214440068,
+    "pct": 52.90811978705507,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     49,
+     66
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_2",
+   "short": "red_fused_div_expa\u2026shold_backward_view_2",
+   "build": "one_1_11_1",
+   "13.5.37": {
+    "default_us": 3.8417816657813333,
+    "variant_us": 3.841701552011474,
+    "pct": -0.0020853285488064977,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     48,
+     48
+    ]
+   },
+   "12.9.86": {
+    "default_us": 3.956950241011526,
+    "variant_us": 3.9589417120106782,
+    "pct": 0.050328431692481246,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     49,
+     49
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_2",
+   "short": "red_fused_div_expa\u2026shold_backward_view_2",
+   "build": "one_1_4_1",
+   "13.5.37": {
+    "default_us": 3.8417816657813333,
+    "variant_us": 3.8417822916701594,
+    "pct": 1.629162926786165e-05,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     48,
+     48
+    ]
+   },
+   "12.9.86": {
+    "default_us": 3.956950241011526,
+    "variant_us": 3.9580295762647757,
+    "pct": 0.027276947838861254,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     49,
+     49
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_2",
+   "short": "red_fused_div_expa\u2026shold_backward_view_2",
+   "build": "one_1_6_1",
+   "13.5.37": {
+    "default_us": 3.8417816657813333,
+    "variant_us": 3.8419706842070953,
+    "pct": 0.004920072044845014,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     48,
+     48
+    ]
+   },
+   "12.9.86": {
+    "default_us": 3.956950241011526,
+    "variant_us": 3.957928160170156,
+    "pct": 0.024713961487177194,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     49,
+     49
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_2",
+   "short": "red_fused_div_expa\u2026shold_backward_view_2",
+   "build": "one_3_3_1",
+   "13.5.37": {
+    "default_us": 3.8417816657813333,
+    "variant_us": 3.8421449942454213,
+    "pct": 0.009457290801417884,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     48,
+     48
+    ]
+   },
+   "12.9.86": {
+    "default_us": 3.956950241011526,
+    "variant_us": 3.9594649337841212,
+    "pct": 0.06355128620352257,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     49,
+     49
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_2",
+   "short": "red_fused_div_expa\u2026shold_backward_view_2",
+   "build": "one_4_10_1",
+   "13.5.37": {
+    "default_us": 3.8417816657813333,
+    "variant_us": 3.8411542122322384,
+    "pct": -0.016332358360782173,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     48,
+     48
+    ]
+   },
+   "12.9.86": {
+    "default_us": 3.956950241011526,
+    "variant_us": 3.9566109691514466,
+    "pct": -0.00857407446174241,
+    "reported": "none",
+    "reordered_only": true,
+    "registers": [
+     49,
+     49
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_2",
+   "short": "red_fused_div_expa\u2026shold_backward_view_2",
+   "build": "one_4_3_1",
+   "13.5.37": {
+    "default_us": 3.8417816657813333,
+    "variant_us": 4.101971161842186,
+    "pct": 6.669056603532764,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     48,
+     52
+    ]
+   },
+   "12.9.86": {
+    "default_us": 3.956950241011526,
+    "variant_us": 4.078803353737662,
+    "pct": 3.079470433143161,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     49,
+     55
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_2",
+   "short": "red_fused_div_expa\u2026shold_backward_view_2",
+   "build": "one_4_4_1",
+   "13.5.37": {
+    "default_us": 3.8417816657813333,
+    "variant_us": 4.521106690248495,
+    "pct": 17.136150459448587,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     48,
+     52
+    ]
+   },
+   "12.9.86": {
+    "default_us": 3.956950241011526,
+    "variant_us": 4.532301714406285,
+    "pct": 14.540275675735593,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     49,
+     58
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_2",
+   "short": "red_fused_div_expa\u2026shold_backward_view_2",
+   "build": "one_4_7_1",
+   "13.5.37": {
+    "default_us": 3.8417816657813333,
+    "variant_us": 5.619294668537795,
+    "pct": 45.42460307583917,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     48,
+     54
+    ]
+   },
+   "12.9.86": {
+    "default_us": 3.956950241011526,
+    "variant_us": 5.534901834922027,
+    "pct": 39.87797414169976,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     49,
+     54
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_2",
+   "short": "red_fused_div_expa\u2026shold_backward_view_2",
+   "build": "rand1",
+   "13.5.37": {
+    "default_us": 3.8417816657813333,
+    "variant_us": 5.351020879442654,
+    "pct": 38.451196468126405,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     48,
+     59
+    ]
+   },
+   "12.9.86": {
+    "default_us": 3.956950241011526,
+    "variant_us": 5.311999613744438,
+    "pct": 34.24479182701366,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     49,
+     56
+    ]
+   }
+  },
+  {
+   "section": "inductor",
+   "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_2",
+   "short": "red_fused_div_expa\u2026shold_backward_view_2",
+   "build": "rand2",
+   "13.5.37": {
+    "default_us": 3.8417816657813333,
+    "variant_us": 5.310221690364101,
+    "pct": 37.53214768214412,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     48,
+     64
+    ]
+   },
+   "12.9.86": {
+    "default_us": 3.956950241011526,
+    "variant_us": 5.337421552681938,
+    "pct": 34.88725476915575,
+    "reported": "slower",
+    "reordered_only": false,
+    "registers": [
+     49,
+     64
+    ]
+   }
+  }
+ ],
+ "reported_by_release": {
+  "triton_kernels": {
+   "faster/faster": 1,
+   "faster/slower": 1,
+   "none/none": 20,
+   "slower/slower": 5
+  },
+  "inductor": {
+   "faster/faster": 9,
+   "faster/none": 2,
+   "none/faster": 4,
+   "none/none": 63,
+   "slower/none": 4,
+   "slower/slower": 28
+  }
+ },
+ "largest_gain_by_kind": {
+  "13.5.37": {
+   "different_operations": {
+    "n_faster": 11,
+    "kernels": 2,
+    "pct": -11.629880187003582,
+    "section": "inductor",
+    "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_0",
+    "short": "red_fused_div_expa\u2026shold_backward_view_0",
+    "default_us": 2.457748415955105,
+    "variant_us": 2.150503073975166
+   },
+   "reordered_only": {
+    "n_faster": 2,
+    "kernels": 2,
+    "pct": -96.12549144488165,
+    "section": "triton_kernels",
+    "label": "_matmul_008",
+    "short": "_matmul fp8e5\u00d7mxfp4 M128 #8",
+    "default_us": 3168.591298162937,
+    "variant_us": 122.76734092405866
+   }
+  },
+  "12.9.86": {
+   "different_operations": {
+    "n_faster": 13,
+    "kernels": 2,
+    "pct": -12.290026541682497,
+    "section": "inductor",
+    "label": "resnet50__triton_red_fused_div_expand_native_batch_norm_backward_threshold_backward_view_0",
+    "short": "red_fused_div_expa\u2026shold_backward_view_0",
+    "default_us": 2.3391252619309104,
+    "variant_us": 2.0516461463964015
+   },
+   "reordered_only": {
+    "n_faster": 1,
+    "kernels": 1,
+    "pct": -93.37840251271405,
+    "section": "triton_kernels",
+    "label": "_matmul_008",
+    "short": "_matmul fp8e5\u00d7mxfp4 M128 #8",
+    "default_us": 3691.1702093978724,
+    "variant_us": 244.41443383693695
+   }
+  }
+ }
+}

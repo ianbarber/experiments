@@ -1,0 +1,71 @@
+[
+ {
+  "name": "survive_regperm_64x64_i32",
+  "source": "survive",
+  "section": "triton_kernels",
+  "count": 80,
+  "shape": [
+   64,
+   64
+  ],
+  "dtype": "i32",
+  "src": "#ttg.nvidia_mma<{versionMajor = 2, versionMinor = 0, warpsPerCTA = [2, 2], instrShape = [16, 8]}>",
+  "dst": "#ttg.linear<{register = [[32, 0], [0, 32], [0, 16], [0, 1], [8, 0]], lane = [[0, 2], [0, 4], [1, 0], [2, 0], [4, 0]], warp = [[0, 8], [16, 0]], block = []}>",
+  "class": "register_permute",
+  "routes": [
+   "default"
+  ]
+ },
+ {
+  "name": "survive_regperm_64x64_f32",
+  "source": "survive",
+  "section": "triton_kernels",
+  "shape": [
+   64,
+   64
+  ],
+  "dtype": "f32",
+  "src": "#ttg.nvidia_mma<{versionMajor = 2, versionMinor = 0, warpsPerCTA = [2, 2], instrShape = [16, 8]}>",
+  "dst": "#ttg.linear<{register = [[32, 0], [0, 32], [0, 16], [0, 1], [8, 0]], lane = [[0, 2], [0, 4], [1, 0], [2, 0], [4, 0]], warp = [[0, 8], [16, 0]], block = []}>",
+  "class": "register_permute",
+  "routes": [
+   "default"
+  ],
+  "note": "same layouts as the i32 case, fp32 so the add unit is a single instruction"
+ },
+ {
+  "name": "survive_regperm_32x64_i32",
+  "source": "survive",
+  "section": "triton_kernels",
+  "count": 12,
+  "shape": [
+   32,
+   64
+  ],
+  "dtype": "i32",
+  "src": "#ttg.nvidia_mma<{versionMajor = 2, versionMinor = 0, warpsPerCTA = [1, 2], instrShape = [16, 8]}>",
+  "dst": "#ttg.linear<{register = [[16, 0], [0, 32], [0, 16], [0, 1], [8, 0]], lane = [[0, 2], [0, 4], [1, 0], [2, 0], [4, 0]], warp = [[0, 8]], block = []}>",
+  "class": "register_permute",
+  "routes": [
+   "default"
+  ]
+ },
+ {
+  "name": "survive_regperm_2x512_i8",
+  "source": "survive",
+  "section": "inductor",
+  "count": 3,
+  "shape": [
+   2,
+   512
+  ],
+  "dtype": "i8",
+  "src": "#ttg.blocked<{sizePerThread = [1, 1], threadsPerWarp = [1, 32], warpsPerCTA = [1, 8], order = [1, 0]}>",
+  "dst": "#ttg.blocked<{sizePerThread = [2, 1], threadsPerWarp = [1, 32], warpsPerCTA = [1, 8], order = [0, 1]}>",
+  "class": "register_permute",
+  "routes": [
+   "default"
+  ],
+  "note": "i1 tensor timed as i8"
+ }
+]

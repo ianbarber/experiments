@@ -1,0 +1,5392 @@
+{
+ "session": {
+  "device": "NVIDIA GeForce RTX 5090",
+  "compute_capability": "12.0",
+  "nvidia_smi": "NVIDIA GeForce RTX 5090, 580.95.05, 3180 MHz",
+  "cuda_runtime": "13.2",
+  "torch": "2.15.0+cu132",
+  "triton": "3.9.0",
+  "n_sm": 170,
+  "grid_mult": 32,
+  "runs": 25,
+  "warmup": 5,
+  "clock_mhz_over_cases": {
+   "min": 2617.0,
+   "median": 2940.0,
+   "max": 2955.0,
+   "n": 63
+  }
+ },
+ "rows": [
+  {
+   "case": "survive00_inductor_shared_memory_16_f32",
+   "source": "survive",
+   "section": "inductor",
+   "route": "default",
+   "shape": [
+    16
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 16,
+   "bytes": 64,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "add_ns": 1.0675335502514138,
+   "add_src_ns": 1.7730140020979632,
+   "add_dst_ns": 0.3620530984048642,
+   "cvt_ns": 9.554664757968705,
+   "cvt_ns_ci": [
+    9.546371611657582,
+    9.559559264369792
+   ],
+   "cvt_per_add": 8.950224333201046,
+   "cvt_per_add_ci": [
+    8.94143847769248,
+    8.955807868287268
+   ],
+   "assumed_per_add": 64.0,
+   "assumed_cost": 4096,
+   "clock_mhz": 2625.0,
+   "cvt_sm_cycles": 25.08099498966785,
+   "assumed_sm_cycles": 4.096,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 70,
+   "grid": 5440,
+   "n_iter": 84445,
+   "runs": 25,
+   "alpha": 0.13984725520626634
+  },
+  {
+   "case": "survive00_inductor_shared_memory_16_f32",
+   "source": "survive",
+   "section": "inductor",
+   "route": "shuffle",
+   "shape": [
+    16
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 16,
+   "bytes": 64,
+   "num_warps": 4,
+   "class": "warp_shuffle",
+   "classes": [
+    "warp_shuffle"
+   ],
+   "barrier": "none",
+   "reps": [],
+   "instr": [],
+   "add_ns": 1.0675335502514138,
+   "add_src_ns": 1.7730140020979632,
+   "add_dst_ns": 0.3620530984048642,
+   "cvt_ns": 10.408445415848856,
+   "cvt_ns_ci": [
+    10.405975327540649,
+    10.415762550325422
+   ],
+   "cvt_per_add": 9.749993724691437,
+   "cvt_per_add_ci": [
+    9.743693954857822,
+    9.757438541605056
+   ],
+   "assumed_per_add": 64.0,
+   "assumed_cost": 4096,
+   "clock_mhz": 2625.0,
+   "cvt_sm_cycles": 27.32216921660325,
+   "assumed_sm_cycles": 4.096,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 70,
+   "grid": 5440,
+   "n_iter": 84445,
+   "runs": 25
+  },
+  {
+   "case": "survive01_inductor_shared_memory_1x1024_f32",
+   "source": "survive",
+   "section": "inductor",
+   "route": "default",
+   "shape": [
+    1,
+    1024
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 1024,
+   "bytes": 4096,
+   "num_warps": 1,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "warp",
+   "reps": [
+    8,
+    8
+   ],
+   "instr": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "add_ns": 2.7714951358329025,
+   "add_src_ns": 2.7689162751489715,
+   "add_dst_ns": 2.7740739965168335,
+   "cvt_ns": 21.066761434741053,
+   "cvt_ns_ci": [
+    21.050185540306277,
+    21.084511543767764
+   ],
+   "cvt_per_add": 7.601226198223138,
+   "cvt_per_add_ci": [
+    7.594630317018641,
+    7.609275515929692
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 131072,
+   "clock_mhz": 2940.0,
+   "cvt_sm_cycles": 61.9362786181387,
+   "assumed_sm_cycles": 131.072,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 19,
+   "grid": 5440,
+   "n_iter": 36599,
+   "runs": 25,
+   "alpha": 0.23753831869447306
+  },
+  {
+   "case": "survive01_inductor_shared_memory_1x1024_f32",
+   "source": "survive",
+   "section": "inductor",
+   "route": "shuffle",
+   "shape": [
+    1,
+    1024
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 1024,
+   "bytes": 4096,
+   "num_warps": 1,
+   "class": "warp_shuffle",
+   "classes": [
+    "warp_shuffle"
+   ],
+   "barrier": "none",
+   "reps": [],
+   "instr": [],
+   "add_ns": 2.7714951358329025,
+   "add_src_ns": 2.7689162751489715,
+   "add_dst_ns": 2.7740739965168335,
+   "cvt_ns": 22.946181901751185,
+   "cvt_ns_ci": [
+    22.891189104191128,
+    23.006150576409322
+   ],
+   "cvt_per_add": 8.27935131657927,
+   "cvt_per_add_ci": [
+    8.25799058043755,
+    8.300036708036469
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 131072,
+   "clock_mhz": 2940.0,
+   "cvt_sm_cycles": 67.46177479114847,
+   "assumed_sm_cycles": 131.072,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 19,
+   "grid": 5440,
+   "n_iter": 36599,
+   "runs": 25
+  },
+  {
+   "case": "survive02_inductor_shared_memory_8_f32",
+   "source": "survive",
+   "section": "inductor",
+   "route": "default",
+   "shape": [
+    8
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 8,
+   "bytes": 32,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "add_ns": 1.0682638076950315,
+   "add_src_ns": 1.7736234174404573,
+   "add_dst_ns": 0.36290419794960577,
+   "cvt_ns": 8.902086802397804,
+   "cvt_ns_ci": [
+    8.888689582619842,
+    8.905776929271301
+   ],
+   "cvt_per_add": 8.333228869379779,
+   "cvt_per_add_ci": [
+    8.319335329114825,
+    8.344706031675129
+   ],
+   "assumed_per_add": 128.0,
+   "assumed_cost": 4096,
+   "clock_mhz": 2955.0,
+   "cvt_sm_cycles": 26.30566650108551,
+   "assumed_sm_cycles": 4.096,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 14,
+   "grid": 5440,
+   "n_iter": 84151,
+   "runs": 25,
+   "alpha": 0.06510335054202952
+  },
+  {
+   "case": "survive02_inductor_shared_memory_8_f32",
+   "source": "survive",
+   "section": "inductor",
+   "route": "shuffle",
+   "shape": [
+    8
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 8,
+   "bytes": 32,
+   "num_warps": 4,
+   "class": "warp_shuffle",
+   "classes": [
+    "warp_shuffle"
+   ],
+   "barrier": "none",
+   "reps": [],
+   "instr": [],
+   "add_ns": 1.0682638076950315,
+   "add_src_ns": 1.7736234174404573,
+   "add_dst_ns": 0.36290419794960577,
+   "cvt_ns": 10.439197630883179,
+   "cvt_ns_ci": [
+    10.434264853955257,
+    10.440648341455066
+   ],
+   "cvt_per_add": 9.772115797321261,
+   "cvt_per_add_ci": [
+    9.767930213167359,
+    9.785207451907155
+   ],
+   "assumed_per_add": 128.0,
+   "assumed_cost": 4096,
+   "clock_mhz": 2955.0,
+   "cvt_sm_cycles": 30.847828999259793,
+   "assumed_sm_cycles": 4.096,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 14,
+   "grid": 5440,
+   "n_iter": 84151,
+   "runs": 25
+  },
+  {
+   "case": "survive03_inductor_shared_memory_64_f32",
+   "source": "survive",
+   "section": "inductor",
+   "route": "default",
+   "shape": [
+    64
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 64,
+   "bytes": 256,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "add_ns": 1.066836719011371,
+   "add_src_ns": 1.7718118925414679,
+   "add_dst_ns": 0.36186154548127397,
+   "cvt_ns": 9.569147394003087,
+   "cvt_ns_ci": [
+    9.558822568583432,
+    9.575106440239033
+   ],
+   "cvt_per_add": 8.96964570442489,
+   "cvt_per_add_ci": [
+    8.96444563956971,
+    8.991116608606513
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 8192,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 28.200277370127097,
+   "assumed_sm_cycles": 8.192,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 14,
+   "grid": 5440,
+   "n_iter": 91565,
+   "runs": 25,
+   "alpha": 0.2803014282632778
+  },
+  {
+   "case": "priced04_inductor_shared_memory_512_i64",
+   "source": "priced",
+   "section": "inductor",
+   "route": "default",
+   "shape": [
+    512
+   ],
+   "dtype": "i64",
+   "bits": 64,
+   "elems": 512,
+   "bytes": 4096,
+   "num_warps": 8,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 4.215160975193261,
+   "add_src_ns": 4.1832428173558585,
+   "add_dst_ns": 4.247079133030664,
+   "cvt_ns": 18.623631561857973,
+   "cvt_ns_ci": [
+    18.440347764378444,
+    18.705979551702903
+   ],
+   "cvt_per_add": 4.418249189404706,
+   "cvt_per_add_ci": [
+    4.410632265696904,
+    4.435872358726179
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 131072,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 54.88384221279545,
+   "assumed_sm_cycles": 131.072,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 503,
+   "grid": 5440,
+   "n_iter": 34412,
+   "runs": 25,
+   "alpha": 0.13807028716889705
+  },
+  {
+   "case": "priced05_inductor_shared_memory_1024_i64",
+   "source": "priced",
+   "section": "inductor",
+   "route": "default",
+   "shape": [
+    1024
+   ],
+   "dtype": "i64",
+   "bits": 64,
+   "elems": 1024,
+   "bytes": 8192,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 8.516109861410822,
+   "add_src_ns": 8.63917783150248,
+   "add_dst_ns": 8.393041891319164,
+   "cvt_ns": 34.947460751829595,
+   "cvt_ns_ci": [
+    34.78543373222909,
+    35.00766443180167
+   ],
+   "cvt_per_add": 4.103688341338521,
+   "cvt_per_add_ci": [
+    4.096598118470341,
+    4.106468156309351
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 262144,
+   "clock_mhz": 2865.0,
+   "cvt_sm_cycles": 100.12447505399179,
+   "assumed_sm_cycles": 262.144,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 492,
+   "grid": 5440,
+   "n_iter": 17819,
+   "runs": 25,
+   "alpha": 0.12824026066682878
+  },
+  {
+   "case": "priced06_inductor_shared_memory_16x1_f32",
+   "source": "priced",
+   "section": "inductor",
+   "route": "default",
+   "shape": [
+    16,
+    1
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 16,
+   "bytes": 64,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "add_ns": 1.0726599897070412,
+   "add_src_ns": 1.7812221717505703,
+   "add_dst_ns": 0.364097807663512,
+   "cvt_ns": 9.59263404086321,
+   "cvt_ns_ci": [
+    9.582050307818102,
+    9.597221136438096
+   ],
+   "cvt_per_add": 8.942846878704868,
+   "cvt_per_add_ci": [
+    8.9378539548994,
+    8.959721151452394
+   ],
+   "assumed_per_add": 64.0,
+   "assumed_cost": 4096,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 28.269492518423878,
+   "assumed_sm_cycles": 4.096,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 292,
+   "grid": 5440,
+   "n_iter": 83985,
+   "runs": 25,
+   "alpha": 0.13973198247976357
+  },
+  {
+   "case": "priced06_inductor_shared_memory_16x1_f32",
+   "source": "priced",
+   "section": "inductor",
+   "route": "shuffle",
+   "shape": [
+    16,
+    1
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 16,
+   "bytes": 64,
+   "num_warps": 4,
+   "class": "warp_shuffle",
+   "classes": [
+    "warp_shuffle"
+   ],
+   "barrier": "none",
+   "reps": [],
+   "instr": [],
+   "add_ns": 1.0726599897070412,
+   "add_src_ns": 1.7812221717505703,
+   "add_dst_ns": 0.364097807663512,
+   "cvt_ns": 10.450813943729663,
+   "cvt_ns_ci": [
+    10.441397898570571,
+    10.460434059638985
+   ],
+   "cvt_per_add": 9.742895273444411,
+   "cvt_per_add_ci": [
+    9.737372846729835,
+    9.763647782168897
+   ],
+   "assumed_per_add": 64.0,
+   "assumed_cost": 4096,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 30.798548692171316,
+   "assumed_sm_cycles": 4.096,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 292,
+   "grid": 5440,
+   "n_iter": 83985,
+   "runs": 25
+  },
+  {
+   "case": "survive07_inductor_warp_shuffle_2_f32",
+   "source": "survive",
+   "section": "inductor",
+   "route": "default",
+   "shape": [
+    2
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 2,
+   "bytes": 8,
+   "num_warps": 4,
+   "class": "warp_shuffle",
+   "classes": [
+    "warp_shuffle"
+   ],
+   "barrier": "none",
+   "reps": [],
+   "instr": [],
+   "add_ns": 0.5316832538136634,
+   "add_src_ns": 0.7009419370808673,
+   "add_dst_ns": 0.3624245705464595,
+   "cvt_ns": 2.3050821752900257,
+   "cvt_ns_ci": [
+    2.3003361623754857,
+    2.308888796968705
+   ],
+   "cvt_per_add": 4.335442500315944,
+   "cvt_per_add_ci": [
+    4.326421367181068,
+    4.3435865378944625
+   ],
+   "assumed_per_add": 512.0,
+   "assumed_cost": 4096,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 6.793077170579706,
+   "assumed_sm_cycles": 4.096,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 6,
+   "grid": 5440,
+   "n_iter": 117597,
+   "runs": 25,
+   "alpha": 0.008467661133429578
+  },
+  {
+   "case": "survive07_inductor_warp_shuffle_2_f32",
+   "source": "survive",
+   "section": "inductor",
+   "route": "smem",
+   "shape": [
+    2
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 2,
+   "bytes": 8,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 0.5316832538136634,
+   "add_src_ns": 0.7009419370808673,
+   "add_dst_ns": 0.3624245705464595,
+   "cvt_ns": 7.3147040668350725,
+   "cvt_ns_ci": [
+    7.313091432813338,
+    7.317505550579763
+   ],
+   "cvt_per_add": 13.757634859416925,
+   "cvt_per_add_ci": [
+    13.750470248163868,
+    13.771017057362059
+   ],
+   "assumed_per_add": 512.0,
+   "assumed_cost": 4096,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 21.55643288496296,
+   "assumed_sm_cycles": 4.096,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 6,
+   "grid": 5440,
+   "n_iter": 117597,
+   "runs": 25
+  },
+  {
+   "case": "survive08_inductor_warp_shuffle_64_f32",
+   "source": "survive",
+   "section": "inductor",
+   "route": "default",
+   "shape": [
+    64
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 64,
+   "bytes": 256,
+   "num_warps": 2,
+   "class": "mixed",
+   "classes": [
+    "shared_memory",
+    "warp_shuffle"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 0.2723483042167654,
+   "add_src_ns": 0.3569479598673103,
+   "add_dst_ns": 0.1877486485662205,
+   "cvt_ns": 4.261130465710215,
+   "cvt_ns_ci": [
+    4.254511313993064,
+    4.264643185801582
+   ],
+   "cvt_per_add": 15.645885800407731,
+   "cvt_per_add_ci": [
+    15.60464941804161,
+    15.74538560090434
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 8192,
+   "clock_mhz": 2902.0,
+   "cvt_sm_cycles": 12.365800611491045,
+   "assumed_sm_cycles": 8.192,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 2,
+   "grid": 5440,
+   "n_iter": 152799,
+   "runs": 25,
+   "alpha": 0.4889339312627416
+  },
+  {
+   "case": "survive08_inductor_warp_shuffle_64_f32",
+   "source": "survive",
+   "section": "inductor",
+   "route": "smem",
+   "shape": [
+    64
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 64,
+   "bytes": 256,
+   "num_warps": 2,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 0.2723483042167654,
+   "add_src_ns": 0.3569479598673103,
+   "add_dst_ns": 0.1877486485662205,
+   "cvt_ns": 5.8462509663215805,
+   "cvt_ns_ci": [
+    5.840351033198176,
+    5.848278877787007
+   ],
+   "cvt_per_add": 21.466081762963636,
+   "cvt_per_add_ci": [
+    21.40854020994716,
+    21.606878488867885
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 8192,
+   "clock_mhz": 2902.0,
+   "cvt_sm_cycles": 16.96582030426523,
+   "assumed_sm_cycles": 8.192,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 2,
+   "grid": 5440,
+   "n_iter": 152799,
+   "runs": 25
+  },
+  {
+   "case": "survive09_inductor_warp_shuffle_64x1_f32",
+   "source": "survive",
+   "section": "inductor",
+   "route": "default",
+   "shape": [
+    64,
+    1
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 64,
+   "bytes": 256,
+   "num_warps": 2,
+   "class": "mixed",
+   "classes": [
+    "shared_memory",
+    "warp_shuffle"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 0.27331317623175,
+   "add_src_ns": 0.3584245465208896,
+   "add_dst_ns": 0.1882018059426104,
+   "cvt_ns": 4.262256951097836,
+   "cvt_ns_ci": [
+    4.2583659505112275,
+    4.265473696267127
+   ],
+   "cvt_per_add": 15.594773036056436,
+   "cvt_per_add_ci": [
+    15.580885786167014,
+    15.636569280900147
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 8192,
+   "clock_mhz": 2925.0,
+   "cvt_sm_cycles": 12.467101581961169,
+   "assumed_sm_cycles": 8.192,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 2,
+   "grid": 5440,
+   "n_iter": 152833,
+   "runs": 25,
+   "alpha": 0.4873366573767636
+  },
+  {
+   "case": "survive09_inductor_warp_shuffle_64x1_f32",
+   "source": "survive",
+   "section": "inductor",
+   "route": "smem",
+   "shape": [
+    64,
+    1
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 64,
+   "bytes": 256,
+   "num_warps": 2,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 0.27331317623175,
+   "add_src_ns": 0.3584245465208896,
+   "add_dst_ns": 0.1882018059426104,
+   "cvt_ns": 5.847937543851333,
+   "cvt_ns_ci": [
+    5.845198970581256,
+    5.851431303659919
+   ],
+   "cvt_per_add": 21.39647134645532,
+   "cvt_per_add_ci": [
+    21.37618978047665,
+    21.458634218191712
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 8192,
+   "clock_mhz": 2925.0,
+   "cvt_sm_cycles": 17.10521731576515,
+   "assumed_sm_cycles": 8.192,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 2,
+   "grid": 5440,
+   "n_iter": 152833,
+   "runs": 25
+  },
+  {
+   "case": "survive10_inductor_warp_shuffle_128_f32",
+   "source": "survive",
+   "section": "inductor",
+   "route": "default",
+   "shape": [
+    128
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 128,
+   "bytes": 512,
+   "num_warps": 2,
+   "class": "mixed",
+   "classes": [
+    "shared_memory",
+    "warp_shuffle"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 0.6233191468627151,
+   "add_src_ns": 0.885957524455312,
+   "add_dst_ns": 0.3606807692701183,
+   "cvt_ns": 5.791958400429767,
+   "cvt_ns_ci": [
+    5.788227912899126,
+    5.796078069230239
+   ],
+   "cvt_per_add": 9.292123352189332,
+   "cvt_per_add_ci": [
+    9.279094162761744,
+    9.304877710961064
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 16384,
+   "clock_mhz": 2895.0,
+   "cvt_sm_cycles": 16.767719569244175,
+   "assumed_sm_cycles": 16.384,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 2,
+   "grid": 5440,
+   "n_iter": 130365,
+   "runs": 25,
+   "alpha": 0.2903788547559166
+  },
+  {
+   "case": "survive10_inductor_warp_shuffle_128_f32",
+   "source": "survive",
+   "section": "inductor",
+   "route": "smem",
+   "shape": [
+    128
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 128,
+   "bytes": 512,
+   "num_warps": 2,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 0.6233191468627151,
+   "add_src_ns": 0.885957524455312,
+   "add_dst_ns": 0.3606807692701183,
+   "cvt_ns": 6.700417506808754,
+   "cvt_ns_ci": [
+    6.697443352741948,
+    6.704513515421818
+   ],
+   "cvt_per_add": 10.749577548729638,
+   "cvt_per_add_ci": [
+    10.732568184174516,
+    10.76616697569287
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 16384,
+   "clock_mhz": 2895.0,
+   "cvt_sm_cycles": 19.39770868221134,
+   "assumed_sm_cycles": 16.384,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 2,
+   "grid": 5440,
+   "n_iter": 130365,
+   "runs": 25
+  },
+  {
+   "case": "priced11_inductor_warp_shuffle_2x1_f32",
+   "source": "priced",
+   "section": "inductor",
+   "route": "default",
+   "shape": [
+    2,
+    1
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 2,
+   "bytes": 8,
+   "num_warps": 4,
+   "class": "warp_shuffle",
+   "classes": [
+    "warp_shuffle"
+   ],
+   "barrier": "none",
+   "reps": [],
+   "instr": [],
+   "add_ns": 0.5316217869915425,
+   "add_src_ns": 0.7007600242652604,
+   "add_dst_ns": 0.36248354971782454,
+   "cvt_ns": 2.3039283820269554,
+   "cvt_ns_ci": [
+    2.2966014091481406,
+    2.306873733806701
+   ],
+   "cvt_per_add": 4.333773442704311,
+   "cvt_per_add_ci": [
+    4.3273027502652015,
+    4.340144688751539
+   ],
+   "assumed_per_add": 512.0,
+   "assumed_cost": 4096,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 6.789676941833438,
+   "assumed_sm_cycles": 4.096,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 36,
+   "grid": 5440,
+   "n_iter": 118855,
+   "runs": 25,
+   "alpha": 0.008464401255281858
+  },
+  {
+   "case": "priced11_inductor_warp_shuffle_2x1_f32",
+   "source": "priced",
+   "section": "inductor",
+   "route": "smem",
+   "shape": [
+    2,
+    1
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 2,
+   "bytes": 8,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 0.5316217869915425,
+   "add_src_ns": 0.7007600242652604,
+   "add_dst_ns": 0.36248354971782454,
+   "cvt_ns": 7.313817141831559,
+   "cvt_ns_ci": [
+    7.306417377237628,
+    7.318085773011253
+   ],
+   "cvt_per_add": 13.757557197233366,
+   "cvt_per_add_ci": [
+    13.747828230826162,
+    13.802320867739397
+   ],
+   "assumed_per_add": 512.0,
+   "assumed_cost": 4096,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 21.553819116977603,
+   "assumed_sm_cycles": 4.096,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 36,
+   "grid": 5440,
+   "n_iter": 118855,
+   "runs": 25
+  },
+  {
+   "case": "priced12_inductor_warp_shuffle_128x1_f32",
+   "source": "priced",
+   "section": "inductor",
+   "route": "default",
+   "shape": [
+    128,
+    1
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 128,
+   "bytes": 512,
+   "num_warps": 2,
+   "class": "mixed",
+   "classes": [
+    "shared_memory",
+    "warp_shuffle"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 0.6242714333169621,
+   "add_src_ns": 0.885903045035664,
+   "add_dst_ns": 0.36263982159826036,
+   "cvt_ns": 5.798331209221953,
+   "cvt_ns_ci": [
+    5.790768723288903,
+    5.800726396699622
+   ],
+   "cvt_per_add": 9.288157201769568,
+   "cvt_per_add_ci": [
+    9.27886565540685,
+    9.314384485600241
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 16384,
+   "clock_mhz": 2895.0,
+   "cvt_sm_cycles": 16.786168850697553,
+   "assumed_sm_cycles": 16.384,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 20,
+   "grid": 5440,
+   "n_iter": 130282,
+   "runs": 25,
+   "alpha": 0.290254912555299
+  },
+  {
+   "case": "priced12_inductor_warp_shuffle_128x1_f32",
+   "source": "priced",
+   "section": "inductor",
+   "route": "smem",
+   "shape": [
+    128,
+    1
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 128,
+   "bytes": 512,
+   "num_warps": 2,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 0.6242714333169621,
+   "add_src_ns": 0.885903045035664,
+   "add_dst_ns": 0.36263982159826036,
+   "cvt_ns": 6.716211675257021,
+   "cvt_ns_ci": [
+    6.7075942014391225,
+    6.7223254996663435
+   ],
+   "cvt_per_add": 10.758479912450184,
+   "cvt_per_add_ci": [
+    10.746310795439873,
+    10.791488678634432
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 16384,
+   "clock_mhz": 2895.0,
+   "cvt_sm_cycles": 19.443432799869075,
+   "assumed_sm_cycles": 16.384,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 20,
+   "grid": 5440,
+   "n_iter": 130282,
+   "runs": 25
+  },
+  {
+   "case": "survive13_triton_kernels_shared_memory_256_f32",
+   "source": "survive",
+   "section": "triton_kernels",
+   "route": "default",
+   "shape": [
+    256
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 256,
+   "bytes": 1024,
+   "num_warps": 8,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 5.921634558393505,
+   "add_src_ns": 0.6990341771252675,
+   "add_dst_ns": 11.144234939661741,
+   "cvt_ns": 46.99008800175593,
+   "cvt_ns_ci": [
+    46.969030703845156,
+    47.00965130878769
+   ],
+   "cvt_per_add": 7.935323860056638,
+   "cvt_per_add_ci": [
+    7.932800540816755,
+    7.941220620581643
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 32768,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 138.47978934117472,
+   "assumed_sm_cycles": 32.768,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 62,
+   "grid": 5440,
+   "n_iter": 17712,
+   "runs": 25,
+   "alpha": 0.24797887062676993
+  },
+  {
+   "case": "survive14_triton_kernels_shared_memory_128x8_f32",
+   "source": "survive",
+   "section": "triton_kernels",
+   "route": "default",
+   "shape": [
+    128,
+    8
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 1024,
+   "bytes": 4096,
+   "num_warps": 8,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    2,
+    2
+   ],
+   "instr": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "add_ns": 12.91884085205802,
+   "add_src_ns": 3.525347083941066,
+   "add_dst_ns": 22.312334620174976,
+   "cvt_ns": 96.00456279986855,
+   "cvt_ns_ci": [
+    95.88399752159644,
+    96.07135177252914
+   ],
+   "cvt_per_add": 7.4313604369988555,
+   "cvt_per_add_ci": [
+    7.424369603414047,
+    7.445216143830885
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 131072,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 282.9254465712126,
+   "assumed_sm_cycles": 131.072,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 40,
+   "grid": 5440,
+   "n_iter": 8669,
+   "runs": 25,
+   "alpha": 0.23223001365621423
+  },
+  {
+   "case": "survive15_triton_kernels_shared_memory_128x8_f32",
+   "source": "survive",
+   "section": "triton_kernels",
+   "route": "default",
+   "shape": [
+    128,
+    8
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 1024,
+   "bytes": 4096,
+   "num_warps": 8,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 3.569913924197007,
+   "add_src_ns": 3.579177784133854,
+   "add_dst_ns": 3.56065006426016,
+   "cvt_ns": 22.723725597011807,
+   "cvt_ns_ci": [
+    22.68817346730093,
+    22.761072691737883
+   ],
+   "cvt_per_add": 6.365342716806017,
+   "cvt_per_add_ci": [
+    6.347731543058527,
+    6.389003732979249
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 131072,
+   "clock_mhz": 2940.0,
+   "cvt_sm_cycles": 66.80775325521472,
+   "assumed_sm_cycles": 131.072,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 40,
+   "grid": 5440,
+   "n_iter": 36517,
+   "runs": 25,
+   "alpha": 0.19891695990018804
+  },
+  {
+   "case": "survive16_triton_kernels_shared_memory_128x4_bf16",
+   "source": "survive",
+   "section": "triton_kernels",
+   "route": "default",
+   "shape": [
+    128,
+    4
+   ],
+   "dtype": "bf16",
+   "bits": 16,
+   "elems": 512,
+   "bytes": 1024,
+   "num_warps": 8,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "add_ns": 11.898906857636922,
+   "add_src_ns": 1.382934694672773,
+   "add_dst_ns": 22.41487902060107,
+   "cvt_ns": 30.689225720214466,
+   "cvt_ns_ci": [
+    30.628231071718968,
+    30.712161617657806
+   ],
+   "cvt_per_add": 2.579163454878008,
+   "cvt_per_add_ci": [
+    2.574324570411358,
+    2.5816932985780188
+   ],
+   "assumed_per_add": 64.0,
+   "assumed_cost": 65536,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 90.44114819747203,
+   "assumed_sm_cycles": 65.536,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 40,
+   "grid": 5440,
+   "n_iter": 20956,
+   "runs": 25,
+   "alpha": 0.040299428982468875
+  },
+  {
+   "case": "priced17_triton_kernels_shared_memory_32x128_i64",
+   "source": "priced",
+   "section": "triton_kernels",
+   "route": "default",
+   "shape": [
+    32,
+    128
+   ],
+   "dtype": "i64",
+   "bits": 64,
+   "elems": 4096,
+   "bytes": 32768,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 870.2882784133664,
+   "add_src_ns": 1674.5328380517205,
+   "add_dst_ns": 66.04371877501205,
+   "cvt_ns": 20895.864249074035,
+   "cvt_ns_ci": [
+    20828.178703038935,
+    20962.598868283414
+   ],
+   "cvt_per_add": 24.01027885515079,
+   "cvt_per_add_ci": [
+    23.799702904425065,
+    24.245302341212863
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 1048576,
+   "clock_mhz": 2632.0,
+   "cvt_sm_cycles": 54997.91470356286,
+   "assumed_sm_cycles": 1048.576,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 122,
+   "grid": 5440,
+   "n_iter": 49,
+   "runs": 25,
+   "alpha": 0.7503212142234622
+  },
+  {
+   "case": "priced18_triton_kernels_shared_memory_64x128_i64",
+   "source": "priced",
+   "section": "triton_kernels",
+   "route": "default",
+   "shape": [
+    64,
+    128
+   ],
+   "dtype": "i64",
+   "bits": 64,
+   "elems": 8192,
+   "bytes": 65536,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    8,
+    8
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 70.67127628757497,
+   "add_src_ns": 70.24900120325414,
+   "add_dst_ns": 71.09355137189581,
+   "cvt_ns": 275.5856047653943,
+   "cvt_ns_ci": [
+    273.7856655887099,
+    276.2737608357842
+   ],
+   "cvt_per_add": 3.899541924840633,
+   "cvt_per_add_ci": [
+    3.893920291694495,
+    3.9075654273916087
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 2097152,
+   "clock_mhz": 2722.0,
+   "cvt_sm_cycles": 750.1440161714032,
+   "assumed_sm_cycles": 2097.152,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 109,
+   "grid": 5440,
+   "n_iter": 2146,
+   "runs": 25,
+   "alpha": 0.12186068515126978
+  },
+  {
+   "case": "priced19_triton_kernels_shared_memory_64x128_i8",
+   "source": "priced",
+   "section": "triton_kernels",
+   "route": "default",
+   "shape": [
+    64,
+    128
+   ],
+   "dtype": "i8",
+   "bits": 8,
+   "elems": 8192,
+   "bytes": 8192,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    4,
+    4
+   ],
+   "instr": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "add_ns": 25.073047175245208,
+   "add_src_ns": 25.100406343881076,
+   "add_dst_ns": 25.04568800660934,
+   "cvt_ns": 83.64284785341637,
+   "cvt_ns_ci": [
+    83.57687308738603,
+    83.75503324851319
+   ],
+   "cvt_per_add": 3.3359665966726824,
+   "cvt_per_add_ci": [
+    3.3324293050510816,
+    3.3402026398544082
+   ],
+   "assumed_per_add": 128.0,
+   "assumed_cost": 1048576,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 246.49547262401802,
+   "assumed_sm_cycles": 1048.576,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 94,
+   "grid": 5440,
+   "n_iter": 7146,
+   "runs": 25,
+   "alpha": 0.02606223903650533
+  },
+  {
+   "case": "survive20_triton_kernels_warp_shuffle_16x8_f16",
+   "source": "survive",
+   "section": "triton_kernels",
+   "route": "default",
+   "shape": [
+    16,
+    8
+   ],
+   "dtype": "f16",
+   "bits": 16,
+   "elems": 128,
+   "bytes": 256,
+   "num_warps": 2,
+   "class": "mixed",
+   "classes": [
+    "shared_memory",
+    "warp_shuffle"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 0.5318808909910198,
+   "add_src_ns": 0.6943429596192809,
+   "add_dst_ns": 0.3694188223627586,
+   "cvt_ns": 4.0799676955978885,
+   "cvt_ns_ci": [
+    4.0759667792388985,
+    4.084710116763515
+   ],
+   "cvt_per_add": 7.670829625023649,
+   "cvt_per_add_ci": [
+    7.65367123372922,
+    7.697823221684417
+   ],
+   "assumed_per_add": 64.0,
+   "assumed_cost": 16384,
+   "clock_mhz": 2910.0,
+   "cvt_sm_cycles": 11.872705994189856,
+   "assumed_sm_cycles": 16.384,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 4,
+   "grid": 5440,
+   "n_iter": 153075,
+   "runs": 25,
+   "alpha": 0.11985671289099452
+  },
+  {
+   "case": "survive20_triton_kernels_warp_shuffle_16x8_f16",
+   "source": "survive",
+   "section": "triton_kernels",
+   "route": "smem",
+   "shape": [
+    16,
+    8
+   ],
+   "dtype": "f16",
+   "bits": 16,
+   "elems": 128,
+   "bytes": 256,
+   "num_warps": 2,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 0.5318808909910198,
+   "add_src_ns": 0.6943429596192809,
+   "add_dst_ns": 0.3694188223627586,
+   "cvt_ns": 5.627800850813688,
+   "cvt_ns_ci": [
+    5.623176968461029,
+    5.640409114518405
+   ],
+   "cvt_per_add": 10.580941985578322,
+   "cvt_per_add_ci": [
+    10.559328596594217,
+    10.623261415560307
+   ],
+   "assumed_per_add": 64.0,
+   "assumed_cost": 16384,
+   "clock_mhz": 2910.0,
+   "cvt_sm_cycles": 16.37690047586783,
+   "assumed_sm_cycles": 16.384,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 4,
+   "grid": 5440,
+   "n_iter": 153075,
+   "runs": 25
+  },
+  {
+   "case": "priced22_triton_kernels_warp_shuffle_16x4_i8",
+   "source": "priced",
+   "section": "triton_kernels",
+   "route": "default",
+   "shape": [
+    16,
+    4
+   ],
+   "dtype": "i8",
+   "bits": 8,
+   "elems": 64,
+   "bytes": 64,
+   "num_warps": 4,
+   "class": "warp_shuffle",
+   "classes": [
+    "warp_shuffle"
+   ],
+   "barrier": "none",
+   "reps": [],
+   "instr": [],
+   "add_ns": 2.5424084715878577,
+   "add_src_ns": 1.8983002832864992,
+   "add_dst_ns": 3.1865166598892163,
+   "cvt_ns": 10.590538441427016,
+   "cvt_ns_ci": [
+    10.577096200272614,
+    10.605646414048168
+   ],
+   "cvt_per_add": 4.165553474109025,
+   "cvt_per_add_ci": [
+    4.159455795288427,
+    4.171159062213726
+   ],
+   "assumed_per_add": 128.0,
+   "assumed_cost": 8192,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 31.210316786885418,
+   "assumed_sm_cycles": 8.192,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 2,
+   "grid": 5440,
+   "n_iter": 62081,
+   "runs": 25,
+   "alpha": 0.03254338651647676
+  },
+  {
+   "case": "priced22_triton_kernels_warp_shuffle_16x4_i8",
+   "source": "priced",
+   "section": "triton_kernels",
+   "route": "smem",
+   "shape": [
+    16,
+    4
+   ],
+   "dtype": "i8",
+   "bits": 8,
+   "elems": 64,
+   "bytes": 64,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 2.5424084715878577,
+   "add_src_ns": 1.8983002832864992,
+   "add_dst_ns": 3.1865166598892163,
+   "cvt_ns": 9.206005783334529,
+   "cvt_ns_ci": [
+    9.192432564160576,
+    9.219662197665011
+   ],
+   "cvt_per_add": 3.620978252005639,
+   "cvt_per_add_ci": [
+    3.6152820551082727,
+    3.6253349515344153
+   ],
+   "assumed_per_add": 128.0,
+   "assumed_cost": 8192,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 27.130099043486858,
+   "assumed_sm_cycles": 8.192,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 2,
+   "grid": 5440,
+   "n_iter": 62081,
+   "runs": 25
+  },
+  {
+   "case": "priced23_triton_kernels_warp_shuffle_16x8_i8",
+   "source": "priced",
+   "section": "triton_kernels",
+   "route": "default",
+   "shape": [
+    16,
+    8
+   ],
+   "dtype": "i8",
+   "bits": 8,
+   "elems": 128,
+   "bytes": 128,
+   "num_warps": 8,
+   "class": "warp_shuffle",
+   "classes": [
+    "warp_shuffle"
+   ],
+   "barrier": "none",
+   "reps": [],
+   "instr": [],
+   "add_ns": 8.908959272922406,
+   "add_src_ns": 5.954369169315017,
+   "add_dst_ns": 11.863549376529795,
+   "cvt_ns": 36.48903246863874,
+   "cvt_ns_ci": [
+    36.45727904288097,
+    36.51836346247656
+   ],
+   "cvt_per_add": 4.095768243047456,
+   "cvt_per_add_ci": [
+    4.093441807522785,
+    4.101161288928633
+   ],
+   "assumed_per_add": 128.0,
+   "assumed_cost": 16384,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 107.53317868507837,
+   "assumed_sm_cycles": 16.384,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 2,
+   "grid": 5440,
+   "n_iter": 16002,
+   "runs": 25,
+   "alpha": 0.03199818939880825
+  },
+  {
+   "case": "priced23_triton_kernels_warp_shuffle_16x8_i8",
+   "source": "priced",
+   "section": "triton_kernels",
+   "route": "smem",
+   "shape": [
+    16,
+    8
+   ],
+   "dtype": "i8",
+   "bits": 8,
+   "elems": 128,
+   "bytes": 128,
+   "num_warps": 8,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 8.908959272922406,
+   "add_src_ns": 5.954369169315017,
+   "add_dst_ns": 11.863549376529795,
+   "cvt_ns": 31.930215340816556,
+   "cvt_ns_ci": [
+    31.890516880352408,
+    31.959498853597385
+   ],
+   "cvt_per_add": 3.5840567189328376,
+   "cvt_per_add_ci": [
+    3.57981109365226,
+    3.589181558021401
+   ],
+   "assumed_per_add": 128.0,
+   "assumed_cost": 16384,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 94.09834460938639,
+   "assumed_sm_cycles": 16.384,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 2,
+   "grid": 5440,
+   "n_iter": 16002,
+   "runs": 25
+  },
+  {
+   "case": "priced24_triton_kernels_warp_shuffle_16x4_i8",
+   "source": "priced",
+   "section": "triton_kernels",
+   "route": "default",
+   "shape": [
+    16,
+    4
+   ],
+   "dtype": "i8",
+   "bits": 8,
+   "elems": 64,
+   "bytes": 64,
+   "num_warps": 4,
+   "class": "warp_shuffle",
+   "classes": [
+    "warp_shuffle"
+   ],
+   "barrier": "none",
+   "reps": [],
+   "instr": [],
+   "add_ns": 2.5477538491063365,
+   "add_src_ns": 1.900854606740252,
+   "add_dst_ns": 3.194653091472421,
+   "cvt_ns": 10.608182499788512,
+   "cvt_ns_ci": [
+    10.599032025416133,
+    10.618522385808646
+   ],
+   "cvt_per_add": 4.163739171077887,
+   "cvt_per_add_ci": [
+    4.158084369253046,
+    4.169070074236061
+   ],
+   "assumed_per_add": 128.0,
+   "assumed_cost": 8192,
+   "clock_mhz": 2925.0,
+   "cvt_sm_cycles": 31.028933811881398,
+   "assumed_sm_cycles": 8.192,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 2,
+   "grid": 5440,
+   "n_iter": 61825,
+   "runs": 25,
+   "alpha": 0.03252921227404599
+  },
+  {
+   "case": "priced24_triton_kernels_warp_shuffle_16x4_i8",
+   "source": "priced",
+   "section": "triton_kernels",
+   "route": "smem",
+   "shape": [
+    16,
+    4
+   ],
+   "dtype": "i8",
+   "bits": 8,
+   "elems": 64,
+   "bytes": 64,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 2.5477538491063365,
+   "add_src_ns": 1.900854606740252,
+   "add_dst_ns": 3.194653091472421,
+   "cvt_ns": 9.225332060489116,
+   "cvt_ns_ci": [
+    9.21628105754859,
+    9.236776535731604
+   ],
+   "cvt_per_add": 3.620966783633765,
+   "cvt_per_add_ci": [
+    3.6161902234332413,
+    3.6264154001643356
+   ],
+   "assumed_per_add": 128.0,
+   "assumed_cost": 8192,
+   "clock_mhz": 2925.0,
+   "cvt_sm_cycles": 26.984096276930664,
+   "assumed_sm_cycles": 8.192,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 2,
+   "grid": 5440,
+   "n_iter": 61825,
+   "runs": 25
+  },
+  {
+   "case": "survive25_tutorials_shared_memory_128_f32",
+   "source": "survive",
+   "section": "tutorials",
+   "route": "default",
+   "shape": [
+    128
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 128,
+   "bytes": 512,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 1.0717213937221082,
+   "add_src_ns": 1.777033895118643,
+   "add_dst_ns": 0.3664088923255734,
+   "cvt_ns": 10.322732447151939,
+   "cvt_ns_ci": [
+    10.318334173088148,
+    10.331653388578651
+   ],
+   "cvt_per_add": 9.631917873077908,
+   "cvt_per_add_ci": [
+    9.616486380765775,
+    9.67116288214083
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 16384,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 30.421092521756762,
+   "assumed_sm_cycles": 16.384,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 60,
+   "grid": 5440,
+   "n_iter": 85288,
+   "runs": 25,
+   "alpha": 0.30099743353368463
+  },
+  {
+   "case": "survive26_tutorials_shared_memory_128_f32",
+   "source": "survive",
+   "section": "tutorials",
+   "route": "default",
+   "shape": [
+    128
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 128,
+   "bytes": 512,
+   "num_warps": 8,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 1.0454895123322052,
+   "add_src_ns": 1.3858573706255881,
+   "add_dst_ns": 0.7051216540388222,
+   "cvt_ns": 12.461194676356962,
+   "cvt_ns_ci": [
+    12.450809005987274,
+    12.465387035629455
+   ],
+   "cvt_per_add": 11.919004953535495,
+   "cvt_per_add_ci": [
+    11.906678754382197,
+    11.966318404537818
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 16384,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 36.72314071122397,
+   "assumed_sm_cycles": 16.384,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 60,
+   "grid": 5440,
+   "n_iter": 68770,
+   "runs": 25,
+   "alpha": 0.3724689047979842
+  },
+  {
+   "case": "survive27_tutorials_shared_memory_64_f32",
+   "source": "survive",
+   "section": "tutorials",
+   "route": "default",
+   "shape": [
+    64
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 64,
+   "bytes": 256,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 1.5734139774621931,
+   "add_src_ns": 2.7841227438799563,
+   "add_dst_ns": 0.3627052110444301,
+   "cvt_ns": 12.08213884812867,
+   "cvt_ns_ci": [
+    12.076638829215174,
+    12.084766559306459
+   ],
+   "cvt_per_add": 7.678931941113372,
+   "cvt_per_add_ci": [
+    7.6745177473912864,
+    7.686404591315734
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 8192,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 35.60606318543519,
+   "assumed_sm_cycles": 8.192,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 30,
+   "grid": 5440,
+   "n_iter": 66429,
+   "runs": 25,
+   "alpha": 0.23996662315979286
+  },
+  {
+   "case": "survive28_tutorials_shared_memory_64_f32",
+   "source": "survive",
+   "section": "tutorials",
+   "route": "default",
+   "shape": [
+    64
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 64,
+   "bytes": 256,
+   "num_warps": 8,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 3.135694227603077,
+   "add_src_ns": 5.568613670606001,
+   "add_dst_ns": 0.7027747846001532,
+   "cvt_ns": 21.14462712671904,
+   "cvt_ns_ci": [
+    21.129080588221836,
+    21.150267491302863
+   ],
+   "cvt_per_add": 6.74320440449386,
+   "cvt_per_add_ci": [
+    6.740296257399678,
+    6.750492858913245
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 8192,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 62.313216142441014,
+   "assumed_sm_cycles": 8.192,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 30,
+   "grid": 5440,
+   "n_iter": 37171,
+   "runs": 25,
+   "alpha": 0.21072513764043313
+  },
+  {
+   "case": "priced29_tutorials_shared_memory_128x128_i32",
+   "source": "priced",
+   "section": "tutorials",
+   "route": "default",
+   "shape": [
+    128,
+    128
+   ],
+   "dtype": "i32",
+   "bits": 32,
+   "elems": 16384,
+   "bytes": 65536,
+   "num_warps": 8,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "add_ns": 78.75924789983355,
+   "add_src_ns": 105.76307750943003,
+   "add_dst_ns": 51.75541829023706,
+   "cvt_ns": 471.27565566473936,
+   "cvt_ns_ci": [
+    470.86257129060044,
+    471.5464612568585
+   ],
+   "cvt_per_add": 5.983750076741595,
+   "cvt_per_add_ci": [
+    5.975563056888314,
+    5.9892552773888985
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 2097152,
+   "clock_mhz": 2917.0,
+   "cvt_sm_cycles": 1374.7110875740448,
+   "assumed_sm_cycles": 2097.152,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 74,
+   "grid": 5440,
+   "n_iter": 1501,
+   "runs": 25,
+   "alpha": 0.18699218989817484
+  },
+  {
+   "case": "priced30_tutorials_shared_memory_128x128_i32",
+   "source": "priced",
+   "section": "tutorials",
+   "route": "default",
+   "shape": [
+    128,
+    128
+   ],
+   "dtype": "i32",
+   "bits": 32,
+   "elems": 16384,
+   "bytes": 65536,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "add_ns": 49.296479304466565,
+   "add_src_ns": 48.85292453707304,
+   "add_dst_ns": 49.740034071860094,
+   "cvt_ns": 295.5939351189698,
+   "cvt_ns_ci": [
+    295.40694806751986,
+    295.88038835602396
+   ],
+   "cvt_per_add": 5.996248399268286,
+   "cvt_per_add_ci": [
+    5.988845387017022,
+    6.000958218540891
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 2097152,
+   "clock_mhz": 2692.0,
+   "cvt_sm_cycles": 795.7388733402667,
+   "assumed_sm_cycles": 2097.152,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 74,
+   "grid": 5440,
+   "n_iter": 2337,
+   "runs": 25,
+   "alpha": 0.18738276247713392
+  },
+  {
+   "case": "priced31_tutorials_shared_memory_128x64_f16",
+   "source": "priced",
+   "section": "tutorials",
+   "route": "default",
+   "shape": [
+    128,
+    64
+   ],
+   "dtype": "f16",
+   "bits": 16,
+   "elems": 8192,
+   "bytes": 16384,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    4,
+    4
+   ],
+   "instr": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "add_ns": 22.00035092263354,
+   "add_src_ns": 21.76829581866962,
+   "add_dst_ns": 22.23240602659746,
+   "cvt_ns": 81.22677569952428,
+   "cvt_ns_ci": [
+    81.2004093984318,
+    81.25622718430542
+   ],
+   "cvt_per_add": 3.6920672758887556,
+   "cvt_per_add_ci": [
+    3.6911441896450827,
+    3.692763238551188
+   ],
+   "assumed_per_add": 64.0,
+   "assumed_cost": 1048576,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 239.37530798649806,
+   "assumed_sm_cycles": 1048.576,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 72,
+   "grid": 5440,
+   "n_iter": 8969,
+   "runs": 25,
+   "alpha": 0.057688551185761806
+  },
+  {
+   "case": "priced32_tutorials_shared_memory_128x64_f16",
+   "source": "priced",
+   "section": "tutorials",
+   "route": "default",
+   "shape": [
+    128,
+    64
+   ],
+   "dtype": "f16",
+   "bits": 16,
+   "elems": 8192,
+   "bytes": 16384,
+   "num_warps": 8,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    2,
+    2
+   ],
+   "instr": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "add_ns": 22.53072513618618,
+   "add_src_ns": 22.169097089671233,
+   "add_dst_ns": 22.89235318270113,
+   "cvt_ns": 74.50897679370365,
+   "cvt_ns_ci": [
+    74.50144713947404,
+    74.53087659835091
+   ],
+   "cvt_per_add": 3.3069941754353995,
+   "cvt_per_add_ci": [
+    3.3065705760419264,
+    3.308796827518128
+   ],
+   "assumed_per_add": 64.0,
+   "assumed_cost": 1048576,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 219.57795461104467,
+   "assumed_sm_cycles": 1048.576,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 72,
+   "grid": 5440,
+   "n_iter": 9493,
+   "runs": 25,
+   "alpha": 0.05167178399117812
+  },
+  {
+   "case": "priced33_tutorials_warp_shuffle_64x1_f32",
+   "source": "priced",
+   "section": "tutorials",
+   "route": "default",
+   "shape": [
+    64,
+    1
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 64,
+   "bytes": 256,
+   "num_warps": 8,
+   "class": "warp_shuffle",
+   "classes": [
+    "warp_shuffle"
+   ],
+   "barrier": "none",
+   "reps": [],
+   "instr": [],
+   "add_ns": 4.5686243651915905,
+   "add_src_ns": 3.5633136179327054,
+   "add_dst_ns": 5.573935112450476,
+   "cvt_ns": 18.276414786872042,
+   "cvt_ns_ci": [
+    18.270919000421273,
+    18.27869588423777
+   ],
+   "cvt_per_add": 4.000419672521184,
+   "cvt_per_add_ci": [
+    3.999653985786986,
+    4.000975142172958
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 8192,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 53.86059437691191,
+   "assumed_sm_cycles": 8.192,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 60,
+   "grid": 5440,
+   "n_iter": 34165,
+   "runs": 25,
+   "alpha": 0.125013114766287
+  },
+  {
+   "case": "priced33_tutorials_warp_shuffle_64x1_f32",
+   "source": "priced",
+   "section": "tutorials",
+   "route": "smem",
+   "shape": [
+    64,
+    1
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 64,
+   "bytes": 256,
+   "num_warps": 8,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "warp",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 4.5686243651915905,
+   "add_src_ns": 3.5633136179327054,
+   "add_dst_ns": 5.573935112450476,
+   "cvt_ns": 23.394652403993035,
+   "cvt_ns_ci": [
+    23.391158432284982,
+    23.398248274246953
+   ],
+   "cvt_per_add": 5.120721366859836,
+   "cvt_per_add_ci": [
+    5.119938724533898,
+    5.1217823805798455
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 8192,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 68.94404063456747,
+   "assumed_sm_cycles": 8.192,
+   "separated": true,
+   "dst_baseline": true,
+   "count": 60,
+   "grid": 5440,
+   "n_iter": 34165,
+   "runs": 25
+  },
+  {
+   "case": "canon_mma_to_blocked_128x128_f16",
+   "source": "canonical",
+   "section": null,
+   "route": "default",
+   "shape": [
+    128,
+    128
+   ],
+   "dtype": "f16",
+   "bits": 16,
+   "elems": 16384,
+   "bytes": 32768,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    4,
+    4
+   ],
+   "instr": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "add_ns": 44.433486849785304,
+   "add_src_ns": 44.42486360614987,
+   "add_dst_ns": 44.44211009342074,
+   "cvt_ns": 151.8886577020542,
+   "cvt_ns_ci": [
+    151.74510288206028,
+    151.99701172420194
+   ],
+   "cvt_per_add": 3.41833757534129,
+   "cvt_per_add_ci": [
+    3.416115903556616,
+    3.420893710061356
+   ],
+   "assumed_per_add": 64.0,
+   "assumed_cost": 2097152,
+   "clock_mhz": 2730.0,
+   "cvt_sm_cycles": 414.6560355266079,
+   "assumed_sm_cycles": 2097.152,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 4747,
+   "runs": 25,
+   "alpha": 0.053411524614707655
+  },
+  {
+   "case": "canon_mma_to_blocked_128x128_f32",
+   "source": "canonical",
+   "section": null,
+   "route": "default",
+   "shape": [
+    128,
+    128
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 16384,
+   "bytes": 65536,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    4,
+    4
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 45.76597719302986,
+   "add_src_ns": 45.76947220778685,
+   "add_dst_ns": 45.76248217827288,
+   "cvt_ns": 337.19068621172346,
+   "cvt_ns_ci": [
+    337.02235592852924,
+    337.43607906083383
+   ],
+   "cvt_per_add": 7.367715208822799,
+   "cvt_per_add_ci": [
+    7.34253805438795,
+    7.38368031920291
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 2097152,
+   "clock_mhz": 2625.0,
+   "cvt_sm_cycles": 885.1255513057741,
+   "assumed_sm_cycles": 2097.152,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 2392,
+   "runs": 25,
+   "alpha": 0.23024110027571246
+  },
+  {
+   "case": "canon_mma_to_dotop_64x32_f16",
+   "source": "canonical",
+   "section": null,
+   "route": "default",
+   "shape": [
+    64,
+    32
+   ],
+   "dtype": "f16",
+   "bits": 16,
+   "elems": 2048,
+   "bytes": 4096,
+   "num_warps": 4,
+   "class": "warp_shuffle",
+   "classes": [
+    "warp_shuffle"
+   ],
+   "barrier": "none",
+   "reps": [],
+   "instr": [],
+   "add_ns": 5.574268289210242,
+   "add_src_ns": 5.572078792692457,
+   "add_dst_ns": 5.576457785728028,
+   "cvt_ns": 16.83940385004034,
+   "cvt_ns_ci": [
+    16.813585965094763,
+    16.848618167066373
+   ],
+   "cvt_per_add": 3.020917361052626,
+   "cvt_per_add_ci": [
+    3.017649136136968,
+    3.022836148335224
+   ],
+   "assumed_per_add": 64.0,
+   "assumed_cost": 262144,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 49.625723146068886,
+   "assumed_sm_cycles": 262.144,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 38824,
+   "runs": 25,
+   "alpha": 0.04720183376644728
+  },
+  {
+   "case": "canon_mma_to_dotop_64x32_f16",
+   "source": "canonical",
+   "section": null,
+   "route": "smem",
+   "shape": [
+    64,
+    32
+   ],
+   "dtype": "f16",
+   "bits": 16,
+   "elems": 2048,
+   "bytes": 4096,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "warp",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 5.574268289210242,
+   "add_src_ns": 5.572078792692457,
+   "add_dst_ns": 5.576457785728028,
+   "cvt_ns": 18.616957926863925,
+   "cvt_ns_ci": [
+    18.592868742467587,
+    18.6238534446997
+   ],
+   "cvt_per_add": 3.3398029949329118,
+   "cvt_per_add_ci": [
+    3.3369952521584887,
+    3.3419446979307987
+   ],
+   "assumed_per_add": 64.0,
+   "assumed_cost": 262144,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 54.86417501046799,
+   "assumed_sm_cycles": 262.144,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 38824,
+   "runs": 25
+  },
+  {
+   "case": "syn_inwarp_32x32_i8",
+   "source": "synthetic",
+   "section": null,
+   "route": "default",
+   "shape": [
+    32,
+    32
+   ],
+   "dtype": "i8",
+   "bits": 8,
+   "elems": 1024,
+   "bytes": 1024,
+   "num_warps": 1,
+   "class": "warp_shuffle",
+   "classes": [
+    "warp_shuffle"
+   ],
+   "barrier": "none",
+   "reps": [],
+   "instr": [],
+   "add_ns": 3.0325677384342034,
+   "add_src_ns": 2.954256811988944,
+   "add_dst_ns": 3.1108786648794626,
+   "cvt_ns": 14.202140883475723,
+   "cvt_ns_ci": [
+    14.188626073149402,
+    14.21076135508092
+   ],
+   "cvt_per_add": 4.683206479934615,
+   "cvt_per_add_ci": [
+    4.680024313816724,
+    4.689999800508139
+   ],
+   "assumed_per_add": 128.0,
+   "assumed_cost": 131072,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 41.85370918360296,
+   "assumed_sm_cycles": 131.072,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 45387,
+   "runs": 25,
+   "alpha": 0.03658755062448918
+  },
+  {
+   "case": "syn_inwarp_32x32_i8",
+   "source": "synthetic",
+   "section": null,
+   "route": "smem",
+   "shape": [
+    32,
+    32
+   ],
+   "dtype": "i8",
+   "bits": 8,
+   "elems": 1024,
+   "bytes": 1024,
+   "num_warps": 1,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "warp",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 3.0325677384342034,
+   "add_src_ns": 2.954256811988944,
+   "add_dst_ns": 3.1108786648794626,
+   "cvt_ns": 12.104793639973144,
+   "cvt_ns_ci": [
+    12.084840163431497,
+    12.117862449824056
+   ],
+   "cvt_per_add": 3.991598765151797,
+   "cvt_per_add_ci": [
+    3.9850089383680904,
+    3.9986968064056403
+   ],
+   "assumed_per_add": 128.0,
+   "assumed_cost": 131072,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 35.67282685700085,
+   "assumed_sm_cycles": 131.072,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 45387,
+   "runs": 25
+  },
+  {
+   "case": "syn_inwarp_32x64_i8",
+   "source": "synthetic",
+   "section": null,
+   "route": "default",
+   "shape": [
+    32,
+    64
+   ],
+   "dtype": "i8",
+   "bits": 8,
+   "elems": 2048,
+   "bytes": 2048,
+   "num_warps": 1,
+   "class": "warp_shuffle",
+   "classes": [
+    "warp_shuffle"
+   ],
+   "barrier": "none",
+   "reps": [],
+   "instr": [],
+   "add_ns": 5.766079403345142,
+   "add_src_ns": 5.418339925238496,
+   "add_dst_ns": 6.113818881451786,
+   "cvt_ns": 23.763776520743097,
+   "cvt_ns_ci": [
+    23.728500381295852,
+    23.788345730832322
+   ],
+   "cvt_per_add": 4.121305805632288,
+   "cvt_per_add_ci": [
+    4.113395726039582,
+    4.125831606591444
+   ],
+   "assumed_per_add": 128.0,
+   "assumed_cost": 262144,
+   "clock_mhz": 2752.0,
+   "cvt_sm_cycles": 65.397912985085,
+   "assumed_sm_cycles": 262.144,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 24936,
+   "runs": 25,
+   "alpha": 0.03219770160650225
+  },
+  {
+   "case": "syn_inwarp_32x64_i8",
+   "source": "synthetic",
+   "section": null,
+   "route": "smem",
+   "shape": [
+    32,
+    64
+   ],
+   "dtype": "i8",
+   "bits": 8,
+   "elems": 2048,
+   "bytes": 2048,
+   "num_warps": 1,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "warp",
+   "reps": [
+    2,
+    2
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 5.766079403345142,
+   "add_src_ns": 5.418339925238496,
+   "add_dst_ns": 6.113818881451786,
+   "cvt_ns": 19.888019558876803,
+   "cvt_ns_ci": [
+    19.86731616812655,
+    19.91099222206678
+   ],
+   "cvt_per_add": 3.4491407709957893,
+   "cvt_per_add_ci": [
+    3.4428857524059895,
+    3.4529717264826556
+   ],
+   "assumed_per_add": 128.0,
+   "assumed_cost": 262144,
+   "clock_mhz": 2752.0,
+   "cvt_sm_cycles": 54.73182982602896,
+   "assumed_sm_cycles": 262.144,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 24936,
+   "runs": 25
+  },
+  {
+   "case": "syn_inwarp_32x128_i8",
+   "source": "synthetic",
+   "section": null,
+   "route": "default",
+   "shape": [
+    32,
+    128
+   ],
+   "dtype": "i8",
+   "bits": 8,
+   "elems": 4096,
+   "bytes": 4096,
+   "num_warps": 1,
+   "class": "warp_shuffle",
+   "classes": [
+    "warp_shuffle"
+   ],
+   "barrier": "none",
+   "reps": [],
+   "instr": [],
+   "add_ns": 11.940411055593906,
+   "add_src_ns": 11.987904021443166,
+   "add_dst_ns": 11.892918089744645,
+   "cvt_ns": 49.77641211207973,
+   "cvt_ns_ci": [
+    49.7128181996063,
+    49.892715816653464
+   ],
+   "cvt_per_add": 4.168735220280396,
+   "cvt_per_add_ci": [
+    4.165630510038228,
+    4.176254945061949
+   ],
+   "assumed_per_add": 128.0,
+   "assumed_cost": 524288,
+   "clock_mhz": 2640.0,
+   "cvt_sm_cycles": 131.40972797589052,
+   "assumed_sm_cycles": 524.288,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 12964,
+   "runs": 25,
+   "alpha": 0.03256824390844059
+  },
+  {
+   "case": "syn_inwarp_32x128_i8",
+   "source": "synthetic",
+   "section": null,
+   "route": "smem",
+   "shape": [
+    32,
+    128
+   ],
+   "dtype": "i8",
+   "bits": 8,
+   "elems": 4096,
+   "bytes": 4096,
+   "num_warps": 1,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "warp",
+   "reps": [
+    4,
+    4
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 11.940411055593906,
+   "add_src_ns": 11.987904021443166,
+   "add_dst_ns": 11.892918089744645,
+   "cvt_ns": 41.9253047530685,
+   "cvt_ns_ci": [
+    41.86607282320673,
+    41.98501409047776
+   ],
+   "cvt_per_add": 3.511211176723026,
+   "cvt_per_add_ci": [
+    3.5074119715956416,
+    3.5162479439581027
+   ],
+   "assumed_per_add": 128.0,
+   "assumed_cost": 524288,
+   "clock_mhz": 2640.0,
+   "cvt_sm_cycles": 110.68280454810085,
+   "assumed_sm_cycles": 524.288,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 12964,
+   "runs": 25
+  },
+  {
+   "case": "syn_inwarp_32x32_f16",
+   "source": "synthetic",
+   "section": null,
+   "route": "default",
+   "shape": [
+    32,
+    32
+   ],
+   "dtype": "f16",
+   "bits": 16,
+   "elems": 1024,
+   "bytes": 2048,
+   "num_warps": 1,
+   "class": "warp_shuffle",
+   "classes": [
+    "warp_shuffle"
+   ],
+   "barrier": "none",
+   "reps": [],
+   "instr": [],
+   "add_ns": 2.6329106828299893,
+   "add_src_ns": 2.7727028318829516,
+   "add_dst_ns": 2.493118533777027,
+   "cvt_ns": 8.638467728534323,
+   "cvt_ns_ci": [
+    8.628700214663349,
+    8.645111172891864
+   ],
+   "cvt_per_add": 3.280957377273903,
+   "cvt_per_add_ci": [
+    3.2795958396197475,
+    3.2842387730686524
+   ],
+   "assumed_per_add": 64.0,
+   "assumed_cost": 131072,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 25.457564395990648,
+   "assumed_sm_cycles": 131.072,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 72090,
+   "runs": 25,
+   "alpha": 0.051264959019904736
+  },
+  {
+   "case": "syn_inwarp_32x32_f16",
+   "source": "synthetic",
+   "section": null,
+   "route": "smem",
+   "shape": [
+    32,
+    32
+   ],
+   "dtype": "f16",
+   "bits": 16,
+   "elems": 1024,
+   "bytes": 2048,
+   "num_warps": 1,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "warp",
+   "reps": [
+    2,
+    2
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 2.6329106828299893,
+   "add_src_ns": 2.7727028318829516,
+   "add_dst_ns": 2.493118533777027,
+   "cvt_ns": 10.369911687738004,
+   "cvt_ns_ci": [
+    10.358441689107302,
+    10.377229563608479
+   ],
+   "cvt_per_add": 3.9385732890079974,
+   "cvt_per_add_ci": [
+    3.9371507503456233,
+    3.94191515967343
+   ],
+   "assumed_per_add": 64.0,
+   "assumed_cost": 131072,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 30.5601297437639,
+   "assumed_sm_cycles": 131.072,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 72090,
+   "runs": 25
+  },
+  {
+   "case": "syn_inwarp_32x64_f16",
+   "source": "synthetic",
+   "section": null,
+   "route": "default",
+   "shape": [
+    32,
+    64
+   ],
+   "dtype": "f16",
+   "bits": 16,
+   "elems": 2048,
+   "bytes": 4096,
+   "num_warps": 1,
+   "class": "warp_shuffle",
+   "classes": [
+    "warp_shuffle"
+   ],
+   "barrier": "none",
+   "reps": [],
+   "instr": [],
+   "add_ns": 5.2532541933106485,
+   "add_src_ns": 5.702628972277531,
+   "add_dst_ns": 4.803879414343767,
+   "cvt_ns": 17.413811334650404,
+   "cvt_ns_ci": [
+    17.404884653326015,
+    17.4196067206977
+   ],
+   "cvt_per_add": 3.314861739762123,
+   "cvt_per_add_ci": [
+    3.3136799873686296,
+    3.3164364927951855
+   ],
+   "assumed_per_add": 64.0,
+   "assumed_cost": 262144,
+   "clock_mhz": 2902.0,
+   "cvt_sm_cycles": 50.53488049315547,
+   "assumed_sm_cycles": 262.144,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 38666,
+   "runs": 25,
+   "alpha": 0.051794714683783175
+  },
+  {
+   "case": "syn_inwarp_32x64_f16",
+   "source": "synthetic",
+   "section": null,
+   "route": "smem",
+   "shape": [
+    32,
+    64
+   ],
+   "dtype": "f16",
+   "bits": 16,
+   "elems": 2048,
+   "bytes": 4096,
+   "num_warps": 1,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "warp",
+   "reps": [
+    4,
+    4
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 5.2532541933106485,
+   "add_src_ns": 5.702628972277531,
+   "add_dst_ns": 4.803879414343767,
+   "cvt_ns": 19.025004461921373,
+   "cvt_ns_ci": [
+    19.016861410038597,
+    19.03092278711439
+   ],
+   "cvt_per_add": 3.621565559524475,
+   "cvt_per_add_ci": [
+    3.6203445190685954,
+    3.623252889943433
+   ],
+   "assumed_per_add": 64.0,
+   "assumed_cost": 262144,
+   "clock_mhz": 2902.0,
+   "cvt_sm_cycles": 55.21056294849583,
+   "assumed_sm_cycles": 262.144,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 38666,
+   "runs": 25
+  },
+  {
+   "case": "syn_inwarp_32x128_f16",
+   "source": "synthetic",
+   "section": null,
+   "route": "default",
+   "shape": [
+    32,
+    128
+   ],
+   "dtype": "f16",
+   "bits": 16,
+   "elems": 4096,
+   "bytes": 8192,
+   "num_warps": 1,
+   "class": "warp_shuffle",
+   "classes": [
+    "warp_shuffle"
+   ],
+   "barrier": "none",
+   "reps": [],
+   "instr": [],
+   "add_ns": 10.471427020866201,
+   "add_src_ns": 11.10839081629366,
+   "add_dst_ns": 9.834463225438743,
+   "cvt_ns": 34.328942135200876,
+   "cvt_ns_ci": [
+    34.309998690696695,
+    34.35830698865712
+   ],
+   "cvt_per_add": 3.2783442091316,
+   "cvt_per_add_ci": [
+    3.2759879383943358,
+    3.2822067624125557
+   ],
+   "assumed_per_add": 64.0,
+   "assumed_cost": 524288,
+   "clock_mhz": 2880.0,
+   "cvt_sm_cycles": 98.86735334937852,
+   "assumed_sm_cycles": 524.288,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 20212,
+   "runs": 25,
+   "alpha": 0.05122412826768125
+  },
+  {
+   "case": "syn_inwarp_32x128_f16",
+   "source": "synthetic",
+   "section": null,
+   "route": "smem",
+   "shape": [
+    32,
+    128
+   ],
+   "dtype": "f16",
+   "bits": 16,
+   "elems": 4096,
+   "bytes": 8192,
+   "num_warps": 1,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "warp",
+   "reps": [
+    8,
+    8
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 10.471427020866201,
+   "add_src_ns": 11.10839081629366,
+   "add_dst_ns": 9.834463225438743,
+   "cvt_ns": 35.855339551562,
+   "cvt_ns_ci": [
+    35.840334058924476,
+    35.894333808416874
+   ],
+   "cvt_per_add": 3.42411206038239,
+   "cvt_per_add_ci": [
+    3.4220271125294026,
+    3.4288068326794936
+   ],
+   "assumed_per_add": 64.0,
+   "assumed_cost": 524288,
+   "clock_mhz": 2880.0,
+   "cvt_sm_cycles": 103.26337790849854,
+   "assumed_sm_cycles": 524.288,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 20212,
+   "runs": 25
+  },
+  {
+   "case": "syn_inwarp_32x32_f32",
+   "source": "synthetic",
+   "section": null,
+   "route": "default",
+   "shape": [
+    32,
+    32
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 1024,
+   "bytes": 4096,
+   "num_warps": 1,
+   "class": "warp_shuffle",
+   "classes": [
+    "warp_shuffle"
+   ],
+   "barrier": "none",
+   "reps": [],
+   "instr": [],
+   "add_ns": 2.7946653522860103,
+   "add_src_ns": 2.7941055889739905,
+   "add_dst_ns": 2.7952251155980297,
+   "cvt_ns": 20.18857711658337,
+   "cvt_ns_ci": [
+    20.16451900015163,
+    20.20406246947684
+   ],
+   "cvt_per_add": 7.22396944595506,
+   "cvt_per_add_ci": [
+    7.216658707111817,
+    7.235445538887953
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 131072,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 59.49573676257119,
+   "assumed_sm_cycles": 131.072,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 37682,
+   "runs": 25,
+   "alpha": 0.22574904518609562
+  },
+  {
+   "case": "syn_inwarp_32x32_f32",
+   "source": "synthetic",
+   "section": null,
+   "route": "smem",
+   "shape": [
+    32,
+    32
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 1024,
+   "bytes": 4096,
+   "num_warps": 1,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "warp",
+   "reps": [
+    4,
+    4
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 2.7946653522860103,
+   "add_src_ns": 2.7941055889739905,
+   "add_dst_ns": 2.7952251155980297,
+   "cvt_ns": 21.302045012369625,
+   "cvt_ns_ci": [
+    21.284927637583834,
+    21.310489473484044
+   ],
+   "cvt_per_add": 7.622395645669973,
+   "cvt_per_add_ci": [
+    7.6143542857639686,
+    7.635690857659179
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 131072,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 62.77712665145329,
+   "assumed_sm_cycles": 131.072,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 37682,
+   "runs": 25
+  },
+  {
+   "case": "syn_inwarp_32x64_f32",
+   "source": "synthetic",
+   "section": null,
+   "route": "default",
+   "shape": [
+    32,
+    64
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 2048,
+   "bytes": 8192,
+   "num_warps": 1,
+   "class": "warp_shuffle",
+   "classes": [
+    "warp_shuffle"
+   ],
+   "barrier": "none",
+   "reps": [],
+   "instr": [],
+   "add_ns": 5.629342614616576,
+   "add_src_ns": 5.625682069296132,
+   "add_dst_ns": 5.6330031599370205,
+   "cvt_ns": 41.55994992474185,
+   "cvt_ns_ci": [
+    41.47946633561523,
+    41.60173700717389
+   ],
+   "cvt_per_add": 7.382735919613692,
+   "cvt_per_add_ci": [
+    7.370664555479275,
+    7.39718161969469
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 262144,
+   "clock_mhz": 2685.0,
+   "cvt_sm_cycles": 111.58846554793188,
+   "assumed_sm_cycles": 262.144,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 19829,
+   "runs": 25,
+   "alpha": 0.23071049748792788
+  },
+  {
+   "case": "syn_inwarp_32x64_f32",
+   "source": "synthetic",
+   "section": null,
+   "route": "smem",
+   "shape": [
+    32,
+    64
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 2048,
+   "bytes": 8192,
+   "num_warps": 1,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "warp",
+   "reps": [
+    8,
+    8
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 5.629342614616576,
+   "add_src_ns": 5.625682069296132,
+   "add_dst_ns": 5.6330031599370205,
+   "cvt_ns": 41.01205259342481,
+   "cvt_ns_ci": [
+    40.974863025286325,
+    41.074341967854274
+   ],
+   "cvt_per_add": 7.2854070894418665,
+   "cvt_per_add_ci": [
+    7.2762059409773086,
+    7.304710531000537
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 262144,
+   "clock_mhz": 2685.0,
+   "cvt_sm_cycles": 110.11736121334562,
+   "assumed_sm_cycles": 262.144,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 19829,
+   "runs": 25
+  },
+  {
+   "case": "syn_inwarp_32x128_f32",
+   "source": "synthetic",
+   "section": null,
+   "route": "default",
+   "shape": [
+    32,
+    128
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 4096,
+   "bytes": 16384,
+   "num_warps": 1,
+   "class": "warp_shuffle",
+   "classes": [
+    "warp_shuffle"
+   ],
+   "barrier": "none",
+   "reps": [],
+   "instr": [],
+   "add_ns": 11.615494847782955,
+   "add_src_ns": 11.599306979189027,
+   "add_dst_ns": 11.631682716376883,
+   "cvt_ns": 83.63020895088414,
+   "cvt_ns_ci": [
+    83.33103794065869,
+    83.9207331589404
+   ],
+   "cvt_per_add": 7.19988343560297,
+   "cvt_per_add_ci": [
+    7.148362739727266,
+    7.213278712641019
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 524288,
+   "clock_mhz": 2670.0,
+   "cvt_sm_cycles": 223.29265789886065,
+   "assumed_sm_cycles": 524.288,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 9918,
+   "runs": 25,
+   "alpha": 0.22499635736259282
+  },
+  {
+   "case": "syn_inwarp_32x128_f32",
+   "source": "synthetic",
+   "section": null,
+   "route": "smem",
+   "shape": [
+    32,
+    128
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 4096,
+   "bytes": 16384,
+   "num_warps": 1,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "warp",
+   "reps": [
+    16,
+    16
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 11.615494847782955,
+   "add_src_ns": 11.599306979189027,
+   "add_dst_ns": 11.631682716376883,
+   "cvt_ns": 81.53185006529678,
+   "cvt_ns_ci": [
+    81.42819462951269,
+    82.08608979081882
+   ],
+   "cvt_per_add": 7.019231736033936,
+   "cvt_per_add_ci": [
+    6.9826870693319,
+    7.063376842542671
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 524288,
+   "clock_mhz": 2670.0,
+   "cvt_sm_cycles": 217.69003967434242,
+   "assumed_sm_cycles": 524.288,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 9918,
+   "runs": 25
+  },
+  {
+   "case": "syn_inwarp_32x32_f64",
+   "source": "synthetic",
+   "section": null,
+   "route": "default",
+   "shape": [
+    32,
+    32
+   ],
+   "dtype": "f64",
+   "bits": 64,
+   "elems": 1024,
+   "bytes": 8192,
+   "num_warps": 1,
+   "class": "warp_shuffle",
+   "classes": [
+    "warp_shuffle"
+   ],
+   "barrier": "none",
+   "reps": [],
+   "instr": [],
+   "add_ns": 207.42223920190065,
+   "add_src_ns": 207.4362497704155,
+   "add_dst_ns": 207.40822863338585,
+   "cvt_ns": 2.832570900205124,
+   "cvt_ns_ci": [
+    2.774338105337099,
+    2.9614791669253844
+   ],
+   "cvt_per_add": null,
+   "cvt_per_add_ci": null,
+   "assumed_per_add": 32.0,
+   "assumed_cost": 262144,
+   "clock_mhz": 2932.0,
+   "cvt_sm_cycles": 8.305097879401423,
+   "assumed_sm_cycles": 262.144,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 2258,
+   "runs": 25,
+   "alpha": null
+  },
+  {
+   "case": "syn_inwarp_32x32_f64",
+   "source": "synthetic",
+   "section": null,
+   "route": "smem",
+   "shape": [
+    32,
+    32
+   ],
+   "dtype": "f64",
+   "bits": 64,
+   "elems": 1024,
+   "bytes": 8192,
+   "num_warps": 1,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "warp",
+   "reps": [
+    8,
+    8
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 207.42223920190065,
+   "add_src_ns": 207.4362497704155,
+   "add_dst_ns": 207.40822863338585,
+   "cvt_ns": 2.771604948894074,
+   "cvt_ns_ci": [
+    2.7108049461291404,
+    2.9454298480197316
+   ],
+   "cvt_per_add": null,
+   "cvt_per_add_ci": null,
+   "assumed_per_add": 32.0,
+   "assumed_cost": 262144,
+   "clock_mhz": 2932.0,
+   "cvt_sm_cycles": 8.126345710157425,
+   "assumed_sm_cycles": 262.144,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 2258,
+   "runs": 25
+  },
+  {
+   "case": "syn_inwarp_32x64_f64",
+   "source": "synthetic",
+   "section": null,
+   "route": "default",
+   "shape": [
+    32,
+    64
+   ],
+   "dtype": "f64",
+   "bits": 64,
+   "elems": 2048,
+   "bytes": 16384,
+   "num_warps": 1,
+   "class": "warp_shuffle",
+   "classes": [
+    "warp_shuffle"
+   ],
+   "barrier": "none",
+   "reps": [],
+   "instr": [],
+   "add_ns": 413.70903454020015,
+   "add_src_ns": 413.92773748523564,
+   "add_dst_ns": 413.4903315951646,
+   "cvt_ns": 5.230397975743607,
+   "cvt_ns_ci": [
+    4.189703521220418,
+    5.401564235864832
+   ],
+   "cvt_per_add": null,
+   "cvt_per_add_ci": null,
+   "assumed_per_add": 32.0,
+   "assumed_cost": 524288,
+   "clock_mhz": 2782.0,
+   "cvt_sm_cycles": 14.550967168518714,
+   "assumed_sm_cycles": 524.288,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 1132,
+   "runs": 25,
+   "alpha": null
+  },
+  {
+   "case": "syn_inwarp_32x64_f64",
+   "source": "synthetic",
+   "section": null,
+   "route": "smem",
+   "shape": [
+    32,
+    64
+   ],
+   "dtype": "f64",
+   "bits": 64,
+   "elems": 2048,
+   "bytes": 16384,
+   "num_warps": 1,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "warp",
+   "reps": [
+    16,
+    16
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 413.70903454020015,
+   "add_src_ns": 413.92773748523564,
+   "add_dst_ns": 413.4903315951646,
+   "cvt_ns": 8.45527979002298,
+   "cvt_ns_ci": [
+    7.45916728745009,
+    8.933480534671274
+   ],
+   "cvt_per_add": null,
+   "cvt_per_add_ci": null,
+   "assumed_per_add": 32.0,
+   "assumed_cost": 524288,
+   "clock_mhz": 2782.0,
+   "cvt_sm_cycles": 23.52258837584393,
+   "assumed_sm_cycles": 524.288,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 1132,
+   "runs": 25
+  },
+  {
+   "case": "syn_inwarp_32x128_f64",
+   "source": "synthetic",
+   "section": null,
+   "route": "default",
+   "shape": [
+    32,
+    128
+   ],
+   "dtype": "f64",
+   "bits": 64,
+   "elems": 4096,
+   "bytes": 32768,
+   "num_warps": 1,
+   "class": "warp_shuffle",
+   "classes": [
+    "warp_shuffle"
+   ],
+   "barrier": "none",
+   "reps": [],
+   "instr": [],
+   "add_ns": 840.0331447216385,
+   "add_src_ns": 837.1762483946833,
+   "add_dst_ns": 842.8900410485937,
+   "cvt_ns": 31.29354351882469,
+   "cvt_ns_ci": [
+    30.91293895420404,
+    33.263445491719914
+   ],
+   "cvt_per_add": null,
+   "cvt_per_add_ci": null,
+   "assumed_per_add": 32.0,
+   "assumed_cost": 1048576,
+   "clock_mhz": 2940.0,
+   "cvt_sm_cycles": 92.0030179453446,
+   "assumed_sm_cycles": 1048.576,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 561,
+   "runs": 25,
+   "alpha": null
+  },
+  {
+   "case": "syn_inwarp_32x128_f64",
+   "source": "synthetic",
+   "section": null,
+   "route": "smem",
+   "shape": [
+    32,
+    128
+   ],
+   "dtype": "f64",
+   "bits": 64,
+   "elems": 4096,
+   "bytes": 32768,
+   "num_warps": 1,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "warp",
+   "reps": [
+    32,
+    32
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 840.0331447216385,
+   "add_src_ns": 837.1762483946833,
+   "add_dst_ns": 842.8900410485937,
+   "cvt_ns": 19.69187995236294,
+   "cvt_ns_ci": [
+    19.46868735862358,
+    21.848880711078824
+   ],
+   "cvt_per_add": null,
+   "cvt_per_add_ci": null,
+   "assumed_per_add": 32.0,
+   "assumed_cost": 1048576,
+   "clock_mhz": 2940.0,
+   "cvt_sm_cycles": 57.89412705994704,
+   "assumed_sm_cycles": 1048.576,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 561,
+   "runs": 25
+  },
+  {
+   "case": "syn_crosswarp_32x32_i8",
+   "source": "synthetic",
+   "section": null,
+   "route": "default",
+   "shape": [
+    32,
+    32
+   ],
+   "dtype": "i8",
+   "bits": 8,
+   "elems": 1024,
+   "bytes": 1024,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 11.399154916067486,
+   "add_src_ns": 11.400994863235315,
+   "add_dst_ns": 11.397314968899655,
+   "cvt_ns": 163.5970566989717,
+   "cvt_ns_ci": [
+    163.43352192730282,
+    163.75880391788345
+   ],
+   "cvt_per_add": 14.351682901368086,
+   "cvt_per_add_ci": [
+    14.314157672130065,
+    14.393754438995217
+   ],
+   "assumed_per_add": 128.0,
+   "assumed_cost": 131072,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 482.1205260918696,
+   "assumed_sm_cycles": 131.072,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 5034,
+   "runs": 25,
+   "alpha": 0.11212252266693817
+  },
+  {
+   "case": "syn_crosswarp_64x64_i8",
+   "source": "synthetic",
+   "section": null,
+   "route": "default",
+   "shape": [
+    64,
+    64
+   ],
+   "dtype": "i8",
+   "bits": 8,
+   "elems": 4096,
+   "bytes": 4096,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 23.547952635686066,
+   "add_src_ns": 23.9889450430103,
+   "add_dst_ns": 23.106960228361835,
+   "cvt_ns": 228.28377665214745,
+   "cvt_ns_ci": [
+    228.17638312406447,
+    228.48784709952292
+   ],
+   "cvt_per_add": 9.694421429495815,
+   "cvt_per_add_ci": [
+    9.684186013559792,
+    9.716245687239434
+   ],
+   "assumed_per_add": 128.0,
+   "assumed_cost": 524288,
+   "clock_mhz": 2910.0,
+   "cvt_sm_cycles": 664.3057900577492,
+   "assumed_sm_cycles": 524.288,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 3419,
+   "runs": 25,
+   "alpha": 0.07573766741793606
+  },
+  {
+   "case": "syn_crosswarp_128x128_i8",
+   "source": "synthetic",
+   "section": null,
+   "route": "default",
+   "shape": [
+    128,
+    128
+   ],
+   "dtype": "i8",
+   "bits": 8,
+   "elems": 16384,
+   "bytes": 16384,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 46.21535512087306,
+   "add_src_ns": 46.24054687822902,
+   "add_dst_ns": 46.19016336351711,
+   "cvt_ns": 401.5798930182279,
+   "cvt_ns_ci": [
+    401.3889801132605,
+    401.8470343255469
+   ],
+   "cvt_per_add": 8.68931747831264,
+   "cvt_per_add_ci": [
+    8.679124071704868,
+    8.710231464908722
+   ],
+   "assumed_per_add": 128.0,
+   "assumed_cost": 2097152,
+   "clock_mhz": 2617.0,
+   "cvt_sm_cycles": 1050.9345800287026,
+   "assumed_sm_cycles": 2097.152,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 1898,
+   "runs": 25,
+   "alpha": 0.0678852927993175
+  },
+  {
+   "case": "syn_crosswarp_32x32_f16",
+   "source": "synthetic",
+   "section": null,
+   "route": "default",
+   "shape": [
+    32,
+    32
+   ],
+   "dtype": "f16",
+   "bits": 16,
+   "elems": 1024,
+   "bytes": 2048,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "add_ns": 11.048932599002585,
+   "add_src_ns": 11.4079687253377,
+   "add_dst_ns": 10.689896472667472,
+   "cvt_ns": 38.55715675417105,
+   "cvt_ns_ci": [
+    38.502248750011084,
+    38.57755963048466
+   ],
+   "cvt_per_add": 3.4896725460748756,
+   "cvt_per_add_ci": [
+    3.488686636322351,
+    3.4953231200957835
+   ],
+   "assumed_per_add": 64.0,
+   "assumed_cost": 131072,
+   "clock_mhz": 2910.0,
+   "cvt_sm_cycles": 112.20132615463774,
+   "assumed_sm_cycles": 131.072,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 18964,
+   "runs": 25,
+   "alpha": 0.05452613353241993
+  },
+  {
+   "case": "syn_crosswarp_64x64_f16",
+   "source": "synthetic",
+   "section": null,
+   "route": "default",
+   "shape": [
+    64,
+    64
+   ],
+   "dtype": "f16",
+   "bits": 16,
+   "elems": 4096,
+   "bytes": 8192,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "add_ns": 22.010964466997503,
+   "add_src_ns": 22.22187515558108,
+   "add_dst_ns": 21.800053778413925,
+   "cvt_ns": 72.39213443582734,
+   "cvt_ns_ci": [
+    72.3216647108298,
+    72.4362893256517
+   ],
+   "cvt_per_add": 3.2889124210967524,
+   "cvt_per_add_ci": [
+    3.287336625324353,
+    3.290774729522378
+   ],
+   "assumed_per_add": 64.0,
+   "assumed_cost": 524288,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 213.3396201823832,
+   "assumed_sm_cycles": 524.288,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 9956,
+   "runs": 25,
+   "alpha": 0.051389256579636756
+  },
+  {
+   "case": "syn_crosswarp_128x128_f16",
+   "source": "synthetic",
+   "section": null,
+   "route": "default",
+   "shape": [
+    128,
+    128
+   ],
+   "dtype": "f16",
+   "bits": 16,
+   "elems": 16384,
+   "bytes": 32768,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "add_ns": 43.62307830630084,
+   "add_src_ns": 44.07505957810267,
+   "add_dst_ns": 43.17109703449902,
+   "cvt_ns": 141.6350425646829,
+   "cvt_ns_ci": [
+    141.26488923373202,
+    141.92851212517056
+   ],
+   "cvt_per_add": 3.246791562259497,
+   "cvt_per_add_ci": [
+    3.241575589935424,
+    3.2532122114945357
+   ],
+   "assumed_per_add": 64.0,
+   "assumed_cost": 2097152,
+   "clock_mhz": 2617.0,
+   "cvt_sm_cycles": 370.65890639177513,
+   "assumed_sm_cycles": 2097.152,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 4790,
+   "runs": 25,
+   "alpha": 0.05073111816030464
+  },
+  {
+   "case": "syn_crosswarp_32x32_f32",
+   "source": "synthetic",
+   "section": null,
+   "route": "default",
+   "shape": [
+    32,
+    32
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 1024,
+   "bytes": 4096,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "add_ns": 11.134479497472606,
+   "add_src_ns": 11.119773694531581,
+   "add_dst_ns": 11.149185300413631,
+   "cvt_ns": 82.502765622752,
+   "cvt_ns_ci": [
+    82.48952429955645,
+    82.5524256822657
+   ],
+   "cvt_per_add": 7.409665233249488,
+   "cvt_per_add_ci": [
+    7.407590205363997,
+    7.414617856758985
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 131072,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 243.13565029025014,
+   "assumed_sm_cycles": 131.072,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 9929,
+   "runs": 25,
+   "alpha": 0.2315520385390465
+  },
+  {
+   "case": "syn_crosswarp_64x64_f32",
+   "source": "synthetic",
+   "section": null,
+   "route": "default",
+   "shape": [
+    64,
+    64
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 4096,
+   "bytes": 16384,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "add_ns": 22.095329465028332,
+   "add_src_ns": 21.702858014132545,
+   "add_dst_ns": 22.487800915924122,
+   "cvt_ns": 160.76357569089603,
+   "cvt_ns_ci": [
+    160.53043652783325,
+    161.14830256378244
+   ],
+   "cvt_per_add": 7.275907605059552,
+   "cvt_per_add_ci": [
+    7.25523828230373,
+    7.297945014785317
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 524288,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 473.7702575610706,
+   "assumed_sm_cycles": 524.288,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 5107,
+   "runs": 25,
+   "alpha": 0.227372112658111
+  },
+  {
+   "case": "syn_crosswarp_128x128_f32",
+   "source": "synthetic",
+   "section": null,
+   "route": "default",
+   "shape": [
+    128,
+    128
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 16384,
+   "bytes": 65536,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "add_ns": 44.93037613391484,
+   "add_src_ns": 45.391859207800366,
+   "add_dst_ns": 44.468893060029316,
+   "cvt_ns": 336.46868953672106,
+   "cvt_ns_ci": [
+    335.6983149007332,
+    337.70570611304515
+   ],
+   "cvt_per_add": 7.48866843522247,
+   "cvt_per_add_ci": [
+    7.467851882594012,
+    7.532002309116848
+   ],
+   "assumed_per_add": 32.0,
+   "assumed_cost": 2097152,
+   "clock_mhz": 2790.0,
+   "cvt_sm_cycles": 938.7476438074517,
+   "assumed_sm_cycles": 2097.152,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 2431,
+   "runs": 25,
+   "alpha": 0.2340208886007022
+  },
+  {
+   "case": "syn_crosswarp_32x32_f64",
+   "source": "synthetic",
+   "section": null,
+   "route": "default",
+   "shape": [
+    32,
+    32
+   ],
+   "dtype": "f64",
+   "bits": 64,
+   "elems": 1024,
+   "bytes": 8192,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 829.8366436695305,
+   "add_src_ns": 829.8660560211581,
+   "add_dst_ns": 829.8072313179028,
+   "cvt_ns": 3.5814680126183025,
+   "cvt_ns_ci": [
+    2.5753023798286243,
+    5.297292435875774
+   ],
+   "cvt_per_add": null,
+   "cvt_per_add_ci": null,
+   "assumed_per_add": 32.0,
+   "assumed_cost": 262144,
+   "clock_mhz": 2940.0,
+   "cvt_sm_cycles": 10.529515957097809,
+   "assumed_sm_cycles": 262.144,
+   "separated": false,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 566,
+   "runs": 25,
+   "alpha": null
+  },
+  {
+   "case": "syn_crosswarp_64x64_f64",
+   "source": "synthetic",
+   "section": null,
+   "route": "default",
+   "shape": [
+    64,
+    64
+   ],
+   "dtype": "f64",
+   "bits": 64,
+   "elems": 4096,
+   "bytes": 32768,
+   "num_warps": 4,
+   "class": "shared_memory",
+   "classes": [
+    "shared_memory"
+   ],
+   "barrier": "cta",
+   "reps": [
+    1,
+    1
+   ],
+   "instr": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "add_ns": 1654.2007130991944,
+   "add_src_ns": 1654.3864685541855,
+   "add_dst_ns": 1654.0149576442034,
+   "cvt_ns": 33.1094379490735,
+   "cvt_ns_ci": [
+    32.28618584136403,
+    34.00260673888528
+   ],
+   "cvt_per_add": null,
+   "cvt_per_add_ci": null,
+   "assumed_per_add": 32.0,
+   "assumed_cost": 1048576,
+   "clock_mhz": 2940.0,
+   "cvt_sm_cycles": 97.3417475702761,
+   "assumed_sm_cycles": 1048.576,
+   "separated": true,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 283,
+   "runs": 25,
+   "alpha": null
+  },
+  {
+   "case": "survive_regperm_64x64_i32",
+   "source": "survive",
+   "section": "triton_kernels",
+   "route": "default",
+   "shape": [
+    64,
+    64
+   ],
+   "dtype": "i32",
+   "bits": 32,
+   "elems": 4096,
+   "bytes": 16384,
+   "num_warps": 4,
+   "class": "register_permute",
+   "classes": [
+    "register_permute"
+   ],
+   "barrier": "none",
+   "reps": [],
+   "instr": [],
+   "add_ns": 12.439622584421079,
+   "add_src_ns": 12.849147179288536,
+   "add_dst_ns": 12.03009798955362,
+   "cvt_ns": 0.792463364998884,
+   "cvt_ns_ci": [
+    0.7373057416465462,
+    0.8597137425577943
+   ],
+   "cvt_per_add": 0.06370477557665903,
+   "cvt_per_add_ci": [
+    0.05928725945674578,
+    0.06903172469702012
+   ],
+   "assumed_per_add": 0.0,
+   "assumed_cost": 0,
+   "clock_mhz": 2655.0,
+   "cvt_sm_cycles": 2.1039902340720373,
+   "assumed_sm_cycles": 0.0,
+   "separated": false,
+   "dst_baseline": true,
+   "count": 80,
+   "grid": 5440,
+   "n_iter": 18343,
+   "runs": 25,
+   "alpha": null
+  },
+  {
+   "case": "survive_regperm_64x64_f32",
+   "source": "survive",
+   "section": "triton_kernels",
+   "route": "default",
+   "shape": [
+    64,
+    64
+   ],
+   "dtype": "f32",
+   "bits": 32,
+   "elems": 4096,
+   "bytes": 16384,
+   "num_warps": 4,
+   "class": "register_permute",
+   "classes": [
+    "register_permute"
+   ],
+   "barrier": "none",
+   "reps": [],
+   "instr": [],
+   "add_ns": 11.157278784320994,
+   "add_src_ns": 11.161105854613735,
+   "add_dst_ns": 11.153451714028252,
+   "cvt_ns": 0.011367755986834815,
+   "cvt_ns_ci": [
+    0.0002332010509005258,
+    0.023235813584101317
+   ],
+   "cvt_per_add": 0.0010188645642528534,
+   "cvt_per_add_ci": [
+    2.089980387231155e-05,
+    0.0020813552776517215
+   ],
+   "assumed_per_add": 0.0,
+   "assumed_cost": 0,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 0.0335007768932022,
+   "assumed_sm_cycles": 0.0,
+   "separated": false,
+   "dst_baseline": true,
+   "count": null,
+   "grid": 5440,
+   "n_iter": 41172,
+   "runs": 25,
+   "alpha": null
+  },
+  {
+   "case": "survive_regperm_32x64_i32",
+   "source": "survive",
+   "section": "triton_kernels",
+   "route": "default",
+   "shape": [
+    32,
+    64
+   ],
+   "dtype": "i32",
+   "bits": 32,
+   "elems": 2048,
+   "bytes": 8192,
+   "num_warps": 2,
+   "class": "register_permute",
+   "classes": [
+    "register_permute"
+   ],
+   "barrier": "none",
+   "reps": [],
+   "instr": [],
+   "add_ns": 6.30064207852096,
+   "add_src_ns": 6.52938515644901,
+   "add_dst_ns": 6.071899000592912,
+   "cvt_ns": 0.44356537406705787,
+   "cvt_ns_ci": [
+    0.42052439690197396,
+    0.46899950793855877
+   ],
+   "cvt_per_add": 0.07040002725740967,
+   "cvt_per_add_ci": [
+    0.06679784586034951,
+    0.07442921286416086
+   ],
+   "assumed_per_add": 0.0,
+   "assumed_cost": 0,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 1.3071871573756195,
+   "assumed_sm_cycles": 0.0,
+   "separated": false,
+   "dst_baseline": true,
+   "count": 12,
+   "grid": 5440,
+   "n_iter": 36130,
+   "runs": 25,
+   "alpha": null
+  },
+  {
+   "case": "survive_regperm_2x512_i8",
+   "source": "survive",
+   "section": "inductor",
+   "route": "default",
+   "shape": [
+    2,
+    512
+   ],
+   "dtype": "i8",
+   "bits": 8,
+   "elems": 1024,
+   "bytes": 1024,
+   "num_warps": 8,
+   "class": "register_permute",
+   "classes": [
+    "register_permute"
+   ],
+   "barrier": "none",
+   "reps": [],
+   "instr": [],
+   "add_ns": 4.358878116594263,
+   "add_src_ns": 4.360159310465782,
+   "add_dst_ns": 4.357596922722743,
+   "cvt_ns": 0.4391445963232803,
+   "cvt_ns_ci": [
+    0.4251775049124864,
+    0.4542469106174984
+   ],
+   "cvt_per_add": 0.10074716121367455,
+   "cvt_per_add_ci": [
+    0.09753347455026402,
+    0.1041971462780699
+   ],
+   "assumed_per_add": 0.0,
+   "assumed_cost": 0,
+   "clock_mhz": 2947.0,
+   "cvt_sm_cycles": 1.2941591253647071,
+   "assumed_sm_cycles": 0.0,
+   "separated": false,
+   "dst_baseline": true,
+   "count": 3,
+   "grid": 5440,
+   "n_iter": 62319,
+   "runs": 25,
+   "alpha": null
+  }
+ ],
+ "pairs": [
+  {
+   "case": "survive00_inductor_shared_memory_16_f32",
+   "bytes": 64,
+   "dtype": "f32",
+   "shuffle_ns": 10.408445415848856,
+   "smem_ns": 9.554664757968705,
+   "ratio": 1.08935746878697,
+   "barrier": "cta",
+   "shuffle_adds": 9.749993724691437,
+   "smem_adds": 8.950224333201046,
+   "ci_overlap": false
+  },
+  {
+   "case": "survive01_inductor_shared_memory_1x1024_f32",
+   "bytes": 4096,
+   "dtype": "f32",
+   "shuffle_ns": 22.946181901751185,
+   "smem_ns": 21.066761434741053,
+   "ratio": 1.0892125955302647,
+   "barrier": "warp",
+   "shuffle_adds": 8.27935131657927,
+   "smem_adds": 7.601226198223138,
+   "ci_overlap": false
+  },
+  {
+   "case": "survive02_inductor_shared_memory_8_f32",
+   "bytes": 32,
+   "dtype": "f32",
+   "shuffle_ns": 10.439197630883179,
+   "smem_ns": 8.902086802397804,
+   "ratio": 1.1726685958702794,
+   "barrier": "cta",
+   "shuffle_adds": 9.772115797321261,
+   "smem_adds": 8.333228869379779,
+   "ci_overlap": false
+  },
+  {
+   "case": "priced06_inductor_shared_memory_16x1_f32",
+   "bytes": 64,
+   "dtype": "f32",
+   "shuffle_ns": 10.450813943729663,
+   "smem_ns": 9.59263404086321,
+   "ratio": 1.08946238324226,
+   "barrier": "cta",
+   "shuffle_adds": 9.742895273444411,
+   "smem_adds": 8.942846878704868,
+   "ci_overlap": false
+  },
+  {
+   "case": "survive07_inductor_warp_shuffle_2_f32",
+   "bytes": 8,
+   "dtype": "f32",
+   "shuffle_ns": 2.3050821752900257,
+   "smem_ns": 7.3147040668350725,
+   "ratio": 0.3151299292805688,
+   "barrier": "cta",
+   "shuffle_adds": 4.335442500315944,
+   "smem_adds": 13.757634859416925,
+   "ci_overlap": false
+  },
+  {
+   "case": "priced11_inductor_warp_shuffle_2x1_f32",
+   "bytes": 8,
+   "dtype": "f32",
+   "shuffle_ns": 2.3039283820269554,
+   "smem_ns": 7.313817141831559,
+   "ratio": 0.3150103888774549,
+   "barrier": "cta",
+   "shuffle_adds": 4.333773442704311,
+   "smem_adds": 13.757557197233366,
+   "ci_overlap": false
+  },
+  {
+   "case": "priced22_triton_kernels_warp_shuffle_16x4_i8",
+   "bytes": 64,
+   "dtype": "i8",
+   "shuffle_ns": 10.590538441427016,
+   "smem_ns": 9.206005783334529,
+   "ratio": 1.1503945023148783,
+   "barrier": "cta",
+   "shuffle_adds": 4.165553474109025,
+   "smem_adds": 3.620978252005639,
+   "ci_overlap": false
+  },
+  {
+   "case": "priced23_triton_kernels_warp_shuffle_16x8_i8",
+   "bytes": 128,
+   "dtype": "i8",
+   "shuffle_ns": 36.48903246863874,
+   "smem_ns": 31.930215340816556,
+   "ratio": 1.1427743934440249,
+   "barrier": "cta",
+   "shuffle_adds": 4.095768243047456,
+   "smem_adds": 3.5840567189328376,
+   "ci_overlap": false
+  },
+  {
+   "case": "priced24_triton_kernels_warp_shuffle_16x4_i8",
+   "bytes": 64,
+   "dtype": "i8",
+   "shuffle_ns": 10.608182499788512,
+   "smem_ns": 9.225332060489116,
+   "ratio": 1.149897090991658,
+   "barrier": "cta",
+   "shuffle_adds": 4.163739171077887,
+   "smem_adds": 3.620966783633765,
+   "ci_overlap": false
+  },
+  {
+   "case": "priced33_tutorials_warp_shuffle_64x1_f32",
+   "bytes": 256,
+   "dtype": "f32",
+   "shuffle_ns": 18.276414786872042,
+   "smem_ns": 23.394652403993035,
+   "ratio": 0.781221899400933,
+   "barrier": "warp",
+   "shuffle_adds": 4.000419672521184,
+   "smem_adds": 5.120721366859836,
+   "ci_overlap": false
+  },
+  {
+   "case": "canon_mma_to_dotop_64x32_f16",
+   "bytes": 4096,
+   "dtype": "f16",
+   "shuffle_ns": 16.83940385004034,
+   "smem_ns": 18.616957926863925,
+   "ratio": 0.9045196275456686,
+   "barrier": "warp",
+   "shuffle_adds": 3.020917361052626,
+   "smem_adds": 3.3398029949329118,
+   "ci_overlap": false
+  },
+  {
+   "case": "syn_inwarp_32x32_i8",
+   "bytes": 1024,
+   "dtype": "i8",
+   "shuffle_ns": 14.202140883475723,
+   "smem_ns": 12.104793639973144,
+   "ratio": 1.1732658404499023,
+   "barrier": "warp",
+   "shuffle_adds": 4.683206479934615,
+   "smem_adds": 3.991598765151797,
+   "ci_overlap": false
+  },
+  {
+   "case": "syn_inwarp_32x64_i8",
+   "bytes": 2048,
+   "dtype": "i8",
+   "shuffle_ns": 23.763776520743097,
+   "smem_ns": 19.888019558876803,
+   "ratio": 1.194878979799494,
+   "barrier": "warp",
+   "shuffle_adds": 4.121305805632288,
+   "smem_adds": 3.4491407709957893,
+   "ci_overlap": false
+  },
+  {
+   "case": "syn_inwarp_32x128_i8",
+   "bytes": 4096,
+   "dtype": "i8",
+   "shuffle_ns": 49.77641211207973,
+   "smem_ns": 41.9253047530685,
+   "ratio": 1.1872641691039016,
+   "barrier": "warp",
+   "shuffle_adds": 4.168735220280396,
+   "smem_adds": 3.511211176723026,
+   "ci_overlap": false
+  },
+  {
+   "case": "syn_inwarp_32x32_f16",
+   "bytes": 2048,
+   "dtype": "f16",
+   "shuffle_ns": 8.638467728534323,
+   "smem_ns": 10.369911687738004,
+   "ratio": 0.8330319474898671,
+   "barrier": "warp",
+   "shuffle_adds": 3.280957377273903,
+   "smem_adds": 3.9385732890079974,
+   "ci_overlap": false
+  },
+  {
+   "case": "syn_inwarp_32x64_f16",
+   "bytes": 4096,
+   "dtype": "f16",
+   "shuffle_ns": 17.413811334650404,
+   "smem_ns": 19.025004461921373,
+   "ratio": 0.9153118134350098,
+   "barrier": "warp",
+   "shuffle_adds": 3.314861739762123,
+   "smem_adds": 3.621565559524475,
+   "ci_overlap": false
+  },
+  {
+   "case": "syn_inwarp_32x128_f16",
+   "bytes": 8192,
+   "dtype": "f16",
+   "shuffle_ns": 34.328942135200876,
+   "smem_ns": 35.855339551562,
+   "ratio": 0.9574290067964333,
+   "barrier": "warp",
+   "shuffle_adds": 3.2783442091316,
+   "smem_adds": 3.42411206038239,
+   "ci_overlap": false
+  },
+  {
+   "case": "syn_inwarp_32x32_f32",
+   "bytes": 4096,
+   "dtype": "f32",
+   "shuffle_ns": 20.18857711658337,
+   "smem_ns": 21.302045012369625,
+   "ratio": 0.9477295304211549,
+   "barrier": "warp",
+   "shuffle_adds": 7.22396944595506,
+   "smem_adds": 7.622395645669973,
+   "ci_overlap": false
+  },
+  {
+   "case": "syn_inwarp_32x64_f32",
+   "bytes": 8192,
+   "dtype": "f32",
+   "shuffle_ns": 41.55994992474185,
+   "smem_ns": 41.01205259342481,
+   "ratio": 1.0133594223324702,
+   "barrier": "warp",
+   "shuffle_adds": 7.382735919613692,
+   "smem_adds": 7.2854070894418665,
+   "ci_overlap": false
+  },
+  {
+   "case": "syn_inwarp_32x128_f32",
+   "bytes": 16384,
+   "dtype": "f32",
+   "shuffle_ns": 83.63020895088414,
+   "smem_ns": 81.53185006529678,
+   "ratio": 1.0257366769416718,
+   "barrier": "warp",
+   "shuffle_adds": 7.19988343560297,
+   "smem_adds": 7.019231736033936,
+   "ci_overlap": false
+  },
+  {
+   "case": "syn_inwarp_32x32_f64",
+   "bytes": 8192,
+   "dtype": "f64",
+   "shuffle_ns": 2.832570900205124,
+   "smem_ns": 2.771604948894074,
+   "ratio": 1.0219966237740254,
+   "barrier": "warp",
+   "shuffle_adds": null,
+   "smem_adds": null,
+   "ci_overlap": true
+  },
+  {
+   "case": "syn_inwarp_32x64_f64",
+   "bytes": 16384,
+   "dtype": "f64",
+   "shuffle_ns": 5.230397975743607,
+   "smem_ns": 8.45527979002298,
+   "ratio": 0.6185954936601089,
+   "barrier": "warp",
+   "shuffle_adds": null,
+   "smem_adds": null,
+   "ci_overlap": false
+  },
+  {
+   "case": "syn_inwarp_32x128_f64",
+   "bytes": 32768,
+   "dtype": "f64",
+   "shuffle_ns": 31.29354351882469,
+   "smem_ns": 19.69187995236294,
+   "ratio": 1.5891597752234725,
+   "barrier": "warp",
+   "shuffle_adds": null,
+   "smem_adds": null,
+   "ci_overlap": false
+  }
+ ],
+ "by_class": [
+  {
+   "class": "register_permute",
+   "bits": 8,
+   "n": 1,
+   "adds_median": 0.10074716121367455,
+   "adds_min": 0.10074716121367455,
+   "adds_max": 0.10074716121367455,
+   "assumed": [
+    0
+   ],
+   "alpha_median": null
+  },
+  {
+   "class": "register_permute",
+   "bits": 32,
+   "n": 3,
+   "adds_median": 0.06370477557665903,
+   "adds_min": 0.0010188645642528534,
+   "adds_max": 0.07040002725740967,
+   "assumed": [
+    0
+   ],
+   "alpha_median": null
+  },
+  {
+   "class": "shared_memory (cta barrier)",
+   "bits": 8,
+   "n": 4,
+   "adds_median": 9.191869453904228,
+   "adds_min": 3.3359665966726824,
+   "adds_max": 14.351682901368086,
+   "assumed": [
+    128
+   ],
+   "alpha_median": 0.07181148010862679
+  },
+  {
+   "class": "shared_memory (cta barrier)",
+   "bits": 16,
+   "n": 7,
+   "adds_median": 3.3069941754353995,
+   "adds_min": 2.579163454878008,
+   "adds_max": 3.6920672758887556,
+   "assumed": [
+    64
+   ],
+   "alpha_median": 0.05167178399117812
+  },
+  {
+   "class": "shared_memory (cta barrier)",
+   "bits": 32,
+   "n": 9,
+   "adds_median": 7.367715208822799,
+   "adds_min": 5.983750076741595,
+   "adds_max": 7.935323860056638,
+   "assumed": [
+    32
+   ],
+   "alpha_median": 0.23024110027571246
+  },
+  {
+   "class": "shared_memory (cta barrier)",
+   "bits": 64,
+   "n": 4,
+   "adds_median": 4.260968765371613,
+   "adds_min": 3.899541924840633,
+   "adds_max": 24.01027885515079,
+   "assumed": [
+    32
+   ],
+   "alpha_median": 0.13315527391786292
+  },
+  {
+   "class": "shared_memory (warp barrier)",
+   "bits": 32,
+   "n": 1,
+   "adds_median": 7.601226198223138,
+   "adds_min": 7.601226198223138,
+   "adds_max": 7.601226198223138,
+   "assumed": [
+    32
+   ],
+   "alpha_median": 0.23753831869447306
+  },
+  {
+   "class": "warp_shuffle",
+   "bits": 8,
+   "n": 3,
+   "adds_median": 4.168735220280396,
+   "adds_min": 4.121305805632288,
+   "adds_max": 4.683206479934615,
+   "assumed": [
+    128
+   ],
+   "alpha_median": 0.03256824390844059
+  },
+  {
+   "class": "warp_shuffle",
+   "bits": 16,
+   "n": 4,
+   "adds_median": 3.2796507932027517,
+   "adds_min": 3.020917361052626,
+   "adds_max": 3.314861739762123,
+   "assumed": [
+    64
+   ],
+   "alpha_median": 0.051244543643792995
+  },
+  {
+   "class": "warp_shuffle",
+   "bits": 32,
+   "n": 3,
+   "adds_median": 7.22396944595506,
+   "adds_min": 7.19988343560297,
+   "adds_max": 7.382735919613692,
+   "assumed": [
+    32
+   ],
+   "alpha_median": 0.22574904518609562
+  }
+ ],
+ "errors": [
+  {
+   "case": "survive03_inductor_shared_memory_64_f32",
+   "route": "shuffle",
+   "error": "compile_error: RuntimeError: Parse MLIR file failed."
+  },
+  {
+   "case": "priced21_triton_kernels_warp_shuffle_128x2x1_f32",
+   "error": "ValueError: the harness handles 1-D and 2-D tensors only"
+  },
+  {
+   "case": "syn_crosswarp_128x128_f64",
+   "error": "OutOfResources: out of resource: shared memory, Required: 131072, Hardware limit: 101376. Reducing block sizes or `num_stages` may help."
+  }
+ ]
+}

@@ -23,3 +23,4 @@ goes in a public push: [AGENTS.md](AGENTS.md).
 | 2026-10-13 | [Layer roles during paired recall in Qwen3.5-4B: source contextualization, global retrieval, and late MLPs](2026-10-13-hybrid-attention-retrieval/) |
 | 2026-11-16 | [Deletion Tuning on LFM3-1.7B: learning Wordle by zeroing weights, and what full fine-tuning, LoRA and deletion each forget](2026-11-16-deletion-tuning-sft/) |
 | 2026-11-21 | [What does HiSA give up? The exact far address, slow to relearn, and two slow RoPE pairs (SmolLM-135M at 2K)](2026-11-21-hisa-far-pairs/) |
+| 2026-11-21 | [Triton's layout-conversion pass: wrong prices that rarely matter, and a choice made with no price at all (RTX 5090)](2026-11-21-triton-layout-cost-weights/) |
