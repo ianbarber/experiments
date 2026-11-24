@@ -35,11 +35,13 @@ On sm_120, the card's own target:
   price itself is 4 to 30 times too high against arithmetic.
 - Where an alternative resolution changes a layout, the best one beat the default by at
   most 11.6% (Inductor's batch-norm backward reduction, 2.46 µs against 2.15 µs); median 0
-  over 46 conflicted kernels.
+  over 46 conflicted kernels. With ptxas 12.9 as the assembler in place of the bundled 13.5
+  it is 12.3%.
 - The largest gap of all is not a layout difference: one alternative build of
   triton_kernels' `_matmul` for fp8 activations and mxfp4 weights runs in 123 µs against
   the default's 3,169 µs, 96.1% less. The two builds hold the same operations on the same
-  layouts in a different order.
+  layouts in a different order. Its size depends on the assembler: with ptxas 12.9 it is
+  244 µs against 3,691 µs, 93.4% less.
 
 What follows from those:
 
@@ -58,7 +60,9 @@ What follows from those:
   differs at all: one `local_load` sits six operations earlier in the slow build, ptxas
   drops from 255 registers to 40 and spills 7.9 KB per thread, and the kernel runs 26 times
   slower. For a sibling specialization the default has the fast order and the alternative
-  is 5.9 times slower. The pass has a price for neither effect.
+  is 5.9 times slower. Six ptxas releases from 12.8 to 13.5 make the same fallback on the
+  same two builds; timed with 12.9 the factors are 15 and 5.0. The pass has a price for
+  neither effect.
 
 ![Assumed against measured cost per class](images/assumed_vs_measured.png)
 
@@ -75,5 +79,5 @@ between the middle and right-hand groups.*
 | [`REPORT.md`](REPORT.md) | Method, results with one table per experiment, verdict, limitations |
 | [`LABNOTES.md`](LABNOTES.md) | The run in order: amendments, failures and corrections |
 | [`code/`](code/) | Patches against the pinned commit, census drivers, microbenchmarks, analysis; [`code/README.md`](code/README.md) has the commands |
-| [`results/`](results/) | Summaries and generated tables for each experiment (`report_tables.md` has every table per section and target), raw E3 and E4 results, and three archives: `census_evidence_sm120.tar.xz` and `e4_results.tar.gz`, from which the analysis rebuilds the sm_120 census tables and the E4 tables, and `e4_ttgir_sm120.tar.gz`, the final TTGIR of every build compared on the card |
+| [`results/`](results/) | Summaries and generated tables for each experiment (`report_tables.md` has every table per section and target, `ptxas_tables.md` the check under other ptxas releases), raw E3 and E4 results, and four archives: `census_evidence_sm120.tar.xz`, `e4_results.tar.gz` and `e4_ptxas12.9_results.tar.gz`, from which the analysis rebuilds the sm_120 census tables, the E4 tables and the ptxas tables, and `e4_ttgir_sm120.tar.gz`, the final TTGIR of every build compared on the card |
 | [`images/`](images/) | The three figures |

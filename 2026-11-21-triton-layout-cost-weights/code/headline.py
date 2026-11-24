@@ -30,6 +30,7 @@ def main():
     e3 = json.loads((res / "e3_summary.json").read_text())
     ratios = json.loads((res / "e3_ratios.json").read_text())
     e4 = json.loads((res / "e4_summary.json").read_text()) if (res / "e4_summary.json").exists() else None
+    px = json.loads((res / "ptxas_summary.json").read_text()) if (res / "ptxas_summary.json").exists() else None
     out = {}
 
     def rows(key, arch):
@@ -126,12 +127,26 @@ def main():
                 lines.append(f'The best alternative resolution that changes a layout beat the default by at most '
                              f'{-ch["pct"]:.1f}% (kernel: {where(ch)}); median '
                              f'{h["gap_median_pct_different_operations"]:.0f}% over {n} conflicted kernels.')
+                # the same study with another ptxas release as the assembler
+                o = ((px or {}).get("largest_gain_by_kind", {}).get((px or {}).get("other_version")) or {}).get("different_operations")
+                if o:
+                    same = "the same kernel" if o["label"] == ch["label"] else f'{o["section"]} {o["short"]}'
+                    lines.append(f'  (with ptxas {px["other_version"]} in place of the bundled {px["base_version"]}: '
+                                 f'{-o["pct"]:.1f}% on {same}, {o["default_us"]:.2f} µs default against {o["variant_us"]:.2f} µs)')
             else:
                 lines.append(f'No alternative resolution that changes a layout beat the default on any of {n} '
                              f'conflicted kernels; median 0%.')
             if ro and (not ch or ro["pct"] < ch["pct"]):
                 lines.append(f'The largest gap of all is not a layout difference: {-ro["pct"]:.1f}% (kernel: {where(ro)}), '
                              f'between two builds that hold the same operations on the same layouts in a different order.')
+                # the same pair timed with another ptxas release as the assembler
+                if px:
+                    row = next((t for t in px["timing"] if t["label"] == ro["label"] and t.get(px["other_version"])), None)
+                    if row:
+                        o = row[px["other_version"]]
+                        lines.append(f'  (that gap depends on the assembler: with ptxas {px["other_version"]} in place of the '
+                                     f'bundled {px["base_version"]} it is {-o["pct"]:.1f}%, {o["default_us"]:.2f} µs default '
+                                     f'against {o["variant_us"]:.2f} µs)')
             for section, e in sorted(h.get("extremes", {}).items()):
                 for key, word in (("largest_gain", "largest gain"), ("largest_loss", "largest loss")):
                     if key in e:

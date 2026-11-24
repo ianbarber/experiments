@@ -32,12 +32,15 @@ On sm_120, the RTX 5090's own target:
   during that case, against an assumed 131.
 - Where an alternative resolution changes a layout, the best one beat the default by at
   most 11.6% (Inductor's batch-norm backward reduction, 2.46 µs against 2.15 µs); median 0
-  over the 46 conflicted kernels studied.
+  over the 46 conflicted kernels studied. With ptxas 12.9 as the assembler in place of the
+  bundled 13.5 it is 12.3%.
 - The largest gap of all is not a layout difference. One alternative build of
   triton_kernels' `_matmul` for fp8 activations and mxfp4 weights at a 128-row tile runs in
   123 µs against the default's 3,169 µs, 96.1% less. The two builds hold the same
   operations on the same layouts in a different order; ptxas gives the fast one 255
-  registers and the slow one 40 and a 7.9 KB stack frame.
+  registers and the slow one 40 and a 7.9 KB stack frame. Its size depends on the assembler:
+  with ptxas 12.9 in place of the bundled 13.5 the same pair runs in 244 µs against
+  3,691 µs, 93.4% less.
 
 The prices are wrong and it rarely matters. The choice between layouts is made by
 insertion order, with no price, and it is usually the best of those tried. Where it is
@@ -136,6 +139,12 @@ program that passes is timed interleaved with the default: 30 runs after 5 warm-
 run a CUDA-graph replay of up to 2,000 launches so that host launch overhead is not in the
 measurement. The default built a second time is timed alongside as a null control. On the
 targets the 5090 cannot run, the procedure stops at the code comparison.
+
+Everything is assembled by the ptxas bundled with the pinned Triton, release 13.5
+(V13.5.37). As a check, the `_matmul` and `_p_matmul` builds of triton_kernels were also
+assembled, without launching, by five other releases (12.8.93, 12.9.86, 13.0.88, 13.1.80,
+13.3.73) for all four targets, and the Inductor and triton_kernels studies were timed again
+on the card with 12.9.86 as Triton's assembler.
 
 **Reporting rule.** A timing difference is reported only at 3% or more with non-overlapping
 intervals. In E4 it must also be reported by both of two independent runs, at the smaller
@@ -360,7 +369,7 @@ More conversions is usually slower and sometimes faster; fewer was never faster.
 winning choice changes is the layout the loop body runs in, and the pass has no price for
 that.
 
-**triton_kernels on the 5090: the same operations in another order, and a factor of 26.**
+**triton_kernels on the 5090: the same operations in another order, and a factor of 15 to 26.**
 Six conflicted configurations each of `_matmul` and `_p_matmul` and three of
 `_upcast_from_mxfp` were studied. 138 of 422 alternatives are not the default's program,
 in 27 distinct programs on 11 configurations, all bit-exact. Not one of the 27 changes a
@@ -392,8 +401,62 @@ layout `resolveConflicts` saw first. It comes out the slow way for one specializ
 alternative is 5.9 times slower). The unpatched compiler builds the same slow default: the
 same program from the same TTIR, and the same 40 registers and 7,880-byte frame from ptxas.
 
+`ReorderInstructions` runs after the last invocation of the pass and does not put the load
+back. It has two rules that move a `local_load`. One sinks a load to its single user when
+that user is in a different loop; here the load and its user are in the same loop body. The
+other moves the load of dot operand B after the load of operand A when both feed `tt.dot`
+directly; here each feeds a cast first (`fp_to_fp` on the fp8 activations, `fp4_to_fp` on
+the mxfp4 weights). Run alone over the final TTGIR of either build, it changes nothing.
+
 The other 20 programs, among them every reordering of `_upcast_from_mxfp`, time within 0.5%
 of the default.
+
+**The same studies with other ptxas releases.** Everything above is assembled by the
+bundled ptxas 13.5.37. Under each of six releases from 12.8.93 to 13.5.37, the same two
+`_matmul` builds and only those are given 40 registers and a stack frame of 7.9 to 11.1
+KB; every other build of the twelve `_matmul` and `_p_matmul` configurations gets 164 to
+255 registers. The `--regAllocOptLevel=2` flag that Triton always passes makes no
+difference to that. Both device studies were then timed again with 12.9.86 as the
+assembler: same harness, two runs, same reporting rule. For triton_kernels:
+
+| Kernel, operand types, M tile | 13.5.37: default, µs | alternative, µs | against default | 12.9.86: default, µs | alternative, µs | against default |
+|---|---|---|---|---|---|---|
+| `_matmul`, fp8 by mxfp4, 128 | 3,168.59 | 122.77 | -96.1% | 3,691.17 | 244.41 | -93.4% |
+| `_matmul`, fp8 by mxfp4, 16 | 185.69 | 178.52 | -3.9% | 186.76 | 218.65 | +16.8% |
+| `_p_matmul`, fp8 by mxfp4, 128 | 50.14 | 55.44 | +10.6% | 54.65 | 89.25 | +63.3% |
+| `_p_matmul`, mxfp8 by mxfp4, 128 | 146.72 | 163.70 | +11.6% | 145.52 | 268.12 | +83.8% |
+| `_p_matmul`, fp8 by mxfp4, 128 | 113.12 | 129.11 | +14.0% | 126.49 | 275.93 | +117.1% |
+| `_p_matmul`, mxfp8 by mxfp4, 128 | 114.01 | 135.93 | +19.2% | 128.29 | 256.82 | +100.2% |
+| `_matmul`, mxfp8 by mxfp4, 128 | 20.94 | 124.34 | +492.5% | 30.35 | 151.79 | +400.2% |
+
+The two extreme rows hold. The slow default is 15 times slower than its alternative with
+12.9.86 and 26 times with 13.5.37, and the sibling's alternative is 5.0 and 5.9 times
+slower. The other five rows do not hold in size, and one not in sign: the `_p_matmul`
+alternatives are 63% to 117% slower with the older assembler against 11% to 19%, and the
+16-row `_matmul` alternative goes from 3.9% faster to 16.8% slower. The other 20 programs
+show no reportable difference under either release, and all 27 are bit-exact under both.
+
+The Inductor results do not move. Again 113 distinct programs on 14 kernels reproduce the
+default's output, and the same max-pool kernel is left out for its null control. The best
+build of the batch-norm backward reduction is 12.3% faster than the default (2.34 µs
+against 2.05 µs), where 13.5.37 gave 11.6%; the second reduction's builds are 3.5% to 3.8%
+faster (3.0% to 3.1%); the worst alternative is 52.9% slower (53.5%). No build is faster
+under one release and slower under the other: 9 are faster under both, 28 slower under
+both, and 10 are reported by one release and fall under the 3% line or the two-run rule
+for the other. One gpt2 kernel is not compared: Inductor's autotuner launched it with 8
+warps where it had picked 2, and its alternatives are within 1% of the default both times.
+In all, 12.9.86 gives 14 faster and 34 slower alternatives where 13.5.37 gives 13 and 37,
+and an alternative wins on three of the 46 kernels, not four.
+
+On the targets the card cannot run, the saved `_matmul` and `_p_matmul` builds can only be
+assembled. On sm_90 no build of eight configurations gets a large frame under any release.
+On sm_80 two of four configurations get 32 registers and a frame of 5.2 to 7.7 KB in every
+build, default and alternatives alike, under every release. On sm_100 the default of one
+`_matmul` configuration (fp8 by mxfp4, 16-row tile) gets 32 registers and a 7.7 KB frame
+under the four releases up to 13.1.80 and 255 registers under 13.3.73 and 13.5.37, while
+its alternative gets 255 under all six. So the fallback is not confined to sm_120, and on
+sm_100 whether the default hits it depends on the release. Every build and release:
+[`results/ptxas_tables.md`](results/ptxas_tables.md).
 
 **Null controls.** The default built a second time and timed as an alternative differs
 from the default by 0.01% at the median over the 98 studies that have one, and was never
@@ -442,12 +505,14 @@ Scoped to the pinned commit, this corpus and one RTX 5090.
    the 46 conflicted kernels studied no alternative tried is reportably faster than the
    default, and 37 distinct alternatives are slower against 13 faster. On the other four
    it costs 3% and 12% (two Inductor reductions) and 4% and a factor of 26 (two
-   specializations of one matmul).
+   specializations of one matmul). With ptxas 12.9 the Inductor gains are the same size,
+   the factor is 15, and the 4% turns into a 17% win for the default.
 5. **What separates the builds is not the number of conversions.** On Inductor the
    alternatives that win have more conversions than the default or as many, never fewer. On
    triton_kernels no alternative changes a conversion or a layout at all, and the order of
-   otherwise identical operations moves runtime by anything from 4% to a factor of 26,
-   through register allocation in ptxas. The pass prices conversions and rematerialized
+   otherwise identical operations moves runtime through register allocation in ptxas: by
+   anything from 4% to a factor of 26 with the bundled release, and from 17% to a factor of
+   15 with 12.9. The pass prices conversions and rematerialized
    arithmetic. It has no price for the layout a loop body runs in, or for how long a tile
    sits in registers.
 
@@ -455,7 +520,8 @@ For the column's claim: the solver here is indeed simple, and the weights it has
 wrong. But the evidence that weights are hard is not that fixing these ones helps. It is
 that the measured value of one weight made more kernels slower than faster when used alone,
 and that the two things that separated a faster build from the default, by 12% in one
-kernel and 26 times in another, are things the pass does not model at all.
+kernel and by 15 to 26 times in another depending on the ptxas release, are things the pass
+does not model at all.
 
 ## Limitations
 
@@ -464,12 +530,13 @@ kernel and 26 times in another, are things the pass does not model at all.
   whether the default is slower there is not measured.
 - **Small kernels.** The Inductor kernels in E4 take 1 to 22 µs per launch at the shapes
   these models produce. They are timed by CUDA-graph replay with a null control, but the
-  11.6% gain is 0.3 µs.
-- **The factor of 26 is one assembler on one target.** It comes from ptxas 13.5, the one
-  bundled with the pinned Triton, building for sm_120. I did not try another ptxas or
-  another target, or look inside ptxas for why it falls back to 40 registers. The
-  configurations are the ones the package's own test suite runs, at the shapes it runs
-  them.
+  11.6% gain is 0.3 µs. It is the same size with a second ptxas release.
+- **The matmul gap is timed on one target, and its size depends on the assembler.** Six
+  ptxas releases make the same register fallback on the same two sm_120 builds, and timed
+  with two of them the slow default is 15 and 26 times slower than its alternative. On the
+  other targets the builds are assembled, not run. I did not look inside ptxas for why it
+  falls back to 40 registers. The configurations are the ones the package's own test suite
+  runs, at the shapes it runs them.
 - **E4 samples.** At most 64 of up to a billion alternatives per kernel were tried, and on
   triton_kernels at most six configurations per kernel function. "Best alternative" is the
   best of those; the true gap can only be larger.

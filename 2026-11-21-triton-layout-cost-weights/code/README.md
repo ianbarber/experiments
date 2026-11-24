@@ -124,6 +124,10 @@ Every study on the device is run twice, in separate processes, into `<name>_sm12
 RP="shared_memory=0:3.84,warp_shuffle=0:3.84"      # the measured price, 0.12 of the assumed one
 
 python e4_bench.py --workload tut06 --out $RUNS/e4/tut06_sm120
+# Inductor has to compile in this process and without its caches, as in the census: a kernel
+# built in a compile worker or restored from a cache comes back without its Python source,
+# and every study then fails with "'NoneType' object has no attribute '__closure__'"
+export TORCHINDUCTOR_COMPILE_THREADS=1 TORCHINDUCTOR_FX_GRAPH_CACHE=0 TORCHINDUCTOR_AUTOGRAD_CACHE=0
 for run in "" _run2; do                                # about 7 and 4 minutes a run
   python e4_bench.py --workload inductor --out $RUNS/e4/inductor${run}_sm120 --runs 30 --warmup 5
   python e4_bench.py --workload inductor --reprice "$RP" --out $RUNS/e4/inductor_reprice${run}_sm120 \
@@ -163,6 +167,34 @@ the digests `census_from_ttgir.py` writes.
 
 Run E3 and the device-target E4 with nothing else on the GPU.
 
+## The same builds under other ptxas releases
+
+`$PTXAS` holds one directory per release, named by its version, each with that release's
+`ptxas` in it. The six used here: 12.9.86 from the CUDA 12.9 toolkit, 12.8.93 and 13.1.80
+from the Triton 3.7.0 and 3.6.0 wheels (`ptxas` and `ptxas-blackwell`), 13.0.88 from the
+torch 2.12.0+cu130 wheel, 13.3.73 from the `nvidia-cuda-nvcc` wheel of that version, and
+the bundled 13.5.37.
+
+```bash
+# registers and stack frame of every saved _matmul and _p_matmul build; nothing is launched
+for arch in 80 90 100 120; do
+  python ptxas_versions.py --ttgir $RUNS/e4/tk_sm$arch/ttgir --ptxas-root $PTXAS --match _matmul_ _p_matmul_ \
+    --arch $arch --jobs 6 $([ $arch = 120 ] && echo --no-regalloc-flag) --out $RUNS/ptxas_versions/tk_sm$arch.json
+done
+
+# the device studies again with 12.9.86 as Triton's assembler: the triton_kernels and
+# Inductor commands of the E4 section, without the repriced builds, with
+export TRITON_PTXAS_PATH=$PTXAS/12.9.86/ptxas TRITON_CACHE_DIR=/path/to/an/empty/directory
+# and output in $RUNS/e4_ptxas12.9/{tk,tk_run2,inductor,inductor_run2}_sm120
+
+python census_from_ttgir.py --runs $RUNS/e4_ptxas12.9
+python analyze_e4.py --runs $RUNS/e4_ptxas12.9 --out /tmp/ptxas12.9 > /dev/null
+python analyze_ptxas.py --versions $RUNS/ptxas_versions/tk_sm120.json \
+  --base ../results/e4_summary.json --base-version 13.5.37 --other /tmp/ptxas12.9/e4_summary.json --other-version 12.9.86 \
+  --other-targets $RUNS/ptxas_versions/tk_sm80.json $RUNS/ptxas_versions/tk_sm90.json $RUNS/ptxas_versions/tk_sm100.json \
+  --json ../results/ptxas_summary.json > ../results/ptxas_tables.md
+```
+
 ## Everything from the raw runs
 
 ```bash
@@ -182,9 +214,18 @@ tar -xJf ../results/census_evidence_sm120.tar.xz -C /tmp/census
 python analyze_census.py --runs /tmp/census --out /tmp/out --ratios ../results/e3_ratios.json > /tmp/out/e1_e2_tables.md
 tar -xzf ../results/e4_results.tar.gz -C /tmp/e4
 python analyze_e4.py --runs /tmp/e4 --out /tmp/out > /tmp/out/e4_tables.md
+
+mkdir -p /tmp/e4_ptxas /tmp/out_ptxas                 # the ptxas 12.9.86 runs
+tar -xzf ../results/e4_ptxas12.9_results.tar.gz -C /tmp/e4_ptxas
+python analyze_e4.py --runs /tmp/e4_ptxas --out /tmp/out_ptxas > /dev/null
+python analyze_ptxas.py --versions ../results/ptxas_versions_sm120.json \
+  --base ../results/e4_summary.json --base-version 13.5.37 --other /tmp/out_ptxas/e4_summary.json --other-version 12.9.86 \
+  --other-targets ../results/ptxas_versions_sm80.json ../results/ptxas_versions_sm90.json ../results/ptxas_versions_sm100.json \
+  > /tmp/out_ptxas/ptxas_tables.md
 ```
 
-The E4 summary and tables come out identical to the committed ones. The census archive
+The E4 summary and tables, and `ptxas_tables.md`, come out identical to the committed ones.
+The census archive
 holds sm_120 only, so every sm_120 row of `e1_e2_summary.json` comes out identical and the
 other targets are empty. The patch-interference check and the classifier total over all
 four targets need the raw runs.
@@ -205,6 +246,7 @@ four targets need the raw runs.
 | `compare_reprice.py` | compares a census recompiled with a different conversion price against the base census |
 | `analyze_census.py`, `analyze_e3.py`, `analyze_e4.py`, `make_figures.py` | tables and figures |
 | `report_tables.py`, `headline.py` | the tables and the headline block as they appear in the report |
+| `ptxas_versions.py`, `analyze_ptxas.py` | the saved builds under other ptxas releases: registers and stack frame per release, and the device timing under two releases |
 | `pack_evidence.py` | reduces the event log of one target to what the tables read, in a form `analyze_census.py` loads |
 | `pack_ttgir.py` | packs the TTGIR saved by the device E4 runs, with debug locations removed |
 | `assemble_results.sh` | runs all of the analysis in order |

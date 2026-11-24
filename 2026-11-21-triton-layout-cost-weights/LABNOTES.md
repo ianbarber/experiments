@@ -331,3 +331,88 @@ measurement changed.
   gain from an alternative that changes a layout, 11.6%, and gives the matmul result its
   own sentence. Of the 13 faster alternatives, 11 change an operation or a layout (two
   Inductor kernels) and 2 are reorderings (two `_matmul` specializations).
+
+## Other assemblers, and why `ReorderInstructions` does not help (2026-11-23)
+
+The report said the factor of 26 was one ptxas release on one target, and that I had not
+looked at why nothing moves the load back. Both are cheap to check. Numbers are in the
+report and `results/ptxas_tables.md`; these are the notes on how I got them.
+
+**Releases.** Six were already on the machine: 12.9.86 in the CUDA 12.9 toolkit, 12.8.93
+and 13.1.80 in the Triton 3.7.0 and 3.6.0 wheels, 13.0.88 in a torch 2.12 wheel, 13.3.73 in
+an `nvidia-cuda-nvcc` wheel, and the bundled 13.5.37. Triton takes another assembler
+through `TRITON_PTXAS_PATH` and sets the PTX version to match it.
+
+**Registers and frames, nothing launched.** I compiled each saved TTGIR of the `_matmul`
+and `_p_matmul` builds again under each release and read what `ptxas -v` reports. Three
+mistakes on the way:
+
+1. I ran it from the directory that holds the `triton` checkout, and Python imported the
+   checkout's root as the package. The code README already warns about this.
+2. My first version took the PTX from Triton and assembled it again by hand with
+   `--gpu-name=sm_120`. Triton's PTX says `sm_120a`, and every assembly failed.
+3. With that fixed, my hand flags still left out `--fmad=false`, which Triton passes
+   because fp fusion is off by default at this commit. The numbers did not depend on it,
+   but I stopped assembling by hand: the script now reads the log of Triton's own ptxas run
+   (`TRITON_DUMP_PTXAS_LOG`). Only the run without `--regAllocOptLevel=2` is by hand.
+
+Check on the method: for every `_matmul` and `_p_matmul` build the device runs loaded under
+13.5.37 and 12.9.86, 56 in all, registers and frame from this route equal what the driver
+reported for the loaded binary. The hand-assembled first pass gave the same 174 numbers.
+
+Under all six releases the same two builds, and no others, get 40 registers and a frame of
+7.9 to 11.1 KB. Dropping `--regAllocOptLevel=2` changes ten register counts (174 to 168)
+and 58 frames, and moves no build into or out of that group. The two releases from 13.3 on
+give the fast builds smaller frames than the four older ones (408 against 1,480 bytes, 632
+against about 2,000).
+
+**triton_kernels timed with 12.9.86.** Two runs, `TRITON_PTXAS_PATH` set and an empty
+Triton cache. Same 15 conflicted configurations, same 27 distinct programs, all bit-exact,
+null control at most 0.6%. The same seven of the suite's tests fail under both releases,
+for wanting more shared memory than the card has. The slow default is 15 times slower than
+its alternative, not 26: both builds are slower under the older assembler, the fast one by
+twice. And `_matmul` at M 16 changes sign, so one of my 13 "faster alternatives" is faster
+only with the bundled assembler.
+
+**Why `ReorderInstructions` leaves the load.** It runs after the fourth invocation of the
+pass, directly after `ReduceDataDuplication`. It can move a `local_load` in two ways. It
+sinks one to its single user if the user is in a different `scf.for`; in these kernels the
+load and its user are in the same loop body. And it moves the load of dot operand B after
+the load of operand A, if B's load has one use and that use is the `tt.dot`; here B's load
+feeds `ttg.fp4_to_fp` and A's feeds `tt.fp_to_fp`, so the rule does not match. I ran the
+pass alone with `triton-opt` on the final TTGIR of the default and the alternative of all
+three `_matmul` pairs: no change in any of the six.
+
+**Inductor with 12.9.86.** With the headline now leading on the Inductor batch-norm kernel,
+I wanted the same check there. Two false starts. Every study failed with `'NoneType' object
+has no attribute '__closure__'`. I blamed a warm Inductor cache and restarted with a fresh
+cache directory and the FX-graph cache off: the same failure on every kernel. The cause is
+that Inductor compiles in worker processes by default (16 threads here) and the kernel
+object it keeps in the parent has had its Python source dropped, so the harness cannot
+rebuild it. The census ran with `TORCHINDUCTOR_COMPILE_THREADS=1`, and so did the E4 runs,
+from the same shell. The E4 commands in the code README did not say so. They do now.
+
+With that set: the same 198 kernels, 16 with a conflict, 113 distinct programs on 14
+kernels, all with the default's output (72 bit-exact, 41 within 1.5e-7 relative), and the
+same max-pool kernel left out for its null control (6.3%). To be sure the runs used the
+assembler I meant, I assembled their saved TTGIR with both releases: all 133 binaries the
+12.9.86 runs loaded have the registers and frame 12.9.86 gives, and 17 of them differ from
+what 13.5.37 gives.
+
+That check turned up one kernel that is not the same launch. Four TTGIR files of the
+original run differ from the new one, all of gpt2's `per_fused_embedding_dense_backward_sum_12`:
+Inductor's own autotuner picked 2 warps for it in both 13.5.37 runs and 8 warps in both
+12.9.86 runs. I had matched Inductor kernels between releases by name. The comparison now
+matches on the specialization too and leaves that kernel out. Its three alternatives are
+within 0.9% of the default either way.
+
+The Inductor numbers barely move: 12.3% for the best build of the batch-norm backward
+reduction where it was 11.6%, and no build that one release calls faster does the other
+call slower. So the Inductor result does not depend on the release, and the triton_kernels
+result does in its size.
+
+**Other targets, assembled only.** The code-only E4 runs saved TTGIR for sm_80, sm_90 and
+sm_100, so the same script can at least say whether ptxas falls back there. It does on
+sm_80 (every build of two configurations, under every release) and on sm_100 (one default,
+under the four older releases only), and not on sm_90. None of this can be timed on this
+card.
